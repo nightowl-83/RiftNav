@@ -12,9 +12,10 @@ follow their instructions.
 
 Two things to be aware of:
 
-- The Drive folder still holds two **Google Docs** that have no true file form. Their `.docx`
-  and `.pdf` snapshots are in `reference/`. If those Docs are still being edited in Drive,
-  Drive is authoritative for them and the snapshots will drift.
+- Both Google Docs have been **imported into `reference/` as Markdown** and the Drive copies
+  are retired. Neither had been edited since 20/21 August, so nothing was lost in the move.
+  `reference/astral-rifts-reference.md` and
+  `reference/mobbin-github-web-reference-screens.md` are now the live copies.
 - If Google Drive for desktop was ever installed and pointed at this folder, uninstall it or
   unlink this folder. Two sync systems fighting over one directory is how you get conflict
   copies.

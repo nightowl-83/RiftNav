@@ -27,12 +27,11 @@ is next touched.
 
 ## Published artifacts
 
-_None recorded yet. When an artifact is published to claude.ai, add it here: name, URL, what
-it's for, date._
+When an artifact is published to claude.ai, add it here: name, URL, what it's for, date.
 
 | Name | URL | Purpose | Date |
 |---|---|---|---|
-| — | — | — | — |
+| Stellaris Helper Style Guide | https://claude.ai/code/artifact/8b4f99af-a76c-4f44-84c2-92a208920505 | Live design system built from the Mobbin/GitHub reference screens — tokens, type scale, components, rift patterns | 2026-08-21 |
 
 ## Research outputs
 
@@ -48,4 +47,10 @@ it's for, date._
 |---|---|
 | stellaris.paradoxwikis.com (game v3.14) | All rift and site data. Rift data captured 2026-08-30; situations added 2026-09-14 |
 | `Template:Reward` on the same wiki | Reward code expansions |
-| Mobbin — GitHub Web | UI reference, `reference/Reference screens — GitHub Web (Mobbin).pdf` |
+| Mobbin — GitHub Web | UI reference. 17 screens, each mapped to what it drove in the style guide: `reference/mobbin-github-web-reference-screens.md` |
+
+## Retired
+
+| What | Status |
+|---|---|
+| Google Drive folder "Stellaris Helper" | **Retired 2026-09-20.** Both Google Docs imported to `reference/` as Markdown; nothing live remains there. Daily parity audit paused. |

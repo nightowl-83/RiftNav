@@ -54,10 +54,10 @@ ABORT RIFT · EVENT LOG · CLASSIC/HOLO toggle.
 Claude Code conversation history is **local to one machine and is not synced anywhere**. The
 only thing that survives a move between machines is what gets committed. So:
 
-**At the start of a session:** `git pull`, then read `docs/DECISIONS.md` and the newest file
-in `docs/sessions/`.
+**At the start of a session:** run `/pick-up` (or `git pull`, then read `docs/DECISIONS.md`
+and the newest file in `docs/sessions/`).
 
-**At the end of a session** (or when Mike says "close out"):
+**At the end of a session** — run `/close-out`, or do this when Mike says "close out":
 1. Write `docs/sessions/YYYY-MM-DD-<topic>.md` — what was done, what was decided, what's open,
    what to do next. Write it for a reader with no memory of the conversation.
 2. Add any binding decision to `docs/DECISIONS.md` with its date and reasoning.

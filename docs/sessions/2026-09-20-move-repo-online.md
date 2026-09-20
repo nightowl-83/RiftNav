@@ -67,3 +67,20 @@ protocol in `CLAUDE.md`.
 - Claude Design canvas: https://claude.ai/design/p/03be95db-3869-4f61-81e5-31ca2661406c
 - Claude Code session docs: https://code.claude.com/docs/en/sessions
 - Claude Code memory docs: https://code.claude.com/docs/en/memory
+
+---
+
+## Addendum — same session, after decisions
+
+- **Remote set:** `https://github.com/nightowl-83/RiftNav.git`. Repo name is RiftNav, folder is
+  still `Stellaris` locally; that's fine, nothing depends on the folder name.
+- **Commit identity** corrected to `mcball83@gmail.com` (the GitHub account) and the first
+  commit re-authored.
+- **Google Drive retired.** Both Docs imported to `reference/` as Markdown. Neither had been
+  edited since 20/21 August, so the exports were current — nothing was lost. The Drive folder
+  and its daily parity audit are done.
+- **Style guide artifact recovered.** The Mobbin doc pointed at a published Stellaris Helper
+  Style Guide on claude.ai that wasn't recorded anywhere in the project. It's now in
+  `docs/ARTIFACTS.md` — exactly the kind of thing that goes missing when a conversation closes.
+- **`/close-out` and `/pick-up` slash commands added** under `.claude/commands/`. They're
+  committed, so they exist on every clone.
