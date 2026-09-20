@@ -1,0 +1,5168 @@
+{
+ "dataset": "stellaris_archaeological_sites",
+ "version": "1.0",
+ "generated": "2026-08-30",
+ "source": "https://stellaris.paradoxwikis.com/Archaeological_site (all data inline on that page) plus https://stellaris.paradoxwikis.com/Template:Reward for code expansion",
+ "coverage": "All documented archaeological sites across every DLC",
+ "mechanics": [
+  "A site must be inside your borders (or reachable) and needs a scientist plus a science ship. Each excavation phase is 90 days; AI empires take twice as long.",
+  "Roll = d10 + scientist skill + bonuses + clues - chapter difficulty. Scientist skill is leader level plus trait modifiers, and the Curator Archaeology Lab technology adds to it.",
+  "14+ completes the chapter (75 XP). 11-13 gives 2 clues for the next phase (40 XP). 6-10 gives 1 clue (25 XP). 5 or less may fire a mishap event (10 XP).",
+  "On completion a site has a 67% chance to leave a minor artifacts deposit: 80% of the time value 1, 16% value 2, 4% value 3. The Antiquarian trait adds +5% deposit chance per level.",
+  "Mishap events (roll 5 or less) are flavoured per site type but mechanically identical: excavating scientist dies (-2 clues); team members die (-1 clue); danger avoided (+3 clues); pay 100 Energy for +3 clues or lose 2; scientist gains the Maimed trait."
+ ],
+ "reward_codes": [
+  {
+   "code": "art1",
+   "meaning": "6x minor artifacts, clamped to 50 / 150 / 250 by game stage"
+  },
+  {
+   "code": "art2",
+   "meaning": "6x minor artifacts, clamped to 300 / 400 / 500"
+  },
+  {
+   "code": "art3",
+   "meaning": "6x minor artifacts, clamped to 750 / 1,000 / 1,500"
+  },
+  {
+   "code": "mat1",
+   "meaning": "6x of the named resource (100~1,000)"
+  },
+  {
+   "code": "mat2",
+   "meaning": "12x of the named resource (150~2,000)"
+  },
+  {
+   "code": "mat3",
+   "meaning": "18x of the named resource (250~5,000)"
+  },
+  {
+   "code": "mat4",
+   "meaning": "24x of the named resource (350~10,000)"
+  },
+  {
+   "code": "mat5",
+   "meaning": "48x of the named resource (700~30,000)"
+  },
+  {
+   "code": "rsh1 / res1",
+   "meaning": "12x of the named research (250~100,000)"
+  },
+  {
+   "code": "rsh2 / res2",
+   "meaning": "18x of the named research (350~100,000)"
+  },
+  {
+   "code": "rsh3 / res3",
+   "meaning": "24x of the named research (500~1,000,000)"
+  },
+  {
+   "code": "rsh4 / res4",
+   "meaning": "48x of the named research (1,000~1,000,000)"
+  },
+  {
+   "code": "rsh5 / res5",
+   "meaning": "96x of the named research (2,000~2,000,000)"
+  },
+  {
+   "code": "uni1",
+   "meaning": "6x Unity (100~100,000)"
+  },
+  {
+   "code": "uni2",
+   "meaning": "12x Unity (150~100,000)"
+  },
+  {
+   "code": "uni3",
+   "meaning": "18x Unity (250~1,000,000)"
+  },
+  {
+   "code": "uni4",
+   "meaning": "24x Unity (350~1,000,000)"
+  },
+  {
+   "code": "uni5",
+   "meaning": "48x Unity (700~2,000,000)"
+  },
+  {
+   "code": "inf1",
+   "meaning": "6x Influence (40~100)"
+  },
+  {
+   "code": "inf2",
+   "meaning": "12x Influence (80~175)"
+  },
+  {
+   "code": "inf3",
+   "meaning": "18x Influence (125~250)"
+  }
+ ],
+ "reward_finder": {
+  "Relics": [
+   {
+    "reward": "Awakens Shard, a guardian - defeating it grants The Rubricator relic",
+    "site": "Kleptomaniac Rats",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Blade of the Huntress relic",
+    "site": "Fossilized Remains",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Choice: special project granting The Defragmentor relic plus the C.A.R.E Interactive Interface modifier (+10% Energy from jobs)",
+    "site": "Planetary Machinery",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Choice: The Tempest Invocator relic",
+    "site": "Celebration",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Crystal of Odryskia relic",
+    "site": "Debris Belt",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Head of Zarqlan relic",
+    "site": "Ancient Tomb",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Miniature Galaxy relic",
+    "site": "Abandoned Ecumenopolis",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Omnicodex relic",
+    "site": "Ruined World",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "OR 100 Influence and fight two mega-warforms for The Defragmentor relic plus a large minor artifact payout",
+    "site": "Planetary Machinery",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Psionic Archive relic",
+    "site": "Zron",
+    "group": "Precursor sites",
+    "chapter": 5
+   },
+   {
+    "reward": "The Disturbance Oppressor relic",
+    "site": "Before the Fall",
+    "group": "Precursor sites",
+    "chapter": 4
+   }
+  ],
+  "Specimens (Grand Archive)": [
+   {
+    "reward": "adAkkaria Propaganda Poster specimen [Grand Archive]",
+    "site": "The Propaganda Station",
+    "group": "Precursor sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Ancient Laser Pointer specimen [Grand Archive]",
+    "site": "Ex Gravitas",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Ancient Rift Sphere specimen [Grand Archive]",
+    "site": "Ancient Crater",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Captain Ness's Logbook specimen [Grand Archive]",
+    "site": "Derelict Safehouse",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Choice: rsh2 Engineering research plus the Altar to the Elder One specimen [Grand Archive]",
+    "site": "The Broken Gates",
+    "group": "Other expansion sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Confessions of the Benefactors specimen [Grand Archive]",
+    "site": "Dark Secret",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Devolved Baol Drones specimen [Grand Archive]",
+    "site": "The Silenced",
+    "group": "Precursor sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Disturbance Tech specimen [Grand Archive]",
+    "site": "Strange Flows",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Doomsday Scrolls specimen [Grand Archive]",
+    "site": "Any Other Rock",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Fossilized Megastomach specimen [Grand Archive]",
+    "site": "Subterranean Hollows",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Fragment of Reckoning specimen [Grand Archive]",
+    "site": "The Shrouded World",
+    "group": "Origin sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Fragmented Zroni Archive specimen [Grand Archive]",
+    "site": "Abandoned Colony Ruins",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Giant Egg Shell specimen [Grand Archive]",
+    "site": "Hole in the Ground",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Grunur Data Crystal specimen [Grand Archive]",
+    "site": "Grunur Ruins",
+    "group": "Precursor sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Heart of the Pulsar specimen [Grand Archive]",
+    "site": "Gas Giant Structure",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Illanii Archives specimen [Grand Archive]",
+    "site": "The Library",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "INET Trade Manifesto specimen [Grand Archive]",
+    "site": "The Ancient Shelters",
+    "group": "Precursor sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Inetian Planetary Model Manual specimen [Grand Archive]",
+    "site": "Coordinates A: Colonized Planet",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Jade Dining Set specimen [Grand Archive]",
+    "site": "Strange Asteroid",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Kha'Lanka Crystallized Corpses specimen [Grand Archive]",
+    "site": "Whispers in the Stone",
+    "group": "Other expansion sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Landeer's Arm specimen [Grand Archive]",
+    "site": "Institute of Exalted Benevolence",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Localised Aurora Borealis specimen [Grand Archive]",
+    "site": "Beautiful Bubble",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Memory Orbs specimen [Grand Archive]",
+    "site": "The Endless Expanse",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Minamar Chandelier specimen [Grand Archive]",
+    "site": "The Aftermath of Battle",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "OR 3,500 Alloys plus uni4 Unity, with the Saariah's Guilt specimen [Grand Archive]",
+    "site": "Ix Belèn",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Organic Computer specimen [Grand Archive]",
+    "site": "The Shattered",
+    "group": "Precursor sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Osseus Construction Material specimen [Grand Archive]",
+    "site": "City of Bones",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Piece of the Invocator specimen [Grand Archive]",
+    "site": "Celebration",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Planetary Sculpture specimen [Grand Archive]",
+    "site": "Too Angled",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Primitive Mega-Electromagnet specimen [Grand Archive]",
+    "site": "Moon Bump",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Programmable Puzzle Cube specimen [Grand Archive]",
+    "site": "Target from Orbit",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Radiated Remains specimen [Grand Archive]",
+    "site": "Mutant Fossils",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Relic Rails Remains specimen [Grand Archive]",
+    "site": "Relic Rails",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Retarax Hunting Trophies specimen [Grand Archive]",
+    "site": "Fossilized Remains",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Robot Debris Fragment specimen [Grand Archive]",
+    "site": "Robot Debris",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Rock Jellies specimen [Grand Archive]",
+    "site": "Dotted Archipelago",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Rock Jellies specimen [Grand Archive]",
+    "site": "Popular Rock",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Rudari Death Laser Prototype specimen [Grand Archive]",
+    "site": "Ruined Station",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Ruins Artifact specimen [Grand Archive]",
+    "site": "Ruins",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Space Shanty specimen [Grand Archive]",
+    "site": "Message in a Bottle",
+    "group": "Base game sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Specimen [Grand Archive]",
+    "site": "One Last Hope",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Specimen [Grand Archive]",
+    "site": "Ruined Star System",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Specimen [Grand Archive]",
+    "site": "Ruined World",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Specimen [Grand Archive]",
+    "site": "The Signal",
+    "group": "Unique system sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Spirit of the Unshackled specimen [Grand Archive]",
+    "site": "Crashed Slaver Ship",
+    "group": "Origin sites",
+    "chapter": 5
+   },
+   {
+    "reward": "The Final Sacrifice specimen [Grand Archive]",
+    "site": "Zron",
+    "group": "Precursor sites",
+    "chapter": 5
+   },
+   {
+    "reward": "The Last General's Badge specimen [Grand Archive]",
+    "site": "Before the Fall",
+    "group": "Precursor sites",
+    "chapter": 4
+   },
+   {
+    "reward": "The Mask of Transformation specimen [Grand Archive]",
+    "site": "Message in the Canopy",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "The Pilgrimage of Last Days specimen [Grand Archive]",
+    "site": "The Grand Herald",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Zroni War Banners specimen [Grand Archive]",
+    "site": "Zroni Shrine",
+    "group": "Precursor sites",
+    "chapter": 2
+   }
+  ],
+  "Paragons & unique leaders": [
+   {
+    "reward": "Choice: recruit the Oracle unique leader (closed to Fanatic Xenophobes)",
+    "site": "Hidden Worlds",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Keides (unique leader): keep him a scientist and strip his negative traits, or change his class and strip all traits",
+    "site": "Vagrosian Ruins",
+    "group": "Unique system sites",
+    "chapter": 7
+   },
+   {
+    "reward": "OR 1,000 Alloys, 3,500 Engineering research and 500 Influence (250 if you spoke to the Oracle first)",
+    "site": "Hidden Worlds",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   }
+  ],
+  "Leader traits & leader effects": [
+   {
+    "reward": "Choice: scientist gains Meticulous (blocked if they have Maniacal or Carefree), or Percussive Maintainer",
+    "site": "Ruined Station",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Either way 54,000 experience and the Ancestral Inheritance trait",
+    "site": "Vagrosian Ruins",
+    "group": "Unique system sites",
+    "chapter": 7
+   },
+   {
+    "reward": "Option for the scientist to gain Psionic if not robotic",
+    "site": "Celebration",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Random: rsh3 Society research and the scientist gains Traumatized",
+    "site": "Déjà Vu Dig",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Rescue costs 100 Influence and 500 Energy, or you lose 3 clues; either path gives +5 clues and the scientist returns Maimed",
+    "site": "The Sentinels",
+    "group": "Other expansion sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Scientist gains Maniacal or Paranoid (33% each)",
+    "site": "Debris Belt",
+    "group": "Unique system sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Skrand Sharpbeak, if you have him, gains 800 experience",
+    "site": "Ancient Capital Site",
+    "group": "Base game sites",
+    "chapter": 3
+   }
+  ],
+  "Ships, armies & structures": [
+   {
+    "reward": "A corvette at 25-75% damage, with a special project to repair it",
+    "site": "Message in the Dust",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "A titan at 25-75% damage",
+    "site": "The Grand Herald",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Choice: negotiate for 8-9 Sentinel armies as planetary protection",
+    "site": "The Sentinels",
+    "group": "Other expansion sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Creates a habitat over the site",
+    "site": "Hold the Line",
+    "group": "Other expansion sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Special project to restore the crashed ship as a warship (up to battleship) or as a habitat (grants Orbital Habitats technology)",
+    "site": "The Aftermath of Battle",
+    "group": "Origin sites",
+    "chapter": 4
+   }
+  ],
+  "Planetary decisions & features": [
+   {
+    "reward": "Machine Intelligence: art2 minor artifacts and the Construct Fungiform Housing Units decision",
+    "site": "City of Bones",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Mutation Vats planetary feature",
+    "site": "Mutant Fossils",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Non-machine: Deploy Tissue Growth Stimulants planetary decision",
+    "site": "City of Bones",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Option to upgrade to the Kha'Lanka Crystal Plant",
+    "site": "Whispers in the Stone",
+    "group": "Other expansion sites",
+    "chapter": 5
+   },
+   {
+    "reward": "OR turn the adAkkaria Convention homeworld into a habitable planet with the Patriotic Institute of Celebration building",
+    "site": "Celebration",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Winning the fight gives the Sentinels Metal planetary feature",
+    "site": "The Sentinels",
+    "group": "Other expansion sites",
+    "chapter": 3
+   }
+  ],
+  "Situations & event chains": [
+   {
+    "reward": "Ends the 'A Rift in Space' situation",
+    "site": "Ancient Crater",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "If you took Unity above: option to begin de-cyberization in the Embodied Identity situation",
+    "site": "Copper and Chrome",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Option to start the Embodied Identity situation if not already running",
+    "site": "Factory Setting",
+    "group": "Origin sites",
+    "chapter": 1
+   },
+   {
+    "reward": "OR +20% progress toward Universal Macrophage plus Adaptive Evolution situation progress if Evolutionary Predators - needs an organic main species",
+    "site": "Ancient Facility",
+    "group": "Base game sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR summon The Elder One guardian - worship it for the Eldritch Knowledge modifier, or attack it for inf4-scale Influence and the Horrific Inverse Mass situation",
+    "site": "The Broken Gates",
+    "group": "Other expansion sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Starts the Genetic Crossroads event chain",
+    "site": "Homeworld Excavation",
+    "group": "Origin sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Starts the Remnant event chain toward the nearest Curator station",
+    "site": "The Library",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "±20 progress toward the Embodied Identity situation",
+    "site": "The Ruined Cradle",
+    "group": "Origin sites",
+    "chapter": 5
+   }
+  ],
+  "Vassals, diplomacy & federation": [
+   {
+    "reward": "Choice: uni3 Unity and +500 opinion with the Anomalous Cube Fallen Empire (closed if at war, or if they are Ancient Caretakers)",
+    "site": "Anomalous Cube",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Federation-wide: +40 Cohesion, ~60 minor artifacts, Genius Caeli: A Time of Knowing (20 years)",
+    "site": "Chthonic Siren",
+    "group": "Other expansion sites",
+    "chapter": 4
+   },
+   {
+    "reward": "OR the Larionessi Consciousness as a unique vassal empire",
+    "site": "The Signal",
+    "group": "Unique system sites",
+    "chapter": 3
+   }
+  ],
+  "Planets, deposits & systems": [
+   {
+    "reward": "2-4 Zro deposits",
+    "site": "Zron",
+    "group": "Precursor sites",
+    "chapter": 1
+   },
+   {
+    "reward": "5 Zro",
+    "site": "Zron",
+    "group": "Precursor sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Adds a 1 Living Metal deposit to the planet",
+    "site": "Anomalous Cube",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Choice: Killer Microorganism modifier, or rsh1 Society research plus an +8 research deposit",
+    "site": "The Library",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "If you have not met the MSI: reveals their location and grants +10% happiness and +10% Unity for 10 years",
+    "site": "Crashed Slaver Ship",
+    "group": "Origin sites",
+    "chapter": 5
+   },
+   {
+    "reward": "OR gamble - 67% a size 25 Gaia world, 33% lose ~10% of your pops and a free robotic empire spawns with an option to switch to it",
+    "site": "The Crashed Ship",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "OR turn the adAkkaria Convention homeworld into a habitable planet with the Patriotic Institute of Celebration building",
+    "site": "Celebration",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Reveals The Barren site",
+    "site": "Grunur Ruins",
+    "group": "Precursor sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Reveals the Buried Deep site",
+    "site": "Something Waiting",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Reveals the Celebration site in adSul - 15 days with a Psionic scientist, otherwise a ~6 month special project",
+    "site": "Institute of Exalted Benevolence",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Reveals the Dark Secret site",
+    "site": "The Last Stand",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Reveals the Dust Upon Dust site",
+    "site": "Copper and Chrome",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Reveals the Fleets of the Thrice Damned site after 15 days",
+    "site": "Windswept Fates",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Reveals the Grunur system",
+    "site": "The Silenced",
+    "group": "Precursor sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Reveals the In Memoriam site",
+    "site": "Buried Deep",
+    "group": "Origin sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Reveals The Last Stand site",
+    "site": "In Memoriam",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Reveals The Shattered site",
+    "site": "Grunur Ruins",
+    "group": "Precursor sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Reveals The Shattered site",
+    "site": "The Barren",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Reveals The Silenced site",
+    "site": "The Shattered",
+    "group": "Precursor sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Reveals the Something Waiting site",
+    "site": "Ex Gravitas",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Reveals the Zron system",
+    "site": "Zroni Core World",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Reveals the Zroni Beacon site",
+    "site": "Abandoned Colony Ruins",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Reveals the Zroni Core World site",
+    "site": "Zroni Research Station",
+    "group": "Precursor sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Reveals the Zroni Research Station site",
+    "site": "Zroni Shrine",
+    "group": "Precursor sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Reveals the Zroni Shrine site",
+    "site": "Zroni Beacon",
+    "group": "Precursor sites",
+    "chapter": 2
+   }
+  ],
+  "Empire & planet modifiers": [
+   {
+    "reward": "2+ studies: rsh3 Society research and the Harsh Truth modifier (-25% species modification cost, +20% Xenophobe attraction) - or Unified Thought for Xenophiles",
+    "site": "Plentiful Fossils",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "33%: Anthem of Aurora empire modifier",
+    "site": "Beautiful Bubble",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "66%: Forced Mindfulness empire modifier",
+    "site": "Any Other Rock",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "83% (71.5% if Egalitarian): another art1 payout plus a 12-year empire modifier (+5% Engineering, +2% Society)",
+    "site": "Relic Rails",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "A Life Worthwhile empire modifier (+5% happiness)",
+    "site": "Never Forget",
+    "group": "Unique system sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Choice - proceed cautiously: art1 minor artifacts (20 artifacts, or 200 Alloys without Ancient Relics) and the Mask of Transformation terraforming modifier",
+    "site": "Message in the Canopy",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Choice of one: Frozen Submariners' Legacy (20 years, +20% colony development speed, -3% amenities usage)",
+    "site": "Under the Ice",
+    "group": "Base game sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Choice: a special shielding project, uni4 Unity, or the Bane of the Prophetess modifier",
+    "site": "Abandoned Observation Outpost",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Choice: Killer Microorganism modifier, or rsh1 Society research plus an +8 research deposit",
+    "site": "The Library",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Choice: Mycelial Network empire modifier, or uni5 Unity",
+    "site": "Desiccated",
+    "group": "Unique system sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Choice: Sage Rage empire modifier (army damage), or 100 Influence",
+    "site": "Seeds of Destruction",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Choice: special project granting The Defragmentor relic plus the C.A.R.E Interactive Interface modifier (+10% Energy from jobs)",
+    "site": "Planetary Machinery",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "Choice: The Memorex planet modifier",
+    "site": "Ix Belèn",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Fewer than 2 studies: 4x Society research, 10x Unity and the Mysterious Universe modifier (+20% Xenophile attraction) - or Unified Thought for Xenophobes",
+    "site": "Plentiful Fossils",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Frozen Submariners' Ingenuity (5 years, +5% Engineering research) for trade empires",
+    "site": "Under the Ice",
+    "group": "Base game sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Grants a permanent modifier: 'We are now more vigilant against incoming danger' (+10 Tracking)",
+    "site": "Green Skies",
+    "group": "Other expansion sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Harmonious Crew empire modifier (ship speed)",
+    "site": "Message in a Bottle",
+    "group": "Base game sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Home Cooking permanent empire modifier (+10% Food from jobs, or +10% Minerals from jobs for Lithoids)",
+    "site": "Point of Origin",
+    "group": "Origin sites",
+    "chapter": 1
+   },
+   {
+    "reward": "In Memory (10 years, +10% monthly Unity) for Memorialists",
+    "site": "Under the Ice",
+    "group": "Base game sites",
+    "chapter": 5
+   },
+   {
+    "reward": "One of: Combat Training technology plus the Modern Trench War modifier, Artificial Workforce, or Climate Control Network",
+    "site": "Trench World",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "OR Local Hive modifier on your capital (+10% amenities, +10% build speed, +10% food production)",
+    "site": "The Signal",
+    "group": "Unique system sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR summon The Elder One guardian - worship it for the Eldritch Knowledge modifier, or attack it for inf4-scale Influence and the Horrific Inverse Mass situation",
+    "site": "The Broken Gates",
+    "group": "Other expansion sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Random: Studying Polarian Seeds modifier (+10% Biology research speed)",
+    "site": "One Last Hope",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Research Allocation empire modifier (-15% Engineering from jobs) - a penalty, removed at chapter 5",
+    "site": "Crashed Slaver Ship",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Rudari Death Laser empire modifier (weapons range)",
+    "site": "Ruined Station",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Spurred by the Past empire modifier (happiness)",
+    "site": "Dark Secret",
+    "group": "Origin sites",
+    "chapter": 4
+   }
+  ],
+  "Technologies": [
+   {
+    "reward": "+20% progress on Rudimentary Node Reformatting or Xeno-Linguistics (with Galactic Paragons), otherwise Rudimentary Node Culling or Xeno Diplomacy",
+    "site": "The Ancient Shelters",
+    "group": "Precursor sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Cavitation Collapser technology progress",
+    "site": "Too Angled",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Defensive Web Slinger technology progress",
+    "site": "Ruins",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Driller Drones technology progress",
+    "site": "Subterranean Hollows",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Macro Batteries technology progress",
+    "site": "Robot Debris",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Nano-Missile Cloud Launcher technology progress",
+    "site": "Mutant Fossils",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Pulse Armor technology progress",
+    "site": "Crashed Starship",
+    "group": "Ancient Relics sites",
+    "chapter": 6
+   },
+   {
+    "reward": "+25% Ancient Rampart (rare) technology progress",
+    "site": "Gas Giant Structure",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "+25% Ancient Refinery technology progress",
+    "site": "Anyone Home?",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "+25% Ancient Ruination Glare technology progress",
+    "site": "Strange Flows",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Saturator Artillery technology progress",
+    "site": "Strange Asteroid",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "+25% Ancient Suspension Field technology progress",
+    "site": "Target from Orbit",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "+25% Ancient Target Scrambler technology progress",
+    "site": "Asteroid Blast Door",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "+25% progress on Nutrient Replication",
+    "site": "Before the Fall",
+    "group": "Precursor sites",
+    "chapter": 4
+   },
+   {
+    "reward": "+25% progress on the first unresearched of Cosmic Weather Models, Storm Dampening Generators, Probability Current, Storm Breaker Coating (rsh2 Engineering research if all researched)",
+    "site": "Windswept Fates",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "+25% progress on the first unresearched of Orbital Habitats, Habitat Expansion, Advanced Space Habitation (rsh2 Engineering research if all researched)",
+    "site": "Institute of Exalted Benevolence",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "+25% progress on the first unresearched of Payload Padding, Storm Dampening Generators, Tempest Cage Architecture, Storm Breaker Coating (rsh2 Engineering research if all researched)",
+    "site": "Fleets of the Thrice Damned",
+    "group": "Precursor sites",
+    "chapter": 6
+   },
+   {
+    "reward": "+50% progress on Probability Current",
+    "site": "Origins of the Pervading",
+    "group": "Precursor sites",
+    "chapter": 4
+   },
+   {
+    "reward": "+50% progress on the first unresearched of Planetary Storm Negation, Storm Manipulation, Cosmic Weather Models, Planetary Storm Nullification, Advanced Storm Manipulation, Storm Dampening Generators, Payload Padding, Probability Current",
+    "site": "Repowered Complex",
+    "group": "Other expansion sites",
+    "chapter": 3
+   },
+   {
+    "reward": "20%: next artificial intelligence technology, or 4x Unity if robotic founder",
+    "site": "Ruined Star System",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "50% progress toward Psionic Theory",
+    "site": "The Shrouded World",
+    "group": "Origin sites",
+    "chapter": 5
+   },
+   {
+    "reward": "50% progress toward Rift Sphere (uni2 Unity instead if already researched)",
+    "site": "Ancient Crater",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "50% progress toward the least advanced unresearched of Gene Seed Purification, Targeted Gene Expressions, Glandular Acclimation, Gene Tailoring, Genome Mapping",
+    "site": "Ancient Capital Site",
+    "group": "Base game sites",
+    "chapter": 3
+   },
+   {
+    "reward": "75% a random tier 2 technology, 25% rsh3 Society research",
+    "site": "Strange Asteroid",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "75% a random tier 2 technology, 25% rsh4 Society research",
+    "site": "Ancient Battle Site",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "80%: next terraforming technology plus Shallarian Terraforming Knowledge (+20% terraforming speed, -10% cost)",
+    "site": "Ruined Star System",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "A random tier 1 technology as a research option at 85% progress",
+    "site": "Something Waiting",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "A random tier 1 technology at 85% progress",
+    "site": "Buried Deep",
+    "group": "Origin sites",
+    "chapter": 2
+   },
+   {
+    "reward": "A random tier 1 technology at 85% progress",
+    "site": "In Memoriam",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "A random tier 1 technology at 85% progress",
+    "site": "The Last Stand",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Devolving Beam (rare) as a research option at +25% progress",
+    "site": "Benign Cover-Up / Bury The Hatchet",
+    "group": "Origin sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Hostile Environment Adaptation technology",
+    "site": "Subterranean Hollows",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "If it is already a research option: +65% progress; otherwise it is added as an option at 45% progress",
+    "site": "From Gateway Sent",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "If you took option 1: 40% progress on Autocannons or Ripper Cannons, or rsh2 Engineering research, plus +4 monthly progress for Embodied Identity",
+    "site": "Factory Setting",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "One of: Combat Training technology plus the Modern Trench War modifier, Artificial Workforce, or Climate Control Network",
+    "site": "Trench World",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "OR +20% progress toward Universal Macrophage plus Adaptive Evolution situation progress if Evolutionary Predators - needs an organic main species",
+    "site": "Ancient Facility",
+    "group": "Base game sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR +25% Living Metal technology progress and -50% edict cost",
+    "site": "Anomalous Cube",
+    "group": "Base game sites",
+    "chapter": 4
+   },
+   {
+    "reward": "OR Ecological Adaptation technology",
+    "site": "Get to the Bottom",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR Ecological Adaptation technology with rsh3/rsh4 Engineering research",
+    "site": "Beneath the Waves",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR Self-Aware Colony Ships technology (50% progress if already an option, 25% if not)",
+    "site": "Popular Rock",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "OR Subterranean Colonization technology (conditional)",
+    "site": "Déjà Vu Dig",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR Terrestrial Sculpting technology",
+    "site": "Get to the Bottom",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR the next colonization technology (50% / 25%)",
+    "site": "Moon Bump",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "OR the next habitability technology as a research option with 60%+ progress",
+    "site": "One Last Hope",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "OR Tomb World Adaptation technology (conditional)",
+    "site": "Déjà Vu Dig",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "OR Vitality Boosters technology (conditional)",
+    "site": "Dotted Archipelago",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Quantum Firewalls as a research option at 40% progress",
+    "site": "Crashed Slaver Ship",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Random: Advanced Shields technology, Deep Core Mining technology (or 100 Volatile Motes if already researched), or Xenology technology",
+    "site": "Hole in the Ground",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Random: Anti-Gravity Engineering technology (50% progress if already an option, 10% if not)",
+    "site": "Moon Bump",
+    "group": "Ancient Relics sites",
+    "chapter": 2
+   },
+   {
+    "reward": "Random: Atmospheric Filtering technology with rsh3/rsh4 Society or Engineering research",
+    "site": "Beneath the Waves",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Random: Hostile Environment Adaptation technology with conditional extras",
+    "site": "Anyone Home?",
+    "group": "Ancient Relics sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Random: Hostile Environment Adaptation, Deep Crust Engineering, or (Gestalt) Unity of Purpose / (non-Gestalt) Artificial Moral Codes technology",
+    "site": "Get Inside",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Random: Ocean Ecology Management technology plus rsh4 Engineering research",
+    "site": "Get to the Bottom",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Random: rsh3 Society research, or Plasma Accelerators technology at 30% progress",
+    "site": "Frozen Complex",
+    "group": "Ancient Relics sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Rare Crystal Manufacturing technology",
+    "site": "Whispers in the Stone",
+    "group": "Other expansion sites",
+    "chapter": 5
+   },
+   {
+    "reward": "Special project granting the rare technology Gateway Activation",
+    "site": "From Gateway Sent",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Special project to restore the crashed ship as a warship (up to battleship) or as a habitat (grants Orbital Habitats technology)",
+    "site": "The Aftermath of Battle",
+    "group": "Origin sites",
+    "chapter": 4
+   },
+   {
+    "reward": "±20 progress toward the Embodied Identity situation",
+    "site": "The Ruined Cradle",
+    "group": "Origin sites",
+    "chapter": 5
+   }
+  ],
+  "Risks, costs & losses": [
+   {
+    "reward": "-10% resources from jobs for 10 years (a penalty)",
+    "site": "The Shrouded World",
+    "group": "Origin sites",
+    "chapter": 1
+   },
+   {
+    "reward": "Awakens Shard, a guardian - defeating it grants The Rubricator relic",
+    "site": "Kleptomaniac Rats",
+    "group": "Ancient Relics sites",
+    "chapter": 5
+   },
+   {
+    "reward": "OR gamble - 67% a size 25 Gaia world, 33% lose ~10% of your pops and a free robotic empire spawns with an option to switch to it",
+    "site": "The Crashed Ship",
+    "group": "Unique system sites",
+    "chapter": 4
+   },
+   {
+    "reward": "Research Allocation empire modifier (-15% Engineering from jobs) - a penalty, removed at chapter 5",
+    "site": "Crashed Slaver Ship",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "Spawns a hostile fleet",
+    "site": "Factory Setting",
+    "group": "Origin sites",
+    "chapter": 3
+   },
+   {
+    "reward": "The scientist goes missing for 30-40 days",
+    "site": "The Sentinels",
+    "group": "Other expansion sites",
+    "chapter": 1
+   },
+   {
+    "reward": "There is also an option that kills the scientist",
+    "site": "Green Skies",
+    "group": "Other expansion sites",
+    "chapter": 4
+   }
+  ]
+ },
+ "groups": [
+  {
+   "key": "base",
+   "label": "Base game sites"
+  },
+  {
+   "key": "unique_system",
+   "label": "Unique system sites"
+  },
+  {
+   "key": "origin",
+   "label": "Origin sites"
+  },
+  {
+   "key": "precursor",
+   "label": "Precursor sites"
+  },
+  {
+   "key": "ancient_relics",
+   "label": "Ancient Relics sites"
+  },
+  {
+   "key": "other_expansion",
+   "label": "Other expansion sites"
+  }
+ ],
+ "sites": [
+  {
+   "name": "Ancient Capital Site",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "Habitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts",
+      "mat1 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "ast1 astral threads",
+      "mat2 Physics research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "50% progress toward the least advanced unresearched of Gene Seed Purification, Targeted Gene Expressions, Glandular Acclimation, Gene Tailoring, Genome Mapping",
+      "rsh3 Society research instead if Gene Seed Purification is already researched",
+      "Skrand Sharpbeak, if you have him, gains 800 experience"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "mat2 Society research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts",
+      "mat2 Society research"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "(final chapter - see wiki, payout is the art/soc pair again)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ancient Facility",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "Uninhabitable or non-dry planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (mat1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (mat1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Choice: art2 minor artifacts (mat2 Society research without Ancient Relics)",
+      "OR +20% progress toward Universal Macrophage plus Adaptive Evolution situation progress if Evolutionary Predators - needs an organic main species"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Anomalous Cube",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "Any planet; you have communications with a Fallen Empire and are not at war with it",
+   "notes": "Chapter 1 designates a random non-hostile Fallen Empire as the Anomalous Cube Fallen Empire; the chapter 4 opinion reward points at that empire.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "6x Living Metal (100~1,000)",
+      "art1 minor artifacts (mat1 Engineering research without Ancient Relics)",
+      "Designates the Anomalous Cube Fallen Empire"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "6x Living Metal (100~1,000)",
+      "art1 minor artifacts (mat1 Engineering research without Ancient Relics)",
+      "Adaptive Evolution progress if Evolutionary Predators"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "12x Living Metal (150~2,000)",
+      "art2 minor artifacts (mat1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Adds a 1 Living Metal deposit to the planet",
+      "12x Living Metal (150~2,000)",
+      "art2 minor artifacts (mat1 Alloys without Ancient Relics)",
+      "Choice: uni3 Unity and +500 opinion with the Anomalous Cube Fallen Empire (closed if at war, or if they are Ancient Caretakers)",
+      "OR +25% Living Metal technology progress and -50% edict cost"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Message in a Bottle",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "From the Solar Sails anomaly; not Gestalt Consciousness",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts",
+      "'Shanty on Repeat' music track",
+      "Harmonious Crew empire modifier (ship speed)",
+      "Space Shanty specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Message in the Canopy",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "From the Message in the Canopy colony event",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh1 Physics research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "10 minor artifacts (200 Minerals without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice - proceed cautiously: art1 minor artifacts (20 artifacts, or 200 Alloys without Ancient Relics) and the Mask of Transformation terraforming modifier",
+      "OR uncover the source: art1 minor artifacts (10 artifacts, or 400 Alloys without Ancient Relics), 1,000 Minerals, 200 Rare Crystals",
+      "The Mask of Transformation specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Plentiful Fossils",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "Habitable planet",
+   "notes": "Chapters 1-3 each offer 'study' or 'use'. Chapter 4 branches on whether you studied at least twice.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Choice: 4x Society research (300~2,000) for studying, or 4x Unity for using"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Study: +20% Genome Mapping progress, plus 8x Society research if already researched or Machine Intelligence",
+      "Use: 2x Society research and 6x Unity (400~3,000)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Study: +20% Gene Tailoring progress, plus 8x Society research if already researched or Machine Intelligence",
+      "Use: 3x Society research and 8x Unity (500~4,000)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "2+ studies: rsh3 Society research and the Harsh Truth modifier (-25% species modification cost, +20% Xenophobe attraction) - or Unified Thought for Xenophiles",
+      "Fewer than 2 studies: 4x Society research, 10x Unity and the Mysterious Universe modifier (+20% Xenophile attraction) - or Unified Thought for Xenophobes"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Under the Ice",
+   "group": "base",
+   "dlc": "Base game",
+   "requirements": "Frozen planet; not Gestalt Consciousness; not Fanatic Purifiers",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Choice: rsh1 Engineering research, or spend 400 Energy for +30% Climate Control Network progress"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Choice: narrative only, or spend 400 Energy for +20% Ocean Ecology Management progress"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Random: mat2 Alloys",
+      "OR rsh1 Society research plus uni1 Unity if Authoritarian or Egalitarian",
+      "OR +60% Genome Mapping and +40% Epigenetic Triggers progress if both are researched (nothing if Xenophobe)"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "Choice of one: Frozen Submariners' Legacy (20 years, +20% colony development speed, -3% amenities usage)",
+      "+30% Subterranean Colonization progress if not researched",
+      "+60% Railguns progress if you have Coilguns",
+      "Frozen Submariners' Ingenuity (5 years, +5% Engineering research) for trade empires",
+      "In Memory (10 years, +10% monthly Unity) for Memorialists"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Abandoned Observation Outpost",
+   "group": "unique_system",
+   "dlc": "First Contact",
+   "requirements": "Ophala system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice: a special shielding project, uni4 Unity, or the Bane of the Prophetess modifier"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ancient Robot World",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Ultima Vigilis system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts",
+      "Mutually exclusive endgame options that affect the Contingency crisis"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Debris Belt",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Odryskia system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Scientist gains Maniacal or Paranoid (33% each)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Crystal of Odryskia relic"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Desiccated",
+   "group": "unique_system",
+   "dlc": "Ancient Relics",
+   "requirements": "Orvall system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "Choice: Mycelial Network empire modifier, or uni5 Unity"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Moon Base",
+   "group": "unique_system",
+   "dlc": "Ancient Relics",
+   "requirements": "Shielded Relic system",
+   "notes": "Completing this spawns the Abandoned Ecumenopolis site.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "Spawns the Abandoned Ecumenopolis site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Abandoned Ecumenopolis",
+   "group": "unique_system",
+   "dlc": "Ancient Relics",
+   "requirements": "Spawned by completing Moon Base",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts",
+      "Miniature Galaxy relic"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Never Forget",
+   "group": "unique_system",
+   "dlc": "Ancient Relics",
+   "requirements": "Hauer system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "A Life Worthwhile empire modifier (+5% happiness)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "One Last Hope",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Polaris system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art2 minor artifacts",
+      "Random: Studying Polarian Seeds modifier (+10% Biology research speed)",
+      "OR the next habitability technology as a research option with 60%+ progress",
+      "OR 5x Society research if Machine Intelligence",
+      "Specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ruined Star System",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Shallash system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts",
+      "80%: next terraforming technology plus Shallarian Terraforming Knowledge (+20% terraforming speed, -10% cost)",
+      "20%: next artificial intelligence technology, or 4x Unity if robotic founder",
+      "Specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ruined World",
+   "group": "unique_system",
+   "dlc": "Ancient Relics",
+   "requirements": "Omni system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Random: mat2 Society research or mat2 Engineering research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts",
+      "Omnicodex relic",
+      "Specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Crashed Ship",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Zevox system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice: rsh3 Society research (the only option for Determined Exterminators and non-machine empires)",
+      "OR gamble - 67% a size 25 Gaia world, 33% lose ~10% of your pops and a free robotic empire spawns with an option to switch to it"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Signal",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Larionessi Refuge system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Choice: rsh2 Engineering plus rsh2 Society research (the only option for Xenophobes and genocidals)",
+      "OR Local Hive modifier on your capital (+10% amenities, +10% build speed, +10% food production)",
+      "OR the Larionessi Consciousness as a unique vassal empire",
+      "Specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Tiyanki Grave Mound",
+   "group": "unique_system",
+   "dlc": "Base game",
+   "requirements": "Tiyun Ort system",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "71.5% core intact (55% if Militarist / Xenophobe / Purifier): dissect (+10% damage vs Tiyanki, Militarist and non-Xenophile), study (rsh5 Society research), leave (uni4 Unity, Spiritualist only), or sell for 5,000 Energy (needs Curator contact)",
+      "28.5% core destroyed (45% for the ethics above): rsh3 Society research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Vagrosian Ruins",
+   "group": "unique_system",
+   "dlc": "Galactic Paragons",
+   "requirements": "Sursect system",
+   "notes": "Chapters 1-6 are narrative only. The whole site exists to deliver Keides.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 7,
+     "rewards": [
+      "Keides (unique leader): keep him a scientist and strip his negative traits, or change his class and strip all traits",
+      "Either way 54,000 experience and the Ancestral Inheritance trait"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "From Gateway Sent",
+   "group": "origin",
+   "dlc": "Base game",
+   "requirements": "Galactic Doorstep origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Physics research"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh3 Engineering research",
+      "Special project granting the rare technology Gateway Activation",
+      "If already researched: rsh4 Engineering and rsh4 Physics research instead",
+      "If it is already a research option: +65% progress; otherwise it is added as an option at 45% progress"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Homeworld Excavation",
+   "group": "origin",
+   "dlc": "Base game",
+   "requirements": "Clone Army origin; appears 3-5 years after game start",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "200 Influence",
+      "Starts the Genetic Crossroads event chain"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Ruined Cradle",
+   "group": "origin",
+   "dlc": "Hard Reset origin",
+   "requirements": "Hard Reset origin (visible only to that origin)",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "rsh1 Society research",
+      "±20 progress toward the Embodied Identity situation"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Factory Setting",
+   "group": "origin",
+   "dlc": "Hard Reset origin",
+   "requirements": "Hard Reset origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Option to start the Embodied Identity situation if not already running"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Choice that sets a flag for the next stage (option 1)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Spawns a hostile fleet",
+      "If you took option 1: 40% progress on Autocannons or Ripper Cannons, or rsh2 Engineering research, plus +4 monthly progress for Embodied Identity",
+      "Otherwise: rsh1 Society research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Copper and Chrome",
+   "group": "origin",
+   "dlc": "Hard Reset origin",
+   "requirements": "Hard Reset origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh2 Society research",
+      "Choice of inf1 Influence or uni1 Unity"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh1 Society research",
+      "If you took Unity above: option to begin de-cyberization in the Embodied Identity situation"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh1 Physics research",
+      "Reveals the Dust Upon Dust site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dust Upon Dust",
+   "group": "origin",
+   "dlc": "Hard Reset origin",
+   "requirements": "Revealed by Copper and Chrome",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh3 Engineering research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh3 Society research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Point of Origin",
+   "group": "origin",
+   "dlc": "Hard Reset origin",
+   "requirements": "Hard Reset origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Home Cooking permanent empire modifier (+10% Food from jobs, or +10% Minerals from jobs for Lithoids)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Choice that sets a flag for the next stage (option 1)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "If you took option 1: choose Cultural Reconstruction (+20% pop happiness) or Cultural Maturity (+5% monthly Unity), both permanent",
+      "Otherwise you get Cultural Maturity"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "uni3 Unity"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ex Gravitas",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "mat1 Minerals",
+      "Reveals the Something Waiting site",
+      "Ancient Laser Pointer specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Something Waiting",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants; revealed by Ex Gravitas",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "A random tier 1 technology as a research option at 85% progress",
+      "Reveals the Buried Deep site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Buried Deep",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants; revealed by Something Waiting",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "A random tier 1 technology at 85% progress",
+      "Reveals the In Memoriam site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "In Memoriam",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants; revealed by Buried Deep",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "A random tier 1 technology at 85% progress",
+      "Reveals The Last Stand site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Last Stand",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants; revealed by In Memoriam",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "A random tier 1 technology at 85% progress"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals the Dark Secret site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dark Secret",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants; revealed by The Last Stand",
+   "notes": "At the mid-game year this triggers an event chain that unlocks either Benign Cover-Up or Bury The Hatchet.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "mat4 Minerals",
+      "mat3 Alloys",
+      "mat3 Exotic Gases"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "Spurred by the Past empire modifier (happiness)",
+      "Confessions of the Benefactors specimen [Grand Archive]",
+      "Mid-game: unlocks Benign Cover-Up or Bury The Hatchet"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Benign Cover-Up / Bury The Hatchet",
+   "group": "origin",
+   "dlc": "Federations",
+   "requirements": "On the Shoulders of Giants; unlocked from Dark Secret at mid-game",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Devolving Beam (rare) as a research option at +25% progress",
+      "Replaces Spurred by the Past with Full Circle (Benign Cover-Up) or Goes Around, Comes Around (Bury The Hatchet)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Aftermath of Battle",
+   "group": "origin",
+   "dlc": "First Contact",
+   "requirements": "Payback origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Engineering research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Choice: rsh2 Society research",
+      "OR inf2 Influence (closed to Xenophiles and Pacifists)",
+      "OR uni2 Unity (Xenophiles, Pacifists and Memorialists only)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh1 Engineering research"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Special project to restore the crashed ship as a warship (up to battleship) or as a habitat (grants Orbital Habitats technology)",
+      "Minamar Chandelier specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Crashed Slaver Ship",
+   "group": "origin",
+   "dlc": "First Contact",
+   "requirements": "Broken Shackles origin",
+   "notes": "Scavengers have a 10% chance per stage of an extra mat1 Alloys payout.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Removes a ship debris blocker",
+      "rsh1 Engineering research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Removes a ship debris blocker",
+      "rsh2 Engineering research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Removes a ship debris blocker",
+      "Research Allocation empire modifier (-15% Engineering from jobs) - a penalty, removed at chapter 5"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Removes a ship debris blocker",
+      "Quantum Firewalls as a research option at 40% progress",
+      "Improved Decryption Processes (+1 Codebreaking)"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "Removes the Research Allocation penalty",
+      "Enables the Locate Home Worlds special project",
+      "If you have not met the MSI: reveals their location and grants +10% happiness and +10% Unity for 10 years",
+      "Spirit of the Unshackled specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Quantum Catapult",
+   "group": "origin",
+   "dlc": "Overlord",
+   "requirements": "Slingshot to the Stars origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Engineering research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh1 Engineering research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh1 Engineering research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "rsh4 Engineering research",
+      "If finished before 2230: +50% megastructure build speed for 10 years"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ancient Crater",
+   "group": "origin",
+   "dlc": "Astral Planes",
+   "requirements": "Riftworld origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "50% progress toward Rift Sphere (uni2 Unity instead if already researched)",
+      "Ends the 'A Rift in Space' situation",
+      "Ancient Rift Sphere specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Derelict Safehouse",
+   "group": "origin",
+   "dlc": "Galactic Paragons",
+   "requirements": "Treasure Hunters origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts and mat1 enclave resources",
+      "Without Ancient Relics: mat1 consumer goods and mat1 enclave resources; Gestalts get mat2 enclave resources"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "mat2 enclave resources"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Captain Ness's Logbook specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Shrouded World",
+   "group": "origin",
+   "dlc": "Shadows of the Shroud",
+   "requirements": "Endbringers origin",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "-10% resources from jobs for 10 years (a penalty)",
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh1 Society research (rsh2 without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research (rsh3 without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "50% progress toward Psionic Theory",
+      "art3 minor artifacts (rsh3 Society research without Ancient Relics)",
+      "Fragment of Reckoning specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Grunur Ruins",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Baol",
+   "requirements": "Baol precursor chain",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals The Barren site",
+      "Grunur Data Crystal specimen [Grand Archive]"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals The Shattered site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Barren",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Baol",
+   "requirements": "Revealed by Grunur Ruins",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals The Shattered site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Shattered",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Baol",
+   "requirements": "Revealed by Grunur Ruins or The Barren",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals The Silenced site",
+      "Organic Computer specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Silenced",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Baol",
+   "requirements": "Revealed by The Shattered",
+   "notes": "Completes the Baol chain and points you at the Grunur home system, where the Baol relic world and the Toxic God-adjacent rewards sit.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals the Grunur system",
+      "Devolved Baol Drones specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Abandoned Colony Ruins",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Zroni",
+   "requirements": "Zroni precursor chain",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Physics research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals the Zroni Beacon site",
+      "+25% Psionic Theory progress if unresearched, otherwise rsh4 Society research (also for Gestalts)",
+      "Fragmented Zroni Archive specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zroni Beacon",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Zroni",
+   "requirements": "Revealed by Abandoned Colony Ruins",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals the Zroni Shrine site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zroni Shrine",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Zroni",
+   "requirements": "Revealed by Zroni Beacon",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals the Zroni Research Station site",
+      "Zroni War Banners specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zroni Research Station",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Zroni",
+   "requirements": "Revealed by Zroni Shrine",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Reveals the Zroni Core World site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zroni Core World",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Zroni",
+   "requirements": "Revealed by Zroni Research Station",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Physics research",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts",
+      "Reveals the Zron system"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Zron",
+   "group": "precursor",
+   "dlc": "Ancient Relics",
+   "precursor": "Zroni",
+   "requirements": "Revealed by Zroni Core World",
+   "notes": "The end of the Zroni chain and the source of the Psionic Archive relic.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts",
+      "2-4 Zro deposits"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "5 Zro",
+      "rsh3 Society research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts",
+      "Psionic Archive relic",
+      "The Final Sacrifice specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Propaganda Station",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "adAkkaria Convention",
+   "requirements": "adAkkaria Convention precursor chain",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (uni1 Unity without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)",
+      "+10% attraction to Xenophile or Xenophobe ethics for one year"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts (rsh3 Society research without Ancient Relics)",
+      "Special project revealing the Windswept Fates site after ~6 months",
+      "adAkkaria Propaganda Poster specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Windswept Fates",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "adAkkaria Convention",
+   "requirements": "Revealed by The Propaganda Station",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Physics research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "+25% progress on the first unresearched of Cosmic Weather Models, Storm Dampening Generators, Probability Current, Storm Breaker Coating (rsh2 Engineering research if all researched)",
+      "Reveals the Fleets of the Thrice Damned site after 15 days"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Fleets of the Thrice Damned",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "adAkkaria Convention",
+   "requirements": "Revealed by Windswept Fates",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "+25% progress on the first unresearched of Payload Padding, Storm Dampening Generators, Tempest Cage Architecture, Storm Breaker Coating (rsh2 Engineering research if all researched)",
+      "Special project (~6 months) revealing the Institute of Exalted Benevolence in adSalivul"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Institute of Exalted Benevolence",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "adAkkaria Convention",
+   "requirements": "Revealed by Fleets of the Thrice Damned",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "+25% progress on the first unresearched of Orbital Habitats, Habitat Expansion, Advanced Space Habitation (rsh2 Engineering research if all researched)",
+      "Reveals the Celebration site in adSul - 15 days with a Psionic scientist, otherwise a ~6 month special project",
+      "Landeer's Arm specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Celebration",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "adAkkaria Convention",
+   "requirements": "Revealed by Institute of Exalted Benevolence",
+   "notes": "End of the adAkkaria chain. Chapter 6 is where The Tempest Invocator relic comes from.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh3 Society research",
+      "Option for the scientist to gain Psionic if not robotic"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "art3 minor artifacts (rsh5 Society research without Ancient Relics)",
+      "Choice: The Tempest Invocator relic",
+      "OR turn the adAkkaria Convention homeworld into a habitable planet with the Patriotic Institute of Celebration building",
+      "Piece of the Invocator specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Ancient Shelters",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "Inetian Traders",
+   "requirements": "Inetian Traders precursor chain",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (rsh2 Society research without Ancient Relics)",
+      "+20% progress on Rudimentary Node Reformatting or Xeno-Linguistics (with Galactic Paragons), otherwise Rudimentary Node Culling or Xeno Diplomacy",
+      "Optional: spend 500 Energy for another art1 payout and 2 clues (2 clues only if under 300 Energy)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice: 1,000 Minerals",
+      "OR spend 800 Energy for 800 Minerals and 600 Engineering research",
+      "OR spend 800 Energy for 400 Minerals and 3 clues"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art2 minor artifacts (rsh2 Engineering research without Ancient Relics)",
+      "Special project revealing the Inetian home system and its three Coordinates sites",
+      "INET Trade Manifesto specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Coordinates A: Colonized Planet",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "Inetian Traders",
+   "requirements": "Revealed by The Ancient Shelters",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh2 Engineering research",
+      "With all three Coordinates sites done, a special project reveals Origins of the Pervading a year later",
+      "Inetian Planetary Model Manual specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Coordinates B: Industrial Planet",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "Inetian Traders",
+   "requirements": "Revealed by The Ancient Shelters",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh2 Physics research",
+      "Contributes to revealing Origins of the Pervading"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Coordinates C: Barren Planet",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "Inetian Traders",
+   "requirements": "Revealed by The Ancient Shelters",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Physics research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Physics research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh2 Society research",
+      "Contributes to revealing Origins of the Pervading"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Origins of the Pervading",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "Inetian Traders",
+   "requirements": "Revealed a year after all three Coordinates sites",
+   "notes": "The wiki flags the no-Ancient-Relics alternate rewards on chapters 1-3 as bugged.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Society research without Ancient Relics - flagged bugged)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art2 minor artifacts (rsh2 Physics research without Ancient Relics - flagged bugged)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts (rsh2 Physics research without Ancient Relics - flagged bugged)"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh3 Physics research",
+      "+50% progress on Probability Current",
+      "Special project to find the Before the Fall site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Before the Fall",
+   "group": "precursor",
+   "dlc": "Cosmic Storms",
+   "precursor": "Inetian Traders",
+   "requirements": "Revealed by Origins of the Pervading",
+   "notes": "End of the Inetian chain and the source of The Disturbance Oppressor relic.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "800 Energy",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts (rsh3 Society research without Ancient Relics)",
+      "The Disturbance Oppressor relic",
+      "+25% progress on Nutrient Replication",
+      "The Last General's Badge specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ancient Battle Site",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Habitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art2 minor artifacts",
+      "75% a random tier 2 technology, 25% rsh4 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ancient Tomb",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet, mid-game onward, and Fanatic Spiritualist Holy Guardians exist in the galaxy",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "art3 minor artifacts",
+      "Head of Zarqlan relic"
+     ]
+    }
+   ],
+   "notes": "The Head of Zarqlan is the reason to dig this; using it on the Holy Guardians' worlds is the classic play."
+  },
+  {
+   "name": "Any Other Rock",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Molten planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "66%: Forced Mindfulness empire modifier",
+      "33%: +200 each of Volatile Motes, Exotic Gases and Rare Crystals",
+      "Doomsday Scrolls specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Anyone Home?",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "+25% Ancient Refinery technology progress",
+      "Random: Hostile Environment Adaptation technology with conditional extras",
+      "OR +150 each of Volatile Motes, Exotic Gases, Rare Crystals plus rsh4 Society research",
+      "OR rsh3 Society research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Asteroid Blast Door",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Asteroid",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts (4x)",
+      "+25% Ancient Target Scrambler technology progress"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Beautiful Bubble",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "66%: rsh4 Society research",
+      "33%: Anthem of Aurora empire modifier",
+      "Localised Aurora Borealis specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Beneath the Waves",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Ocean planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: Atmospheric Filtering technology with rsh3/rsh4 Society or Engineering research",
+      "OR Ecological Adaptation technology with rsh3/rsh4 Engineering research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "City of Bones",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Gaia or dry planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "rsh4 Society research",
+      "Non-machine: Deploy Tissue Growth Stimulants planetary decision",
+      "Machine Intelligence: art2 minor artifacts and the Construct Fungiform Housing Units decision",
+      "Osseus Construction Material specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Crashed Starship",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "art3 minor artifacts",
+      "+25% Ancient Pulse Armor technology progress"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Déjà Vu Dig",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: rsh3 Society research and the scientist gains Traumatized",
+      "OR Subterranean Colonization technology (conditional)",
+      "OR Tomb World Adaptation technology (conditional)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dotted Archipelago",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Ocean planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: +250 Exotic Gases",
+      "OR Vitality Boosters technology (conditional)",
+      "OR rsh3 Society research",
+      "Rock Jellies specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Fossilized Remains",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "From the Fossils Discovered colony event",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts",
+      "Blade of the Huntress relic",
+      "Retarax Hunting Trophies specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Frozen Complex",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Frozen planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: rsh3 Society research, or Plasma Accelerators technology at 30% progress"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Gas Giant Structure",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Gas giant",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art2 minor artifacts",
+      "4,000 Energy",
+      "+25% Ancient Rampart (rare) technology progress",
+      "Heart of the Pulsar specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Get Inside",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: Hostile Environment Adaptation, Deep Crust Engineering, or (Gestalt) Unity of Purpose / (non-Gestalt) Artificial Moral Codes technology"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Get to the Bottom",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Ocean planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: Ocean Ecology Management technology plus rsh4 Engineering research",
+      "OR Ecological Adaptation technology",
+      "OR Terrestrial Sculpting technology"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ix Belèn",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Gas giant, revealed from The Endless Expanse",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "Choice: The Memorex planet modifier",
+      "OR 3,500 Alloys plus uni4 Unity, with the Saariah's Guilt specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Hidden Worlds",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "5% chance when clearing Dense Jungle, Toxic Kelp, Deep Sinkhole, Quicksand Basin, Noxious Swamp or Massive Glacier blockers",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice: recruit the Oracle unique leader (closed to Fanatic Xenophobes)",
+      "OR 1,000 Alloys, 3,500 Engineering research and 500 Influence (250 if you spoke to the Oracle first)"
+     ]
+    }
+   ],
+   "notes": "The Oracle is one of the few unique leaders you can get from a dig site."
+  },
+  {
+   "name": "Hole in the Ground",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Random: Advanced Shields technology, Deep Core Mining technology (or 100 Volatile Motes if already researched), or Xenology technology",
+      "Giant Egg Shell specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Kleptomaniac Rats",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Rubricator system, spawned by the Weapon Trails anomaly",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts",
+      "Awakens Shard, a guardian - defeating it grants The Rubricator relic"
+     ]
+    }
+   ],
+   "notes": "The relic is behind a fight, not the dig. Shard is a mid-game guardian; do not finish chapter 5 with a weak fleet nearby."
+  },
+  {
+   "name": "Message in the Dust",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Tomb, desert, arid or savanna planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts",
+      "A corvette at 25-75% damage, with a special project to repair it"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Moon Bump",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Random: Anti-Gravity Engineering technology (50% progress if already an option, 10% if not)",
+      "OR the next colonization technology (50% / 25%)",
+      "OR 500 Alloys",
+      "Primitive Mega-Electromagnet specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Mutant Fossils",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Tomb planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Mutation Vats planetary feature",
+      "+25% Ancient Nano-Missile Cloud Launcher technology progress",
+      "Radiated Remains specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Planetary Machinery",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "C.A.R.E. relic world",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh3 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "rsh3 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "rsh3 Engineering research",
+      "Choice: special project granting The Defragmentor relic plus the C.A.R.E Interactive Interface modifier (+10% Energy from jobs)",
+      "OR 100 Influence",
+      "OR 100 Influence and fight two mega-warforms for The Defragmentor relic plus a large minor artifact payout"
+     ]
+    }
+   ],
+   "notes": "Two of the three chapter 6 options give The Defragmentor; the fight version pays extra artifacts."
+  },
+  {
+   "name": "Popular Rock",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Asteroid",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Random: 3x research speed",
+      "OR 500 Alloys, 150 Volatile Motes and 150 Exotic Gases",
+      "OR Self-Aware Colony Ships technology (50% progress if already an option, 25% if not)",
+      "Rock Jellies specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Relic Rails",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Triggers after completing a housing building",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art2 minor artifacts",
+      "83% (71.5% if Egalitarian): another art1 payout plus a 12-year empire modifier (+5% Engineering, +2% Society)",
+      "17% (28.5% if Egalitarian): narrative only",
+      "Relic Rails Remains specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Robot Debris",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Asteroid",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts",
+      "rsh5 Engineering research",
+      "+25% Ancient Macro Batteries technology progress",
+      "Robot Debris Fragment specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ruined Station",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Neutron star or pulsar",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Choice: scientist gains Meticulous (blocked if they have Maniacal or Carefree), or Percussive Maintainer"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts",
+      "Rudari Death Laser empire modifier (weapons range)",
+      "Rudari Death Laser Prototype specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ruins",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Random: rsh3 Society research or rsh3 Engineering research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Random: rsh3 Society or Engineering research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art2 minor artifacts",
+      "rsh3 Society research",
+      "+25% Ancient Defensive Web Slinger technology progress",
+      "Adds an Alien Site level 3 anomaly to a random body in the system",
+      "Ruins Artifact specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Seeds of Destruction",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "From the Crash Site anomaly; not Gestalt Consciousness",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "Choice: Sage Rage empire modifier (army damage), or 100 Influence"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Strange Asteroid",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Asteroid",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art2 minor artifacts",
+      "+25% Ancient Saturator Artillery technology progress",
+      "75% a random tier 2 technology, 25% rsh3 Society research",
+      "Jade Dining Set specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Strange Flows",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Molten planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "+25% Ancient Ruination Glare technology progress",
+      "One of Deep Crust Engineering, Ion Disruptors or Nano-Separators",
+      "Disturbance Tech specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Subterranean Hollows",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Habitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Hostile Environment Adaptation technology",
+      "+25% Ancient Driller Drones technology progress",
+      "Fossilized Megastomach specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Target from Orbit",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "+25% Ancient Suspension Field technology progress",
+      "One of Quantum Energy States, +1,000 Minerals, or rsh3 Society research",
+      "Programmable Puzzle Cube specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Echoes Inside",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Barren planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "rsh4 Society research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Endless Expanse",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Frozen planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "Memory Orbs specimen [Grand Archive]"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art3 minor artifacts",
+      "Choice: reveal the Ix Belèn site, or 500 Influence"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Grand Herald",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Tomb, desert, arid or savanna planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "art1 minor artifacts",
+      "A titan at 25-75% damage",
+      "The Pilgrimage of Last Days specimen [Grand Archive]"
+     ]
+    }
+   ],
+   "notes": "A free titan is the single biggest early-military payout on the dig-site list."
+  },
+  {
+   "name": "The Library",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Barren planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts",
+      "Starts the Remnant event chain toward the nearest Curator station",
+      "Choice: Killer Microorganism modifier, or rsh1 Society research plus an +8 research deposit",
+      "Illanii Archives specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Too Angled",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Uninhabitable planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "+25% Ancient Cavitation Collapser technology progress",
+      "One of Mega Art Installation (+10%), Terrestrial Sculpting, or Mineral Cutting Beams",
+      "Planetary Sculpture specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Trench World",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "Barren planet",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "One of: Combat Training technology plus the Modern Trench War modifier, Artificial Workforce, or Climate Control Network"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Weapons Cache",
+   "group": "ancient_relics",
+   "dlc": "Ancient Relics",
+   "requirements": "From a terraforming event (classically on Earth)",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "Nothing"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art2 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Xenophobe / Gestalt: mat3 Alloys",
+      "Xenophile / Empaths: art2 minor artifacts and rsh3 Unity",
+      "Everyone else: art2 minor artifacts and uni3 Unity"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Whispers in the Stone",
+   "group": "other_expansion",
+   "dlc": "Ancient Relics",
+   "requirements": "A mining district on a planet with no archaeological site; 5% chance per technology researched after Mineral Isolation",
+   "notes": "While the site is present the planet produces 50% less Minerals from jobs. That penalty is the cost of the dig.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "art3 minor artifacts",
+      "+500 Rare Crystals",
+      "Rare Crystal Manufacturing technology",
+      "Option to upgrade to the Kha'Lanka Crystal Plant",
+      "Kha'Lanka Crystallized Corpses specimen [Grand Archive]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Sentinels",
+   "group": "other_expansion",
+   "dlc": "Ancient Relics",
+   "requirements": "A colonised planet with 5+ pops; 5% chance when clearing Dense Jungle, Toxic Kelp, Noxious Swamp or Massive Glacier; not Gestalt Consciousness",
+   "notes": "Chapter 2 is a hostage situation: rescuing the scientist costs resources and leaves them Maimed. Chapter 3 can start a fight with 9 Sentinel armies.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts",
+      "The scientist goes missing for 30-40 days"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts",
+      "Rescue costs 100 Influence and 500 Energy, or you lose 3 clues; either path gives +5 clues and the scientist returns Maimed"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts",
+      "Choice: negotiate for 8-9 Sentinel armies as planetary protection",
+      "OR claim the land, silence them, or destroy them - each sends 9 armies against you",
+      "OR leave them undisturbed",
+      "Winning the fight gives the Sentinels Metal planetary feature",
+      "Losing opens the Into the Earth project with science / entertainment / hunting / lab-rat modifiers"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "The Broken Gates",
+   "group": "other_expansion",
+   "dlc": "Ancient Relics",
+   "requirements": "Any planet that is not a gas giant or asteroid, outside black hole systems; not Gestalt Consciousness",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art1 minor artifacts",
+      "Choice: rsh2 Engineering research plus the Altar to the Elder One specimen [Grand Archive]",
+      "OR summon The Elder One guardian - worship it for the Eldritch Knowledge modifier, or attack it for inf4-scale Influence and the Horrific Inverse Mass situation"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Chthonic Siren",
+   "group": "other_expansion",
+   "dlc": "Federations",
+   "requirements": "Be in a Federation with the Research Cooperative perk; 10% chance after fully excavating any site",
+   "notes": "A federation-wide site. Full completion by every member gives +40 Cohesion, ~60 minor artifacts and the 'Genius Caeli: A Time of Knowing' modifier for 20 years; partial completion pays less.",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (rsh1 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "50% art1 / 50% art2 minor artifacts (50% rsh1 Physics / 50% rsh2 Engineering research without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Conditional on the chapter 2 result"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "art2 minor artifacts (rsh2 Society research without Ancient Relics)",
+      "Federation-wide: +40 Cohesion, ~60 minor artifacts, Genius Caeli: A Time of Knowing (20 years)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Green Skies",
+   "group": "other_expansion",
+   "dlc": "Cosmic Storms",
+   "requirements": "Habitable planet; not Gestalt Consciousness",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh1 Society research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh1 Society research",
+      "A Stardust Storm appears in the system"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "500 Minerals",
+      "200 Alloys",
+      "100 Consumer Goods"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice: pay 2,000 Energy, or fight a small pirate fleet",
+      "Grants a permanent modifier: 'We are now more vigilant against incoming danger' (+10 Tracking)",
+      "There is also an option that kills the scientist"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "rsh2 Society research"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Hold the Line",
+   "group": "other_expansion",
+   "dlc": "Cosmic Storms",
+   "requirements": "Uninhabitable planet; not Gestalt Consciousness",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "rsh2 Engineering research"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "Narrative only"
+     ]
+    },
+    {
+     "n": 4,
+     "rewards": [
+      "Choice: rsh2 Society research or rsh2 Engineering research"
+     ]
+    },
+    {
+     "n": 5,
+     "rewards": [
+      "rsh2 Society research"
+     ]
+    },
+    {
+     "n": 6,
+     "rewards": [
+      "Creates a habitat over the site"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Repowered Complex",
+   "group": "other_expansion",
+   "dlc": "Cosmic Storms",
+   "requirements": "Any planet except gas giants",
+   "chapters": [
+    {
+     "n": 1,
+     "rewards": [
+      "art1 minor artifacts (uni1 Unity without Ancient Relics)"
+     ]
+    },
+    {
+     "n": 2,
+     "rewards": [
+      "Food, enclave resources and Consumer Goods (Minerals instead without Consumer Goods)"
+     ]
+    },
+    {
+     "n": 3,
+     "rewards": [
+      "art1 minor artifacts (uni1 Unity without Ancient Relics)",
+      "+50% progress on the first unresearched of Planetary Storm Negation, Storm Manipulation, Cosmic Weather Models, Planetary Storm Nullification, Advanced Storm Manipulation, Storm Dampening Generators, Payload Padding, Probability Current",
+      "Engineering research if all are researched"
+     ]
+    }
+   ]
+  }
+ ],
+ "assumptions": [
+  "Everything here is wiki-sourced (stellaris.paradoxwikis.com/Archaeological_site, captured 2026-08-30), not extracted from the game files. Spot-check the sites you build tooling on against your current patch.",
+  "Reward codes (art/mat/rsh/uni/inf) are multipliers of your empire's current output with a min-max clamp, expanded in section 2 from Template:Reward. 'Best reward' therefore shifts with game stage - do not treat the clamps as flat numbers.",
+  "Chapter difficulties are not reproduced here. The wiki's site tables give rewards per chapter but are inconsistent about listing per-chapter difficulty, unlike the astral rift tables.",
+  "A few site tables on the wiki are visibly incomplete (Repowered Complex chapters beyond 3; Ancient Capital Site chapter 6). Those rows are marked rather than guessed.",
+  "Site names are the wiki's display names. Some sites share a name with an astral rift or a system (Ruined World, Windswept Fates); match on the group as well as the name when joining datasets.",
+  "The 67% minor-artifact deposit chance and the 80/16/4 value split come from the mechanics section and are not restated per site.",
+  "Several sites gate a reward behind a fight (Kleptomaniac Rats -> Shard, The Broken Gates -> The Elder One, The Sentinels, Planetary Machinery). Those are listed as rewards but the reward is not guaranteed by excavation alone."
+ ]
+}

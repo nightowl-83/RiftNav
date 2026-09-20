@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+.AppleDouble
+Icon?
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Claude Code — machine-local only, never shared
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Scratch
+tmp/
+*.tmp

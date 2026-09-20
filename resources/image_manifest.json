@@ -1,0 +1,1659 @@
+{
+ "dataset": "stellaris_image_manifest",
+ "version": "1.0",
+ "generated": "2026-08-30",
+ "schema_note": "Filenames and wiki page URLs only. No image data is included or redistributed here.",
+ "source": "https://stellaris.paradoxwikis.com/Archaeological_site , https://stellaris.paradoxwikis.com/Astral_rift , https://stellaris.paradoxwikis.com/Relics",
+ "licensing": "These files are Paradox Interactive game assets hosted on the community wiki for documentation. The wiki's TEXT is openly licensed; the extracted art is not. Fine for a local prototype; get a deliberate answer before putting them behind a public URL.",
+ "counts": {
+  "total": 138,
+  "resolved": 133,
+  "needs_verification": 3,
+  "unresolved": 2,
+  "unique_files": 89,
+  "entities_with_art": 111,
+  "entities_total": 142
+ },
+ "items": [
+  {
+   "category": "entity_art",
+   "subject": "Ruined Planet",
+   "wiki_file": "Evt_astral_rift_riftworld.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_riftworld.png",
+   "local_name": "ruined-planet.png",
+   "entity_uids": [
+    "rift:ruined-planet"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Genesis",
+   "wiki_file": "Evt_astral_rift_genesis_2.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_genesis_2.png",
+   "local_name": "genesis.png",
+   "entity_uids": [
+    "rift:genesis"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Strange Station",
+   "wiki_file": "Evt_space_station.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_space_station.png",
+   "local_name": "strange-station.png",
+   "entity_uids": [
+    "rift:strange-station"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Microverse",
+   "wiki_file": "Evt_astral_rift_microverse.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_microverse.png",
+   "local_name": "the-microverse.png",
+   "entity_uids": [
+    "rift:the-microverse"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Entertainment Nexus",
+   "wiki_file": "Evt_astral_rift_interdimensional_circus.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_interdimensional_circus.png",
+   "local_name": "entertainment-nexus.png",
+   "entity_uids": [
+    "rift:entertainment-nexus"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Crystal Rift",
+   "wiki_file": "Evt_astral_rift_crystal_1.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_crystal_1.png",
+   "local_name": "the-crystal-rift.png",
+   "entity_uids": [
+    "rift:the-crystal-rift"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Psionic Stranger",
+   "wiki_file": "Evt_astral_rift_psionic_stranger.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_psionic_stranger.png",
+   "local_name": "psionic-stranger.png",
+   "entity_uids": [
+    "rift:psionic-stranger"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Siege on Paradise",
+   "wiki_file": "Evt_astral_rift_siege_on_paradise_baol.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_astral_rift_siege_on_paradise_baol.png",
+   "local_name": "siege-on-paradise.png",
+   "entity_uids": [
+    "rift:siege-on-paradise"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ancient Capital Site",
+   "wiki_file": "Evt_overgrown_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_overgrown_city.png",
+   "local_name": "ancient-capital-site.png",
+   "entity_uids": [
+    "site:ancient-capital-site"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ancient Facility",
+   "wiki_file": "Evt_outpost.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_outpost.png",
+   "local_name": "ancient-facility.png",
+   "entity_uids": [
+    "site:ancient-facility"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Anomalous Cube",
+   "wiki_file": "Evt_errant_cube.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_errant_cube.png",
+   "local_name": "anomalous-cube.png",
+   "entity_uids": [
+    "site:anomalous-cube"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Message in a Bottle",
+   "wiki_file": "Evt_frozen.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_frozen.png",
+   "local_name": "message-in-a-bottle.png",
+   "entity_uids": [
+    "site:message-in-a-bottle"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Message in the Canopy",
+   "wiki_file": "Evt_tropical_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tropical_planet.png",
+   "local_name": "message-in-the-canopy.png",
+   "entity_uids": [
+    "site:message-in-the-canopy"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Plentiful Fossils",
+   "wiki_file": "Evt_alien_wildlife.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_alien_wildlife.png",
+   "local_name": "plentiful-fossils.png",
+   "entity_uids": [
+    "site:plentiful-fossils"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Under the Ice",
+   "wiki_file": "Evt_frozen.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_frozen.png",
+   "local_name": "under-the-ice.png",
+   "entity_uids": [
+    "site:under-the-ice"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Abandoned Observation Outpost",
+   "wiki_file": "Evt_medieval_alien_civilization.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_medieval_alien_civilization.png",
+   "local_name": "abandoned-observation-outpost.png",
+   "entity_uids": [
+    "site:abandoned-observation-outpost"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ancient Robot World",
+   "wiki_file": "Evt_ai_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ai_planet.png",
+   "local_name": "ancient-robot-world.png",
+   "entity_uids": [
+    "site:ancient-robot-world"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Debris Belt",
+   "wiki_file": "Evt_space_debris.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_space_debris.png",
+   "local_name": "debris-belt.png",
+   "entity_uids": [
+    "site:debris-belt"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Desiccated",
+   "wiki_file": "Evt_warm_barren.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_warm_barren.png",
+   "local_name": "desiccated.png",
+   "entity_uids": [
+    "site:desiccated"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Moon Base",
+   "wiki_file": "Evt_barren_dig_site.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_barren_dig_site.png",
+   "local_name": "moon-base.png",
+   "entity_uids": [
+    "site:moon-base"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Abandoned Ecumenopolis",
+   "wiki_file": "Evt_overgrown_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_overgrown_city.png",
+   "local_name": "abandoned-ecumenopolis.png",
+   "entity_uids": [
+    "site:abandoned-ecumenopolis"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Never Forget",
+   "wiki_file": "Evt_city_ruins.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_city_ruins.png",
+   "local_name": "never-forget.png",
+   "entity_uids": [
+    "site:never-forget"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "One Last Hope",
+   "wiki_file": "Evt_ocean.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ocean.png",
+   "local_name": "one-last-hope.png",
+   "entity_uids": [
+    "site:one-last-hope"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ruined Star System",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "ruined-star-system.png",
+   "entity_uids": [
+    "site:ruined-star-system"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ruined World",
+   "wiki_file": "Evt_relic_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_relic_world.png",
+   "local_name": "ruined-world.png",
+   "entity_uids": [
+    "site:ruined-world"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Crashed Ship",
+   "wiki_file": "Evt_landing_ship_2.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_landing_ship_2.png",
+   "local_name": "the-crashed-ship.png",
+   "entity_uids": [
+    "site:the-crashed-ship"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Signal",
+   "wiki_file": "Evt_landing_ship.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_landing_ship.png",
+   "local_name": "the-signal.png",
+   "entity_uids": [
+    "site:the-signal"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Tiyanki Grave Mound",
+   "wiki_file": "Evt_gray_goo.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_gray_goo.png",
+   "local_name": "tiyanki-grave-mound.png",
+   "entity_uids": [
+    "site:tiyanki-grave-mound"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Vagrosian Ruins",
+   "wiki_file": "Evt_city_ruins.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_city_ruins.png",
+   "local_name": "vagrosian-ruins.png",
+   "entity_uids": [
+    "site:vagrosian-ruins"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "From Gateway Sent",
+   "wiki_file": "Evt_atmospheric_entry.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_atmospheric_entry.png",
+   "local_name": "from-gateway-sent.png",
+   "entity_uids": [
+    "site:from-gateway-sent"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Homeworld Excavation",
+   "wiki_file": "Evt_archaeological_dig.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_archaeological_dig.png",
+   "local_name": "homeworld-excavation.png",
+   "entity_uids": [
+    "site:homeworld-excavation"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Ruined Cradle",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "the-ruined-cradle.png",
+   "entity_uids": [
+    "site:the-ruined-cradle"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Factory Setting",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "factory-setting.png",
+   "entity_uids": [
+    "site:factory-setting"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Copper and Chrome",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "copper-and-chrome.png",
+   "entity_uids": [
+    "site:copper-and-chrome"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Dust Upon Dust",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "dust-upon-dust.png",
+   "entity_uids": [
+    "site:dust-upon-dust"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Point of Origin",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "point-of-origin.png",
+   "entity_uids": [
+    "site:point-of-origin"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Aftermath of Battle",
+   "wiki_file": "Evt_payback.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_payback.png",
+   "local_name": "the-aftermath-of-battle.png",
+   "entity_uids": [
+    "site:the-aftermath-of-battle"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Crashed Slaver Ship",
+   "wiki_file": "Evt_broken_shackles.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_broken_shackles.png",
+   "local_name": "crashed-slaver-ship.png",
+   "entity_uids": [
+    "site:crashed-slaver-ship"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Quantum Catapult",
+   "wiki_file": "Evt_slingshot_stars.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_slingshot_stars.png",
+   "local_name": "quantum-catapult.png",
+   "entity_uids": [
+    "site:quantum-catapult"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ancient Crater",
+   "wiki_file": "Evt_riftworld_archsite_crater.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_riftworld_archsite_crater.png",
+   "local_name": "ancient-crater.png",
+   "entity_uids": [
+    "site:ancient-crater"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Derelict Safehouse",
+   "wiki_file": "Evt_cold_barren.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_cold_barren.png",
+   "local_name": "derelict-safehouse.png",
+   "entity_uids": [
+    "site:derelict-safehouse"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Shrouded World",
+   "wiki_file": "Evt_shrouded_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_shrouded_planet.png",
+   "local_name": "the-shrouded-world.png",
+   "entity_uids": [
+    "site:the-shrouded-world"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Grunur Ruins",
+   "wiki_file": "Evt_baol_1.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_baol_1.png",
+   "local_name": "grunur-ruins.png",
+   "entity_uids": [
+    "site:grunur-ruins"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Barren",
+   "wiki_file": "Evt_warm_barren_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_warm_barren_planet.png",
+   "local_name": "the-barren.png",
+   "entity_uids": [
+    "site:the-barren"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Shattered",
+   "wiki_file": "Evt_asteroid_field.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_asteroid_field.png",
+   "local_name": "the-shattered.png",
+   "entity_uids": [
+    "site:the-shattered"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Silenced",
+   "wiki_file": "Evt_baol_5.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_baol_5.png",
+   "local_name": "the-silenced.png",
+   "entity_uids": [
+    "site:the-silenced"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Abandoned Colony Ruins",
+   "wiki_file": "Evt_overgrown_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_overgrown_city.png",
+   "local_name": "abandoned-colony-ruins.png",
+   "entity_uids": [
+    "site:abandoned-colony-ruins"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Zroni Beacon",
+   "wiki_file": "Evt_overgrown_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_overgrown_city.png",
+   "local_name": "zroni-beacon.png",
+   "entity_uids": [
+    "site:zroni-beacon"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Zroni Shrine",
+   "wiki_file": "Evt_overgrown_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_overgrown_city.png",
+   "local_name": "zroni-shrine.png",
+   "entity_uids": [
+    "site:zroni-shrine"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Zroni Research Station",
+   "wiki_file": "Evt_baol_2.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_baol_2.png",
+   "local_name": "zroni-research-station.png",
+   "entity_uids": [
+    "site:zroni-research-station"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Zroni Core World",
+   "wiki_file": "Evt_baol_2.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_baol_2.png",
+   "local_name": "zroni-core-world.png",
+   "entity_uids": [
+    "site:zroni-core-world"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Zron",
+   "wiki_file": "Evt_shrouded_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_shrouded_planet.png",
+   "local_name": "zron.png",
+   "entity_uids": [
+    "site:zron"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Propaganda Station",
+   "wiki_file": "Evt_ruined_system.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ruined_system.png",
+   "local_name": "the-propaganda-station.png",
+   "entity_uids": [
+    "site:the-propaganda-station"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Windswept Fates",
+   "wiki_file": "Evt_cosmic_storms_windswept_fates.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_cosmic_storms_windswept_fates.png",
+   "local_name": "windswept-fates.png",
+   "entity_uids": [
+    "site:windswept-fates"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Fleets of the Thrice Damned",
+   "wiki_file": "Evt_cosmic_storms_fleets_of_the_thrice_damned.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_cosmic_storms_fleets_of_the_thrice_damned.png",
+   "local_name": "fleets-of-the-thrice-damned.png",
+   "entity_uids": [
+    "site:fleets-of-the-thrice-damned"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Institute of Exalted Benevolence",
+   "wiki_file": "Evt_habitat.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_habitat.png",
+   "local_name": "institute-of-exalted-benevolence.png",
+   "entity_uids": [
+    "site:institute-of-exalted-benevolence"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Celebration",
+   "wiki_file": "Evt_ancient_databank.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ancient_databank.png",
+   "local_name": "celebration.png",
+   "entity_uids": [
+    "site:celebration"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Ancient Shelters",
+   "wiki_file": "Evt_weather_manipulators.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_weather_manipulators.png",
+   "local_name": "the-ancient-shelters.png",
+   "entity_uids": [
+    "site:the-ancient-shelters"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Coordinates A: Colonized Planet",
+   "wiki_file": "Evt_weather_manipulators.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_weather_manipulators.png",
+   "local_name": "coordinates-a-colonized-planet.png",
+   "entity_uids": [
+    "site:coordinates-a-colonized-planet"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Coordinates B: Industrial Planet",
+   "wiki_file": "Evt_weather_manipulators.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_weather_manipulators.png",
+   "local_name": "coordinates-b-industrial-planet.png",
+   "entity_uids": [
+    "site:coordinates-b-industrial-planet"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Coordinates C: Barren Planet",
+   "wiki_file": "Evt_weather_manipulators.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_weather_manipulators.png",
+   "local_name": "coordinates-c-barren-planet.png",
+   "entity_uids": [
+    "site:coordinates-c-barren-planet"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Origins of the Pervading",
+   "wiki_file": "Evt_weather_manipulators.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_weather_manipulators.png",
+   "local_name": "origins-of-the-pervading.png",
+   "entity_uids": [
+    "site:origins-of-the-pervading"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Before the Fall",
+   "wiki_file": "Evt_weather_manipulators.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_weather_manipulators.png",
+   "local_name": "before-the-fall.png",
+   "entity_uids": [
+    "site:before-the-fall"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ancient Battle Site",
+   "wiki_file": "Evt_landing_ship.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_landing_ship.png",
+   "local_name": "ancient-battle-site.png",
+   "entity_uids": [
+    "site:ancient-battle-site"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ancient Tomb",
+   "wiki_file": "Evt_excavation_team.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_excavation_team.png",
+   "local_name": "ancient-tomb.png",
+   "entity_uids": [
+    "site:ancient-tomb"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Any Other Rock",
+   "wiki_file": "Evt_warm_barren.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_warm_barren.png",
+   "local_name": "any-other-rock.png",
+   "entity_uids": [
+    "site:any-other-rock"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Anyone Home?",
+   "wiki_file": "Evt_overgrown_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_overgrown_city.png",
+   "local_name": "anyone-home.png",
+   "entity_uids": [
+    "site:anyone-home"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Asteroid Blast Door",
+   "wiki_file": "Evt_barren_dig_site.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_barren_dig_site.png",
+   "local_name": "asteroid-blast-door.png",
+   "entity_uids": [
+    "site:asteroid-blast-door"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Beautiful Bubble",
+   "wiki_file": "Evt_big_landing_ship.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_big_landing_ship.png",
+   "local_name": "beautiful-bubble.png",
+   "entity_uids": [
+    "site:beautiful-bubble"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Beneath the Waves",
+   "wiki_file": "Evt_ship_in_orbit_2.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ship_in_orbit_2.png",
+   "local_name": "beneath-the-waves.png",
+   "entity_uids": [
+    "site:beneath-the-waves"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "City of Bones",
+   "wiki_file": "Evt_relic_world_street.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_relic_world_street.png",
+   "local_name": "city-of-bones.png",
+   "entity_uids": [
+    "site:city-of-bones"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Crashed Starship",
+   "wiki_file": "Evt_crashed_station.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_crashed_station.png",
+   "local_name": "crashed-starship.png",
+   "entity_uids": [
+    "site:crashed-starship"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Déjà Vu Dig",
+   "wiki_file": "Evt_archaeology_camp.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_archaeology_camp.png",
+   "local_name": "deja-vu-dig.png",
+   "entity_uids": [
+    "site:deja-vu-dig"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Dotted Archipelago",
+   "wiki_file": "Evt_ocean.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ocean.png",
+   "local_name": "dotted-archipelago.png",
+   "entity_uids": [
+    "site:dotted-archipelago"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Fossilized Remains",
+   "wiki_file": "Evt_archaeology_camp.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_archaeology_camp.png",
+   "local_name": "fossilized-remains.png",
+   "entity_uids": [
+    "site:fossilized-remains"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Frozen Complex",
+   "wiki_file": "Evt_frozen.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_frozen.png",
+   "local_name": "frozen-complex.png",
+   "entity_uids": [
+    "site:frozen-complex"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Gas Giant Structure",
+   "wiki_file": "Evt_gas_giant_station.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_gas_giant_station.png",
+   "local_name": "gas-giant-structure.png",
+   "entity_uids": [
+    "site:gas-giant-structure"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Get Inside",
+   "wiki_file": "Evt_alien_ruins.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_alien_ruins.png",
+   "local_name": "get-inside.png",
+   "entity_uids": [
+    "site:get-inside"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Get to the Bottom",
+   "wiki_file": "Evt_ship_in_orbit.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ship_in_orbit.png",
+   "local_name": "get-to-the-bottom.png",
+   "entity_uids": [
+    "site:get-to-the-bottom"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ix Belèn",
+   "wiki_file": "Evt_gas_giant_station.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_gas_giant_station.png",
+   "local_name": "ix-belen.png",
+   "entity_uids": [
+    "site:ix-belen"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Hidden Worlds",
+   "wiki_file": "Evt_crashed_station.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_crashed_station.png",
+   "local_name": "hidden-worlds.png",
+   "entity_uids": [
+    "site:hidden-worlds"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Hole in the Ground",
+   "wiki_file": "Evt_big_landing_ship.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_big_landing_ship.png",
+   "local_name": "hole-in-the-ground.png",
+   "entity_uids": [
+    "site:hole-in-the-ground"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Kleptomaniac Rats",
+   "wiki_file": "Evt_relic_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_relic_world.png",
+   "local_name": "kleptomaniac-rats.png",
+   "entity_uids": [
+    "site:kleptomaniac-rats"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Message in the Dust",
+   "wiki_file": "Evt_ship_in_orbit.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ship_in_orbit.png",
+   "local_name": "message-in-the-dust.png",
+   "entity_uids": [
+    "site:message-in-the-dust"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Moon Bump",
+   "wiki_file": "Evt_relic_world_street.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_relic_world_street.png",
+   "local_name": "moon-bump.png",
+   "entity_uids": [
+    "site:moon-bump"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Mutant Fossils",
+   "wiki_file": "Evt_scanning_remains.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_scanning_remains.png",
+   "local_name": "mutant-fossils.png",
+   "entity_uids": [
+    "site:mutant-fossils"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Planetary Machinery",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "planetary-machinery.png",
+   "entity_uids": [
+    "site:planetary-machinery"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Popular Rock",
+   "wiki_file": "Evt_ice_asteroids.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ice_asteroids.png",
+   "local_name": "popular-rock.png",
+   "entity_uids": [
+    "site:popular-rock"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Relic Rails",
+   "wiki_file": "Evt_archaeological_dig.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_archaeological_dig.png",
+   "local_name": "relic-rails.png",
+   "entity_uids": [
+    "site:relic-rails"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Robot Debris",
+   "wiki_file": "Evt_space_debris.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_space_debris.png",
+   "local_name": "robot-debris.png",
+   "entity_uids": [
+    "site:robot-debris"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ruined Station",
+   "wiki_file": "Evt_space_debris.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_space_debris.png",
+   "local_name": "ruined-station.png",
+   "entity_uids": [
+    "site:ruined-station"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Ruins",
+   "wiki_file": "Evt_dead_city.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_dead_city.png",
+   "local_name": "ruins.png",
+   "entity_uids": [
+    "site:ruins"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Seeds of Destruction",
+   "wiki_file": "Evt_frozen.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_frozen.png",
+   "local_name": "seeds-of-destruction.png",
+   "entity_uids": [
+    "site:seeds-of-destruction"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Strange Asteroid",
+   "wiki_file": "Evt_asteroid_field.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_asteroid_field.png",
+   "local_name": "strange-asteroid.png",
+   "entity_uids": [
+    "site:strange-asteroid"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Strange Flows",
+   "wiki_file": "Evt_glitchy_matrix.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_glitchy_matrix.png",
+   "local_name": "strange-flows.png",
+   "entity_uids": [
+    "site:strange-flows"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Subterranean Hollows",
+   "wiki_file": "Evt_underground_civilization.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_underground_civilization.png",
+   "local_name": "subterranean-hollows.png",
+   "entity_uids": [
+    "site:subterranean-hollows"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Target from Orbit",
+   "wiki_file": "Evt_ship_in_orbit.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ship_in_orbit.png",
+   "local_name": "target-from-orbit.png",
+   "entity_uids": [
+    "site:target-from-orbit"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Echoes Inside",
+   "wiki_file": "Evt_arid_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_arid_planet.png",
+   "local_name": "the-echoes-inside.png",
+   "entity_uids": [
+    "site:the-echoes-inside"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Endless Expanse",
+   "wiki_file": "Evt_frozen.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_frozen.png",
+   "local_name": "the-endless-expanse.png",
+   "entity_uids": [
+    "site:the-endless-expanse"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Grand Herald",
+   "wiki_file": "Evt_ancient_alien_temple.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ancient_alien_temple.png",
+   "local_name": "the-grand-herald.png",
+   "entity_uids": [
+    "site:the-grand-herald"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Library",
+   "wiki_file": "Evt_archaeological_dig.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_archaeological_dig.png",
+   "local_name": "the-library.png",
+   "entity_uids": [
+    "site:the-library"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Too Angled",
+   "wiki_file": "Evt_ship_in_orbit.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_ship_in_orbit.png",
+   "local_name": "too-angled.png",
+   "entity_uids": [
+    "site:too-angled"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Trench World",
+   "wiki_file": "Evt_tundra_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tundra_planet.png",
+   "local_name": "trench-world.png",
+   "entity_uids": [
+    "site:trench-world"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Weapons Cache",
+   "wiki_file": "Evt_tomb_world.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_tomb_world.png",
+   "local_name": "weapons-cache.png",
+   "entity_uids": [
+    "site:weapons-cache"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Whispers in the Stone",
+   "wiki_file": "Evt_hidden_door.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_hidden_door.png",
+   "local_name": "whispers-in-the-stone.png",
+   "entity_uids": [
+    "site:whispers-in-the-stone"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Sentinels",
+   "wiki_file": "Evt_huge_monument.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_huge_monument.png",
+   "local_name": "the-sentinels.png",
+   "entity_uids": [
+    "site:the-sentinels"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "The Broken Gates",
+   "wiki_file": "Evt_baol_5.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_baol_5.png",
+   "local_name": "the-broken-gates.png",
+   "entity_uids": [
+    "site:the-broken-gates"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Chthonic Siren",
+   "wiki_file": "Evt_clocks.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_clocks.png",
+   "local_name": "chthonic-siren.png",
+   "entity_uids": [
+    "site:chthonic-siren"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Green Skies",
+   "wiki_file": "Evt_alien_planet.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_alien_planet.png",
+   "local_name": "green-skies.png",
+   "entity_uids": [
+    "site:green-skies"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Hold the Line",
+   "wiki_file": "Evt_habitat.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_habitat.png",
+   "local_name": "hold-the-line.png",
+   "entity_uids": [
+    "site:hold-the-line"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "entity_art",
+   "subject": "Repowered Complex",
+   "wiki_file": "Evt_generator_powerup.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Evt_generator_powerup.png",
+   "local_name": "repowered-complex.png",
+   "entity_uids": [
+    "site:repowered-complex"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Celestial Tear",
+   "wiki_file": "R_celestial_tear.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_celestial_tear.png",
+   "local_name": "celestial-tear.png",
+   "entity_uids": [
+    "rift:subnautical"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Daedalus Seal",
+   "wiki_file": "R_daedalus_seal.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_daedalus_seal.png",
+   "local_name": "daedalus-seal.png",
+   "entity_uids": [
+    "rift:dimensional-conflict"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Ever Spinning Top",
+   "wiki_file": "R_ever_spinning_top.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_ever_spinning_top.png",
+   "local_name": "ever-spinning-top.png",
+   "entity_uids": [
+    "rift:the-vortex"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Infinity Root",
+   "wiki_file": "R_infinity_root.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_infinity_root.png",
+   "local_name": "infinity-root.png",
+   "entity_uids": [
+    "rift:the-garden"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Plasmic Core",
+   "wiki_file": "R_plasmic_core.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_plasmic_core.png",
+   "local_name": "plasmic-core.png",
+   "entity_uids": [
+    "rift:the-fluid"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "The Continuum",
+   "wiki_file": "R_continuum.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_continuum.png",
+   "local_name": "the-continuum.png",
+   "entity_uids": [
+    "rift:the-mechanism"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Time Crystal",
+   "wiki_file": "R_time_crystal.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_time_crystal.png",
+   "local_name": "time-crystal.png",
+   "entity_uids": [
+    "rift:desert-ruins"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Crystal of Odryskia",
+   "wiki_file": "R_odryskan_crystal.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_odryskan_crystal.png",
+   "local_name": "crystal-of-odryskia.png",
+   "entity_uids": [
+    "site:debris-belt"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Blade of the Huntress",
+   "wiki_file": "R_ancient_sword.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_ancient_sword.png",
+   "local_name": "blade-of-the-huntress.png",
+   "entity_uids": [
+    "site:fossilized-remains"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Head of Zarqlan",
+   "wiki_file": "R_severed_head.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_severed_head.png",
+   "local_name": "head-of-zarqlan.png",
+   "entity_uids": [
+    "site:ancient-tomb"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Miniature Galaxy",
+   "wiki_file": "R_galaxy.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_galaxy.png",
+   "local_name": "miniature-galaxy.png",
+   "entity_uids": [
+    "site:abandoned-ecumenopolis"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "The Defragmentor",
+   "wiki_file": "R_mechano_calibrator.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_mechano_calibrator.png",
+   "local_name": "the-defragmentor.png",
+   "entity_uids": [
+    "site:planetary-machinery"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Omnicodex",
+   "wiki_file": "R_omnicodex.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_omnicodex.png",
+   "local_name": "omnicodex.png",
+   "entity_uids": [
+    "site:ruined-world"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "The Rubricator",
+   "wiki_file": "R_rubricator.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_rubricator.png",
+   "local_name": "the-rubricator.png",
+   "entity_uids": [
+    "site:kleptomaniac-rats"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Psionic Archive",
+   "wiki_file": "R_zro_crystal.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_zro_crystal.png",
+   "local_name": "psionic-archive.png",
+   "entity_uids": [
+    "site:zron"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "The Disturbance Oppressor",
+   "wiki_file": "R_weather_manipulator.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_weather_manipulator.png",
+   "local_name": "the-disturbance-oppressor.png",
+   "entity_uids": [
+    "site:before-the-fall"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "The Tempest Invocator",
+   "wiki_file": "R_the_tempest_invocator.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_the_tempest_invocator.png",
+   "local_name": "the-tempest-invocator.png",
+   "entity_uids": [
+    "site:celebration"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Eternal Throne",
+   "wiki_file": "R_eternal_throne.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:R_eternal_throne.png",
+   "local_name": "eternal-throne.png",
+   "entity_uids": [
+    "rift:the-crystal-rift"
+   ],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "relic",
+   "subject": "Advisor Core",
+   "wiki_file": null,
+   "file_page": null,
+   "local_name": null,
+   "entity_uids": [
+    "rift:the-advisor"
+   ],
+   "status": "unresolved",
+   "note": "Not found in the wiki's Relics table under this name. Verify before assuming an icon exists."
+  },
+  {
+   "category": "leader_trait",
+   "subject": "Rift Warped",
+   "wiki_file": "Leader_trait_rift_warped.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Leader_trait_rift_warped.png",
+   "local_name": "rift-warped.png",
+   "entity_uids": [],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "leader_trait",
+   "subject": "Maimed",
+   "wiki_file": "Leader_trait_maimed.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Leader_trait_maimed.png",
+   "local_name": "maimed.png",
+   "entity_uids": [],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "leader_trait",
+   "subject": "Resilient",
+   "wiki_file": "Leader_trait_resilient.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Leader_trait_resilient.png",
+   "local_name": "resilient.png",
+   "entity_uids": [],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "leader_trait",
+   "subject": "Psionic",
+   "wiki_file": "Leader_trait_psionic_leader.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Leader_trait_psionic_leader.png",
+   "local_name": "psionic.png",
+   "entity_uids": [],
+   "status": "resolved",
+   "note": null
+  },
+  {
+   "category": "resource_icon",
+   "subject": "Astral threads",
+   "wiki_file": "Astral_threads.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Astral_threads.png",
+   "local_name": "astral-threads.png",
+   "entity_uids": [],
+   "status": "needs_verification",
+   "note": "Filename inferred from wiki usage; confirm the File: page exists before download."
+  },
+  {
+   "category": "resource_icon",
+   "subject": "Grand Archive",
+   "wiki_file": "Grand_Archive.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Grand_Archive.png",
+   "local_name": "grand-archive.png",
+   "entity_uids": [],
+   "status": "needs_verification",
+   "note": "Filename inferred from wiki usage; confirm the File: page exists before download."
+  },
+  {
+   "category": "resource_icon",
+   "subject": "Minor artifacts",
+   "wiki_file": "Minor_artifacts.png",
+   "file_page": "https://stellaris.paradoxwikis.com/File:Minor_artifacts.png",
+   "local_name": "minor-artifacts.png",
+   "entity_uids": [],
+   "status": "needs_verification",
+   "note": "Filename inferred from wiki usage; confirm the File: page exists before download."
+  },
+  {
+   "category": "specimen",
+   "subject": "(63 specimen icons)",
+   "wiki_file": null,
+   "file_page": null,
+   "local_name": null,
+   "entity_uids": [],
+   "status": "unresolved",
+   "note": "59 specimen reward rows reference Grand Archive specimens, but the rift and site pages link them as anchors on the Collection page rather than as File: refs. Their icons need a separate pass over Collection."
+  }
+ ]
+}

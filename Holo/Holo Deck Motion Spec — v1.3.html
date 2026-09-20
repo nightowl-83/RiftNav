@@ -1,0 +1,1159 @@
+<title>Holo Deck Motion Spec</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Saira:wght@300;500;600&display=swap">
+<style>
+  :root{
+    --void:#070A11;
+    --deck:#0D1320;
+    --panel:#111a2a;
+    --rule:#1D2A3E;
+    --rule-soft:#152032;
+    --ink:#C6D2E4;
+    --ink-dim:#8494AC;
+    --ink-faint:#5E6E86;
+    --sig:#5FD3E8;
+    --sig-deep:#2A93AC;
+    --cream:#E9DBBB;
+    --warn:#D9A14A;
+    --stop:#D9705A;
+
+    --f-display:"Saira","Helvetica Neue",Arial,sans-serif;
+    --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    --f-mono:"IBM Plex Mono","SF Mono",Menlo,monospace;
+
+    --measure:68ch;
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0;
+    background:var(--void);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:15px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px 120px;
+  }
+  @media (min-width:1000px){
+    .shell{grid-template-columns:216px minmax(0,1fr);gap:64px;padding-top:0}
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    grid-column:1/-1;
+    border-bottom:1px solid var(--rule);
+    padding:56px 0 30px;
+    margin-bottom:52px;
+  }
+  .eyebrow{
+    font-family:var(--f-mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--sig);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 18px;
+    align-items:center;
+    margin-bottom:22px;
+  }
+  .eyebrow .sep{color:var(--ink-faint)}
+  .eyebrow .dim{color:var(--ink-faint)}
+  .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--sig);
+    box-shadow:0 0 0 3px rgba(95,211,232,.16);
+    display:inline-block;
+  }
+  h1{
+    font-family:var(--f-display);
+    font-weight:300;
+    font-size:clamp(2.4rem,6vw,3.9rem);
+    line-height:1.02;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    margin:0 0 20px;
+    text-wrap:balance;
+    color:#EAF1FA;
+  }
+  .standfirst{
+    font-size:1.06rem;
+    line-height:1.6;
+    color:var(--ink-dim);
+    max-width:60ch;
+    margin:0;
+  }
+  .standfirst strong{color:var(--ink);font-weight:600}
+
+  /* ---------- index rail ---------- */
+  .rail{display:none}
+  @media (min-width:1000px){
+    .rail{
+      display:block;
+      position:sticky;
+      top:0;
+      align-self:start;
+      padding-top:4px;
+      max-height:100vh;
+      overflow-y:auto;
+    }
+  }
+  .rail-title{
+    font-family:var(--f-mono);
+    font-size:10px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    padding-bottom:12px;
+    border-bottom:1px solid var(--rule-soft);
+    margin-bottom:14px;
+  }
+  .rail a{
+    display:flex;
+    gap:12px;
+    text-decoration:none;
+    color:var(--ink-dim);
+    font-size:13px;
+    line-height:1.4;
+    padding:7px 0;
+    border-left:2px solid transparent;
+    padding-left:12px;
+    margin-left:-14px;
+    transition:color .15s,border-color .15s;
+  }
+  .rail a:hover,.rail a:focus-visible{color:var(--sig);border-left-color:var(--sig-deep)}
+  .rail a .n{font-family:var(--f-mono);font-size:11px;color:var(--ink-faint);flex:none}
+
+  /* ---------- sections ---------- */
+  main{min-width:0}
+  section{margin-bottom:64px;scroll-margin-top:28px}
+  h2{
+    font-family:var(--f-display);
+    font-weight:500;
+    font-size:1.55rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:#E4ECF7;
+    margin:0 0 6px;
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    text-wrap:balance;
+  }
+  h2 .n{
+    font-family:var(--f-mono);
+    font-size:.72rem;
+    color:var(--sig);
+    letter-spacing:.14em;
+    flex:none;
+  }
+  .h2rule{height:1px;background:var(--rule);margin:14px 0 26px}
+  h3{
+    font-family:var(--f-body);
+    font-weight:600;
+    font-size:1rem;
+    color:#DCE6F3;
+    margin:32px 0 10px;
+    letter-spacing:.005em;
+  }
+  h4{
+    font-family:var(--f-mono);
+    font-weight:500;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:26px 0 10px;
+  }
+  p{max-width:var(--measure);margin:0 0 15px}
+  ul,ol{max-width:var(--measure);margin:0 0 15px;padding-left:20px}
+  li{margin-bottom:7px}
+  li::marker{color:var(--sig-deep)}
+  strong{color:#E4ECF7;font-weight:600}
+  a{color:var(--sig)}
+  code{
+    font-family:var(--f-mono);
+    font-size:.86em;
+    background:var(--panel);
+    border:1px solid var(--rule-soft);
+    border-radius:3px;
+    padding:1px 5px;
+    color:var(--cream);
+  }
+
+  /* ---------- callout ---------- */
+  .call{
+    border-left:2px solid var(--sig-deep);
+    background:linear-gradient(90deg,rgba(95,211,232,.055),transparent 70%);
+    padding:16px 20px;
+    margin:22px 0;
+    max-width:var(--measure);
+  }
+  .call.warn{border-left-color:var(--warn);background:linear-gradient(90deg,rgba(217,161,74,.06),transparent 70%)}
+  .call.stop{border-left-color:var(--stop);background:linear-gradient(90deg,rgba(217,112,90,.06),transparent 70%)}
+  .call p:last-child{margin-bottom:0}
+  .call .tag{
+    font-family:var(--f-mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--sig);
+    display:block;
+    margin-bottom:7px;
+  }
+  .call.warn .tag{color:var(--warn)}
+  .call.stop .tag{color:var(--stop)}
+
+  /* ---------- diagram ---------- */
+  .figure{
+    border:1px solid var(--rule);
+    background:var(--deck);
+    border-radius:2px;
+    padding:8px 8px 0;
+    margin:26px 0 10px;
+    overflow-x:auto;
+  }
+  .figure svg{display:block;min-width:720px;width:100%;height:auto}
+  .figcap{
+    font-family:var(--f-mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--ink-faint);
+    margin:0 0 34px;
+    max-width:var(--measure);
+  }
+
+  /* ---------- table ---------- */
+  .tablewrap{overflow-x:auto;margin:20px 0 8px;border:1px solid var(--rule);border-radius:2px}
+  table{border-collapse:collapse;width:100%;min-width:660px;font-size:13.5px}
+  th{
+    font-family:var(--f-mono);
+    font-weight:500;
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    text-align:left;
+    padding:12px 14px;
+    background:var(--panel);
+    border-bottom:1px solid var(--rule);
+    white-space:nowrap;
+  }
+  td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--rule-soft);
+    vertical-align:top;
+    font-variant-numeric:tabular-nums;
+    color:var(--ink-dim);
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.clip{font-family:var(--f-mono);color:var(--cream);white-space:nowrap;font-size:12.5px}
+  td.kf{font-family:var(--f-mono);color:var(--sig);white-space:nowrap;font-size:12px}
+  td.num{font-family:var(--f-mono);color:var(--ink);white-space:nowrap}
+  .pill{
+    font-family:var(--f-mono);
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:2px;
+    border:1px solid;
+    white-space:nowrap;
+  }
+  .pill.loop{color:var(--sig);border-color:rgba(95,211,232,.35);background:rgba(95,211,232,.07)}
+  .pill.once{color:var(--cream);border-color:rgba(233,219,187,.3);background:rgba(233,219,187,.05)}
+
+  /* ---------- code ---------- */
+  .codeblock{position:relative;margin:20px 0}
+  .codehead{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-bottom:none;
+    padding:9px 14px;
+    font-family:var(--f-mono);
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  pre{
+    margin:0;
+    background:var(--deck);
+    border:1px solid var(--rule);
+    padding:18px;
+    overflow-x:auto;
+    font-family:var(--f-mono);
+    font-size:12.5px;
+    line-height:1.72;
+    color:var(--ink);
+    tab-size:2;
+  }
+  pre .c{color:var(--ink-faint);font-style:italic}
+  pre .k{color:var(--sig)}
+  pre .s{color:var(--cream)}
+  .copy{
+    font-family:var(--f-mono);
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--sig);
+    background:transparent;
+    border:1px solid var(--sig-deep);
+    border-radius:2px;
+    padding:5px 11px;
+    cursor:pointer;
+    transition:background .15s,color .15s;
+    flex:none;
+  }
+  .copy:hover,.copy:focus-visible{background:var(--sig);color:var(--void)}
+
+  /* ---------- prompt block ---------- */
+  .prompt{
+    border:1px solid var(--sig-deep);
+    border-radius:2px;
+    background:linear-gradient(180deg,rgba(95,211,232,.05),transparent 40%);
+  }
+  .prompt .codehead{background:rgba(95,211,232,.09);border-color:var(--sig-deep);color:var(--sig)}
+  .prompt pre{border-color:var(--sig-deep);background:#0A121C;max-height:none}
+
+  /* ---------- steps ---------- */
+  .steps{counter-reset:s;list-style:none;padding:0;max-width:var(--measure)}
+  .steps>li{
+    counter-increment:s;
+    position:relative;
+    padding-left:52px;
+    padding-bottom:24px;
+    margin:0;
+    border-left:1px solid var(--rule);
+    margin-left:15px;
+  }
+  .steps>li:last-child{border-left-color:transparent;padding-bottom:0}
+  .steps>li::before{
+    content:counter(s,decimal-leading-zero);
+    position:absolute;left:-15px;top:-2px;
+    width:30px;height:30px;
+    display:grid;place-items:center;
+    font-family:var(--f-mono);font-size:11px;
+    color:var(--sig);
+    background:var(--deck);
+    border:1px solid var(--rule);
+    border-radius:50%;
+  }
+  .steps h3{margin:0 0 6px}
+  .steps p{margin-bottom:0}
+
+  /* ---------- swatches ---------- */
+  .tokens{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+    margin:20px 0;
+  }
+  .token{background:var(--deck);padding:13px 14px}
+  .token .sw{height:26px;border-radius:2px;margin-bottom:10px;border:1px solid rgba(255,255,255,.07)}
+  .token .nm{font-family:var(--f-mono);font-size:11px;color:var(--ink);letter-spacing:.04em}
+  .token .vl{font-family:var(--f-mono);font-size:10px;color:var(--ink-faint);margin-top:3px}
+
+  /* ---------- footer ---------- */
+  footer{
+    grid-column:1/-1;
+    border-top:1px solid var(--rule);
+    margin-top:24px;
+    padding-top:24px;
+    font-family:var(--f-mono);
+    font-size:11px;
+    letter-spacing:.08em;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    text-transform:uppercase;
+  }
+
+  :focus-visible{outline:2px solid var(--sig);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="shell">
+
+  <header class="masthead">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <span>Rift Nav · Holo Deck</span>
+      <span class="sep">//</span>
+      <span>Build Spec v1.3</span>
+      <span class="sep">//</span>
+      <span class="dim">Stellaris Helper</span>
+      <span class="sep">//</span>
+      <span class="dim">30 Aug 2026</span>
+    </div>
+    <h1>Holo Deck<br>Motion Spec</h1>
+    <p class="standfirst">A state-driven video background for the Rift Finder Holo deck. Six short clips wired to a state machine — <strong>not one long timeline with seek points.</strong> This document covers the clip graph, the Higgsfield generation brief, the playback module, and a drop-in prompt for the Claude Design canvas.</p>
+  </header>
+
+  <nav class="rail" aria-label="Section index">
+    <div class="rail-title">Contents</div>
+    <a href="#s1"><span class="n">01</span><span>The decision</span></a>
+    <a href="#s2"><span class="n">02</span><span>State graph</span></a>
+    <a href="#s3"><span class="n">03</span><span>Clip manifest</span></a>
+    <a href="#s4"><span class="n">04</span><span>Generation brief &amp; prompts</span></a>
+    <a href="#s5"><span class="n">05</span><span>Playback module</span></a>
+    <a href="#s6"><span class="n">06</span><span>Latency &amp; feel</span></a>
+    <a href="#s7"><span class="n">07</span><span>Encoding</span></a>
+    <a href="#s8"><span class="n">08</span><span>Accessibility</span></a>
+    <a href="#s9"><span class="n">09</span><span>Canvas integration</span></a>
+    <a href="#s10"><span class="n">10</span><span>Claude Design prompt</span></a>
+    <a href="#s11"><span class="n">11</span><span>Build sequence</span></a>
+    <a href="#s12"><span class="n">12</span><span>Open assumptions</span></a>
+  </nav>
+
+  <main>
+
+    <!-- 01 -->
+    <section id="s1">
+      <h2><span class="n">01</span> The decision</h2>
+      <div class="h2rule"></div>
+
+      <p>The intuitive approach — render one continuous video containing every state and seek to timestamps — fails on how browsers actually decode video.</p>
+
+      <p>Setting <code>video.currentTime = 12.5</code> does not jump to that frame. The browser seeks to the nearest <em>keyframe</em>, then decodes forward. You land near your mark, with a decode stall and often a visible flash. Forcing a keyframe on every frame fixes accuracy but multiplies file size several times over. Either path produces exactly the jarring cut the design is trying to avoid — and every new state means re-rendering and re-cutting the whole timeline.</p>
+
+      <div class="call">
+        <span class="tag">Approach</span>
+        <p>Model the background as a <strong>directed graph of short clips</strong>. Stills are the nodes; clips are the edges. Each clip is generated with its first and last frames locked to a shared still, so the player can hard-cut between clips and the viewer sees continuous motion.</p>
+      </div>
+
+      <p>Total asset budget for the full graph is roughly 15 seconds of video — smaller than the single-timeline approach, individually cacheable, and extendable one edge at a time.</p>
+    </section>
+
+    <!-- 02 -->
+    <section id="s2">
+      <h2><span class="n">02</span> State graph</h2>
+      <div class="h2rule"></div>
+
+      <p>Three states, six clips. The graph maps directly onto controls already in the design: <code>skipBoot</code> gates the boot edge, the <strong>RETARGET</strong> button drives the event self-transition, and <strong>ABORT RIFT</strong> drives the return edge.</p>
+
+      <div class="figure">
+        <svg viewBox="0 0 920 380" role="img" aria-labelledby="graphtitle graphdesc">
+          <title id="graphtitle">Holo deck clip state graph</title>
+          <desc id="graphdesc">Boot leads once into Idle. Idle loops on holo-idle and transitions to Event via holo-engage. Event loops on holo-event, self-transitions via holo-retarget, and returns to Idle via holo-return.</desc>
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#2A93AC"></path>
+            </marker>
+            <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#8B7C5E"></path>
+            </marker>
+          </defs>
+
+          <!-- edges -->
+          <line x1="152" y1="190" x2="312" y2="190" stroke="#2A93AC" stroke-width="1.5" marker-end="url(#ah)"></line>
+          <text x="232" y="178" fill="#8494AC" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" letter-spacing="0.5">holo-boot</text>
+
+          <path d="M470,176 Q585,104 698,176" fill="none" stroke="#2A93AC" stroke-width="1.5" marker-end="url(#ah)"></path>
+          <text x="584" y="97" fill="#5FD3E8" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" letter-spacing="0.5">holo-engage</text>
+          <text x="584" y="112" fill="#5E6E86" font-family="IBM Plex Mono, monospace" font-size="9.5" text-anchor="middle" letter-spacing="1">SELECT RIFT</text>
+
+          <path d="M698,204 Q585,278 472,204" fill="none" stroke="#2A93AC" stroke-width="1.5" marker-end="url(#ah)"></path>
+          <text x="584" y="298" fill="#5FD3E8" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" letter-spacing="0.5">holo-return</text>
+          <text x="584" y="313" fill="#5E6E86" font-family="IBM Plex Mono, monospace" font-size="9.5" text-anchor="middle" letter-spacing="1">ABORT RIFT / COMPLETE</text>
+
+          <!-- idle self loop -->
+          <path d="M368,160 C346,104 444,104 422,160" fill="none" stroke="#2A93AC" stroke-width="1.5" marker-end="url(#ah)"></path>
+          <text x="395" y="96" fill="#8494AC" font-family="IBM Plex Mono, monospace" font-size="10.5" text-anchor="middle">holo-idle ↻</text>
+
+          <!-- event self loop -->
+          <path d="M752,160 C730,104 828,104 806,160" fill="none" stroke="#2A93AC" stroke-width="1.5" marker-end="url(#ah)"></path>
+          <text x="779" y="96" fill="#8494AC" font-family="IBM Plex Mono, monospace" font-size="10.5" text-anchor="middle">holo-event ↻</text>
+
+          <!-- retarget self loop -->
+          <path d="M752,220 C730,272 828,272 806,220" fill="none" stroke="#8B7C5E" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ahc)"></path>
+          <text x="779" y="292" fill="#E9DBBB" font-family="IBM Plex Mono, monospace" font-size="10.5" text-anchor="middle">holo-retarget</text>
+          <text x="779" y="307" fill="#5E6E86" font-family="IBM Plex Mono, monospace" font-size="9.5" text-anchor="middle" letter-spacing="1">RETARGET</text>
+
+          <!-- nodes -->
+          <g>
+            <rect x="30" y="162" width="122" height="56" rx="2" fill="#111a2a" stroke="#1D2A3E"></rect>
+            <text x="91" y="187" fill="#C6D2E4" font-family="Saira, sans-serif" font-size="15" font-weight="500" text-anchor="middle" letter-spacing="1.6">BOOT</text>
+            <text x="91" y="204" fill="#5E6E86" font-family="IBM Plex Mono, monospace" font-size="9.5" text-anchor="middle">entry · once</text>
+          </g>
+          <g>
+            <rect x="312" y="162" width="158" height="56" rx="2" fill="#111a2a" stroke="#2A93AC"></rect>
+            <text x="391" y="187" fill="#EAF1FA" font-family="Saira, sans-serif" font-size="15" font-weight="500" text-anchor="middle" letter-spacing="1.6">IDLE</text>
+            <text x="391" y="204" fill="#5FD3E8" font-family="IBM Plex Mono, monospace" font-size="9.5" text-anchor="middle">KF-REST · hub</text>
+          </g>
+          <g>
+            <rect x="698" y="162" width="162" height="56" rx="2" fill="#111a2a" stroke="#2A93AC"></rect>
+            <text x="779" y="187" fill="#EAF1FA" font-family="Saira, sans-serif" font-size="15" font-weight="500" text-anchor="middle" letter-spacing="1.6">EVENT</text>
+            <text x="779" y="204" fill="#5FD3E8" font-family="IBM Plex Mono, monospace" font-size="9.5" text-anchor="middle">KF-EVENT</text>
+          </g>
+        </svg>
+      </div>
+      <p class="figcap">Fig. 01 — Clip graph. Solid edges are always present; the dashed retarget edge is optional and can be deferred to a later stage.</p>
+
+      <h3>The junction-frame rule</h3>
+      <p>This is the constraint everything else depends on. <strong>Every clip's last frame must be pixel-identical to the first frame of any clip that can follow it.</strong></p>
+      <ul>
+        <li><code>holo-boot</code> ends on <code>KF-REST</code>, which is where <code>holo-idle</code> begins.</li>
+        <li><code>holo-idle</code> begins and ends on <code>KF-REST</code> — that is what makes it a true seamless loop rather than a hidden cut.</li>
+        <li><code>holo-engage</code> begins on <code>KF-REST</code> and ends on <code>KF-EVENT</code>.</li>
+        <li><code>holo-return</code> is the exact inverse.</li>
+      </ul>
+      <p>When this holds, transitions are hard cuts with no crossfade. That matters: crossfades on generated video look mushy and read as an error rather than a move.</p>
+
+      <div class="call">
+        <span class="tag">Relaxation · particle form</span>
+        <p>The Guide is a <strong>column of suspended motes</strong>, not a character, and that loosens the rule where it is hardest to satisfy. The junction has to match <em>perceptually</em>, not per-pixel: the column's silhouette, height, screen position and density distribution must be identical across a junction, but individual particle positions need not be. The eye reads the envelope of a noise field, not its individual elements — the same property that lets <code>holoScan</code> mask seams (§06), applied to the subject itself. This is the single biggest reason a non-figurative form de-risks the whole architecture, and every prompt in §04 is written to exploit it.</p>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section id="s3">
+      <h2><span class="n">03</span> Clip manifest</h2>
+      <div class="h2rule"></div>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Clip</th>
+              <th>Play</th>
+              <th>Len</th>
+              <th>Start frame</th>
+              <th>End frame</th>
+              <th>Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="clip">holo-boot.mp4</td>
+              <td><span class="pill once">Once</span></td>
+              <td class="num">3s</td>
+              <td class="kf">KF-VOID</td>
+              <td class="kf">KF-REST</td>
+              <td>First load. Skipped when <code>skipBoot</code> is on or the visitor is returning.</td>
+            </tr>
+            <tr>
+              <td class="clip">holo-idle.mp4</td>
+              <td><span class="pill loop">Loop</span></td>
+              <td class="num">3s</td>
+              <td class="kf">KF-REST</td>
+              <td class="kf">KF-REST</td>
+              <td>Rest state. The hub — every path passes through it.</td>
+            </tr>
+            <tr>
+              <td class="clip">holo-engage.mp4</td>
+              <td><span class="pill once">Once</span></td>
+              <td class="num">2s</td>
+              <td class="kf">KF-REST</td>
+              <td class="kf">KF-EVENT</td>
+              <td>User selects a rift or dig site.</td>
+            </tr>
+            <tr>
+              <td class="clip">holo-event.mp4</td>
+              <td><span class="pill loop">Loop</span></td>
+              <td class="num">3s</td>
+              <td class="kf">KF-EVENT</td>
+              <td class="kf">KF-EVENT</td>
+              <td>Event log open. Rest state for the detail view.</td>
+            </tr>
+            <tr>
+              <td class="clip">holo-retarget.mp4</td>
+              <td><span class="pill once">Once</span></td>
+              <td class="num">2s</td>
+              <td class="kf">KF-EVENT</td>
+              <td class="kf">KF-EVENT</td>
+              <td><strong>RETARGET</strong> — a scan pulse that reads as "re-locking" without leaving the event view.</td>
+            </tr>
+            <tr>
+              <td class="clip">holo-return.mp4</td>
+              <td><span class="pill once">Once</span></td>
+              <td class="num">2s</td>
+              <td class="kf">KF-EVENT</td>
+              <td class="kf">KF-REST</td>
+              <td><strong>ABORT RIFT</strong>, or chapter completion.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="figcap">Six clips · 15s total · three keyframe stills. Durations are whole seconds with a 2s floor — a hard model constraint, see §04.</p>
+
+      <h4>Keyframe stills — lock these first</h4>
+      <div class="tokens">
+        <div class="token"><div class="sw" style="background:#05070C"></div><div class="nm">KF-VOID</div><div class="vl">Empty deck, ring only</div></div>
+        <div class="token"><div class="sw" style="background:linear-gradient(135deg,#0E2233,#2A93AC)"></div><div class="nm">KF-REST</div><div class="vl">Column at rest, wide</div></div>
+        <div class="token"><div class="sw" style="background:linear-gradient(135deg,#12293A,#5FD3E8)"></div><div class="nm">KF-EVENT</div><div class="vl">Column resolved, close</div></div>
+      </div>
+
+      <div class="call warn">
+        <span class="tag">Scope guard</span>
+        <p>There are 32 rifts and 110 dig sites. A distinct camera view per entity is an n² transition problem — do not go there. Use <strong>three to five camera positions total</strong> and let entity-specific content live in the DOM. The hologram sells presence; the interface carries the data.</p>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section id="s4">
+      <h2><span class="n">04</span> Generation brief &amp; prompts</h2>
+      <div class="h2rule"></div>
+
+      <p>The graph is only buildable because Higgsfield exposes models that accept <strong>both a start frame and an end frame</strong>. Verified against the connector's model catalogue: <code>flux_3_video</code> (FLUX 3 Video, Black Forest Labs), <code>wan3_0</code> and <code>wan3_0_prime</code> (Wan 3.0 / Prime) all carry <code>start_image</code> and <code>end_image</code> media roles. Any model exposing only <code>start_image</code> — Kling 3.0 Turbo, for instance — cannot build this graph.</p>
+
+      <div class="call">
+        <span class="tag">Model</span>
+        <p><strong>Wan 3.0 Prime</strong> (<code>wan3_0_prime</code>) at 1080p, 16:9, <code>generate_audio: false</code>, <code>enable_thinking: true</code>. It carries the <code>first-last-frame</code> tag and accepts durations from 2s. FLUX 3 Video also does start-plus-end frames but has a 5s minimum, which would force trimming and break the very end-frame lock the architecture depends on.</p>
+      </div>
+
+      <div class="call warn">
+        <span class="tag">Constraint · corrected</span>
+        <p><strong>Duration is whole seconds with a 2-second floor.</strong> The manifest in §03 reflects this. Sub-second timing is not available at generation, so anything shorter has to come from trimming — and trimming a conditioned clip discards the locked end frame, which is the one thing that cannot be given up. Design the motion to fill the whole 2 or 3 seconds instead.</p>
+      </div>
+
+      <h3>Order of operations</h3>
+      <ol class="steps">
+        <li>
+          <h3>Lock the three stills</h3>
+          <p>Pull <code>KF-REST</code> from the existing proof-of-concept clip or Midjourney, then derive <code>KF-EVENT</code> and <code>KF-VOID</code> from it by image edit — never by fresh generation. Nothing else starts until all three are signed off: every clip is conditioned on them, so changing a still invalidates every clip that touches it.</p>
+        </li>
+        <li>
+          <h3>Generate each edge as a conditioned segment</h3>
+          <p>One generation per row of the manifest, supplying the manifest's start and end stills. Because the endpoints are supplied images rather than wherever the model drifts, junctions match by construction.</p>
+        </li>
+        <li>
+          <h3>Verify the junctions numerically</h3>
+          <p>Extract the first and last frame of every clip and diff them against the source still. Anything above a small perceptual delta gets regenerated, not colour-corrected. Do this before encoding — it is the one QA step that cannot be skipped.</p>
+        </li>
+      </ol>
+
+      <h3>How to prompt a first-and-last-frame model</h3>
+
+      <p>This is not text-to-video prompting, and the habits transfer badly. When both endpoints are supplied as images, <strong>the images already define the subject — the prompt's only job is to describe the path between them.</strong></p>
+
+      <p>Re-describing the form, its colour or the environment competes with the conditioning images and is the most common cause of mid-clip drift. Every prompt below is roughly ninety percent verbs. What appearance language remains is there to hold things <em>constant</em>, not to introduce them.</p>
+
+      <p>Each prompt has four parts in this order: the <strong>camera</strong> instruction (including an explicit "static" when it does not move), the <strong>subject motion</strong>, a <strong>constancy clause</strong> naming what must not change, and the shared block below.</p>
+
+      <h4>Constancy block — append verbatim to all six</h4>
+      <div class="codeblock">
+        <div class="codehead"><span>Shared suffix</span><button class="copy" data-copy="p-const">Copy</button></div>
+<pre id="p-const">Volumetric holographic projection: a tall vertical column of thousands of fine
+suspended light motes, cyan and ice-blue, densest at the core and dispersing
+toward the edges, standing on the right third of frame above a faint glowing
+circular emitter ring set into a matte near-black floor. The left two thirds
+of frame stay empty dark space throughout. Fine horizontal scanlines cross the
+volume; soft chromatic fringing at the outer edge. One continuous take — no
+cuts, no dissolves, no speed ramps. Locked exposure and colour temperature:
+the light level on the last frame matches the first exactly. No text, no
+interface elements, no letters or numbers, no people or figures, no lens
+flare, nothing new entering frame.</pre>
+      </div>
+
+      <h4>The two loop clips</h4>
+      <p>Start and end image are the same file, and the model's instinct is either to do nothing or to wander off and come back sloppily. The phrase that does the work is <strong>"a single closed cycle"</strong>. Note what these ask to match: <em>silhouette, height, position and density</em> — not individual mote positions, per the relaxation in §02. Asking a particle field to return every element to an exact coordinate is both unnecessary and much harder for the model to satisfy.</p>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-idle · 3s · KF-REST → KF-REST</span><button class="copy" data-copy="p-idle">Copy</button></div>
+<pre id="p-idle">Camera static. The column stays exactly where it is — same height, same width,
+same position on the right third of frame, same overall density. It does not
+translate, scale, tilt or lean at any point. Animate only inside the volume:
+the motes drift in a slow internal rotation around the column's vertical axis,
+one faint brightness swell rises from the base to the top and fades, and the
+outermost particles shimmer. A single closed cycle across the full three
+seconds — the column's silhouette, height, screen position and density
+distribution on the final frame are identical to the first.</pre>
+      </div>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-event · 3s · KF-EVENT → KF-EVENT</span><button class="copy" data-copy="p-event">Copy</button></div>
+<pre id="p-event">Camera static. The column holds its tighter, resolved configuration — same
+height, same width, same screen position, same overall density. It does not
+translate, scale, tilt or lean. Animate only inside the volume: slow internal
+rotation of the motes around the vertical axis, one faint brightness swell
+rising from base to top, shimmer at the outer edge. A single closed cycle
+across the full three seconds — silhouette, screen position and density
+distribution on the final frame are identical to the first.</pre>
+      </div>
+
+      <h4>The transition pair</h4>
+      <p>Spell out the mirrored move explicitly. The model generating <code>holo-return</code> has never seen <code>holo-engage</code>, so "the reverse of the other clip" means nothing to it — name the direction, the distance and the easing on both sides or the pair will not match.</p>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-engage · 2s · KF-REST → KF-EVENT</span><button class="copy" data-copy="p-engage">Copy</button></div>
+<pre id="p-engage">One continuous camera move: the camera arcs to the RIGHT around the column and
+pushes in, ending closer and off-axis. The emitter ring on the floor sweeps
+visibly through the frame as the camera travels — it is the fixed landmark
+that makes the arc read as a move. Simultaneously the column resolves: the
+loose outer motes draw inward and the core tightens into a denser, more
+defined vertical form. Smooth ease-in-out, decelerating clearly through the
+final third so both the camera and the densification have fully settled by the
+last frame. No cut, no whip pan, no motion-blur streaks.</pre>
+      </div>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-return · 2s · KF-EVENT → KF-REST</span><button class="copy" data-copy="p-return">Copy</button></div>
+<pre id="p-return">One continuous camera move: the camera arcs to the LEFT around the column and
+pulls back out, ending wider and on-axis. The emitter ring on the floor sweeps
+visibly through the frame in the opposite direction as the camera travels.
+Simultaneously the column relaxes: the tightened core loosens and the motes
+disperse back outward to their resting spread. Smooth ease-in-out,
+decelerating clearly through the final third so both the camera and the
+dispersal have fully settled by the last frame. No cut, no whip pan, no
+motion-blur streaks.</pre>
+      </div>
+
+      <h4>Boot and retarget</h4>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-boot · 3s · KF-VOID → KF-REST</span><button class="copy" data-copy="p-boot">Copy</button></div>
+<pre id="p-boot">Camera static. The projection assembles: motes rise from the emitter ring on
+the floor and stream upward, accumulating into the full column over the first
+two seconds — the base fills first, the top completes last. The final second
+is a settle: the column's outer edge stabilises, the upward streaming decays
+into the resting internal drift, and the projection is fully formed and at
+rest when the clip ends. Ease out hard into the final frame.</pre>
+      </div>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-retarget · 2s · KF-EVENT → KF-EVENT</span><button class="copy" data-copy="p-retarget">Copy</button></div>
+<pre id="p-retarget">Camera static. The column's height, width, screen position and overall density
+are identical on the first and last frame and do not change in between. A
+single bright scan band sweeps once from the top of the column down to the
+base and leaves frame, briefly brightening every mote it passes through and
+lifting the edge glow. The glow returns fully to its resting level before the
+clip ends. No other motion, no camera movement, no change to the column's
+shape.</pre>
+      </div>
+
+      <h4>Connector parameters</h4>
+      <div class="codeblock">
+        <div class="codehead"><span>generate_video · one call per clip</span><button class="copy" data-copy="p-params">Copy</button></div>
+<pre id="p-params">model:           <span class="s">wan3_0_prime</span>
+resolution:      <span class="s">1080p</span>
+aspect_ratio:    <span class="s">16:9</span>
+duration:        <span class="k">&lt;3 | 2 — whole seconds, from the §03 manifest&gt;</span>
+generate_audio:  <span class="k">false</span>   <span class="c">// a background must be silent, and audio</span>
+                          <span class="c">// generation can alter the motion pacing</span>
+enable_thinking: <span class="k">true</span>    <span class="c">// slower, but materially better at holding</span>
+                          <span class="c">// the "returns exactly to start" instruction</span>
+medias:
+  - role: <span class="s">start_image</span>, value: <span class="k">&lt;media_id of start KF&gt;</span>
+  - role: <span class="s">end_image</span>,   value: <span class="k">&lt;media_id of end KF&gt;</span>
+
+prompt: <span class="k">&lt;per-clip prompt&gt;</span> + <span class="k">&lt;constancy block&gt;</span></pre>
+      </div>
+
+      <h3>Deriving the other two stills</h3>
+
+      <p>With no character to preserve, this is easier than it would otherwise be — but the <strong>deck, the emitter ring and the lighting</strong> still have to match across all three stills, because the camera travels between them. Both derivations are image edits from <code>KF-REST</code>, passed as <code>image_references</code>. Generating either from scratch gives you a different floor and a different ring, and the mismatch shows as a jump at the junction.</p>
+
+      <div class="codeblock">
+        <div class="codehead"><span>KF-EVENT · image edit from KF-REST</span><button class="copy" data-copy="p-kfevent">Copy</button></div>
+<pre id="p-kfevent">Same scene, same deck, same emitter ring, same lighting temperature, same
+scanline density, same cyan and ice-blue palette. Move the camera closer and
+rotate it roughly thirty degrees to the right, so the emitter ring is seen
+from a new angle. The column of motes is tighter and more resolved: the outer
+particles have drawn inward and the core is denser and more clearly defined,
+at the same height. Keep the left side of frame empty dark space. Change only
+the camera position and the column's density. Do not restyle, do not change
+the palette, do not add anything to the scene.</pre>
+      </div>
+
+      <div class="codeblock">
+        <div class="codehead"><span>KF-VOID · image edit from KF-REST</span><button class="copy" data-copy="p-kfvoid">Copy</button></div>
+<pre id="p-kfvoid">The same deck from exactly the same camera position, with the column of motes
+removed entirely. Keep the emitter ring on the floor exactly where it is,
+still faintly lit, with a few stray light motes drifting just above it. Same
+near-black ground, same lighting temperature, same scanline density. Change
+nothing else — the floor, the ring and the framing must match the source
+precisely.</pre>
+      </div>
+
+      <div class="call warn">
+        <span class="tag">Salvage check</span>
+        <p>The existing 8-second proof-of-concept clip was generated as one continuous shot, so its 2-second mark almost certainly does not match its loop point. Expect to regenerate against locked stills rather than recut the existing file. Its best use is as the source frame for <code>KF-REST</code> — pick the cleanest, most neutral standing frame in it and upscale that.</p>
+      </div>
+
+      <h4>Build order — run in waves, not one batch</h4>
+      <p>Each clip needs its own start/end image pair, so there is no single call that produces the set. The question is whether to fire all six at once, and the answer is no: each wave validates prompt language the next wave reuses. "Returns to exactly where it started" appears in both loop clips — if it takes three rewordings to land on <code>holo-idle</code>, that fix should reach <code>holo-event</code> before it is paid for.</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Wave</th><th>Generate</th><th>Why grouped</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">0</td><td class="clip">KF-REST</td><td>Everything downstream is conditioned on it.</td></tr>
+            <tr><td class="num">1</td><td class="clip">holo-idle <span class="pill once">count 3</span></td><td>The gate. Needs only KF-REST and tests the hardest instruction with the least setup. Run it alone.</td></tr>
+            <tr><td class="num">2</td><td class="clip">KF-EVENT + KF-VOID</td><td>Both derive from KF-REST by image edit.</td></tr>
+            <tr><td class="num">3</td><td class="clip">holo-event, holo-engage, holo-return</td><td>Share KF-EVENT and now-validated loop language. Prove the graph.</td></tr>
+            <tr><td class="num">4</td><td class="clip">holo-boot, holo-retarget</td><td>Lowest risk; retarget may not be needed at all.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Batch <em>within</em> waves 3 and 4 — the clips are independent and the language is proven, so <code>generate_video_batch</code> plus <code>jobs_wait</code> is one wait instead of three. Use <code>count: 3</code> on the loop clips: three variants of one prompt beats three sequential retries at the same spend, and lets you compare rather than judge each alone. Preflight with <code>get_cost: true</code>.</p>
+
+      <div class="call">
+        <span class="tag">The honest trade</span>
+        <p>A single long generation <em>would</em> give better cross-clip consistency — one render, one continuous look, no drift between files. That is a real advantage and losing it is the actual cost of this architecture. What recovers most of it: every clip carries the identical constancy block, and every still derives from KF-REST rather than being independently generated.</p>
+      </div>
+
+      <h4>What to expect</h4>
+      <ul>
+        <li><strong>Generate the two loop clips first.</strong> If the model cannot hold the column in place for three seconds and land back on its start frame, the whole architecture needs rethinking — and that is the cheapest possible place to discover it, before any transition work exists.</li>
+        <li><strong>Budget three to five attempts per clip.</strong> Conditioned generation is more constrained than open text-to-video, but "returns to exactly the start" is a demanding instruction and will not land first try every time.</li>
+        <li><strong>The endpoints protect the junctions, not the middle.</strong> A clip can start and end perfectly and still drift through its own midpoint. Watch the middle second of every transition specifically — it is the failure the frame-diff QA in step 3 will not catch.</li>
+        <li><strong>The failure mode to watch for is the column leaning or wandering.</strong> A particle field has no skeleton, so nothing stops the model sliding it toward frame centre over three seconds. That is why every loop prompt names <em>height, width, screen position</em> explicitly rather than trusting "static camera" to imply it. If it still drifts, the fix is to strengthen the position clause, not the camera clause.</li>
+      </ul>
+    </section>
+
+    <!-- 05 -->
+    <section id="s5">
+      <h2><span class="n">05</span> Playback module</h2>
+      <div class="h2rule"></div>
+
+      <p>Two stacked <code>&lt;video&gt;</code> elements. One is visible and playing; the other is hidden and preloaded with the likely next clip. Switching means swapping which is visible — the incoming clip is already decoded, so there is no load pause.</p>
+
+      <p>For <em>when</em> to swap, use <code>requestVideoFrameCallback()</code> rather than the <code>timeupdate</code> event. <code>timeupdate</code> fires roughly four times a second and will overshoot the end of a clip, producing a visible stutter; <code>requestVideoFrameCallback</code> fires once per rendered frame. Support is 94% globally — Chrome and Edge 83+, Safari 15.4+, Firefox 132+ — so a <code>timeupdate</code> fallback covers the remainder.</p>
+
+      <div class="codeblock">
+        <div class="codehead"><span>holo-deck.js</span><button class="copy" data-copy="js">Copy</button></div>
+<pre id="js"><span class="k">const</span> GRAPH = {
+  boot:     { src: <span class="s">'holo-boot.mp4'</span>,     loop: <span class="k">false</span>, next: <span class="s">'idle'</span>  },
+  idle:     { src: <span class="s">'holo-idle.mp4'</span>,     loop: <span class="k">true</span>                    },
+  engage:   { src: <span class="s">'holo-engage.mp4'</span>,   loop: <span class="k">false</span>, next: <span class="s">'event'</span> },
+  event:    { src: <span class="s">'holo-event.mp4'</span>,    loop: <span class="k">true</span>                    },
+  retarget: { src: <span class="s">'holo-retarget.mp4'</span>, loop: <span class="k">false</span>, next: <span class="s">'event'</span> },
+  ret:      { src: <span class="s">'holo-return.mp4'</span>,   loop: <span class="k">false</span>, next: <span class="s">'idle'</span>  },
+};
+
+<span class="c">// Which edge to take from a given state to reach a target state.</span>
+<span class="k">const</span> ROUTE = {
+  <span class="s">'idle→event'</span>: <span class="s">'engage'</span>,
+  <span class="s">'event→idle'</span>: <span class="s">'ret'</span>,
+  <span class="s">'event→event'</span>: <span class="s">'retarget'</span>,
+};
+
+<span class="k">const</span> EPS = 0.08; <span class="c">// seconds of slack at the loop boundary</span>
+
+<span class="k">class</span> HoloDeck {
+  constructor(mount, { skipBoot = <span class="k">false</span> } = {}) {
+    <span class="k">this</span>.els = [<span class="k">this</span>._video(mount), <span class="k">this</span>._video(mount)];
+    <span class="k">this</span>.front = 0;
+    <span class="k">this</span>.state = <span class="s">'idle'</span>;   <span class="c">// logical state, not the playing clip</span>
+    <span class="k">this</span>.pending = <span class="k">null</span>;
+    <span class="k">this</span>.mount = mount;
+    <span class="k">this</span>._play(skipBoot ? <span class="s">'idle'</span> : <span class="s">'boot'</span>);
+  }
+
+  _video(mount) {
+    <span class="k">const</span> v = document.createElement(<span class="s">'video'</span>);
+    Object.assign(v, { muted: <span class="k">true</span>, playsInline: <span class="k">true</span>, preload: <span class="s">'auto'</span> });
+    v.style.cssText = <span class="s">'position:absolute;inset:0;width:100%;height:100%;'</span> +
+                      <span class="s">'object-fit:cover;opacity:0;'</span>;
+    mount.appendChild(v);
+    <span class="k">return</span> v;
+  }
+
+  <span class="c">/* Public: ask to reach a logical state. Fires an immediate ack so the
+     UI can respond in ~100ms even when the video has to wait for a
+     loop boundary. */</span>
+  request(target) {
+    <span class="k">this</span>.mount.dispatchEvent(<span class="k">new</span> CustomEvent(<span class="s">'holo:ack'</span>, { detail: { target } }));
+    <span class="k">const</span> edge = ROUTE[<span class="s">`</span>${<span class="k">this</span>.state}<span class="s">→</span>${target}<span class="s">`</span>];
+    <span class="k">if</span> (!edge) <span class="k">return</span>;
+    <span class="k">this</span>.state = target;
+    <span class="k">this</span>.pending = edge;   <span class="c">// consumed at the next boundary</span>
+  }
+
+  _play(id) {
+    <span class="k">const</span> clip = GRAPH[id];
+    <span class="k">const</span> back = <span class="k">this</span>.els[1 - <span class="k">this</span>.front];
+    back.loop = clip.loop;
+    back.src = clip.src;
+    back.currentTime = 0;
+
+    <span class="k">const</span> reveal = () => {
+      back.style.opacity = <span class="s">'1'</span>;
+      <span class="k">this</span>.els[<span class="k">this</span>.front].style.opacity = <span class="s">'0'</span>;
+      <span class="k">this</span>.front = 1 - <span class="k">this</span>.front;
+      <span class="k">this</span>.current = id;
+      <span class="k">this</span>._watch(back, clip);
+      <span class="k">if</span> (clip.next) <span class="k">this</span>._preload(clip.next);
+    };
+
+    <span class="c">// Reveal only once a real frame has been rendered — never on 'play'.</span>
+    back.play().then(() => {
+      back.requestVideoFrameCallback
+        ? back.requestVideoFrameCallback(reveal)
+        : back.addEventListener(<span class="s">'loadeddata'</span>, reveal, { once: <span class="k">true</span> });
+    });
+  }
+
+  _watch(v, clip) {
+    <span class="k">const</span> tick = (_, meta) => {
+      <span class="k">if</span> (<span class="k">this</span>.current !== clip.srcId &amp;&amp; v !== <span class="k">this</span>.els[<span class="k">this</span>.front]) <span class="k">return</span>;
+      <span class="k">const</span> atEnd = meta.mediaTime &gt;= v.duration - EPS;
+      <span class="k">if</span> (atEnd) {
+        <span class="k">if</span> (<span class="k">this</span>.pending) { <span class="k">const</span> n = <span class="k">this</span>.pending; <span class="k">this</span>.pending = <span class="k">null</span>; <span class="k">return this</span>._play(n); }
+        <span class="k">if</span> (!clip.loop &amp;&amp; clip.next) <span class="k">return this</span>._play(clip.next);
+      }
+      v.requestVideoFrameCallback(tick);
+    };
+    v.requestVideoFrameCallback(tick);
+  }
+
+  _preload(id) {
+    <span class="k">const</span> back = <span class="k">this</span>.els[1 - <span class="k">this</span>.front];
+    <span class="k">if</span> (back.src.endsWith(GRAPH[id].src)) <span class="k">return</span>;
+    back.src = GRAPH[id].src;
+    back.load();
+  }
+}</pre>
+      </div>
+
+      <h4>Preload policy</h4>
+      <p><code>idle</code> is the hub, so while it loops, preload <code>holo-engage</code> — it is the only edge out. While <code>event</code> loops, <code>holo-return</code> is the more likely exit than <code>holo-retarget</code>; preload return and let retarget fetch on demand, since a 1.2s clip at 1080p arrives fast enough on any connection that can already stream the rest.</p>
+
+      <div class="call">
+        <span class="tag">Note</span>
+        <p>The module above uses the native <code>loop</code> attribute for looping clips, which is simple and adequate for a hologram. Some browsers introduce a sub-frame gap on native loop. If QA sees a hitch, upgrade the loop clips to the same A/B ping-pong the transitions already use — the code path exists, it just needs the loop clip to schedule itself as its own <code>next</code>.</p>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section id="s6">
+      <h2><span class="n">06</span> Latency &amp; feel</h2>
+      <div class="h2rule"></div>
+
+      <p>This is the part most likely to make the finished thing feel broken, and it is not obvious until it is built.</p>
+
+      <p><strong>A click during a loop cannot transition immediately.</strong> The player must reach the loop's end frame before it can cut, or the junction rule is violated and the seam shows. With an 8-second idle loop, worst case the guide ignores the user for eight seconds.</p>
+
+      <h4>Three fixes — use all three</h4>
+      <ul>
+        <li><strong>Keep loops at 3 seconds.</strong> Worst-case wait drops under 3s, average 1.5s. This is why the manifest specifies 3.0s and not 8.0s.</li>
+        <li><strong>Acknowledge in the DOM, not the video.</strong> The <code>holo:ack</code> event fires the instant <code>request()</code> is called. Wire it to the card's selected state, a corner-bracket snap, or a scan pulse on the status line. The user gets feedback in ~100ms regardless of where the video is in its loop.</li>
+        <li><strong>Let the aesthetic carry the seam.</strong> Flicker, scanlines and chromatic fringing mask frame discontinuity extremely well. The <code>holoScan</code> toggle already in the canvas is doing double duty here — it is an aesthetic choice <em>and</em> the technical mask that buys tolerance at every junction. Keep it on by default.</li>
+      </ul>
+
+      <div class="call">
+        <span class="tag">Design consequence</span>
+        <p>Because the resting column is near-static and made entirely of noise, a cut from almost any point in the loop is close to invisible — there is no pose, no face and no silhouette detail for the eye to catch a mismatch on. A particle field is the most forgiving subject this architecture could have been given. The direction chosen makes the engineering easier, not harder.</p>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section id="s7">
+      <h2><span class="n">07</span> Encoding &amp; delivery</h2>
+      <div class="h2rule"></div>
+
+      <ul>
+        <li><strong>H.264 High profile in MP4</strong> is the universal default for a desktop-first tool. Add VP9/WebM only if bandwidth becomes a measured complaint rather than an assumed one.</li>
+        <li><strong>Keyframe at frame 0 of every clip</strong> — automatic, but verify. A short GOP elsewhere is unnecessary since nothing seeks.</li>
+        <li><strong><code>muted</code> + <code>playsinline</code> + <code>autoplay</code></strong>. Autoplay only works muted. Any audio requires a prior user gesture.</li>
+        <li><strong>A <code>poster</code> on every element</strong>, set to that clip's start still. There should never be a black flash — the stills already exist, so this is free.</li>
+        <li><strong>Budget:</strong> ~15s at 1080p / H.264 lands around 10–14 MB total, split across six independently cacheable files.</li>
+      </ul>
+
+      <div class="call stop">
+        <span class="tag">Decide before generating</span>
+        <p><strong>Alpha channel is a fork in the road.</strong> If the guide floats over the interface rather than filling the background, you need transparent video — and no single format covers every browser: HEVC-with-alpha for Safari, VP9-with-alpha for Chrome and Firefox, or a side-by-side RGB-plus-matte file composited in a canvas shader. That choice changes the entire asset pipeline, so settle it before the stills are locked, not after.</p>
+      </div>
+    </section>
+
+    <!-- 08 -->
+    <section id="s8">
+      <h2><span class="n">08</span> Accessibility &amp; fallbacks</h2>
+      <div class="h2rule"></div>
+
+      <ul>
+        <li><strong>WCAG 2.1 SC 2.2.2 <em>Pause, Stop, Hide</em> (Level A)</strong> applies: this background moves automatically, runs longer than five seconds, and sits alongside other content. It needs a visible pause control, or a documented argument that the motion is essential. A "HOLO / CLASSIC" switch already exists in the design — if <strong>CLASSIC</strong> renders a static ground, that switch <em>is</em> the compliance mechanism. Make that explicit rather than incidental.</li>
+        <li><strong><code>prefers-reduced-motion: reduce</code></strong> → skip video entirely and render the poster still. Do not merely slow it down.</li>
+        <li><strong>Contrast is the real risk.</strong> Hologram backgrounds are the classic place body text fails. Treat <code>videoDim</code> as a token, not a taste slider, and set its floor at whatever value holds body text at 4.5:1 against the <em>brightest frame of any clip</em> — not the average frame, and not a screenshot of the resting column.</li>
+        <li><strong>iOS low-power mode blocks autoplay outright.</strong> The poster fallback path is not an edge case; it is a normal state on phones.</li>
+        <li><strong>The video is decorative.</strong> Mark it <code>aria-hidden</code>. The moment the guide conveys state the interface does not also convey, it becomes content and needs a text equivalent — so keep the status line (<code>GUIDE ONLINE</code> / <code>AWAITING RIFT SELECTION</code>) authoritative and the video illustrative.</li>
+      </ul>
+    </section>
+
+    <!-- 09 -->
+    <section id="s9">
+      <h2><span class="n">09</span> Canvas integration</h2>
+      <div class="h2rule"></div>
+
+      <p>The <code>Rift Finder Holo.dc.html</code> page already exposes four controls. Three of them map onto this spec directly, which means the architecture does not require inventing a parallel vocabulary.</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Existing control</th><th>Role in this spec</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="clip">skipBoot</td><td>Gates the <code>holo-boot</code> edge. On → the deck enters at <code>idle</code>. Should also be set automatically for returning visitors.</td></tr>
+            <tr><td class="clip">videoDim</td><td>The contrast scrim. Currently 46%. Becomes a token with a contrast-derived floor (§08).</td></tr>
+            <tr><td class="clip">holoScan</td><td>The junction mask (§06). Aesthetic and technical at once — keep on by default.</td></tr>
+            <tr><td class="clip">cornerBrackets</td><td>No video role, but the natural home for the <code>holo:ack</code> response — a bracket snap is the cheapest 100ms acknowledgement available.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Two new controls to add</h4>
+      <ul>
+        <li><code>holoState</code> — enum: <code>boot</code> / <code>idle</code> / <code>engage</code> / <code>event</code>. Lets you step through every state on the canvas without a real video file.</li>
+        <li><code>videoLayer</code> — enum: <code>placeholder</code> / <code>off</code>. The canvas cannot host a 12 MB asset, so the design communicates the states through a CSS stand-in and the developer swaps the layer for real <code>&lt;video&gt;</code> elements.</li>
+      </ul>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <h2><span class="n">10</span> Claude Design prompt</h2>
+      <div class="h2rule"></div>
+
+      <p>Paste this into the composer on the <strong>Rift Finder Holo</strong> page. It is written to extend the existing page rather than replace it, and it asks for a placeholder motion layer rather than a real video — the canvas cannot carry the asset, but it can carry the states.</p>
+
+      <div class="codeblock prompt">
+        <div class="codehead"><span>Drop-in prompt · Rift Finder Holo</span><button class="copy" data-copy="dcprompt">Copy prompt</button></div>
+<pre id="dcprompt">Extend this page with a state-driven holographic background layer. Keep every
+existing control, token and component exactly as it is — add to them, do not
+replace them.
+
+ADD TWO CONTROLS
+- holoState: enum "boot" | "idle" | "engage" | "event", default "idle"
+- videoLayer: enum "placeholder" | "off", default "placeholder"
+
+BACKGROUND LAYER
+Add a full-bleed layer behind all content, above the page ground:
+  1. A CSS/canvas placeholder standing in for generated video — a tall
+     volumetric column of drifting light motes in cyan and ice-blue on
+     near-black, sitting on the right third of the canvas above a faint
+     glowing circular emitter ring on the floor. The left two thirds stay
+     empty dark ground. No photographic imagery, no external assets,
+     everything self-contained. Canvas is a good fit for the particle field.
+  2. The existing videoDim scrim above it, at its current 46%.
+  3. The existing holoScan scanline overlay above the scrim.
+  4. All page content above that, unchanged.
+Mark the whole layer aria-hidden. It is decorative.
+
+STATE BEHAVIOUR — driven by holoState
+- boot    Motes rise from the emitter ring and accumulate into the full
+          column over ~3s, base first, then settle.
+- idle    Column at rest, wide, loose spread. Internal drift only: motes
+          rotate slowly around the vertical axis, one brightness swell
+          rises base to top every ~3s, outer particles shimmer. The column
+          never translates, scales or leans. This is the hub state.
+- engage  Mid-transition: the view has arced right and pushed in, the column
+          tightened and denser. Show this as a held state, not a loop — it
+          represents a 2s one-shot.
+- event   Column holds the tighter, resolved configuration. Internal drift
+          only.
+Transitions between states use a 2s ease-in-out. The idle and event states
+must return to their own starting appearance on every cycle — silhouette,
+height, position and density, not individual particle positions. The
+production asset depends on that, so the placeholder should demonstrate it.
+
+WIRE IT TO THE EXISTING UI
+- skipBoot on → enter at idle, never boot.
+- Selecting a rift card → holoState "idle" → "engage" → "event".
+- RETARGET → a single bright scan band sweeps top to base over the column,
+  shape unchanged, staying in "event".
+- ABORT RIFT → holoState "event" → "idle".
+- Every one of those interactions must also fire an instant acknowledgement in
+  the interface itself, independent of the background: the selected card's
+  corner brackets snap in, and the footer status line updates. That feedback
+  must appear immediately, not after the background finishes moving.
+
+FOUR ARTBOARDS
+Lay out one artboard per state — BOOT, IDLE, ENGAGE, EVENT — at the existing
+page dimensions, each with the full interface composited over its background
+state, so the four can be compared side by side.
+
+CONSTRAINTS
+- Respect prefers-reduced-motion: render the idle column statically, no motion.
+- Body text must hold 4.5:1 contrast against the brightest moment of the
+  background in every state.
+- CLASSIC mode renders a static ground with no motion at all.
+- Keep all existing typography, spacing, colour tokens and terminology
+  (RIFT NAV, HOLO DECK, GUIDE ONLINE, SIG-####, SELECT RIFT).</pre>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+      <h2><span class="n">11</span> Build sequence</h2>
+      <div class="h2rule"></div>
+
+      <p>Staged so each step produces something testable and nothing is generated before it is needed.</p>
+
+      <ol class="steps">
+        <li>
+          <h3>Placeholder states on the canvas</h3>
+          <p>Run the §10 prompt. No generated video at all. Proves the state model, the artboards, and the acknowledgement pattern — and gets the contrast question answered before any asset exists.</p>
+        </li>
+        <li>
+          <h3>Two clips, real playback</h3>
+          <p>Lock <code>KF-REST</code>, generate <code>holo-boot</code> and <code>holo-idle</code>, wire the playback module. Proves the boot-to-loop hand-off and the junction rule with the least possible asset spend.</p>
+        </li>
+        <li>
+          <h3>One transition pair</h3>
+          <p>Lock <code>KF-EVENT</code>, add <code>holo-engage</code> and <code>holo-return</code>. Proves the graph, and surfaces the loop-boundary latency in real use — this is where the 3-second loop decision gets validated or revised.</p>
+        </li>
+        <li>
+          <h3>Retarget, then fan out</h3>
+          <p>Add <code>holo-retarget</code> only if the RETARGET button reads as unresponsive without it. Additional camera positions only if step 3 earns them — remember the n² guard in §03.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 12 -->
+    <section id="s12">
+      <h2><span class="n">12</span> Open assumptions</h2>
+      <div class="h2rule"></div>
+
+      <p>Pressure-test these before committing budget. Each one changes the spec materially if it turns out false.</p>
+
+      <ul>
+        <li><strong style="color:var(--sig)">Resolved 6 Sep:</strong> the Guide is a non-figurative particle column, and the transition is a camera arc plus a densification — no character, no performance. This removed the identity-drift risk entirely and relaxed the junction rule (§02). Everything in §04 is written for that form; reverting to a figure invalidates all six prompts.</li>
+        <li><strong>The emitter ring is load-bearing.</strong> It is the only fixed landmark in an otherwise symmetrical, featureless scene, and it is what makes the camera arc read as a move rather than a cut. If a still comes back without a clearly readable ring, regenerate rather than proceeding.</li>
+        <li><strong>Three camera positions is enough.</strong> If product wants a distinct view per rift type, revisit §03 before anything else — that is the decision with the largest cost consequence in this document.</li>
+        <li><strong>The existing 8-second clip is reference, not source.</strong> Assumed unusable as cut footage. Worth ten minutes of checking before accepting the regeneration cost.</li>
+        <li><strong>Background over transparent.</strong> This spec assumes a full-bleed background. Alpha compositing changes the pipeline end to end (§07).</li>
+        <li><strong>This is a browser app.</strong> Everything here is HTML5 video. Electron changes little; a native or engine-based client changes almost all of §05 and §07.</li>
+        <li><strong>The guide is decorative.</strong> If it ever communicates state the interface does not, §08 stops being a checklist and becomes a redesign.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Rift Nav · Holo Deck · Build Spec v1.3</span>
+    <span>Stellaris Helper // 30 Aug 2026</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.copy);
+      if (!el) return;
+      navigator.clipboard.writeText(el.innerText).then(function () {
+        var was = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = was; }, 1600);
+      });
+    });
+  });
+</script>

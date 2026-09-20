@@ -1,0 +1,114 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "stellaris-discovery/2.1",
+ "title": "Stellaris discovery dataset (astral rifts and archaeological sites)",
+ "description": "One shape for both datasets. astral_rifts.v2.1.json and archaeological_sites.v2.1.json are single-kind files; stellaris_discovery.v2.1.json merges them and is the file to load if you render both from one component.",
+ "type": "object",
+ "required": ["dataset", "kind", "schema", "version", "generated", "source", "coverage", "reward_codes", "groups", "entities", "reward_finder"],
+ "properties": {
+  "dataset":   {"type": "string", "enum": ["stellaris_astral_rifts", "stellaris_archaeological_sites", "stellaris_discovery"]},
+  "kind":      {"type": "string", "enum": ["astral_rift", "archaeological_site", "mixed"],
+                "description": "The kind of every entity in this file, or 'mixed' for the merged file."},
+  "schema":    {"const": "stellaris-discovery/2.1"},
+  "version":   {"type": "string"},
+  "generated": {"type": "string", "format": "date"},
+  "source":    {"type": "string"},
+  "notes":     {"type": ["string", "null"]},
+  "coverage": {
+   "type": "object",
+   "required": ["entities", "chapters", "finder_rows"],
+   "properties": {
+    "entities":    {"type": "integer", "minimum": 0},
+    "chapters":    {"type": "integer", "minimum": 0},
+    "finder_rows": {"type": "integer", "minimum": 0}
+   }
+  },
+  "mechanics": {
+   "description": "Single-kind files: an array of strings. Merged file: an array of {kind, lines[]}.",
+   "type": "array"
+  },
+  "reward_codes": {
+   "description": "Expansion of the wiki's {{reward}} template codes. Payouts are a multiplier of your current empire output with a min-max clamp, so these are not flat numbers.",
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["code", "meaning"],
+    "properties": {"code": {"type": "string"}, "meaning": {"type": "string"}}
+   }
+  },
+  "groups": {
+   "description": "Display groupings. 'key' matches entity.group; 'label' matches entity.group_label. The merged file adds a 'kind' field because group keys are only unique within a kind.",
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["key", "label"],
+    "properties": {"key": {"type": "string"}, "label": {"type": "string"},
+                   "kind": {"type": "string", "enum": ["astral_rift", "archaeological_site"]}}
+   }
+  },
+  "entities": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "uid", "kind", "name", "group", "group_label", "chapters"],
+    "properties": {
+     "id":   {"type": "string", "pattern": "^[a-z0-9-]+$",
+              "description": "Slug of the name. Unique within a kind, NOT across kinds."},
+     "uid":  {"type": "string", "pattern": "^(rift|site):[a-z0-9-]+$",
+              "description": "Globally unique key. Use this for routing and for joining to reward_finder.entity_id."},
+     "kind": {"type": "string", "enum": ["astral_rift", "archaeological_site"]},
+     "name": {"type": "string"},
+     "group": {"type": "string",
+               "description": "Rifts: unique | precursor | general. Sites: base | unique_system | origin | precursor | ancient_relics | other_expansion."},
+     "group_label": {"type": "string"},
+     "dlc":          {"type": ["string", "null"]},
+     "precursor":    {"type": ["string", "null"], "description": "Baol, Zroni, adAkkaria Convention, Inetian Traders. Null for everything else."},
+     "system":       {"type": ["string", "null"], "description": "Named system, where the entity is tied to one."},
+     "requirements": {"type": ["string", "null"]},
+     "restrictions": {"type": ["string", "null"], "description": "Ethic and civic locks. Populated for rifts; always null for sites, where such locks are written into the chapter reward lines instead."},
+     "notes":        {"type": ["string", "null"]},
+     "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": "object",
+       "required": ["id", "index", "rewards", "choices"],
+       "properties": {
+        "id":    {"type": "string",
+                  "description": "The wiki's chapter id. Rifts use forms like '4-A', '3/4/5', '2b', or a named node such as 'fungal_bloom'. Sites use a plain ordinal as a string. Never parse this as a number - sort on 'index'."},
+        "index": {"type": "integer", "minimum": 1, "description": "1-based position in this entity's chapter list. Use this for ordering."},
+        "title": {"type": ["string", "null"], "description": "Chapter name. Null for archaeological sites, which the wiki does not title."},
+        "rewards": {"type": "array", "items": {"type": "string"},
+                    "description": "One string per reward. May embed a reward code (ast1, rsh3, art2) - expand via reward_codes."},
+        "choices": {"type": "array", "items": {"type": "string"},
+                    "description": "One string per clickable option, including difficulty, destination, cost and any ethic lock. Always empty for archaeological sites, which have no branching choice tree."}
+       }
+      }
+     }
+    }
+   }
+  },
+  "reward_finder": {
+   "description": "Flat index answering 'I want X, where do I get it?'. Derived from the chapter tables - a reward at several entities gets one row each. Group in the UI by 'category'.",
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["category", "reward", "entity", "kind"],
+    "properties": {
+     "category":  {"type": "string", "description": "Relics, Specimens (Grand Archive), Technologies, Empire modifiers, and so on. Category names differ between the two kinds - do not assume a shared vocabulary."},
+     "reward":    {"type": "string"},
+     "entity":    {"type": "string", "description": "Display name. May be a placeholder such as 'several' or '-' on cross-cutting rows."},
+     "entity_id": {"type": ["string", "null"], "description": "Joins to entities[].uid. Null where 'entity' is a placeholder rather than a real entity - handle that before dereferencing."},
+     "kind":      {"type": "string", "enum": ["astral_rift", "archaeological_site"]},
+     "group_label": {"type": ["string", "null"]},
+     "chapter":   {"type": ["string", "null"], "description": "Chapter id the reward comes from. Populated for sites, null for rifts (use 'path' instead)."},
+     "path":      {"type": ["string", "null"], "description": "The full click path through the rift. Populated for rifts, null for sites."}
+    }
+   }
+  },
+  "assumptions": {
+   "description": "What to pressure-test before shipping on this data. Single-kind files: array of strings. Merged file: array of {kind, text}.",
+   "type": "array"
+  }
+ }
+}

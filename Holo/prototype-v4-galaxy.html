@@ -1,0 +1,495 @@
+<title>Rift Nav Galaxy Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Saira:wght@200;300;500&display=swap">
+<style>
+  :root{
+    --void:#03060B; --rule:#1B2739; --ink:#C6D2E4; --dim:#7285A0; --faint:#4E5D74;
+    --sig:#5FD3E8; --cream:#E9DBBB;
+    --f-d:"Saira","Helvetica Neue",Arial,sans-serif;
+    --f-m:"IBM Plex Mono","SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--void);color:var(--ink);font-family:var(--f-m);
+       overflow:hidden;-webkit-font-smoothing:antialiased}
+  #stage{position:fixed;inset:0;overflow:hidden;background:var(--void)}
+  #halo{position:absolute;inset:0;pointer-events:none;transition:opacity .9s ease}
+  #fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+  #scrim{position:absolute;inset:0;background:#03060B;pointer-events:none;opacity:.30}
+  #scan{position:absolute;inset:0;pointer-events:none;opacity:.42;
+    background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.32) 3px 4px);
+    mix-blend-mode:multiply}
+  #vig{position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 46%,rgba(0,0,0,0) 22%,rgba(3,6,11,.80) 100%)}
+
+  #overlay{position:absolute;inset:0;pointer-events:none}
+  #leaders{position:absolute;inset:0;width:100%;height:100%}
+  .lead{stroke:var(--sig);stroke-width:1;fill:none;opacity:0}
+  .lead.on{animation:draw .6s ease forwards}
+  @keyframes draw{to{opacity:.7}}
+  .node{fill:var(--sig);opacity:0}
+  .node.on{animation:draw .6s ease .1s forwards}
+  .rd{position:absolute;font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;
+      color:var(--sig);text-transform:uppercase;white-space:nowrap;opacity:0;transform:translateX(-6px)}
+  .rd.on{animation:rdin .5s cubic-bezier(.2,.7,.3,1) forwards}
+  .rd .v{color:var(--cream)}
+  @keyframes rdin{to{opacity:1;transform:translateX(0)}}
+
+  /* ---------- chrome ---------- */
+  #ui{position:absolute;inset:0;pointer-events:none;padding:56px 34px 30px;
+      display:flex;flex-direction:column}
+  .bar{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:14px}
+  .mark{width:12px;height:12px;border:1px solid var(--sig);transform:rotate(45deg);flex:none}
+  .wm{font-family:var(--f-d);font-weight:500;font-size:15px;letter-spacing:.22em;color:#EAF1FA}
+  .meta{font-size:10px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase}
+  .meta b{color:var(--dim);font-weight:400}
+  .spacer{flex:1}
+  .status{font-size:10px;letter-spacing:.16em;color:var(--sig);display:flex;align-items:center;gap:7px}
+  .led{width:5px;height:5px;border-radius:50%;background:var(--sig);box-shadow:0 0 0 3px rgba(95,211,232,.18)}
+
+  h1{font-family:var(--f-d);font-weight:200;font-size:clamp(1.9rem,4.2vw,3.1rem);letter-spacing:.05em;
+     text-transform:uppercase;margin:30px 0 5px;color:#EAF1FA;line-height:1;transition:opacity .4s}
+  .sub{font-size:10.5px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase}
+
+  .tools{display:flex;gap:10px;margin-top:26px;pointer-events:auto;align-items:center;flex-wrap:wrap}
+  #q{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+     background:rgba(11,17,28,.62);border:1px solid var(--rule);color:var(--ink);
+     padding:10px 14px;width:290px;outline:none;backdrop-filter:blur(3px)}
+  #q:focus{border-color:var(--sig)}
+  #q::placeholder{color:var(--faint)}
+  .bt{font-family:var(--f-m);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+      background:rgba(11,17,28,.62);border:1px solid var(--rule);color:var(--dim);
+      padding:10px 14px;cursor:pointer;backdrop-filter:blur(3px);transition:.16s}
+  .bt:hover{color:var(--sig);border-color:var(--sig)}
+  .bt.back{border-color:var(--cream);color:var(--cream)}
+
+  .cards{display:flex;gap:12px;margin-top:auto;max-width:660px;flex-wrap:wrap;pointer-events:auto}
+  .card{width:200px;border:1px solid var(--rule);background:rgba(11,17,28,.55);backdrop-filter:blur(3px);
+        padding:12px 13px;position:relative;cursor:pointer;transition:.18s}
+  .card:hover{border-color:var(--sig)}
+  .card.sel{border-color:var(--sig);background:rgba(95,211,232,.10)}
+  .card .tag{font-size:9px;letter-spacing:.14em;color:var(--sig);text-transform:uppercase}
+  .card .nm{font-family:var(--f-d);font-weight:300;font-size:16px;color:#EAF1FA;margin:13px 0 7px;
+            white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .card .ft{font-size:9px;letter-spacing:.1em;color:var(--faint);display:flex;justify-content:space-between}
+
+  #ctl{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;flex-wrap:wrap;align-items:center;
+       gap:7px 15px;padding:8px 13px;background:rgba(3,6,11,.92);border-bottom:1px solid var(--rule);
+       backdrop-filter:blur(8px)}
+  #ctl .lab{font-size:9px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase}
+  input[type=range]{width:78px;accent-color:var(--sig);vertical-align:middle}
+  .val{font-size:9.5px;color:var(--cream);min-width:30px;display:inline-block;font-variant-numeric:tabular-nums}
+  .chk{display:flex;align-items:center;gap:5px;font-size:9px;letter-spacing:.14em;color:var(--dim);
+       text-transform:uppercase;cursor:pointer}
+  .chk input{accent-color:var(--sig)}
+  #fps{font-size:9px;color:var(--faint);letter-spacing:.1em;margin-left:auto;font-variant-numeric:tabular-nums}
+  :focus-visible{outline:2px solid var(--sig);outline-offset:2px}
+</style>
+
+<div id="stage">
+  <div id="halo"></div>
+  <canvas id="fx"></canvas>
+  <div id="scrim"></div>
+  <div id="scan"></div>
+  <div id="vig"></div>
+  <div id="overlay"><svg id="leaders" aria-hidden="true"></svg></div>
+
+  <div id="ui">
+    <div class="bar">
+      <span class="mark"></span><span class="wm">RIFT NAV</span>
+      <span class="meta">// <b>GALACTIC SURVEY</b></span>
+      <span class="meta"><b>32</b> RIFTS</span>
+      <span class="meta"><b>110</b> SITES</span>
+      <span class="spacer"></span>
+      <span class="status"><span class="led"></span><span id="stat">SURVEY ONLINE</span></span>
+    </div>
+
+    <h1 id="head">Galactic Survey</h1>
+    <div class="sub" id="subhead">Idle // 142 signatures catalogued</div>
+
+    <div class="tools">
+      <input id="q" placeholder="Query designation…" autocomplete="off" list="names">
+      <datalist id="names"></datalist>
+      <button class="bt" data-browse="rift">Browse rifts</button>
+      <button class="bt" data-browse="dig">Browse dig sites</button>
+      <button class="bt back" id="back" style="display:none">← Return to galaxy</button>
+    </div>
+
+    <div class="cards" id="cards"></div>
+  </div>
+
+  <div id="ctl">
+    <span class="lab">Trails</span><input type="range" id="tr" min="3" max="60" value="22"><span class="val" id="trv">22</span>
+    <span class="lab">Flow</span><input type="range" id="fl" min="0" max="200" value="60"><span class="val" id="flv">0.6</span>
+    <span class="lab">Stars</span><input type="range" id="den" min="2000" max="14000" step="500" value="9000"><span class="val" id="denv">9000</span>
+    <span class="lab">Dim</span><input type="range" id="dim" min="0" max="90" value="30"><span class="val" id="dimv">30%</span>
+    <label class="chk"><input type="checkbox" id="sc" checked> holoScan</label>
+    <label class="chk"><input type="checkbox" id="ov" checked> Scan</label>
+    <span id="fps">— fps</span>
+  </div>
+</div>
+
+<script>
+(function(){
+var cv=document.getElementById('fx'), ctx=cv.getContext('2d',{alpha:false});
+var W=0,H=0,DPR=Math.min(devicePixelRatio||1,2), TAU=Math.PI*2;
+var NMAX=14000, N=9000;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- palette: warm core, cool arms ---------- */
+var PAL=[
+  {rgb:'255,246,228'},  /* 0 core white  */
+  {rgb:'253,206,140'},  /* 1 amber       */
+  {rgb:'226,132,96'},   /* 2 dust red    */
+  {rgb:'150,215,250'},  /* 3 arm blue    */
+  {rgb:'95,180,235'},   /* 4 deep blue   */
+  {rgb:'190,240,250'}   /* 5 ice / scan  */
+];
+var SPR=PAL.map(function(p){
+  var s=document.createElement('canvas'); s.width=s.height=20;
+  var c=s.getContext('2d'), g=c.createRadialGradient(10,10,0,10,10,10);
+  g.addColorStop(0,'rgba('+p.rgb+',1)'); g.addColorStop(.25,'rgba('+p.rgb+',.42)');
+  g.addColorStop(1,'rgba('+p.rgb+',0)');
+  c.fillStyle=g; c.fillRect(0,0,20,20); return s;
+});
+
+/* ---------- deterministic scatter for the dig markers ---------- */
+function rnd(s){ var x=Math.sin(s*127.1+311.7)*43758.545; return x-Math.floor(x); }
+var CONES=[]; for(var k=0;k<24;k++){
+  CONES.push({x:-1.45+rnd(k)*2.9, z:-1.0+rnd(k+90)*2.0,
+              h:.10+rnd(k+40)*.22, r:.045+rnd(k+70)*.055});
+}
+function ground(x,z){
+  return Math.sin(x*2.1+.4)*.070 + Math.sin(z*1.7-.8)*.085 + Math.sin((x+z)*3.3)*.030 - .30;
+}
+
+/* ---------- forms (world space: disc lies in x/z, y is up) ---------- */
+var FORMS={
+  /* barred spiral: bulge, four log arms, thin disc, sparse halo */
+  galaxy:function(p){
+    if(p.u<.14){                                   /* core bulge */
+      var br=Math.pow(p.v,2.1)*.20, t1=p.w*TAU, t2=Math.acos(2*p.a-1);
+      return {x:br*Math.sin(t2)*Math.cos(t1), y:br*Math.cos(t2)*.5, z:br*Math.sin(t2)*Math.sin(t1)};
+    }
+    if(p.u>.965){                                  /* halo */
+      var hr=.9+p.v*.9, h1=p.w*TAU, h2=Math.acos(2*p.a-1);
+      return {x:hr*Math.sin(h2)*Math.cos(h1), y:hr*Math.cos(h2)*.5, z:hr*Math.sin(h2)*Math.sin(h1)};
+    }
+    var arms=4, r=.15+Math.pow(p.v,.78)*.92;
+    var arm=Math.floor(p.w*arms), fr=p.w*arms-arm;
+    var th=Math.log(1+r*3.4)*3.25 + arm*(TAU/arms);
+    var sc=.14+r*.34;
+    th += (fr-.5)*sc*2.0 + (p.a-.5)*.09;
+    var rr=r*(1+(p.b-.5)*sc*.28);
+    return {x:rr*Math.cos(th), y:(p.a-.5)*.085*(1-r*.55), z:rr*Math.sin(th)};
+  },
+  /* scanned sphere: longitudes quantised into meridians → vertical scanlines */
+  rift:function(p){
+    var lat=Math.acos(1-2*p.u), r=1+(p.b-.5)*.012;
+    if(p.a>.88){                                   /* a few latitude rings */
+      var LR=14, la=Math.floor(p.u*LR)/LR*Math.PI, lo=p.v*TAU;
+      return {x:Math.sin(la)*Math.cos(lo), y:Math.cos(la), z:Math.sin(la)*Math.sin(lo)};
+    }
+    var NL=72, lon=Math.floor(p.v*NL)/NL*TAU+(p.a-.5)*.005;
+    return {x:r*Math.sin(lat)*Math.cos(lon), y:r*Math.cos(lat), z:r*Math.sin(lat)*Math.sin(lon)};
+  },
+  /* survey terrain: scanline ground rows plus excavation cone markers */
+  dig:function(p){
+    if(p.u<.28){
+      var C=CONES[Math.floor(p.v*CONES.length)%CONES.length];
+      var t=p.w, ang=p.a*TAU, rr=C.r*(1-t)*(1+(p.b-.5)*.1);
+      return {x:C.x+rr*Math.cos(ang), y:ground(C.x,C.z)+t*C.h, z:C.z+rr*Math.sin(ang)};
+    }
+    var ROWS=64, zq=Math.floor(p.v*ROWS)/ROWS;
+    var z=-1.05+zq*2.05, x=-1.55+p.w*3.1;
+    return {x:x, y:ground(x,z)+(p.a-.5)*.004, z:z};
+  }
+};
+
+/* ---------- particles ---------- */
+var P=[], BUCK=[[],[],[],[],[],[]];
+for(var i=0;i<NMAX;i++){
+  var szr=Math.pow(Math.random(),3.4);
+  var pt={x:0,y:0,z:0,vx:0,vy:0,vz:0,tx:0,ty:0,tz:0,px:0,py:0,pa:0,psz:0,vis:0,
+    u:Math.random(),v:Math.random(),w:Math.random(),a:Math.random(),b:Math.random(),
+    szr:szr, big:szr>.90, bs:.42+szr*szr*3.2, gl:0, gt:1+Math.random()*9,
+    esc: Math.random()<.05 ? .4+Math.random()*.6 : 0, cg:3, cf:5};
+  /* galaxy colour follows radius — hot core, amber bar, blue arms */
+  var g=FORMS.galaxy(pt), gr=Math.sqrt(g.x*g.x+g.z*g.z), rr=Math.random();
+  pt.cg = gr<.13 ? (rr<.62?0:1) : gr<.34 ? (rr<.55?1:(rr<.85?0:2)) : (rr<.62?3:(rr<.92?4:5));
+  P.push(pt);
+}
+function rebucket(useGalaxy){
+  for(var c=0;c<6;c++) BUCK[c].length=0;
+  for(var i=0;i<NMAX;i++){ var p=P[i]; if(!p.big) BUCK[useGalaxy?p.cg:p.cf].push(i); }
+}
+rebucket(true);
+
+/* ---------- catalogue ---------- */
+var ITEMS=[
+  {n:'Ruined Planet',   t:'rift', sig:'SIG-8481', ch:10, rw:'rsh4 · 48×', cl:'Unique breach'},
+  {n:'Genesis',         t:'rift', sig:'SIG-3248', ch:4,  rw:'art2 · 12×', cl:'Unique breach'},
+  {n:'Strange Station', t:'rift', sig:'SIG-1224', ch:6,  rw:'uni3 · 24×', cl:'Unique breach'},
+  {n:'The Tower',       t:'rift', sig:'SIG-6017', ch:8,  rw:'rsh3 · 24×', cl:'Unique breach'},
+  {n:'Whiteout',        t:'rift', sig:'SIG-2290', ch:5,  rw:'mat2 · 12×', cl:'Unique breach'},
+  {n:'Ancient Capital', t:'dig',  sig:'SIT-0442', ch:6,  rw:'mat3 · 24×', cl:'Dig site'},
+  {n:'Repowered Complex',t:'dig', sig:'SIT-1130', ch:3,  rw:'inf2 · 12×', cl:'Dig site'},
+  {n:'Cybrex Alpha',    t:'dig',  sig:'SIT-0087', ch:5,  rw:'rsh5 · 96×', cl:'Dig site'}
+];
+document.getElementById('names').innerHTML=ITEMS.map(function(o){return '<option value="'+o.n+'">'}).join('');
+/* each item sits at a stable spot in a spiral arm — the map "knows where it is" */
+function locate(name){
+  var h=0; for(var i=0;i<name.length;i++) h=(h*31+name.charCodeAt(i))|0;
+  var r=.34+rnd(h)*.62, th=Math.log(1+r*3.4)*3.25 + Math.floor(rnd(h+7)*4)*(TAU/4)+(rnd(h+3)-.5)*.5;
+  return {x:r*Math.cos(th), y:(rnd(h+11)-.5)*.05, z:r*Math.sin(th)};
+}
+
+/* ---------- camera ---------- */
+var VIEW={
+  galaxy:{pitch:.50, zoom:1.00, spin:.030, trail:22},
+  rift:  {pitch:.16, zoom:2.55, spin:.075, trail:30},
+  dig:   {pitch:.235,zoom:1.95, spin:.030, trail:34}
+};
+var cam={pitch:.50,zoom:1,yaw:0,fx:0,fy:0,fz:0,spin:.030};
+var tgt={pitch:.50,zoom:1,fx:0,fy:0,fz:0,spin:.030};
+var FOCUS={x:0,y:0,z:0};
+var state='galaxy', tMorph=1, current=null, trail=22, flowAmt=.6, autoTrail=true;
+
+function setTargets(name){
+  var f=FORMS[name], off = name==='galaxy' ? {x:0,y:0,z:0} : FOCUS;
+  for(var i=0;i<NMAX;i++){
+    var p=P[i], t=f(p);
+    p.tx=t.x+off.x; p.ty=t.y+off.y; p.tz=t.z+off.z;
+  }
+}
+function applyView(name){
+  var v=VIEW[name];
+  tgt.pitch=v.pitch; tgt.zoom=v.zoom; tgt.spin=v.spin;
+  if(autoTrail){ trail=v.trail; document.getElementById('tr').value=v.trail;
+                 document.getElementById('trv').textContent=v.trail; }
+  tgt.fx = name==='galaxy'?0:FOCUS.x;
+  tgt.fy = name==='galaxy'?0:FOCUS.y;
+  tgt.fz = name==='galaxy'?0:FOCUS.z;
+}
+
+/* ---------- chrome ---------- */
+function cardHTML(o){
+  return '<div class="card" data-n="'+o.n+'"><div class="tag">● '+(o.t==='rift'?'Astral rift':'Archaeology')+
+    ' &nbsp; '+o.sig+'</div><div class="nm">'+o.n+'</div><div class="ft"><span>'+o.ch+
+    ' CHAPTERS</span><span>'+o.rw+'</span></div></div>';
+}
+function renderCards(list){
+  var el=document.getElementById('cards');
+  el.innerHTML=list.map(cardHTML).join('');
+  el.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('click',function(){ select(c.dataset.n); });
+  });
+}
+function setChrome(title,sub,stat,showBack){
+  document.getElementById('head').textContent=title;
+  document.getElementById('subhead').textContent=sub;
+  document.getElementById('stat').textContent=stat;
+  document.getElementById('back').style.display=showBack?'':'none';
+}
+
+function toGalaxy(){
+  if(state==='galaxy') return;
+  state='galaxy'; current=null; tMorph=0;
+  setTargets('galaxy'); applyView('galaxy'); drawOverlay(null);
+  setChrome('Galactic Survey','Idle // 142 signatures catalogued','SURVEY ONLINE',false);
+  renderCards([]);
+  document.getElementById('q').value='';
+  document.getElementById('halo').style.opacity='1';
+}
+function browse(type){
+  var list=ITEMS.filter(function(o){return o.t===type;});
+  renderCards(list);
+  /* browse frames the whole class — a shallower dive than a named search */
+  FOCUS=locate(type==='rift'?'RIFT CLASS':'DIG CLASS');
+  enter(type, null,
+    type==='rift'?'Astral Rifts':'Archaeology',
+    list.length+' of '+(type==='rift'?32:110)+' signatures in range',
+    type==='rift'?'CLASS LOCKED':'CLASS LOCKED');
+}
+function select(name){
+  var o=ITEMS.filter(function(x){return x.n===name;})[0];
+  if(!o) return;
+  renderCards(ITEMS.filter(function(x){return x.t===o.t;}));
+  FOCUS=locate(o.n);
+  enter(o.t, o, o.n, o.sig+' // '+o.ch+' chapters mapped',
+        o.t==='rift'?'RIFT LOCKED':'SITE LOCKED');
+  document.querySelectorAll('.card').forEach(function(c){
+    c.classList.toggle('sel',c.dataset.n===name); });
+}
+function enter(type,item,title,sub,stat){
+  state=type; current=item; tMorph=0;
+  setTargets(type); applyView(type); rebucket(false);
+  setChrome(title,sub,stat,true);
+  drawOverlay(item);
+  document.getElementById('halo').style.opacity='0';
+}
+
+/* ---------- scan overlay ---------- */
+function drawOverlay(item){
+  var sv=document.getElementById('leaders'), on=document.getElementById('ov').checked;
+  document.querySelectorAll('.rd').forEach(function(e){e.remove()});
+  sv.innerHTML='';
+  if(!item||!on) return;
+  var rows=[['Signature',item.sig],['Chapters',item.ch+' mapped'],
+            ['Reward',item.rw],['Class',item.cl]];
+  sv.setAttribute('viewBox','0 0 '+W+' '+H);
+  var cx=W*.5, top=H*.24, gap=Math.min(44,H*.072), lx=W*.30;
+  rows.forEach(function(r,i){
+    var y=top+i*gap, ax=cx-118-i*18;
+    var p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d','M'+ax+','+y+' L'+(lx+56)+','+y);
+    p.setAttribute('class','lead'); p.style.animationDelay=(.5+i*.09)+'s'; sv.appendChild(p);
+    var c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',ax); c.setAttribute('cy',y); c.setAttribute('r','2.5');
+    c.setAttribute('class','node'); c.style.animationDelay=(.5+i*.09)+'s'; sv.appendChild(c);
+    var lab=document.createElement('div'); lab.className='rd';
+    lab.innerHTML=r[0]+' &nbsp;<span class="v">'+r[1]+'</span>';
+    lab.style.cssText='left:'+(lx-160)+'px;top:'+(y-7)+'px;width:160px;text-align:right;'+
+                      'animation-delay:'+(.56+i*.09)+'s';
+    document.getElementById('overlay').appendChild(lab);
+    requestAnimationFrame(function(){p.classList.add('on');c.classList.add('on');lab.classList.add('on');});
+  });
+}
+
+/* ---------- render ---------- */
+var last=performance.now(), fA=0, fN=0;
+function resize(){
+  W=innerWidth; H=innerHeight;
+  cv.style.width=W+'px'; cv.style.height=H+'px';
+  cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+  ctx.fillStyle='#03060B'; ctx.fillRect(0,0,W,H);
+  document.getElementById('halo').style.background=
+    'radial-gradient(ellipse '+(Math.min(W,H)*.30)+'px '+(Math.min(W,H)*.13)+'px at 50% 46%,'+
+    'rgba(255,232,190,.20) 0%, rgba(120,150,220,.09) 45%, rgba(0,0,0,0) 72%)';
+  drawOverlay(current);
+}
+addEventListener('resize',resize);
+
+function frame(now){
+  var dt=Math.min((now-last)/1000,.05); last=now;
+  fN++; fA+=dt; if(fA>.5){document.getElementById('fps').textContent=Math.round(fN/fA)+' fps';fN=0;fA=0;}
+  if(tMorph<1) tMorph=Math.min(1,tMorph+dt/2.1);
+
+  /* camera eases toward the state's framing — this is the dive */
+  var kc=Math.min(1,dt*1.5);
+  cam.pitch+=(tgt.pitch-cam.pitch)*kc;
+  cam.zoom +=(tgt.zoom -cam.zoom )*kc;
+  cam.spin +=(tgt.spin -cam.spin )*kc;
+  cam.fx+=(tgt.fx-cam.fx)*kc; cam.fy+=(tgt.fy-cam.fy)*kc; cam.fz+=(tgt.fz-cam.fz)*kc;
+  if(!reduce) cam.yaw+=dt*cam.spin;
+
+  ctx.globalCompositeOperation='source-over';
+  ctx.fillStyle='rgba(3,6,11,'+(trail/100)+')';
+  ctx.fillRect(0,0,W,H);
+
+  var gx=W*.5, gy=H*.46, R=Math.min(W,H)*.42*cam.zoom;
+  var cy2=Math.cos(cam.yaw), sy2=Math.sin(cam.yaw);
+  var cp=Math.cos(cam.pitch), sp=Math.sin(cam.pitch);
+  var T=now*.001, dr=reduce?0:1, isG=(state==='galaxy');
+
+  for(var i=0;i<N;i++){
+    var p=P[i];
+
+    /* ambient: differential rotation in the galaxy, gentle settle in a form */
+    if(isG && tMorph>=1){
+      var rr=Math.sqrt(p.x*p.x+p.z*p.z)||1e-5;
+      var om=dt*(.055/(rr+.22))*dr;              /* inner orbits faster */
+      var c2=Math.cos(om), s2=Math.sin(om);
+      var nx=p.x*c2-p.z*s2, nz=p.x*s2+p.z*c2;
+      p.x=nx; p.z=nz; p.tx=nx; p.tz=nz;          /* target follows, so no spring fight */
+      p.y+=Math.sin(T*.4+p.ph0)*.000018*dr;
+    }else{
+      var fx=Math.sin(p.y*3.4+T*.42)*Math.cos(p.z*2.5-T*.26);
+      var fy=Math.sin(p.z*2.9-T*.33)*Math.cos(p.x*3.1+T*.22);
+      var fz=Math.sin(p.x*3.2+T*.29)*Math.cos(p.y*3.9-T*.19);
+      var spring=(p.esc?1.4:5.6)*dr+(tMorph<1?6.5:0);
+      var flow=(p.esc?1.2:.5)*flowAmt*dr*(tMorph<1?1.6:1);
+      var damp=Math.exp(-dt*(p.esc?1.7:3.6));
+      p.vx=(p.vx+((p.tx-p.x)*spring+fx*flow)*dt)*damp;
+      p.vy=(p.vy+((p.ty-p.y)*spring+fy*flow)*dt)*damp;
+      p.vz=(p.vz+((p.tz-p.z)*spring+fz*flow)*dt)*damp;
+      p.x+=p.vx*dt; p.y+=p.vy*dt; p.z+=p.vz*dt;
+    }
+
+    /* camera transform: translate to focus, yaw, then pitch */
+    var wx=p.x-cam.fx, wy=p.y-cam.fy, wz=p.z-cam.fz;
+    var rx=wx*cy2-wz*sy2, rz0=wx*sy2+wz*cy2;
+    var sy3=wy*cp-rz0*sp;
+    var dz =wy*sp+rz0*cp;
+    var persp=2.6/(2.6+dz*1.15);
+    p.px=gx+rx*R*persp; p.py=gy-sy3*R*persp;
+
+    if(p.big&&dr){ p.gt-=dt; if(p.gt<=0){p.gl=1;p.gt=2.5+Math.random()*10;}
+                   if(p.gl>0) p.gl=Math.max(0,p.gl-dt*2.1); }
+
+    var a;
+    if(isG){
+      var rad=Math.sqrt(p.x*p.x+p.z*p.z);
+      a=(.16+persp*.30)*(.30+p.szr*1.05)*(1.25-Math.min(1,rad*.70))+p.gl*.26;
+    }else{
+      var len=Math.sqrt(wx*wx+wy*wy+wz*wz)||1;
+      var limb=state==='rift' ? 1-Math.min(1,Math.abs(dz)/len) : .75;
+      a=(.14+persp*.26)*(.35+limb*.95)*(.4+p.szr*.9)+p.gl*.26;
+    }
+    if(p.esc) a*=.5;
+    p.pa=Math.max(0,Math.min(1,a));
+    p.psz=p.bs*(.55+persp*.55)*(1+p.gl*.55);
+    p.vis=(p.pa>.012&&p.px>-40&&p.px<W+40&&p.py>-40&&p.py<H+40)?1:0;
+  }
+
+  ctx.globalCompositeOperation='lighter';
+  for(var c=0;c<6;c++){
+    var L=BUCK[c]; if(!L.length) continue;
+    ctx.fillStyle='rgb('+PAL[c].rgb+')';
+    for(var q=0;q<L.length;q++){
+      var id=L[q]; if(id>=N) continue;
+      var pp=P[id]; if(!pp.vis) continue;
+      ctx.globalAlpha=pp.pa; var s=pp.psz;
+      ctx.fillRect(pp.px-s*.5,pp.py-s*.5,s,s);
+    }
+  }
+  for(var j=0;j<N;j++){
+    var p2=P[j]; if(!p2.big||!p2.vis) continue;
+    ctx.globalAlpha=p2.pa; var sz=p2.psz*1.5;
+    ctx.drawImage(SPR[isG?p2.cg:p2.cf],p2.px-sz,p2.py-sz,sz*2,sz*2);
+  }
+  ctx.globalAlpha=1;
+  requestAnimationFrame(frame);
+}
+
+/* ---------- wiring ---------- */
+document.querySelectorAll('[data-browse]').forEach(function(b){
+  b.addEventListener('click',function(){ browse(b.dataset.browse); });
+});
+document.getElementById('back').addEventListener('click',toGalaxy);
+document.getElementById('q').addEventListener('change',function(e){
+  var v=e.target.value.trim().toLowerCase();
+  var hit=ITEMS.filter(function(o){return o.n.toLowerCase()===v;})[0] ||
+          ITEMS.filter(function(o){return o.n.toLowerCase().indexOf(v)===0;})[0];
+  if(hit) select(hit.n);
+});
+function bind(id,vid,fn,fmt){
+  var el=document.getElementById(id);
+  el.addEventListener('input',function(){
+    fn(+el.value); document.getElementById(vid).textContent=fmt?fmt(+el.value):el.value; });
+}
+bind('tr','trv',function(v){trail=v;autoTrail=false;});
+bind('fl','flv',function(v){flowAmt=v/100;},function(v){return (v/100).toFixed(1);});
+bind('den','denv',function(v){N=v;});
+bind('dim','dimv',function(v){document.getElementById('scrim').style.opacity=v/100;},
+     function(v){return v+'%';});
+document.getElementById('sc').addEventListener('change',function(e){
+  document.getElementById('scan').style.display=e.target.checked?'':'none'; });
+document.getElementById('ov').addEventListener('change',function(){ drawOverlay(current); });
+
+for(var i=0;i<NMAX;i++) P[i].ph0=Math.random()*TAU;
+resize(); setTargets('galaxy'); applyView('galaxy');
+for(var i=0;i<NMAX;i++){ var p=P[i]; p.x=p.tx; p.y=p.ty; p.z=p.tz; }
+renderCards([]);
+requestAnimationFrame(frame);
+})();
+</script>
