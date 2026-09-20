@@ -76,3 +76,20 @@ what I am looking for." Direction is **not** settled. Read
 
 **Decided:** The tool covers Astral Rifts and Archaeological Sites only. General events are
 deferred.
+
+---
+
+## 2026-09-20 — Session close-out is a committed command, not a habit
+
+**Decided:** `/close-out` and `/pick-up` live in `.claude/commands/` and are committed, so
+they exist on every clone. A weekly scheduled task pushes unpushed commits and flags work
+that happened without a close-out.
+
+**Why:** Claude Code CLI conversation history is machine-local, isn't synced, and is swept
+after ~30 days ([docs](https://code.claude.com/docs/en/sessions)). The transcript is not a
+durable record and can't be made into one. The only thing that crosses machines is what gets
+committed, so the discipline of writing down reasoning had to become a command rather than
+something to remember.
+
+**What would overturn it:** Anthropic shipping cross-device CLI session sync. Even then the
+decision log stays useful — a transcript is not a decision record.

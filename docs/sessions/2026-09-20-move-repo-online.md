@@ -84,3 +84,23 @@ protocol in `CLAUDE.md`.
   `docs/ARTIFACTS.md` — exactly the kind of thing that goes missing when a conversation closes.
 - **`/close-out` and `/pick-up` slash commands added** under `.claude/commands/`. They're
   committed, so they exist on every clone.
+
+---
+
+## Addendum 2 — remote live
+
+- **Pushed.** `main` is on GitHub at https://github.com/nightowl-83/RiftNav — two commits.
+- **Auth:** fine-grained PAT, scoped to RiftNav only, Contents read/write. Stored at
+  `.git/.credentials` (inside `.git`, so never committed) via `credential.helper store`.
+  The token never passed through a chat transcript — it was handed over as a file in the
+  project folder and deleted after install.
+  **When it expires, pushes start failing.** Regenerate at
+  https://github.com/settings/personal-access-tokens, save as `token.txt` in this folder,
+  and ask Claude to reinstall it.
+- **Weekly backstop:** a scheduled task runs Fridays 4pm CT. It pushes any commits sitting
+  unpushed, reports uncommitted changes without committing them (a commit with no reasoning
+  is worse than none), and flags commits that no session log covers. Silent when clean.
+- **Caveat on the credential path:** `credential.helper` is set to the relative path
+  `.git/.credentials`, which resolves from the repo root. It works from the sandbox Claude
+  uses. If a `git push` run manually from Terminal ever prompts for a username, that's why —
+  say so and it can be switched to an absolute path.
