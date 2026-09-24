@@ -1,0 +1,16 @@
+# Normalise line endings so Mac and Windows checkouts don't fight.
+# Text files are stored with LF in the repo; Git converts on checkout as needed.
+* text=auto eol=lf
+
+# Binary — never touch line endings, never try to diff
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.fig   binary
+*.pdf   binary
+*.docx  binary
+*.xlsx  binary
+*.mp4   binary
+*.mov   binary
