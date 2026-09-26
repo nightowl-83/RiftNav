@@ -1,0 +1,875 @@
+# Handoff: Rift Finder — Astral Rifts Reward Finder
+
+## Overview
+
+Rift Finder is a reference/lookup tool for Stellaris **Astral Rifts** and **Archaeological Dig Sites**. A player picks a rift, picks the reward they want, and the tool walks them step-by-step through the exact chain of chapter choices that produces that reward. Dig sites work similarly but are reference-only (phases and payouts, no branching path).
+
+The UI is styled as a holographic ship console: dark space backdrop (animated galaxy map or looping video), glass panels, scanlines, corner HUD brackets, amber + cyan accents, monospace/techno type.
+
+**The two things this handoff exists to document precisely are the two variant systems:**
+
+- `layout` — Grid / Split column / Notched split
+- `filterUI` — Menu / One line / Chips
+
+Both must be implemented as component props/variants, not as separate screens. They are independent of each other (3 × 3 = 9 valid combinations).
+
+## About the design files
+
+The files in this bundle are **design references created in HTML** — working prototypes showing intended look and behavior. They are **not production code to copy directly**.
+
+The task is to **recreate these designs in the target codebase's existing environment** (React, Vue, Svelte, native, etc.) using its established patterns, component library, and styling approach. If no environment exists yet, pick the framework most appropriate for the project and implement there.
+
+The prototype uses a small custom template runtime (`support.js`). Ignore it — it is scaffolding, not part of the design. What matters is the markup structure, the computed inline styles, and the state logic in the `Component` class.
+
+## Fidelity
+
+**High-fidelity.** Colors, typography, spacing, radii, shadows, animation timings, and interaction states are final. Recreate pixel-accurately. Every value in this document is lifted from the prototype source.
+
+---
+
+# Variant system
+
+## Prop: `layout`
+
+Type: `'Grid' | 'Split column' | 'Notched split'`, default `'Grid'`.
+
+Controls the home/browse screen only (rift detail, dig detail, and the step-by-step reader are identical across all three). Derived booleans used throughout:
+
+```
+split = layout === 'Split column' || layout === 'Notched split'
+notch = layout === 'Notched split'
+```
+
+### Grid (default)
+
+| Property | Value |
+|---|---|
+| Content container | `max-width: 1180px; margin: 0 auto; padding: 28px 34px 110px` |
+| Card grid | `display: grid; grid-template-columns: repeat(auto-fill, minmax(266px, 1fr)); gap: 16px` |
+| Browse-landing grid (the two "ASTRAL RIFTS / DIG SITES" tiles) | `display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 760px` |
+| Page title size | `44px`, letter-spacing `.1em` |
+| Card min-height | `152px` |
+| Pin rail width | `56px` |
+| Galaxy map x-offset | `0` (centered) |
+| Corner HUD opacity | `.85` |
+
+### Split column
+
+Content collapses to a narrow left column so the galaxy map backdrop stays visible on the right.
+
+| Property | Value |
+|---|---|
+| Content container | `width: min(37vw, 520px); min-width: 320px; margin: 0; padding: 28px 26px 110px 34px` |
+| Card grid | `display: flex; flex-direction: column; gap: 12px` |
+| Browse-landing grid | `display: flex; flex-direction: column; gap: 14px` |
+| Page title size | `29px`, letter-spacing `.06em` |
+| Card min-height | `86px` |
+| Pin rail width | `40px` |
+| Rift/Dig segmented toggle | stacks vertically: `flex-direction: column; align-items: stretch; gap: 3px; padding: 3px` |
+| Galaxy map x-offset | `0.17` (map shifts right so its core clears the column) |
+| Corner HUD opacity | `.72` |
+
+### Notched split
+
+Same column geometry as Split column, but cards and the header panel take a **folder-tab silhouette** instead of a plain rounded rectangle. This is the most involved variant — full geometry below.
+
+| Property | Value |
+|---|---|
+| Card grid gap | `20px` (vs 12px in Split column) |
+| Card padding | `30px 16px 18px` (extra top padding clears the 24px tab band) |
+| Card min-height | `122px` |
+| Card background/border | **none** on the card element itself — the shape is drawn by 6 absolutely-positioned layers underneath (see below) |
+| Header panel padding | `30px 18px 14px`, transparent background (same layered treatment) |
+| Pin rail negative margin | `-28px -16px -14px 14px` (vs `-14px -16px -14px 14px`) |
+
+---
+
+## The notched folder shape
+
+The silhouette is a rectangle whose **top edge steps down**: flat from the left edge to 34%, a 24px-deep recess across the middle, then back up for a short tab at the right. It is built from six sibling `<div>`s inside a `position: relative` wrapper, all `pointer-events: none`, rendered behind the card content (`z-index: 0`–`1`; content sits at `z-index: 2`).
+
+**Percentages differ between the card and the header panel** — card breaks at 34%, header at 38%.
+
+### Layer 1 — outer wrapper (shadow only)
+
+```css
+position: absolute; inset: 0; z-index: 0; pointer-events: none;
+border-radius: 14px;                 /* header: 16px */
+box-shadow: 0 18px 50px rgba(0,6,16,.4);
+```
+
+### Layer 2 — fill (the clipped glass body)
+
+Card:
+```css
+position: absolute; inset: 0; box-sizing: border-box;
+border-radius: 14px;
+clip-path: polygon(
+  0 0,
+  calc(34% - 2px) 0,
+  calc(34% + 10px) 24px,
+  calc(100% - 51px) 24px,
+  calc(100% - 39px) 0,
+  100% 0,
+  100% 100%,
+  0 100%
+);
+background-image: linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));
+background-size: 100% calc(100% + 26px);
+background-position: 0 -26px;        /* pulls the gradient up so the notch doesn't lighten */
+backdrop-filter: blur(20px) saturate(140%);
+border: 1px solid rgba(176,214,255,.1);
+border-top: none;                    /* top edge is drawn by the tab layers instead */
+```
+
+Header panel — identical except:
+```css
+border-radius: 16px;
+clip-path: polygon(0 0, calc(38% - 2px) 0, calc(38% + 10px) 24px,
+                   calc(100% - 88px) 24px, calc(100% - 76px) 0, 100% 0, 100% 100%, 0 100%);
+background-image: linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));
+/* no border at all on the header fill */
+```
+
+### Layers 3 & 4 — the two tabs (hairline outline of the raised sections)
+
+Generated by `tabCss(isHeader, position, dropSide)`:
+
+```css
+position: absolute; top: 0; height: 24px; box-sizing: border-box;
+background: none;
+border: 1px solid rgba(176,214,255,.26);
+border-bottom: none;
+border-<dropSide>: none;             /* the side facing the notch has no border */
+border-radius: <r>px 4px 0 0;        /* dropSide 'right' */
+     /* or: 4px <r>px 0 0 */         /* dropSide 'left'  */
+z-index: 1;
+box-shadow: inset 0 1px 0 rgba(255,255,255,.13);
+```
+
+`r` = `13px` on cards, `15px` on the header panel.
+
+| | Left tab | Right tab |
+|---|---|---|
+| Card | `left: 0; width: 34%`, drop `right` | `right: 0; width: 41px`, drop `left` |
+| Header | `left: 0; width: 38%`, drop `right` | `right: 0; width: 78px`, drop `left` |
+
+### Layers 5 & 6 — the diagonal wedges
+
+The 45° connectors between each tab and the recessed middle. Generated by `wedge(isHeader, position, isRight)`:
+
+```css
+position: absolute; top: 0; width: 12px; height: 24px;
+clip-path: polygon(0 0, 100% 100%, 0 100%);        /* left wedge  */
+        /* polygon(100% 0, 100% 100%, 0 100%) */   /* right wedge */
+background-image: linear-gradient(63.43deg,        /* right wedge: 116.57deg */
+  transparent 0 9.5px,
+  rgba(176,214,255,.26) 9.5px 10.7px,              /* the 1.2px hairline itself */
+  transparent 10.7px);
+z-index: 1;
+```
+
+The gradient paints a 1.2px diagonal line inside a transparent triangle — this is what makes the hairline continue cleanly around the step. `63.43deg` / `116.57deg` are the exact angles of a 12×24 diagonal (`atan(24/12)`).
+
+| | Left wedge | Right wedge |
+|---|---|---|
+| Card | `left: calc(34% - 2px)` | `right: 39px` |
+| Header | `left: calc(38% - 2px)` | `right: 76px` |
+
+### Layer 7 — the recessed bar
+
+Fills the notch floor with a slightly different glass tone and caps it with a hairline.
+
+```css
+position: absolute; top: 12px; height: 12px; z-index: 1; box-sizing: border-box;
+left: 34%; right: 41px;              /* header: left: 38%; right: 78px */
+clip-path: polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);
+border-top: 1px solid rgba(176,214,255,.26);
+background: rgba(13,29,47,.28);      /* header: rgba(13,29,47,.26) */
+backdrop-filter: blur(14px) saturate(130%);
+```
+
+### Corner brackets (all layouts, on cards)
+
+Two L-brackets, radially masked so they fade out along their length:
+
+```css
+/* top-left, amber */
+position: absolute; left: 0; top: 0; width: 30px; height: 30px; z-index: 4;
+border-left: 1.5px solid rgba(255,224,190,.85);
+border-top: 1.5px solid rgba(255,224,190,.85);
+border-top-left-radius: 14px;
+mask-image: radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%);
+
+/* bottom-right, cyan */
+border-right / border-bottom: 1.5px solid rgba(174,225,255,.8);
+border-bottom-right-radius: 14px;
+mask-image: radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%);
+```
+
+---
+
+## Prop: `filterUI`
+
+Type: `'Menu' | 'One line' | 'Chips'`, default `'Menu'`.
+
+Controls how the **reward-type filter** is presented on the rift browse screen (`browse === 'rift'`). It has no effect on the dig-site browse screen, which has no filter.
+
+All three drive the same state: `cat`, a string that is either `'ALL'` or a reward category name. Category list is derived at runtime from the distinct `cat` values across all rewards, sorted alphabetically, with `'ALL'` prepended. Each entry carries a count (`ALL` = total reward count; otherwise rewards in that category).
+
+Shared item styling — `catItem(c, mode)`:
+
+```
+/* base, all modes */
+font-family: inherit; font-size: 10px; letter-spacing: .16em; cursor: pointer;
+
+/* unselected */
+border: 1px solid rgba(176,214,255,.2);
+background: rgba(10,24,40,.36);
+color: #a8c4dc;
+box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+
+/* selected */
+border: 1px solid rgba(255,224,190,.7);
+background: linear-gradient(180deg, rgba(255,214,170,.22), rgba(142,203,255,.1));
+color: #fff8ef;
+box-shadow: 0 10px 30px rgba(0,6,16,.36), inset 0 1px 0 rgba(255,255,255,.26);
+
+/* count badge */
+font-size: 9px; color: #ffd9b0 (selected) / #7f9cb4 (unselected)
+
+/* glass (chip + strip modes only) */
+backdrop-filter: blur(18px) saturate(140%);
+```
+
+### Menu (default)
+
+A dropdown trigger that sits inline in the control row next to the search field.
+
+**Trigger:**
+```css
+order: 1; flex: none; box-sizing: border-box; height: 40px;   /* 36px when condensed */
+display: flex; align-items: center; cursor: pointer; user-select: none;
+border-radius: 11px;
+gap: 11px; padding: 0 16px;                 /* condensed: gap 7px; padding 0 11px */
+backdrop-filter: blur(18px) saturate(140%);
+
+/* cat === 'ALL' */
+border: 1px solid rgba(176,214,255,.24);
+background: rgba(10,24,40,.42); color: #cfe6ff;
+box-shadow: inset 0 1px 0 rgba(255,255,255,.13);
+
+/* a category is active */
+border: 1px solid rgba(255,224,190,.6);
+background: linear-gradient(180deg, rgba(255,214,170,.2), rgba(142,203,255,.08));
+color: #fff8ef;
+box-shadow: 0 10px 30px rgba(0,6,16,.36), inset 0 1px 0 rgba(255,255,255,.24);
+```
+
+Trigger contents, left to right: label (`ALL REWARD TYPES` or the category uppercased, `font-size: 10px; letter-spacing: .16em`, ellipsised, `max-width: 140px` when condensed), count (`font-size: 9px; color: #ffd9b0`), caret `▾` (`font-size: 9px; color: #8ecbff; transition: transform .22s ease`, rotates `180deg` when open).
+
+When a category is active, a `✕ CLEAR` button appears next to the trigger: `order: 2; background: transparent; border: none; font-size: 9px; letter-spacing: .18em; color: #ffb87a`.
+
+**Panel:**
+```css
+position: absolute; top: calc(100% + 9px); right: 0;
+width: min(620px, 100%);
+display: grid; grid-template-columns: repeat(auto-fill, minmax(184px, 1fr)); gap: 4px;
+padding: 10px; border-radius: 14px;
+background: linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99));
+border: 1px solid rgba(176,214,255,.24);
+box-shadow: 0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);
+animation: hudFade .16s ease-out; z-index: 600;
+```
+
+Rows use `catItem(c, 'row')`: `display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 13px; border-radius: 9px`. Unselected rows are fully transparent (`border-color: transparent; background: transparent`); only the selected row shows the amber treatment. Picking a row sets `cat` **and closes the panel**.
+
+### One line
+
+A horizontally scrolling single row above the card grid.
+
+Section header above it:
+```
+"REWARD TYPE"  font-size: 9px; letter-spacing: .22em; color: #a8c4dc
++ 1px flex-fill rule  rgba(176,214,255,.16)
++ "✕ CLEAR FILTER" (only when a category is active), color #ffb87a
+margin-bottom: 11px
+```
+
+Rail:
+```css
+display: flex; gap: 8px; overflow-x: auto;
+padding-bottom: 9px; margin-bottom: 22px;
+mask-image: linear-gradient(90deg, #000 0, #000 93%, transparent 100%);
+```
+
+Items use `catItem(c, 'strip')`: `display: flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 11px; flex: none; white-space: nowrap` + glass. Picking does **not** close anything.
+
+### Chips
+
+Same section header (`margin-bottom: 12px`), then a wrapping chip field:
+
+```css
+display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px;
+```
+
+Items use `catItem(c, 'chip')`: `display: flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 11px` + glass. Identical to strip items minus `flex: none` / `white-space: nowrap`.
+
+---
+
+## Other props
+
+| Prop | Type | Default | Effect |
+|---|---|---|---|
+| `backdrop` | `'Galaxy map' \| 'Video'` | `Galaxy map` | Galaxy map = procedural animated starfield (`galaxy-map.js`), reacts to the current screen via a `mode` of `galaxy` / `rift` / `dig`. Video = looping `uploads/bg-scene-1.mp4`, `object-fit: cover`, `animation: holoBreath 40s ease-in-out infinite`; first pass plays from 0, every loop after restarts at 2s. |
+| `videoDim` | number 0–85, step 1, unit % | `46` | Only with Video backdrop. Renders `position: fixed; inset: 0; background: rgba(4,10,20, videoDim/100)`. |
+| `holoScan` | boolean | `true` | Two fixed overlays at `z-index: 2`: a `repeating-linear-gradient(to bottom, rgba(174,225,255,.05) 0 1px, transparent 1px 4px)` at `opacity: .5; mix-blend-mode: screen`, plus a 34vh sweep band running `holoScan 11s linear infinite`. |
+| `cornerBrackets` | boolean | `true` | Top-right and bottom-right fixed HUD bracket clusters. Auto-hidden when the content column would collide — see below. |
+| `skipBoot` | boolean | `false` | Skips the boot sequence overlay. |
+
+### Corner bracket collision rule
+
+Brackets only render when they are genuinely clear of the content column:
+
+```js
+contentRight = split ? min(vw * 0.37, 520) + 34
+                     : (vw > 1180 ? (vw + 1180) / 2 - 34 : vw - 34)
+visible = vw >= 768 && contentRight <= vw - 196
+```
+
+Bottom cluster: `position: fixed; right: 0; bottom: 34px; width: 180px; height: 180px; z-index: 860`.
+Top cluster: `position: fixed; right: 0; top: 56px; width: 180px; height: 210px; z-index: 860`.
+Opacity `.72` when `split`, `.85` otherwise.
+
+---
+
+# Screens
+
+## 1. Boot overlay
+
+Full-screen modal, `z-index: 9000`, `background: rgba(4,10,20,.62)` + `backdrop-filter: blur(26px) saturate(130%)`. Panel `width: min(540px, 88vw); padding: 34px 34px 30px; border-radius: 18px`, glass gradient `linear-gradient(160deg, rgba(24,52,80,.5), rgba(6,16,28,.6))`, `border: 1px solid rgba(176,214,255,.24)`, amber top-left + cyan bottom-right corner brackets (26px, 1.5px, radius 18px).
+
+Six log lines reveal one at a time at `170ms × index`, plus 2 extra ticks (the last one delayed a further 220ms):
+
+```
+POWER ON SELF TEST ......... OK
+OBSERVATION DECK FEED ...... LIVE
+ASTRAL PLANE TELEMETRY ..... OK
+RIFT INDEX 32 / CHAPTERS 289
+REWARD MANIFEST 71 ENTRIES
+GUIDE PROJECTION ........... OK
+```
+
+Each line: `font-size: 11px; letter-spacing: .14em; color: #bcd6ea`, prefixed `› `, `animation: hudFade .18s ease-out`. Container `min-height: 150px; gap: 7px`.
+
+Progress bar: 3px track `rgba(176,214,255,.16)`, fill `linear-gradient(90deg, #8ecbff, #ffd9b0)` with `box-shadow: 0 0 14px rgba(174,225,255,.6)`, `transition: width .18s linear`.
+
+Footer row: `PROJECTING HOLOGRAPHIC GUIDE` (left, `#7fa3c0`) / percentage (right, `#8ecbff`), both `font-size: 10px; letter-spacing: .2em`. When complete, `LINK ESTABLISHED` appears — Chakra Petch 13px, `letter-spacing: .24em`, `color: #ffd9b0`, `animation: blink 1s infinite`.
+
+Header: 16px rotated-45° diamond outlined `#8ecbff` with `box-shadow: 0 0 14px rgba(142,203,255,.8)` and `animation: blink 1.4s infinite`; `RIFT NAV` Chakra Petch 19px/700, `letter-spacing: .24em`, `#f2f9ff`; `HOLO v5.0` 10px, `letter-spacing: .2em`, `#7fa3c0`.
+
+## 2. Top navigation (sticky, all screens)
+
+```css
+display: flex; align-items: center; gap: 20px;
+height: 56px; padding: 0 34px;
+position: sticky; top: 0; z-index: 900;
+background: linear-gradient(180deg, rgba(10,24,40,.62), rgba(6,14,26,.38));
+backdrop-filter: blur(20px) saturate(140%);
+border-bottom: 1px solid rgba(176,214,255,.16);
+box-shadow: 0 12px 40px rgba(0,6,16,.35);
+```
+
+Contents: 13px diamond mark → `RIFT NAV` (Chakra Petch 15px/700, `.18em`, `#f2f9ff`) → `// HOLO DECK` (10px, `.22em`, `#7fa3c0`) → stat run `32 RIFTS · 289 CHAPTERS · 71 REWARDS` (10px, `.16em`, `#7fa3c0`, `gap: 18px`) → right cluster: camera toggle button, CLASSIC/HOLO segmented link pair, and a `GUIDE ONLINE` status pip (6px dot `#ffd9b0`, `box-shadow: 0 0 10px #ffd9b0`, `animation: blink 2.4s infinite`).
+
+## 3. Compact scroll bar
+
+On the browse screens, scrolling past **130px** cross-fades in a fixed compact bar; it fades back out below **90px** (hysteresis — do not use a single threshold, it causes jitter).
+
+```css
+position: fixed; left: 0; right: 0; top: 56px; z-index: 840;
+display: flex; align-items: center; flex-wrap: nowrap; gap: 10px;
+padding: 11px 34px;
+background: linear-gradient(180deg, rgba(7,17,30,.97), rgba(7,16,28,.92));
+backdrop-filter: blur(26px) saturate(140%);
+border-bottom: 1px solid rgba(176,214,255,.18);
+box-shadow: 0 16px 34px rgba(0,6,16,.55);
+transition: opacity .26s ease,
+            transform .3s cubic-bezier(.16,.86,.24,1),
+            visibility .26s;
+
+/* shown */  opacity: 1; transform: translateY(0);    pointer-events: auto; visibility: visible;
+/* hidden */ opacity: 0; transform: translateY(-12px); pointer-events: none; visibility: hidden;
+```
+
+Contains: back chevron, the ASTRAL RIFTS / DIG SITES toggle, a 34px search field (`flex: 1 1 170px; max-width: 300px`), the category trigger (Menu mode only), spacer, monitoring count.
+
+**Important:** the compact bar is a separate fixed element that cross-fades. The page header does **not** resize itself on scroll — an earlier version did and it caused a feedback loop (header shrinks → scroll position changes → header grows).
+
+## 4. Home / Galactic index
+
+No browse mode selected. Title `GALACTIC INDEX`, subtitle `AWAITING QUERY // {n} RIFTS · {n} DIG SITES`.
+
+Two entry tiles (`browseGrid`), each: `border-radius: 14px; padding: 22px; min-height: 140px`, glass `linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5))`, `border: 1px solid rgba(176,214,255,.2)`, `box-shadow: 0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13)`. One 20px corner bracket each (amber top-left on the first tile, cyan bottom-right on the second).
+
+Tile content: `BROWSE` eyebrow (9px, `.22em`, `#8ecbff`) → pushed to bottom: name (Chakra Petch 22px/600, `#f6fbff`) → count line (10px, `.12em`, `#8ba7bf`).
+
+Hover: `border-color: rgba(174,225,255,.6); transform: translateY(-2px); box-shadow: 0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18)`.
+
+Entrance: `animation: wipeIn .55s cubic-bezier(.2,.75,.2,1) both` at `.36s` / `.43s`.
+
+## 5. Browse — rifts / dig sites
+
+Title `SELECT RIFT` / `SELECT DIG SITE`, subtitle `SCAN COMPLETE // {n} SIGNATURES IN RANGE` / `SURVEY COMPLETE // {n} SITES CATALOGUED`.
+
+Header block contains: back-to-galaxy button, title block, the rift/dig segmented toggle, and the control row (search + filter + monitoring). In Notched split this whole block takes the folder-tab treatment; in Grid and Split column it is a plain glass panel (`padding: 16px 18px 14px; border-radius: 16px`).
+
+**Card anatomy** (identical structure for both rifts and dig sites, only accent color and meta differ):
+
+- Row 1: 5px status dot (`#8ecbff` for rifts, `#7fe0d4` for dig sites, with matching 8px glow) → group label (9px, `.2em`, `#a8c4dc`) → signature code pushed right (9px, `.14em`, `#6f8ea6`). Codes are deterministic hashes: `SIG-{hash % 9000 + 1000}` for rifts, `ARC-…` for dig sites.
+- Title: Chakra Petch 19px/600, `letter-spacing: .03em`, `line-height: 1.15`, `#f6fbff`, `text-wrap: pretty`, pushed to bottom with `margin-top: auto`.
+- 1px rule `rgba(176,214,255,.18)`, `margin-top: 9px`.
+- Meta row (10px, `.12em`): rifts → `{n} CHAPTERS` (`#8ba7bf`) / `{n} REWARDS` or `{n} MATCH` (`#ffd9b0`); dig sites → `{n} PHASES` (`#8ba7bf`) / DLC name (`#7fe0d4`).
+
+**Pin rail** — a full-height strip on the card's right edge that toggles monitoring:
+
+```css
+flex: none; position: relative; align-self: stretch;
+display: flex; align-items: center; justify-content: center; cursor: pointer;
+width: 56px;                                   /* 40px when split */
+margin: -14px -16px -14px 14px;                /* -28px top when notch */
+border-radius: 0 13px 13px 0;
+border-left: 1px solid rgba(176,214,255,.16);  /* .34 when active */
+transition: background-color .2s, color .2s, border-color .2s;
+
+/* inactive */ background: rgba(8,18,32,.34);  /* .16 when notch */  color: #7f9cb4;
+/* active   */ background: linear-gradient(180deg, rgba(255,214,170,.22), rgba(255,196,132,.09));
+               color: #ffd9b0;
+```
+
+Icon `✚` → `⦿` when monitored, 19px. Hover shows a tooltip above: `MONITOR SITUATION` / `STOP MONITORING`, `padding: 6px 9px; border-radius: 7px; font-size: 8px; letter-spacing: .2em; color: #07111e; background: #ffd9b0; border: 1px solid rgba(255,255,255,.5)`.
+
+**Card hover** (all layouts): the card slides right and grows an amber left edge —
+```css
+border-color: rgba(174,225,255,.6);
+box-shadow: -6px 0 0 -3px rgba(255,224,190,.7),
+            0 22px 60px rgba(0,6,16,.5),
+            inset 0 1px 0 rgba(255,255,255,.2),
+            0 0 0 1px rgba(174,225,255,.18);
+transform: translateX(9px);
+z-index: 520;
+```
+
+**Card entrance:** `animation: wipeIn .8s cubic-bezier(.16,.86,.24,1) both`, delay `0.42 + min(index, 16) × 0.075` seconds.
+
+**Search** — live, filters rifts by name; the dropdown also matches dig sites and individual dig payouts. Results: up to 6 rifts, 4 dig sites, 4 payouts. Each row has a type badge (`RIFT` cyan `#8ecbff`, `DIG SITE` teal `#7fe0d4`, `DIG PAYOUT` amber `#ffd9b0`; `font-size: 8px; letter-spacing: .2em; padding: 3px 7px; border-radius: 6px`, 1px border in the matching hue at 40% alpha), the name (11px, `#e8f2fb`), and right-aligned meta (9px, `#7f9cb4`). Empty state: `NO SIGNATURE MATCHES`.
+
+Dropdown panel: `top: calc(100% + 8px); padding: 8px; border-radius: 14px; background: linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99)); border: 1px solid rgba(176,214,255,.24); box-shadow: 0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16)`. Row hover: `background: rgba(176,214,255,.1)`.
+
+## 6. Monitoring
+
+Users pin rifts and dig sites to a watch list. State is `monitored: [{ type: 'rift'|'dig', name }]`.
+
+- **Wide viewport, detail screen open** → a tab strip sticks under the nav at `top: 56px`, `z-index: 480`. Active tab: `padding: 8px 12px 9px; background: rgba(20,44,70,.72); color: #fff8ef; border-bottom-color: transparent`. Inactive: `padding: 6px 12px 7px; background: rgba(8,18,32,.4); color: #8ba7bf`. Both `border-radius: 7px 7px 0 0; margin-bottom: -1px`.
+- **Narrow viewport (< 720px)** → the strip becomes a dropdown.
+- **On the browse screen** → a dropdown trigger in the control row, amber-tinted: `border: 1px solid rgba(255,224,190,.44); background: linear-gradient(180deg, rgba(255,214,170,.16), rgba(142,203,255,.06)); color: #fff8ef`.
+
+Switching tabs **preserves per-item progress** (`reward`, `cur`, `railOpen` are stashed in `progress` keyed by `type:name` and restored on return).
+
+Toggling monitoring fires a toast: `position: fixed; left: 50%; bottom: 30px; transform: translateX(-50%); z-index: 950; padding: 11px 18px; border-radius: 11px`, glass `linear-gradient(160deg, rgba(24,52,80,.86), rgba(6,16,28,.94))`, border amber `rgba(255,224,190,.5)` on add / cyan `rgba(176,214,255,.3)` on remove, `animation: hudIn .24s cubic-bezier(.16,.86,.24,1)`, auto-dismiss after **2600ms**.
+
+## 7. Rift detail — select target reward
+
+Container `max-width: 1180px; margin: 0 auto; padding: 40px 34px 110px; animation: hudIn .32s ease-out`.
+
+Header: `‹ ABORT / ALL RIFTS` button + monitor toggle → eyebrow `RIFT LOCKED // {GROUP}` (10px, `.22em`, `#a8c4dc`) → `<h1>` Chakra Petch 44px/700, `letter-spacing: .04em`, `#f6fbff`, `text-shadow: 0 4px 30px rgba(3,10,20,.9), 0 0 40px rgba(142,203,255,.22)`.
+
+Right-aligned `ACCESS REQUIREMENTS` panel: `max-width: 400px; border-radius: 14px; padding: 16px 18px`, glass `linear-gradient(160deg, rgba(22,48,74,.4), rgba(6,16,28,.5))`, `border: 1px solid rgba(176,214,255,.2)`, amber 20px top-left bracket. Body 11px / `line-height: 1.7` / `#cfe0ef`; restriction line prefixed `⚠` in `#ffb87a`.
+
+Divider: `height: 1px; background: linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent); margin: 22px 0 26px`.
+
+Reward grid: `repeat(auto-fill, minmax(336px, 1fr)); gap: 18px`. Each card `border-radius: 16px; padding: 24px; min-height: 194px`, glass `linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54))`, `backdrop-filter: blur(22px) saturate(140%)`, `box-shadow: 0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14)`, **four** 22px corner brackets (amber TL + BR, cyan TR + BL).
+
+Card content: category (9px, `.2em`, `#8ecbff`) + code `RWD-{hash % 900 + 100}` right → name Chakra Petch 26px/600 pushed to bottom → 3px progress bar + meta `{n} STEPS / ROLL {n}` or `/ NO ROLLS`. Bar gradient is amber (`#ffb87a → #ffd9b0`) when the hardest roll is ≥ 5, cyan (`#8ecbff → #d6ecff`) otherwise; width `min(100, steps/9 × 100)%`.
+
+Hover: `border-color: rgba(174,225,255,.62); transform: translateY(-2px); box-shadow: 0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2)`.
+
+## 8. Step-by-step reader
+
+Three columns, `max-width: 1460px; gap: 22px; padding: 28px 34px 96px; align-items: flex-start`.
+
+**Left — EVENT LOG** (`flex: 1 1 246px; max-width: 300px`, sticky at `top: 84px`, or `127px` when the monitoring strip is present). One row per step, expandable to show all choices at that chapter with the picked one marked `◆` (`#ffd9b0`) and the rest `◇` (`#5a7893`). Active row: `border: 1px solid rgba(174,225,255,.6); background: linear-gradient(180deg, rgba(142,203,255,.18), rgba(142,203,255,.06))`. Scroll region `max-height: calc(100vh - 208px)`. A `◆ CLAIM REWARD` row pins to the bottom of the list. Below: `✕ ABORT RIFT` button in the danger palette (`background: rgba(30,14,10,.4); border: 1px solid rgba(255,150,110,.34); color: #ffb87a`).
+
+**Center — step card** (`flex: 100 1 470px`). `border-radius: 18px; padding: 36px 38px 38px`, glass `linear-gradient(165deg, rgba(24,52,80,.5), rgba(6,16,28,.62))`, `backdrop-filter: blur(26px) saturate(145%)`, four 28px corner brackets (the amber pair carries an extra `16px` glow shadow).
+
+- Meta row: `STEP n OF m` (10px, `.22em`, `#8ecbff`) + rule + route pill when applicable (`color: #ffd0a0; border: 1px solid rgba(255,208,160,.45); border-radius: 9px; padding: 5px 11px; background: rgba(255,190,130,.08)`).
+- `<h2>` Chakra Petch 36px/700, `line-height: 1.1`.
+- **Choice callout** — the key element: `border-radius: 14px; border: 1px solid rgba(174,225,255,.45); background: linear-gradient(160deg, rgba(142,203,255,.16), rgba(142,203,255,.05)); box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 0 30px rgba(142,203,255,.1); padding: 22px 24px`. Label row: blinking 5px cyan dot + one of `SELECT THIS OPTION` / `ONLY OPTION AVAILABLE` / `NO CHOICE NEEDED HERE` / `FINAL OPTION`. Choice text Chakra Petch 23px/500, pure `#ffffff`.
+- `OTHER OPTIONS ON SCREEN // DO NOT SELECT` — amber warning list, each row `border-left: 2px solid rgba(255,184,122,.5); padding: 3px 0 3px 13px; color: #ffc79a`, prefixed `✕`.
+- `SALVAGE ACQUIRED AT THIS STEP` — rows prefixed `▸`, 12px, `#cfe0ef`.
+
+**Final card** (after the last step): `background: radial-gradient(120% 100% at 50% 0%, rgba(142,203,255,.24), rgba(6,16,28,.66) 62%)`, `border: 1px solid rgba(174,225,255,.5)`, `box-shadow: 0 30px 90px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.22), 0 0 50px rgba(142,203,255,.14)`, `padding: 46px 38px`. Header `RIFT CLOSED // PAYLOAD SECURED` with blinking amber dot; reward name Chakra Petch 44px/700 in `#ffffff`.
+
+**Right rail** (`flex: 1 1 262px; max-width: 302px`, sticky `top: 84px`):
+- `TARGET INFORMATION` panel — reward name, category, progress bar, and a `RETARGET` button carrying two ambient animations: `retGlow 7s ease-in-out infinite` on the button and a `retSwipe 7s ease-in-out infinite` sheen sweep overlay.
+- Radar widget, `height: 186px` — concentric rings (152px solid, 114px dashed amber spinning `24s`, 74px cyan counter-spinning `9s` with a transparent top border), crosshair lines, center step number in Chakra Petch 30px/700, `RIFT TRACE ACTIVE` caption.
+- `MISSION PARAMETERS` panel — requirement text, restriction line.
+
+Footer buttons: `‹ PREV` (ghost, disabled at step 0) / `NEXT STEP ›` (primary) → becomes `◆ CLAIM REWARD ›` on the last step → `RETURN TO RIFT INDEX ›` on the final card. Trace counter right-aligned.
+
+## 9. Dig site detail
+
+Mirrors the rift detail structure. `EXCAVATION DATA` panel (teal eyebrow `#7fe0d4`) replaces `ACCESS REQUIREMENTS`; stat run under the title shows PHASES / GROUP / DLC / PRECURSOR.
+
+Optional `NOTABLE PAYOUTS` band — up to 4 non-risk rewards in a `repeat(auto-fill, minmax(300px, 1fr))` grid, `border-radius: 13px; padding: 14px 16px`.
+
+`EXCAVATION PHASES // {n}` — a `repeat(auto-fill, minmax(336px, 1fr)); gap: 18px` card grid (**not** an accordion; an earlier version used one). Each phase card matches the reward-card shell: `border-radius: 16px; padding: 24px; min-height: 194px`, four 22px corner brackets. Content: `PHASE 01` (teal) + group right → payout list, each prefixed `▪` in `#7fe0d4`, Chakra Petch 15px/500 → bottom bar sized `payouts / maxPayouts` with gradient `linear-gradient(90deg, rgba(127,224,212,.85), rgba(174,225,255,.5))` + `{n} PAYOUTS` label.
+
+`DIG MECHANICS` panel closes the page: `border-radius: 14px; padding: 18px 20px`, `border: 1px solid rgba(176,214,255,.16)`, body rows 11px / `line-height: 1.7` / `#9fb8cc`.
+
+## 10. Footer (fixed)
+
+```css
+position: fixed; left: 0; right: 0; bottom: 0; z-index: 880;
+height: 34px; padding: 0 34px;
+display: flex; align-items: center; gap: 16px;
+border-top: 1px solid rgba(176,214,255,.12);
+background: rgba(4,10,20,.55);
+backdrop-filter: blur(16px) saturate(140%);
+font-size: 9px; letter-spacing: .18em; color: #7f9cb4;
+```
+
+Left: `ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0`. Right: context status — `GALACTIC MAP // IDLE` → `BROWSING ASTRAL RIFTS` → `RIFT: {NAME}` → `TARGET: {REWARD}` / `DIG SITE: {NAME}`.
+
+---
+
+# State
+
+```ts
+{
+  // navigation
+  browse:   null | 'rift' | 'dig'   // which index is open
+  rift:     string | null           // selected rift name
+  dig:      string | null           // selected dig site name
+  reward:   number | null           // index into the rift's reward list
+  cur:      number                  // current step index; === steps.length means the final card
+  railOpen: Record<string|number, boolean>
+
+  // filtering
+  q:        string                  // search query
+  cat:      string                  // 'ALL' or a category name
+  catOpen:  boolean
+
+  // monitoring
+  monitored: Array<{ type: 'rift'|'dig', name: string }>
+  progress:  Record<`${type}:${name}`, { reward, cur, railOpen }>
+  monMenuOpen: boolean
+  tip: string                       // hovered pin key, `${type}:${name}`
+  toastText: string
+  toastAdd: boolean
+
+  // chrome
+  boot:      number                 // boot sequence tick
+  condensed: boolean                // scrolled past threshold
+  narrow:    boolean                // viewport < 720px
+  monTight:  boolean                // control row wrapped to a second line
+  vw:        number
+
+  // camera (dev tool)
+  cam: object | null
+  ctlOpen: boolean
+  presetName: string
+  presets: Array<{ name, cam }> | null
+  copied: boolean
+}
+```
+
+## Path parsing — the core logic
+
+Each reward carries a `path` string such as:
+
+```
+Chapter 1 "Investigate the signal" -> Chapter 2-A "Send a probe" -> Chapter 4
+```
+
+`parsePath` splits on `->`, and per segment extracts a chapter id (matching `[0-9]+(-[A-Za-z])?`), a quoted choice, and any trailing prose. `steps()` then resolves each segment against the rift's chapter data:
+
+1. Find the chapter by id.
+2. Find the choice by exact text; fall back to a case-insensitive prefix match on the first 18 characters.
+3. If there is still no match and the chapter has exactly one choice, use it.
+4. Everything else in that chapter becomes `alts` (the DO NOT SELECT list).
+5. When no choice is specified: if the chapter ends the rift → `"No option to pick — this event closes the rift"`, else → `"Any option — just reach this event"` and `anyRoute = true`.
+
+**Branch detection:** reward and chapter reward strings sometimes lead with a branch name (`Voidspawn + something: …`). `branchOf` extracts a leading capitalized phrase followed by `+`, `base`, or `route`. Reward lines belonging to a branch the player is not on are filtered out.
+
+**Text cleaning** (`clean`) rewrites chapter references into player-facing prose, because raw data leaks internal ids:
+
+| Pattern | Replacement |
+|---|---|
+| `(sets you on the X branch)` | removed |
+| `chapters 4/5 by any route` | `this step is reachable by any route` |
+| `from/via/at chapter 4` | `from an earlier step` |
+| bare `chapter 4` / `chapters 4, 5` | `an earlier step` |
+| `4-A` style ids | `{route name} route` or `the other route` |
+
+`rewardLine` strips leading chapter prefixes, converts `X + condition: body` into `Only if you gave {condition} — {body}`, and drops any line identical to the target reward name.
+
+---
+
+# Design tokens
+
+## Color
+
+| Token | Value | Use |
+|---|---|---|
+| Void | `#040a14` | Page background |
+| Ink | `#e8f2fb` | Body text |
+| Ink bright | `#f6fbff` | Headings |
+| Ink white | `#ffffff` | Choice text, final reward name |
+| Cyan | `#8ecbff` | Primary accent, eyebrows, rift dot |
+| Cyan light | `#d6ecff` | Link hover, bar gradient end |
+| Cyan pale | `#a8d8ff` | Choice callout label |
+| Teal | `#7fe0d4` | Dig-site accent |
+| Teal pale | `#dffaf5` | Active phase number |
+| Amber | `#ffd9b0` | Selection, monitoring, secondary accent |
+| Amber warm | `#ffb87a` | Warnings, clear actions, destructive |
+| Amber soft | `#ffc79a` | Warning body text |
+| Amber cream | `#fff8ef` | Text on amber surfaces |
+| Amber deep | `#ffe6c8` | Retarget button label |
+| Muted 1 | `#cfe0ef` | Secondary body |
+| Muted 2 | `#a8c4dc` | Labels |
+| Muted 3 | `#8ba7bf` | Tertiary |
+| Muted 4 | `#7f9cb4` / `#7fa3c0` | Quaternary |
+| Muted 5 | `#6f8ea6` | Codes, faint meta |
+| Muted 6 | `#5a7893` | Placeholder, unpicked marks |
+| Disabled | `#4f6a80` | Disabled button text |
+
+Recurring alpha values:
+
+```
+rgba(176,214,255, .1 / .12 / .14 / .16 / .18 / .2 / .22 / .24 / .26 / .3 / .34)   cool hairlines
+rgba(174,225,255, .3 / .34 / .4 / .42 / .45 / .5 / .6 / .62 / .7 / .8 / .9)        bright cyan edges
+rgba(255,224,190, .34 / .4 / .44 / .5 / .55 / .6 / .62 / .7 / .75 / .8 / .85 / .95) amber edges
+rgba(255,214,170, .16 / .2 / .22 / .24 / .26 / .28 / .3)                            amber fills
+rgba(255,255,255, .1 → .3)                                                          inset top highlights
+rgba(0,6,16, .34 → .6)                                                              drop shadows
+```
+
+## Glass recipe
+
+Every panel is a variation on:
+
+```css
+background: linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));
+backdrop-filter: blur(20px) saturate(140%);
+-webkit-backdrop-filter: blur(20px) saturate(140%);
+border: 1px solid rgba(176,214,255,.2);
+box-shadow: 0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);
+```
+
+Blur scales with elevation: `14px` (notch bar) → `16px` (footer) → `18px` (buttons, chips) → `20px` (cards) → `22px` (reward cards) → `26px` (modals, compact bar). Gradient angle is `160deg` on most panels, `155deg` on reward/phase cards, `165deg` on the step card.
+
+## Typography
+
+Two families, loaded from Google Fonts:
+
+- **Chakra Petch** (400/500/600/700) — display. All headings, card titles, choice text, numerals in the radar and phase badges.
+- **IBM Plex Mono** (400/500/600) — everything else. Set on `body`, so it is the default.
+
+| Role | Size / weight / tracking |
+|---|---|
+| Page h1 | Chakra Petch 44px / 700 / `.04em`–`.1em` |
+| Split-column h1 | Chakra Petch 29px / 700 / `.06em` |
+| Final reward name | Chakra Petch 44px / 700 / `.01em` |
+| Step h2 | Chakra Petch 36px / 700 / `.02em` |
+| Reward card title | Chakra Petch 26px / 600 / `.01em` |
+| Choice text | Chakra Petch 23px / 500 |
+| Browse tile title | Chakra Petch 22px / 600 / `.04em` |
+| Rift/dig card title | Chakra Petch 19px / 600 / `.03em` |
+| Target panel title | Chakra Petch 17px / 600 |
+| Phase payout | Chakra Petch 15px / 500 |
+| Claim button | Chakra Petch 14px / 700 / `.18em` |
+| Rail step title | Chakra Petch 12px / 600 / `.09em` |
+| Body | Plex Mono 11–13px / `line-height: 1.6`–`1.8` |
+| Label | Plex Mono 10px / `.2em`–`.22em` |
+| Micro label | Plex Mono 9px / `.2em`–`.24em` |
+| Nano label | Plex Mono 8px / `.2em`–`.24em` |
+
+Nearly every uppercase label carries wide tracking (`.12em`–`.24em`). This is load-bearing for the console aesthetic — do not drop it.
+
+## Spacing
+
+Page padding `34px` horizontal (all breakpoints), `28px`–`40px` top, `96px`–`110px` bottom (clears the fixed footer). Panel padding `14px 16px` (compact card) → `16px 18px` (info panel) → `18px` (rail panel) → `22px 24px` (callout) → `24px` (reward card) → `36px 38px` (step card) → `46px 38px` (final card). Gaps: `2px` (segmented control) · `4px` (menu grid) · `8px` (chips, meta rows) · `10px`–`12px` (control row, card stacks) · `16px`–`18px` (grids) · `20px`–`22px` (notch stack, columns) · `26px` (detail header).
+
+## Radii
+
+`4px` (tab outer corners) · `6px` (badges, pin button) · `7px` (tooltip, monitor tab top) · `8px`–`9px` (small buttons, menu rows) · `10px`–`11px` (buttons, chips, controls) · `12px`–`13px` (rail rows, toast, claim button) · `14px` (cards, panels) · `16px` (reward cards, header panel) · `18px` (step card, boot panel) · `999px` (dots, rings).
+
+## Shadows
+
+```
+inset 0 1px 0 rgba(255,255,255,.12 → .3)          top highlight, on nearly every surface
+0 10px 30px rgba(0,6,16,.36)                      selected chip
+0 12px 34px rgba(0,6,16,.34 → .4)                 small panel / primary button
+0 14px 40px rgba(0,6,16,.36 → .4)                 rail row
+0 16px 34px rgba(0,6,16,.55)                      compact bar
+0 18px 50px rgba(0,6,16,.4)                       card
+0 22px 60px rgba(0,6,16,.42 → .6)                 reward card, toast
+0 26px 70px rgba(0,6,16,.55 → .6)                 dropdown
+0 30px 80px rgba(0,6,16,.5)                       step card
+0 30px 90px rgba(0,6,16,.55 → .6)                 boot panel, final card
+```
+
+Glow shadows use the accent at low alpha: `0 0 8px` (dots) · `0 0 12px`–`0 0 14px` (small marks) · `0 0 30px`–`0 0 50px` (callout, final card).
+
+## Motion
+
+| Keyframe | Definition | Used on |
+|---|---|---|
+| `hudIn` | `opacity 0→1`, `translateY(12px)→0` | Detail page enter, toast |
+| `hudFade` | `opacity 0→1` | Dropdowns, boot lines, reader enter |
+| `blink` | `1 → .28 → 1` | Status dots, boot diamond |
+| `spin` / `spinR` | `rotate(±360deg)` | Radar rings |
+| `holoScan` | `translateY(-40vh → 120vh)` | Scan band, 11s linear infinite |
+| `holoBreath` | `scale(1.04 → 1.09 → 1.04)` | Video backdrop, 40s |
+| `retGlow` | box-shadow pulse at 84% of cycle | Retarget button, 7s |
+| `retSwipe` | `translateX(-130% → 130%)` at 68–90% | Retarget sheen, 7s |
+| `wipeIn` | `opacity 0→1` + `clip-path: inset(-60% 100% -60% -60%)` opening left-to-right + `translateX(-18px)→0` | Card entrances |
+
+Standard easings: `cubic-bezier(.16,.86,.24,1)` for layout motion (`.3s`–`.8s`), `ease` for color/border (`.18s`–`.22s`), `cubic-bezier(.2,.75,.2,1)` for the browse tiles.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+```
+
+## Scrollbars
+
+```css
+::-webkit-scrollbar { width: 6px; height: 6px }
+::-webkit-scrollbar-thumb { background: rgba(176,214,255,.28); border-radius: 9px }
+::-webkit-scrollbar-track { background: transparent }
+```
+
+---
+
+# Responsive behavior
+
+| Breakpoint | Behavior |
+|---|---|
+| `< 720px` | `narrow = true`. Monitoring strip → dropdown. Search field drops its `min-width: 160px`. |
+| `< 768px` | Corner HUD brackets hidden. |
+| Content column within 196px of the right edge | Corner HUD brackets hidden (see formula above). |
+| Control row wraps to a second line | `monTight = true`, monitoring dropdown hides its text label and keeps only the count. Measured with a `ResizeObserver` checking whether children share an `offsetTop`. Requires ~90px of recovered width before reverting (hysteresis). |
+| Scroll > 130px / < 90px | Compact bar in / out. |
+
+---
+
+# Data
+
+Two global data files, loaded as plain scripts.
+
+**`rift-data.js`** → `window.RIFT_DATA`
+
+```ts
+{
+  rifts: Array<{
+    name: string
+    group?: string
+    req?: string
+    restrict?: string
+    chapters: Array<{
+      id: string                    // '1', '2-A', …
+      title: string
+      ends?: boolean
+      rewards: string[]
+      choices: Array<{ text: string, to?: string, diff?: number, note?: string }>
+    }>
+  }>
+  rewards: Array<{
+    rift: string                    // FK → rifts[].name
+    name: string
+    cat?: string                    // drives the filter
+    path: string                    // 'Chapter 1 "…" -> Chapter 2-A "…"'
+  }>
+}
+```
+
+**`dig-data.js`** → `window.DIG_DATA`
+
+```ts
+{
+  sites: Array<{
+    name: string
+    groupLabel?: string
+    dlc?: string
+    precursor?: string
+    req?: string
+    restrict?: string
+    notes?: string
+    chapters: Array<{ id: string, rewards: string[] }>
+  }>
+  rewards: Array<{ site: string, name: string, cat?: string, chapter?: string }>
+  mechanics: string[]
+  groups: string[]
+}
+```
+
+Source: the Stellaris wiki and in-game data, compiled in `uploads/Archaeological Sites - Complete Site, Requirement & Reward Reference.md`.
+
+---
+
+# Assets
+
+| Asset | Notes |
+|---|---|
+| Chakra Petch, IBM Plex Mono | Google Fonts, weights listed above |
+| `galaxy-map.js` | Self-contained procedural starfield web component. Props: `mode` (`galaxy`/`rift`/`dig`), `speed`, `pitch`, `dist`, `ang`, `zoom`, `xoff`, `yoff`, `glow`, `core`. Renders to canvas — port as-is or substitute an equivalent background. |
+| `uploads/bg-scene-1.mp4` | Optional video backdrop. Not bundled (large); swap for your own footage or drop the Video option. |
+
+No icons or image assets — every glyph is a Unicode character (`✚ ⦿ ✕ ◆ ◇ ▸ ▪ ‹ › ▾ ◎ ✦ ⚠ ›`) and every graphic element is CSS.
+
+---
+
+# Files in this bundle
+
+| File | What it is |
+|---|---|
+| `Rift Finder Holo.dc.html` | **Primary reference.** Contains all three layouts and all three filter UIs. The `Component` class at the bottom holds every computed style and all state logic. |
+| `Rift Finder Split.dc.html` | Standalone split-column build, for reference |
+| `rift-data.js` | Astral rift dataset |
+| `dig-data.js` | Dig site dataset |
+| `galaxy-map.js` | Animated backdrop component |
+| `support.js` | Prototype runtime — **scaffolding, not design.** Ignore when porting. |
+
+## Screenshots
+
+`screenshots/` holds one capture per variant, all taken on the rift browse screen:
+
+| File | `layout` | `filterUI` |
+|---|---|---|
+| `layout-grid--filter-menu.png` | Grid | Menu |
+| `layout-grid--filter-one-line.png` | Grid | One line |
+| `layout-grid--filter-chips.png` | Grid | Chips |
+| `layout-split-column--filter-menu.png` | Split column | Menu |
+| `layout-notched-split--filter-menu.png` | Notched split | Menu |
+
+The filter variants are shown against Grid because `filterUI` renders identically in all three layouts. The two split layouts are shown with Menu so the column geometry and the notched folder silhouette read clearly against the galaxy backdrop.
+
+To view a prototype: open the `.dc.html` file directly in a browser. Both are self-contained apart from the sibling `.js` files.
+
+## Where to find things in the source
+
+| What | Where |
+|---|---|
+| Layout switching | `renderVals()` → `lay`, `split`, `notch`, then `homeWrap`, `cardGrid`, `browseGrid`, `cardShell`, `titleStyle` |
+| Notch geometry | `tabCss()`, `wedge()` methods; `chamferEdge`/`chamferFill`/`chamferInner`/`notchTabR`/`notchWedgeL`/`notchWedgeR`/`notchBar` in `renderVals()` |
+| Header notch geometry | `headEdge`/`headFill`/`headCut`/`headTabR`/`headWedgeL`/`headWedgeR`/`headBar` |
+| Filter UI switching | `catItem()` method; `filterMenu`/`filterScroll`/`filterChips`, `catChips`/`catStrip`/`catRows` |
+| Path resolution | `parsePath()`, `steps()` |
+| Copy cleanup | `clean()`, `rewardLine()`, `dispName()`, `branchOf()` |
+| Scroll condense | `bindScroll()` |
+| Control row wrap detection | `bindCtl()` |
+| Monitoring | `isMon()`, `toggleMon()`, `monTab()`, `pinRail()`, `pinBtn()`, `monBtn()` |
+| Button styles | `glassBtn()`, `claimBtn()` |

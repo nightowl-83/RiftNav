@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="https://unpkg.com/react@18.3.1/umd/react.production.min.js" data-resource-id="https://unpkg.com/react@18.3.1/umd/react.production.min.js">
+<meta name="ext-resource-dependency" content="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" data-resource-id="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="_ds/apple-8951750e-090a-4bf4-b94d-984d03ffc612/_ds_bundle.js"></script>
+<script src="rift-data.js"></script>
+<script src="dig-data.js"></script>
+<script src="galaxy-map.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#040a14;color:#e8f2fb;font-family:"IBM Plex Mono",ui-monospace,monospace;-webkit-font-smoothing:antialiased}
+a{color:#8ecbff;text-decoration:none}a:hover{color:#d6ecff}
+::placeholder{color:#5a7893}
+input{font-family:inherit}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:rgba(176,214,255,.28);border-radius:9px}
+::-webkit-scrollbar-track{background:transparent}
+@keyframes hudIn{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes hudFade{0%{opacity:0}100%{opacity:1}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.28}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinR{to{transform:rotate(-360deg)}}
+@keyframes holoScan{0%{transform:translateY(-40vh)}100%{transform:translateY(120vh)}}
+@keyframes holoBreath{0%,100%{transform:scale(1.04)}50%{transform:scale(1.09)}}
+@keyframes retGlow{0%,70%,100%{box-shadow:0 0 12px rgba(255,196,132,.12), inset 0 1px 0 rgba(255,255,255,.16)}84%{box-shadow:0 0 26px rgba(255,196,132,.5), 0 0 0 1px rgba(255,214,170,.45), inset 0 1px 0 rgba(255,255,255,.26)}}
+@keyframes retSwipe{0%,68%{transform:translateX(-130%)}90%,100%{transform:translateX(130%)}}
+@keyframes wipeIn{0%{opacity:0;clip-path:inset(-60% 100% -60% -60%);transform:translateX(-18px)}70%{opacity:.92}99%{clip-path:inset(-200% -200% -200% -200%)}100%{opacity:1;clip-path:none;transform:translateX(0)}}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;overflow-x:hidden;background:#040a14">
+
+<sc-if value="{{ useMap }}" hint-placeholder-val="{{ true }}">
+<x-import component-from-global-scope="galaxy-map" mode="{{ mapMode }}" speed="{{ cam.speed }}" pitch="{{ cam.pitch }}" dist="{{ cam.dist }}" ang="{{ cam.ang }}" zoom="{{ cam.zoom }}" xoff="{{ mapXOff }}" yoff="{{ cam.yOff }}" glow="{{ cam.glow }}" core="{{ cam.core }}" style="position:fixed;inset:0;z-index:0" hint-size="100%,100%"></x-import>
+<div style="position:fixed;top:66px;right:18px;z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:'Space Mono',monospace;pointer-events:none">
+  <sc-if value="{{ ctlOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="pointer-events:auto;width:min(420px,calc(100vw - 36px));box-sizing:border-box;border-radius:14px;padding:16px 18px;background:linear-gradient(160deg, rgba(24,52,80,.72), rgba(6,16,28,.84));backdrop-filter:blur(26px) saturate(145%);-webkit-backdrop-filter:blur(26px) saturate(145%);border:1px solid rgba(176,214,255,.26);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out">
+    <div style="display:grid;grid-template-columns:96px minmax(0,1fr) 52px;gap:8px 12px;align-items:center">
+      <sc-for list="{{ ctlRows }}" as="c" hint-placeholder-count="7">
+        <span style="font-size:9px;letter-spacing:.18em;color:#a8c4dc">{{ c.label }}</span>
+        <input type="range" min="{{ c.min }}" max="{{ c.max }}" step="{{ c.step }}" value="{{ c.val }}" onInput="{{ c.set }}" style="width:100%;accent-color:#ffd9b0;cursor:pointer">
+        <span style="font-size:10px;text-align:right;color:#fff8ef">{{ c.disp }}</span>
+      </sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(176,214,255,.16)">
+      <input value="{{ presetName }}" onInput="{{ onPresetName }}" placeholder="PRESET NAME" style="flex:1;min-width:0;box-sizing:border-box;border-radius:8px;background:rgba(10,24,40,.5);border:1px solid rgba(176,214,255,.24);color:#e8f2fb;font-family:inherit;font-size:10px;letter-spacing:.12em;padding:8px 10px;outline:none">
+      <button onClick="{{ snapPreset }}" style="border-radius:8px;background:linear-gradient(180deg, rgba(255,214,170,.28), rgba(142,203,255,.12));border:1px solid rgba(255,224,190,.55);color:#fff8ef;font-family:inherit;font-size:9px;letter-spacing:.2em;padding:8px 12px;cursor:pointer">SNAPSHOT</button>
+      <button onClick="{{ resetCam }}" style="border-radius:8px;background:transparent;border:1px solid rgba(176,214,255,.26);color:#a8c4dc;font-family:inherit;font-size:9px;letter-spacing:.2em;padding:8px 12px;cursor:pointer">RESET</button>
+    </div>
+    <sc-if value="{{ hasPresets }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:4px;margin-top:10px">
+      <sc-for list="{{ presetRows }}" as="p" hint-placeholder-count="0">
+        <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;background:rgba(8,18,32,.4);border:1px solid rgba(176,214,255,.14)">
+          <span onClick="{{ p.load }}" title="Load" style="font-size:10px;letter-spacing:.1em;color:#e8f2fb;cursor:pointer">{{ p.name }}</span>
+          <span style="flex:1;min-width:0;font-size:8px;color:#6f8ea6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.json }}</span>
+          <span onClick="{{ p.del }}" style="font-size:9px;color:#7f9cb4;cursor:pointer">✕</span>
+        </div>
+      </sc-for>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+        <span style="font-size:8px;letter-spacing:.16em;color:#6f8ea6">CLICK A NAME TO LOAD</span>
+        <button onClick="{{ copyPresets }}" style="border-radius:8px;background:transparent;border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:9px;letter-spacing:.2em;padding:6px 12px;cursor:pointer">{{ copyLabel }}</button>
+      </div>
+    </div>
+    </sc-if>
+  </div>
+  </sc-if>
+</div>
+</sc-if>
+<div style="position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(4,10,20,.72) 0%, rgba(4,10,20,.12) 26%, rgba(4,10,20,.24) 58%, rgba(3,8,16,.86) 100%)"></div>
+<div style="position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(110% 78% at 50% 46%, transparent 34%, rgba(2,7,14,.66) 100%)"></div>
+
+<sc-if value="{{ holoScan }}" hint-placeholder-val="{{ true }}">
+<div style="position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.5;background:repeating-linear-gradient(to bottom, rgba(174,225,255,.05) 0 1px, transparent 1px 4px);mix-blend-mode:screen"></div>
+<div style="position:fixed;left:0;right:0;top:0;height:34vh;z-index:2;pointer-events:none;background:linear-gradient(180deg, transparent, rgba(150,215,255,.07) 70%, rgba(214,238,255,.16));animation:holoScan 11s linear infinite"></div>
+</sc-if>
+
+<sc-if value="{{ cornerBrackets }}" hint-placeholder-val="{{ true }}">
+<div style="{{ cornerHudStyle }}">
+  <div style="position:absolute;right:0;bottom:0;width:120px;height:120px;border-right:1.5px solid rgba(174,225,255,.42);border-bottom:1.5px solid rgba(174,225,255,.42);border-bottom-right-radius:20px"></div>
+  <div style="position:absolute;right:11px;bottom:11px;width:64px;height:64px;border-right:1px solid rgba(255,224,190,.34);border-bottom:1px solid rgba(255,224,190,.34);border-bottom-right-radius:12px"></div>
+  <div style="position:absolute;right:26px;bottom:120px;width:1px;height:52px;background:linear-gradient(180deg, transparent, rgba(174,225,255,.4))"></div>
+  <div style="position:absolute;right:120px;bottom:26px;width:52px;height:1px;background:linear-gradient(90deg, transparent, rgba(174,225,255,.4))"></div>
+  <div style="position:absolute;right:33px;bottom:31px;width:26px;height:26px;border:1px solid rgba(255,224,190,.5);transform:rotate(45deg);box-shadow:0 0 14px rgba(255,214,170,.18)"></div>
+  <div style="position:absolute;right:44px;bottom:42px;width:4px;height:4px;border-radius:999px;background:#ffd9b0;box-shadow:0 0 10px #ffd9b0;animation:blink 2.4s infinite"></div>
+  <div style="position:absolute;right:64px;bottom:64px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.24em;color:rgba(174,225,255,.5);white-space:nowrap">
+    <span>SECTOR GRID</span>
+    <span style="color:rgba(255,217,176,.55)">{{ cornerSig }}</span>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ booting }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;background:rgba(4,10,20,.62);backdrop-filter:blur(26px) saturate(130%);-webkit-backdrop-filter:blur(26px) saturate(130%)">
+  <div style="position:relative;width:min(540px, 88vw);padding:34px 34px 30px;border-radius:18px;background:linear-gradient(160deg, rgba(24,52,80,.5), rgba(6,16,28,.6));border:1px solid rgba(176,214,255,.24);box-shadow:0 30px 90px rgba(0,6,16,.6), inset 0 1px 0 rgba(255,255,255,.16)">
+    <div style="position:absolute;left:-1px;top:-1px;width:26px;height:26px;border-left:1.5px solid rgba(255,224,190,.9);border-top:1.5px solid rgba(255,224,190,.9);border-top-left-radius:18px;pointer-events:none"></div>
+    <div style="position:absolute;right:-1px;bottom:-1px;width:26px;height:26px;border-right:1.5px solid rgba(174,225,255,.9);border-bottom:1.5px solid rgba(174,225,255,.9);border-bottom-right-radius:18px;pointer-events:none"></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+      <div style="width:16px;height:16px;border:1px solid #8ecbff;transform:rotate(45deg);box-shadow:0 0 14px rgba(142,203,255,.8);animation:blink 1.4s infinite"></div>
+      <span style="font-family:'Chakra Petch',sans-serif;font-size:19px;font-weight:700;letter-spacing:.24em;color:#f2f9ff">RIFT NAV</span>
+      <span style="font-size:10px;letter-spacing:.2em;color:#7fa3c0">HOLO v5.0</span>
+    </div>
+    <div style="min-height:150px;display:flex;flex-direction:column;gap:7px">
+      <sc-for list="{{ bootLines }}" as="l" hint-placeholder-count="0">
+        <div style="font-size:11px;letter-spacing:.14em;color:#bcd6ea;animation:hudFade .18s ease-out">› {{ l.t }}</div>
+      </sc-for>
+    </div>
+    <div style="margin-top:20px;height:3px;border-radius:9px;background:rgba(176,214,255,.16);overflow:hidden">
+      <div style="{{ bootBarStyle }}"></div>
+    </div>
+    <div style="margin-top:10px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.2em;color:#7fa3c0">
+      <span>PROJECTING HOLOGRAPHIC GUIDE</span><span style="color:#8ecbff">{{ bootPct }}</span>
+    </div>
+    <sc-if value="{{ bootReady }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:20px;font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:.24em;color:#ffd9b0;animation:blink 1s infinite">LINK ESTABLISHED</div>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<div ref="{{ scrollRef }}" style="position:relative;z-index:3;height:100vh;overflow-y:auto;overflow-x:hidden" data-comment-anchor="2d16638850-div">
+
+<div style="display:flex;align-items:center;gap:20px;height:56px;margin:0 auto;padding:0 34px;position:sticky;top:0;z-index:900;background:linear-gradient(180deg, rgba(10,24,40,.62), rgba(6,14,26,.38));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid rgba(176,214,255,.16);box-shadow:0 12px 40px rgba(0,6,16,.35)" data-comment-anchor="8f2f97ae57-div">
+  <div style="display:flex;align-items:center;gap:10px">
+    <div style="width:13px;height:13px;border:1px solid #8ecbff;transform:rotate(45deg);box-shadow:0 0 10px rgba(142,203,255,.7)"></div>
+    <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:15px;letter-spacing:.18em;color:#f2f9ff">RIFT NAV</span>
+    <span style="font-size:10px;letter-spacing:.22em;color:#7fa3c0">// HOLO DECK</span>
+  </div>
+  <div style="display:flex;gap:18px;font-size:10px;letter-spacing:.16em;color:#7fa3c0">
+    <span>32 RIFTS</span><span>289 CHAPTERS</span><span>71 REWARDS</span>
+  </div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:14px">
+    <button onClick="{{ toggleCtl }}" style="{{ camBtnStyle }}" data-comment-anchor="e431cc6c63-button">{{ ctlLabel }}</button>
+    <div style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)">
+      <a href="Rift%20Finder%20HUD.dc.html" style="font-size:9px;letter-spacing:.18em;padding:6px 12px;border-radius:8px;color:#8ba7bf;text-decoration:none" style-hover="color:#e8f2fb;background:rgba(176,214,255,.1)">CLASSIC</a>
+      <span style="font-size:9px;letter-spacing:.18em;padding:6px 12px;border-radius:8px;color:#fff8ef;background:linear-gradient(180deg, rgba(255,214,170,.24), rgba(142,203,255,.1));border:1px solid rgba(255,224,190,.5)">HOLO</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="width:6px;height:6px;border-radius:999px;background:#ffd9b0;box-shadow:0 0 10px #ffd9b0;animation:blink 2.4s infinite"></span>
+      <span style="font-size:10px;letter-spacing:.2em;color:#ffd9b0">GUIDE ONLINE</span>
+    </div>
+  </div>
+</div>
+
+<sc-if value="{{ monStripAny }}" hint-placeholder-val="{{ false }}">
+<div style="position:sticky;top:56px;z-index:480;width:100%;box-sizing:border-box;padding:12px 34px 0;background:linear-gradient(180deg, rgba(7,17,30,.96), rgba(7,16,28,.9));backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border-bottom:1px solid rgba(176,214,255,.2)">
+  <div style="display:flex;align-items:flex-end;gap:3px;overflow-x:auto">
+    <span style="flex:none;font-size:8px;letter-spacing:.2em;color:#6f8ea6;padding:0 12px 8px 0">MONITORING</span>
+    <sc-for list="{{ monitorTabs }}" as="t" hint-placeholder-count="0">
+      <div style="{{ t.style }}">
+        <span onClick="{{ t.go }}" style="font-size:9px;letter-spacing:.12em;white-space:nowrap;cursor:pointer">{{ t.label }}</span>
+        <span onClick="{{ t.close }}" style="font-size:9px;color:#7f9cb4;cursor:pointer;padding:0 1px" style-hover="color:#ffb87a">✕</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+<sc-if value="{{ monDropAny }}" hint-placeholder-val="{{ false }}">
+<div style="padding:14px 20px 0">
+  <div style="{{ monDropWrap }}">
+    <div onClick="{{ toggleMonMenu }}" style="{{ monDropTrigger }}">
+      <span style="{{ monDropLabel }}">MONITORING</span>
+      <span style="flex:none;font-size:10px;letter-spacing:.14em;color:#ffd9b0">{{ monCount }}</span>
+      <span style="{{ monCaret }}">▾</span>
+    </div>
+    <sc-if value="{{ monMenuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;top:calc(100% + 8px);left:0;right:0;display:flex;flex-direction:column;gap:2px;padding:8px;border-radius:13px;background:linear-gradient(160deg, rgba(24,52,80,.82), rgba(6,16,28,.92));backdrop-filter:blur(26px) saturate(145%);-webkit-backdrop-filter:blur(26px) saturate(145%);border:1px solid rgba(176,214,255,.26);box-shadow:0 26px 70px rgba(0,6,16,.6), inset 0 1px 0 rgba(255,255,255,.16);z-index:620">
+        <sc-for list="{{ monitorTabs }}" as="t" hint-placeholder-count="0">
+          <div style="{{ t.rowStyle }}">
+            <span onClick="{{ t.go }}" style="flex:1;min-width:0;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer">{{ t.label }}</span>
+            <span onClick="{{ t.close }}" style="flex:none;font-size:10px;color:#7f9cb4;cursor:pointer;padding:2px 4px;border-radius:5px" style-hover="color:#ffb87a;background:rgba(255,184,122,.12)">✕</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
+<div style="{{ homeWrap }}">
+  <div style="{{ stickyWrap }}" data-comment-anchor="7c299f1aa1-div">
+  <div style="{{ headEdge }}"><div style="{{ headFill }}"></div><div style="{{ headCut }}"></div><div style="{{ headTabR }}"></div><div style="{{ headWedgeL }}"></div><div style="{{ headWedgeR }}"></div><div style="{{ headBar }}"></div></div>
+  <sc-if value="{{ browseAny }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ backRow }}">
+      <button onClick="{{ goGalaxy }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:8px 15px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹ GALAXY</button>
+    </div>
+  </sc-if>
+  <div style="{{ headRow }}">
+  <div style="{{ titleRow }}">
+  <div style="{{ titleBlock }}" data-comment-anchor="c12c43cc60-div">
+    <h1 style="{{ titleStyle }}">{{ homeTitle }}</h1>
+    <span style="{{ subStyle }}">{{ homeSub }}</span>
+  </div>
+  <sc-if value="{{ browseAny }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ toggleShell }}">
+      <span onClick="{{ browseRifts }}" style="{{ tabRiftStyle }}">ASTRAL RIFTS</span>
+      <span onClick="{{ browseDigs }}" style="{{ tabDigStyle }}">DIG SITES</span>
+    </div>
+  </sc-if>
+  </div>
+
+  <div ref="{{ ctlRef }}" style="{{ ctlRow }}">
+  <div style="{{ searchWrap }}">
+    <input value="{{ q }}" onInput="{{ onQ }}" placeholder="QUERY DESIGNATION…" style="width:100%;height:100%;box-sizing:border-box;border-radius:12px;background:rgba(10,24,40,.5);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(176,214,255,.24);color:#e8f2fb;font-size:12px;letter-spacing:.12em;padding:0 15px;outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)">
+    <sc-if value="{{ hasSearch }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:40;display:flex;flex-direction:column;gap:2px;padding:8px;border-radius:14px;background:linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out">
+        <sc-for list="{{ searchRows }}" as="s" hint-placeholder-count="0">
+          <div onClick="{{ s.pick }}" style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:9px;cursor:pointer;transition:background-color .18s ease" style-hover="background:rgba(176,214,255,.1)">
+            <span style="{{ s.badgeStyle }}">{{ s.type }}</span>
+            <span style="font-size:11px;letter-spacing:.06em;color:#e8f2fb">{{ s.name }}</span>
+            <span style="margin-left:auto;font-size:9px;color:#7f9cb4">{{ s.meta }}</span>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noSearch }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:10px 12px;font-size:10px;letter-spacing:.18em;color:#7f9cb4">NO SIGNATURE MATCHES</div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ hasMonitor }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ monDropWrap }}">
+      <div onClick="{{ toggleMonMenu }}" style="{{ monDropTrigger }}">
+        <span style="{{ monDropLabel }}">MONITORING</span>
+        <span style="flex:none;font-size:10px;letter-spacing:.14em;color:#ffd9b0">{{ monCount }}</span>
+        <span style="{{ monCaret }}">▾</span>
+      </div>
+      <sc-if value="{{ monMenuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:calc(100% + 8px);right:0;min-width:260px;max-width:340px;display:flex;flex-direction:column;gap:2px;padding:8px;border-radius:13px;background:linear-gradient(160deg, rgba(24,52,80,.82), rgba(6,16,28,.92));backdrop-filter:blur(26px) saturate(145%);-webkit-backdrop-filter:blur(26px) saturate(145%);border:1px solid rgba(176,214,255,.26);box-shadow:0 26px 70px rgba(0,6,16,.6), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out;z-index:620">
+          <sc-for list="{{ monitorTabs }}" as="t" hint-placeholder-count="0">
+            <div style="{{ t.rowStyle }}">
+              <span onClick="{{ t.go }}" style="flex:1;min-width:0;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer">{{ t.label }}</span>
+              <span onClick="{{ t.close }}" style="flex:none;font-size:10px;color:#7f9cb4;cursor:pointer;padding:2px 4px;border-radius:5px" style-hover="color:#ffb87a;background:rgba(255,184,122,.12)">✕</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+  <sc-if value="{{ showCatMenu }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ toggleCatMenu }}" style="{{ catTriggerStyle }}">
+      <span style="{{ catValStyle }}">{{ activeCatLabel }}</span>
+      <span style="font-size:9px;color:#ffd9b0">{{ activeCatCount }}</span>
+      <span style="{{ caretStyle }}">▾</span>
+    </div>
+    <sc-if value="{{ hasCatHint }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ clearCat }}" style="order:2;background:transparent;border:none;font-family:inherit;font-size:9px;letter-spacing:.18em;color:#ffb87a;cursor:pointer;padding:0">✕ CLEAR</button>
+    </sc-if>
+    <sc-if value="{{ catOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;top:calc(100% + 9px);right:0;width:min(620px, 100%);display:grid;grid-template-columns:repeat(auto-fill,minmax(184px,1fr));gap:4px;padding:10px;border-radius:14px;background:linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out;z-index:600">
+        <sc-for list="{{ catRows }}" as="c" hint-placeholder-count="8">
+          <div onClick="{{ c.pick }}" style="{{ c.style }}">
+            <span>{{ c.label }}</span>
+            <span style="{{ c.countStyle }}">{{ c.count }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+  </sc-if>
+  </div>
+  </div>
+  <div style="{{ dividerStyle }}"></div>
+
+  </div>
+  
+
+  <sc-if value="{{ browseNone }}" hint-placeholder-val="{{ true }}">
+  <div style="{{ browseGrid }}">
+    <div onClick="{{ browseRifts }}" style="position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:22px;min-height:140px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;animation:wipeIn .55s cubic-bezier(.2,.75,.2,1) both;animation-delay:.36s" style-hover="border-color:rgba(174,225,255,.6);transform:translateY(-2px);box-shadow:0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18)">
+      <div style="position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:1.5px solid rgba(255,224,190,.75);border-top:1.5px solid rgba(255,224,190,.75);border-top-left-radius:14px;pointer-events:none"></div>
+      <div style="font-size:9px;letter-spacing:.22em;color:#8ecbff">BROWSE</div>
+      <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:22px;font-weight:600;letter-spacing:.04em;color:#f6fbff">ASTRAL RIFTS</div>
+      <div style="margin-top:8px;font-size:10px;letter-spacing:.12em;color:#8ba7bf">{{ riftTotal }} SIGNATURES ›</div>
+    </div>
+    <div onClick="{{ browseDigs }}" style="position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:22px;min-height:140px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;animation:wipeIn .55s cubic-bezier(.2,.75,.2,1) both;animation-delay:.43s" style-hover="border-color:rgba(174,225,255,.6);transform:translateY(-2px);box-shadow:0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18)">
+      <div style="position:absolute;right:-1px;bottom:-1px;width:20px;height:20px;border-right:1.5px solid rgba(174,225,255,.7);border-bottom:1.5px solid rgba(174,225,255,.7);border-bottom-right-radius:14px;pointer-events:none"></div>
+      <div style="font-size:9px;letter-spacing:.22em;color:#8ecbff">BROWSE</div>
+      <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:22px;font-weight:600;letter-spacing:.04em;color:#f6fbff">DIG SITES</div>
+      <div style="margin-top:8px;font-size:10px;letter-spacing:.12em;color:#8ba7bf">{{ digTotal }} SITES ›</div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ browseRift }}" hint-placeholder-val="{{ false }}">
+  <sc-if value="{{ filterScroll }}" hint-placeholder-val="{{ false }}">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px">
+    <span style="font-size:9px;letter-spacing:.22em;color:#a8c4dc">REWARD TYPE</span>
+    <span style="flex:1;height:1px;background:rgba(176,214,255,.16)"></span>
+    <sc-if value="{{ hasCatHint }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ clearCat }}" style="background:transparent;border:none;font-family:inherit;font-size:9px;letter-spacing:.18em;color:#ffb87a;cursor:pointer;padding:0">✕ CLEAR FILTER</button>
+    </sc-if>
+  </div>
+  <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:9px;margin-bottom:22px;mask-image:linear-gradient(90deg, #000 0, #000 93%, transparent 100%);-webkit-mask-image:linear-gradient(90deg, #000 0, #000 93%, transparent 100%)">
+    <sc-for list="{{ catStrip }}" as="c" hint-placeholder-count="8">
+      <div onClick="{{ c.pick }}" style="{{ c.style }}">
+        <span>{{ c.label }}</span>
+        <span style="{{ c.countStyle }}">{{ c.count }}</span>
+      </div>
+    </sc-for>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ filterChips }}" hint-placeholder-val="{{ false }}">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+    <span style="font-size:9px;letter-spacing:.22em;color:#a8c4dc">REWARD TYPE</span>
+    <span style="flex:1;height:1px;background:rgba(176,214,255,.16)"></span>
+    <sc-if value="{{ hasCatHint }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ clearCat }}" style="background:transparent;border:none;font-family:inherit;font-size:9px;letter-spacing:.18em;color:#ffb87a;cursor:pointer;padding:0">✕ CLEAR FILTER</button>
+    </sc-if>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px">
+    <sc-for list="{{ catChips }}" as="c" hint-placeholder-count="5">
+      <div onClick="{{ c.pick }}" style="{{ c.style }}">
+        <span>{{ c.label }}</span>
+        <span style="{{ c.countStyle }}">{{ c.count }}</span>
+      </div>
+    </sc-for>
+  </div>
+  </sc-if>
+
+  <div style="{{ cardGrid }}">
+    <sc-for list="{{ riftCards }}" as="c" hint-placeholder-count="9">
+      <div style="{{ c.wrap }}">
+      <div onClick="{{ c.open }}" style="{{ cardShell }}" style-hover="border-color:rgba(174,225,255,.6);box-shadow:-6px 0 0 -3px rgba(255,224,190,.7), 0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18);transform:translateX(9px);z-index:520">
+        <div style="{{ chamferEdge }}"><div style="{{ chamferFill }}"></div><div style="{{ chamferInner }}"></div><div style="{{ notchTabR }}"></div><div style="{{ notchWedgeL }}"></div><div style="{{ notchWedgeR }}"></div><div style="{{ notchBar }}"></div></div>
+        <div style="position:absolute;left:0;top:0;width:30px;height:30px;border-left:1.5px solid rgba(255,224,190,.85);border-top:1.5px solid rgba(255,224,190,.85);border-top-left-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%)"></div>
+        <div style="position:absolute;right:0;bottom:0;width:30px;height:30px;border-right:1.5px solid rgba(174,225,255,.8);border-bottom:1.5px solid rgba(174,225,255,.8);border-bottom-right-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%)"></div>
+        <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px">
+          <span style="width:5px;height:5px;border-radius:9px;background:#8ecbff;box-shadow:0 0 8px #8ecbff"></span>
+          <span style="font-size:9px;letter-spacing:.2em;color:#a8c4dc">{{ c.group }}</span>
+          <span style="margin-left:auto;font-size:9px;letter-spacing:.14em;color:#6f8ea6">{{ c.sig }}</span>
+        </div>
+        <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:19px;font-weight:600;letter-spacing:.03em;line-height:1.15;color:#f6fbff;text-wrap:pretty">{{ c.name }}</div>
+        <div style="margin-top:9px;height:1px;background:rgba(176,214,255,.18)"></div>
+        <div style="margin-top:7px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em">
+          <span style="color:#8ba7bf">{{ c.chapters }}</span>
+          <span style="color:#ffd9b0">{{ c.rewardCount }}</span>
+        </div>
+        </div>
+        <div onClick="{{ c.pin }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ c.tipOff }}" style="{{ c.pinStyle }}">
+          <span style="font-size:19px;line-height:1">{{ c.pinIcon }}</span>
+          <sc-if value="{{ c.tipShown }}" hint-placeholder-val="{{ false }}">
+            <span style="{{ tipStyle }}">{{ c.tipText }}</span>
+          </sc-if>
+        </div>
+      </div>
+      </div>
+    </sc-for>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ browseDig }}" hint-placeholder-val="{{ false }}">
+  <div style="{{ cardGrid }}">
+    <sc-for list="{{ digCards }}" as="c" hint-placeholder-count="6">
+      <div style="{{ c.wrap }}">
+      <div onClick="{{ c.open }}" style="{{ cardShell }}" style-hover="border-color:rgba(174,225,255,.6);box-shadow:-6px 0 0 -3px rgba(255,224,190,.7), 0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18);transform:translateX(9px);z-index:520">
+        <div style="{{ chamferEdge }}"><div style="{{ chamferFill }}"></div><div style="{{ chamferInner }}"></div><div style="{{ notchTabR }}"></div><div style="{{ notchWedgeL }}"></div><div style="{{ notchWedgeR }}"></div><div style="{{ notchBar }}"></div></div>
+        <div style="position:absolute;left:0;top:0;width:30px;height:30px;border-left:1.5px solid rgba(255,224,190,.85);border-top:1.5px solid rgba(255,224,190,.85);border-top-left-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%)"></div>
+        <div style="position:absolute;right:0;bottom:0;width:30px;height:30px;border-right:1.5px solid rgba(174,225,255,.8);border-bottom:1.5px solid rgba(174,225,255,.8);border-bottom-right-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%)"></div>
+        <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px">
+          <span style="width:5px;height:5px;border-radius:9px;background:#7fe0d4;box-shadow:0 0 8px #7fe0d4"></span>
+          <span style="font-size:9px;letter-spacing:.2em;color:#a8c4dc">{{ c.group }}</span>
+          <span style="margin-left:auto;font-size:9px;letter-spacing:.14em;color:#6f8ea6">{{ c.sig }}</span>
+        </div>
+        <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:19px;font-weight:600;letter-spacing:.03em;line-height:1.15;color:#f6fbff;text-wrap:pretty">{{ c.name }}</div>
+        <div style="margin-top:9px;height:1px;background:rgba(176,214,255,.18)"></div>
+        <div style="margin-top:7px;display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.12em">
+          <span style="color:#8ba7bf">{{ c.phases }}</span>
+          <span style="color:#7fe0d4;text-align:right">{{ c.dlc }}</span>
+        </div>
+        </div>
+        <div onClick="{{ c.pin }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ c.tipOff }}" style="{{ c.pinStyle }}">
+          <span style="font-size:19px;line-height:1">{{ c.pinIcon }}</span>
+          <sc-if value="{{ c.tipShown }}" hint-placeholder-val="{{ false }}">
+            <span style="{{ tipStyle }}">{{ c.tipText }}</span>
+          </sc-if>
+        </div>
+      </div>
+      </div>
+    </sc-for>
+  </div>
+  </sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ showDig }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+    <button onClick="{{ close }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 16px;cursor:pointer">‹ ABORT / ALL DIG SITES</button>
+    <button onClick="{{ monitorDig }}" style="{{ monitorDigStyle }}">{{ monitorDigLabel }}</button>
+  </div>
+  <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:8px;text-shadow:0 2px 12px rgba(3,10,20,.9)">DIG SITE LOCKED // ARCHAEOLOGY</div>
+  <h1 style="margin:0;font-family:'Chakra Petch',sans-serif;font-size:44px;font-weight:700;letter-spacing:.04em;color:#f6fbff;text-shadow:0 4px 30px rgba(3,10,20,.9), 0 0 40px rgba(142,203,255,.22);text-wrap:pretty">{{ digName }}</h1>
+  <div style="height:1px;background:linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent);margin:22px 0 26px"></div>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:30px">
+    <div style="flex:1 1 300px;min-width:0;position:relative;border-radius:14px;padding:18px 20px;background:linear-gradient(160deg, rgba(22,48,74,.4), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13)">
+      <div style="position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:1.5px solid rgba(255,224,190,.75);border-top:1.5px solid rgba(255,224,190,.75);border-top-left-radius:14px;pointer-events:none"></div>
+      <div style="font-size:9px;letter-spacing:.2em;color:#7fe0d4;margin-bottom:8px">EXCAVATION DATA</div>
+      <div style="font-size:11px;line-height:1.7;color:#cfe0ef">{{ digReq }}</div>
+      <sc-if value="{{ digHasRestrict }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:9px;font-size:11px;line-height:1.7;color:#ffb87a">⚠ {{ digRestrict }}</div>
+      </sc-if>
+      <sc-if value="{{ digHasNotes }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:9px;font-size:11px;line-height:1.7;color:#9fb8cc">{{ digNotes }}</div>
+      </sc-if>
+    </div>
+    <div style="flex:0 1 220px;position:relative;border-radius:14px;padding:18px 20px;background:linear-gradient(160deg, rgba(22,48,74,.4), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13)">
+      <div style="font-size:9px;letter-spacing:.2em;color:#8ecbff;margin-bottom:10px">SURVEY</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:10px;letter-spacing:.12em;color:#8ba7bf">
+        <div style="display:flex;justify-content:space-between;gap:10px"><span>PHASES</span><span style="color:#f6fbff">{{ digPhases }}</span></div>
+        <div style="display:flex;justify-content:space-between;gap:10px"><span>GROUP</span><span style="color:#f6fbff;text-align:right">{{ digGroup }}</span></div>
+        <div style="display:flex;justify-content:space-between;gap:10px"><span>DLC</span><span style="color:#f6fbff;text-align:right">{{ digDlc }}</span></div>
+        <sc-if value="{{ digHasPrecursor }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;justify-content:space-between;gap:10px"><span>PRECURSOR</span><span style="color:#ffd9b0;text-align:right">{{ digPrecursor }}</span></div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ digHasHeadline }}" hint-placeholder-val="{{ false }}">
+  <div style="margin-bottom:30px">
+    <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:12px">NOTABLE PAYOUTS</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+      <sc-for list="{{ digHeadline }}" as="h" hint-placeholder-count="2">
+        <div style="position:relative;border-radius:13px;padding:14px 16px;background:linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(174,225,255,.24);box-shadow:0 16px 44px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.14)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:8px;letter-spacing:.2em;padding:3px 7px;border-radius:6px;color:#ffd9b0;border:1px solid rgba(255,217,176,.4)">{{ h.cat }}</span>
+            <span style="margin-left:auto;font-size:9px;letter-spacing:.16em;color:#8ba7bf">PHASE {{ h.chapter }}</span>
+          </div>
+          <div style="font-size:12px;line-height:1.6;color:#eaf4ff;text-wrap:pretty">{{ h.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:12px">EXCAVATION PHASES // {{ digPhases }}</div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <sc-for list="{{ digChapters }}" as="ch" hint-placeholder-count="6">
+      <div onClick="{{ ch.toggle }}" style="{{ ch.wrapStyle }}">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="{{ ch.numStyle }}">{{ ch.id }}</div>
+          <div style="flex:1;min-width:0;font-size:11px;letter-spacing:.14em;color:#cfe0ef">{{ ch.summary }}</div>
+          <span style="{{ ch.caretStyle }}">⌄</span>
+        </div>
+        <sc-if value="{{ ch.open }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(176,214,255,.18);display:flex;flex-direction:column;gap:8px">
+            <sc-for list="{{ ch.rewards }}" as="r" hint-placeholder-count="2">
+              <div style="display:flex;gap:10px;font-size:12px;line-height:1.65;color:#eaf4ff">
+                <span style="flex:none;color:#7fe0d4">▪</span>
+                <span style="text-wrap:pretty">{{ r.t }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin-top:26px;position:relative;border-radius:14px;padding:18px 20px;background:linear-gradient(160deg, rgba(22,48,74,.34), rgba(6,16,28,.46));backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(176,214,255,.16)">
+    <div style="font-size:9px;letter-spacing:.2em;color:#8ecbff;margin-bottom:10px">DIG MECHANICS</div>
+    <div style="display:flex;flex-direction:column;gap:7px">
+      <sc-for list="{{ digMechanics }}" as="m" hint-placeholder-count="3">
+        <div style="font-size:11px;line-height:1.7;color:#9fb8cc;text-wrap:pretty">{{ m.t }}</div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showTargets }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+  <button onClick="{{ close }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 16px;cursor:pointer">‹ ABORT / ALL RIFTS</button>
+  <button onClick="{{ monitorRift }}" style="{{ monitorRiftStyle }}">{{ monitorRiftLabel }}</button>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:10px">
+    <div>
+      <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:8px;text-shadow:0 2px 12px rgba(3,10,20,.9)">RIFT LOCKED // {{ riftGroup }}</div>
+      <h1 style="margin:0;font-family:'Chakra Petch',sans-serif;font-size:44px;font-weight:700;letter-spacing:.04em;color:#f6fbff;text-shadow:0 4px 30px rgba(3,10,20,.9), 0 0 40px rgba(142,203,255,.22);text-wrap:pretty">{{ riftName }}</h1>
+    </div>
+    <div style="margin-left:auto;max-width:400px;position:relative;border-radius:14px;padding:16px 18px;background:linear-gradient(160deg, rgba(22,48,74,.4), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13)">
+      <div style="position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:1.5px solid rgba(255,224,190,.75);border-top:1.5px solid rgba(255,224,190,.75);border-top-left-radius:14px;pointer-events:none"></div>
+      <div style="font-size:9px;letter-spacing:.2em;color:#8ecbff;margin-bottom:8px">ACCESS REQUIREMENTS</div>
+      <div style="font-size:11px;line-height:1.7;color:#cfe0ef">{{ riftReq }}</div>
+      <sc-if value="{{ hasRestrict }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:9px;font-size:11px;line-height:1.7;color:#ffb87a">⚠ {{ riftRestrict }}</div>
+      </sc-if>
+    </div>
+  </div>
+  <div style="height:1px;background:linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent);margin:22px 0 26px"></div>
+  <div style="font-size:10px;letter-spacing:.22em;color:#8ecbff;margin-bottom:18px">SELECT TARGET REWARD // {{ rewardCountLabel }}</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(336px,1fr));gap:18px">
+    <sc-for list="{{ rewardCards }}" as="r" hint-placeholder-count="6">
+      <div onClick="{{ r.open }}" style="position:relative;border-radius:16px;background:linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14);padding:24px;min-height:194px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease" style-hover="border-color:rgba(174,225,255,.62);box-shadow:0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2);transform:translateY(-2px)">
+        <div style="position:absolute;left:-1px;top:-1px;width:22px;height:22px;border-left:1.5px solid rgba(255,224,190,.8);border-top:1.5px solid rgba(255,224,190,.8);border-top-left-radius:16px;pointer-events:none"></div>
+        <div style="position:absolute;right:-1px;top:-1px;width:22px;height:22px;border-right:1.5px solid rgba(174,225,255,.6);border-top:1.5px solid rgba(174,225,255,.6);border-top-right-radius:16px;pointer-events:none"></div>
+        <div style="position:absolute;left:-1px;bottom:-1px;width:22px;height:22px;border-left:1.5px solid rgba(174,225,255,.6);border-bottom:1.5px solid rgba(174,225,255,.6);border-bottom-left-radius:16px;pointer-events:none"></div>
+        <div style="position:absolute;right:-1px;bottom:-1px;width:22px;height:22px;border-right:1.5px solid rgba(255,224,190,.8);border-bottom:1.5px solid rgba(255,224,190,.8);border-bottom-right-radius:16px;pointer-events:none"></div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:9px;letter-spacing:.2em;color:#8ecbff">{{ r.cat }}</span>
+          <span style="margin-left:auto;font-size:9px;letter-spacing:.14em;color:#6f8ea6">{{ r.code }}</span>
+        </div>
+        <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:26px;font-weight:600;letter-spacing:.01em;line-height:1.2;color:#f6fbff;text-wrap:pretty">{{ r.name }}</div>
+        <div style="margin-top:16px;display:flex;align-items:center;gap:12px">
+          <div style="flex:1;height:3px;border-radius:9px;background:rgba(176,214,255,.16);overflow:hidden">
+            <div style="{{ r.barStyle }}"></div>
+          </div>
+          <span style="font-size:10px;letter-spacing:.12em;color:#a8c4dc;white-space:nowrap">{{ r.meta }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showRead }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1460px;margin:0 auto;display:flex;flex-wrap:wrap;gap:22px;padding:28px 34px 96px;align-items:flex-start;animation:hudFade .35s ease-out">
+
+  <div style="{{ sideStyle }}">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span style="font-family:'Chakra Petch',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;color:#8ecbff">EVENT LOG</span>
+      <span style="flex:1;height:1px;background:rgba(176,214,255,.22)"></span>
+    </div>
+
+    <div style="max-height:calc(100vh - 208px);overflow:auto;padding-right:4px">
+      <sc-for list="{{ rail }}" as="t" hint-placeholder-count="7">
+        <div style="{{ t.wrapStyle }}">
+          <div onClick="{{ t.go }}" style="display:flex;gap:10px;align-items:baseline;padding:11px 13px;cursor:pointer">
+            <span style="{{ t.numStyle }}">{{ t.n }}</span>
+            <div style="flex:1;min-width:0">
+              <div style="{{ t.titleStyle }}">{{ t.title }}</div>
+              <div style="margin-top:4px;font-size:10px;line-height:1.5;color:#8ba7bf">{{ t.pick }}</div>
+            </div>
+          </div>
+          <sc-if value="{{ t.isOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 13px 13px 36px;display:flex;flex-direction:column;gap:6px;animation:hudFade .2s ease-out">
+              <sc-for list="{{ t.choices }}" as="ch" hint-placeholder-count="2">
+                <div style="{{ ch.style }}"><span style="{{ ch.markStyle }}">{{ ch.mark }}</span><span>{{ ch.text }}</span></div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+      <div onClick="{{ railFinal.go }}" style="{{ railFinal.wrapStyle }}">
+        <div style="{{ railFinal.labelStyle }}">◆ CLAIM REWARD</div>
+        <div style="{{ railFinal.titleStyle }}">{{ railFinal.title }}</div>
+      </div>
+    </div>
+    <button onClick="{{ close }}" style="margin-top:12px;width:100%;border-radius:11px;background:rgba(30,14,10,.4);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,150,110,.34);color:#ffb87a;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:11px 0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:border-color .22s ease,color .22s ease,background-color .22s ease" style-hover="border-color:rgba(255,160,120,.7);color:#ffd0a8;background:rgba(52,20,12,.5)">✕ ABORT RIFT</button>
+  </div>
+
+  <div style="flex:100 1 470px;min-width:0">
+    <sc-if value="{{ rc.isStep }}" hint-placeholder-val="{{ true }}">
+      <div style="position:relative;border-radius:18px;background:linear-gradient(165deg, rgba(24,52,80,.5), rgba(6,16,28,.62));backdrop-filter:blur(26px) saturate(145%);-webkit-backdrop-filter:blur(26px) saturate(145%);border:1px solid rgba(176,214,255,.22);box-shadow:0 30px 80px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.16);padding:36px 38px 38px">
+        <div style="position:absolute;left:-1px;top:-1px;width:28px;height:28px;border-left:1.5px solid rgba(255,224,190,.85);border-top:1.5px solid rgba(255,224,190,.85);border-top-left-radius:18px;pointer-events:none;box-shadow:-2px -2px 16px rgba(255,206,150,.18)"></div>
+        <div style="position:absolute;right:-1px;top:-1px;width:28px;height:28px;border-right:1.5px solid rgba(174,225,255,.7);border-top:1.5px solid rgba(174,225,255,.7);border-top-right-radius:18px;pointer-events:none"></div>
+        <div style="position:absolute;left:-1px;bottom:-1px;width:28px;height:28px;border-left:1.5px solid rgba(174,225,255,.7);border-bottom:1.5px solid rgba(174,225,255,.7);border-bottom-left-radius:18px;pointer-events:none"></div>
+        <div style="position:absolute;right:-1px;bottom:-1px;width:28px;height:28px;border-right:1.5px solid rgba(255,224,190,.85);border-bottom:1.5px solid rgba(255,224,190,.85);border-bottom-right-radius:18px;pointer-events:none;box-shadow:2px 2px 16px rgba(255,206,150,.18)"></div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span style="font-size:10px;letter-spacing:.22em;color:#8ecbff">{{ rc.stepLabel }}</span>
+          <span style="flex:1;min-width:40px;height:1px;background:rgba(176,214,255,.22)"></span>
+          <sc-if value="{{ rc.hasRoute }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:9px;letter-spacing:.16em;color:#ffd0a0;border:1px solid rgba(255,208,160,.45);border-radius:9px;padding:5px 11px;background:rgba(255,190,130,.08)">{{ rc.route }}</span>
+          </sc-if>
+        </div>
+        <h2 style="margin:18px 0 0;font-family:'Chakra Petch',sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;line-height:1.1;color:#f6fbff;text-shadow:0 3px 24px rgba(3,10,20,.7);text-wrap:pretty">{{ rc.title }}</h2>
+        <div style="margin-top:28px;position:relative;border-radius:14px;border:1px solid rgba(174,225,255,.45);background:linear-gradient(160deg, rgba(142,203,255,.16), rgba(142,203,255,.05));box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 0 30px rgba(142,203,255,.1);padding:22px 24px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:11px">
+            <span style="width:5px;height:5px;border-radius:9px;background:#8ecbff;box-shadow:0 0 8px #8ecbff;animation:blink 2s infinite"></span>
+            <span style="font-size:10px;letter-spacing:.22em;color:#a8d8ff">{{ rc.pickLabel }}</span>
+          </div>
+          <div style="font-family:'Chakra Petch',sans-serif;font-size:23px;font-weight:500;line-height:1.35;color:#ffffff;text-wrap:pretty">{{ rc.choice }}</div>
+          <sc-if value="{{ rc.hasNote }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:13px;font-size:11px;line-height:1.75;color:#cfe0ef">{{ rc.note }}</div>
+          </sc-if>
+        </div>
+        <sc-if value="{{ rc.hasAlts }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:26px">
+            <div style="font-size:10px;letter-spacing:.22em;color:#c9946a;margin-bottom:11px">OTHER OPTIONS ON SCREEN // DO NOT SELECT</div>
+            <sc-for list="{{ rc.alts }}" as="a" hint-placeholder-count="2">
+              <div style="display:flex;gap:10px;font-size:13px;line-height:1.7;color:#ffc79a;border-left:2px solid rgba(255,184,122,.5);padding:3px 0 3px 13px;margin-bottom:6px"><span style="color:#ffb87a">✕</span><span>{{ a.t }}</span></div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ rc.hasEntering }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:26px;border-top:1px solid rgba(176,214,255,.18);padding-top:19px">
+            <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:11px">SALVAGE ACQUIRED AT THIS STEP</div>
+            <sc-for list="{{ rc.entering }}" as="e" hint-placeholder-count="2">
+              <div style="font-size:12px;line-height:1.8;color:#cfe0ef">▸ {{ e.t }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ rc.isFinal }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;border-radius:18px;background:radial-gradient(120% 100% at 50% 0%, rgba(142,203,255,.24), rgba(6,16,28,.66) 62%);backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);border:1px solid rgba(174,225,255,.5);box-shadow:0 30px 90px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.22), 0 0 50px rgba(142,203,255,.14);padding:46px 38px">
+        <div style="position:absolute;left:-1px;top:-1px;width:30px;height:30px;border-left:1.5px solid rgba(255,224,190,.95);border-top:1.5px solid rgba(255,224,190,.95);border-top-left-radius:18px;pointer-events:none;box-shadow:-2px -2px 20px rgba(255,206,150,.3)"></div>
+        <div style="position:absolute;right:-1px;bottom:-1px;width:30px;height:30px;border-right:1.5px solid rgba(255,224,190,.95);border-bottom:1.5px solid rgba(255,224,190,.95);border-bottom-right-radius:18px;pointer-events:none;box-shadow:2px 2px 20px rgba(255,206,150,.3)"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:6px;height:6px;border-radius:9px;background:#ffd9b0;box-shadow:0 0 10px #ffd9b0;animation:blink 1.6s infinite"></span>
+          <span style="font-size:10px;letter-spacing:.24em;color:#ffd9b0">RIFT CLOSED // PAYLOAD SECURED</span>
+        </div>
+        <h2 style="margin:20px 0 0;font-family:'Chakra Petch',sans-serif;font-size:44px;font-weight:700;letter-spacing:.01em;line-height:1.08;color:#ffffff;text-shadow:0 4px 30px rgba(3,10,20,.7), 0 0 40px rgba(142,203,255,.3);text-wrap:pretty">{{ rewardName }}</h2>
+        <div style="margin-top:16px;font-size:11px;letter-spacing:.12em;color:#a8c4dc">{{ finalChapterLabel }} // {{ finalNote }}</div>
+        <sc-if value="{{ hasAlsoFinal }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:26px;border-top:1px solid rgba(176,214,255,.22);padding-top:19px">
+            <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:11px">ALSO POSSIBLE FROM THIS ENDING, DEPENDING ON EARLIER CHOICES</div>
+            <sc-for list="{{ alsoFinal }}" as="f" hint-placeholder-count="2">
+              <div style="font-size:12px;line-height:1.8;color:#cfe0ef">▸ {{ f.t }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap">
+      <button onClick="{{ prev }}" style="{{ prevStyle }}">‹ PREV</button>
+      <button onClick="{{ next }}" style="{{ nextStyle }}">{{ nextLabel }}</button>
+      <span style="margin-left:auto;font-size:10px;letter-spacing:.16em;color:#8ba7bf">{{ traceLabel }}</span>
+    </div>
+  </div>
+
+  <div style="position:sticky;top:84px;flex:1 1 262px;min-width:0;max-width:302px;display:flex;flex-direction:column;gap:18px">
+    <div style="position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(24,52,80,.46), rgba(6,16,28,.56));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 20px 56px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14);padding:18px">
+      <div style="position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:1.5px solid rgba(255,224,190,.8);border-top:1.5px solid rgba(255,224,190,.8);border-top-left-radius:14px;pointer-events:none"></div>
+      <div style="position:absolute;right:-1px;bottom:-1px;width:20px;height:20px;border-right:1.5px solid rgba(174,225,255,.7);border-bottom:1.5px solid rgba(174,225,255,.7);border-bottom-right-radius:14px;pointer-events:none"></div>
+      <div style="font-size:9px;letter-spacing:.22em;color:#8ecbff;margin-bottom:11px">TARGET INFORMATION</div>
+      <div style="font-family:'Chakra Petch',sans-serif;font-size:17px;font-weight:600;line-height:1.25;color:#f6fbff;text-wrap:pretty">{{ rewardName }}</div>
+      <div style="margin-top:7px;font-size:9px;letter-spacing:.18em;color:#a8c4dc">{{ rewardCat }} // {{ riftName }}</div>
+      <div style="margin:16px 0 8px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;color:#a8c4dc">
+        <span>PROGRESS</span><span style="color:#ffd9b0">{{ progressLabel }}</span>
+      </div>
+      <div style="height:4px;border-radius:9px;background:rgba(176,214,255,.16);overflow:hidden">
+        <div style="{{ progressStyle }}"></div>
+      </div>
+      <button onClick="{{ back }}" style="position:relative;overflow:hidden;margin-top:18px;width:100%;border-radius:10px;background:linear-gradient(180deg, rgba(255,214,170,.2), rgba(255,190,130,.06));border:1px solid rgba(255,224,190,.62);color:#ffe6c8;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:11px 0;cursor:pointer;animation:retGlow 7s ease-in-out infinite;transition:border-color .22s ease,color .22s ease" style-hover="border-color:rgba(255,236,214,.92);color:#fff8ef">
+        <span style="position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;background:linear-gradient(105deg, transparent 0%, rgba(255,224,190,.06) 34%, rgba(255,238,216,.36) 50%, rgba(255,224,190,.06) 66%, transparent 100%);animation:retSwipe 7s ease-in-out infinite"></span>
+        <span style="position:relative">RETARGET</span>
+      </button>
+    </div>
+
+    <div style="position:relative;height:186px;border-radius:14px;border:1px solid rgba(176,214,255,.18);background:radial-gradient(80% 80% at 50% 50%, rgba(142,203,255,.16), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;overflow:hidden">
+      <div style="position:absolute;width:152px;height:152px;border:1px solid rgba(174,225,255,.3);border-radius:999px"></div>
+      <div style="position:absolute;width:114px;height:114px;border:1px dashed rgba(255,224,190,.4);border-radius:999px;animation:spin 24s linear infinite"></div>
+      <div style="position:absolute;width:74px;height:74px;border:1px solid rgba(174,225,255,.5);border-top-color:transparent;border-radius:999px;animation:spinR 9s linear infinite"></div>
+      <div style="position:absolute;width:152px;height:1px;background:linear-gradient(90deg, transparent, rgba(174,225,255,.45), transparent)"></div>
+      <div style="position:absolute;width:1px;height:152px;background:linear-gradient(180deg, transparent, rgba(174,225,255,.45), transparent)"></div>
+      <div style="position:relative;text-align:center">
+        <div style="font-family:'Chakra Petch',sans-serif;font-size:30px;font-weight:700;color:#f6fbff;line-height:1">{{ stepNum }}</div>
+        <div style="font-size:9px;letter-spacing:.2em;color:#ffd9b0;margin-top:3px">{{ stepOf }}</div>
+      </div>
+      <div style="position:absolute;left:12px;bottom:9px;font-size:8px;letter-spacing:.16em;color:#8ba7bf">RIFT TRACE ACTIVE</div>
+    </div>
+
+    <div style="position:relative;border-radius:14px;background:rgba(8,18,32,.5);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.11);padding:18px">
+      <div style="position:absolute;right:-1px;top:-1px;width:20px;height:20px;border-right:1.5px solid rgba(255,224,190,.7);border-top:1.5px solid rgba(255,224,190,.7);border-top-right-radius:14px;pointer-events:none"></div>
+      <div style="font-size:9px;letter-spacing:.22em;color:#8ecbff;margin-bottom:11px">MISSION PARAMETERS</div>
+      <div style="font-size:10px;line-height:1.75;color:#cfe0ef">{{ riftReq }}</div>
+      <sc-if value="{{ hasRestrict }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:11px;font-size:10px;line-height:1.75;color:#ffb87a">⚠ {{ riftRestrict }}</div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<div style="display:flex;align-items:center;gap:16px;height:34px;padding:0 34px;border-top:1px solid rgba(176,214,255,.12);font-size:9px;letter-spacing:.18em;color:#7f9cb4;background:rgba(4,10,20,.55);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);position:fixed;left:0;right:0;bottom:0;z-index:880" data-comment-anchor="b696c1d46c-div">
+  <span>ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0</span>
+  <span style="margin-left:auto">{{ statusLine }}</span>
+</div>
+
+</div>
+</div>
+
+<sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+<div style="{{ toastStyle }}">
+  <span style="{{ toastDotStyle }}"></span>
+  <span style="font-size:10px;letter-spacing:.16em;color:#f2f9ff">{{ toastText }}</span>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Split column&quot;,&quot;options&quot;:[&quot;Grid&quot;,&quot;Split column&quot;,&quot;Notched split&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;filterUI&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Menu&quot;,&quot;options&quot;:[&quot;Menu&quot;,&quot;One line&quot;,&quot;Chips&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home filters&quot;},&quot;holoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;cornerBrackets&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;}}">
+class Component extends DCLogic {
+  state = { rift: null, reward: null, cur: 0, railOpen: {}, q: '', boot: 0, cat: 'ALL', catOpen: false, browse: null, dig: null, cam: null, ctlOpen: false, presetName: '', presets: null, copied: false, monitored: [], condensed: false, narrow: false, monMenuOpen: false, tip: '', toastText: '', toastAdd: true, progress: {} };
+
+  componentDidMount() {
+    if (this._rz) return;
+    this._rz = () => {
+      const n = window.innerWidth < 720;
+      const patch = {};
+      if (n !== !!this.state.narrow) patch.narrow = n;
+      if (window.innerWidth !== this.state.vw) patch.vw = window.innerWidth;
+      if (Object.keys(patch).length) this.setState(patch);
+    };
+    window.addEventListener('resize', this._rz, { passive: true });
+    this._rz();
+  }
+  bindCtl(el) {
+    if (!el || this._ctl === el) return;
+    this._ctl = el;
+    if (this._ro) this._ro.disconnect();
+    this._ro = new ResizeObserver(() => {
+      const tight = !!this.state.monTight;
+      // the row wraps rather than overflows, so detect a second flex line
+      const wrapped = new Set([].map.call(el.children, c => c.offsetTop)).size > 1;
+      if (!tight && wrapped) { this._tightAt = el.clientWidth; this.setState({ monTight: true }); }
+      else if (tight && el.clientWidth > (this._tightAt || 0) + 90) this.setState({ monTight: false });
+    });
+    this._ro.observe(el);
+  }
+  bindScroll(el) {
+    if (!el || this._el === el) return;
+    if (this._el && this._sc) this._el.removeEventListener('scroll', this._sc);
+    this._el = el;
+    this._sc = () => {
+      const on = el.scrollTop > 70;
+      if (on !== !!this.state.condensed) this.setState({ condensed: on });
+    };
+    el.addEventListener('scroll', this._sc, { passive: true });
+  }
+  componentWillUnmount() {
+    if (this._el && this._sc) this._el.removeEventListener('scroll', this._sc);
+    if (this._rz) window.removeEventListener('resize', this._rz);
+    if (this._ro) this._ro.disconnect();
+    clearTimeout(this._tt);
+  }
+
+  isMon(type, name) { return (this.state.monitored || []).some(m => m.type === type && m.name === name); }
+  toggleMon(type, name) {
+    const list = this.state.monitored || [], on = this.isMon(type, name);
+    this.set({ monitored: on ? list.filter(m => !(m.type === type && m.name === name)) : list.concat([{ type, name }]) });
+    this.toast(on ? 'REMOVED FROM MONITORING // ' + name.toUpperCase() : 'NOW MONITORING // ' + name.toUpperCase(), !on);
+  }
+  toast(text, add) {
+    clearTimeout(this._tt);
+    this.set({ toastText: text, toastAdd: !!add });
+    this._tt = setTimeout(() => this.set({ toastText: '' }), 2600);
+  }
+  tabCss(head, pos, drop) {
+    const r = head ? 15 : 13;
+    return 'position:absolute;top:0;height:24px;box-sizing:border-box;' + pos + ';background:none;'
+      + 'border:1px solid rgba(176,214,255,.26);border-bottom:none;border-' + drop + ':none;'
+      + 'border-radius:' + (drop === 'right' ? r + 'px 4px 0 0' : '4px ' + r + 'px 0 0') + ';z-index:1;'
+      + 'box-shadow:inset 0 1px 0 rgba(255,255,255,.13)';
+  }
+  wedge(head, pos, right) {
+    return 'position:absolute;top:0;width:12px;height:24px;' + pos + ';'
+      + 'clip-path:' + (right ? 'polygon(100% 0, 100% 100%, 0 100%)' : 'polygon(0 0, 100% 100%, 0 100%)') + ';'
+      + 'background-image:linear-gradient(' + (right ? '116.57deg' : '63.43deg')
+      + ', transparent 0 9.5px, rgba(176,214,255,.26) 9.5px 10.7px, transparent 10.7px);z-index:1';
+  }
+  pinRail(on, split, notch) {
+    return 'flex:none;position:relative;align-self:stretch;display:flex;align-items:center;justify-content:center;cursor:pointer;'
+      + 'width:' + (split ? '40px' : '56px') + ';margin:' + (notch ? '-28px' : '-14px') + ' -16px -14px 14px;border-radius:0 13px 13px 0;'
+      + 'border-left:1px solid rgba(176,214,255,' + (on ? '.34' : '.16') + ');transition:background-color .2s ease,color .2s ease,border-color .2s ease;'
+      + (on ? 'background:linear-gradient(180deg, rgba(255,214,170,.22), rgba(255,196,132,.09));color:#ffd9b0'
+        : 'background:rgba(8,18,32,' + (notch ? '.16' : '.34') + ');color:#7f9cb4');
+  }
+  monBtn(on) {
+    return 'display:inline-flex;align-items:center;gap:8px;border-radius:10px;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 15px;cursor:pointer;transition:border-color .2s ease,color .2s ease,background-color .2s ease;'
+      + (on ? 'background:linear-gradient(180deg, rgba(255,214,170,.26), rgba(142,203,255,.1));border:1px solid rgba(255,224,190,.6);color:#fff8ef'
+        : 'background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff');
+  }
+  pinBtn(on) {
+    return 'flex:none;display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;margin:-3px -4px -3px 6px;border-radius:6px;font-size:11px;line-height:1;cursor:pointer;transition:color .18s ease,background-color .18s ease,border-color .18s ease;'
+      + (on ? 'color:#ffd9b0;border:1px solid rgba(255,224,190,.55);background:rgba(255,214,170,.16)'
+        : 'color:#7f9cb4;border:1px solid rgba(176,214,255,.24);background:transparent');
+  }
+  monTab(on) {
+    return 'flex:none;display:flex;align-items:center;gap:8px;padding:' + (on ? '8px 12px 9px' : '6px 12px 7px')
+      + ';border-radius:7px 7px 0 0;margin-bottom:-1px;border:1px solid rgba(176,214,255,' + (on ? '.3' : '.16') + ');border-bottom-color:'
+      + (on ? 'transparent' : 'rgba(176,214,255,.26)') + ';background:' + (on ? 'rgba(20,44,70,.72)' : 'rgba(8,18,32,.4)')
+      + ';color:' + (on ? '#fff8ef' : '#8ba7bf') + ';transition:background-color .2s ease,color .2s ease,padding .2s ease';
+  }
+
+  CAM0 = { pitch: 0.5, dist: 2.6, ang: 0, zoom: 1.7, yOff: -0.06, glow: 1.4, core: 0.35, speed: 1 };
+  CTL = [
+    ['pitch', 'TILT', -1.5708, 1.5708, 0.01, v => Math.round(v * 57.2958) + '°'],
+    ['dist', 'DISTANCE', 1.2, 12, 0.1, v => v.toFixed(1)],
+    ['ang', 'ANGLE', -3.1416, 3.1416, 0.01, v => Math.round(v * 57.2958) + '°'],
+    ['zoom', 'ZOOM', 0.3, 2.5, 0.01, v => v.toFixed(2) + '×'],
+    ['yOff', 'CENTRE Y', -0.4, 0.4, 0.005, v => (v * 100).toFixed(1) + '%'],
+    ['speed', 'MAP SPEED', 0, 6, 0.1, v => v.toFixed(1) + '×'],
+    ['glow', 'CORE GLOW', 0, 3, 0.05, v => v.toFixed(2)],
+    ['core', 'CORE STARS', 0, 0.8, 0.01, v => Math.round(v * 100) + '%']
+  ];
+  camStore() { try { return JSON.parse(localStorage.getItem('rf-holo-cam') || 'null'); } catch (e) { return null; } }
+  setCam(patch) { const cam = Object.assign({}, this.CAM0, this.camStore() || {}, this.state.cam || {}, patch); localStorage.setItem('rf-holo-cam', JSON.stringify(cam)); this.set({ cam }); }
+  setPresets(presets) { localStorage.setItem('rf-holo-presets', JSON.stringify(presets)); this.set({ presets }); }
+
+  CHAMFER = 'polygon(14px 0, 34% 0, calc(34% + 15px) 15px, calc(100% - 16px) 15px, 100% 31px,'
+    + ' 100% calc(100% - 15px), calc(100% - 15px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px)';
+  HEAD_CLIP = 'polygon(20px 0, calc(100% - 44px) 0, calc(100% - 26px) 18px, 100% 18px, 100% 100%, 20px 100%, 0 calc(100% - 20px), 0 20px)';
+  NOTCH = 'polygon(0 0, 32% 0, calc(32% + 12px) 24px, calc(86% - 12px) 24px, 86% 0, 100% 0, 100% 100%, 0 100%)';
+
+  get digData() { return (typeof window !== 'undefined' && window.DIG_DATA) || { sites: [], rewards: [], mechanics: [], groups: [] }; }
+  get DIG_SITES() { return this.digData.sites.map(s => s.name); }
+  digBy(n) { return this.digData.sites.find(s => s.name === n) || null; }
+  digRewardsFor(n) { return this.digData.rewards.filter(r => r.site === n); }
+
+  tabStyle(on, tight) {
+    return 'white-space:nowrap;text-align:center;font-size:' + (tight ? '8px' : '9px') + ';letter-spacing:' + (tight ? '.13em' : '.18em') + ';padding:' + (tight ? '5px 8px' : '6px 12px') + ';border-radius:8px;cursor:pointer;user-select:none;transition:color .2s ease,background-color .2s ease;'
+      + (on ? 'color:#fff8ef;background:linear-gradient(180deg, rgba(255,214,170,.24), rgba(142,203,255,.1));border:1px solid rgba(255,224,190,.5)'
+        : 'color:#8ba7bf;border:1px solid transparent');
+  }
+
+  BOOT = [
+    'POWER ON SELF TEST ......... OK',
+    'OBSERVATION DECK FEED ...... LIVE',
+    'ASTRAL PLANE TELEMETRY ..... OK',
+    'RIFT INDEX 32 / CHAPTERS 289',
+    'REWARD MANIFEST 71 ENTRIES',
+    'GUIDE PROJECTION ........... OK'
+  ];
+
+  componentDidMount() {
+    const v = this.vid;
+    if (v) {
+      v.muted = true; v.loop = false; v.playsInline = true;
+      // First pass plays from 0; every loop after that restarts at 2s.
+      v.onended = () => { v.currentTime = 2; const r = v.play(); if (r && r.catch) r.catch(() => {}); };
+      const p = v.play(); if (p && p.catch) p.catch(() => {});
+    }
+    if (this.props.skipBoot) { this.setState({ boot: this.BOOT.length + 2 }); return; }
+    this.timers = [];
+    for (let i = 1; i <= this.BOOT.length + 2; i++) {
+      this.timers.push(setTimeout(() => this.setState({ boot: i }), 170 * i + (i > this.BOOT.length ? 220 : 0)));
+    }
+  }
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); }
+
+  get data() { return (typeof window !== 'undefined' && window.RIFT_DATA) || { rifts: [], rewards: [] }; }
+  set(p) { this.setState(p); }
+  riftBy(n) { return this.data.rifts.find(r => r.name === n) || null; }
+  rewardsFor(n) { return this.data.rewards.filter(r => r.rift === n); }
+  code(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
+
+  parsePath(path) {
+    if (!path) return [];
+    return path.split('->').map(seg => {
+      const s = seg.trim().replace(/^[Cc]hapter\s+/, '');
+      const idRe = /(?:chapter\s+)?([0-9]+(?:-[A-Za-z])?)/i;
+      const q = s.match(/"([^"]*)"/);
+      const head = q ? s.slice(0, s.indexOf('"')) : s;
+      const idm = head.match(idRe) || s.match(idRe);
+      const id = idm ? idm[1] : head.trim().split(/\s+/)[0];
+      const extra = q ? s.slice(s.indexOf('"') + q[1].length + 2).trim() : '';
+      return { chapter: id, choice: q ? q[1] : '', extra };
+    });
+  }
+
+  steps(rift, reward) {
+    if (!rift || !reward) return [];
+    return this.parsePath(reward.path).map((p, i) => {
+      const ch = rift.chapters.find(c => c.id === p.chapter) || null;
+      let choice = null;
+      if (ch && p.choice) {
+        choice = ch.choices.find(c => c.text === p.choice)
+          || ch.choices.find(c => c.text.toLowerCase().startsWith(p.choice.toLowerCase().slice(0, 18))) || null;
+      }
+      if (!choice && ch && ch.choices.length === 1) choice = ch.choices[0];
+      const alts = ch ? ch.choices.filter(c => !choice || c.text !== choice.text) : [];
+      return {
+        i, chapter: p.chapter, title: ch ? ch.title : '',
+        choice: p.choice || (ch && ch.choices.length === 1 ? ch.choices[0].text : '')
+          || (ch && ch.ends ? 'No option to pick — this event closes the rift' : 'Any option — just reach this event'),
+        anyRoute: !p.choice && !!ch && ch.choices.length !== 1,
+        diff: choice ? choice.diff : null,
+        note: [choice && choice.note, p.extra].filter(Boolean).join(' · '),
+        entering: ch ? ch.rewards : [], alts: alts.map(a => a.text), ends: ch ? ch.ends : false,
+        to: choice ? choice.to : null
+      };
+    });
+  }
+
+  clean(note, routeName) {
+    if (!note) return '';
+    let t = String(note);
+    t = t.replace(/\(?\s*sets you on the\s+\S+\s+branch\s*\)?/gi, '');
+    t = t.replace(/\bchapters?\s+[0-9]+[A-Za-z]*(?:\s*\/\s*[0-9]+[A-Za-z]*)*\s+by any route\b/gi, 'this step is reachable by any route');
+    t = t.replace(/\b(?:from|via|through|at|in|to)\s+chapters?\s+[0-9]+[A-Za-z]*(?:\s*\/\s*[0-9]+[A-Za-z]*)*/gi, 'from an earlier step');
+    t = t.replace(/\bchapters?\s+[0-9]+[A-Za-z]*(?:(?:\s*(?:\/|and|,|or)\s*)(?:chapter\s+)?[0-9]+[A-Za-z]*)*/gi, 'an earlier step');
+    t = t.replace(/\b[0-9]+-[A-Z]\b/g, routeName ? routeName + ' route' : 'the other route');
+    return t.replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').replace(/^\s*[·,;]\s*/, '').trim();
+  }
+
+  dispName(name) {
+    const t = String(name || '').replace(/^\s*chapter\s+[0-9]+[A-Za-z-]*\s+/i, '').trim();
+    return t.charAt(0).toUpperCase() + t.slice(1);
+  }
+
+  branchOf(text) {
+    const m = String(text).match(/^([A-Z][A-Za-z']*(?:\s+[A-Z][A-Za-z']*)*)\s*(?:\+|base\b|route\b)/);
+    return m ? m[1] : null;
+  }
+
+  rewardLine(text, chosenBranch, targetName) {
+    let t = String(text).trim();
+    if (targetName && t.toLowerCase() === String(targetName).toLowerCase()) return null;
+    const b = this.branchOf(t);
+    if (b && chosenBranch && b.toLowerCase() !== chosenBranch.toLowerCase()) return null;
+    const hadChapter = /^chapter\s+[0-9]+[A-Za-z-]*\s+/i.test(t);
+    t = t.replace(/^chapter\s+[0-9]+[A-Za-z-]*\s+/i, '').trim();
+
+    let cond = null;
+    const plus = t.match(/^[A-Z][A-Za-z']*(?:\s+[A-Z][A-Za-z']*)*\s*\+\s*([^:]+):\s*(.+)$/);
+    if (plus) { cond = plus[1].trim(); t = plus[2].trim(); }
+    else if (hadChapter) {
+      const m = t.match(/^([^:]{1,40}):\s*(.+)$/);
+      if (m && !/^follow[- ]?up$/i.test(m[1])) { cond = m[1].trim(); t = m[2].trim(); }
+    } else {
+      t = t.replace(/^[A-Z][A-Za-z']*(?:\s+[A-Z][A-Za-z']*)*\s+base:\s*/, '');
+    }
+    const body = t.charAt(0).toUpperCase() + t.slice(1);
+    return cond ? 'Only if you gave ' + cond.toLowerCase() + ' — ' + body : body;
+  }
+
+  catItem(c, mode) {
+    const on = c.on;
+    const shell = 'font-family:inherit;font-size:10px;letter-spacing:.16em;cursor:pointer;border:1px solid '
+      + (on ? 'rgba(255,224,190,.7);background:linear-gradient(180deg, rgba(255,214,170,.22), rgba(142,203,255,.1));color:#fff8ef'
+        : 'rgba(176,214,255,.2);background:rgba(10,24,40,.36);color:#a8c4dc');
+    const glass = 'backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);'
+      + (on ? 'box-shadow:0 10px 30px rgba(0,6,16,.36), inset 0 1px 0 rgba(255,255,255,.26);' : 'box-shadow:inset 0 1px 0 rgba(255,255,255,.12);');
+    let box;
+    if (mode === 'row') box = 'display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;border-radius:9px;border-color:'
+      + (on ? 'rgba(255,224,190,.6)' : 'transparent') + ';' + (on ? '' : 'background:transparent;');
+    else if (mode === 'strip') box = 'display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:11px;flex:none;white-space:nowrap;' + glass;
+    else box = 'display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:11px;' + glass;
+    return {
+      label: c.label, count: String(c.count),
+      pick: () => this.set(mode === 'row' ? { cat: c.value, catOpen: false } : { cat: c.value }),
+      style: shell + ';' + box,
+      countStyle: 'font-size:9px;color:' + (on ? '#ffd9b0' : '#7f9cb4')
+    };
+  }
+
+  glassBtn(kind) {
+    const base = 'font-family:inherit;font-size:11px;letter-spacing:.2em;padding:13px 24px;border-radius:11px;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid ';
+    if (kind === 'dis') return base + 'rgba(176,214,255,.12);background:rgba(8,18,32,.3);color:#4f6a80;cursor:default';
+    if (kind === 'primary') return base + 'rgba(174,225,255,.6);background:linear-gradient(180deg, rgba(142,203,255,.24), rgba(142,203,255,.08));color:#f6fbff;cursor:pointer;box-shadow:0 12px 34px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.24)';
+    return base + 'rgba(176,214,255,.26);background:rgba(10,24,40,.4);color:#cfe6ff;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)';
+  }
+
+  claimBtn(done) {
+    const base = 'font-family:\'Chakra Petch\',sans-serif;font-size:14px;font-weight:700;letter-spacing:.18em;padding:17px 32px;border-radius:13px;cursor:pointer;white-space:nowrap;'
+      + 'backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border:1px solid ';
+    return base + (done
+      ? 'rgba(176,214,255,.4);background:rgba(10,24,40,.42);color:#cfe6ff;box-shadow:inset 0 1px 0 rgba(255,255,255,.16)'
+      : 'rgba(255,224,190,.75);background:linear-gradient(180deg, rgba(255,214,170,.3), rgba(142,203,255,.14));color:#fff8ef;box-shadow:0 16px 44px rgba(0,6,16,.45), 0 0 34px rgba(255,206,150,.28), inset 0 1px 0 rgba(255,255,255,.3);text-shadow:0 0 14px rgba(255,206,150,.5)');
+  }
+
+  renderVals() {
+    const d = this.data, q = this.state.q.trim().toLowerCase();
+    const rift = this.riftBy(this.state.rift);
+    const riftRewards = rift ? this.rewardsFor(rift.name) : [];
+    const reward = this.state.reward != null ? riftRewards[this.state.reward] : null;
+    const steps = this.steps(rift, reward);
+    const total = steps.length + 1;
+    const cur = Math.max(0, Math.min(this.state.cur, total - 1));
+    const s = steps[cur] || null;
+    const last = steps[steps.length - 1];
+
+    let route = '', routeAt = -1;
+    for (const x of steps) if (/sets you on the\s+\S+\s+branch/i.test(x.note || '')) { route = x.choice.replace(/[.?!]+$/, '').toUpperCase(); routeAt = x.i; break; }
+
+    const cat = this.state.cat, filterUI = this.props.filterUI || 'Menu';
+    const cats = [];
+    d.rewards.forEach(r => { const c = (r.cat || 'Other').trim(); if (c && cats.indexOf(c) < 0) cats.push(c); });
+    cats.sort();
+    const filtered = d.rifts.filter(r => (!q || r.name.toLowerCase().includes(q))
+      && (cat === 'ALL' || this.rewardsFor(r.name).some(x => (x.cat || 'Other').trim() === cat)));
+    const catList = ['ALL'].concat(cats).map(c => ({
+      value: c, on: cat === c,
+      label: c === 'ALL' ? 'ALL TYPES' : c.toUpperCase(),
+      count: c === 'ALL' ? d.rewards.length : d.rewards.filter(x => (x.cat || 'Other').trim() === c).length
+    }));
+
+    const finalCh = rift && last ? rift.chapters.find(c => c.id === (last.to || last.chapter)) : null;
+    const branchNames = [];
+    riftRewards.forEach(r => { const b = this.branchOf(r.name); if (b && branchNames.indexOf(b) < 0) branchNames.push(b); });
+    rift && rift.chapters.forEach(c => c.rewards.forEach(t => {
+      const b = this.branchOf(String(t).replace(/^\s*chapter\s+[0-9]+[A-Za-z-]*\s+/i, ''));
+      if (b && branchNames.indexOf(b) < 0) branchNames.push(b);
+    }));
+    const haystack = (steps.map(x => x.choice).join(' ') + ' ' + (reward ? reward.name : '')).toLowerCase();
+    const chosenBranch = branchNames.find(b => haystack.includes(b.toLowerCase())) || null;
+
+    const lines = (arr, excludeTarget) => (arr || [])
+      .map(t => this.rewardLine(t, chosenBranch, excludeTarget && reward ? reward.name : null))
+      .filter(Boolean).map(t => ({ t }));
+
+    const alsoFinal = finalCh && reward ? lines(finalCh.rewards, true) : [];
+    const dim = typeof this.props.videoDim === 'number' ? this.props.videoDim : 46;
+    const browse = this.state.browse, dig = this.state.dig;
+    const useMap = true;
+    const lay = this.props.layout || 'Split column';
+    const split = lay === 'Split column' || lay === 'Notched split';
+    const notch = lay === 'Notched split';
+    const wipe = (i, lift) => 'position:relative;z-index:' + (lift ? 900 : 'auto')
+      + ';animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both;animation-delay:' + (0.42 + Math.min(i, 16) * 0.075).toFixed(3) + 's';
+    const cond = !!this.state.condensed, mon = this.state.monitored || [], narrow = !!this.state.narrow, tip = this.state.tip;
+    const ctlH = cond ? 36 : 40;
+    const pinFor = (type, name) => {
+      const on = this.isMon(type, name), key = type + ':' + name;
+      return {
+        pinIcon: on ? '⦿' : '✚', pinStyle: this.pinRail(on, split, notch),
+        pin: e => { e.stopPropagation(); this.toggleMon(type, name); },
+        tipOn: () => this.set({ tip: key }), tipOff: () => { if (this.state.tip === key) this.set({ tip: '' }); },
+        tipShown: tip === key, tipText: on ? 'STOP MONITORING' : 'MONITOR SITUATION'
+      };
+    };
+    const cam = Object.assign({}, this.CAM0, this.camStore() || {}, this.state.cam || {});
+    for (const k in cam) if (typeof cam[k] !== 'number' || isNaN(cam[k])) cam[k] = this.CAM0[k];
+    const presets = this.state.presets || (() => { try { return JSON.parse(localStorage.getItem('rf-holo-presets') || '[]'); } catch (e) { return []; } })();
+    const ctlRows = this.CTL.map(([k, label, min, max, step, fmt]) => ({
+      label, min, max, step, val: cam[k], disp: fmt(cam[k]), set: e => this.setCam({ [k]: parseFloat(e.target.value) })
+    }));
+    const presetRows = presets.map((p, i) => ({
+      name: p.name, json: JSON.stringify(p.cam),
+      load: () => this.setCam(p.cam),
+      del: () => this.setPresets(presets.filter((_, j) => j !== i))
+    }));
+    const mapMode = (rift || browse === 'rift') ? 'rift' : ((dig || browse === 'dig') ? 'dig' : 'galaxy');
+    const digSite = dig ? this.digBy(dig) : null;
+    const digHeadline = digSite
+      ? this.digRewardsFor(digSite.name).filter(r => r.cat !== 'Risks, costs & losses').slice(0, 4)
+      : [];
+    const digMatches = q ? this.DIG_SITES.filter(n => n.toLowerCase().includes(q)) : [];
+    const digRewardMatches = q
+      ? this.digData.rewards.filter(r => r.name.toLowerCase().includes(q) || (r.cat || '').toLowerCase().includes(q)).slice(0, 4)
+      : [];
+    const riftMatches = q ? d.rifts.filter(r => r.name.toLowerCase().includes(q)) : [];
+    const searchRows = riftMatches.slice(0, 6).map(r => ({
+      type: 'RIFT', name: r.name, meta: this.rewardsFor(r.name).length + ' REWARDS',
+      badgeStyle: 'flex:none;font-size:8px;letter-spacing:.2em;padding:3px 7px;border-radius:6px;color:#8ecbff;border:1px solid rgba(142,203,255,.4)',
+      pick: () => this.set({ rift: r.name, browse: 'rift', reward: null, cur: 0, railOpen: {}, q: '' })
+    })).concat(digMatches.slice(0, 4).map(n => {
+      const s = this.digBy(n);
+      return {
+        type: 'DIG SITE', name: n, meta: s ? s.chapters.length + ' PHASES' : 'ARCHAEOLOGY',
+        badgeStyle: 'flex:none;font-size:8px;letter-spacing:.2em;padding:3px 7px;border-radius:6px;color:#7fe0d4;border:1px solid rgba(127,224,212,.4)',
+        pick: () => this.set({ dig: n, browse: 'dig', q: '', railOpen: {} })
+      };
+    })).concat(digRewardMatches.map(r => ({
+      type: 'DIG PAYOUT', name: r.name, meta: r.site.toUpperCase() + ' / PHASE ' + (r.chapter || '—'),
+      badgeStyle: 'flex:none;font-size:8px;letter-spacing:.2em;padding:3px 7px;border-radius:6px;color:#ffd9b0;border:1px solid rgba(255,217,176,.4)',
+      pick: () => this.set({ dig: r.site, browse: 'dig', q: '', railOpen: { ['dig' + r.chapter]: true } })
+    })));
+
+    return {
+      useMap, mapMode, cam,
+      ctlOpen: this.state.ctlOpen, ctlLabel: this.state.ctlOpen ? '✕ CLOSE CAMERA' : '◎ CAMERA', toggleCtl: () => this.set({ ctlOpen: !this.state.ctlOpen }),
+      camBtnStyle: 'border-radius:9px;font-family:inherit;font-size:9px;letter-spacing:.18em;padding:6px 12px;cursor:pointer;'
+        + 'transition:border-color .2s ease,color .2s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);'
+        + (this.state.ctlOpen
+          ? 'background:linear-gradient(180deg, rgba(255,214,170,.24), rgba(142,203,255,.1));border:1px solid rgba(255,224,190,.5);color:#fff8ef'
+          : 'background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);color:#8ba7bf'),
+      cornerSig: (() => {
+        const f = (v, m) => { const n = Math.round(v * 57.3) % m; return (n < 0 ? '-' : '') + String(Math.abs(n)).padStart(3, '0'); };
+        return 'X' + f(cam.ang, 360) + ' / Y' + f(cam.pitch, 180);
+      })(),
+      cornerHudStyle: (() => {
+        const vw = this.state.vw || (typeof window !== 'undefined' ? window.innerWidth : 1440);
+        // only draw once the corner is genuinely clear of the content column
+        const contentRight = split
+          ? Math.min(vw * 0.37, 520) + 34
+          : (vw > 1180 ? (vw + 1180) / 2 - 34 : vw - 34);
+        const clear = vw >= 768 && contentRight <= vw - 196;
+        return 'position:fixed;right:0;bottom:34px;width:180px;height:180px;z-index:860;pointer-events:none;'
+          + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (clear ? 'block' : 'none');
+      })(),
+      ctlRows, presetName: this.state.presetName, onPresetName: e => this.set({ presetName: e.target.value }),
+      snapPreset: () => { const name = this.state.presetName.trim() || 'PRESET ' + (presets.length + 1); this.setPresets(presets.concat([{ name, cam: Object.assign({}, cam) }])); this.set({ presetName: '' }); },
+      resetCam: () => this.setCam(this.CAM0),
+      hasPresets: presets.length > 0, presetRows,
+      copyLabel: this.state.copied ? 'COPIED' : 'COPY ALL JSON',
+      copyPresets: () => { const txt = JSON.stringify(presets, null, 2); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).catch(() => window.prompt('Copy presets JSON', txt)); this.set({ copied: true }); setTimeout(() => this.set({ copied: false }), 1600); },
+      homeTitle: browse === 'rift' ? 'SELECT RIFT' : (browse === 'dig' ? 'SELECT DIG SITE' : 'GALACTIC INDEX'),
+      homeSub: browse === 'rift' ? 'SCAN COMPLETE // ' + filtered.length + ' SIGNATURES IN RANGE'
+        : (browse === 'dig' ? 'SURVEY COMPLETE // ' + this.DIG_SITES.length + ' SITES CATALOGUED' : 'AWAITING QUERY // ' + d.rifts.length + ' RIFTS · ' + this.DIG_SITES.length + ' DIG SITES'),
+      hasSearch: !!q && !browse, searchRows, noSearch: searchRows.length === 0,
+      browseNone: !browse, browseAny: !!browse, browseRift: browse === 'rift', browseDig: browse === 'dig',
+      browseRifts: () => this.set({ browse: 'rift', q: '' }),
+      browseDigs: () => this.set({ browse: 'dig', q: '' }),
+      goGalaxy: () => this.set({ browse: null, rift: null, dig: null, reward: null, cur: 0, railOpen: {}, q: '', cat: 'ALL', catOpen: false }),
+      tabRiftStyle: this.tabStyle(browse === 'rift', split && !cond), tabDigStyle: this.tabStyle(browse === 'dig', split && !cond),
+      riftTotal: String(d.rifts.length), digTotal: String(this.DIG_SITES.length),
+      digCards: this.digData.sites.filter(s => !q || s.name.toLowerCase().includes(q)
+        || this.digRewardsFor(s.name).some(r => r.name.toLowerCase().includes(q))).map((s, i) => ({
+          name: s.name, sig: 'ARC-' + String(this.code(s.name) % 9000 + 1000), wrap: wipe(i, tip === 'dig:' + s.name),
+          group: (s.groupLabel || 'ARCHAEOLOGY').toUpperCase(),
+          phases: s.chapters.length + ' PHASES', dlc: (s.dlc || '').toUpperCase(),
+          open: () => this.set({ dig: s.name, q: '', railOpen: {} }),
+          ...pinFor('dig', s.name)
+        })),
+      showDig: !!dig, digName: dig || '',
+      digReq: digSite ? (digSite.req || 'No special requirement beyond a surveyed site inside your borders.') : '',
+      digHasRestrict: !!(digSite && digSite.restrict), digRestrict: digSite ? digSite.restrict : '',
+      digHasNotes: !!(digSite && digSite.notes), digNotes: digSite ? digSite.notes : '',
+      digPhases: digSite ? String(digSite.chapters.length) : '',
+      digGroup: digSite ? (digSite.groupLabel || '—').toUpperCase() : '',
+      digDlc: digSite ? (digSite.dlc || '—').toUpperCase() : '',
+      digHasPrecursor: !!(digSite && digSite.precursor), digPrecursor: digSite ? String(digSite.precursor).toUpperCase() : '',
+      digHasHeadline: digHeadline.length > 0,
+      digHeadline: digHeadline.map(r => ({ cat: (r.cat || '').toUpperCase(), chapter: r.chapter || '—', name: r.name })),
+      digChapters: digSite ? digSite.chapters.map((c, i) => {
+        const open = !!this.state.railOpen['dig' + c.id];
+        return {
+          id: c.id, open, rewards: c.rewards.map(t => ({ t })),
+          summary: c.rewards.length ? (c.rewards.length + (c.rewards.length === 1 ? ' PAYOUT' : ' PAYOUTS')) : 'NO RECORDED PAYOUT',
+          numStyle: 'flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:\'Chakra Petch\',sans-serif;font-size:13px;font-weight:700;'
+            + (open ? 'background:linear-gradient(180deg,rgba(127,224,212,.3),rgba(127,224,212,.12));color:#dffaf5;border:1px solid rgba(127,224,212,.55)'
+              : 'background:rgba(10,24,40,.5);color:#8ba7bf;border:1px solid rgba(176,214,255,.22)'),
+          caretStyle: 'flex:none;font-size:11px;color:#7fe0d4;transition:transform .22s ease;transform:rotate(' + (open ? '180deg' : '0deg') + ')',
+          wrapStyle: 'border-radius:13px;padding:14px 16px;cursor:pointer;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);'
+            + 'background:linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));box-shadow:0 14px 40px rgba(0,6,16,.36), inset 0 1px 0 rgba(255,255,255,.12);'
+            + 'transition:border-color .22s ease;border:1px solid ' + (open ? 'rgba(127,224,212,.5)' : 'rgba(176,214,255,.18)'),
+          toggle: () => this.setState(st => ({ railOpen: Object.assign({}, st.railOpen, { ['dig' + c.id]: !st.railOpen['dig' + c.id] }) }))
+        };
+      }) : [],
+      digMechanics: this.digData.mechanics.map(t => ({ t })),
+      showCatMenu: browse === 'rift' && filterUI === 'Menu',
+      scrollRef: el => this.bindScroll(el),
+      ctlRef: el => this.bindCtl(el),
+      stickyWrap: 'position:sticky;top:56px;z-index:500;box-sizing:border-box;'
+        + (cond
+          ? 'width:100vw;margin:0 0 16px -34px;border-radius:0;padding:10px 34px 9px;'
+          : (notch
+            ? 'width:auto;margin:0 0 18px;border-radius:16px;padding:30px 18px 14px;background:transparent;border:none;box-shadow:none;'
+            : 'width:auto;margin:0 0 18px;border-radius:16px;padding:16px 18px 14px;'
+              + 'background:linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));'
+              + 'backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);'
+              + 'border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);'))
+        + ';transition:padding .3s cubic-bezier(.16,.86,.24,1);'
+        + (cond ? 'background:linear-gradient(180deg, rgba(7,17,30,.97), rgba(7,16,28,.93));backdrop-filter:blur(26px) saturate(140%);-webkit-backdrop-filter:blur(26px) saturate(140%);border-bottom:1px solid rgba(176,214,255,.18);box-shadow:0 16px 34px rgba(0,6,16,.55)' : ''),
+      backRow: 'position:relative;z-index:2;overflow:hidden;transition:max-height .34s cubic-bezier(.16,.86,.24,1),opacity .22s ease,margin-bottom .34s cubic-bezier(.16,.86,.24,1);max-height:'
+        + (cond ? '0px' : '44px') + ';opacity:' + (cond ? '0' : '1') + ';margin-bottom:' + (cond ? '0' : '12px')
+        + ';animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both',
+      headRow: 'position:relative;z-index:2;display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0',
+      headEdge: (notch && !cond) ? 'position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:16px;box-shadow:0 18px 50px rgba(0,6,16,.4)' : 'display:none',
+      headFill: (notch && !cond) ? 'position:absolute;inset:0;box-sizing:border-box;border-radius:16px;clip-path:polygon(0 0, calc(38% - 2px) 0, calc(38% + 10px) 24px, calc(100% - 88px) 24px, calc(100% - 76px) 0, 100% 0, 100% 100%, 0 100%);background-image:linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));background-size:100% calc(100% + 26px);background-position:0 -26px;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%)' : 'display:none',
+      headCut: (notch && !cond) ? this.tabCss(1, 'left:0;width:38%', 'right') : 'display:none',
+      headTabR: (notch && !cond) ? this.tabCss(1, 'right:0;width:78px', 'left') : 'display:none',
+      headWedgeL: (notch && !cond) ? this.wedge(1, 'left:calc(38% - 2px)', false) : 'display:none',
+      headWedgeR: (notch && !cond) ? this.wedge(1, 'right:76px', true) : 'display:none',
+      headBar: (notch && !cond) ? 'z-index:1;position:absolute;top:12px;left:38%;right:78px;height:12px;box-sizing:border-box;clip-path:polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);border-top:1px solid rgba(176,214,255,.26);background:rgba(13,29,47,.26);backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%)' : 'display:none',
+      titleRow: cond
+        ? 'position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-start;gap:0;min-width:0'
+        : 'position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:14px;min-width:0',
+      titleBlock: 'display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;overflow:hidden;'
+        + 'transition:max-height .34s cubic-bezier(.16,.86,.24,1),opacity .22s ease,margin-bottom .34s cubic-bezier(.16,.86,.24,1);'
+        + 'max-height:' + (cond ? '0px' : '180px') + ';opacity:' + (cond ? '0' : '1')
+        + (cond ? ';flex:0 0 0px;width:0;min-width:0;padding:0;margin:0;overflow:hidden' : '')
+        + ';transition:max-height .28s ease, margin .28s ease' + ';margin-bottom:' + (cond ? '-10px' : '0')
+        + ';animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both;animation-delay:.06s',
+      titleStyle: 'margin:0;font-family:\'Chakra Petch\',sans-serif;font-weight:700;color:#f6fbff;text-shadow:0 4px 30px rgba(3,10,20,.9), 0 0 40px rgba(142,203,255,.25);text-wrap:pretty;overflow-wrap:break-word;font-size:'
+        + (split ? '29px' : '44px') + ';letter-spacing:' + (split ? '.06em' : '.1em'),
+      subStyle: 'font-size:10px;letter-spacing:.2em;color:#a8c4dc;text-shadow:0 2px 12px rgba(3,10,20,.9);padding-bottom:0',
+      ctlRow: 'position:relative;display:flex;align-items:center;gap:' + (cond ? '8px' : '10px') + ';min-width:0;z-index:520;margin-top:' + (cond ? '0' : '14px')
+        + ';transition:margin-top .34s cubic-bezier(.16,.86,.24,1);flex-wrap:wrap;justify-content:flex-start',
+      searchWrap: 'position:relative;height:' + ctlH + 'px;min-width:' + (narrow ? '0' : '160px') + ';flex:1 1 ' + (cond ? '160px' : '140px') + ';max-width:' + (cond ? '230px' : '430px') + ';transition:max-width .3s cubic-bezier(.16,.86,.24,1);animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both;animation-delay:.18s',
+      catLabelStyle: 'font-size:9px;letter-spacing:.22em;color:#a8c4dc;transition:opacity .2s ease;' + (cond ? 'display:none' : ''),
+      catValStyle: 'font-size:10px;letter-spacing:.16em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:' + (cond ? '140px' : 'none'),
+      dividerStyle: 'background:linear-gradient(90deg, rgba(255,222,186,.55), rgba(174,225,255,.35) 40%, transparent);height:'
+        + (cond ? '0px' : '1px') + ';margin-top:' + (cond ? '0' : '16px') + ';opacity:' + (cond ? '0' : '1') + ';transition:opacity .22s ease,height .3s ease,margin-top .34s cubic-bezier(.16,.86,.24,1);animation:wipeIn .7s cubic-bezier(.16,.86,.24,1) both;animation-delay:.12s',
+
+      hasMonitor: mon.length > 0,
+      sideStyle: 'position:sticky;top:' + (mon.length > 0 && !narrow && (!!rift || !!dig) ? 127 : 84) + 'px;flex:1 1 246px;min-width:0;max-width:300px',
+      monStripAny: mon.length > 0 && !narrow && (!!rift || !!dig),
+      monDropAny: mon.length > 0 && narrow && (!!rift || !!dig),
+      toggleShell: 'flex:none;box-sizing:border-box;'
+        + ((split && !cond)
+          ? 'display:flex;flex-direction:column;align-items:stretch;gap:3px;padding:3px;'
+          : 'height:' + ctlH + 'px;display:flex;align-items:center;gap:2px;padding:0 3px;')
+        + 'border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both;animation-delay:.3s',
+      monCount: String(mon.length).padStart(2, '0'),
+      monMenuOpen: this.state.monMenuOpen,
+      toggleMonMenu: () => this.set({ monMenuOpen: !this.state.monMenuOpen }),
+      monDropWrap: 'order:3;position:relative;flex:none;min-width:0',
+      monDropLabel: 'flex:none;font-size:9px;letter-spacing:.2em;color:#a8c4dc;' + (this.state.monTight ? 'display:none' : ''),
+      monDropTrigger: 'box-sizing:border-box;height:' + ctlH + 'px;display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none;border-radius:11px;padding:0 '
+        + (cond ? '11px' : '15px') + ';border:1px solid rgba(255,224,190,.44);background:linear-gradient(180deg, rgba(255,214,170,.16), rgba(142,203,255,.06));color:#fff8ef;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13);transition:border-color .2s ease,padding .3s ease',
+      monCaret: 'flex:none;font-size:9px;color:#ffd9b0;transition:transform .22s ease;transform:rotate(' + (this.state.monMenuOpen ? '180deg' : '0deg') + ')',
+      tipStyle: 'position:absolute;bottom:calc(100% + 8px);right:0;z-index:700;white-space:nowrap;pointer-events:none;padding:6px 9px;border-radius:7px;font-size:8px;letter-spacing:.2em;color:#07111e;background:#ffd9b0;border:1px solid rgba(255,255,255,.5);box-shadow:0 10px 26px rgba(0,6,16,.5);animation:hudFade .14s ease-out',
+      hasToast: !!this.state.toastText, toastText: this.state.toastText,
+      toastStyle: 'position:fixed;left:50%;bottom:30px;transform:translateX(-50%);z-index:950;display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:11px;background:linear-gradient(160deg, rgba(24,52,80,.86), rgba(6,16,28,.94));backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%);border:1px solid rgba('
+        + (this.state.toastAdd ? '255,224,190,.5' : '176,214,255,.3') + ');box-shadow:0 22px 60px rgba(0,6,16,.6), inset 0 1px 0 rgba(255,255,255,.14);animation:hudIn .24s cubic-bezier(.16,.86,.24,1)',
+      toastDotStyle: 'flex:none;width:6px;height:6px;border-radius:999px;background:' + (this.state.toastAdd ? '#ffd9b0' : '#8ecbff') + ';box-shadow:0 0 10px ' + (this.state.toastAdd ? '#ffd9b0' : '#8ecbff'),
+      monitorTabs: mon.map(m => ({
+        label: m.name.toUpperCase(),
+        style: this.monTab((m.type === 'rift' && rift && rift.name === m.name) || (m.type === 'dig' && dig === m.name)),
+        go: () => {
+          const prog = Object.assign({}, this.state.progress);
+          if (rift) prog['rift:' + rift.name] = { reward: this.state.reward, cur: this.state.cur, railOpen: this.state.railOpen };
+          if (dig) prog['dig:' + dig] = { reward: null, cur: 0, railOpen: {} };
+          const at = prog[m.type + ':' + m.name] || { reward: null, cur: 0, railOpen: {} };
+          this.set(m.type === 'rift'
+            ? { progress: prog, rift: m.name, dig: null, browse: 'rift', q: '', reward: at.reward, cur: at.cur || 0, railOpen: at.railOpen || {} }
+            : { progress: prog, dig: m.name, rift: null, browse: 'dig', q: '', reward: null, cur: 0, railOpen: {} });
+        },
+        rowStyle: 'display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;transition:background-color .18s ease;background:'
+          + (((m.type === 'rift' && rift && rift.name === m.name) || (m.type === 'dig' && dig === m.name)) ? 'rgba(255,214,170,.14);color:#fff8ef' : 'transparent;color:#cfe6ff'),
+        close: () => { this.set({ monitored: mon.filter(x => !(x.type === m.type && x.name === m.name)) }); this.toast('REMOVED FROM MONITORING // ' + m.name.toUpperCase(), false); }
+      })),
+      monitorRift: () => rift && this.toggleMon('rift', rift.name),
+      monitorRiftStyle: this.monBtn(!!rift && this.isMon('rift', rift.name)),
+      monitorRiftLabel: (!!rift && this.isMon('rift', rift.name)) ? '⦿ MONITORING' : '✚ MONITOR SITUATION',
+      monitorDig: () => dig && this.toggleMon('dig', dig),
+      monitorDigStyle: this.monBtn(!!dig && this.isMon('dig', dig)),
+      monitorDigLabel: (!!dig && this.isMon('dig', dig)) ? '⦿ MONITORING' : '✚ MONITOR SITUATION',
+      mapXOff: split ? 0.17 : 0,
+      homeWrap: split
+        ? 'width:min(37vw,520px);min-width:320px;margin:0;padding:28px 26px 110px 34px;animation:hudFade .35s ease-out'
+        : 'max-width:1180px;margin:0 auto;padding:28px 34px 110px;animation:hudFade .35s ease-out',
+      browseGrid: split ? 'display:flex;flex-direction:column;gap:14px' : 'display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:760px',
+      cardGrid: split ? 'display:flex;flex-direction:column;gap:' + (notch ? '20px' : '12px') : 'display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:16px',
+      chamferEdge: notch ? 'position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:14px;box-shadow:0 18px 50px rgba(0,6,16,.4)' : 'display:none',
+      chamferFill: notch ? 'position:absolute;inset:0;box-sizing:border-box;border-radius:14px;clip-path:polygon(0 0, calc(34% - 2px) 0, calc(34% + 10px) 24px, calc(100% - 51px) 24px, calc(100% - 39px) 0, 100% 0, 100% 100%, 0 100%);background-image:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));background-size:100% calc(100% + 26px);background-position:0 -26px;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.1);border-top:none' : 'display:none',
+      chamferInner: notch ? this.tabCss(0, 'left:0;width:34%', 'right') : 'display:none',
+      notchTabR: notch ? this.tabCss(0, 'right:0;width:41px', 'left') : 'display:none',
+      notchWedgeL: notch ? this.wedge(0, 'left:calc(34% - 2px)', false) : 'display:none',
+      notchWedgeR: notch ? this.wedge(0, 'right:39px', true) : 'display:none',
+      notchBar: notch ? 'z-index:1;position:absolute;top:12px;left:34%;right:41px;height:12px;box-sizing:border-box;clip-path:polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);border-top:1px solid rgba(176,214,255,.26);background:rgba(13,29,47,.28);backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%)' : 'display:none',
+      cardShell: notch
+        ? 'position:relative;border-radius:14px;background:transparent;border:none;box-shadow:none;padding:30px 16px 18px;min-height:122px;height:100%;box-sizing:border-box;display:flex;flex-direction:row;align-items:stretch;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .24s cubic-bezier(.16,.86,.24,1)'
+        : 'position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:14px 16px;min-height:'
+          + (split ? '86px' : '152px') + ';height:100%;box-sizing:border-box;display:flex;flex-direction:row;align-items:stretch;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .24s cubic-bezier(.16,.86,.24,1)',
+
+      vidRef: el => { this.vid = el; },
+      dimStyle: 'position:fixed;inset:0;z-index:1;pointer-events:none;background:rgba(4,10,20,' + (dim / 100) + ')',
+      holoScan: this.props.holoScan === true,
+      cornerBrackets: this.props.cornerBrackets !== false,
+
+      booting: this.state.boot <= this.BOOT.length + 1,
+      bootLines: this.BOOT.slice(0, this.state.boot).map(t => ({ t })),
+      bootReady: this.state.boot > this.BOOT.length,
+      bootBarStyle: 'height:3px;border-radius:9px;background:linear-gradient(90deg,#8ecbff,#ffd9b0);box-shadow:0 0 14px rgba(174,225,255,.6);transition:width .18s linear;width:'
+        + Math.round((Math.min(this.state.boot, this.BOOT.length) / this.BOOT.length) * 100) + '%',
+      bootPct: Math.round((Math.min(this.state.boot, this.BOOT.length) / this.BOOT.length) * 100) + '%',
+
+      q: this.state.q,
+      onQ: e => this.set({ q: e.target.value }),
+      showHome: !rift && !dig, showTargets: !!rift && !reward, showRead: !!rift && !!reward,
+      riftCountLabel: filtered.length + ' SIGNATURES IN RANGE',
+      catChips: catList.map(c => this.catItem(c, 'chip')),
+      catStrip: catList.map(c => this.catItem(c, 'strip')),
+      catRows: catList.map(c => this.catItem(c, 'row')),
+      filterMenu: filterUI === 'Menu', filterScroll: filterUI === 'One line', filterChips: filterUI === 'Chips',
+      catOpen: this.state.catOpen,
+      toggleCatMenu: () => this.setState(st => ({ catOpen: !st.catOpen })),
+      activeCatLabel: cat === 'ALL' ? 'ALL REWARD TYPES' : cat.toUpperCase(),
+      activeCatCount: String((catList.find(c => c.value === cat) || { count: 0 }).count),
+      catTriggerStyle: 'order:1;flex:none;min-width:0;box-sizing:border-box;height:' + ctlH + 'px;display:flex;align-items:center;cursor:pointer;user-select:none;border-radius:11px;'
+        + (cond ? 'gap:7px;padding:0 11px;' : 'gap:11px;padding:0 16px;')
+        + 'backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid '
+        + (cat === 'ALL' ? 'rgba(176,214,255,.24);background:rgba(10,24,40,.42);color:#cfe6ff;box-shadow:inset 0 1px 0 rgba(255,255,255,.13)'
+          : 'rgba(255,224,190,.6);background:linear-gradient(180deg, rgba(255,214,170,.2), rgba(142,203,255,.08));color:#fff8ef;box-shadow:0 10px 30px rgba(0,6,16,.36), inset 0 1px 0 rgba(255,255,255,.24)'),
+      caretStyle: 'flex:none;font-size:9px;color:#8ecbff;transition:transform .22s ease;transform:rotate(' + (this.state.catOpen ? '180deg' : '0deg') + ')',
+      hasCatHint: cat !== 'ALL',
+      clearCat: () => this.set({ cat: 'ALL', catOpen: false }),
+
+      riftCards: filtered.map((r, i) => ({
+        wrap: wipe(i, tip === 'rift:' + r.name),
+        ...pinFor('rift', r.name),
+        name: r.name, group: (r.group || 'RIFT').toUpperCase(),
+        sig: 'SIG-' + String(this.code(r.name) % 9000 + 1000),
+        chapters: r.chapters.length + ' CHAPTERS',
+        rewardCount: cat === 'ALL'
+          ? this.rewardsFor(r.name).length + ' REWARDS'
+          : this.rewardsFor(r.name).filter(x => (x.cat || 'Other').trim() === cat).length + ' MATCH',
+        open: () => this.set({ rift: r.name, reward: null, cur: 0, railOpen: {}, q: '' })
+      })),
+
+      riftName: rift ? rift.name : '', riftGroup: rift ? (rift.group || '').toUpperCase() : '',
+      riftReq: rift ? this.clean(rift.req, '') : '', riftRestrict: rift ? this.clean(rift.restrict, '') : '',
+      hasRestrict: !!(rift && rift.restrict),
+      rewardCountLabel: riftRewards.length + ' DOCUMENTED',
+
+      rewardCards: riftRewards.map((r, idx) => {
+        const st = this.steps(rift, r);
+        const dif = st.map(x => x.diff).filter(n => typeof n === 'number');
+        const hard = dif.length ? Math.max.apply(null, dif) : 0;
+        return {
+          name: this.dispName(r.name), cat: (r.cat || '').toUpperCase(), code: 'RWD-' + String(this.code(r.name) % 900 + 100),
+          meta: st.length + ' STEPS' + (hard ? ' / ROLL ' + hard : ' / NO ROLLS'),
+          barStyle: 'height:3px;border-radius:9px;background:' + (hard >= 5 ? 'linear-gradient(90deg,#ffb87a,#ffd9b0)' : 'linear-gradient(90deg,#8ecbff,#d6ecff)')
+            + ';width:' + Math.min(100, Math.round((st.length / 9) * 100)) + '%',
+          open: () => this.set({ reward: idx, cur: 0, railOpen: {} })
+        };
+      }),
+
+      rewardName: reward ? this.dispName(reward.name) : '', rewardCat: reward ? (reward.cat || '').toUpperCase() : '',
+      finalChapterLabel: last && rift ? (finalCh && finalCh.title ? 'ENDING ' + finalCh.title.toUpperCase() : 'FINAL STEP ' + steps.length) : '',
+      finalNote: last && last.ends ? 'THIS OPTION CLOSES THE RIFT' : 'GRANTED AT THE END OF THIS ROUTE',
+      alsoFinal, hasAlsoFinal: alsoFinal.length > 0,
+
+      rc: s ? {
+        isStep: true, isFinal: false,
+        stepLabel: 'STEP ' + (cur + 1) + ' OF ' + steps.length,
+        title: s.title || 'CONTINUE',
+        route: route + ' ROUTE', hasRoute: !!route && cur >= routeAt,
+        pickLabel: s.anyRoute ? 'NO CHOICE NEEDED HERE' : (s.ends ? 'FINAL OPTION' : (s.alts.length ? 'SELECT THIS OPTION' : 'ONLY OPTION AVAILABLE')),
+        choice: s.choice, hasNote: !!this.clean(s.note, route), note: this.clean(s.note, route),
+        hasAlts: s.alts.length > 0, alts: s.alts.map(t => ({ t })),
+        hasEntering: !(finalCh && String(s.chapter) === String(finalCh.id)) && lines(s.entering, true).length > 0,
+        entering: lines(s.entering, true)
+      } : { isStep: false, isFinal: true },
+
+      stepNum: cur >= steps.length ? '✦' : String(cur + 1).padStart(2, '0'),
+      stepOf: cur >= steps.length ? 'COMPLETE' : 'OF ' + String(steps.length).padStart(2, '0'),
+      progressLabel: cur >= steps.length ? '100%' : Math.round(((cur + 1) / total) * 100) + '%',
+      progressStyle: 'height:4px;border-radius:9px;background:linear-gradient(90deg,#8ecbff,#ffd9b0);box-shadow:0 0 12px rgba(174,225,255,.5);width:' + Math.round(((cur + 1) / total) * 100) + '%;transition:width .3s ease',
+      traceLabel: 'TRACE ' + (cur + 1) + '/' + total,
+      statusLine: reward ? 'TARGET: ' + this.dispName(reward.name).toUpperCase() : (rift ? 'RIFT: ' + rift.name.toUpperCase()
+        : (dig ? 'DIG SITE: ' + dig.toUpperCase() : (browse ? 'BROWSING ' + (browse === 'rift' ? 'ASTRAL RIFTS' : 'DIG SITES') : 'GALACTIC MAP // IDLE'))),
+
+      prev: () => this.set({ cur: Math.max(0, cur - 1) }),
+      next: () => cur === total - 1
+        ? this.set({ rift: null, reward: null, cur: 0, railOpen: {}, q: '' })
+        : this.set({ cur: cur + 1 }),
+      prevStyle: this.glassBtn(cur === 0 ? 'dis' : 'ghost'),
+      nextStyle: cur >= steps.length - 1 ? this.claimBtn(cur === total - 1) : this.glassBtn('primary'),
+      nextLabel: cur === steps.length - 1 ? '◆ CLAIM REWARD ›' : (cur === total - 1 ? 'RETURN TO RIFT INDEX ›' : 'NEXT STEP ›'),
+
+      railFinal: (() => {
+        const isCur = cur >= steps.length;
+        return {
+          title: reward ? this.dispName(reward.name).toUpperCase() : '',
+          go: () => this.set({ cur: steps.length }),
+          wrapStyle: 'margin-top:10px;padding:13px;border-radius:12px;cursor:pointer;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid '
+            + (isCur ? 'rgba(255,224,190,.72);background:linear-gradient(180deg, rgba(255,214,170,.22), rgba(142,203,255,.1));box-shadow:0 14px 40px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.26)'
+              : 'rgba(176,214,255,.24);background:rgba(10,24,40,.38);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)'),
+          labelStyle: 'font-size:9px;letter-spacing:.22em;color:' + (isCur ? '#ffd9b0' : '#8ba7bf'),
+          titleStyle: 'margin-top:7px;font-family:\'Chakra Petch\',sans-serif;font-size:13px;font-weight:700;letter-spacing:.05em;line-height:1.25;color:' + (isCur ? '#fff8ef' : '#cfe0ef')
+        };
+      })(),
+      back: () => this.set({ reward: null, cur: 0, railOpen: {} }),
+      close: () => this.set({ rift: null, dig: null, reward: null, cur: 0, railOpen: {}, q: '' }),
+
+      rail: steps.map(t => {
+        const isCur = t.i === cur, isOpen = !!this.state.railOpen[t.i];
+        const ch = rift ? rift.chapters.find(c => c.id === t.chapter) : null;
+        return {
+          n: String(t.i + 1).padStart(2, '0'), title: (t.title || 'STEP ' + (t.i + 1)).toUpperCase(), isOpen,
+          pick: t.choice.length > 46 ? t.choice.slice(0, 46).trim() + '…' : t.choice,
+          wrapStyle: 'margin-bottom:8px;border-radius:12px;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);transition:border-color .22s ease,background-color .22s ease;border:1px solid '
+            + (isCur ? 'rgba(174,225,255,.6);background:linear-gradient(180deg, rgba(142,203,255,.18), rgba(142,203,255,.06));box-shadow:0 12px 34px rgba(0,6,16,.34), inset 0 1px 0 rgba(255,255,255,.2)'
+              : 'rgba(176,214,255,.16);background:rgba(8,18,32,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)'),
+          numStyle: 'flex:none;font-size:10px;letter-spacing:.1em;color:' + (isCur ? '#ffd9b0' : '#6f8ea6'),
+          titleStyle: 'font-family:\'Chakra Petch\',sans-serif;font-size:12px;font-weight:600;letter-spacing:.09em;line-height:1.3;color:' + (isCur ? '#f6fbff' : '#a8c4dc'),
+          choices: (ch ? ch.choices : []).map(c => {
+            const picked = c.text === t.choice;
+            return {
+              text: c.text, mark: picked ? '◆' : '◇',
+              markStyle: 'flex:none;font-size:8px;margin-right:8px;color:' + (picked ? '#ffd9b0' : '#5a7893'),
+              style: 'display:flex;align-items:baseline;font-size:10px;line-height:1.55;color:' + (picked ? '#e8f2fb' : '#7f9cb4')
+            };
+          }),
+          go: () => this.setState(st => ({ cur: t.i, railOpen: Object.assign({}, st.railOpen, { [t.i]: !st.railOpen[t.i] }) }))
+        };
+      })
+    };
+  }
+}
+
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#040a14">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#040a14"/>
+  <circle cx="600" cy="400" r="150" fill="none" stroke="#8ecbff" stroke-width="6" opacity=".85"/>
+  <circle cx="600" cy="400" r="220" fill="none" stroke="#ffe0be" stroke-width="4" stroke-dasharray="26 22" opacity=".7"/>
+  <circle cx="600" cy="400" r="52" fill="#8ecbff" opacity=".9"/>
+  <path d="M320 190h-70v70M880 190h70v70M320 610h-70v-70M880 610h70v-70" fill="none" stroke="#ffe0be" stroke-width="7"/>
+</svg>
+</template>
+</body>
+</html>
