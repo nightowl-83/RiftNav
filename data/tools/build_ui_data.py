@@ -70,12 +70,51 @@ def s(v):
     return v if v is not None else ""
 
 
+SHORT_MAX = 60
+OPTION_PREFIX = re.compile(r"^\s*(?:choice(?:\s+of(?:\s+one)?)?|random|or)\b\s*(?:-\s*[^:]+)?\s*:?\s*", re.I)
+
+
+def short_name(text, full=None):
+    """(short, effect): a heading-length name and the effect text (audit U2).
+    'Black Curtain + astral threads: +25% …' -> ('Black Curtain + astral threads', '+25% …').
+    Without a colon, long names break at the first clause boundary, then at a word, and the effect
+    is the full text. A name that is only an option marker ("Choice of one", "Random") falls back
+    to the full text."""
+    t = OPTION_PREFIX.sub("", text or "").strip()
+    fullt = OPTION_PREFIX.sub("", full or "").strip() or t
+    if not t:
+        t = fullt
+    t = t[:1].upper() + t[1:]
+    fullt = fullt[:1].upper() + fullt[1:]
+    tidy = lambda x: re.sub(r"(?:[\s,;:—-]+(?:or|and))+$", "", x.strip()).rstrip(" ,;:—-").strip()
+    head, sep, rest = t.partition(":")
+    if sep and 0 < len(head.strip()) <= SHORT_MAX:
+        return tidy(head), rest.strip()
+    if len(t) <= SHORT_MAX:
+        short = tidy(t)
+    else:
+        short = None
+        for cut in (" — ", " (", "; ", ", ", " - "):
+            i = t.find(cut)
+            if 0 < i <= SHORT_MAX:
+                short = tidy(t[:i]); break
+        if short is None:
+            i = t.rfind(" ", 0, SHORT_MAX - 1)
+            short = tidy(t[:i]) + "…"
+    fh, fsep, frest = fullt.partition(":")
+    if fsep and tidy(fh) == short:
+        return short, frest.strip()
+    effect = fullt if fullt.rstrip(" .") not in (short, short.rstrip("…")) else ""
+    return short, effect
+
+
 def _groups(lines, T):
     guaranteed, groups = group_lines(lines)
     return guaranteed, [{"kind": g["kind"],
-                         "options": [{"label": T.text(o["label"]) if o["label"] else T.text(o["text"]),
-                                      "payouts": [T.text(o["text"])], "raw": lines[o["idx"]],
-                                      "line": o["idx"]}
+                         "options": [dict(zip(("short", "shortDetail"), short_name(
+                                          T.text(o["label"]) if o["label"] else T.text(o["text"]))),
+                                      label=T.text(o["label"]) if o["label"] else T.text(o["text"]),
+                                      payouts=[T.text(o["text"])], raw=lines[o["idx"]], line=o["idx"])
                                      for o in g["options"]]}
                         for g in groups]
 
@@ -202,7 +241,9 @@ def main(rifts, arch, catalogue, T):
     for x in rifts["rewards"]:
         path, how = rift_path(x, chapters_by_rift[x["entity"]], finder)
         path_kinds[how] += 1
+        short, effect = short_name(T.text(x["name"]), x["text"])
         row = {"name": T.text(x["name"]), "rift": x["entity"], "path": path, "cat": RIFT_CAT[x["type"]],
+               "short": short, "effect": effect,
                "rid": x["rid"], "type": x["type"], "rewardGroup": x["group"],
                "rewardGroupLabel": x["group_label"], "chapter": x["chapter"], "source": x["source"],
                "polarity": x["polarity"], "conditional": x["conditional"], "gate": x["gate"],
@@ -249,7 +290,9 @@ def main(rifts, arch, catalogue, T):
     ids = {e["name"]: e["id"] for e in arch["entities"]}
     dig_rewards = []
     for x in arch["rewards"]:
+        short, effect = short_name(T.text(x["name"]), x["text"])
         row = {"cat": DIG_CAT[x["type"]], "name": T.text(x["name"]), "site": x["entity"],
+               "short": short, "effect": effect,
                "siteId": ids[x["entity"]], "chapter": x["chapter"], "groupLabel": labels[x["entity"]],
                "rid": x["rid"], "type": x["type"], "rewardGroup": x["group"],
                "rewardGroupLabel": x["group_label"], "source": x["source"], "polarity": x["polarity"],

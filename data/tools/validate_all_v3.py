@@ -185,6 +185,13 @@ for row in RD["rewards"]:
             bad_paths.append((row["rift"],row["path"])); break
 check(f"every rift reward path resolves to real chapters and choices ({len(RD['rewards'])})",
       not bad_paths, str(bad_paths[:3]))
+rows_all=RD["rewards"]+DD["rewards"]
+bad_short=[(x.get("short"),x["name"]) for x in rows_all if not x.get("short") or len(x["short"])>60]
+check(f"every rift and dig reward has a short name of 1-60 characters ({len(rows_all)})", not bad_short, str(bad_short[:3]))
+opts=[o for x in RD["rifts"] for c in x["chapters"] for g in c["rewardChoices"] for o in g["options"]]+\
+     [o for x in DD["sites"] for c in x["chapters"] for g in c["choices"] for o in g["options"]]
+check(f"every choice option has a short label of 1-60 characters ({len(opts)})",
+      all(o.get("short") and len(o["short"])<=60 for o in opts))
 rrows=[x for x in RD["rewards"]+DD["rewards"] if x["type"]=="relic"]
 check(f"every UI relic reward carries relic details or a documented note ({len(rrows)})",
       all(x.get("relic") or x.get("relicNote") for x in rrows))

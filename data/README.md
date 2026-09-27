@@ -98,7 +98,7 @@ figure is wrong at every game stage but one.
 
 ```
 python3 data/tools/build_all_v3.py     # all four JSON files, then the two UI .js files
-python3 data/tools/validate_all_v3.py  # 83 checks
+python3 data/tools/validate_all_v3.py  # 85 checks
 ```
 
 Inputs, in the order the build uses them:
@@ -135,6 +135,10 @@ least two options, and every line is either guaranteed or in exactly one group.
 
 - Reward rows add `rid`, `type`, `rewardGroup`, `source`, `polarity`, `conditional`, `gate`,
   `text`, `raw`, and for relics `relicId` + `relic` (passive, triumph, cost, cooldown, DLC).
+- Reward rows also carry **`short`** (a heading-length name, 1–60 characters: the part before the first
+  colon when there is one, otherwise the first clause) and **`effect`** (the rest, or the full text when
+  it adds anything). Option-group options carry `short` + `shortDetail` the same way. The validator
+  fails any reward or option without a short name of 60 characters or less.
 - Rift reward `path` is the curated v2.1 path when it still resolves, else the shortest route
   through the chapter graph; `pathSource` says which (`curated`, `computed`, `failure` via an
   "on failure →" edge, `direct` for situation stages).

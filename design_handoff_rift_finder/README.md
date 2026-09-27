@@ -513,9 +513,15 @@ z-index: 520;
 
 **Card entrance:** `animation: wipeIn .8s cubic-bezier(.16,.86,.24,1) both`, delay `0.42 + min(index, 16) × 0.075` seconds.
 
-**Search** — live, filters rifts by name; the dropdown also matches dig sites and individual dig payouts. Results: up to 6 rifts, 4 dig sites, 4 payouts. Each row has a type badge (`RIFT` cyan `#8ecbff`, `DIG SITE` teal `#7fe0d4`, `DIG PAYOUT` amber `#ffd9b0`; `font-size: 8px; letter-spacing: .2em; padding: 3px 7px; border-radius: 6px`, 1px border in the matching hue at 40% alpha), the name (11px, `#e8f2fb`), and right-aligned meta (9px, `#7f9cb4`). Empty state: `NO SIGNATURE MATCHES`.
+**Search** — live. On the browse lists it filters by name. From home, the dropdown returns, in order:
+- up to 6 rifts;
+- up to 5 **rift rewards** (badge `RIFT REWARD`, `#a8d8ff`; picking one opens that reward's reader);
+- up to 4 dig sites (named first, then sites whose rewards match);
+- up to 4 dig payouts.
 
-Dropdown panel: `top: calc(100% + 8px); padding: 8px; border-radius: 14px; background: linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99)); border: 1px solid rgba(176,214,255,.24); box-shadow: 0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16)`. Row hover: `background: rgba(176,214,255,.1)`.
+A reward matches on its short name, full name, effect, category or relic name. Matches on the name, the category or the relic's name rank ahead of matches that only appear in the effect text, so "relic" returns rift relics, dig relics and the sites that give them. Result rows are a grid: the badge on the left, the name (12px) on the first line and the meta (11px) on the second, so names don't wrap word by word at 390px. Empty state: `NO SIGNATURE MATCHES`.
+
+Dropdown panel: `top: calc(100% + 8px); padding: 8px; border-radius: 14px; background: linear-gradient(160deg, rgba(16,36,58,.98), rgba(5,13,24,.985))` + `backdrop-filter: blur(30px)` (see **Overlays** below; was `.97 / .99`; border: 1px solid rgba(176,214,255,.24); box-shadow: 0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16)`. Row hover: `background: rgba(176,214,255,.1)`.
 
 ## 6. Monitoring
 
@@ -533,7 +539,7 @@ Toggling monitoring fires a toast: `position: fixed; left: 50%; bottom: 30px; tr
 
 Container `max-width: 1180px; margin: 0 auto; padding: 40px 34px 110px; animation: hudIn .32s ease-out`.
 
-Header: `‹ ABORT / ALL RIFTS` button + monitor toggle → eyebrow `RIFT LOCKED // {GROUP}` (10px, `.22em`, `#a8c4dc`) → `<h1>` Chakra Petch 44px/700, `letter-spacing: .04em`, `#f6fbff`, `text-shadow: 0 4px 30px rgba(3,10,20,.9), 0 0 40px rgba(142,203,255,.22)`.
+Header: `‹ ABORT / ALL RIFTS` button + monitor toggle → eyebrow is the category, `{GROUP} RIFT` (`UNIQUE RIFT`, `PRECURSOR RIFT`, `GENERAL RIFT`) or `RIFT SITUATION`; "RIFT LOCKED" read as "you can't access this" (11px, `.22em`, `#a8c4dc`) → `<h1>` Chakra Petch 44px/700, `letter-spacing: .04em`, `#f6fbff`, `text-shadow: 0 4px 30px rgba(3,10,20,.9), 0 0 40px rgba(142,203,255,.22)`.
 
 Right-aligned `ACCESS REQUIREMENTS` panel: `max-width: 400px; border-radius: 14px; padding: 16px 18px`, glass `linear-gradient(160deg, rgba(22,48,74,.4), rgba(6,16,28,.5))`, `border: 1px solid rgba(176,214,255,.2)`, amber 20px top-left bracket. Body 11px / `line-height: 1.7` / `#cfe0ef`; restriction line prefixed `⚠` in `#ffb87a`.
 
@@ -553,7 +559,7 @@ Three columns, `max-width: 1460px; gap: 22px; padding: 28px 34px 96px; align-ite
 
 **Center — step card** (`flex: 100 1 470px`). `border-radius: 18px; padding: 36px 38px 38px`, glass `linear-gradient(165deg, rgba(24,52,80,.5), rgba(6,16,28,.62))`, `backdrop-filter: blur(26px) saturate(145%)`, four 28px corner brackets (the amber pair carries an extra `16px` glow shadow).
 
-- Meta row: `STEP n OF m` (10px, `.22em`, `#8ecbff`) + rule + route pill when applicable (`color: #ffd0a0; border: 1px solid rgba(255,208,160,.45); border-radius: 9px; padding: 5px 11px; background: rgba(255,190,130,.08)`).
+- Meta row: `STEP n OF m`, the **only** progress count on the screen; the claim step isn't counted (11px, `.22em`, `#8ecbff`) + rule + route pill when applicable (`color: #ffd0a0; border: 1px solid rgba(255,208,160,.45); border-radius: 9px; padding: 5px 11px; background: rgba(255,190,130,.08)`).
 - `<h2>` Chakra Petch 36px/700, `line-height: 1.1`.
 - **Choice callout** — the key element: `border-radius: 14px; border: 1px solid rgba(174,225,255,.45); background: linear-gradient(160deg, rgba(142,203,255,.16), rgba(142,203,255,.05)); box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 0 30px rgba(142,203,255,.1); padding: 22px 24px`. Label row: blinking 5px cyan dot + one of `SELECT THIS OPTION` / `ONLY OPTION AVAILABLE` / `NO CHOICE NEEDED HERE` / `FINAL OPTION`. Choice text Chakra Petch 23px/500, pure `#ffffff`.
 - `OTHER OPTIONS ON SCREEN // DO NOT SELECT` — amber warning list, each row `border-left: 2px solid rgba(255,184,122,.5); padding: 3px 0 3px 13px; color: #ffc79a`, prefixed `✕`.
@@ -562,8 +568,8 @@ Three columns, `max-width: 1460px; gap: 22px; padding: 28px 34px 96px; align-ite
 **Final card** (after the last step): `background: radial-gradient(120% 100% at 50% 0%, rgba(142,203,255,.24), rgba(6,16,28,.66) 62%)`, `border: 1px solid rgba(174,225,255,.5)`, `box-shadow: 0 30px 90px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.22), 0 0 50px rgba(142,203,255,.14)`, `padding: 46px 38px`. Header `RIFT CLOSED // PAYLOAD SECURED` with blinking amber dot; reward name Chakra Petch 44px/700 in `#ffffff`.
 
 **Right rail** (`flex: 1 1 262px; max-width: 302px`, sticky `top: 84px`):
-- `TARGET INFORMATION` panel — reward name, category, a compact **Relic card** when the target is a relic, progress bar, and a `RETARGET` button carrying two ambient animations: `retGlow 7s ease-in-out infinite` on the button and a `retSwipe 7s ease-in-out infinite` sheen sweep overlay.
-- Radar widget, `height: 186px` — concentric rings (152px solid, 114px dashed amber spinning `24s`, 74px cyan counter-spinning `9s` with a transparent top border), crosshair lines, center step number in Chakra Petch 30px/700, `RIFT TRACE ACTIVE` caption.
+- `TARGET INFORMATION` panel — the reward's **short name**, its **full effect text** (the one place it appears), category, a compact **Relic card** when the target is a relic, progress bar (width = current step ÷ steps, full on the claim; no percentage label), and a `RETARGET` button carrying two ambient animations: `retGlow 7s ease-in-out infinite` on the button and a `retSwipe 7s ease-in-out infinite` sheen sweep overlay.
+- Radar widget, `height: 186px` — decoration only (no step number since audit step 4): concentric rings, 152px solid, 114px dashed amber spinning `24s`, 74px cyan counter-spinning `9s`, and a small blinking amber dot at the centre.
 - `MISSION PARAMETERS` panel — requirement text, restriction line.
 
 Footer buttons: `‹ PREV` (ghost, disabled at step 0) / `NEXT STEP ›` (primary) → becomes `◆ CLAIM REWARD ›` on the last step → `RETURN TO RIFT INDEX ›` on the final card. Trace counter right-aligned.
@@ -784,6 +790,49 @@ box-shadow: 0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);
 ```
 
 Blur scales with elevation: `16px` (footer) → `18px` (buttons, chips) → `20px` (cards) → `22px` (reward cards) → `26px` (modals, compact bar). Gradient angle is `160deg` on most panels, `155deg` on reward/phase cards, `165deg` on the step card.
+
+## Accessibility and polish (audit step 4)
+
+These rules override any smaller or older figure elsewhere in this document.
+
+**Type minimums (P2).**
+- **Uppercase mono labels:** 11px minimum.
+- **Reading text:** 12px minimum for anything the player reads, including counts, costs, conditions, requirements, choice text and search result names.
+- **Decoration only:** the SIG / ARC / RWD codes, the corner HUD and the dial's `RIFT TRACE ACTIVE` stay at 8–9px.
+
+**Keyboard (P4).**
+- **Real buttons:** the home Astral Rifts and Dig Sites tiles, the Rifts / Dig sites toggle (`aria-pressed`), the reward filter trigger (`aria-expanded`) and its options, Prev / Next / claim, Retarget, Abort and Monitor.
+- **`role="button"` with Enter / Space (`onActivate`):** reward cards on a rift, event-log rows, the event log's claim row, search results and the monitoring tabs.
+- **Focus style:** every focusable control shows `outline: 2px solid #8ecbff; outline-offset: 2px` on `:focus-visible`. The folder card keeps its own focus treatment (the 2px cyan outline stroke), and nothing else uses `outline: none` without a replacement.
+- **Verified:** home → rift → reward → every step → claim, using only Tab, Enter and Space.
+
+**Overlays (P5).** Surfaces that sit over other content are near-opaque; cards keep their glass.
+
+| Surface | Background | Blur |
+|---|---|---|
+| Top bar | `rgba(9,21,36,.95)` → `rgba(6,14,26,.93)` | 30px |
+| Footer | `rgba(6,14,26,.94)` | 30px |
+| Compact bar | `.96` → `.94` | 30px |
+| Search dropdown, filter menu, monitoring menus | `.98` → `.985` | 30px |
+
+The dropdowns and menus sit inside animated ancestors that stop `backdrop-filter` from rendering. That's why they're more opaque than the others: at 95%, bright card text still showed through them unblurred.
+
+**One progress counter (U1).**
+- `STEP n OF m` by the step title is the only count, and the claim step isn't counted.
+- The target card's progress bar matches it and fills on the claim.
+- `TRACE n/m`, the `PROGRESS n%` label and the dial's `01 OF 03` are gone.
+
+**Short reward names (U2).**
+- **Short name:** headings, reward cards, the event log's claim row, the final card and the footer use `reward.short`, the generated heading-length name (60 characters maximum).
+- **Full effect text:** `reward.effect` appears once, in the target card.
+- **Dig options:** the heading is the option's `short`, and the rest of its text is secondary.
+- **Duplicate cost:** a bare amount a path appends after a choice (`· (-100 threads)`) is dropped when the choice's own note already carries `cost:`.
+
+**Filter (U4).**
+- **Reward types only:** the rift filter lists reward types only (no Warnings, Other or Unlocks); the dig filter drops Risks and Other.
+- **Card counts:** rift cards count real rewards (`N REWARDS`). A rift with none shows what it leads to (`LEADS TO …`, from `unlocks` or its follow-up rewards), else `NO REWARD`, never `0 REWARDS`. No rift in the current data needs the fallback.
+
+**Labels (U5).** The rift eyebrow is `{GROUP} RIFT` or `RIFT SITUATION`. The dig eyebrow is the singular group, e.g. `UNIQUE SYSTEM SITE // 4 PHASES`.
 
 ## Typography
 
