@@ -468,6 +468,20 @@ Header block contains: back-to-galaxy button, title block, the rift/dig segmente
 - 1px rule `rgba(176,214,255,.18)`, `margin-top: 9px`.
 - Meta row (10px, `.12em`): rifts → `{n} CHAPTERS` (`#8ba7bf`) / `{n} REWARDS` or `{n} MATCH` (`#ffd9b0`); dig sites → `{n} PHASES` (`#8ba7bf`) / DLC name (`#7fe0d4`).
 
+**Dig site list** (audit step 3). The dig list differs from the rift list:
+
+- **Filter.** The same reward-type filter as rifts (Menu, One line or Chips, per `filterUI`), fed by the dig reward categories in `dig-data.js`. On the dig list the counts are **sites**, not rewards, so `RELICS 10` answers "which digs give a relic?" in one tap. Rift and dig filters keep separate state (`cat` / `digCat`). Every filter item is a `<button>` with `aria-pressed`.
+- **Section headings** replace the group label on every card. One heading per site group, in `DIG_DATA.groups` order (Base game, Unique system, Origin, Precursor, Ancient Relics, Other expansion). A heading is Chakra Petch 14px/600 uppercase `#d6ecff`, followed by an `{n} SITES` count (11px `#7f9cb4`) and a fading rule. Empty groups are hidden; with nothing left, the list shows "No dig sites match…".
+- **Card content** (folder card shape, hover and focus unchanged):
+  - Row 1: teal dot → `{n} PHASES` (11px mono, takes the card's hover colour) → `ARC-####` pushed right. The code is decorative: 11px `#56738a`.
+  - Name: Chakra Petch 19px/600.
+  - Rule.
+  - **Yields line**: up to 3 chips, ranked relic → technology → specimen → modifier → planet/deposit → everything else. Risks are never a yield, and each kind shows once.
+    - Chips are 11px mono, `border-radius: 999px`, `rgba(176,214,255,.24)` border.
+    - A relic chip is amber (`#ffd9b0` on `rgba(255,217,176,.1)`, 12px since it carries the relic's name) and reads `◆ {relic name}`.
+    - A teal outline chip shows the DLC, only when it isn't the base game.
+  - The card's `aria-label` reads name, phase count and yields.
+
 **Pin rail** (Grid and Split column; the notched card uses its own + column, see [The notched folder shape](#the-notched-folder-shape)). A full-height strip on the card's right edge that toggles monitoring:
 
 ```css
@@ -527,7 +541,7 @@ Divider: `height: 1px; background: linear-gradient(90deg, rgba(255,222,186,.5), 
 
 Reward grid: `repeat(auto-fill, minmax(336px, 1fr)); gap: 18px`. Each card `border-radius: 16px; padding: 24px; min-height: 194px`, glass `linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54))`, `backdrop-filter: blur(22px) saturate(140%)`, `box-shadow: 0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14)`, **four** 22px corner brackets (amber TL + BR, cyan TR + BL).
 
-Card content: category (9px, `.2em`, `#8ecbff`) + code `RWD-{hash % 900 + 100}` right → name Chakra Petch 26px/600 pushed to bottom → 3px progress bar + meta `{n} STEPS / ROLL {n}` or `/ NO ROLLS`. Bar gradient is amber (`#ffb87a → #ffd9b0`) when the hardest roll is ≥ 5, cyan (`#8ecbff → #d6ecff`) otherwise; width `min(100, steps/9 × 100)%`.
+A relic reward also shows a compact **Relic card** (below) between its name and the progress bar. Card content: category (9px, `.2em`, `#8ecbff`) + code `RWD-{hash % 900 + 100}` right → name Chakra Petch 26px/600 pushed to bottom → 3px progress bar + meta `{n} STEPS / ROLL {n}` or `/ NO ROLLS`. Bar gradient is amber (`#ffb87a → #ffd9b0`) when the hardest roll is ≥ 5, cyan (`#8ecbff → #d6ecff`) otherwise; width `min(100, steps/9 × 100)%`.
 
 Hover: `border-color: rgba(174,225,255,.62); transform: translateY(-2px); box-shadow: 0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2)`.
 
@@ -548,7 +562,7 @@ Three columns, `max-width: 1460px; gap: 22px; padding: 28px 34px 96px; align-ite
 **Final card** (after the last step): `background: radial-gradient(120% 100% at 50% 0%, rgba(142,203,255,.24), rgba(6,16,28,.66) 62%)`, `border: 1px solid rgba(174,225,255,.5)`, `box-shadow: 0 30px 90px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.22), 0 0 50px rgba(142,203,255,.14)`, `padding: 46px 38px`. Header `RIFT CLOSED // PAYLOAD SECURED` with blinking amber dot; reward name Chakra Petch 44px/700 in `#ffffff`.
 
 **Right rail** (`flex: 1 1 262px; max-width: 302px`, sticky `top: 84px`):
-- `TARGET INFORMATION` panel — reward name, category, progress bar, and a `RETARGET` button carrying two ambient animations: `retGlow 7s ease-in-out infinite` on the button and a `retSwipe 7s ease-in-out infinite` sheen sweep overlay.
+- `TARGET INFORMATION` panel — reward name, category, a compact **Relic card** when the target is a relic, progress bar, and a `RETARGET` button carrying two ambient animations: `retGlow 7s ease-in-out infinite` on the button and a `retSwipe 7s ease-in-out infinite` sheen sweep overlay.
 - Radar widget, `height: 186px` — concentric rings (152px solid, 114px dashed amber spinning `24s`, 74px cyan counter-spinning `9s` with a transparent top border), crosshair lines, center step number in Chakra Petch 30px/700, `RIFT TRACE ACTIVE` caption.
 - `MISSION PARAMETERS` panel — requirement text, restriction line.
 
@@ -556,13 +570,75 @@ Footer buttons: `‹ PREV` (ghost, disabled at step 0) / `NEXT STEP ›` (primar
 
 ## 9. Dig site detail
 
-Mirrors the rift detail structure. `EXCAVATION DATA` panel (teal eyebrow `#7fe0d4`) replaces `ACCESS REQUIREMENTS`; stat run under the title shows PHASES / GROUP / DLC / PRECURSOR.
+Container as the rift detail (`max-width: 1180px; padding: 40px 34px 110px`, 16px sides on phones). Top to bottom:
 
-Optional `NOTABLE PAYOUTS` band — up to 4 non-risk rewards in a `repeat(auto-fill, minmax(300px, 1fr))` grid, `border-radius: 13px; padding: 14px 16px`.
+**a. Header.**
+- Back button + monitor toggle (11px labels).
+- Eyebrow `{GROUP LABEL} // {n} PHASES` in teal. This replaced "DIG SITE LOCKED", which read as "you can't access this".
+- `<h1>` Chakra Petch `clamp(30px, 6vw, 44px)`/700.
+- A stat run of 11px mono labels over 12px values: PHASES, GROUP, SYSTEM (if any), DLC (only when not the base game), PRECURSOR (if any).
+- Right: a `REQUIREMENTS` panel (`.rf-panel`) with the requirement, the restriction in amber with `⚠`, and notes. All 12px / `line-height: 1.7`.
 
-`EXCAVATION PHASES // {n}` — a `repeat(auto-fill, minmax(336px, 1fr)); gap: 18px` card grid (**not** an accordion; an earlier version used one). Each phase card matches the reward-card shell: `border-radius: 16px; padding: 24px; min-height: 194px`, four 22px corner brackets. Content: `PHASE 01` (teal) + group right → payout list, each prefixed `▪` in `#7fe0d4`, Chakra Petch 15px/500 → bottom bar sized `payouts / maxPayouts` with gradient `linear-gradient(90deg, rgba(127,224,212,.85), rgba(174,225,255,.5))` + `{n} PAYOUTS` label.
+**b. Relic card** (only when the site gives a relic). See **Relic card** below. The eyebrow reads `◆ RELIC · PHASE {n}`. When the relic comes through a choice or a fight rather than finishing the phase, one line says so: "Through a choice in phase 6: … ; or …" (Planetary Machinery), "Phase 5: awakens Shard, a guardian…" (Kleptomaniac Rats).
 
-`DIG MECHANICS` panel closes the page: `border-radius: 14px; padding: 18px 20px`, `border: 1px solid rgba(176,214,255,.16)`, body rows 11px / `line-height: 1.7` / `#9fb8cc`.
+**c. Headline outcomes.** `HEADLINE OUTCOMES`: up to 4 payouts ranked by type with the same ranking as the list's yields, not list order.
+- The relic is left out because it has its card, and so are risks and duplicates.
+- Items sit in a `repeat(auto-fill, minmax(min(260px,100%),1fr))` grid.
+- Each item has a type chip (`TECHNOLOGY`, `SPECIMEN`…, plus `· ONE OPTION` when it is one side of a choice), `PHASE n`, and the payout's main text at 13px. Conditions are dropped here; the timeline shows them.
+
+**d. Phase timeline.** One `.rf-tl` glass panel, one `.rf-ph` row per phase. Rows are a two-column grid: a `PH 01` label (11px teal mono, 58px column) and a body sized to its content, so there are no equal-height cards and no progress bars. On phones the rows stack. Body items keep the source order:
+
+- **Guaranteed payouts**: plain 13px lines.
+  - A condition moves into 12px `#8ba7bf` secondary text on its own line under the payout. That means a parenthetical that mentions `without / if / unless / only / instead / closed / blocked / requires / needs / when / otherwise`, or a trailing "— instead if …".
+  - Clamp brackets such as `(50 / 150 / 250 by game stage)` stay in the main line.
+- **Risks** are amber (`#ffc79a`, prefixed `⚠`): penalty-typed rewards, plus scientist deaths, losses, hostile spawns, and the Maniacal / Paranoid / Maimed / Traumatized traits.
+- **The relic's line** is warm white with an amber `◆`.
+- **Option groups** (`chapter.choices[]`) use the reader's option styling: cyan-bordered boxes, a mono key column, and wrapping text. Options wrap freely, so a label of about 150 characters is fine at 390px.
+  - `choice`: header `PICK ONE`, options keyed `PICK` / `OR`. These are real `<button aria-pressed>` elements. Picking one highlights it and dims the rest, and picking it again clears it. The pick is session-only.
+  - `random`: header `RANDOM — THE GAME PICKS ONE`, keyed `ROLL` / `OR`, dashed and not interactive, because the player doesn't choose.
+  - `either`: header `ONE OF THESE`, keyed `EITHER` / `OR`, not interactive.
+  - A labelled option ("proceed cautiously") shows the label, with its payout as secondary text.
+
+**e. Unlocks.** For each `site.unlocks` entry, a `UNLOCKS → {site}` link button (teal outline) that opens that site. Targets that aren't dig sites render as a dashed, non-interactive chip.
+
+**f. How digs work.** A collapsed `HOW DIGS WORK` button (`aria-expanded`, caret rotates). It opens a 3-column table: ROLL / RESULT / XP. The table is CSS grid with `role="table"`, not a `<table>`, because the template runtime can't put loops inside `<tbody>`.
+
+| Roll | Result | XP |
+|---|---|---|
+| 14+ | Completes the phase | 75 |
+| 11–13 | 2 clues toward the next roll | 40 |
+| 6–10 | 1 clue | 25 |
+| 5 or less | Risks a mishap event | 10 |
+
+Under the table: the "6x" glossary line from `mechanics[]` in warm white, then the remaining mechanics lines (site requirements, deposit chance, mishap outcomes) at 12px.
+
+### Relic card
+
+One component (`.rf-relic`), used in three places: the dig detail page, a rift's reward cards (compact) and the step reader's `TARGET INFORMATION` panel (compact). It reads `reward.relic` and never needs the catalogue lookup.
+
+```
+◆ RELIC · PHASE 4                    ← eyebrow, 11px mono .2em #ffd9b0 (rifts: ◆ RELIC · {CATEGORY})
+Crystal of Odryskia                  ← Chakra Petch 24px/600 #fff3e4 (17px compact; hidden where the card already names it)
+Through a choice in phase 6: …       ← optional one-line route, 12px #f0d7b8
+PASSIVE              TRIUMPH         ← 11px mono labels #b9a58c; two columns ≥ 480px, one column compact
+▸ +15% Monthly…      ▸ 60 months…    ← 12px list, amber ▸ bullets
+───────────────────────────────────  ← rgba(255,217,176,.22)
+COST          COOLDOWN
+3,000 Unity   3,600 days (10 years)  ← 12px #fff3e4; years = days / 360 (a Stellaris year)
+```
+
+- **Shell:** `border-radius: 16px` (13px compact); `border: 1px solid rgba(255,217,176,.48)`; `background: linear-gradient(160deg, rgba(255,206,150,.14), rgba(6,16,28,.58) 62%)`; the same blur as the other glass.
+- **Cost and cooldown:** cost is `relic.triumphCost`, or "Cannot be activated" when `activatable` is false. When `cooldownDays` is null, cooldown reads "None — cannot be activated".
+- **No catalogue entry** (`reward.relic === null`, e.g. The Advisor's Advisor Core): the card shows its eyebrow and the line "Not on the wiki's Relics page, so its effects aren't documented." It shows no effect lists.
+
+### Data fields used
+
+| Screen | Fields |
+|---|---|
+| Dig list | `DIG_DATA.sites[].{name, group, dlc, chapters.length}`, `DIG_DATA.groups[]`, `DIG_DATA.rewards[].{site, cat, type, raw, relic.name}` |
+| Dig detail | `site.{groupLabel, system, dlc, precursor, req, restrict, notes, unlocks[]}`; per chapter `rewards[]` (display text), `raw[]` (matching only, never shown), `guaranteed[]`, `choices[].{kind, options[].{label, payouts[], line}}`; rewards `{chapter, type, text, raw, relic, relicId}`; `mechanics[]` |
+| Rift reward cards, reader | `RIFT_DATA.rewards[].{type, relic, relicNote}` |
+| Header stats | `RIFT_DATA.counts` |
 
 ## 10. Footer (fixed)
 
@@ -906,6 +982,15 @@ No icons or image assets — every glyph is a Unicode character (`✚ ⦿ ✕ �
 | `layout-notched-split--filter-menu.png` | Notched split | Menu |
 
 The filter variants are shown against Grid because `filterUI` renders identically in all three layouts. The two split layouts are shown with Menu so the column geometry and the notched folder silhouette read clearly against the galaxy backdrop.
+
+**Dig redesign (audit step 3)**: `audit3--{scene}--{width}x{height}.png`, Notched split, at 1440×900, 1180×820, 820×1180 and 390×844 (phone sizes with touch emulation):
+
+| Scene | Shows |
+|---|---|
+| `dig-list-relics` | dig list with the Relics filter on (10 sites under section headings, amber relic chips) |
+| `dig-debris-belt` | dig detail: relic card, risk and relic lines in the timeline |
+| `dig-ancient-facility-phase3` | phase 3's PICK / OR pair with one option picked, conditions as secondary text |
+| `rift-relic-reward` | Subnautical's reward cards with the compact relic card |
 
 To view a prototype: open the `.dc.html` file directly in a browser. Both are self-contained apart from the sibling `.js` files.
 
