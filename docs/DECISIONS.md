@@ -63,6 +63,75 @@ construction (which would supersede the header half of the README section).
 
 ---
 
+## 2026-09-26 — Both halves on v3; the merged file is generated, never authored
+
+**Decided:** Archaeological sites move to the v3 shape (`archaeological_sites.v3.json`), and
+`stellaris_discovery.v3.json` is **generated from both v3 datasets** by `build_all_v3.py`. The
+old `stellaris_discovery.v2.1.json` is retired to `data/_superseded/`.
+
+**Why:** The v2.1 merged file held pre-v3 rift data and no situations — 4 entities and 25 reward
+rows behind `astral_rifts.v3.json` — with nothing in the filename to say so. A consumer loading
+it silently rendered stale rifts. Hand-maintaining a merged file is how that happened; generating
+it means it cannot drift from its parts. The validator now asserts merged == rifts + sites on
+every count.
+
+**Supersedes:** the "load `stellaris_discovery.v2.1.json` for a combined UI" guidance in
+`data/README.md`.
+
+**What would overturn it:** rifts and sites diverging enough that one schema stops fitting both.
+
+---
+
+## 2026-09-26 — Chain unlocks are graph edges, not rewards
+
+**Decided:** "Reveals the X site" lines live in `chains[]` with resolved `targets[]`, plus
+`entities[].unlocks[]` denormalised. They are **not** in `rewards[]` and get no reward group.
+
+**Why:** 30 archaeology lines are of this form. "This unlocks the next dig" and "this gives you a
+modifier" are different player questions; putting them under one chip would have made the finder
+harder to scan, which is the problem v3 exists to solve. As a graph it also became useful —
+25 entities unlock another, so precursor chains are now navigable.
+
+**Consequence to respect:** 4 of 30 chains resolve to no site because they point at event chains,
+a special project and a system. They carry `target_kind` rather than an empty `targets[]`, so
+"unresolved" is never ambiguous with "not yet parsed".
+
+---
+
+## 2026-09-26 — Dropped lines are recorded, not counted
+
+**Decided:** Lines the parser deliberately discards (branch flags, "narrative only") are written
+to `ignored_lines[]`. The validator then asserts an exact identity: every v2.1 reward string
+appears in `rewards` + `payouts` + `chains` + `ignored_lines`.
+
+**Why:** The previous "nothing was lost" check passed by way of a hand-written exclusion list of
+structural strings — the same class of mistake as the hand-curated reward finder that v3 was
+built to eliminate. An approximate check that passes is worse than no check.
+
+---
+
+## 2026-09-26 — Recurrence: capture relic effects before modelling timing
+
+**Decided:** Do **not** build a `recurring` reward type. When recurrence is modelled it will be a
+`timing: {mode, years, cycle_years, uses, delay_years}` object on every reward. But relic
+passive/triumph/cooldown data gets captured **first**.
+
+**Why:** Only 29 of 1,156 typed objects carry any time dimension, across 7 shapes
+(duration 13, delayed 7, permanent 4, uses 3, cycle 1, while_active 1) — a type describing one
+row was never the right shape. More importantly, **relic effects are absent from the dataset
+entirely**: 23 relic rewards, only 2 with any effect text. Relic triumphs have cooldowns, so the
+largest recurrence class in the game is missing while we were preparing to model it for The Seal.
+Capturing relics first means the timing schema gets designed once, against real cooldowns.
+
+**Supersedes:** the 2026-09-19 entry "Recurring rewards are typed but not modelled" — that
+entry's consequence still holds (totals are wrong for The Seal), but its implied next step
+(model recurrence) is reordered behind relic effects.
+
+**Cost note:** both datasets are generated, so adding `timing` later is a regeneration, not a
+migration. There is no penalty for deciding after relic effects land.
+
+---
+
 ## 2026-09-20 — This repository is the source of truth
 
 **Decided:** The Git repository, hosted on GitHub (private), is authoritative for this

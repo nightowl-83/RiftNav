@@ -1,76 +1,89 @@
 # Stellaris discovery datasets
 
-Machine-readable companions to the reference documents one folder up.
-Everything here is generated, not hand-edited.
+Generated, never hand-edited. Both halves are now on the same shape.
 
 ## Which file do I load?
 
-| If your PoC… | Load |
+| If your UI… | Load |
 |---|---|
-| does astral rifts (current) | **`astral_rifts.v3.json`** |
-| renders rifts and archaeological sites from one component | `stellaris_discovery.v2.1.json` |
-| only does archaeological sites | `archaeological_sites.v2.1.json` |
+| renders rifts and sites together | **`stellaris_discovery.v3.json`** (768 KB) |
+| only does astral rifts | `astral_rifts.v3.json` (384 KB) |
+| only does archaeological sites | `archaeological_sites.v3.json` (448 KB) |
 
-**v3 is rifts only, and it is the current shape for rifts.** It supersedes the rift half of
-v2.1: rewards are parsed deterministically instead of hand-curated, the 4 astral rift
-situations are included, and bulk resource payouts are split out of the reward index.
-Archaeological sites have not been migrated to v3 yet — they are still v2.1.
+`*.v2.1.json` are the **build inputs** for v3 — not stale outputs. Don't load them, don't
+delete them. `_superseded/` holds genuinely retired files, including the old merged
+`stellaris_discovery.v2.1.json` which carried pre-v3 rift data behind an innocent filename.
 
-The v2.1 files are untouched so existing wiring keeps working. `astral_rifts.json` (v2.0) and
-`archaeological_sites.json` (v1.0) are older still; don't build on them.
-
-## v3 shape (rifts)
+## Shape
 
 ```
-{ dataset, kind, schema, version, generated, source, wiki_version, coverage,
-  reward_groups[{key,label,blurb,types[]}],   // the 6 chip groups
-  payout_types[], reward_codes[], groups[], mechanics[],
+{ dataset, kind, schema, version, generated, wiki_version, source, coverage,
+  reward_groups[{key,label,blurb,types[]}],  payout_types[],
+  reward_codes[], groups[], mechanics[],
   entities[ { uid, id, kind, name, group, group_label, dlc, requirements,
-              restrictions, notes,
+              restrictions, notes, unlocks[],
               chapters[ { id, index, title, rewards[], choices[],
-                          reward_ids[], payout_ids[] } ] } ],
-  rewards[ { rid, group, group_label, type, name, entity, entity_uid,
+                          reward_ids[], payout_ids[], chain_ids[] } ] } ],
+  rewards[ { rid, group, group_label, type, name, entity, entity_uid, kind,
              chapter, chapter_index, polarity, source, conditional, gate, raw } ],
-  payouts[ { pid, type, entity, entity_uid, chapter, chapter_index,
-             polarity, source, conditional, gate, raw } ],
+  payouts[ { pid, type, … same fields … } ],
+  chains[  { cid, targets[], target_kind, … same fields … } ],
+  ignored_lines[ { entity, chapter, type, raw } ],
   assumptions[] }
 ```
 
-**Two levels on purpose.** `group` is what goes on a chip row (6 of them). `type` is what
-picks an icon or a detail label (18 of them). Render whichever depth the view needs — you
-never have to re-cut the taxonomy.
+Four arrays, one purpose each:
 
-## Six things that will bite you
+- **`rewards[]`** — the ~341 things a player actually chases. Two levels: `group` (6, for chip
+  rows) and `type` (20, for icons and detail labels). Render whichever depth a view needs.
+- **`payouts[]`** — 815 bulk currency lines (astral threads, minor artifacts, research,
+  resources). Deliberately out of the reward index; this is what stopped the finder being
+  mostly astral threads.
+- **`chains[]`** — 30 graph edges: which dig reveals which next dig. Not rewards to your
+  empire, so not in `rewards[]`. `entities[].unlocks[]` is the same information denormalised.
+- **`ignored_lines[]`** — lines the parser deliberately drops (branch flags, "narrative only").
+  Recorded rather than discarded so "nothing was lost" is checkable.
 
-1. **`rewards[]` and `payouts[]` are separate arrays.** 362 of the 519 typed objects are bulk
-   resource payouts. They are deliberately out of the reward index — that is what stopped the
-   finder being 70% astral threads. Merge them only if you actually want that.
-2. **Sort chapters on `index`, never `id`.** Rift chapter ids are not numbers: `4-A`, `3/4/5`,
-   `2b`, `4-A-fail`, and named nodes like `fungal_bloom`.
-3. **Choice-line rewards inherit the chapter of the *choice*, not the payout.** Ruined Planet's
-   chapter-4/5 offers resolve at chapter 7. `source: "choice"` marks these — 24 rows.
-4. **`type: "recurring"` fires more than once.** One row: The Seal's every-10-years choice.
-   Any "total value of this rift" calculation is wrong for The Seal until you special-case it.
-5. **`type: "undocumented"` is real, not a bug.** One row, where the wiki declines to name a
-   reward. Surface it as unknown rather than dropping it.
-6. **Situations are entities with `kind: "astral_rift_situation"`.** Filter on `kind` if you
-   want rifts only; their uids are prefixed `situation:`.
+## Seven things that will bite you
+
+1. **Sort chapters on `index`, never `id`.** Rift ids are not numbers: `4-A`, `3/4/5`, `2b`,
+   `fungal_bloom`. Site ids are ordinals *as strings*.
+2. **Join on `uid`, not `id` or `name`.** Ids collide across kinds. Prefixes: `rift:`,
+   `situation:`, `site:`.
+3. **Two bulk currencies.** Rifts pay astral threads, sites pay minor artifacts. `payout_types`
+   is `[threads, artifacts, research, resource]` — don't assume one.
+4. **Choice-line rewards carry the chapter of the *choice*, not the payout.** Ruined Planet's
+   ch4/ch5 offers resolve at ch7. 24 rows, flagged `source: "choice"`.
+5. **`type: "recurring"` fires repeatedly.** One row (The Seal, every 10 years). Any totals
+   view is wrong for it. See `docs/DECISIONS.md`.
+6. **`type: "undocumented"` is real.** 3 rows where the wiki declines to name a reward.
+   Show as unknown; don't drop.
+7. **Sites have no choice tree.** `choices[]` is always empty and chapter `title` always null
+   for `archaeological_site`. Source limitation, not a conversion gap — don't build UI that
+   assumes both kinds branch.
 
 ## Reward values are not numbers
 
-Payouts are multipliers of your *current* empire output with a min–max clamp, expanded in
-`reward_codes`. `rsh3` is "24x of the named research (500~1,000,000)", not a fixed figure.
-A UI showing a payout as one number is wrong at every stage but one.
+Payouts are multipliers of *current* empire output with a min–max clamp, expanded in
+`reward_codes`. `rsh3` is "24x of the named research (500~1,000,000)". A UI showing one
+figure is wrong at every game stage but one.
 
 ## Regenerating
 
-`tools/build_v3.py` reads v2.1 plus `tools/situations.py` and rebuilds v3. `tools/parse_rewards.py`
-is the classifier — anything matching no rule is reported as unclassified, currently zero.
-`tools/validate_v3.py` runs 17 checks. Never hand-edit a generated file.
+```
+python3 data/tools/build_all_v3.py     # builds all three from v2.1 + situations.py
+python3 data/tools/validate_all_v3.py  # 50 checks
+```
+
+`parse_rewards.py` is the classifier. Anything matching no rule is reported as
+`unclassified` — currently **zero across both datasets**. Keep it there: that is what makes
+coverage provable instead of asserted. Add new rules to the **priority block at the top**, not
+the bottom — a substring elsewhere in a line will otherwise win (this is how "100 Astral
+Threads" inside a *cost* clause once got typed as a payout).
 
 ## Provenance
 
-Wiki-sourced (`stellaris.paradoxwikis.com`), documented against game version **3.14**. Rift
-data captured 2026-08-30, situations added 2026-09-14, reward codes verified against
-`Template:Reward`. Read the `assumptions` array before shipping — reward *magnitudes* have
-never been re-verified against a live patch, only presence and typing.
+Wiki-sourced, documented against game version **3.14**. Rifts captured 2026-08-30, rift
+situations 2026-09-14, sites migrated to v3 2026-09-26, reward codes verified against
+`Template:Reward`. Reward **magnitudes** have never been checked against a live patch — only
+presence and typing.

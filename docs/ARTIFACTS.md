@@ -21,9 +21,15 @@ Add a row whenever a Claude Design page, published artifact, or research output 
 Canvas controls present on the current page: `videoDim` (46%), `holoScan`, `cornerBrackets`,
 `skipBoot`.
 
-Header copy in the design reads: `32 RIFTS · 289 CHAPTERS · 71 REWARDS`. That reward count
-predates the v3 audit and is now low — v3 finds substantially more. Update when the design
-is next touched.
+Header copy in the design reads: `32 RIFTS · 289 CHAPTERS · 71 REWARDS`. **All three numbers are
+now wrong.** As of v3 (2026-09-26) rifts are 36 entities / 294 chapters / 157 rewards, and the
+combined dataset is 146 / 723 / 341. Update when the design is next touched.
+
+**The bundled UI data is a third copy and it is stale.** `design_handoff_rift_finder/rift-data.js`
+and `dig-data.js` are hand-shaped snapshots (`window.RIFT_DATA`) matching no dataset schema, with
+no version or provenance marker. They are missing all 4 rift situations and every v3 finding. See
+`docs/sessions/2026-09-26-archaeology-v3-and-merge.md` open item 1 — the proposal is to generate
+them from the v3 JSON as a build step.
 
 ## Published artifacts
 
@@ -38,6 +44,7 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 
 | Topic | Where it landed | Date |
 |---|---|---|
+| Archaeology to v3, merged file resolved, recurrence scoped | `docs/audits/2026-09-26-archaeology-v3-and-merge.md` | 2026-09-26 |
 | Astral rift rewards — completeness audit | `docs/audits/2026-09-19-rift-rewards-v3.md` | 2026-09-19 |
 | Rift reward audit (first pass) | `docs/audits/2026-08-30-rift-rewards.md` | 2026-08-30 |
 | Claude Code / Cowork cross-machine session portability | `docs/sessions/2026-09-20-move-repo-online.md` | 2026-09-20 |
@@ -46,7 +53,7 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 
 | Source | Used for |
 |---|---|
-| stellaris.paradoxwikis.com (game v3.14) | All rift and site data. Rift data captured 2026-08-30; situations added 2026-09-14 |
+| stellaris.paradoxwikis.com (game v3.14) | All rift and site data. Rifts captured 2026-08-30; rift situations 2026-09-14; sites migrated to v3 2026-09-26 |
 | `Template:Reward` on the same wiki | Reward code expansions |
 | Mobbin — GitHub Web | UI reference. 17 screens, each mapped to what it drove in the style guide: `reference/mobbin-github-web-reference-screens.md` |
 

@@ -22,18 +22,21 @@ to move between machines. Assume nothing about local state that isn't committed.
 ## Hard rules
 
 - **Never hand-edit anything in `data/*.json`.** They are build outputs. Regenerate with
-  `data/tools/build_v3.py` and validate with `data/tools/validate_v3.py` (17 checks).
-- **`astral_rifts.v3.json` is current for rifts.** Archaeological sites are still on
-  `archaeological_sites.v2.1.json` — the v3 migration hasn't happened.
+  `data/tools/build_all_v3.py` and validate with `data/tools/validate_all_v3.py`.
+- **Both halves are on v3.** `astral_rifts.v3.json`, `archaeological_sites.v3.json`, and
+  `stellaris_discovery.v3.json` (both kinds, load this one for a combined UI). The
+  `*.v2.1.json` files are the **build inputs** — don't load them, don't delete them.
+  `data/_superseded/` holds retired files; nothing there should be built on.
 - **Sort chapters on `index`, never `id`.** Rift chapter ids are not numeric (`4-A`, `3/4/5`,
   `2b`, `fungal_bloom`).
-- **`rewards[]` and `payouts[]` are separate on purpose.** Don't merge them without a reason —
-  362 of 519 typed objects are bulk resource payouts, and merging is what made the finder 70%
-  astral threads.
+- **`rewards[]`, `payouts[]` and `chains[]` are separate on purpose.** 815 of 1,186 typed
+  objects are bulk currency; merging them is what made the finder mostly astral threads.
+  `chains[]` is the site-unlock graph, not a reward.
+- **Two bulk currencies.** Rifts pay astral threads, sites pay minor artifacts.
 - **Reward values are not numbers.** They are multipliers of current empire output with a
   min–max clamp. A UI that shows one figure is wrong.
 
-`data/README.md` has the full schema and the six gotchas. Read it before any data work.
+`data/README.md` has the full schema and the seven gotchas. Read it before any data work.
 
 ## The UI direction that holds
 

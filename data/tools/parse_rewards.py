@@ -18,9 +18,26 @@ RESEARCH  = r"physics|society|engineering|unity"
 RULES = [
  # -- priority: explicit structural markers, so a substring elsewhere in the line cannot win
  ("recurring",   r"^recurring every|\brepeats every\b", None),
- ("undocumented",r"the wiki does not name|unnamed reward|not documented", None),
- ("deposit",     r"on the rift\b", None),
- ("planet",      r"gaia world|pre-ftl planet|size \d+ .*world|new colony appears", None),
+ # -- archaeology forms: reward CODES appear as prefixes (art1 / mat2 / rsh3 / uni1 / inf2)
+ #    and the bulk currency is minor artifacts, not astral threads
+ ("artifacts",   r"^art\d\b|\b\d+ minor artifacts\b|^minor artifacts\b", None),
+ ("research",    r"^(?:rsh|res|uni)\d\b|^(?:mat|rsh|res)\d\s+(?:society|physics|engineering|unity)\b|"
+                 r"^\d+x?\s+(?:society|physics|engineering)\s+research\b", None),
+ ("resource",    r"^(?:mat|inf)\d\b|^\d+x?\s+living metal\b", None),
+ ("cosmetic",    r"music track", None),
+ # chain progression: a dig that reveals the next dig, or starts a named chain
+ ("chain",       r"\breveals?\b.*\b(site|system)\b|contributes to revealing|special project.*\b(reveal|find)|starts the .* event chain|\bevent chain\b|unlocks Benign Cover-Up|enables the .* special project", None),
+ ("routing",     r"^choice that sets a flag|^conditional on the chapter", None),
+ ("undocumented",r"see wiki|mutually exclusive endgame options|the wiki does not name|unnamed reward|not documented", None),
+ # relic by the word, never a specimen line and never the 'relic world' requirement
+ ("relic",       r"^(?!.*\bspecimen\b)(?!.*relic world).*\brelic\b", None),
+ ("specimen",    r"^specimen\b", None),
+ # reward codes appearing mid-line: "OR rsh3 Society research", "66%: rsh4 Society research"
+ ("research",    r"\b(?:rsh|res|uni)\d\b|\b\d+x\s+(?:society|physics|engineering|unity)\b|\bplus uni\d\b", None),
+ ("resource",    r"\b(?:mat|inf)\d\b|\bspend \d+ energy\b|^or \d[\d,]*\s+(?:alloys|influence|minerals)|^\d+(?:-\d+)?\s+zro\b|^\d[\d,]*\s+(?:influence|alloys|minerals|energy)\b", None),
+ ("modifier",    r"^removes the .* penalty|^otherwise you get|^replaces .* with", None),
+ ("deposit",     r"on the rift\b|deposit to the planet|\+\d+ research deposit", None),
+ ("planet",      r"gaia world|pre-ftl planet|size \d+ .*world|new colony appears|ship debris blocker|creates? a habitat|planetary feature|mutation vats|sentinels metal|terraform|relic world|planet modifier", None),
  ("modifier",    r"\bmodifier\b|^\+\d+% ", None),
  ("routing",  r"^sets you on|^sets up the|^adds an? \w+ payout to|^goes to \d|^forces outcome", None),
  ("threads",  r"^(small|medium|large) astral threads", None),
@@ -39,14 +56,14 @@ RULES = [
  ("edict",    r"astral cloaking|automated disinfection|spontaneous crystallization", None),
  ("unit",     r"\barmies\b|warpling|flamestorm|\bfleet\b(?! of 10)", None),
  ("species",  r"\bpops?\b|\bDNA\b|adaptive evolution|species gains|new (random )?species", None),
- ("leader",   r"level \d+ (commander|scientist|official)|new scientist|paragon|oakenstalk|plantoid leader|"
+ ("leader",   r"level \d+ (commander|scientist|official)|new scientist|paragon|oakenstalk|plantoid leader|gains [\d,]+ experience|[\d,]+ experience|unique leader|\bkeides\b|the oracle|skrand sharpbeak|"
               r"becomes \d+ years younger|level 5 scholar|aged official|scholar\b|"
               r"returns? (in|after) \d+ years|recruit", None),
- ("trait",    r"rift warped|spark of genius|meticulous|roamer|psychic|planar theorist|riftwalker|"
+ ("trait",    r"scientist gains|gain psionic|rift warped|spark of genius|meticulous|roamer|psychic|planar theorist|riftwalker|"
               r"foreign consciousness|resilient|black light blinded|sanitary drone|latent psionic|"
               r"increased lifespan|society focus|expertise:", None),
- ("modifier", r"^(genesis insight|fractured ambassadors|colonization drones|procedural space|formula pink|rift fluid samples|extra dimensional spores|lonely planet|vortex fuel|restoring the balance|zroni insight|astral shield experimentation|grunur weapons interface|a star is born|revolutionary medi-gel|reconverted leader|harmonious crew)\b", None),
- ("contact",  r"communications with|contact with|mirror empire|formless contact|opinion|subject type|\bvassal\b", None),
+ ("modifier", r"^(genesis insight|fractured ambassadors|colonization drones|procedural space|formula pink|rift fluid samples|extra dimensional spores|lonely planet|vortex fuel|restoring the balance|zroni insight|astral shield experimentation|grunur weapons interface|a star is born|revolutionary medi-gel|reconverted leader|harmonious crew|cultural maturity|cultural reconstruction|home cooking|harsh truth|mysterious universe|unified thought|frozen submariners|in memory|a life worthwhile|mycelial network|bane of the prophetess|forced mindfulness|anthem of aurora|local hive|sage rage|eldritch knowledge|killer microorganism|modern trench war|the memorex|spurred by the past|full circle|goes around|improved decryption|research allocation|genius caeli|studying polarian seeds|shallarian terraforming|rudari death laser|c\\.a\\.r\\.e|peace in this dimension|temporal distortions|dreadnought's reactor)\b", None),
+ ("contact",  r"communications with|contact with|mirror empire|formless contact|opinion|subject type|\bvassal\b|designates the .*fallen empire|federation|cohesion", None),
  ("situation",r"\bsituation\b|the seal\b|spawns the crystal rift|^spawns ", None),
  ("system",   r"^azilash|strange wormhole", None),
  ("relic",    r"^(advisor core|celestial tear|daedalus seal|ever spinning top|infinity root|"
@@ -58,7 +75,11 @@ RULES = [
               r"cloaking strength|\+0\.5 basic", None),
  ("resource", r"^-\d+\s|^-?\d+,?\d*\s*(food|minerals|energy|alloys|exotic gases|rare crystals|astral threads)\b", None),
  ("research", r"^(research and unity|unity|research)$", None),
- ("narrative",r"^(—|ends the rift\.?|narrative only)$", None),
+ ("tech",     r"as a research option|^one of [A-Z]", None),
+ ("planet",   r"appears in the system|alien site level \d|into a habitable planet", None),
+ ("penalty",  r"goes missing for", None),
+ ("decision", r"option to upgrade to", None),
+ ("narrative",r"^(—|ends the rift\.?|narrative only|nothing)$|^or leave them undisturbed$|narrative only", None),
 ]
 COMPILED=[(t,re.compile(p,re.I),g) for t,p,g in RULES]
 
