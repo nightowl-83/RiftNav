@@ -46,6 +46,7 @@ input{font-family:inherit}
 .rf-fc-outline{position:absolute;inset:0;z-index:3;pointer-events:none}
 .rf-fc-outline svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 5px rgba(142,203,255,0));transition:filter .18s cubic-bezier(.2,.7,.2,1)}
 .rf-fc-hov{opacity:0;transition:opacity .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fc-corners{transition:stroke .18s cubic-bezier(.2,.7,.2,1)}
 .rf-fc-body{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-width:0}
 .rf-fc-group{color:#a8c4dc;transition:color .18s ease}
 .rf-fc-cta{position:absolute;top:0;right:0;bottom:0;z-index:4;box-sizing:border-box;width:52px;display:flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;border-left:1px solid rgba(255,255,255,.15);border-radius:0 20px 20px 0;background:transparent;color:#a3e5ff;font:100 32px/1 'JetBrains Mono',ui-monospace,monospace;cursor:pointer;transition:border-color .18s ease,background-color .18s ease,color .18s ease}
@@ -55,6 +56,7 @@ input{font-family:inherit}
 .rf-fcw:hover .rf-fc-shadow,.rf-fc:focus-visible .rf-fc-shadow{box-shadow:0 24px 56px rgba(0,6,16,.55)}
 .rf-fcw:hover .rf-fc-wash,.rf-fc:focus-visible .rf-fc-wash,.rf-fcw:hover .rf-fc-hov,.rf-fc:focus-visible .rf-fc-hov{opacity:1}
 .rf-fcw:hover .rf-fc-outline svg,.rf-fc:focus-visible .rf-fc-outline svg{filter:drop-shadow(0 0 5px rgba(142,203,255,.35))}
+.rf-fcw:hover .rf-fc-corners,.rf-fc:focus-visible .rf-fc-corners{stroke:rgba(191,230,255,.6)}
 .rf-fc:focus-visible .rf-fc-hov{stroke-width:2}
 .rf-fcw:hover .rf-fc-bar,.rf-fc:focus-visible .rf-fc-bar{border-top-color:rgba(142,203,255,.55)}
 .rf-fcw:hover .rf-fc-group,.rf-fc:focus-visible .rf-fc-group{color:#8ecbff}
@@ -267,7 +269,10 @@ input{font-family:inherit}
 <sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
 <div style="{{ homeWrap }}">
   <div style="{{ stickyWrap }}" data-comment-anchor="7c299f1aa1-div">
-  <div style="{{ headEdge }}"><div style="{{ headFill }}"></div><div style="{{ headCut }}"></div><div style="{{ headTabR }}"></div><div style="{{ headWedgeL }}"></div><div style="{{ headWedgeR }}"></div><div style="{{ headBar }}"></div></div>
+  <sc-if value="{{ headNotch }}" hint-placeholder-val="{{ false }}">
+    <div class="rf-fc-shadow"></div><div class="rf-fc-fill"></div><div class="rf-fc-bar"></div>
+    <div class="rf-fc-outline" ref="{{ headFrameRef }}"></div>
+  </sc-if>
   <sc-if value="{{ browseAny }}" hint-placeholder-val="{{ false }}">
     <div style="{{ backRow }}">
       <button onClick="{{ goGalaxy }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:8px 15px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹ GALAXY</button>
@@ -920,20 +925,21 @@ class Component extends DCLogic {
       A${r-h} ${r-h} 0 0 1 ${h} ${H-r} Z`;
   }
   // Cached per card so React sees a stable ref and only calls it on mount/unmount.
-  frameRef(key) {
+  // noHover: the browse header shares the frame but has no hover path.
+  frameRef(key, noHover) {
     const refs = this._frameRefs || (this._frameRefs = {});
-    return refs[key] || (refs[key] = el => this.bindFrame(key, el));
+    return refs[key] || (refs[key] = el => this.bindFrame(key, el, noHover));
   }
-  bindFrame(key, el) {
+  bindFrame(key, el, noHover) {
     const hosts = this._frameHosts || (this._frameHosts = {});
     const ro = this._frameRO || (this._frameRO = new ResizeObserver(es => es.forEach(e => this.drawFrame(e.target))));
     if (hosts[key] && hosts[key] !== el) { ro.unobserve(hosts[key]); delete hosts[key]; }
     if (!el) return;
     hosts[key] = el;
-    if (!el.firstChild) this.buildFrame(el);
+    if (!el.firstChild) this.buildFrame(el, noHover);
     ro.observe(el);
   }
-  buildFrame(el) {
+  buildFrame(el, noHover) {
     const NS = 'http://www.w3.org/2000/svg';
     // many cards render at once, so gradient ids must be unique per instance
     const id = 'rf-fc-' + (this._frameSeq = (this._frameSeq || 0) + 1);
@@ -945,35 +951,38 @@ class Component extends DCLogic {
       return g;
     };
     const svg = mk('svg', { 'aria-hidden': 'true', focusable: 'false' }), defs = mk('defs', {});
-    defs.appendChild(grad(id + '-b', '#fff', 0.6, 0.35));
-    defs.appendChild(grad(id + '-h', '#8ecbff', 0.9, 0.5));
+    defs.appendChild(grad(id + '-b', '#fff', 0.3, 0.16));
+    defs.appendChild(grad(id + '-h', '#8ecbff', 0.7, 0.35));
+    // corner accents: a brighter copy of the outline, masked to soft radial pools at the four corners
+    const rg = mk('radialGradient', { id: id + '-r' });
+    [[0, 1], [0.3, 0.6], [0.65, 0.18], [1, 0]].forEach(([o, a]) =>
+      rg.appendChild(mk('stop', { offset: o, 'stop-color': '#fff', 'stop-opacity': a })));
+    defs.appendChild(rg);
+    const mask = mk('mask', { id: id + '-m', maskUnits: 'userSpaceOnUse' });
+    for (let i = 0; i < 4; i++) mask.appendChild(mk('circle', { fill: 'url(#' + id + '-r)' }));
+    defs.appendChild(mask);
     svg.appendChild(defs);
     svg.appendChild(mk('path', { class: 'rf-fc-base', fill: 'none', stroke: 'url(#' + id + '-b)', 'stroke-width': 1 }));
-    svg.appendChild(mk('path', { class: 'rf-fc-hov', fill: 'none', stroke: 'url(#' + id + '-h)', 'stroke-width': 1 }));
+    svg.appendChild(mk('path', { class: 'rf-fc-corners', fill: 'none', stroke: 'rgba(255,255,255,.42)', 'stroke-width': 1, mask: 'url(#' + id + '-m)' }));
+    if (!noHover) svg.appendChild(mk('path', { class: 'rf-fc-hov', fill: 'none', stroke: 'url(#' + id + '-h)', 'stroke-width': 1 }));
     el.appendChild(svg);
     this.drawFrame(el);
   }
   drawFrame(el) {
     const W = el.clientWidth, H = el.clientHeight;
     if (!W || !H) return;
-    const d = this.folderPath(W, H);
+    const d = this.folderPath(W, H), R = 72;
     el.querySelectorAll('path').forEach(p => p.setAttribute('d', d));
+    const mask = el.querySelector('mask');
+    if (!mask) return;
+    [['x', -R], ['y', -R], ['width', W + 2 * R], ['height', H + 2 * R]].forEach(([k, v]) => mask.setAttribute(k, v));
+    [[0, 0], [W, 0], [0, H], [W, H]].forEach(([cx, cy], i) => {
+      const c = mask.children[i];
+      c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', R);
+    });
   }
   onActivate(fn) {
     return e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fn(); } };
-  }
-  tabCss(head, pos, drop) {
-    const r = head ? 15 : 13;
-    return 'position:absolute;top:0;height:24px;box-sizing:border-box;' + pos + ';background:none;'
-      + 'border:1px solid rgba(176,214,255,.26);border-bottom:none;border-' + drop + ':none;'
-      + 'border-radius:' + (drop === 'right' ? r + 'px 4px 0 0' : '4px ' + r + 'px 0 0') + ';z-index:1;'
-      + 'box-shadow:inset 0 1px 0 rgba(255,255,255,.13)';
-  }
-  wedge(head, pos, right) {
-    return 'position:absolute;top:0;width:12px;height:24px;' + pos + ';'
-      + 'clip-path:' + (right ? 'polygon(100% 0, 100% 100%, 0 100%)' : 'polygon(0 0, 100% 100%, 0 100%)') + ';'
-      + 'background-image:linear-gradient(' + (right ? '116.57deg' : '63.43deg')
-      + ', transparent 0 9.5px, rgba(176,214,255,.26) 9.5px 10.7px, transparent 10.7px);z-index:1';
   }
   pinRail(on, split, notch) {
     return 'flex:none;position:relative;align-self:stretch;display:flex;align-items:center;justify-content:center;cursor:pointer;'
@@ -1383,7 +1392,7 @@ class Component extends DCLogic {
         + (cond
           ? 'width:100vw;margin:0 0 16px -34px;border-radius:0;padding:10px 34px 9px;'
           : (notch
-            ? 'width:auto;margin:0 0 18px;border-radius:16px;padding:30px 18px 14px;background:transparent;border:none;box-shadow:none;'
+            ? 'width:100%;min-width:320px;max-width:920px;margin:0 0 18px;border-radius:24px;padding:44px 24px 22px;background:transparent;border:none;box-shadow:none;'
             : 'width:auto;margin:0 0 18px;border-radius:16px;padding:16px 18px 14px;'
               + 'background:linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));'
               + 'backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);'
@@ -1397,13 +1406,8 @@ class Component extends DCLogic {
         + (cond
           ? 'flex-direction:row;align-items:center;flex-wrap:nowrap;gap:10px'
           : 'flex-direction:column;align-items:stretch;gap:10px'),
-      headEdge: (notch && !cond) ? 'position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:16px;box-shadow:0 18px 50px rgba(0,6,16,.4)' : 'display:none',
-      headFill: (notch && !cond) ? 'position:absolute;inset:0;box-sizing:border-box;border-radius:16px;clip-path:polygon(0 0, calc(38% - 2px) 0, calc(38% + 10px) 24px, calc(100% - 88px) 24px, calc(100% - 76px) 0, 100% 0, 100% 100%, 0 100%);background-image:linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));background-size:100% calc(100% + 26px);background-position:0 -26px;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%)' : 'display:none',
-      headCut: (notch && !cond) ? this.tabCss(1, 'left:0;width:38%', 'right') : 'display:none',
-      headTabR: (notch && !cond) ? this.tabCss(1, 'right:0;width:78px', 'left') : 'display:none',
-      headWedgeL: (notch && !cond) ? this.wedge(1, 'left:calc(38% - 2px)', false) : 'display:none',
-      headWedgeR: (notch && !cond) ? this.wedge(1, 'right:76px', true) : 'display:none',
-      headBar: (notch && !cond) ? 'z-index:1;position:absolute;top:12px;left:38%;right:78px;height:12px;box-sizing:border-box;clip-path:polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);border-top:1px solid rgba(176,214,255,.26);background:rgba(13,29,47,.26);backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%)' : 'display:none',
+      // Notched split header shares the card's folder frame (no hover path)
+      headNotch: notch && !cond, headFrameRef: this.frameRef('head', true),
       titleRow: cond
         ? 'position:relative;z-index:2;display:flex;flex:none;align-items:center;justify-content:flex-start;gap:0;min-width:0'
         : 'position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:14px;min-width:0',

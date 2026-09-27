@@ -71,7 +71,7 @@ Content collapses to a narrow left column so the galaxy map backdrop stays visib
 
 ### Notched split
 
-Same column geometry as Split column, but cards and the header panel take a **folder-tab silhouette** instead of a plain rounded rectangle. The card follows Figma node `82:17` (Rift Nav file); full geometry below. The header panel is unchanged and documented separately.
+Same column geometry as Split column, but cards and the header panel take a **folder-tab silhouette** instead of a plain rounded rectangle. The card follows Figma node `82:17` (Rift Nav file), and the header panel shares the same frame so the notches line up down the column. Full geometry below.
 
 | Property | Value |
 |---|---|
@@ -82,7 +82,7 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 | Card corner radius | `24px`; + column right corners `20px` |
 | Card background/border | **none** on the card element itself. The shape comes from layers underneath plus one SVG outline (see below) |
 | Corner brackets | **none** on the notched card (Grid and Split column keep them) |
-| Header panel padding | `30px 18px 14px`, transparent background (same layered treatment) |
+| Header panel | Same frame as the card (no hover, no + column). Padding `44px 24px 22px`, height from content, `width: 100%; min-width: 320px; max-width: 920px` |
 
 ---
 
@@ -158,7 +158,24 @@ function folderPath(W, H) {
 }
 ```
 
-Stroke `1px`, no fill, horizontal `linearGradient` from `#fff` at 60% opacity to `#fff` at 35%. A second path with the same `d` carries the hover state (below). Gradient ids are unique per card instance (`rf-fc-{n}-b` / `rf-fc-{n}-h`).
+Stroke `1px`, no fill, horizontal `linearGradient` from `#fff` at 30% opacity to `#fff` at 16%. This is deliberately softer than Figma's 60% → 35%. Three paths share the same `d`, in this order: base, corner accents, hover (below). All ids are unique per card instance (`rf-fc-{n}-b`, `-h`, `-r`, `-m`).
+
+**Corner accents.** A brighter copy of the outline shows only near the four outer corners. It fades along the line into the base stroke, with no visible start or end and no change in line weight.
+```html
+<path class="rf-fc-corners" fill="none" stroke-width="1"
+      stroke="rgba(255,255,255,.42)" mask="url(#<id>-m)"/>
+
+<radialGradient id="<id>-r">
+  <stop offset="0"   stop-color="#fff" stop-opacity="1"/>
+  <stop offset=".3"  stop-color="#fff" stop-opacity=".6"/>
+  <stop offset=".65" stop-color="#fff" stop-opacity=".18"/>
+  <stop offset="1"   stop-color="#fff" stop-opacity="0"/>
+</radialGradient>
+<mask id="<id>-m" maskUnits="userSpaceOnUse">
+  <circle fill="url(#<id>-r)"/> × 4
+</mask>
+```
+On each redraw, with `R = 72`, the mask box is set to `x = -R, y = -R, width = W + 2R, height = H + 2R`. The four circles get `r = R` and sit at `(0,0)`, `(W,0)`, `(0,H)` and `(W,H)`.
 
 **+ column.** A separate `<button>`, a sibling of the card rather than a child, so clicking it never triggers the card's click and there are no nested interactive elements.
 ```css
@@ -178,7 +195,8 @@ Applied on `:hover` and `:focus-visible`. Timing is `180ms cubic-bezier(.2,.7,.2
 |---|---|---|
 | Lift (`.rf-fcw`) | `translateY(0)` | `translateY(-2px)`; `:active` snaps back to `0` over `60ms`. No lift under `prefers-reduced-motion` |
 | Shadow | `0 18px 50px rgba(0,6,16,.4)` | `0 24px 56px rgba(0,6,16,.55)` |
-| Cyan outline | opacity `0` | opacity `1`. Same `d`, gradient `#8ecbff` 90% → 50%. SVG `filter: drop-shadow(0 0 5px rgba(142,203,255,.35))` |
+| Cyan outline | opacity `0` | opacity `1`. Same `d`, gradient `#8ecbff` 70% → 35%. SVG `filter: drop-shadow(0 0 5px rgba(142,203,255,.35))` |
+| Corner accents | `rgba(255,255,255,.42)` | `rgba(191,230,255,.6)` |
 | Wash | opacity `0` | opacity `1`. Same clip-path and radius as the fill, `linear-gradient(160deg, rgba(142,203,255,.09), rgba(142,203,255,0) 55%)` |
 | Bar border-top | `rgba(176,214,255,.26)` | `rgba(142,203,255,.55)` |
 | Group label | `#a8c4dc` | `#8ecbff` |
@@ -192,72 +210,20 @@ Applied on `:hover` and `:focus-visible`. Timing is `180ms cubic-bezier(.2,.7,.2
 
 ### Header panel
 
-Unchanged. It keeps the older layered construction: six sibling `<div>`s (shadow, fill, two tab hairlines, two diagonal wedges, recessed bar), all `pointer-events: none`, behind the content.
+In Notched split, the browse header panel (back button, title, subtitle, rift/dig-site toggle, search, Filter, Monitoring) uses **the same frame as the card**. It has the same fill clip-path, `folderPath()` geometry, recessed bar, and base and corner-accent paths, built by the same `frameRef()`/`buildFrame()` code. Its left tab, slopes, notch and 52px right tab therefore line up with the cards below it at every width. The Galactic index panel on the home screen uses the same frame.
 
-**Shadow wrapper**
-```css
-position: absolute; inset: 0; z-index: 0; pointer-events: none;
-border-radius: 16px;
-box-shadow: 0 18px 50px rgba(0,6,16,.4);
+```html
+<div class="rf-fc-shadow"></div><div class="rf-fc-fill"></div><div class="rf-fc-bar"></div>
+<div class="rf-fc-outline"></div>   <!-- frameRef('head', true): base + corner paths, no hover path -->
 ```
 
-**Fill**
-```css
-position: absolute; inset: 0; box-sizing: border-box;
-border-radius: 16px;
-clip-path: polygon(0 0, calc(38% - 2px) 0, calc(38% + 10px) 24px,
-                   calc(100% - 88px) 24px, calc(100% - 76px) 0, 100% 0, 100% 100%, 0 100%);
-background-image: linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));
-background-size: 100% calc(100% + 26px);
-background-position: 0 -26px;
-backdrop-filter: blur(20px) saturate(140%);
-/* no border */
-```
+Differences from the card:
 
-**Tabs.** These are generated by `tabCss(isHeader, position, dropSide)`:
+- **Size:** height comes from the content. Padding `44px 24px 22px`, where the top clears the 25px notch.
+- **Width:** `100%`, `min-width: 320px`, `max-width: 920px`, the same as the cards.
+- **Interaction:** no hover, lift, wash or + column.
 
-```css
-position: absolute; top: 0; height: 24px; box-sizing: border-box;
-background: none;
-border: 1px solid rgba(176,214,255,.26);
-border-bottom: none;
-border-<dropSide>: none;             /* the side facing the notch has no border */
-border-radius: 15px 4px 0 0;         /* dropSide 'right' */
-     /* or: 4px 15px 0 0 */          /* dropSide 'left'  */
-z-index: 1;
-box-shadow: inset 0 1px 0 rgba(255,255,255,.13);
-```
-
-- Left tab: `left: 0; width: 38%`, with the right side dropped.
-- Right tab: `right: 0; width: 78px`, with the left side dropped.
-
-**Wedges.** These are the diagonal connectors between each tab and the recessed middle, generated by `wedge(isHeader, position, isRight)`:
-
-```css
-position: absolute; top: 0; width: 12px; height: 24px;
-clip-path: polygon(0 0, 100% 100%, 0 100%);        /* left wedge  */
-        /* polygon(100% 0, 100% 100%, 0 100%) */   /* right wedge */
-background-image: linear-gradient(63.43deg,        /* right wedge: 116.57deg */
-  transparent 0 9.5px,
-  rgba(176,214,255,.26) 9.5px 10.7px,              /* the 1.2px hairline itself */
-  transparent 10.7px);
-z-index: 1;
-```
-
-The gradient paints a 1.2px diagonal line inside a transparent triangle. `63.43deg` and `116.57deg` are the exact angles of a 12×24 diagonal (`atan(24/12)`).
-
-- Left wedge: `left: calc(38% - 2px)`.
-- Right wedge: `right: 76px`.
-
-**Recessed bar**
-```css
-position: absolute; top: 12px; height: 12px; z-index: 1; box-sizing: border-box;
-left: 38%; right: 78px;
-clip-path: polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);
-border-top: 1px solid rgba(176,214,255,.26);
-background: rgba(13,29,47,.26);
-backdrop-filter: blur(14px) saturate(130%);
-```
+The Grid and Split column headers are unchanged: a plain glass panel.
 
 ### Corner brackets (Grid and Split column cards)
 
@@ -737,7 +703,7 @@ border: 1px solid rgba(176,214,255,.2);
 box-shadow: 0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);
 ```
 
-Blur scales with elevation: `14px` (header notch bar) → `16px` (footer) → `18px` (buttons, chips) → `20px` (cards) → `22px` (reward cards) → `26px` (modals, compact bar). Gradient angle is `160deg` on most panels, `155deg` on reward/phase cards, `165deg` on the step card.
+Blur scales with elevation: `16px` (footer) → `18px` (buttons, chips) → `20px` (cards) → `22px` (reward cards) → `26px` (modals, compact bar). Gradient angle is `160deg` on most panels, `155deg` on reward/phase cards, `165deg` on the step card.
 
 ## Typography
 
@@ -935,7 +901,7 @@ To view a prototype: open the `.dc.html` file directly in a browser. Both are se
 |---|---|
 | Layout switching | `renderVals()` → `lay`, `split`, `notch`, then `homeWrap`, `cardGrid`, `browseGrid`, `cardShell`, `titleStyle` |
 | Card notch geometry | `.rf-fc*` rules at the end of the helmet `<style>`; `folderPath()`, `frameRef()`/`bindFrame()`/`buildFrame()`/`drawFrame()` methods; `notchCards`/`plainCards` in `renderVals()` |
-| Header notch geometry | `tabCss()`, `wedge()` methods; `headEdge`/`headFill`/`headCut`/`headTabR`/`headWedgeL`/`headWedgeR`/`headBar` |
+| Header notch geometry | Same `.rf-fc-*` layers as the card; `headNotch`/`headFrameRef` in `renderVals()`, padding and width in `stickyWrap` |
 | Filter UI switching | `catItem()` method; `filterMenu`/`filterScroll`/`filterChips`, `catChips`/`catStrip`/`catRows` |
 | Path resolution | `parsePath()`, `steps()` |
 | Copy cleanup | `clean()`, `rewardLine()`, `dispName()`, `branchOf()` |

@@ -48,7 +48,6 @@ is drawn to Figma node `82:17`:
   button and never opens the card.
 
 The full spec is in the handoff README under "The notched folder shape" and "Hover and focus".
-The header panel keeps its old construction (38% / 76px / 88px).
 
 **Why:** The old card broke at 34% on both sides, so the notch and right tab stretched with
 width. The + divider never lined up with the right tab, and the hairline was assembled from six
