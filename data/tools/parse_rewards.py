@@ -8,7 +8,7 @@ coverage provable instead of assumed.
 import json, os, re
 from collections import Counter, defaultdict
 
-HOME=os.environ["HOME"]; DATA=HOME+"/mnt/Stellaris/data"
+from paths import DATA
 
 RESOURCES = (r"astral threads|minerals?|energy|alloys?|food|exotic gas(?:es)?|rare crystals?|"
              r"dark matter|volatile motes?|living metal|influence|zro|consumer goods|nanites?")

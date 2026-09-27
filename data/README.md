@@ -9,6 +9,8 @@ Generated, never hand-edited. Both halves are now on the same shape.
 | renders rifts and sites together | **`stellaris_discovery.v3.json`** (768 KB) |
 | only does astral rifts | `astral_rifts.v3.json` (384 KB) |
 | only does archaeological sites | `archaeological_sites.v3.json` (448 KB) |
+| needs relic effects on their own | `relics.v3.json` (also in the merged file as `relics[]`) |
+| is the Rift Finder handoff | nothing: it reads `design_handoff_rift_finder/rift-data.js` / `dig-data.js`, generated from these files (see below) |
 
 `*.v2.1.json` are the **build inputs** for v3 — not stale outputs. Don't load them, don't
 delete them. `_superseded/` holds genuinely retired files, including the old merged
@@ -29,8 +31,30 @@ delete them. `_superseded/` holds genuinely retired files, including the old mer
   payouts[ { pid, type, … same fields … } ],
   chains[  { cid, targets[], target_kind, … same fields … } ],
   ignored_lines[ { entity, chapter, type, raw } ],
+  corrections[ { entity_uid, op, removed_lines[], source, revid, evidence_sha256, why } ],  # sites
+  relics[ … ],                                                     # merged file only
   assumptions[] }
 ```
+
+Every row in `rewards[]`, `payouts[]` and `chains[]` has **`raw`** (the verbatim source line) and
+**`text`** (player wording: reward codes expanded to multiplier + min–max clamp, `a~b` written
+`a–b`). Relic rewards also carry **`relic_id`**, or `relic_link_exception` with the reason.
+
+### `relics.v3.json`
+
+```
+{ dataset, kind: "relic", schema, version, generated, wiki_version, source, captured,
+  captured_with, capture_sha256, coverage, categories[], dlc_names{},
+  relics[ { id, uid, name, category, category_key, subsection, stage,
+            passive[], triumph[], triumph_cost[{resource, amount}], triumph_cooldown_days,
+            activatable, source, source_kind, score, dlc[], dlc_codes[],
+            raw{passive[], triumph[]}, rewarded_by[rid] } ],
+  link_exceptions[ { entity, entity_uid, raw, why } ], assumptions[] }
+```
+
+68 relics from the Relics wiki page, one per relic; upgradeable relics (The Key, Celestial
+Chart) have one entry per stage. `rewarded_by` lists the merged-file reward ids that grant it.
+The page is tagged for game version **4.5**, newer than the 3.14 the rest of the data documents.
 
 Four arrays, one purpose each:
 
@@ -60,7 +84,9 @@ Four arrays, one purpose each:
    Show as unknown; don't drop.
 7. **Sites have no choice tree.** `choices[]` is always empty and chapter `title` always null
    for `archaeological_site`. Source limitation, not a conversion gap — don't build UI that
-   assumes both kinds branch.
+   assumes both kinds branch. Some site *reward lines* do offer a pick ("Choice: … / OR …"); the UI
+   file groups those into `choices` option groups (see below). That is a different thing from a
+   rift's event choices.
 
 ## Reward values are not numbers
 
@@ -71,9 +97,49 @@ figure is wrong at every game stage but one.
 ## Regenerating
 
 ```
-python3 data/tools/build_all_v3.py     # builds all three from v2.1 + situations.py
-python3 data/tools/validate_all_v3.py  # 50 checks
+python3 data/tools/build_all_v3.py     # all four JSON files, then the two UI .js files
+python3 data/tools/validate_all_v3.py  # 83 checks
 ```
+
+Inputs, in the order the build uses them:
+
+| Input | What it is |
+|---|---|
+| `astral_rifts.v2.1.json`, `archaeological_sites.v2.1.json` | the captured rift and site data |
+| `tools/situations.py` | the four rift situations |
+| `tools/corrections.py` | sourced fixes to the v2.1 inputs, each citing a wiki revision and an evidence hash. Never edit the JSON instead |
+| `tools/capture/relics.wiki.json` | the relic capture. Re-capture with `tools/capture/capture_relics.js` in a browser tab on the wiki (the wiki blocks scripted API clients); the build refuses a file that doesn't match its own hash |
+
+The tools find the repo from their own location; set `STELLARIS_ROOT` to point them elsewhere.
+
+## The UI data files
+
+`design_handoff_rift_finder/rift-data.js` (`window.RIFT_DATA`) and `dig-data.js`
+(`window.DIG_DATA`) are **generated** by `tools/build_ui_data.py`. Don't edit them. Every field
+the UI already read is still there with the same name; everything new is additive:
+
+- `counts` (rifts, situations, chapters, rewards; sites, phases, …) and `meta` (sources, versions,
+  corrections). The design's header stats read `counts`.
+- Chapters keep `rewards[]` as display strings (now plain wording), plus `raw[]` (verbatim),
+  `guaranteed[]` (indexes of lines that always pay out) and option groups:
+
+```
+choices (dig chapters) / rewardChoices (rift chapters, where choices[] is already the event's choices):
+  [ { kind: "choice" | "random" | "either",
+      options: [ { label, payouts[], raw, line } ] } ]
+```
+
+`choice` means the player picks, `random` means the game picks ("Random: …" / "OR …"), and
+`either` means the wiki doesn't say. Don't draw a `random` group as a pick. Every group has at
+least two options, and every line is either guaranteed or in exactly one group.
+
+- Reward rows add `rid`, `type`, `rewardGroup`, `source`, `polarity`, `conditional`, `gate`,
+  `text`, `raw`, and for relics `relicId` + `relic` (passive, triumph, cost, cooldown, DLC).
+- Rift reward `path` is the curated v2.1 path when it still resolves, else the shortest route
+  through the chapter graph; `pathSource` says which (`curated`, `computed`, `failure` via an
+  "on failure →" edge, `direct` for situation stages).
+- `dig-data.js` `mechanics[]` ends with the glossary line explaining that "6x" is six months of
+  current output clamped to the min–max shown.
 
 `parse_rewards.py` is the classifier. Anything matching no rule is reported as
 `unclassified` — currently **zero across both datasets**. Keep it there: that is what makes
@@ -85,5 +151,6 @@ Threads" inside a *cost* clause once got typed as a payout).
 
 Wiki-sourced, documented against game version **3.14**. Rifts captured 2026-08-30, rift
 situations 2026-09-14, sites migrated to v3 2026-09-26, reward codes verified against
-`Template:Reward`. Reward **magnitudes** have never been checked against a live patch — only
+`Template:Reward` (`inf4` added from it on 2026-09-26). Relics captured 2026-09-26 from the
+Relics page, revision 119679, tagged game version **4.5**. Reward **magnitudes** have never been checked against a live patch — only
 presence and typing.

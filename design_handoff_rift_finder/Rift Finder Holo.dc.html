@@ -230,7 +230,7 @@ input{font-family:inherit}
     <span class="rf-top-sub" style="font-size:10px;letter-spacing:.22em;color:#7fa3c0">// HOLO DECK</span>
   </div>
   <div class="rf-top-stats" style="display:flex;gap:18px;font-size:10px;letter-spacing:.16em;color:#7fa3c0;white-space:nowrap">
-    <span>32 RIFTS</span><span>289 CHAPTERS</span><span>71 REWARDS</span>
+    <span title="{{ statTitle }}">{{ statRifts }}</span><span>{{ statChapters }}</span><span>{{ statRewards }}</span>
   </div>
   <div class="rf-top-ctl" style="margin-left:auto;display:flex;align-items:center;gap:14px">
     <button class="rf-cam" onClick="{{ toggleCtl }}" style="{{ camBtnStyle }}" data-comment-anchor="e431cc6c63-button">{{ ctlLabel }}</button>
@@ -1131,8 +1131,8 @@ class Component extends DCLogic {
     'POWER ON SELF TEST ......... OK',
     'OBSERVATION DECK FEED ...... LIVE',
     'ASTRAL PLANE TELEMETRY ..... OK',
-    'RIFT INDEX 32 / CHAPTERS 289',
-    'REWARD MANIFEST 71 ENTRIES',
+    'RIFT INDEX {rifts} / CHAPTERS {chapters}',
+    'REWARD MANIFEST {rewards} ENTRIES',
     'GUIDE PROJECTION ........... OK'
   ];
 
@@ -1154,6 +1154,12 @@ class Component extends DCLogic {
   }
 
   get data() { return (typeof window !== 'undefined' && window.RIFT_DATA) || { rifts: [], rewards: [] }; }
+  get stats() {
+    const c = this.data.counts || {};
+    return { rifts: c.rifts ?? this.data.rifts.length, situations: c.situations ?? 0,
+             chapters: c.chapters ?? this.data.rifts.reduce((n, r) => n + r.chapters.length, 0),
+             rewards: c.rewards ?? this.data.rewards.length };
+  }
   set(p) { this.setState(p); }
   riftBy(n) { return this.data.rifts.find(r => r.name === n) || null; }
   rewardsFor(n) { return this.data.rewards.filter(r => r.rift === n); }
@@ -1325,6 +1331,7 @@ class Component extends DCLogic {
       + ';animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both;animation-delay:' + (0.42 + Math.min(i, 16) * 0.075).toFixed(3) + 's';
     const shrunk = !!this.state.condensed, cond = false;
     const mon = this.state.monitored || [], narrow = !!this.state.narrow, tip = this.state.tip;
+    const stats = this.stats;
     const ctlH = cond ? 36 : 40;
     const pinFor = (type, name) => {
       const on = this.isMon(type, name), key = type + ':' + name;
@@ -1567,7 +1574,10 @@ class Component extends DCLogic {
       cornerBrackets: this.props.cornerBrackets !== false,
 
       booting: this.state.boot <= this.BOOT.length + 1,
-      bootLines: this.BOOT.slice(0, this.state.boot).map(t => ({ t })),
+      bootLines: this.BOOT.slice(0, this.state.boot).map(t => ({ t: t.replace(/\{(\w+)\}/g, (m, k) => stats[k]) })),
+      // header stats come from the generated data (rift-data.js counts), never hard-coded
+      statRifts: stats.rifts + ' RIFTS', statChapters: stats.chapters + ' CHAPTERS', statRewards: stats.rewards + ' REWARDS',
+      statTitle: stats.rifts + ' rifts and ' + stats.situations + ' rift situations. Chapters and rewards count both.',
       bootReady: this.state.boot > this.BOOT.length,
       bootBarStyle: 'height:3px;border-radius:9px;background:linear-gradient(90deg,#8ecbff,#ffd9b0);box-shadow:0 0 14px rgba(174,225,255,.6);transition:width .18s linear;width:'
         + Math.round((Math.min(this.state.boot, this.BOOT.length) / this.BOOT.length) * 100) + '%',

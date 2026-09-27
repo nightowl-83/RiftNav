@@ -1,0 +1,2069 @@
+{
+ "captured": "2026-09-26",
+ "captured_with": "data/tools/capture/capture_relics.js (run in a browser tab on the wiki)",
+ "capture_sha256": "f5c698c6d992b6dac27b4963f23dcbcb929eca4e0c8508398e8ffb3c685dc3f3",
+ "page": "Relics",
+ "revid": 119679,
+ "wiki_version": "4.5",
+ "wikitext_sha256": "8b34098ac29925af50bb2933aa8b19b977f33094eefe24e54f26de7fd9b8bbef",
+ "url": "https://stellaris.paradoxwikis.com/Relics",
+ "dlc_names": {
+  "anr": "Ancient Relics",
+  "apc": "Apocalypse",
+  "asp": "Astral Planes",
+  "bio": "BioGenesis",
+  "cos": "Cosmic Storms",
+  "glp": "Galactic Paragons",
+  "gra": "Grand Archive",
+  "inf": "Infernals",
+  "lev": "Leviathans",
+  "mgc": "MegaCorp",
+  "nem": "Nemesis",
+  "nmd": "Nomads",
+  "sos": "Shadows of the Shroud",
+  "tma": "The Machine Age",
+  "tox": "Toxoids"
+ },
+ "relics": [
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [],
+   "dlc_codes": [],
+   "name": "Extradimensional Warlock",
+   "passive": [
+    "+30% Sublight Speed",
+    "+30% Ship Weapons Range"
+   ],
+   "score": 5000,
+   "source": "Destroying the last Extradimensional Invaders portal",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+100% Jump Drive Range for 10 years",
+    "-50% Jump Drive Cooldown for 10 years",
+    "+75% Catapult Accuracy for 10 years",
+    "+75% Catapult Range for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [],
+   "dlc_codes": [],
+   "name": "Isolated Contingency Core",
+   "passive": [
+    "+100% Mechanical Pop Assembly Speed",
+    "Can build 2 of every multi-stage megastructure"
+   ],
+   "score": 5000,
+   "source": "Destroying the Contingency's secret lair",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+300% Megastructure Build Speed for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [],
+   "dlc_codes": [],
+   "name": "Prethoryn Brood-Queen",
+   "passive": [
+    "+50% Society Research Speed"
+   ],
+   "score": 5000,
+   "source": "Defeating a Prethoryn Scourge fleet (1% chance)",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+5% Prethoryn Weapon Attack Speed",
+    "Controllable Prethoryn fleet",
+    "(1 Brood Queens, 6 Warriors and 5 Swarmlings)"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 10000,
+     "resource": "food"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [
+    "Apocalypse",
+    "Nomads"
+   ],
+   "dlc_codes": [
+    "apc",
+    "nmd"
+   ],
+   "name": "Khan's Throne",
+   "passive": [
+    "Unlocks the Satrapy subject type",
+    "−20% Claim influence cost if settled",
+    "+200 Naval capacity if nomadic",
+    "+200 Naval capacity if Heirs of the Khan"
+   ],
+   "score": 3000,
+   "source": "Defeating the Great Khan's fleet after it lost once; If Heirs of the Khan, claiming victory over the marauders upon the Horde's formation",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+20% Ship weapons damage for 10 years",
+    "+25% Militarist Ethic Attraction for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Eternal Throne",
+   "passive": [
+    "Leaders are immortal"
+   ],
+   "score": 3000,
+   "source": "Subjugating or defeating the Formless",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+333% Monthly astral threads for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 333,
+     "resource": "astral threads"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [
+    "The Machine Age"
+   ],
+   "dlc_codes": [
+    "tma"
+   ],
+   "name": "Cetana's Heart",
+   "passive": [
+    "-50% Colony Ascension Cost"
+   ],
+   "score": 5000,
+   "source": "Destroying Cetana",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+3000-5000 Robot Pops with the Reawakened trait"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    },
+    {
+     "amount": 500,
+     "resource": "nanites"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Crisis relics",
+   "dlc": [
+    "Shadows of the Shroud"
+   ],
+   "dlc_codes": [
+    "sos"
+   ],
+   "name": "Core of the Reckoning",
+   "passive": [
+    "+1 Monthly influence",
+    "+1 Station capacity",
+    "+25% Resources from jobs",
+    "+25% Station output",
+    "+25% Naval capacity",
+    "-25% Ship upkeep"
+   ],
+   "score": 5000,
+   "source": "Endbringers empire killing The Reckoning",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "Unlocks one use of the Banish decision"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 500,
+     "resource": "zro"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Archaeological relics",
+   "dlc": [],
+   "dlc_codes": [],
+   "name": "Crystal of Odryskia",
+   "passive": [
+    "+15% Monthly Rare Crystals"
+   ],
+   "score": 3000,
+   "source": "Debris Belt",
+   "source_kind": "archaeological site",
+   "subsection": null,
+   "triumph": [
+    "60 months worth of Energy Credits",
+    "A scientist gains the Maniacal trait"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Archaeological relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Blade of the Huntress",
+   "passive": [
+    "+25% Army Morale",
+    "+10% Diplomatic Weight",
+    "+2 Planet Sensor Range"
+   ],
+   "score": 200,
+   "source": "Fossilized Remains",
+   "source_kind": "archaeological site",
+   "subsection": null,
+   "triumph": [
+    "+25% Sublight Speed for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Archaeological relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Head of Zarqlan",
+   "passive": [
+    "+150 Opinion with Holy Guardians",
+    "No penalties for colonizing Holy Worlds",
+    "No penalties for entering Holy Guardians systems",
+    "No penalties waystations in Holy Guardians systems"
+   ],
+   "score": 200,
+   "source": "Ancient Tomb",
+   "source_kind": "archaeological site",
+   "subsection": null,
+   "triumph": [
+    "+75% Spiritualist Ethics Attraction for 10 years",
+    "Creates a fleet of Holy Guardians design Fallen Empire ships for the user near the empire capital, increasing in size with each use up to a limit.",
+    "+3 Riddle Escort, max 15 after 5+ uses",
+    "+1 Enigma Battlecruiser, max 5 after 5+ uses (if the Holy Guardians Fallen Empire exists)"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Archaeological relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Miniature Galaxy",
+   "passive": [
+    "+5% Research Speed"
+   ],
+   "score": 2000,
+   "source": "Abandoned Ecumenopolis",
+   "source_kind": "archaeological site",
+   "subsection": null,
+   "triumph": [
+    "+50% Research progress in a random technology"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Archaeological relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "The Defragmentor",
+   "passive": [
+    "−10% Building and District Energy Upkeep",
+    "−10% Job Energy Upkeep",
+    "−10% Robot Upkeep",
+    "−10% Pop Housing Usage if machine founder species"
+   ],
+   "score": 1000,
+   "source": "Planetary Machinery; Develop A Cure For The Ferrophage special project",
+   "source_kind": "archaeological site",
+   "subsection": null,
+   "triumph": [
+    "+20% Monthly Energy Credits for 10 years",
+    "+5% Engineering Research Speed for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Archaeological relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "The Omnicodex",
+   "passive": [
+    "+1 Gene Modification Points",
+    "+25 Opinion with biological empires if machine"
+   ],
+   "score": 500,
+   "source": "Ruined World",
+   "source_kind": "archaeological site",
+   "subsection": null,
+   "triumph": [
+    "300 Pops from a new random species",
+    "New pops have the Hive-Minded trait if Hive Mind"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Guardian relics",
+   "dlc": [
+    "Leviathans"
+   ],
+   "dlc_codes": [
+    "lev"
+   ],
+   "name": "Ether Drake Trophy",
+   "passive": [
+    "+10% Monthly Unity"
+   ],
+   "score": 1000,
+   "source": "Ether Drake",
+   "source_kind": "guardian",
+   "subsection": null,
+   "triumph": [
+    "+10% Happiness for 10 years",
+    "+3 Stability for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Guardian relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Scales of the Worm",
+   "passive": [
+    "+5% Physics Research Speed"
+   ],
+   "score": 1000,
+   "source": "The Worm",
+   "source_kind": "guardian",
+   "subsection": null,
+   "triumph": [
+    "+20% Research Speed for 10 years",
+    "−5 Stability for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Guardian relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "The Rubricator",
+   "passive": [
+    "+15% Archaeotech Weapon Damage",
+    "+20 Society Research"
+   ],
+   "score": 1000,
+   "source": "Shard",
+   "source_kind": "guardian",
+   "subsection": null,
+   "triumph": [
+    "2000 Minor Artifacts"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Guardian relics",
+   "dlc": [
+    "Toxoids"
+   ],
+   "dlc_codes": [
+    "tox"
+   ],
+   "name": "Maw of the Toxic Entity",
+   "passive": [
+    "+15% Strike craft damage"
+   ],
+   "score": 3000,
+   "source": "Toxic Entity",
+   "source_kind": "guardian",
+   "subsection": null,
+   "triumph": [
+    "Unlocks one use of the Consecrate Habitat decision (if Knights of the Toxic God)",
+    "60 months worth (minimum 1000) of Exotic Gases (if not Knights of the Toxic God)"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Guardian relics",
+   "dlc": [
+    "BioGenesis"
+   ],
+   "dlc_codes": [
+    "bio"
+   ],
+   "name": "Voidspawn Myocardium",
+   "passive": [
+    "+10% Ship fire rate",
+    "+5% Damage reduction"
+   ],
+   "score": 3000,
+   "source": "Elder Voidspawn",
+   "source_kind": "guardian",
+   "subsection": null,
+   "triumph": [
+    "+15% Damage reduction for 10 years without a Class-IV Behemoth",
+    "With a Class-IV Behemoth destroy the relic to gain the following",
+    "+85% Damage reduction",
+    "+555% Ship fire rate"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Cybrex War Forge",
+   "passive": [
+    "Can recruit Cybrex Warform armies on capital"
+   ],
+   "score": 5000,
+   "source": "Cybrex",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "+1000 Alloys (increases by another +1000 after each use)",
+    "Cost also increases by +2000 after each use"
+   ],
+   "triumph_cooldown_days": 900,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    },
+    {
+     "amount": 2000,
+     "resource": "minerals"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Javorian Pox Sample",
+   "passive": [
+    "+20 Years leader lifespan",
+    "Javorian Pox orbital bombardment stance",
+    "Double chance to discover Biology techs"
+   ],
+   "score": 5000,
+   "source": "Irassian Concordat",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "+50% Biology research speed for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Psionic Archive",
+   "passive": [
+    "−50% Shroud Delve cooldown",
+    "Enables the Zro Additives edict",
+    "Better Shroud odds"
+   ],
+   "score": 1000,
+   "source": "Zroni",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "Choose one:",
+    "Insight:",
+    "Increase ruler level by 1 (unless already level 10)",
+    "Martial Guidance empire modifier for 5 years:",
+    "+20% Ship weapons damage",
+    "Statecraft Guidance empire modifier for 5 years:",
+    "+3 Planet stability",
+    "-10% Edict upkeep",
+    "+25% Government ethic attraction"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "The Last Baol",
+   "passive": [
+    "+10% Pop growth speed if not machine empire",
+    "+10% Society research if machine empire"
+   ],
+   "score": 1000,
+   "source": "Baol",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "Unlocks one use of the Nu-Baol Life-Seeding or Nu-Baol Life-Enhancing decision"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Vultaum Reality Perforator",
+   "passive": [
+    "−10% Pop amenities usage"
+   ],
+   "score": 5000,
+   "source": "Vultaum Star Assembly",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "Random combat modifier:",
+    "+40% Armor hit points for 2-5 years",
+    "+40% Shield hit points for 2-5 years",
+    "+40% Ship hull points for 2-5 years",
+    "+40% Ship weapons damage for 2-5 years",
+    "All the above for 1 year"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "Yuht Cryo Core",
+   "passive": [
+    "+20% Energy weapon fire rate",
+    "+200% Colony development speed if settled",
+    "+50% Megastructure build speed if nomadic"
+   ],
+   "score": 5000,
+   "source": "Yuht Empire",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "−20% Ship upkeep for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Cosmic Storms"
+   ],
+   "dlc_codes": [
+    "cos"
+   ],
+   "name": "The Disturbance Oppressor",
+   "passive": [
+    "+15% Monthly physics research"
+   ],
+   "score": 1000,
+   "source": "Inetian Traders",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "Repels cosmic storms around the empire capital",
+    "The size of the protected area scales with galaxy size"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Precursor relics",
+   "dlc": [
+    "Cosmic Storms"
+   ],
+   "dlc_codes": [
+    "cos"
+   ],
+   "name": "The Tempest Invocator",
+   "passive": [
+    "+10% Monthly unity",
+    "-15% Ship upkeep"
+   ],
+   "score": 1000,
+   "source": "adAkkaria Convention",
+   "source_kind": "precursor",
+   "subsection": null,
+   "triumph": [
+    "Choose a system to create a Nexus Storm in",
+    "Range increases with galaxy and empire size",
+    "+100% Cosmic storm repulsion effect for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 50000,
+     "resource": "energy"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Celestial Tear",
+   "passive": [
+    "+5% Habitability in orbit of class A, B, F or G stars"
+   ],
+   "score": 3000,
+   "source": "Subnautical",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "+1000 Astral Threads"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Daedalus Seal",
+   "passive": [
+    "+25% Dimensional locks duration",
+    "+1 Astral threads"
+   ],
+   "score": 3000,
+   "source": "Dimensional Conflict",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "Places a lock on every bypass in systems owned or with arkships for 5 years"
+   ],
+   "triumph_cooldown_days": 1800,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Ever Spinning Top",
+   "passive": [
+    "+10% Monthly energy credits"
+   ],
+   "score": 3000,
+   "source": "The Vortex",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "Propulsion +15% Propulsion research speed"
+   ],
+   "triumph_cooldown_days": 1800,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Infinity Root",
+   "passive": [
+    "+10% or +20% Monthly Food"
+   ],
+   "score": 3000,
+   "source": "The Garden",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "No-upkeep level 3 Scientist with the Adaptionist and Eagerness traits"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 100,
+     "resource": "astral threads"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Plasmic Core",
+   "passive": [
+    "+10% Pop growth speed if organic",
+    "+10% Leader experience gain if mechanical"
+   ],
+   "score": 3000,
+   "source": "The Fluid",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "All Pops on a random world gain the Plasmic trait if organic, lithoid or thermophile",
+    "A leader gains 3 basic positive traits if robot or Wilderness",
+    "Evolutionary Predators instead gains:",
+    "Gives 50% progress to the Adaptive Evolution situation",
+    "Plasmic trait may be gained on completion of the Adaptive Evolution situation"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "The Continuum",
+   "passive": [
+    "+5% Monthly basic resources",
+    "+5% Monthly advanced resources",
+    "+5% Monthly research"
+   ],
+   "score": 3000,
+   "source": "The Mechanism",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "12 months worth of basic resources",
+    "12 months worth of advanced resources",
+    "12 months worth of strategic resources",
+    "12 months worth of research"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Astral relics",
+   "dlc": [
+    "Astral Planes"
+   ],
+   "dlc_codes": [
+    "asp"
+   ],
+   "name": "Time Crystal",
+   "passive": [
+    "+10 years Leader lifespan"
+   ],
+   "score": 3000,
+   "source": "Desert Ruins",
+   "source_kind": "astral rift",
+   "subsection": null,
+   "triumph": [
+    "+800 Experience for each leader"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Celestial Resonator",
+   "passive": [
+    "+10 Unity per exhibit"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+1% Happiness per exhibit for 5 years",
+    "+2% Diplomatic Weight per exhibit for 5 years"
+   ],
+   "triumph_cooldown_days": 1800,
+   "triumph_cost": [
+    {
+     "amount": 100,
+     "resource": "energy"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Gavel of the Tribunal",
+   "passive": [
+    "+5% Diplomatic Weight per Galactic Community delegate level"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+50% Diplomatic Weight until next resolution if settled",
+    "-25% Claim Influence Cost for 10 years without Galactic Community if settled",
+    "-25% Waystation Build Cost for 10 years if nomadic",
+    "-25% Waystation Upgrade Cost for 10 years if nomadic"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "The Pattern Maker",
+   "passive": [
+    "+4 Codebreaking",
+    "+5 Tracking",
+    "+5% Accuracy"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "Creates a Patternwalker science ship"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    },
+    {
+     "amount": 750,
+     "resource": "alloys"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Tiyanki Matriarch Nerve Core",
+   "passive": [
+    "+25% Damage to Guardians"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+20% Space Fauna Hull for 10 years",
+    "+20% Space Fauna Armor for 10 years",
+    "+25% Space Fauna Growth Rate for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Vaporous Mega-Orchid",
+   "passive": [
+    "+50 Trust Cap with Organic Empires",
+    "+1 Monthly Loyalty from Organic Subjects"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+150 Opinion with every organic non-genocidal and non-fallen empire for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Entangled Relay",
+   "passive": [
+    "+2 Sector Size if settled",
+    "-50% Starbase Influence Distance Cost if settled",
+    "+2 Station Capacity if nomadic",
+    "-25% Waystation Build Cost if nomadic",
+    "-25% Waystation Upgrade Cost if nomadic"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+40% Resources from Orbital Stations for 10 years if settled",
+    "+30% Waystation Collection Efficiency for 10 years if nomadic",
+    "+50% Waystation Resource Transfer Rate for 10 years if nomadic"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Executus Compendium",
+   "passive": [
+    "+1 Effective Councilor Skill",
+    "+25% Councilor Agenda Speed"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "Launch the current agenda for 10% of its Launch Early cost (min 3000)"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": []
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Preservation Chamber",
+   "passive": [
+    "+25000 Resource Storage Capacity",
+    "+25 Vivarium Max Capacity"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+2 Exceptional Mature specimens for the Vivarium"
+   ],
+   "triumph_cooldown_days": 1800,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Prototype VIR Core",
+   "passive": [
+    "+1 Leader Capacity for all classes"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+4 Effective Councilor Skill for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Propagandosphere",
+   "passive": [
+    "+2 Unity per 100 Soldiers",
+    "+25% Governing Ethics Attraction"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "uni5"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 5000,
+     "resource": "energy"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Crystallinus Diffuser",
+   "passive": [
+    "+5% Resources from Jobs",
+    "+25 Opinion with Biological Empires if machine"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+100 Energy for 10 years if machine",
+    "+100% Biological Pop Output for 10 years if biological",
+    "20% of biological pops will die after 10 years if biological"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Ever-changing Stone",
+   "passive": [
+    "+30% Xeno Geology specimens output",
+    "-1 Minerals upkeep from Metallurgists",
+    "-1 Minerals upkeep from Artisans"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+3% Aesthetic Wonder output for 10 years per exhibited Xeno Geology specimen",
+    "+3% Galactic History output for 10 years per exhibited Xeno Geology specimen"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Flowmetal Alloy",
+   "passive": [
+    "+15% Ship Build Speed",
+    "-30% Robot Upkeep"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+300 Robot pops on the capital"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Pulsestone",
+   "passive": [
+    "+25% Field Manipulation Research Speed",
+    "+50% Chance for Field Manipulation Research Options"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "+25% Combat Disengagement Chance for 10 years",
+    "+25% Shield Hardening for 10 years",
+    "+25% Energy Weapon Damage for 10 years",
+    "-10% Happiness for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Curator relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "The Modularium",
+   "passive": [
+    "+1 Exotic Gases",
+    "+1 Rare Crystals",
+    "+1 Volatile Motes"
+   ],
+   "score": 1000,
+   "source": null,
+   "source_kind": null,
+   "subsection": null,
+   "triumph": [
+    "Doubles the passive effect",
+    "Doubles the triumph cost"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 2500,
+     "resource": "energy"
+    }
+   ]
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Galactic Paragons"
+   ],
+   "dlc_codes": [
+    "glp"
+   ],
+   "name": "Relic Fragment (1/4)",
+   "passive": [
+    "+5% Physics Research Speed"
+   ],
+   "score": 0,
+   "source": "Finding Keides",
+   "source_kind": "source",
+   "stage": 1,
+   "subsection": "The Key",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Galactic Paragons"
+   ],
+   "dlc_codes": [
+    "glp"
+   ],
+   "name": "Relic Fragment (2/4)",
+   "passive": [
+    "+10% Physics Research Speed"
+   ],
+   "score": 0,
+   "source": "One Keides special project complete",
+   "source_kind": "source",
+   "stage": 2,
+   "subsection": "The Key",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Galactic Paragons"
+   ],
+   "dlc_codes": [
+    "glp"
+   ],
+   "name": "Relic Fragment (3/4)",
+   "passive": [
+    "+15% Physics Research Speed"
+   ],
+   "score": 0,
+   "source": "Two Keides special projects complete",
+   "source_kind": "source",
+   "stage": 3,
+   "subsection": "The Key",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Galactic Paragons"
+   ],
+   "dlc_codes": [
+    "glp"
+   ],
+   "name": "Restored Relic",
+   "passive": [
+    "+15% Physics Research Speed"
+   ],
+   "score": 0,
+   "source": "Three Keides special projects complete",
+   "source_kind": "source",
+   "stage": 4,
+   "subsection": "The Key",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": true,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Galactic Paragons"
+   ],
+   "dlc_codes": [
+    "glp"
+   ],
+   "name": "The Key",
+   "passive": [
+    "+20% Physics Research Speed",
+    "-25% Jump Drive Cooldown"
+   ],
+   "score": 2500,
+   "source": "Completing Keides' story",
+   "source_kind": "source",
+   "stage": 5,
+   "subsection": "The Key",
+   "triumph": [
+    "-50% Jump Drive Cooldown for 3 months",
+    "+75% Combat Disengagement Chance for 3 months",
+    "Enables Jumps for every ship for 3 months"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Mysterious Orbital Capsule",
+   "passive": [
+    "No effects"
+   ],
+   "score": 0,
+   "source": "Game start",
+   "source_kind": "source",
+   "stage": 1,
+   "subsection": "Celestial Chart",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Celestial Chart",
+   "passive": [
+    "+10% Survey Speed"
+   ],
+   "score": 0,
+   "source": "Completing the first special project",
+   "source_kind": "source",
+   "stage": 2,
+   "subsection": "Celestial Chart",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Celestial Chart",
+   "passive": [
+    "+20% Survey Speed"
+   ],
+   "score": 0,
+   "source": "Completing the third special project",
+   "source_kind": "source",
+   "stage": 3,
+   "subsection": "Celestial Chart",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": false,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Celestial Chart",
+   "passive": [
+    "+30% Survey Speed"
+   ],
+   "score": 0,
+   "source": "Completing the fifth special project",
+   "source_kind": "source",
+   "stage": 4,
+   "subsection": "Celestial Chart",
+   "triumph": [
+    "Cannot be activated"
+   ],
+   "triumph_cooldown_days": null,
+   "triumph_cost": []
+  },
+  {
+   "activatable": true,
+   "category": "Upgradeable relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Celestial Chart",
+   "passive": [
+    "+40% Survey Speed",
+    "Every 10 years can discover a treasure trove"
+   ],
+   "score": 2500,
+   "source": "Completing the sixth special project",
+   "source_kind": "source",
+   "stage": 5,
+   "subsection": "Celestial Chart",
+   "triumph": [
+    "Choose a planet to gain a Treasure Vault planetary feature",
+    "Unlocks the Head Treasure Hunter council position (if Galactic Paragons)"
+   ],
+   "triumph_cooldown_days": 1800,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "MegaCorp"
+   ],
+   "dlc_codes": [
+    "mgc"
+   ],
+   "name": "The Galatron",
+   "passive": [
+    "+3 Influence",
+    "+100% Diplomatic weight"
+   ],
+   "score": 20000,
+   "source": "Reliquary reward (0.5% chance); Can be captured with the Take Galatron Wargoal",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "Random resources:",
+    "8000 Energy",
+    "8000 Minerals",
+    "8000 Food",
+    "5000 Alloys",
+    "5000 Consumer Goods",
+    "500 Exotic Gases",
+    "500 Rare Crystals",
+    "500 Volatile Motes",
+    "30 Minor Artifacts if Ancient Relics is enabled",
+    "All empires gain a casus belli to take the relic"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "Ancient Relics"
+   ],
+   "dlc_codes": [
+    "anr"
+   ],
+   "name": "The Surveyor",
+   "passive": [
+    "+1 Sensor Range"
+   ],
+   "score": 200,
+   "source": "Defeating the Home Base Ore Grinder",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "A celestial object within borders gains a random deposit:",
+    "5/7/9 Energy",
+    "5/7/9 Minerals",
+    "5/7/9 Engineering Research",
+    "5/7/9 Physics Research",
+    "5/7/9 Society Research",
+    "5/7/9 Trade",
+    "3-5 Alloys",
+    "1-3 Exotic Gases",
+    "1-3 Rare Crystals",
+    "1-3 Volatile Motes",
+    "50% chance to repeat this process in 720-1080 days",
+    "20% chance to repeat this process again in 1440-1800 days",
+    "If nomadic always picks the capital arkship system"
+   ],
+   "triumph_cooldown_days": 1800,
+   "triumph_cost": [
+    {
+     "amount": 500,
+     "resource": "energy"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "Nemesis"
+   ],
+   "dlc_codes": [
+    "nem"
+   ],
+   "name": "Vacuum Flower",
+   "passive": [
+    "+10% Monthly Energy"
+   ],
+   "score": 1000,
+   "source": "Finished the The Kaleidoscope situation positively",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "Resource income for 10 years depending on capital star",
+    "+300 Food if class F",
+    "+300 Energy if class G",
+    "+300 Minerals if class K",
+    "+150 Consumer Goods if class A",
+    "+75 Alloys if class B",
+    "+30 Rare Crystals if class M",
+    "+30 Volatile Motes if class T",
+    "+30 Exotic Gases if Viridescent Lightbringer",
+    "+15 Dark Matter if Black Hole",
+    "+15 Living Metal if Red Giant",
+    "+15 Zro if Pulsar",
+    "+15 Nanites if Neutron Star",
+    "+15 Astral Threads if azilash",
+    "Bonuses stack in binary and trinary systems"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "The Machine Age"
+   ],
+   "dlc_codes": [
+    "tma"
+   ],
+   "name": "RulerChip",
+   "passive": [
+    "+1 Additional Ruler Trait Options",
+    "Per previous Scientist ruler:",
+    "+5% Research Speed (max +25%)",
+    "Per previous Official ruler:",
+    "+5% Resources from Jobs (max +25%)",
+    "Per previous Commander ruler:",
+    "+5% Ship Weapons Damage (max +25%)",
+    "Can't be stolen"
+   ],
+   "score": 0,
+   "source": "Imperial Chipset authority",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+50% Ruler Experience Gain for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "Grand Archive"
+   ],
+   "dlc_codes": [
+    "gra"
+   ],
+   "name": "Mutated Voidworm Nest",
+   "passive": [
+    "+25% Space Fauna Cloning Speed",
+    "+25 Vivarium Max Capacity"
+   ],
+   "score": 3000,
+   "source": "Defeating the Frenzied Voidworms",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "Controllable Voidworm fleet",
+    "32 Nymphs",
+    "18 Juveniles",
+    "32 Adults"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 5000,
+     "resource": "minerals"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "Shadows of the Shroud"
+   ],
+   "dlc_codes": [
+    "sos"
+   ],
+   "name": "The Dreamer",
+   "passive": [
+    "+1 Shroud Seal Range",
+    "+25 Unity per Shroud Seal",
+    "+10 Naval Capacity per Shroud Seal"
+   ],
+   "score": 3000,
+   "source": "Mindwardens origin ending choice",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "First use creates 3 Shrouded worlds",
+    "Subsequent uses unlock one use of the Dreamscaping decision"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 500,
+     "resource": "zro"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "Infernals"
+   ],
+   "dlc_codes": [
+    "inf"
+   ],
+   "name": "Pyroglyphic Codex",
+   "passive": [
+    "+10% Monthly Unity",
+    "Can't be stolen"
+   ],
+   "score": 1000,
+   "source": "Finishing the Deep Excavation situation",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+10% Research from Researchers for 10 years",
+    "archaeological dig Underground Architecture capital modifier"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 10000,
+     "resource": "energy"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Other relics",
+   "dlc": [
+    "Infernals"
+   ],
+   "dlc_codes": [
+    "inf"
+   ],
+   "name": "Crystallized Singularity",
+   "passive": [
+    "+10% Physics Research Speed",
+    "Can't be stolen"
+   ],
+   "score": 1500,
+   "source": "Galactic Hyperthermia crisis victory",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "+0.1 Energy per Physics for 10 years",
+    "+10% Energy Weapons Damage for 10 years",
+    "+10% Energy Weapons Fire Rate for 10 years",
+    "+5% Engineering Research Speed for 10 years",
+    "Unlocks one use of the Life Seeding decision if not Genocidal"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 3000,
+     "resource": "unity"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Champion's Forge Live! Trophy",
+   "dlc": [
+    "Nomads"
+   ],
+   "dlc_codes": [
+    "nmd"
+   ],
+   "name": "Champion's Forge Live! Trophy",
+   "passive": [
+    "+30% Diplomatic Weight from Fleet Power"
+   ],
+   "score": 200,
+   "source": "Winning a Champion's Forge Live! tournament",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "Next tradition cost reduced to 1",
+    "Empire gains the Raise it High modifier for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 200,
+     "resource": "Influence"
+    }
+   ]
+  },
+  {
+   "activatable": true,
+   "category": "Champion's Forge Live! Trophy",
+   "dlc": [
+    "Nomads"
+   ],
+   "dlc_codes": [
+    "nmd"
+   ],
+   "name": "Tarnished Champion's Forge Live! Trophy",
+   "passive": [
+    "+25% Diplomatic Weight from Fleet Power"
+   ],
+   "score": 200,
+   "source": "Champion's Forge Live! enclave destroyed while owning the Trophy",
+   "source_kind": "source",
+   "subsection": null,
+   "triumph": [
+    "Next tradition cost reduced by -90%",
+    "Empire gains the Raise it High modifier for 10 years"
+   ],
+   "triumph_cooldown_days": 3600,
+   "triumph_cost": [
+    {
+     "amount": 200,
+     "resource": "Influence"
+    }
+   ]
+  }
+ ]
+}

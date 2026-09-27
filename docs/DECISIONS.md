@@ -6,6 +6,96 @@ supersedes it and say so.
 
 ---
 
+## 2026-09-27 — UI data files are generated from v3
+
+**Decided:** `design_handoff_rift_finder/rift-data.js` and `dig-data.js` are build outputs. They are
+written by `data/tools/build_ui_data.py`, which `build_all_v3.py` runs after the JSON datasets,
+and are never edited by hand. Each file starts with a generated-file header naming the script,
+the source datasets with their schema, version, generation date and wiki version, and a
+"do not edit" line. This resolves open item 1 of
+`docs/sessions/2026-09-26-archaeology-v3-and-merge.md`.
+
+The UI's data contract is frozen as a floor. Every field the UI already reads keeps its name and
+meaning; the generator only adds fields:
+- `counts` and `meta` at the top of each file.
+- `text` beside `raw` on every row.
+- Option groups: `choices` on dig chapters, `rewardChoices` on rift chapters.
+- Relic details (`relicId`, `relic`).
+- `pathSource` on rift rewards.
+
+Player-facing wording is produced in the build, not the UI:
+- Reward codes are expanded into multiplier plus min–max clamp.
+- Tilde ranges become en-dash ranges.
+- "Choice / Random / OR" lines are grouped into typed option groups: `choice` means the player
+  picks, `random` means the game picks, and `either` means the wiki doesn't say who picks.
+
+The header stats now read the generated counts instead of "32 · 289 · 71".
+
+**Why:** The old files were a third, hand-shaped copy with no version marker. They showed 71 of
+157 rift rewards, no rift situations, 11 relics named only, and raw wiki codes in 113 payout
+lines. It was the same failure as the stale merged file one layer further out: a copy with no
+way to tell it was stale. Generating it means the validator can prove the UI matches v3:
+- Counts, ids and ordering.
+- Every rift path resolving to real chapters and choices.
+- No untranslated codes, placeholders or tilde ranges.
+- Every option group having two or more options.
+
+Regenerating the 32 existing rifts reproduced the old chapter structure exactly. The only
+differences are 19 lines the hand copy had garbled.
+
+**Consequences to respect:**
+- `random` groups must not be drawn as player picks. Fifteen of the 63 "Choice/OR" lines
+  are random outcomes; the wiki words them "Randomly, one of".
+- Rift reward paths are the curated v2.1 path when it still resolves (74), otherwise computed
+  as the shortest route through the chapter graph. That is 65 computed, 15 through "on failure →"
+  edges, and 3 direct situation stages.
+- Corrections to the v2.1 inputs go in `data/tools/corrections.py` with the wiki revision they
+  rest on, never into the JSON. The first one: Ancient Capital Site has five chapters on the wiki
+  (rev 118610), so the input's placeholder chapter 6 was dropped. The Skrand Sharpbeak line
+  moved from chapter 3 to chapter 2.
+
+**What would overturn it:** the UI moving onto the v3 JSON directly, which would retire the .js
+files altogether.
+
+---
+
+## 2026-09-27 — Relic catalogue captured from the wiki
+
+**Decided:** Relics are a dataset of their own, `data/relics.v3.json`, and are included as
+`relics[]` in `stellaris_discovery.v3.json`. It holds 68 entries from the Relics wiki page
+(revision 119679), one per relic and one per stage for the two upgradeable relics. Each entry
+records:
+- name and category;
+- passive and triumph effects;
+- triumph cost as resource and amount;
+- cooldown in days;
+- whether it can be activated;
+- source, score and DLC.
+
+Every relic reward in rifts and sites carries a `relic_id`, found by whole-word name match against
+the catalogue. Matches are never guessed. The one reward that names no catalogue entry, The
+Advisor's "Advisor Core", is on a documented exceptions list. The build fails on any new
+unmatched or ambiguous reward.
+
+Capture is its own step. The wiki's browser challenge blocks scripted API clients, so
+`data/tools/capture/capture_relics.js` runs in a browser tab on the wiki and parses the page
+deterministically. Its output, `data/tools/capture/relics.wiki.json`, stores the revision id, the
+wikitext hash and its own hash. The build refuses a capture that doesn't match its hash.
+
+**Why:** Relic effects were absent from the data: 23 relic rewards, 2 with any effect text. The
+archaeology session's recurrence work also depends on triumph cooldowns. A catalogue linked by id
+means the UI can show passive, triumph, cost and cooldown without the rift and site datasets each
+carrying copies. It also means cooldown is recorded once, ahead of designing a timing object.
+
+**Flag to pressure-test:** the Relics page is tagged for game version **4.5**, while the rift and
+site data is documented against 3.14. Relic values may be newer than the rewards that grant them.
+Nested effect lists (for example Psionic Archive's "Choose one:") are flattened in page order.
+
+**What would overturn it:** relic data extracted from the game files, which would replace the wiki
+as the source.
+
+---
+
 ## 2026-09-26 — Folder outline softened, corner accents, header panel shares the card shape
 
 **Decided:** Refines the "notched folder card follows Figma 82:17" entry below, and supersedes its

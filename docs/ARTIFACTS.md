@@ -25,11 +25,9 @@ Header copy in the design reads: `32 RIFTS · 289 CHAPTERS · 71 REWARDS`. **All
 now wrong.** As of v3 (2026-09-26) rifts are 36 entities / 294 chapters / 157 rewards, and the
 combined dataset is 146 / 723 / 341. Update when the design is next touched.
 
-**The bundled UI data is a third copy and it is stale.** `design_handoff_rift_finder/rift-data.js`
-and `dig-data.js` are hand-shaped snapshots (`window.RIFT_DATA`) matching no dataset schema, with
-no version or provenance marker. They are missing all 4 rift situations and every v3 finding. See
-`docs/sessions/2026-09-26-archaeology-v3-and-merge.md` open item 1 — the proposal is to generate
-them from the v3 JSON as a build step.
+**The bundled UI data is generated from v3** (since 2026-09-27). `rift-data.js` and `dig-data.js` are
+written by `data/tools/build_ui_data.py` and carry a generated-file header; the header stats in
+the design now read their counts. See `docs/DECISIONS.md`.
 
 ## Published artifacts
 

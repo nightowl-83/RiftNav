@@ -1,17 +1,20 @@
 # -*- coding: utf-8 -*-
-"""Build all three v3 datasets: rifts, archaeological sites, and the merged file.
+"""Build the v3 datasets: rifts, archaeological sites, relics, the merged file, and the UI's
+rift-data.js / dig-data.js.
 
-Single entry point. Reads v2.1 (+ situations source) and emits v3. Nothing is
-hand-written: every string is copied verbatim from its source.
+Single entry point. Reads v2.1 (+ situations source, sourced corrections, the relic capture)
+and emits v3. Nothing is hand-written: every string is copied verbatim from its source, and
+player-facing wording (`text`) sits beside the verbatim line (`raw`).
 """
 import json, os, sys, re
 from collections import Counter, OrderedDict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from parse_rewards import classify, from_choice, GATE, COND
 from situations import SITUATIONS
-
-HOME=os.environ["HOME"]; DATA=HOME+"/mnt/Stellaris/data"
-SCHEMA="stellaris-discovery/3.0"; VERSION="3.0"; GENERATED="2026-09-26"
+from paths import DATA
+import corrections, relics as relic_catalogue
+from reward_text import code_table, Translator, SUPPLEMENTARY_CODES
+SCHEMA="stellaris-discovery/3.0"; VERSION="3.0"; GENERATED="2026-09-27"
 WIKI="3.14"
 
 REWARD_GROUPS = OrderedDict([
@@ -169,7 +172,8 @@ def main():
 
     # ---------- archaeological sites ----------
     asrc=json.load(open(f"{DATA}/archaeological_sites.v2.1.json"))
-    aents=[dict(e) for e in asrc["entities"]]
+    aents=[dict(e, chapters=[dict(c) for c in e["chapters"]]) for e in asrc["entities"]]
+    fixes=corrections.apply(aents)
     ar_,ap,ac,an = collect(aents); resolve_chains(aents,ac); link(aents,ar_,ap,ac)
     arch=envelope("stellaris_archaeological_sites","archaeological_site",aents,ar_,ap,ac,an,
       asrc["source"],
@@ -185,9 +189,22 @@ def main():
        "do not assume the two are the same thing.",
        "Sites have no choice tree on the wiki, so every chapter's choices[] is empty and title is null.",
       ])
-    arch["reward_codes"]=asrc["reward_codes"]
+    arch["reward_codes"]=asrc["reward_codes"]+[dict(c) for c in SUPPLEMENTARY_CODES]
+    arch["corrections"]=fixes
     arch["mechanics"]=asrc.get("mechanics",[])
     arch["groups"]=asrc["groups"]
+
+    # ---------- plain wording beside every raw line (audit D1) ----------
+    T=Translator(code_table(arch["reward_codes"], rifts["reward_codes"]))
+    for arr in (rr,rp,rc,ar_,ap,ac):
+        for x in arr: x["text"]=T.text(x["raw"])
+
+    # ---------- relic catalogue + links (audit D5) ----------
+    cap=relic_catalogue.load_capture()
+    cat=relic_catalogue.build(cap, T.text)
+    unmatched,ambiguous=[],[]
+    for arr in (rr,ar_):
+        u,a=relic_catalogue.link(arr,cat); unmatched+=u; ambiguous+=a
 
     # ---------- merged ----------
     ments=rents+aents
@@ -208,14 +225,49 @@ def main():
     merged["groups"]=([dict(g,kind="astral_rift") for g in rifts["groups"]]+
                       [dict(g,kind="archaeological_site") for g in arch["groups"]])
     merged["notes"]=("Rifts and archaeological sites in one file, both on the v3 shape. "
-                     "Filter on entity.kind. Supersedes stellaris_discovery.v2.1.json, which "
-                     "held pre-v3 rift data and no situations.")
+                     "Filter on entity.kind. relics[] is the relic catalogue; relic rewards point "
+                     "at it by relic_id. Supersedes stellaris_discovery.v2.1.json, which held "
+                     "pre-v3 rift data and no situations.")
+    merged["corrections"]=fixes
+    by_id={r["id"]:r for r in cat}
+    for x in mr:
+        if x.get("relic_id"): by_id[x["relic_id"]]["rewarded_by"].append(x["rid"])
+    merged["relics"]=cat
+    merged["coverage"]["relics"]=len(cat)
+
+    relic_ds={
+     "dataset":"stellaris_relics","kind":"relic","schema":SCHEMA,"version":VERSION,
+     "generated":GENERATED,"wiki_version":cap["wiki_version"],
+     "source":f"{cap['url']} (revision {cap['revid']})","captured":cap["captured"],
+     "captured_with":cap["captured_with"],"capture_sha256":cap["capture_sha256"],
+     "coverage":{"relics":len(cat),"categories":len({r['category'] for r in cat}),
+                 "linked_rewards":sum(1 for x in mr if x.get("relic_id")),
+                 "relic_rewards":sum(1 for x in mr if x["type"]=="relic")},
+     "categories":[{"key":k,"label":l} for k,l in dict.fromkeys(
+                   (r["category_key"],r["category"]) for r in cat)],
+     "dlc_names":cap["dlc_names"],
+     "relics":cat,
+     "link_exceptions":[{"entity":x["entity"],"entity_uid":x["entity_uid"],"raw":x["raw"],
+                         "why":x["relic_link_exception"]} for x in mr if x.get("relic_link_exception")],
+     "assumptions":[
+      f"Captured from the Relics wiki page, which is tagged for game version {cap['wiki_version']}. "
+      "The rift and site datasets are documented against 3.14. Relic values may be newer than the "
+      "rewards that grant them; check both against the patch you play.",
+      "Upgradeable relics (The Key, Celestial Chart) have one entry per stage. A reward that names "
+      "one links to its final stage.",
+      "Effects are the wiki's wording with markup removed. Nested effect lists (e.g. Psionic "
+      "Archive's 'Choose one:') are flattened into one list in page order.",
+     ]}
 
     for fn,obj in (("astral_rifts.v3.json",rifts),
                    ("archaeological_sites.v3.json",arch),
-                   ("stellaris_discovery.v3.json",merged)):
+                   ("stellaris_discovery.v3.json",merged),
+                   ("relics.v3.json",relic_ds)):
         json.dump(obj,open(f"{DATA}/{fn}","w"),indent=1,ensure_ascii=False)
         c=obj["coverage"]
+        if fn=="relics.v3.json":
+            print(f"{fn:36} relics {c['relics']:4} in {c['categories']} categories, "
+                  f"{c['linked_rewards']}/{c['relic_rewards']} relic rewards linked"); continue
         print(f"{fn:36} entities {c['entities']:4} chapters {c['chapters']:4} "
               f"rewards {c['rewards']:4} payouts {c['payouts']:4} chains {c['chains']:3} "
               f"unclassified {c['unclassified']}")
@@ -226,5 +278,16 @@ def main():
     for t,n in Counter(p["type"] for p in mp).most_common(): print(f"  {n:4}  {t}")
     print(f"\nchain edges with >=1 resolved target: {sum(1 for x in mc if x.get('targets'))}/{len(mc)}")
     print(f"entities that unlock another: {sum(1 for e in ments if e.get('unlocks'))}")
+    print(f"\ncorrections applied: {len(fixes)}")
+    for f in fixes: print(f"  {f['entity']}: {f['op']} {f.get('chapter') or f.get('from')+'->'+f.get('to')}  (rev {f['revid']})")
+    print(f"relic rewards unlinked (on exceptions list): {len(relic_ds['link_exceptions'])}")
+    for x in relic_ds["link_exceptions"]: print(f"  {x['entity']}: {x['raw']}")
+    if unmatched or ambiguous:
+        for x in unmatched: print(f"  UNMATCHED relic reward: {x['entity']} | {x['raw']}")
+        for x,ids in ambiguous: print(f"  AMBIGUOUS relic reward: {x['entity']} | {x['raw']} -> {ids}")
+        raise SystemExit("relic rewards without a catalogue link - add a rule or a documented exception")
+
+    import build_ui_data
+    build_ui_data.main(rifts, arch, cat, T)
 
 main()

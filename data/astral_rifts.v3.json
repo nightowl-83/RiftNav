@@ -3,7 +3,7 @@
  "kind": "astral_rift",
  "schema": "stellaris-discovery/3.0",
  "version": "3.0",
- "generated": "2026-09-26",
+ "generated": "2026-09-27",
  "wiki_version": "3.14",
  "source": "https://stellaris.paradoxwikis.com/Astral_rift , per-rift pages , https://stellaris.paradoxwikis.com/Astral_rift_situations , Template:Reward",
  "coverage": {
@@ -6006,7 +6006,8 @@
    "rid": "r0001",
    "group": "empire",
    "group_label": "Empire",
-   "name": "grants +0.5 basic resource per job at chapter 7"
+   "name": "grants +0.5 basic resource per job at chapter 7",
+   "text": "grants +0.5 basic resource per job at chapter 7"
   },
   {
    "entity": "Ruined Planet",
@@ -6023,7 +6024,8 @@
    "rid": "r0002",
    "group": "empire",
    "group_label": "Empire",
-   "name": "grants +25% rift exploration speed and -50% rift fail chance at chapter 7"
+   "name": "grants +25% rift exploration speed and -50% rift fail chance at chapter 7",
+   "text": "grants +25% rift exploration speed and -50% rift fail chance at chapter 7"
   },
   {
    "entity": "Ruined Planet",
@@ -6040,7 +6042,8 @@
    "rid": "r0003",
    "group": "empire",
    "group_label": "Empire",
-   "name": "grants +10% armor HP and hardening at chapter 7"
+   "name": "grants +10% armor HP and hardening at chapter 7",
+   "text": "grants +10% armor HP and hardening at chapter 7"
   },
   {
    "entity": "Ruined Planet",
@@ -6057,7 +6060,8 @@
    "rid": "r0004",
    "group": "empire",
    "group_label": "Empire",
-   "name": "grants +10% shield HP and hardening at chapter 7"
+   "name": "grants +10% shield HP and hardening at chapter 7",
+   "text": "grants +10% shield HP and hardening at chapter 7"
   },
   {
    "entity": "Ruined Planet",
@@ -6074,7 +6078,8 @@
    "rid": "r0005",
    "group": "empire",
    "group_label": "Empire",
-   "name": "adds +5% Sublight Speed at chapter 7"
+   "name": "adds +5% Sublight Speed at chapter 7",
+   "text": "adds +5% Sublight Speed at chapter 7"
   },
   {
    "entity": "Ruined Planet",
@@ -6091,7 +6096,8 @@
    "rid": "r0006",
    "group": "empire",
    "group_label": "Empire",
-   "name": "adds +5% Ship Build Speed at chapter 7"
+   "name": "adds +5% Ship Build Speed at chapter 7",
+   "text": "adds +5% Ship Build Speed at chapter 7"
   },
   {
    "entity": "Ruined Planet",
@@ -6108,7 +6114,8 @@
    "rid": "r0007",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Formless contact one year later hinting at The Crystal Rift"
+   "name": "Formless contact one year later hinting at The Crystal Rift",
+   "text": "Follow-up: Formless contact one year later hinting at The Crystal Rift."
   },
   {
    "entity": "Ruined Planet",
@@ -6125,7 +6132,8 @@
    "rid": "r0008",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Level 3 Scientist with Rift Warped"
+   "name": "Level 3 Scientist with Rift Warped",
+   "text": "Level 3 Scientist with Rift Warped"
   },
   {
    "entity": "Ruined Planet",
@@ -6142,7 +6150,8 @@
    "rid": "r0009",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Level 3 Commander with Rift Warped"
+   "name": "Level 3 Commander with Rift Warped",
+   "text": "Level 3 Commander with Rift Warped"
   },
   {
    "entity": "Ruined Planet",
@@ -6159,7 +6168,8 @@
    "rid": "r0010",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Level 3 Official with Rift Warped"
+   "name": "Level 3 Official with Rift Warped",
+   "text": "Level 3 Official with Rift Warped"
   },
   {
    "entity": "Ruined Planet",
@@ -6176,7 +6186,8 @@
    "rid": "r0011",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Energy and an aged Official immune to negative traits"
+   "name": "Energy and an aged Official immune to negative traits",
+   "text": "Energy and an aged Official immune to negative traits"
   },
   {
    "entity": "Ruined Planet",
@@ -6193,7 +6204,8 @@
    "rid": "r0012",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Formless contact one year later hinting at The Crystal Rift"
+   "name": "Formless contact one year later hinting at The Crystal Rift",
+   "text": "Follow-up: Formless contact one year later hinting at The Crystal Rift."
   },
   {
    "entity": "Ruined Planet",
@@ -6210,7 +6222,8 @@
    "rid": "r0013",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Black Curtain base"
+   "name": "Black Curtain base",
+   "text": "Black Curtain base: +5% Pop Growth Speed and +5% Habitability"
   },
   {
    "entity": "Ruined Planet",
@@ -6227,7 +6240,8 @@
    "rid": "r0014",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Starlight Vanguard base"
+   "name": "Starlight Vanguard base",
+   "text": "Starlight Vanguard base: +10% Kinetic Weapon Damage"
   },
   {
    "entity": "Ruined Planet",
@@ -6244,7 +6258,8 @@
    "rid": "r0015",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Black Curtain + resources"
+   "name": "Black Curtain + resources",
+   "text": "Black Curtain + resources: +0.5 basic resource from the matching job category"
   },
   {
    "entity": "Ruined Planet",
@@ -6261,7 +6276,8 @@
    "rid": "r0016",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Starlight Vanguard + alloys"
+   "name": "Starlight Vanguard + alloys",
+   "text": "Starlight Vanguard + alloys: +10% Armor HP, +10% Armor Hardening"
   },
   {
    "entity": "Ruined Planet",
@@ -6278,7 +6294,8 @@
    "rid": "r0017",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Chapter 5 energy"
+   "name": "Chapter 5 energy",
+   "text": "Chapter 5 energy: +5% Ship Build Speed"
   },
   {
    "entity": "Genesis",
@@ -6295,7 +6312,8 @@
    "rid": "r0018",
    "group": "forces",
    "group_label": "Forces",
-   "name": "species gains Strong"
+   "name": "species gains Strong",
+   "text": "species gains Strong"
   },
   {
    "entity": "Genesis",
@@ -6312,7 +6330,8 @@
    "rid": "r0019",
    "group": "forces",
    "group_label": "Forces",
-   "name": "species gains Natural Intellectuals"
+   "name": "species gains Natural Intellectuals",
+   "text": "species gains Natural Intellectuals"
   },
   {
    "entity": "Genesis",
@@ -6329,7 +6348,8 @@
    "rid": "r0020",
    "group": "forces",
    "group_label": "Forces",
-   "name": "species gains Proles"
+   "name": "species gains Proles",
+   "text": "species gains Proles"
   },
   {
    "entity": "Genesis",
@@ -6346,7 +6366,8 @@
    "rid": "r0021",
    "group": "forces",
    "group_label": "Forces",
-   "name": "species gains Ingenious"
+   "name": "species gains Ingenious",
+   "text": "species gains Ingenious"
   },
   {
    "entity": "Genesis",
@@ -6363,7 +6384,8 @@
    "rid": "r0022",
    "group": "forces",
    "group_label": "Forces",
-   "name": "species gains Conservative"
+   "name": "species gains Conservative",
+   "text": "species gains Conservative"
   },
   {
    "entity": "Genesis",
@@ -6380,7 +6402,8 @@
    "rid": "r0023",
    "group": "forces",
    "group_label": "Forces",
-   "name": "species gains Starborn"
+   "name": "species gains Starborn",
+   "text": "species gains Starborn"
   },
   {
    "entity": "Genesis",
@@ -6397,7 +6420,8 @@
    "rid": "r0024",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Genesis Core"
+   "name": "Genesis Core",
+   "text": "Genesis Core specimen [Grand Archive DLC]"
   },
   {
    "entity": "Genesis",
@@ -6414,7 +6438,8 @@
    "rid": "r0025",
    "group": "forces",
    "group_label": "Forces",
-   "name": "One pop of the new species on a random colony, with the three traits you picked and that c"
+   "name": "One pop of the new species on a random colony, with the three traits you picked and that c",
+   "text": "One pop of the new species on a random colony, with the three traits you picked and that colony's climate preference"
   },
   {
    "entity": "Genesis",
@@ -6431,7 +6456,8 @@
    "rid": "r0026",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Genesis Insight (Gestalt Consciousness only)"
+   "name": "Genesis Insight (Gestalt Consciousness only)",
+   "text": "Genesis Insight (Gestalt Consciousness only)"
   },
   {
    "entity": "Strange Station",
@@ -6448,7 +6474,8 @@
    "rid": "r0027",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Interdimensional Treaty"
+   "name": "Interdimensional Treaty",
+   "text": "Interdimensional Treaty specimen [Grand Archive DLC]"
   },
   {
    "entity": "Strange Station",
@@ -6465,7 +6492,8 @@
    "rid": "r0028",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+50% Governing Ethics Attraction"
+   "name": "+50% Governing Ethics Attraction",
+   "text": "+50% Governing Ethics Attraction for 10 years"
   },
   {
    "entity": "Strange Station",
@@ -6482,7 +6510,8 @@
    "rid": "r0029",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Permanent communications with the Mirror Empire"
+   "name": "Permanent communications with the Mirror Empire",
+   "text": "Permanent communications with the Mirror Empire"
   },
   {
    "entity": "Strange Station",
@@ -6499,7 +6528,8 @@
    "rid": "r0030",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Fractured Ambassadors (Gestalt Consciousness only)"
+   "name": "Fractured Ambassadors (Gestalt Consciousness only)",
+   "text": "Fractured Ambassadors (Gestalt Consciousness only)"
   },
   {
    "entity": "Strange Station",
@@ -6516,7 +6546,8 @@
    "rid": "r0031",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Interdimensional Treaty"
+   "name": "Interdimensional Treaty",
+   "text": "Interdimensional Treaty specimen [Grand Archive DLC]"
   },
   {
    "entity": "The Microverse",
@@ -6533,7 +6564,8 @@
    "rid": "r0032",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Scientist becomes 5 years younger"
+   "name": "Scientist becomes 5 years younger",
+   "text": "Scientist becomes 5 years younger"
   },
   {
    "entity": "The Microverse",
@@ -6550,7 +6582,8 @@
    "rid": "r0033",
    "group": "empire",
    "group_label": "Empire",
-   "name": "A Star is Born"
+   "name": "A Star is Born",
+   "text": "A Star is Born: +10% Physics research for 10 years"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6567,7 +6600,8 @@
    "rid": "r0034",
    "group": "research",
    "group_label": "Research",
-   "name": "Random Biology (Genetics) technology"
+   "name": "Random Biology (Genetics) technology",
+   "text": "Random Biology (Genetics) technology"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6584,7 +6618,8 @@
    "rid": "r0035",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Wormhole Fur"
+   "name": "Wormhole Fur",
+   "text": "Wormhole Fur specimen [Grand Archive DLC]"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6601,7 +6636,8 @@
    "rid": "r0036",
    "group": "research",
    "group_label": "Research",
-   "name": "Wormhole Stabilization"
+   "name": "Wormhole Stabilization",
+   "text": "Wormhole Stabilization if researchable, otherwise 50% progress toward a random Particles technology"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6618,7 +6654,8 @@
    "rid": "r0037",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Mutative Digestive Fluids"
+   "name": "Mutative Digestive Fluids",
+   "text": "Mutative Digestive Fluids specimen [Grand Archive DLC]"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6635,7 +6672,8 @@
    "rid": "r0038",
    "group": "research",
    "group_label": "Research",
-   "name": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts"
+   "name": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts",
+   "text": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts; otherwise a random Biology (Farming) technology"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6652,7 +6690,8 @@
    "rid": "r0039",
    "group": "research",
    "group_label": "Research",
-   "name": "10% progress toward a random Robotics technology"
+   "name": "10% progress toward a random Robotics technology",
+   "text": "10% progress toward a random Robotics technology"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6669,7 +6708,8 @@
    "rid": "r0040",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Extreme Contortionist DNA"
+   "name": "Extreme Contortionist DNA",
+   "text": "Extreme Contortionist DNA specimen [Grand Archive DLC]"
   },
   {
    "entity": "Entertainment Nexus",
@@ -6686,7 +6726,8 @@
    "rid": "r0041",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)"
+   "name": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)",
+   "text": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)"
   },
   {
    "entity": "The Crystal Rift",
@@ -6703,7 +6744,8 @@
    "rid": "r0042",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Particles technology"
+   "name": "25% progress toward a random Particles technology",
+   "text": "25% progress toward a random Particles technology"
   },
   {
    "entity": "The Crystal Rift",
@@ -6720,7 +6762,8 @@
    "rid": "r0043",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Field Manipulation technology"
+   "name": "25% progress toward a random Field Manipulation technology",
+   "text": "25% progress toward a random Field Manipulation technology"
   },
   {
    "entity": "The Crystal Rift",
@@ -6737,7 +6780,8 @@
    "rid": "r0044",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+10 Unity and +10 Physics on the rift"
+   "name": "+10 Unity and +10 Physics on the rift",
+   "text": "+10 Unity and +10 Physics on the rift"
   },
   {
    "entity": "The Crystal Rift",
@@ -6754,7 +6798,8 @@
    "rid": "r0045",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Azilash"
+   "name": "Azilash",
+   "text": "Azilash: neutral Formless starbase, 8 hostile Aberrant fleets, deposits of 1 astral thread / 10 rare crystals / 10 physics"
   },
   {
    "entity": "The Crystal Rift",
@@ -6771,7 +6816,9 @@
    "rid": "r0046",
    "group": "loot",
    "group_label": "Loot",
-   "name": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or "
+   "name": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or ",
+   "text": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or the Eternal Throne relic",
+   "relic_id": "eternal-throne"
   },
   {
    "entity": "The Crystal Rift",
@@ -6788,7 +6835,8 @@
    "rid": "r0047",
    "group": "risk",
    "group_label": "Risk",
-   "name": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost"
+   "name": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost",
+   "text": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost"
   },
   {
    "entity": "Psionic Stranger",
@@ -6805,7 +6853,8 @@
    "rid": "r0048",
    "group": "research",
    "group_label": "Research",
-   "name": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materiali"
+   "name": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materiali",
+   "text": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materialist / Fanatic Materialist empires)"
   },
   {
    "entity": "Siege on Paradise",
@@ -6822,7 +6871,8 @@
    "rid": "r0049",
    "group": "empire",
    "group_label": "Empire",
-   "name": "2-4 years later the 'Dust to Dust' event gives Society and Engineering research and remove"
+   "name": "2-4 years later the 'Dust to Dust' event gives Society and Engineering research and remove",
+   "text": "Follow-up: 2-4 years later the 'Dust to Dust' event gives Society and Engineering research and removes the deposit."
   },
   {
    "entity": "Siege on Paradise",
@@ -6839,7 +6889,8 @@
    "rid": "r0050",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+25 Society research on the rift"
+   "name": "+25 Society research on the rift",
+   "text": "+25 Society research on the rift"
   },
   {
    "entity": "Siege on Paradise",
@@ -6856,7 +6907,8 @@
    "rid": "r0051",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Option to recruit the paragon Oakenstalk"
+   "name": "Option to recruit the paragon Oakenstalk",
+   "text": "Option to recruit the paragon Oakenstalk"
   },
   {
    "entity": "Siege on Paradise",
@@ -6873,7 +6925,8 @@
    "rid": "r0052",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Astral Cloaking (+1 Cloaking Strength while active)"
+   "name": "Astral Cloaking (+1 Cloaking Strength while active)",
+   "text": "Astral Cloaking (+1 Cloaking Strength while active)"
   },
   {
    "entity": "Siege on Paradise",
@@ -6890,7 +6943,8 @@
    "rid": "r0053",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Astral Shield Experimentation"
+   "name": "Astral Shield Experimentation",
+   "text": "Astral Shield Experimentation: +5% Shield HP, +5% Shield Hardening"
   },
   {
    "entity": "Siege on Paradise",
@@ -6907,7 +6961,8 @@
    "rid": "r0054",
    "group": "forces",
    "group_label": "Forces",
-   "name": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pac"
+   "name": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pac",
+   "text": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pacifist ethic)"
   },
   {
    "entity": "Siege on Paradise",
@@ -6924,7 +6979,8 @@
    "rid": "r0055",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Military Theory technology"
+   "name": "25% progress toward a random Military Theory technology",
+   "text": "25% progress toward a random Military Theory technology"
   },
   {
    "entity": "Siege on Paradise",
@@ -6941,7 +6997,8 @@
    "rid": "r0056",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Grunur Weapons Interface"
+   "name": "Grunur Weapons Interface",
+   "text": "Grunur Weapons Interface: +10% Ship Fire Rate"
   },
   {
    "entity": "Siege on Paradise",
@@ -6958,7 +7015,8 @@
    "rid": "r0057",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Flamestorm Troopers"
+   "name": "Flamestorm Troopers",
+   "text": "Flamestorm Troopers"
   },
   {
    "entity": "Siege on Paradise",
@@ -6975,7 +7033,8 @@
    "rid": "r0058",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist is lost for 5-7 years"
+   "name": "Scientist is lost for 5-7 years",
+   "text": "Scientist is lost for 5-7 years"
   },
   {
    "entity": "Siege on Paradise",
@@ -6992,7 +7051,8 @@
    "rid": "r0059",
    "group": "empire",
    "group_label": "Empire",
-   "name": "The leader returns with Rift Warped and gains Expertise"
+   "name": "The leader returns with Rift Warped and gains Expertise",
+   "text": "Follow-up: The leader returns with Rift Warped and gains Expertise: Propulsion I (or Expertise: Voidcraft I if they already have it)."
   },
   {
    "entity": "Abandoned Complex",
@@ -7009,7 +7069,8 @@
    "rid": "r0060",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Reptilian DNA"
+   "name": "Reptilian DNA",
+   "text": "Reptilian DNA if Evolutionary Predators is active"
   },
   {
    "entity": "Abandoned Complex",
@@ -7026,7 +7087,8 @@
    "rid": "r0061",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Warpling Armies"
+   "name": "Warpling Armies",
+   "text": "Warpling Armies"
   },
   {
    "entity": "Abandoned Complex",
@@ -7043,7 +7105,8 @@
    "rid": "r0062",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist dies within 1 month"
+   "name": "Scientist dies within 1 month",
+   "text": "Scientist dies within 1 month"
   },
   {
    "entity": "Bleached Planet",
@@ -7060,7 +7123,8 @@
    "rid": "r0063",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Biology technology"
+   "name": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
   },
   {
    "entity": "Bleached Planet",
@@ -7077,7 +7141,8 @@
    "rid": "r0064",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Spark of Genius"
+   "name": "Spark of Genius",
+   "text": "Spark of Genius"
   },
   {
    "entity": "Bleached Planet",
@@ -7094,7 +7159,8 @@
    "rid": "r0065",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Black Light Blinded"
+   "name": "Black Light Blinded",
+   "text": "Black Light Blinded"
   },
   {
    "entity": "Bleached Planet",
@@ -7111,7 +7177,8 @@
    "rid": "r0066",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+10 Physics on the rift"
+   "name": "+10 Physics on the rift",
+   "text": "+10 Physics on the rift"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7128,7 +7195,8 @@
    "rid": "r0067",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Biology technology"
+   "name": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7145,7 +7213,8 @@
    "rid": "r0068",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Avian DNA + 10 Adaptive Evolution"
+   "name": "Avian DNA + 10 Adaptive Evolution",
+   "text": "Avian DNA + 10 Adaptive Evolution"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7162,7 +7231,8 @@
    "rid": "r0069",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Avian DNA + 10 Adaptive Evolution"
+   "name": "Avian DNA + 10 Adaptive Evolution",
+   "text": "Avian DNA + 10 Adaptive Evolution"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7179,7 +7249,8 @@
    "rid": "r0070",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Computing technology"
+   "name": "25% progress toward a random Computing technology",
+   "text": "25% progress toward a random Computing technology"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7196,7 +7267,8 @@
    "rid": "r0071",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Automated Disinfection"
+   "name": "Automated Disinfection",
+   "text": "Automated Disinfection"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7213,7 +7285,8 @@
    "rid": "r0072",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)"
+   "name": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)",
+   "text": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7230,7 +7303,8 @@
    "rid": "r0073",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Repurposed Cleaning Drone (+25% Planetary Build Speed)"
+   "name": "Repurposed Cleaning Drone (+25% Planetary Build Speed)",
+   "text": "Repurposed Cleaning Drone (+25% Planetary Build Speed)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7247,7 +7321,8 @@
    "rid": "r0074",
    "group": "research",
    "group_label": "Research",
-   "name": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech"
+   "name": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech",
+   "text": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech"
   },
   {
    "entity": "Chemical Wasteland",
@@ -7264,7 +7339,8 @@
    "rid": "r0075",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Sanitary Drone Assistant"
+   "name": "Sanitary Drone Assistant",
+   "text": "Sanitary Drone Assistant"
   },
   {
    "entity": "Desert Ruins",
@@ -7281,7 +7357,9 @@
    "rid": "r0076",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Time Crystal"
+   "name": "Time Crystal",
+   "text": "Time Crystal",
+   "relic_id": "time-crystal"
   },
   {
    "entity": "Desert Ruins",
@@ -7298,7 +7376,8 @@
    "rid": "r0077",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Psychic (if the leader has Latent Psionic)"
+   "name": "Psychic (if the leader has Latent Psionic)",
+   "text": "Psychic (if the leader has Latent Psionic)"
   },
   {
    "entity": "Desert Ruins",
@@ -7315,7 +7394,8 @@
    "rid": "r0078",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist dies"
+   "name": "Scientist dies",
+   "text": "Scientist dies"
   },
   {
    "entity": "Dimensional Conflict",
@@ -7332,7 +7412,8 @@
    "rid": "r0079",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Leviathan Scale"
+   "name": "Leviathan Scale",
+   "text": "Leviathan Scale specimen [Grand Archive DLC]"
   },
   {
    "entity": "Dimensional Conflict",
@@ -7349,7 +7430,8 @@
    "rid": "r0080",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Biology technology"
+   "name": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
   },
   {
    "entity": "Dimensional Conflict",
@@ -7366,7 +7448,9 @@
    "rid": "r0081",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Daedalus Seal"
+   "name": "Daedalus Seal",
+   "text": "Daedalus Seal",
+   "relic_id": "daedalus-seal"
   },
   {
    "entity": "Dimensional Dump",
@@ -7383,7 +7467,8 @@
    "rid": "r0082",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 "
+   "name": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 ",
+   "text": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 year)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -7400,7 +7485,8 @@
    "rid": "r0083",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientis"
+   "name": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientis",
+   "text": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientist (upgraded versions if already Psychic)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -7417,7 +7503,8 @@
    "rid": "r0084",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Foreign Consciousness (+5% research) for Gestalt empires"
+   "name": "Foreign Consciousness (+5% research) for Gestalt empires",
+   "text": "Foreign Consciousness (+5% research) for Gestalt empires"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -7434,7 +7521,8 @@
    "rid": "r0085",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+25 Physics and +25 Engineering on the rift"
+   "name": "+25 Physics and +25 Engineering on the rift",
+   "text": "+25 Physics and +25 Engineering on the rift for 10 years"
   },
   {
    "entity": "Hatching Ground",
@@ -7451,7 +7539,8 @@
    "rid": "r0086",
    "group": "forces",
    "group_label": "Forces",
-   "name": "Medium DNA reward"
+   "name": "Medium DNA reward",
+   "text": "Medium DNA reward"
   },
   {
    "entity": "Hatching Ground",
@@ -7468,7 +7557,8 @@
    "rid": "r0087",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Lonely Planet empire modifier"
+   "name": "Lonely Planet empire modifier",
+   "text": "Lonely Planet empire modifier: +15% Propulsion for 15 years"
   },
   {
    "entity": "Lone Object",
@@ -7485,7 +7575,8 @@
    "rid": "r0088",
    "group": "research",
    "group_label": "Research",
-   "name": "Random Psionics technology"
+   "name": "Random Psionics technology",
+   "text": "Random Psionics technology if the leader is Psychic"
   },
   {
    "entity": "Lone Object",
@@ -7502,7 +7593,8 @@
    "rid": "r0089",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)"
+   "name": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)",
+   "text": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)"
   },
   {
    "entity": "Rockworms",
@@ -7519,7 +7611,8 @@
    "rid": "r0090",
    "group": "research",
    "group_label": "Research",
-   "name": "15% progress toward a random Biology technology"
+   "name": "15% progress toward a random Biology technology",
+   "text": "15% progress toward a random Biology technology"
   },
   {
    "entity": "Rockworms",
@@ -7536,7 +7629,8 @@
    "rid": "r0091",
    "group": "research",
    "group_label": "Research",
-   "name": "15% Biology tech progress"
+   "name": "15% Biology tech progress",
+   "text": "15% Biology tech progress"
   },
   {
    "entity": "Rockworms",
@@ -7553,7 +7647,8 @@
    "rid": "r0092",
    "group": "forces",
    "group_label": "Forces",
-   "name": "+20 Adaptive Evolution and Lithoid DNA"
+   "name": "+20 Adaptive Evolution and Lithoid DNA",
+   "text": "+20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators"
   },
   {
    "entity": "Rockworms",
@@ -7570,7 +7665,8 @@
    "rid": "r0093",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Rockworm Hive planetary decision"
+   "name": "Rockworm Hive planetary decision",
+   "text": "Rockworm Hive planetary decision"
   },
   {
    "entity": "Rockworms",
@@ -7587,7 +7683,8 @@
    "rid": "r0094",
    "group": "forces",
    "group_label": "Forces",
-   "name": "+20 Adaptive Evolution and Lithoid DNA"
+   "name": "+20 Adaptive Evolution and Lithoid DNA",
+   "text": "+20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators"
   },
   {
    "entity": "Rockworms",
@@ -7604,7 +7701,8 @@
    "rid": "r0095",
    "group": "research",
    "group_label": "Research",
-   "name": "15% progress toward a random Biology technology"
+   "name": "15% progress toward a random Biology technology",
+   "text": "15% progress toward a random Biology technology"
   },
   {
    "entity": "Rockworms",
@@ -7621,7 +7719,8 @@
    "rid": "r0096",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist dies and returns a year later with the Partially Digested trait"
+   "name": "Scientist dies and returns a year later with the Partially Digested trait",
+   "text": "Scientist dies and returns a year later with the Partially Digested trait"
   },
   {
    "entity": "Subnautical",
@@ -7638,7 +7737,9 @@
    "rid": "r0097",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Celestial Tear"
+   "name": "Celestial Tear",
+   "text": "Celestial Tear",
+   "relic_id": "celestial-tear"
   },
   {
    "entity": "Subnautical",
@@ -7655,7 +7756,9 @@
    "rid": "r0098",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Celestial Tear"
+   "name": "Celestial Tear",
+   "text": "Celestial Tear",
+   "relic_id": "celestial-tear"
   },
   {
    "entity": "Subnautical",
@@ -7672,7 +7775,9 @@
    "rid": "r0099",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Celestial Tear"
+   "name": "Celestial Tear",
+   "text": "Celestial Tear",
+   "relic_id": "celestial-tear"
   },
   {
    "entity": "The Advisor",
@@ -7689,7 +7794,8 @@
    "rid": "r0100",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius /"
+   "name": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius /",
+   "text": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer"
   },
   {
    "entity": "The Advisor",
@@ -7706,7 +7812,8 @@
    "rid": "r0101",
    "group": "research",
    "group_label": "Research",
-   "name": "20% progress toward a random Computing technology"
+   "name": "20% progress toward a random Computing technology",
+   "text": "20% progress toward a random Computing technology"
   },
   {
    "entity": "The Advisor",
@@ -7723,7 +7830,10 @@
    "rid": "r0102",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Advisor Core"
+   "name": "Advisor Core",
+   "text": "Advisor Core",
+   "relic_id": null,
+   "relic_link_exception": "The Relics page (revision 119679) has no 'Advisor Core' entry. The Advisor rift's reward line names it, but there is no catalogue record to link it to."
   },
   {
    "entity": "The Corridors",
@@ -7740,7 +7850,8 @@
    "rid": "r0103",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Procedural Space (+1 district, +1 branch office)"
+   "name": "Procedural Space (+1 district, +1 branch office)",
+   "text": "Procedural Space (+1 district, +1 branch office)"
   },
   {
    "entity": "The Corridors",
@@ -7757,7 +7868,8 @@
    "rid": "r0104",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / R"
+   "name": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / R",
+   "text": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer"
   },
   {
    "entity": "The Fluid",
@@ -7774,7 +7886,8 @@
    "rid": "r0105",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Dimensional Endothelial Lining"
+   "name": "Dimensional Endothelial Lining",
+   "text": "Dimensional Endothelial Lining specimen [Grand Archive DLC]"
   },
   {
    "entity": "The Fluid",
@@ -7791,7 +7904,8 @@
    "rid": "r0106",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Rift Fluid Samples"
+   "name": "Rift Fluid Samples",
+   "text": "Rift Fluid Samples: +10% Biology research speed (10 years, or 5 if you cut the rig loose)"
   },
   {
    "entity": "The Fluid",
@@ -7808,7 +7922,9 @@
    "rid": "r0107",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Plasmic Core"
+   "name": "Plasmic Core",
+   "text": "Plasmic Core",
+   "relic_id": "plasmic-core"
   },
   {
    "entity": "The Fluid",
@@ -7825,7 +7941,8 @@
    "rid": "r0108",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist and science ship are destroyed"
+   "name": "Scientist and science ship are destroyed",
+   "text": "Scientist and science ship are destroyed"
   },
   {
    "entity": "The Fluid",
@@ -7842,7 +7959,8 @@
    "rid": "r0109",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Rift Fluid Samples"
+   "name": "Rift Fluid Samples",
+   "text": "Rift Fluid Samples: +10% Biology research speed (10 years)"
   },
   {
    "entity": "The Garden",
@@ -7859,7 +7977,8 @@
    "rid": "r0110",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Symbiotic Fruit"
+   "name": "Symbiotic Fruit",
+   "text": "Symbiotic Fruit specimen"
   },
   {
    "entity": "The Garden",
@@ -7876,7 +7995,9 @@
    "rid": "r0111",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Infinity Root"
+   "name": "Infinity Root",
+   "text": "Infinity Root",
+   "relic_id": "infinity-root"
   },
   {
    "entity": "The Garden",
@@ -7893,7 +8014,8 @@
    "rid": "r0112",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Plantoid leader"
+   "name": "Plantoid leader",
+   "text": "Plantoid leader"
   },
   {
    "entity": "The Garden",
@@ -7910,7 +8032,8 @@
    "rid": "r0113",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Biology technology"
+   "name": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
   },
   {
    "entity": "The Garden",
@@ -7927,7 +8050,8 @@
    "rid": "r0114",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist dies and returns as a plantoid in 5 years"
+   "name": "Scientist dies and returns as a plantoid in 5 years",
+   "text": "Scientist dies and returns as a plantoid in 5 years"
   },
   {
    "entity": "The Garden",
@@ -7944,7 +8068,8 @@
    "rid": "r0115",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward a random Biology technology"
+   "name": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
   },
   {
    "entity": "The Lattice",
@@ -7961,7 +8086,8 @@
    "rid": "r0116",
    "group": "empire",
    "group_label": "Empire",
-   "name": "9 Fractal Seed planetary decisions"
+   "name": "9 Fractal Seed planetary decisions",
+   "text": "9 Fractal Seed planetary decisions"
   },
   {
    "entity": "The Lattice",
@@ -7978,7 +8104,8 @@
    "rid": "r0117",
    "group": "empire",
    "group_label": "Empire",
-   "name": "3 Fractal Seed planetary decisions"
+   "name": "3 Fractal Seed planetary decisions",
+   "text": "3 Fractal Seed planetary decisions"
   },
   {
    "entity": "The Mechanism",
@@ -7995,7 +8122,8 @@
    "rid": "r0118",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist ages 20 years"
+   "name": "Scientist ages 20 years",
+   "text": "Scientist ages 20 years"
   },
   {
    "entity": "The Mechanism",
@@ -8012,7 +8140,9 @@
    "rid": "r0119",
    "group": "loot",
    "group_label": "Loot",
-   "name": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Sp"
+   "name": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Sp",
+   "text": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Speed; active grants a large lump of every resource",
+   "relic_id": "the-continuum"
   },
   {
    "entity": "The Tower",
@@ -8029,7 +8159,8 @@
    "rid": "r0120",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire"
+   "name": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire",
+   "text": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire)"
   },
   {
    "entity": "The Tower",
@@ -8046,7 +8177,8 @@
    "rid": "r0121",
    "group": "research",
    "group_label": "Research",
-   "name": "Random Society technology (if you confiscate their documents instead)"
+   "name": "Random Society technology (if you confiscate their documents instead)",
+   "text": "Random Society technology (if you confiscate their documents instead)"
   },
   {
    "entity": "The Vortex",
@@ -8063,7 +8195,8 @@
    "rid": "r0122",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Vortex Fuel"
+   "name": "Vortex Fuel",
+   "text": "Vortex Fuel: +10% Energy for 10 years"
   },
   {
    "entity": "The Vortex",
@@ -8080,7 +8213,8 @@
    "rid": "r0123",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist dies"
+   "name": "Scientist dies",
+   "text": "Scientist dies"
   },
   {
    "entity": "The Vortex",
@@ -8097,7 +8231,9 @@
    "rid": "r0124",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Ever Spinning Top"
+   "name": "Ever Spinning Top",
+   "text": "Ever Spinning Top",
+   "relic_id": "ever-spinning-top"
   },
   {
    "entity": "Tiny Planet",
@@ -8114,7 +8250,8 @@
    "rid": "r0125",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Mini Moon Dust"
+   "name": "Mini Moon Dust",
+   "text": "Mini Moon Dust specimen [Grand Archive DLC]"
   },
   {
    "entity": "Tiny Planet",
@@ -8131,7 +8268,8 @@
    "rid": "r0126",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+10 Society on the rift"
+   "name": "+10 Society on the rift",
+   "text": "+10 Society on the rift"
   },
   {
    "entity": "Tiny Planet",
@@ -8148,7 +8286,8 @@
    "rid": "r0127",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Intentional Tidal Locking planetary decision"
+   "name": "Intentional Tidal Locking planetary decision",
+   "text": "Intentional Tidal Locking planetary decision"
   },
   {
    "entity": "Tiny Planet",
@@ -8165,7 +8304,8 @@
    "rid": "r0128",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Display Microplanet Husk decision"
+   "name": "Display Microplanet Husk decision",
+   "text": "Display Microplanet Husk decision"
   },
   {
    "entity": "Tiny Planet",
@@ -8182,7 +8322,8 @@
    "rid": "r0129",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+15 Society on the rift"
+   "name": "+15 Society on the rift",
+   "text": "+15 Society on the rift for 10 years"
   },
   {
    "entity": "Tropical Habitat",
@@ -8199,7 +8340,8 @@
    "rid": "r0130",
    "group": "research",
    "group_label": "Research",
-   "name": "Random Biology (Farming) technology"
+   "name": "Random Biology (Farming) technology",
+   "text": "Random Biology (Farming) technology"
   },
   {
    "entity": "Tropical Habitat",
@@ -8216,7 +8358,8 @@
    "rid": "r0131",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist gains the Maimed trait"
+   "name": "Scientist gains the Maimed trait",
+   "text": "Scientist gains the Maimed trait unless robotic"
   },
   {
    "entity": "Tropical Habitat",
@@ -8233,7 +8376,8 @@
    "rid": "r0132",
    "group": "research",
    "group_label": "Research",
-   "name": "Random Biology (Farming) technology"
+   "name": "Random Biology (Farming) technology",
+   "text": "Random Biology (Farming) technology"
   },
   {
    "entity": "Tropical Habitat",
@@ -8250,7 +8394,8 @@
    "rid": "r0133",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Formula Pink"
+   "name": "Formula Pink",
+   "text": "Formula Pink: +20 opinion from non-robotic/lithoid/toxoid empires, +10% army health, -50% morale damage"
   },
   {
    "entity": "Volcanic Plane",
@@ -8267,7 +8412,8 @@
    "rid": "r0134",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Obsidian Obelisk Fragment"
+   "name": "Obsidian Obelisk Fragment",
+   "text": "Obsidian Obelisk Fragment specimen [Grand Archive DLC]"
   },
   {
    "entity": "Volcanic Plane",
@@ -8284,7 +8430,8 @@
    "rid": "r0135",
    "group": "risk",
    "group_label": "Risk",
-   "name": "about 6 years later the obelisk demands 1 pop per year"
+   "name": "about 6 years later the obelisk demands 1 pop per year",
+   "text": "Follow-up: about 6 years later the obelisk demands 1 pop per year for 6 years. Accept → Restoring the Balance (+10% Energy for 6 years). Refuse → Obelisk's Curse (-6% happiness for 6 years; +6 deviancy for gestalts)."
   },
   {
    "entity": "Volcanic Plane",
@@ -8301,7 +8448,8 @@
    "rid": "r0136",
    "group": "risk",
    "group_label": "Risk",
-   "name": "Scientist is lost"
+   "name": "Scientist is lost",
+   "text": "Scientist is lost"
   },
   {
    "entity": "Volcanic Plane",
@@ -8318,7 +8466,8 @@
    "rid": "r0137",
    "group": "risk",
    "group_label": "Risk",
-   "name": "after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obe"
+   "name": "after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obe",
+   "text": "Follow-up: after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obelisk's Curse (+10% Energy, but sacrifices 1 pop per year while on the council)."
   },
   {
    "entity": "Whiteout",
@@ -8335,7 +8484,8 @@
    "rid": "r0138",
    "group": "loot",
    "group_label": "Loot",
-   "name": "The Writer's Sphere"
+   "name": "The Writer's Sphere",
+   "text": "The Writer's Sphere specimen [Grand Archive DLC]"
   },
   {
    "entity": "Whiteout",
@@ -8352,7 +8502,8 @@
    "rid": "r0139",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+10% Physics research"
+   "name": "+10% Physics research",
+   "text": "+10% Physics research for 10 years"
   },
   {
    "entity": "Windswept Planet",
@@ -8369,7 +8520,8 @@
    "rid": "r0140",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)"
+   "name": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)",
+   "text": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)"
   },
   {
    "entity": "Windswept Planet",
@@ -8386,7 +8538,8 @@
    "rid": "r0141",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Extradimensional Fungus"
+   "name": "Extradimensional Fungus",
+   "text": "Extradimensional Fungus specimen [Grand Archive DLC]"
   },
   {
    "entity": "Windswept Planet",
@@ -8403,7 +8556,8 @@
    "rid": "r0142",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Extra Dimensional Spores"
+   "name": "Extra Dimensional Spores",
+   "text": "Extra Dimensional Spores: +25% Exotic Gases"
   },
   {
    "entity": "Windswept Planet",
@@ -8420,7 +8574,8 @@
    "rid": "r0143",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+10 Society on the rift"
+   "name": "+10 Society on the rift",
+   "text": "+10 Society on the rift"
   },
   {
    "entity": "Windswept Planet",
@@ -8437,7 +8592,8 @@
    "rid": "r0144",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Reconverted Leader (+1 envoy)"
+   "name": "Reconverted Leader (+1 envoy)",
+   "text": "Reconverted Leader (+1 envoy) if you convert the scientist to an envoy in the follow-up event"
   },
   {
    "entity": "A Rift in Space",
@@ -8454,7 +8610,8 @@
    "rid": "r0145",
    "group": "research",
    "group_label": "Research",
-   "name": "25% progress toward Rift Sphere technology"
+   "name": "25% progress toward Rift Sphere technology",
+   "text": "25% progress toward Rift Sphere technology"
   },
   {
    "entity": "A Rift in Space",
@@ -8471,7 +8628,8 @@
    "rid": "r0146",
    "group": "empire",
    "group_label": "Empire",
-   "name": "A new pre-FTL planet appears in the rift system"
+   "name": "A new pre-FTL planet appears in the rift system",
+   "text": "A new pre-FTL planet appears in the rift system"
   },
   {
    "entity": "A Rift in Space",
@@ -8488,7 +8646,8 @@
    "rid": "r0147",
    "group": "forces",
    "group_label": "Forces",
-   "name": "OR a new random species appears on your nearest colony"
+   "name": "OR a new random species appears on your nearest colony",
+   "text": "OR a new random species appears on your nearest colony"
   },
   {
    "entity": "A Rift in Space",
@@ -8505,7 +8664,8 @@
    "rid": "r0148",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Temporal Distortions modifier for 1 year"
+   "name": "Temporal Distortions modifier for 1 year",
+   "text": "Temporal Distortions modifier for 1 year: +100% resources from jobs, +100% pop growth speed, +100% pop assembly speed, +100% building build speed"
   },
   {
    "entity": "Study the Crystal Sphere",
@@ -8522,7 +8682,8 @@
    "rid": "r0149",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Spawns The Crystal Rift"
+   "name": "Spawns The Crystal Rift",
+   "text": "Spawns The Crystal Rift"
   },
   {
    "entity": "Destroy the Crystal Sphere",
@@ -8539,7 +8700,8 @@
    "rid": "r0150",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Peace in This Dimension modifier"
+   "name": "Peace in This Dimension modifier",
+   "text": "Peace in This Dimension modifier for 10 years: +10% happiness"
   },
   {
    "entity": "Destroy the Crystal Sphere",
@@ -8556,7 +8718,8 @@
    "rid": "r0151",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name"
+   "name": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name",
+   "text": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name"
   },
   {
    "entity": "The Seal",
@@ -8573,7 +8736,8 @@
    "rid": "r0152",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Formless Haven"
+   "name": "Formless Haven",
+   "text": "Formless Haven: a size 40 Gaia world in the Azilash system"
   },
   {
    "entity": "The Seal",
@@ -8590,7 +8754,8 @@
    "rid": "r0153",
    "group": "leaders",
    "group_label": "Leaders",
-   "name": "Zadigal paragon"
+   "name": "Zadigal paragon",
+   "text": "Zadigal paragon"
   },
   {
    "entity": "The Seal",
@@ -8607,7 +8772,8 @@
    "rid": "r0154",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Recurring every 10 years, choose one"
+   "name": "Recurring every 10 years, choose one",
+   "text": "Recurring every 10 years, choose one: 16 extradimensional cruisers, 100 Astral Threads, or a random Physics technology"
   },
   {
    "entity": "The Seal",
@@ -8624,7 +8790,9 @@
    "rid": "r0155",
    "group": "loot",
    "group_label": "Loot",
-   "name": "Eternal Throne relic (conditional"
+   "name": "Eternal Throne relic (conditional",
+   "text": "Eternal Throne relic (conditional: via subjugation or victory)",
+   "relic_id": "eternal-throne"
   },
   {
    "entity": "The Seal",
@@ -8641,7 +8809,8 @@
    "rid": "r0156",
    "group": "empire",
    "group_label": "Empire",
-   "name": "Luminarium subject type (conditional"
+   "name": "Luminarium subject type (conditional",
+   "text": "Luminarium subject type (conditional: if subjugation succeeds)"
   },
   {
    "entity": "The Seal",
@@ -8658,7 +8827,8 @@
    "rid": "r0157",
    "group": "empire",
    "group_label": "Empire",
-   "name": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)"
+   "name": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)",
+   "text": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)"
   }
  ],
  "payouts": [
@@ -8674,7 +8844,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 food / minerals / energy",
-   "pid": "p0001"
+   "pid": "p0001",
+   "text": "-1000 food / minerals / energy"
   },
   {
    "entity": "Ruined Planet",
@@ -8688,7 +8859,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0002"
+   "pid": "p0002",
+   "text": "-100 Astral Threads"
   },
   {
    "entity": "Ruined Planet",
@@ -8702,7 +8874,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Alloys",
-   "pid": "p0003"
+   "pid": "p0003",
+   "text": "-100 Alloys"
   },
   {
    "entity": "Ruined Planet",
@@ -8716,7 +8889,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0004"
+   "pid": "p0004",
+   "text": "-100 Astral Threads"
   },
   {
    "entity": "Ruined Planet",
@@ -8730,7 +8904,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0005"
+   "pid": "p0005",
+   "text": "-100 Astral Threads"
   },
   {
    "entity": "Ruined Planet",
@@ -8744,7 +8919,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0006"
+   "pid": "p0006",
+   "text": "-1000 Energy"
   },
   {
    "entity": "Ruined Planet",
@@ -8758,7 +8934,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0007"
+   "pid": "p0007",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Ruined Planet",
@@ -8772,7 +8949,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small Unity",
-   "pid": "p0008"
+   "pid": "p0008",
+   "text": "Small Unity"
   },
   {
    "entity": "Ruined Planet",
@@ -8786,7 +8964,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Unity",
-   "pid": "p0009"
+   "pid": "p0009",
+   "text": "Unity"
   },
   {
    "entity": "Ruined Planet",
@@ -8800,7 +8979,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Research and Unity",
-   "pid": "p0010"
+   "pid": "p0010",
+   "text": "Research and Unity"
   },
   {
    "entity": "Ruined Planet",
@@ -8814,7 +8994,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Research and Unity",
-   "pid": "p0011"
+   "pid": "p0011",
+   "text": "Research and Unity"
   },
   {
    "entity": "Ruined Planet",
@@ -8828,7 +9009,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability",
-   "pid": "p0012"
+   "pid": "p0012",
+   "text": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability"
   },
   {
    "entity": "Ruined Planet",
@@ -8842,7 +9024,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening",
-   "pid": "p0013"
+   "pid": "p0013",
+   "text": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening"
   },
   {
    "entity": "Ruined Planet",
@@ -8856,7 +9039,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Chapter 5 astral threads: +5% Sublight Speed",
-   "pid": "p0014"
+   "pid": "p0014",
+   "text": "Chapter 5 astral threads: +5% Sublight Speed"
   },
   {
    "entity": "Genesis",
@@ -8870,7 +9054,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0015"
+   "pid": "p0015",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Genesis",
@@ -8884,7 +9069,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0016"
+   "pid": "p0016",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Genesis",
@@ -8898,7 +9084,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "48x Alloys output (700-30,000)",
-   "pid": "p0017"
+   "pid": "p0017",
+   "text": "48x Alloys output (700-30,000)"
   },
   {
    "entity": "Genesis",
@@ -8912,7 +9099,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0018"
+   "pid": "p0018",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Genesis",
@@ -8926,7 +9114,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0019"
+   "pid": "p0019",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Genesis",
@@ -8940,7 +9129,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0020"
+   "pid": "p0020",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Genesis",
@@ -8954,7 +9144,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000) — Gestalt Consciousness",
-   "pid": "p0021"
+   "pid": "p0021",
+   "text": "24x Society research output (500-1,000,000) — Gestalt Consciousness"
   },
   {
    "entity": "Strange Station",
@@ -8968,7 +9159,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0022"
+   "pid": "p0022",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Strange Station",
@@ -8982,7 +9174,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0023"
+   "pid": "p0023",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Strange Station",
@@ -8996,7 +9189,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Moderate Society research (moderate Unity for Gestalts)",
-   "pid": "p0024"
+   "pid": "p0024",
+   "text": "Moderate Society research (moderate Unity for Gestalts)"
   },
   {
    "entity": "Strange Station",
@@ -9010,7 +9204,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0025"
+   "pid": "p0025",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Strange Station",
@@ -9024,7 +9219,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Moderate Engineering research (moderate Unity for Gestalts)",
-   "pid": "p0026"
+   "pid": "p0026",
+   "text": "Moderate Engineering research (moderate Unity for Gestalts)"
   },
   {
    "entity": "Strange Station",
@@ -9038,7 +9234,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0027"
+   "pid": "p0027",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Strange Station",
@@ -9052,7 +9249,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large Society research",
-   "pid": "p0028"
+   "pid": "p0028",
+   "text": "Large Society research"
   },
   {
    "entity": "Strange Station",
@@ -9066,7 +9264,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0029"
+   "pid": "p0029",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Strange Station",
@@ -9080,7 +9279,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large Unity",
-   "pid": "p0030"
+   "pid": "p0030",
+   "text": "Large Unity"
   },
   {
    "entity": "The Microverse",
@@ -9094,7 +9294,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "100 Dark Matter",
-   "pid": "p0031"
+   "pid": "p0031",
+   "text": "100 Dark Matter"
   },
   {
    "entity": "The Microverse",
@@ -9108,7 +9309,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0032"
+   "pid": "p0032",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Microverse",
@@ -9122,7 +9324,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0033"
+   "pid": "p0033",
+   "text": "24x Physics research output (500-1,000,000)"
   },
   {
    "entity": "The Microverse",
@@ -9136,7 +9339,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-10 Astral Threads",
-   "pid": "p0034"
+   "pid": "p0034",
+   "text": "-10 Astral Threads"
   },
   {
    "entity": "The Microverse",
@@ -9150,7 +9354,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Physics research output (2,000-2,000,000)",
-   "pid": "p0035"
+   "pid": "p0035",
+   "text": "96x Physics research output (2,000-2,000,000)"
   },
   {
    "entity": "The Microverse",
@@ -9164,7 +9369,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0036"
+   "pid": "p0036",
+   "text": "24x Physics research output (500-1,000,000)"
   },
   {
    "entity": "The Microverse",
@@ -9178,7 +9384,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0037"
+   "pid": "p0037",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "The Microverse",
@@ -9192,7 +9399,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0038"
+   "pid": "p0038",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Microverse",
@@ -9206,7 +9414,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Physics research output (1,000-1,000,000)",
-   "pid": "p0039"
+   "pid": "p0039",
+   "text": "48x Physics research output (1,000-1,000,000)"
   },
   {
    "entity": "The Microverse",
@@ -9220,7 +9429,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0040"
+   "pid": "p0040",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9234,7 +9444,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0041"
+   "pid": "p0041",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9248,7 +9459,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0042"
+   "pid": "p0042",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9262,7 +9474,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0043"
+   "pid": "p0043",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9276,7 +9489,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0044"
+   "pid": "p0044",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9290,7 +9504,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rare Crystals",
-   "pid": "p0045"
+   "pid": "p0045",
+   "text": "Rare Crystals"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9304,7 +9519,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0046"
+   "pid": "p0046",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9318,7 +9534,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0047"
+   "pid": "p0047",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9332,7 +9549,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0048"
+   "pid": "p0048",
+   "text": "-1000 Energy"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9346,7 +9564,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0049"
+   "pid": "p0049",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9360,7 +9579,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Food",
-   "pid": "p0050"
+   "pid": "p0050",
+   "text": "-1000 Food"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9374,7 +9594,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0051"
+   "pid": "p0051",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9388,7 +9609,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0052"
+   "pid": "p0052",
+   "text": "-1000 Energy"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9402,7 +9624,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0053"
+   "pid": "p0053",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9416,7 +9639,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Society research",
-   "pid": "p0054"
+   "pid": "p0054",
+   "text": "Society research"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9430,7 +9654,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0055"
+   "pid": "p0055",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9444,7 +9669,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0056"
+   "pid": "p0056",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9458,7 +9684,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0057"
+   "pid": "p0057",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9472,7 +9699,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0058"
+   "pid": "p0058",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9486,7 +9714,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0059"
+   "pid": "p0059",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entertainment Nexus",
@@ -9500,7 +9729,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0060"
+   "pid": "p0060",
+   "text": "Physics research"
   },
   {
    "entity": "The Crystal Rift",
@@ -9514,7 +9744,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0061"
+   "pid": "p0061",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9528,7 +9759,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0062"
+   "pid": "p0062",
+   "text": "-1000 Energy"
   },
   {
    "entity": "The Crystal Rift",
@@ -9542,7 +9774,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0063"
+   "pid": "p0063",
+   "text": "24x Physics research output (500-1,000,000)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9556,7 +9789,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0064"
+   "pid": "p0064",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9570,7 +9804,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0065"
+   "pid": "p0065",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9584,7 +9819,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Unity output (2,000-2,000,000)",
-   "pid": "p0066"
+   "pid": "p0066",
+   "text": "96x Unity output (2,000-2,000,000)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9598,7 +9834,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0067"
+   "pid": "p0067",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9612,7 +9849,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0068"
+   "pid": "p0068",
+   "text": "24x Physics research output (500-1,000,000)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9626,7 +9864,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0069"
+   "pid": "p0069",
+   "text": "24x Society research output (500-1,000,000)"
   },
   {
    "entity": "The Crystal Rift",
@@ -9640,7 +9879,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-500 Astral Threads",
-   "pid": "p0070"
+   "pid": "p0070",
+   "text": "-500 Astral Threads"
   },
   {
    "entity": "Psionic Stranger",
@@ -9654,7 +9894,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0071"
+   "pid": "p0071",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Psionic Stranger",
@@ -9668,7 +9909,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0072"
+   "pid": "p0072",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Psionic Stranger",
@@ -9682,7 +9924,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0073"
+   "pid": "p0073",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Psionic Stranger",
@@ -9696,7 +9939,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0074"
+   "pid": "p0074",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Psionic Stranger",
@@ -9710,7 +9954,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Minerals",
-   "pid": "p0075"
+   "pid": "p0075",
+   "text": "Minerals"
   },
   {
    "entity": "Psionic Stranger",
@@ -9724,7 +9969,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rare Crystals",
-   "pid": "p0076"
+   "pid": "p0076",
+   "text": "Rare Crystals"
   },
   {
    "entity": "Psionic Stranger",
@@ -9738,7 +9984,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0077"
+   "pid": "p0077",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Psionic Stranger",
@@ -9752,7 +9999,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0078"
+   "pid": "p0078",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Psionic Stranger",
@@ -9766,7 +10014,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Follow-up: 3-5 years later: 'A Message from Beyond' (75% progress toward a random Particles technology + large astral threads) if you advised against breaching the Shroud; or 'The Shroud's Promise' (Zroni Insight Storm Safeguard — space storm effects halved, +5% Particles research, Energy, Rare Crystals and large astral threads) if you encouraged it.",
-   "pid": "p0079"
+   "pid": "p0079",
+   "text": "Follow-up: 3-5 years later: 'A Message from Beyond' (75% progress toward a random Particles technology + large astral threads) if you advised against breaching the Shroud; or 'The Shroud's Promise' (Zroni Insight Storm Safeguard — space storm effects halved, +5% Particles research, Energy, Rare Crystals and large astral threads) if you encouraged it."
   },
   {
    "entity": "Siege on Paradise",
@@ -9780,7 +10029,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0080"
+   "pid": "p0080",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9794,7 +10044,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0081"
+   "pid": "p0081",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9808,7 +10059,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0082"
+   "pid": "p0082",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9822,7 +10074,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0083"
+   "pid": "p0083",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9836,7 +10089,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0084"
+   "pid": "p0084",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9850,7 +10104,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Astral Threads",
-   "pid": "p0085"
+   "pid": "p0085",
+   "text": "-50 Astral Threads"
   },
   {
    "entity": "Siege on Paradise",
@@ -9864,7 +10119,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0086"
+   "pid": "p0086",
+   "text": "-100 Astral Threads"
   },
   {
    "entity": "Siege on Paradise",
@@ -9878,7 +10134,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0087"
+   "pid": "p0087",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9892,7 +10149,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0088"
+   "pid": "p0088",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9906,7 +10164,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0089"
+   "pid": "p0089",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9920,7 +10179,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0090"
+   "pid": "p0090",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9934,7 +10194,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0091"
+   "pid": "p0091",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9948,7 +10209,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0092"
+   "pid": "p0092",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9962,7 +10224,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0093"
+   "pid": "p0093",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9976,7 +10239,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0094"
+   "pid": "p0094",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -9990,7 +10254,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0095"
+   "pid": "p0095",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10004,7 +10269,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0096"
+   "pid": "p0096",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10018,7 +10284,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0097"
+   "pid": "p0097",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10032,7 +10299,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0098"
+   "pid": "p0098",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10046,7 +10314,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0099"
+   "pid": "p0099",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10060,7 +10329,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0100"
+   "pid": "p0100",
+   "text": "24x Society research output (500-1,000,000)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10074,7 +10344,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0101"
+   "pid": "p0101",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Siege on Paradise",
@@ -10088,7 +10359,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Engineering research output (500-1,000,000)",
-   "pid": "p0102"
+   "pid": "p0102",
+   "text": "24x Engineering research output (500-1,000,000)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10102,7 +10374,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0103"
+   "pid": "p0103",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10116,7 +10389,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0104"
+   "pid": "p0104",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10130,7 +10404,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0105"
+   "pid": "p0105",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10144,7 +10419,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0106"
+   "pid": "p0106",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10158,7 +10434,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Society research output (250-100,000)",
-   "pid": "p0107"
+   "pid": "p0107",
+   "text": "12x Society research output (250-100,000)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10172,7 +10449,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0108"
+   "pid": "p0108",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10186,7 +10464,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Physics research output (1,000-1,000,000)",
-   "pid": "p0109"
+   "pid": "p0109",
+   "text": "48x Physics research output (1,000-1,000,000)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10200,7 +10479,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0110"
+   "pid": "p0110",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10214,7 +10494,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0111"
+   "pid": "p0111",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Abandoned Complex",
@@ -10228,7 +10509,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0112"
+   "pid": "p0112",
+   "text": "24x Physics research output (500-1,000,000)"
   },
   {
    "entity": "Bleached Planet",
@@ -10242,7 +10524,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0113"
+   "pid": "p0113",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Bleached Planet",
@@ -10256,7 +10539,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0114"
+   "pid": "p0114",
+   "text": "24x Society research output (500-1,000,000)"
   },
   {
    "entity": "Bleached Planet",
@@ -10270,7 +10554,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0115"
+   "pid": "p0115",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Bleached Planet",
@@ -10284,7 +10569,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0116"
+   "pid": "p0116",
+   "text": "18x Society research output (350-100,000)"
   },
   {
    "entity": "Bleached Planet",
@@ -10298,7 +10584,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0117"
+   "pid": "p0117",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Bleached Planet",
@@ -10312,7 +10599,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0118"
+   "pid": "p0118",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Bleached Planet",
@@ -10326,7 +10614,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0119"
+   "pid": "p0119",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Bleached Planet",
@@ -10340,7 +10629,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0120"
+   "pid": "p0120",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10354,7 +10644,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0121"
+   "pid": "p0121",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10368,7 +10659,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0122"
+   "pid": "p0122",
+   "text": "18x Engineering research output (350-100,000)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10382,7 +10674,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0123"
+   "pid": "p0123",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10396,7 +10689,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0124"
+   "pid": "p0124",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10410,7 +10704,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0125"
+   "pid": "p0125",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10424,7 +10719,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0126"
+   "pid": "p0126",
+   "text": "18x Engineering research output (350-100,000)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10438,7 +10734,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0127"
+   "pid": "p0127",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10452,7 +10749,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0128"
+   "pid": "p0128",
+   "text": "18x Society research output (350-100,000)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10466,7 +10764,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0129"
+   "pid": "p0129",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10480,7 +10779,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000) — Gestalt Consciousness",
-   "pid": "p0130"
+   "pid": "p0130",
+   "text": "24x Society research output (500-1,000,000) — Gestalt Consciousness"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10494,7 +10794,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0131"
+   "pid": "p0131",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10508,7 +10809,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Energy output (350-10,000)",
-   "pid": "p0132"
+   "pid": "p0132",
+   "text": "24x Energy output (350-10,000)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10522,7 +10824,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Energy output (700-30,000) — Barbaric Despoilers or Genocidal (replaces the smaller energy reward)",
-   "pid": "p0133"
+   "pid": "p0133",
+   "text": "48x Energy output (700-30,000) — Barbaric Despoilers or Genocidal (replaces the smaller energy reward)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10536,7 +10839,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0134"
+   "pid": "p0134",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10550,7 +10854,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Alloys output (250-5,000)",
-   "pid": "p0135"
+   "pid": "p0135",
+   "text": "18x Alloys output (250-5,000)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10564,7 +10869,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0136"
+   "pid": "p0136",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10578,7 +10884,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0137"
+   "pid": "p0137",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Chemical Wasteland",
@@ -10592,7 +10899,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0138"
+   "pid": "p0138",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Desert Ruins",
@@ -10606,7 +10914,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0139"
+   "pid": "p0139",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10620,7 +10929,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0140"
+   "pid": "p0140",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10634,7 +10944,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0141"
+   "pid": "p0141",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10648,7 +10959,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0142"
+   "pid": "p0142",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10662,7 +10974,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0143"
+   "pid": "p0143",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10676,7 +10989,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0144"
+   "pid": "p0144",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10690,7 +11004,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0145"
+   "pid": "p0145",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10704,7 +11019,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0146"
+   "pid": "p0146",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10718,7 +11034,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0147"
+   "pid": "p0147",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10732,7 +11049,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0148"
+   "pid": "p0148",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Desert Ruins",
@@ -10746,7 +11064,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Astral threads scaled to how few mistakes you made (roughly 50 / 100 / 150)",
-   "pid": "p0149"
+   "pid": "p0149",
+   "text": "Astral threads scaled to how few mistakes you made (roughly 50 / 100 / 150)"
   },
   {
    "entity": "Desert Ruins",
@@ -10760,7 +11079,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0150"
+   "pid": "p0150",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Dimensional Conflict",
@@ -10774,7 +11094,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0151"
+   "pid": "p0151",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Dimensional Conflict",
@@ -10788,7 +11109,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Alloys output (100-1,000)",
-   "pid": "p0152"
+   "pid": "p0152",
+   "text": "6x Alloys output (100-1,000)"
   },
   {
    "entity": "Dimensional Conflict",
@@ -10802,7 +11124,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0153"
+   "pid": "p0153",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Dimensional Conflict",
@@ -10816,7 +11139,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "No astral threads",
-   "pid": "p0154"
+   "pid": "p0154",
+   "text": "No astral threads"
   },
   {
    "entity": "Dimensional Conflict",
@@ -10830,7 +11154,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0155"
+   "pid": "p0155",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Dimensional Conflict",
@@ -10844,7 +11169,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Dark Matter output (350-10,000)",
-   "pid": "p0156"
+   "pid": "p0156",
+   "text": "24x Dark Matter output (350-10,000)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10858,7 +11184,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0157"
+   "pid": "p0157",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10872,7 +11199,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0158"
+   "pid": "p0158",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10886,7 +11214,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0159"
+   "pid": "p0159",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10900,7 +11229,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Minerals output (350-10,000)",
-   "pid": "p0160"
+   "pid": "p0160",
+   "text": "24x Minerals output (350-10,000)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10914,7 +11244,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Alloys output (350-10,000)",
-   "pid": "p0161"
+   "pid": "p0161",
+   "text": "24x Alloys output (350-10,000)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10928,7 +11259,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Engineering research output (2,000-2,000,000) — only if you chose 'recover its gear' in chapter 1",
-   "pid": "p0162"
+   "pid": "p0162",
+   "text": "96x Engineering research output (2,000-2,000,000) — only if you chose 'recover its gear' in chapter 1"
   },
   {
    "entity": "Dimensional Dump",
@@ -10942,7 +11274,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "On failure: scientist is killed; you still get large astral threads and alloys",
-   "pid": "p0163"
+   "pid": "p0163",
+   "text": "On failure: scientist is killed; you still get large astral threads and alloys"
   },
   {
    "entity": "Dimensional Dump",
@@ -10956,7 +11289,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0164"
+   "pid": "p0164",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10970,7 +11304,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0165"
+   "pid": "p0165",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Dimensional Dump",
@@ -10984,7 +11319,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0166"
+   "pid": "p0166",
+   "text": "24x Society research output (500-1,000,000)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -10998,7 +11334,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Dark Matter output (100-1,000)",
-   "pid": "p0167"
+   "pid": "p0167",
+   "text": "6x Dark Matter output (100-1,000)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11012,7 +11349,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0168"
+   "pid": "p0168",
+   "text": "18x Engineering research output (350-100,000)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11026,7 +11364,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0169"
+   "pid": "p0169",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11040,7 +11379,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0170"
+   "pid": "p0170",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11054,7 +11394,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Dark Matter output (700-30,000)",
-   "pid": "p0171"
+   "pid": "p0171",
+   "text": "48x Dark Matter output (700-30,000)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11068,7 +11409,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0172"
+   "pid": "p0172",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11082,7 +11424,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0173"
+   "pid": "p0173",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11096,7 +11439,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "On failure (Unfortunate Complications): you get large astral threads and dark matter instead of the traits",
-   "pid": "p0174"
+   "pid": "p0174",
+   "text": "On failure (Unfortunate Complications): you get large astral threads and dark matter instead of the traits"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11110,7 +11454,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0175"
+   "pid": "p0175",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11124,7 +11469,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0176"
+   "pid": "p0176",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11138,7 +11484,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Dark Matter output (700-30,000)",
-   "pid": "p0177"
+   "pid": "p0177",
+   "text": "48x Dark Matter output (700-30,000)"
   },
   {
    "entity": "Entangled Dark Matter",
@@ -11152,7 +11499,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0178"
+   "pid": "p0178",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Hatching Ground",
@@ -11166,7 +11514,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0179"
+   "pid": "p0179",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Hatching Ground",
@@ -11180,7 +11529,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0180"
+   "pid": "p0180",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Hatching Ground",
@@ -11194,7 +11544,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0181"
+   "pid": "p0181",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Hatching Ground",
@@ -11208,7 +11559,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "48x Society research (organic shipset) or 48x Engineering research (mechanical shipset)",
-   "pid": "p0182"
+   "pid": "p0182",
+   "text": "48x Society research (organic shipset) or 48x Engineering research (mechanical shipset)"
   },
   {
    "entity": "Hatching Ground",
@@ -11222,7 +11574,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "48x Engineering research output (1,000-1,000,000)",
-   "pid": "p0183"
+   "pid": "p0183",
+   "text": "48x Engineering research output (1,000-1,000,000)"
   },
   {
    "entity": "Hatching Ground",
@@ -11236,7 +11589,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0184"
+   "pid": "p0184",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Hatching Ground",
@@ -11250,7 +11604,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0185"
+   "pid": "p0185",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Hatching Ground",
@@ -11264,7 +11619,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000)",
-   "pid": "p0186"
+   "pid": "p0186",
+   "text": "18x Unity output (250-1,000,000)"
   },
   {
    "entity": "Hatching Ground",
@@ -11278,7 +11634,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0187"
+   "pid": "p0187",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Hatching Ground",
@@ -11292,7 +11649,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000)",
-   "pid": "p0188"
+   "pid": "p0188",
+   "text": "18x Unity output (250-1,000,000)"
   },
   {
    "entity": "Lone Object",
@@ -11306,7 +11664,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0189"
+   "pid": "p0189",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Lone Object",
@@ -11320,7 +11679,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0190"
+   "pid": "p0190",
+   "text": "18x Society research output (350-100,000)"
   },
   {
    "entity": "Lone Object",
@@ -11334,7 +11694,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0191"
+   "pid": "p0191",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Lone Object",
@@ -11348,7 +11709,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0192"
+   "pid": "p0192",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Lone Object",
@@ -11362,7 +11724,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0193"
+   "pid": "p0193",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Lone Object",
@@ -11376,7 +11739,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Minerals output (150-2,000)",
-   "pid": "p0194"
+   "pid": "p0194",
+   "text": "12x Minerals output (150-2,000)"
   },
   {
    "entity": "Lone Object",
@@ -11390,7 +11754,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Alloys output (100-1,000)",
-   "pid": "p0195"
+   "pid": "p0195",
+   "text": "6x Alloys output (100-1,000)"
   },
   {
    "entity": "Lone Object",
@@ -11404,7 +11769,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "500 Rare Crystals",
-   "pid": "p0196"
+   "pid": "p0196",
+   "text": "500 Rare Crystals"
   },
   {
    "entity": "Lone Object",
@@ -11418,7 +11784,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Unity output (150-100,000)",
-   "pid": "p0197"
+   "pid": "p0197",
+   "text": "12x Unity output (150-100,000)"
   },
   {
    "entity": "Lone Object",
@@ -11432,7 +11799,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0198"
+   "pid": "p0198",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Rockworms",
@@ -11446,7 +11814,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0199"
+   "pid": "p0199",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Rockworms",
@@ -11460,7 +11829,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0200"
+   "pid": "p0200",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Rockworms",
@@ -11474,7 +11844,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0201"
+   "pid": "p0201",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Rockworms",
@@ -11488,7 +11859,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "6x Unity output (100-100,000)",
-   "pid": "p0202"
+   "pid": "p0202",
+   "text": "6x Unity output (100-100,000)"
   },
   {
    "entity": "Rockworms",
@@ -11502,7 +11874,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0203"
+   "pid": "p0203",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Rockworms",
@@ -11516,7 +11889,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Exotic Gases",
-   "pid": "p0204"
+   "pid": "p0204",
+   "text": "-100 Exotic Gases"
   },
   {
    "entity": "Rockworms",
@@ -11530,7 +11904,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0205"
+   "pid": "p0205",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Rockworms",
@@ -11544,7 +11919,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0206"
+   "pid": "p0206",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Rockworms",
@@ -11558,7 +11934,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0207"
+   "pid": "p0207",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11572,7 +11949,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0208"
+   "pid": "p0208",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11586,7 +11964,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0209"
+   "pid": "p0209",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11600,7 +11979,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0210"
+   "pid": "p0210",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11614,7 +11994,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0211"
+   "pid": "p0211",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Subnautical",
@@ -11628,7 +12009,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0212"
+   "pid": "p0212",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11642,7 +12024,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Physics research output (350-100,000)",
-   "pid": "p0213"
+   "pid": "p0213",
+   "text": "18x Physics research output (350-100,000)"
   },
   {
    "entity": "Subnautical",
@@ -11656,7 +12039,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0214"
+   "pid": "p0214",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11670,7 +12054,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0215"
+   "pid": "p0215",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11684,7 +12069,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Physics research output (350-100,000)",
-   "pid": "p0216"
+   "pid": "p0216",
+   "text": "18x Physics research output (350-100,000)"
   },
   {
    "entity": "Subnautical",
@@ -11698,7 +12084,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0217"
+   "pid": "p0217",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11712,7 +12099,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0218"
+   "pid": "p0218",
+   "text": "24x Society research output (500-1,000,000)"
   },
   {
    "entity": "Subnautical",
@@ -11726,7 +12114,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0219"
+   "pid": "p0219",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11740,7 +12129,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Society research output (1,000-1,000,000)",
-   "pid": "p0220"
+   "pid": "p0220",
+   "text": "48x Society research output (1,000-1,000,000)"
   },
   {
    "entity": "Subnautical",
@@ -11754,7 +12144,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0221"
+   "pid": "p0221",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Subnautical",
@@ -11768,7 +12159,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Society research output (2,000-2,000,000)",
-   "pid": "p0222"
+   "pid": "p0222",
+   "text": "96x Society research output (2,000-2,000,000)"
   },
   {
    "entity": "The Advisor",
@@ -11782,7 +12174,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0223"
+   "pid": "p0223",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Advisor",
@@ -11796,7 +12189,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0224"
+   "pid": "p0224",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Advisor",
@@ -11810,7 +12204,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0225"
+   "pid": "p0225",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Advisor",
@@ -11824,7 +12219,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Engineering research output (500-1,000,000)",
-   "pid": "p0226"
+   "pid": "p0226",
+   "text": "24x Engineering research output (500-1,000,000)"
   },
   {
    "entity": "The Advisor",
@@ -11838,7 +12234,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0227"
+   "pid": "p0227",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Advisor",
@@ -11852,7 +12249,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Alloys output (250-5,000)",
-   "pid": "p0228"
+   "pid": "p0228",
+   "text": "18x Alloys output (250-5,000)"
   },
   {
    "entity": "The Advisor",
@@ -11866,7 +12264,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Engineering research output (500-1,000,000)",
-   "pid": "p0229"
+   "pid": "p0229",
+   "text": "24x Engineering research output (500-1,000,000)"
   },
   {
    "entity": "The Corridors",
@@ -11880,7 +12279,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0230"
+   "pid": "p0230",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Corridors",
@@ -11894,7 +12294,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0231"
+   "pid": "p0231",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Corridors",
@@ -11908,7 +12309,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Physics research output (350-100,000)",
-   "pid": "p0232"
+   "pid": "p0232",
+   "text": "18x Physics research output (350-100,000)"
   },
   {
    "entity": "The Corridors",
@@ -11922,7 +12324,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0233"
+   "pid": "p0233",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Fluid",
@@ -11936,7 +12339,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0234"
+   "pid": "p0234",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Fluid",
@@ -11950,7 +12354,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0235"
+   "pid": "p0235",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Fluid",
@@ -11964,7 +12369,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Exotic Gases",
-   "pid": "p0236"
+   "pid": "p0236",
+   "text": "-50 Exotic Gases"
   },
   {
    "entity": "The Fluid",
@@ -11978,7 +12384,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0237"
+   "pid": "p0237",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Fluid",
@@ -11992,7 +12399,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "+200 Exotic Gases if you spent gases earlier",
-   "pid": "p0238"
+   "pid": "p0238",
+   "text": "+200 Exotic Gases if you spent gases earlier"
   },
   {
    "entity": "The Fluid",
@@ -12006,7 +12414,8 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "+200 Rare Crystals if you spent gases earlier",
-   "pid": "p0239"
+   "pid": "p0239",
+   "text": "+200 Rare Crystals if you spent gases earlier"
   },
   {
    "entity": "The Fluid",
@@ -12020,7 +12429,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0240"
+   "pid": "p0240",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Fluid",
@@ -12034,7 +12444,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Exotic Gases",
-   "pid": "p0241"
+   "pid": "p0241",
+   "text": "-100 Exotic Gases"
   },
   {
    "entity": "The Fluid",
@@ -12048,7 +12459,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0242"
+   "pid": "p0242",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Fluid",
@@ -12062,7 +12474,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0243"
+   "pid": "p0243",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Fluid",
@@ -12076,7 +12489,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0244"
+   "pid": "p0244",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Garden",
@@ -12090,7 +12504,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0245"
+   "pid": "p0245",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Garden",
@@ -12104,7 +12519,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0246"
+   "pid": "p0246",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Garden",
@@ -12118,7 +12534,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0247"
+   "pid": "p0247",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Garden",
@@ -12132,7 +12549,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology if nothing was burnt, otherwise small astral threads",
-   "pid": "p0248"
+   "pid": "p0248",
+   "text": "25% progress toward a random Biology technology if nothing was burnt, otherwise small astral threads"
   },
   {
    "entity": "The Garden",
@@ -12146,7 +12564,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0249"
+   "pid": "p0249",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Garden",
@@ -12160,7 +12579,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0250"
+   "pid": "p0250",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Garden",
@@ -12174,7 +12594,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0251"
+   "pid": "p0251",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Garden",
@@ -12188,7 +12609,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0252"
+   "pid": "p0252",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Garden",
@@ -12202,7 +12624,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0253"
+   "pid": "p0253",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "The Garden",
@@ -12216,7 +12639,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0254"
+   "pid": "p0254",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Lattice",
@@ -12230,7 +12654,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0255"
+   "pid": "p0255",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Lattice",
@@ -12244,7 +12669,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0256"
+   "pid": "p0256",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Lattice",
@@ -12258,7 +12684,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0257"
+   "pid": "p0257",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Lattice",
@@ -12272,7 +12699,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0258"
+   "pid": "p0258",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Lattice",
@@ -12286,7 +12714,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0259"
+   "pid": "p0259",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Lattice",
@@ -12300,7 +12729,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0260"
+   "pid": "p0260",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Lattice",
@@ -12314,7 +12744,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0261"
+   "pid": "p0261",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Mechanism",
@@ -12328,7 +12759,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0262"
+   "pid": "p0262",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Mechanism",
@@ -12342,7 +12774,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0263"
+   "pid": "p0263",
+   "text": "18x Engineering research output (350-100,000)"
   },
   {
    "entity": "The Mechanism",
@@ -12356,7 +12789,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0264"
+   "pid": "p0264",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "The Mechanism",
@@ -12370,7 +12804,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Engineering research output (2,000-2,000,000)",
-   "pid": "p0265"
+   "pid": "p0265",
+   "text": "96x Engineering research output (2,000-2,000,000)"
   },
   {
    "entity": "The Mechanism",
@@ -12384,7 +12819,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0266"
+   "pid": "p0266",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Mechanism",
@@ -12398,7 +12834,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Engineering research output (2,000-2,000,000)",
-   "pid": "p0267"
+   "pid": "p0267",
+   "text": "96x Engineering research output (2,000-2,000,000)"
   },
   {
    "entity": "The Mechanism",
@@ -12412,7 +12849,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0268"
+   "pid": "p0268",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Tower",
@@ -12426,7 +12864,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0269"
+   "pid": "p0269",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Tower",
@@ -12440,7 +12879,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0270"
+   "pid": "p0270",
+   "text": "18x Society research output (350-100,000)"
   },
   {
    "entity": "The Tower",
@@ -12454,7 +12894,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Alloys",
-   "pid": "p0271"
+   "pid": "p0271",
+   "text": "-100 Alloys"
   },
   {
    "entity": "The Tower",
@@ -12468,7 +12909,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0272"
+   "pid": "p0272",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Tower",
@@ -12482,7 +12924,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Alloys",
-   "pid": "p0273"
+   "pid": "p0273",
+   "text": "-100 Alloys"
   },
   {
    "entity": "The Tower",
@@ -12496,7 +12939,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Unity output (1,000-1,000,000)",
-   "pid": "p0274"
+   "pid": "p0274",
+   "text": "48x Unity output (1,000-1,000,000)"
   },
   {
    "entity": "The Tower",
@@ -12510,7 +12954,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Unity output (1,000-1,000,000)",
-   "pid": "p0275"
+   "pid": "p0275",
+   "text": "48x Unity output (1,000-1,000,000)"
   },
   {
    "entity": "The Tower",
@@ -12524,7 +12969,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0276"
+   "pid": "p0276",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Vortex",
@@ -12538,7 +12984,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0277"
+   "pid": "p0277",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Vortex",
@@ -12552,7 +12999,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0278"
+   "pid": "p0278",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Vortex",
@@ -12566,7 +13014,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Engineering research",
-   "pid": "p0279"
+   "pid": "p0279",
+   "text": "Engineering research"
   },
   {
    "entity": "The Vortex",
@@ -12580,7 +13029,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases",
-   "pid": "p0280"
+   "pid": "p0280",
+   "text": "Exotic Gases"
   },
   {
    "entity": "The Vortex",
@@ -12594,7 +13044,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0281"
+   "pid": "p0281",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "The Vortex",
@@ -12608,7 +13059,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0282"
+   "pid": "p0282",
+   "text": "Physics research"
   },
   {
    "entity": "The Vortex",
@@ -12622,7 +13074,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0283"
+   "pid": "p0283",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Vortex",
@@ -12636,7 +13089,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0284"
+   "pid": "p0284",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "The Vortex",
@@ -12650,7 +13104,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0285"
+   "pid": "p0285",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "The Vortex",
@@ -12664,7 +13119,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0286"
+   "pid": "p0286",
+   "text": "Physics research"
   },
   {
    "entity": "Tiny Planet",
@@ -12678,7 +13134,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Physics research output (250-100,000)",
-   "pid": "p0287"
+   "pid": "p0287",
+   "text": "12x Physics research output (250-100,000)"
   },
   {
    "entity": "Tiny Planet",
@@ -12692,7 +13149,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0288"
+   "pid": "p0288",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tiny Planet",
@@ -12706,7 +13164,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0289"
+   "pid": "p0289",
+   "text": "18x Society research output (350-100,000)"
   },
   {
    "entity": "Tiny Planet",
@@ -12720,7 +13179,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0290"
+   "pid": "p0290",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tiny Planet",
@@ -12734,7 +13194,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0291"
+   "pid": "p0291",
+   "text": "24x Physics research output (500-1,000,000)"
   },
   {
    "entity": "Tiny Planet",
@@ -12748,7 +13209,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Physics research output (250-100,000)",
-   "pid": "p0292"
+   "pid": "p0292",
+   "text": "12x Physics research output (250-100,000)"
   },
   {
    "entity": "Tiny Planet",
@@ -12762,7 +13224,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "5 Minerals",
-   "pid": "p0293"
+   "pid": "p0293",
+   "text": "5 Minerals"
   },
   {
    "entity": "Tiny Planet",
@@ -12776,7 +13239,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Unity output — Homicidal or Barbaric Despoilers",
-   "pid": "p0294"
+   "pid": "p0294",
+   "text": "24x Unity output — Homicidal or Barbaric Despoilers"
   },
   {
    "entity": "Tiny Planet",
@@ -12790,7 +13254,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0295"
+   "pid": "p0295",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Tiny Planet",
@@ -12804,7 +13269,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Society research output (250-100,000)",
-   "pid": "p0296"
+   "pid": "p0296",
+   "text": "12x Society research output (250-100,000)"
   },
   {
    "entity": "Tiny Planet",
@@ -12818,7 +13284,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Unity output — Homicidal or Barbaric Despoilers",
-   "pid": "p0297"
+   "pid": "p0297",
+   "text": "24x Unity output — Homicidal or Barbaric Despoilers"
   },
   {
    "entity": "Tiny Planet",
@@ -12832,7 +13299,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0298"
+   "pid": "p0298",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Tiny Planet",
@@ -12846,7 +13314,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Unity output (250-100,000)",
-   "pid": "p0299"
+   "pid": "p0299",
+   "text": "12x Unity output (250-100,000)"
   },
   {
    "entity": "Tiny Planet",
@@ -12860,7 +13329,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0300"
+   "pid": "p0300",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Tiny Planet",
@@ -12874,7 +13344,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0301"
+   "pid": "p0301",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Tiny Planet",
@@ -12888,7 +13359,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Society research output (250-100,000)",
-   "pid": "p0302"
+   "pid": "p0302",
+   "text": "12x Society research output (250-100,000)"
   },
   {
    "entity": "Tropical Habitat",
@@ -12902,7 +13374,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0303"
+   "pid": "p0303",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -12916,7 +13389,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0304"
+   "pid": "p0304",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -12930,7 +13404,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases if Robotic/Lithoid/Toxoid, otherwise Society research",
-   "pid": "p0305"
+   "pid": "p0305",
+   "text": "Exotic Gases if Robotic/Lithoid/Toxoid, otherwise Society research"
   },
   {
    "entity": "Tropical Habitat",
@@ -12944,7 +13419,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases",
-   "pid": "p0306"
+   "pid": "p0306",
+   "text": "Exotic Gases"
   },
   {
    "entity": "Tropical Habitat",
@@ -12958,7 +13434,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0307"
+   "pid": "p0307",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -12972,7 +13449,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases",
-   "pid": "p0308"
+   "pid": "p0308",
+   "text": "Exotic Gases"
   },
   {
    "entity": "Tropical Habitat",
@@ -12986,7 +13464,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0309"
+   "pid": "p0309",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -13000,7 +13479,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "5000 Minerals",
-   "pid": "p0310"
+   "pid": "p0310",
+   "text": "5000 Minerals"
   },
   {
    "entity": "Tropical Habitat",
@@ -13014,7 +13494,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "1000 Exotic Gases",
-   "pid": "p0311"
+   "pid": "p0311",
+   "text": "1000 Exotic Gases"
   },
   {
    "entity": "Tropical Habitat",
@@ -13028,7 +13509,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0312"
+   "pid": "p0312",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -13042,7 +13524,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0313"
+   "pid": "p0313",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Tropical Habitat",
@@ -13056,7 +13539,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0314"
+   "pid": "p0314",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -13070,7 +13554,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0315"
+   "pid": "p0315",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Tropical Habitat",
@@ -13084,7 +13569,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0316"
+   "pid": "p0316",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Tropical Habitat",
@@ -13098,7 +13584,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Society research",
-   "pid": "p0317"
+   "pid": "p0317",
+   "text": "Society research"
   },
   {
    "entity": "Tropical Habitat",
@@ -13112,7 +13599,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0318"
+   "pid": "p0318",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13126,7 +13614,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0319"
+   "pid": "p0319",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13140,7 +13629,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0320"
+   "pid": "p0320",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13154,7 +13644,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0321"
+   "pid": "p0321",
+   "text": "-100 Astral Threads"
   },
   {
    "entity": "Volcanic Plane",
@@ -13168,7 +13659,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0322"
+   "pid": "p0322",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13182,7 +13674,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Exotic Gases",
-   "pid": "p0323"
+   "pid": "p0323",
+   "text": "-100 Exotic Gases"
   },
   {
    "entity": "Volcanic Plane",
@@ -13196,7 +13689,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0324"
+   "pid": "p0324",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13210,7 +13704,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0325"
+   "pid": "p0325",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13224,7 +13719,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Minerals output (150-2,000)",
-   "pid": "p0326"
+   "pid": "p0326",
+   "text": "12x Minerals output (150-2,000)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13238,7 +13734,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Alloys output (150-2,000)",
-   "pid": "p0327"
+   "pid": "p0327",
+   "text": "12x Alloys output (150-2,000)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13252,7 +13749,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Unity output (150-2,000)",
-   "pid": "p0328"
+   "pid": "p0328",
+   "text": "12x Unity output (150-2,000)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13266,7 +13764,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0329"
+   "pid": "p0329",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Volcanic Plane",
@@ -13280,7 +13779,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0330"
+   "pid": "p0330",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Whiteout",
@@ -13294,7 +13794,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0331"
+   "pid": "p0331",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Whiteout",
@@ -13308,7 +13809,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0332"
+   "pid": "p0332",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Whiteout",
@@ -13322,7 +13824,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0333"
+   "pid": "p0333",
+   "text": "Physics research"
   },
   {
    "entity": "Whiteout",
@@ -13336,7 +13839,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0334"
+   "pid": "p0334",
+   "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
    "entity": "Whiteout",
@@ -13350,7 +13854,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rare Crystals",
-   "pid": "p0335"
+   "pid": "p0335",
+   "text": "Rare Crystals"
   },
   {
    "entity": "Whiteout",
@@ -13364,7 +13869,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Society research",
-   "pid": "p0336"
+   "pid": "p0336",
+   "text": "Society research"
   },
   {
    "entity": "Whiteout",
@@ -13378,7 +13884,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0337"
+   "pid": "p0337",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Windswept Planet",
@@ -13392,7 +13899,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Exotic Gases output (100-1,000)",
-   "pid": "p0338"
+   "pid": "p0338",
+   "text": "6x Exotic Gases output (100-1,000)"
   },
   {
    "entity": "Windswept Planet",
@@ -13406,7 +13914,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0339"
+   "pid": "p0339",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13420,7 +13929,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0340"
+   "pid": "p0340",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13434,7 +13944,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0341"
+   "pid": "p0341",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13448,7 +13959,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-25 Alloys",
-   "pid": "p0342"
+   "pid": "p0342",
+   "text": "-25 Alloys"
   },
   {
    "entity": "Windswept Planet",
@@ -13462,7 +13974,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0343"
+   "pid": "p0343",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13476,7 +13989,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0344"
+   "pid": "p0344",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13490,7 +14004,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0345"
+   "pid": "p0345",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13504,7 +14019,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0346"
+   "pid": "p0346",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13518,7 +14034,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Minerals",
-   "pid": "p0347"
+   "pid": "p0347",
+   "text": "-50 Minerals"
   },
   {
    "entity": "Windswept Planet",
@@ -13532,7 +14049,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0348"
+   "pid": "p0348",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13546,7 +14064,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0349"
+   "pid": "p0349",
+   "text": "Small astral threads (40 / 50 / 60)"
   },
   {
    "entity": "Windswept Planet",
@@ -13560,7 +14079,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-25 Alloys",
-   "pid": "p0350"
+   "pid": "p0350",
+   "text": "-25 Alloys"
   },
   {
    "entity": "Windswept Planet",
@@ -13574,7 +14094,8 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Minerals",
-   "pid": "p0351"
+   "pid": "p0351",
+   "text": "-50 Minerals"
   },
   {
    "entity": "Windswept Planet",
@@ -13588,7 +14109,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Exotic Gases output (250-5,000)",
-   "pid": "p0352"
+   "pid": "p0352",
+   "text": "18x Exotic Gases output (250-5,000)"
   },
   {
    "entity": "Windswept Planet",
@@ -13602,7 +14124,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Energy output (250-5,000)",
-   "pid": "p0353"
+   "pid": "p0353",
+   "text": "18x Energy output (250-5,000)"
   },
   {
    "entity": "Windswept Planet",
@@ -13616,7 +14139,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000) — Gestalt",
-   "pid": "p0354"
+   "pid": "p0354",
+   "text": "18x Unity output (250-1,000,000) — Gestalt"
   },
   {
    "entity": "Windswept Planet",
@@ -13630,7 +14154,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0355"
+   "pid": "p0355",
+   "text": "Large astral threads (140 / 150 / 160)"
   },
   {
    "entity": "Windswept Planet",
@@ -13644,7 +14169,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Food output (700-30,000)",
-   "pid": "p0356"
+   "pid": "p0356",
+   "text": "48x Food output (700-30,000)"
   },
   {
    "entity": "Windswept Planet",
@@ -13658,7 +14184,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000)",
-   "pid": "p0357"
+   "pid": "p0357",
+   "text": "18x Unity output (250-1,000,000)"
   },
   {
    "entity": "A Rift in Space",
@@ -13672,7 +14199,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "100 Astral Threads",
-   "pid": "p0358"
+   "pid": "p0358",
+   "text": "100 Astral Threads"
   },
   {
    "entity": "Destroy the Crystal Sphere",
@@ -13686,7 +14214,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "100 Astral Threads",
-   "pid": "p0359"
+   "pid": "p0359",
+   "text": "100 Astral Threads"
   },
   {
    "entity": "Destroy the Crystal Sphere",
@@ -13700,7 +14229,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "500 Exotic Gases",
-   "pid": "p0360"
+   "pid": "p0360",
+   "text": "500 Exotic Gases"
   },
   {
    "entity": "Destroy the Crystal Sphere",
@@ -13714,7 +14244,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "500 Rare Crystals",
-   "pid": "p0361"
+   "pid": "p0361",
+   "text": "500 Rare Crystals"
   },
   {
    "entity": "The Seal",
@@ -13728,7 +14259,8 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "1000 Astral Threads (conditional: if you defeat the Formless)",
-   "pid": "p0362"
+   "pid": "p0362",
+   "text": "1000 Astral Threads (conditional: if you defeat the Formless)"
   }
  ],
  "chains": [],
