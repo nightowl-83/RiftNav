@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-26
 **Surface:** Cowork (cloud session linked to mikes-macbook-pro-local), with Claude Design and Figma
-**Status at close:** design settled; implementation is half applied and **uncommitted** (see open items)
+**Status at close:** design settled; first pass implemented and committed; follow-up prompt not yet run
 
 ## What we set out to do
 
@@ -33,9 +33,9 @@ In `docs/DECISIONS.md`:
 
 ## What's still open
 
-1. **Review and commit Claude Code's first-pass diff** (the Holo file, the README and the Figma 82:17 DECISIONS entry).
+1. ~~Review and commit Claude Code's first-pass diff.~~ Done: Mike approved it, committed 2026-09-26.
 2. **Run the follow-up prompt below** in Claude Code (softer outline, corner accents, header panel).
-3. **Uncommitted work from the earlier archaeology session is also in the tree**: `data/*`, `CLAUDE.md`,
+3. ~~Uncommitted archaeology session work.~~ Done: committed separately 2026-09-26 after validate_all_v3.py passed. It was blocked by a stale `.git/index.lock`, which has been removed. Originally:: `data/*`, `CLAUDE.md`,
    `data/README.md`, the audit and the session note `2026-09-26-archaeology-v3-and-merge.md`. This
    close-out did not commit it. It needs its own review and commit.
 4. The Figma file has no hover state and no header panel. Consider adding both so Figma stays the
@@ -45,9 +45,9 @@ In `docs/DECISIONS.md`:
 
 ## Next three things
 
-1. Review the first-pass diff, then commit.
-2. Run the follow-up prompt, review, then commit.
-3. Commit the archaeology v3 work (separately).
+1. Run the follow-up prompt in Claude Code, review the diff, then commit.
+2. Add a hover state and the header panel to Figma so it stays the source of truth.
+3. Pick up the archaeology session's open item 1 (the UI data contract).
 
 ## Follow-up prompt for Claude Code
 
