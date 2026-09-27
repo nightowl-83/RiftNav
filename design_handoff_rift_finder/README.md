@@ -71,69 +71,150 @@ Content collapses to a narrow left column so the galaxy map backdrop stays visib
 
 ### Notched split
 
-Same column geometry as Split column, but cards and the header panel take a **folder-tab silhouette** instead of a plain rounded rectangle. This is the most involved variant — full geometry below.
+Same column geometry as Split column, but cards and the header panel take a **folder-tab silhouette** instead of a plain rounded rectangle. The card follows Figma node `82:17` (Rift Nav file); full geometry below. The header panel is unchanged and documented separately.
 
 | Property | Value |
 |---|---|
 | Card grid gap | `20px` (vs 12px in Split column) |
-| Card padding | `30px 16px 18px` (extra top padding clears the 24px tab band) |
+| Card width | `width: 100%; min-width: 320px; max-width: 920px` |
+| Card padding | `31px 66px 18px 16px` (top clears the 25px notch; right clears the 52px + column) |
 | Card min-height | `122px` |
-| Card background/border | **none** on the card element itself — the shape is drawn by 6 absolutely-positioned layers underneath (see below) |
+| Card corner radius | `24px`; + column right corners `20px` |
+| Card background/border | **none** on the card element itself. The shape comes from layers underneath plus one SVG outline (see below) |
+| Corner brackets | **none** on the notched card (Grid and Split column keep them) |
 | Header panel padding | `30px 18px 14px`, transparent background (same layered treatment) |
-| Pin rail negative margin | `-28px -16px -14px 14px` (vs `-14px -16px -14px 14px`) |
 
 ---
 
 ## The notched folder shape
 
-The silhouette is a rectangle whose **top edge steps down**: flat from the left edge to 34%, a 24px-deep recess across the middle, then back up for a short tab at the right. It is built from six sibling `<div>`s inside a `position: relative` wrapper, all `pointer-events: none`, rendered behind the card content (`z-index: 0`–`1`; content sits at `z-index: 2`).
+### Card
 
-**Percentages differ between the card and the header panel** — card breaks at 34%, header at 38%.
+The top edge steps down: a raised left tab, a 25px-deep notch across the middle, then back up to a right tab the width of the + column. **Only the left tab scales** (it ends at `25%` of the card width). Every other measurement is fixed px, so the slopes, notch depth and right tab look the same at any width.
 
-### Layer 1 — outer wrapper (shadow only)
+| | Value |
+|---|---|
+| Left tab ends | `25%` of card width |
+| Left slope | `42px` across × `25px` down |
+| Notch depth | `25px` |
+| Notch floor | `calc(25% + 42px)` → `calc(100% - 78px)` |
+| Right slope | `26px` across × `25px` down |
+| Right tab | `52px` wide, same as the + column; its inner edge lines up with the + divider |
 
+Check at 683px wide (Figma 82:17): tab end `171`, floor `213 → 605` at `25` deep, right tab edge `631`.
+
+Markup (the `.rf-fcw` wrapper carries the hover lift, because `c.wrap` runs the `wipeIn` entrance animation, which owns `transform`):
+
+```html
+<div class="rf-fcw">
+  <div class="rf-fc" role="button" tabindex="0" aria-label="Ruined Planet, 10 chapters">
+    <div class="rf-fc-shadow"></div>  <!-- z 0 -->
+    <div class="rf-fc-fill"></div>    <!-- z 0 -->
+    <div class="rf-fc-wash"></div>    <!-- z 1, hover only -->
+    <div class="rf-fc-bar"></div>     <!-- z 1 -->
+    <div class="rf-fc-outline"></div> <!-- z 3, SVG drawn by script -->
+    <div class="rf-fc-body">…</div>   <!-- z 2 -->
+  </div>
+  <button class="rf-fc-cta" aria-label="Monitor Ruined Planet" aria-pressed="false">+</button>
+</div>
+```
+
+All layers are `position: absolute; inset: 0; pointer-events: none` unless noted.
+
+**Shadow**
 ```css
-position: absolute; inset: 0; z-index: 0; pointer-events: none;
-border-radius: 14px;                 /* header: 16px */
+border-radius: 24px;
 box-shadow: 0 18px 50px rgba(0,6,16,.4);
 ```
 
-### Layer 2 — fill (the clipped glass body)
-
-Card:
+**Fill** (clipped glass body, no border)
 ```css
-position: absolute; inset: 0; box-sizing: border-box;
-border-radius: 14px;
-clip-path: polygon(
-  0 0,
-  calc(34% - 2px) 0,
-  calc(34% + 10px) 24px,
-  calc(100% - 51px) 24px,
-  calc(100% - 39px) 0,
-  100% 0,
-  100% 100%,
-  0 100%
-);
+border-radius: 24px;
+clip-path: polygon(0 0, 25% 0, calc(25% + 42px) 25px, calc(100% - 78px) 25px,
+                   calc(100% - 52px) 0, 100% 0, 100% 100%, 0 100%);
 background-image: linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));
 background-size: 100% calc(100% + 26px);
 background-position: 0 -26px;        /* pulls the gradient up so the notch doesn't lighten */
 backdrop-filter: blur(20px) saturate(140%);
-border: 1px solid rgba(176,214,255,.1);
-border-top: none;                    /* top edge is drawn by the tab layers instead */
 ```
 
-Header panel — identical except:
+**Recessed bar** (fills the notch floor, capped with a hairline)
 ```css
+top: 13px; height: 12px; left: calc(25% + 21px); right: 67px;
+clip-path: polygon(0 0, 100% 0, calc(100% - 11px) 100%, 21px 100%);
+border-top: 1px solid rgba(176,214,255,.26);
+background: linear-gradient(185.7deg, rgba(13,32,53,.5) 36.5%, rgba(11,25,40,.5) 70.7%);
+```
+
+**Outline.** One SVG replaces the old tab and wedge layers. It is `position: absolute; inset: 0; overflow: visible; pointer-events: none` and a `ResizeObserver` redraws it from the card's live size:
+
+```js
+function folderPath(W, H) {
+  const r = 24, h = -0.5, L = W * 0.25;   // stroke sits half a pixel outside the box, as in Figma
+  return `M${h} ${r} A${r-h} ${r-h} 0 0 1 ${r} ${h} H${L} L${L+42} ${25-h}
+    H${W-78} L${W-52} ${h} H${W-r} A${r-h} ${r-h} 0 0 1 ${W-h} ${r}
+    V${H-r} A${r-h} ${r-h} 0 0 1 ${W-r} ${H-h} H${r}
+    A${r-h} ${r-h} 0 0 1 ${h} ${H-r} Z`;
+}
+```
+
+Stroke `1px`, no fill, horizontal `linearGradient` from `#fff` at 60% opacity to `#fff` at 35%. A second path with the same `d` carries the hover state (below). Gradient ids are unique per card instance (`rf-fc-{n}-b` / `rf-fc-{n}-h`).
+
+**+ column.** A separate `<button>`, a sibling of the card rather than a child, so clicking it never triggers the card's click and there are no nested interactive elements.
+```css
+position: absolute; top: 0; right: 0; bottom: 0; width: 52px;
+border-left: 1px solid rgba(255,255,255,.15);
+border-radius: 0 20px 20px 0;
+font: 100 32px/1 'JetBrains Mono';  /* the "+" glyph */
+color: #a3e5ff;
+```
+When monitored it shows `⦿` (19px, `#ffd9b0`) on the amber pin-rail gradient, `aria-pressed="true"` and the label "Stop monitoring {name}".
+
+### Hover and focus
+
+Applied on `:hover` and `:focus-visible`. Timing is `180ms cubic-bezier(.2,.7,.2,1)` throughout.
+
+| Part | Rest | Hover / focus |
+|---|---|---|
+| Lift (`.rf-fcw`) | `translateY(0)` | `translateY(-2px)`; `:active` snaps back to `0` over `60ms`. No lift under `prefers-reduced-motion` |
+| Shadow | `0 18px 50px rgba(0,6,16,.4)` | `0 24px 56px rgba(0,6,16,.55)` |
+| Cyan outline | opacity `0` | opacity `1`. Same `d`, gradient `#8ecbff` 90% → 50%. SVG `filter: drop-shadow(0 0 5px rgba(142,203,255,.35))` |
+| Wash | opacity `0` | opacity `1`. Same clip-path and radius as the fill, `linear-gradient(160deg, rgba(142,203,255,.09), rgba(142,203,255,0) 55%)` |
+| Bar border-top | `rgba(176,214,255,.26)` | `rgba(142,203,255,.55)` |
+| Group label | `#a8c4dc` | `#8ecbff` |
+| + border-left | `rgba(255,255,255,.15)` | `rgba(142,203,255,.35)` |
+| + glyph | `#a3e5ff` | `#d6f3ff` |
+
+- **Pointer on the + itself:** background `rgba(163,229,255,.1)`, glyph `#fff`.
+- **Keyboard focus:** same as hover, and the cyan path's `stroke-width` goes to `2px`. The card sets `outline: none`, and the lift comes from `.rf-fcw:has(> .rf-fc:focus-visible)`.
+- **Tab order:** card, then its + button. The + shows a `1px #8ecbff` outline inset `5px` on focus.
+- **Accessibility:** the card is `role="button"`, `tabindex="0"`, opens on Enter or Space, and is named "{title}, {n} chapters" (dig sites: "{n} phases").
+
+### Header panel
+
+Unchanged. It keeps the older layered construction: six sibling `<div>`s (shadow, fill, two tab hairlines, two diagonal wedges, recessed bar), all `pointer-events: none`, behind the content.
+
+**Shadow wrapper**
+```css
+position: absolute; inset: 0; z-index: 0; pointer-events: none;
+border-radius: 16px;
+box-shadow: 0 18px 50px rgba(0,6,16,.4);
+```
+
+**Fill**
+```css
+position: absolute; inset: 0; box-sizing: border-box;
 border-radius: 16px;
 clip-path: polygon(0 0, calc(38% - 2px) 0, calc(38% + 10px) 24px,
                    calc(100% - 88px) 24px, calc(100% - 76px) 0, 100% 0, 100% 100%, 0 100%);
 background-image: linear-gradient(160deg, rgba(22,48,74,.42), rgba(6,16,28,.5));
-/* no border at all on the header fill */
+background-size: 100% calc(100% + 26px);
+background-position: 0 -26px;
+backdrop-filter: blur(20px) saturate(140%);
+/* no border */
 ```
 
-### Layers 3 & 4 — the two tabs (hairline outline of the raised sections)
-
-Generated by `tabCss(isHeader, position, dropSide)`:
+**Tabs.** These are generated by `tabCss(isHeader, position, dropSide)`:
 
 ```css
 position: absolute; top: 0; height: 24px; box-sizing: border-box;
@@ -141,22 +222,16 @@ background: none;
 border: 1px solid rgba(176,214,255,.26);
 border-bottom: none;
 border-<dropSide>: none;             /* the side facing the notch has no border */
-border-radius: <r>px 4px 0 0;        /* dropSide 'right' */
-     /* or: 4px <r>px 0 0 */         /* dropSide 'left'  */
+border-radius: 15px 4px 0 0;         /* dropSide 'right' */
+     /* or: 4px 15px 0 0 */          /* dropSide 'left'  */
 z-index: 1;
 box-shadow: inset 0 1px 0 rgba(255,255,255,.13);
 ```
 
-`r` = `13px` on cards, `15px` on the header panel.
+- Left tab: `left: 0; width: 38%`, with the right side dropped.
+- Right tab: `right: 0; width: 78px`, with the left side dropped.
 
-| | Left tab | Right tab |
-|---|---|---|
-| Card | `left: 0; width: 34%`, drop `right` | `right: 0; width: 41px`, drop `left` |
-| Header | `left: 0; width: 38%`, drop `right` | `right: 0; width: 78px`, drop `left` |
-
-### Layers 5 & 6 — the diagonal wedges
-
-The 45° connectors between each tab and the recessed middle. Generated by `wedge(isHeader, position, isRight)`:
+**Wedges.** These are the diagonal connectors between each tab and the recessed middle, generated by `wedge(isHeader, position, isRight)`:
 
 ```css
 position: absolute; top: 0; width: 12px; height: 24px;
@@ -169,29 +244,24 @@ background-image: linear-gradient(63.43deg,        /* right wedge: 116.57deg */
 z-index: 1;
 ```
 
-The gradient paints a 1.2px diagonal line inside a transparent triangle — this is what makes the hairline continue cleanly around the step. `63.43deg` / `116.57deg` are the exact angles of a 12×24 diagonal (`atan(24/12)`).
+The gradient paints a 1.2px diagonal line inside a transparent triangle. `63.43deg` and `116.57deg` are the exact angles of a 12×24 diagonal (`atan(24/12)`).
 
-| | Left wedge | Right wedge |
-|---|---|---|
-| Card | `left: calc(34% - 2px)` | `right: 39px` |
-| Header | `left: calc(38% - 2px)` | `right: 76px` |
+- Left wedge: `left: calc(38% - 2px)`.
+- Right wedge: `right: 76px`.
 
-### Layer 7 — the recessed bar
-
-Fills the notch floor with a slightly different glass tone and caps it with a hairline.
-
+**Recessed bar**
 ```css
 position: absolute; top: 12px; height: 12px; z-index: 1; box-sizing: border-box;
-left: 34%; right: 41px;              /* header: left: 38%; right: 78px */
+left: 38%; right: 78px;
 clip-path: polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);
 border-top: 1px solid rgba(176,214,255,.26);
-background: rgba(13,29,47,.28);      /* header: rgba(13,29,47,.26) */
+background: rgba(13,29,47,.26);
 backdrop-filter: blur(14px) saturate(130%);
 ```
 
-### Corner brackets (all layouts, on cards)
+### Corner brackets (Grid and Split column cards)
 
-Two L-brackets, radially masked so they fade out along their length:
+Two L-brackets, radially masked so they fade out along their length. The notched card has none.
 
 ```css
 /* top-left, amber */
@@ -431,25 +501,25 @@ Header block contains: back-to-galaxy button, title block, the rift/dig segmente
 - 1px rule `rgba(176,214,255,.18)`, `margin-top: 9px`.
 - Meta row (10px, `.12em`): rifts → `{n} CHAPTERS` (`#8ba7bf`) / `{n} REWARDS` or `{n} MATCH` (`#ffd9b0`); dig sites → `{n} PHASES` (`#8ba7bf`) / DLC name (`#7fe0d4`).
 
-**Pin rail** — a full-height strip on the card's right edge that toggles monitoring:
+**Pin rail** (Grid and Split column; the notched card uses its own + column, see [The notched folder shape](#the-notched-folder-shape)). A full-height strip on the card's right edge that toggles monitoring:
 
 ```css
 flex: none; position: relative; align-self: stretch;
 display: flex; align-items: center; justify-content: center; cursor: pointer;
 width: 56px;                                   /* 40px when split */
-margin: -14px -16px -14px 14px;                /* -28px top when notch */
+margin: -14px -16px -14px 14px;
 border-radius: 0 13px 13px 0;
 border-left: 1px solid rgba(176,214,255,.16);  /* .34 when active */
 transition: background-color .2s, color .2s, border-color .2s;
 
-/* inactive */ background: rgba(8,18,32,.34);  /* .16 when notch */  color: #7f9cb4;
+/* inactive */ background: rgba(8,18,32,.34);  color: #7f9cb4;
 /* active   */ background: linear-gradient(180deg, rgba(255,214,170,.22), rgba(255,196,132,.09));
                color: #ffd9b0;
 ```
 
 Icon `✚` → `⦿` when monitored, 19px. Hover shows a tooltip above: `MONITOR SITUATION` / `STOP MONITORING`, `padding: 6px 9px; border-radius: 7px; font-size: 8px; letter-spacing: .2em; color: #07111e; background: #ffd9b0; border: 1px solid rgba(255,255,255,.5)`.
 
-**Card hover** (all layouts): the card slides right and grows an amber left edge —
+**Card hover** (Grid and Split column; the notched card has its own, see [Hover and focus](#hover-and-focus)): the card slides right and grows an amber left edge —
 ```css
 border-color: rgba(174,225,255,.6);
 box-shadow: -6px 0 0 -3px rgba(255,224,190,.7),
@@ -667,7 +737,7 @@ border: 1px solid rgba(176,214,255,.2);
 box-shadow: 0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);
 ```
 
-Blur scales with elevation: `14px` (notch bar) → `16px` (footer) → `18px` (buttons, chips) → `20px` (cards) → `22px` (reward cards) → `26px` (modals, compact bar). Gradient angle is `160deg` on most panels, `155deg` on reward/phase cards, `165deg` on the step card.
+Blur scales with elevation: `14px` (header notch bar) → `16px` (footer) → `18px` (buttons, chips) → `20px` (cards) → `22px` (reward cards) → `26px` (modals, compact bar). Gradient angle is `160deg` on most panels, `155deg` on reward/phase cards, `165deg` on the step card.
 
 ## Typography
 
@@ -864,8 +934,8 @@ To view a prototype: open the `.dc.html` file directly in a browser. Both are se
 | What | Where |
 |---|---|
 | Layout switching | `renderVals()` → `lay`, `split`, `notch`, then `homeWrap`, `cardGrid`, `browseGrid`, `cardShell`, `titleStyle` |
-| Notch geometry | `tabCss()`, `wedge()` methods; `chamferEdge`/`chamferFill`/`chamferInner`/`notchTabR`/`notchWedgeL`/`notchWedgeR`/`notchBar` in `renderVals()` |
-| Header notch geometry | `headEdge`/`headFill`/`headCut`/`headTabR`/`headWedgeL`/`headWedgeR`/`headBar` |
+| Card notch geometry | `.rf-fc*` rules at the end of the helmet `<style>`; `folderPath()`, `frameRef()`/`bindFrame()`/`buildFrame()`/`drawFrame()` methods; `notchCards`/`plainCards` in `renderVals()` |
+| Header notch geometry | `tabCss()`, `wedge()` methods; `headEdge`/`headFill`/`headCut`/`headTabR`/`headWedgeL`/`headWedgeR`/`headBar` |
 | Filter UI switching | `catItem()` method; `filterMenu`/`filterScroll`/`filterChips`, `catChips`/`catStrip`/`catRows` |
 | Path resolution | `parsePath()`, `steps()` |
 | Copy cleanup | `clean()`, `rewardLine()`, `dispName()`, `branchOf()` |

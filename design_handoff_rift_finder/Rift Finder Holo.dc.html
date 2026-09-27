@@ -13,7 +13,7 @@
 <script src="dig-data.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=JetBrains+Mono:wght@100&amp;display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;background:#040a14;color:#e8f2fb;font-family:"IBM Plex Mono",ui-monospace,monospace;-webkit-font-smoothing:antialiased}
 a{color:#8ecbff;text-decoration:none}a:hover{color:#d6ecff}
@@ -33,6 +33,34 @@ input{font-family:inherit}
 @keyframes retSwipe{0%,68%{transform:translateX(-130%)}90%,100%{transform:translateX(130%)}}
 @keyframes wipeIn{0%{opacity:0;clip-path:inset(-60% 100% -60% -60%);transform:translateX(-18px)}70%{opacity:.92}99%{clip-path:inset(-200% -200% -200% -200%)}100%{opacity:1;clip-path:none;transform:translateX(0)}}
 @media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Notched split folder card (Figma 82:17). Left tab scales at 25%; every other measurement is fixed px. */
+.rf-fcw{position:relative;width:100%;min-width:320px;max-width:920px;transition:transform .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fcw:hover,.rf-fcw:has(>.rf-fc:focus-visible){transform:translateY(-2px)}
+.rf-fcw:active{transform:translateY(0);transition-duration:.06s}
+.rf-fc{position:relative;display:flex;flex-direction:column;box-sizing:border-box;min-height:122px;height:100%;padding:31px 66px 18px 16px;border-radius:24px;cursor:pointer;outline:none}
+.rf-fc-shadow{position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:24px;box-shadow:0 18px 50px rgba(0,6,16,.4);transition:box-shadow .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fc-fill,.rf-fc-wash{position:absolute;inset:0;box-sizing:border-box;pointer-events:none;border-radius:24px;clip-path:polygon(0 0,25% 0,calc(25% + 42px) 25px,calc(100% - 78px) 25px,calc(100% - 52px) 0,100% 0,100% 100%,0 100%)}
+.rf-fc-fill{z-index:0;background-image:linear-gradient(160deg,rgba(22,48,74,.44),rgba(6,16,28,.5));background-size:100% calc(100% + 26px);background-position:0 -26px;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%)}
+.rf-fc-wash{z-index:1;background:linear-gradient(160deg,rgba(142,203,255,.09),rgba(142,203,255,0) 55%);opacity:0;transition:opacity .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fc-bar{position:absolute;z-index:1;pointer-events:none;box-sizing:border-box;top:13px;height:12px;left:calc(25% + 21px);right:67px;clip-path:polygon(0 0,100% 0,calc(100% - 11px) 100%,21px 100%);border-top:1px solid rgba(176,214,255,.26);background:linear-gradient(185.7deg,rgba(13,32,53,.5) 36.5%,rgba(11,25,40,.5) 70.7%);transition:border-color .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fc-outline{position:absolute;inset:0;z-index:3;pointer-events:none}
+.rf-fc-outline svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 5px rgba(142,203,255,0));transition:filter .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fc-hov{opacity:0;transition:opacity .18s cubic-bezier(.2,.7,.2,1)}
+.rf-fc-body{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-width:0}
+.rf-fc-group{color:#a8c4dc;transition:color .18s ease}
+.rf-fc-cta{position:absolute;top:0;right:0;bottom:0;z-index:4;box-sizing:border-box;width:52px;display:flex;align-items:center;justify-content:center;margin:0;padding:0;border:0;border-left:1px solid rgba(255,255,255,.15);border-radius:0 20px 20px 0;background:transparent;color:#a3e5ff;font:100 32px/1 'JetBrains Mono',ui-monospace,monospace;cursor:pointer;transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+.rf-fc-cta.is-on{color:#ffd9b0;border-left-color:rgba(255,224,190,.4);background:linear-gradient(180deg,rgba(255,214,170,.2),rgba(255,196,132,.08));font-family:inherit;font-weight:400;font-size:19px}
+.rf-fc-cta:focus-visible{outline:1px solid #8ecbff;outline-offset:-5px}
+.rf-fc-tip{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:400;line-height:normal}
+.rf-fcw:hover .rf-fc-shadow,.rf-fc:focus-visible .rf-fc-shadow{box-shadow:0 24px 56px rgba(0,6,16,.55)}
+.rf-fcw:hover .rf-fc-wash,.rf-fc:focus-visible .rf-fc-wash,.rf-fcw:hover .rf-fc-hov,.rf-fc:focus-visible .rf-fc-hov{opacity:1}
+.rf-fcw:hover .rf-fc-outline svg,.rf-fc:focus-visible .rf-fc-outline svg{filter:drop-shadow(0 0 5px rgba(142,203,255,.35))}
+.rf-fc:focus-visible .rf-fc-hov{stroke-width:2}
+.rf-fcw:hover .rf-fc-bar,.rf-fc:focus-visible .rf-fc-bar{border-top-color:rgba(142,203,255,.55)}
+.rf-fcw:hover .rf-fc-group,.rf-fc:focus-visible .rf-fc-group{color:#8ecbff}
+.rf-fcw:hover .rf-fc-cta,.rf-fc:focus-visible~.rf-fc-cta{border-left-color:rgba(142,203,255,.35);color:#d6f3ff}
+.rf-fcw .rf-fc-cta:hover{background:rgba(163,229,255,.1);color:#fff}
+@media (prefers-reduced-motion: reduce){.rf-fcw,.rf-fcw:hover,.rf-fcw:has(>.rf-fc:focus-visible),.rf-fcw:active{transform:none}}
 </style>
 </helmet>
 
@@ -378,11 +406,48 @@ input{font-family:inherit}
   </div>
   </sc-if>
 
+  <sc-if value="{{ notchCards }}" hint-placeholder-val="{{ false }}">
+  <div style="{{ cardGrid }}">
+    <sc-for list="{{ riftCards }}" as="c" hint-placeholder-count="9">
+      <div style="{{ c.wrap }}">
+      <div class="rf-fcw">
+        <div class="rf-fc" role="button" tabIndex="0" aria-label="{{ c.label }}" onClick="{{ c.open }}" onKeyDown="{{ c.key }}">
+          <div class="rf-fc-shadow"></div>
+          <div class="rf-fc-fill"></div>
+          <div class="rf-fc-wash"></div>
+          <div class="rf-fc-bar"></div>
+          <div class="rf-fc-outline" ref="{{ c.frameRef }}"></div>
+          <div class="rf-fc-body">
+            <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px">
+              <span style="width:5px;height:5px;border-radius:9px;background:#8ecbff;box-shadow:0 0 8px #8ecbff"></span>
+              <span class="rf-fc-group" style="font-size:9px;letter-spacing:.2em">{{ c.group }}</span>
+              <span style="margin-left:auto;font-size:9px;letter-spacing:.14em;color:#6f8ea6">{{ c.sig }}</span>
+            </div>
+            <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:19px;font-weight:600;letter-spacing:.03em;line-height:1.15;color:#f6fbff;text-wrap:pretty">{{ c.name }}</div>
+            <div style="margin-top:9px;height:1px;background:rgba(176,214,255,.18)"></div>
+            <div style="margin-top:7px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em">
+              <span style="color:#8ba7bf">{{ c.chapters }}</span>
+              <span style="color:#ffd9b0">{{ c.rewardCount }}</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="{{ c.ctaClass }}" aria-label="{{ c.pinLabel }}" aria-pressed="{{ c.pinOn }}" onClick="{{ c.pin }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ c.tipOff }}">
+          <span aria-hidden="true">{{ c.ctaGlyph }}</span>
+          <sc-if value="{{ c.tipShown }}" hint-placeholder-val="{{ false }}">
+            <span class="rf-fc-tip" style="{{ tipStyle }}">{{ c.tipText }}</span>
+          </sc-if>
+        </button>
+      </div>
+      </div>
+    </sc-for>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ plainCards }}" hint-placeholder-val="{{ true }}">
   <div style="{{ cardGrid }}">
     <sc-for list="{{ riftCards }}" as="c" hint-placeholder-count="9">
       <div style="{{ c.wrap }}">
       <div onClick="{{ c.open }}" style="{{ cardShell }}" style-hover="border-color:rgba(174,225,255,.6);box-shadow:-6px 0 0 -3px rgba(255,224,190,.7), 0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18);transform:translateX(9px);z-index:520">
-        <div style="{{ chamferEdge }}"><div style="{{ chamferFill }}"></div><div style="{{ chamferInner }}"></div><div style="{{ notchTabR }}"></div><div style="{{ notchWedgeL }}"></div><div style="{{ notchWedgeR }}"></div><div style="{{ notchBar }}"></div></div>
         <div style="position:absolute;left:0;top:0;width:30px;height:30px;border-left:1.5px solid rgba(255,224,190,.85);border-top:1.5px solid rgba(255,224,190,.85);border-top-left-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%)"></div>
         <div style="position:absolute;right:0;bottom:0;width:30px;height:30px;border-right:1.5px solid rgba(174,225,255,.8);border-bottom:1.5px solid rgba(174,225,255,.8);border-bottom-right-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%)"></div>
         <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-width:0">
@@ -409,13 +474,51 @@ input{font-family:inherit}
     </sc-for>
   </div>
   </sc-if>
+  </sc-if>
 
   <sc-if value="{{ browseDig }}" hint-placeholder-val="{{ false }}">
+  <sc-if value="{{ notchCards }}" hint-placeholder-val="{{ false }}">
+  <div style="{{ cardGrid }}">
+    <sc-for list="{{ digCards }}" as="c" hint-placeholder-count="6">
+      <div style="{{ c.wrap }}">
+      <div class="rf-fcw">
+        <div class="rf-fc" role="button" tabIndex="0" aria-label="{{ c.label }}" onClick="{{ c.open }}" onKeyDown="{{ c.key }}">
+          <div class="rf-fc-shadow"></div>
+          <div class="rf-fc-fill"></div>
+          <div class="rf-fc-wash"></div>
+          <div class="rf-fc-bar"></div>
+          <div class="rf-fc-outline" ref="{{ c.frameRef }}"></div>
+          <div class="rf-fc-body">
+            <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px">
+              <span style="width:5px;height:5px;border-radius:9px;background:#7fe0d4;box-shadow:0 0 8px #7fe0d4"></span>
+              <span class="rf-fc-group" style="font-size:9px;letter-spacing:.2em">{{ c.group }}</span>
+              <span style="margin-left:auto;font-size:9px;letter-spacing:.14em;color:#6f8ea6">{{ c.sig }}</span>
+            </div>
+            <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:19px;font-weight:600;letter-spacing:.03em;line-height:1.15;color:#f6fbff;text-wrap:pretty">{{ c.name }}</div>
+            <div style="margin-top:9px;height:1px;background:rgba(176,214,255,.18)"></div>
+            <div style="margin-top:7px;display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.12em">
+              <span style="color:#8ba7bf">{{ c.phases }}</span>
+              <span style="color:#7fe0d4;text-align:right">{{ c.dlc }}</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="{{ c.ctaClass }}" aria-label="{{ c.pinLabel }}" aria-pressed="{{ c.pinOn }}" onClick="{{ c.pin }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ c.tipOff }}">
+          <span aria-hidden="true">{{ c.ctaGlyph }}</span>
+          <sc-if value="{{ c.tipShown }}" hint-placeholder-val="{{ false }}">
+            <span class="rf-fc-tip" style="{{ tipStyle }}">{{ c.tipText }}</span>
+          </sc-if>
+        </button>
+      </div>
+      </div>
+    </sc-for>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ plainCards }}" hint-placeholder-val="{{ true }}">
   <div style="{{ cardGrid }}">
     <sc-for list="{{ digCards }}" as="c" hint-placeholder-count="6">
       <div style="{{ c.wrap }}">
       <div onClick="{{ c.open }}" style="{{ cardShell }}" style-hover="border-color:rgba(174,225,255,.6);box-shadow:-6px 0 0 -3px rgba(255,224,190,.7), 0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18);transform:translateX(9px);z-index:520">
-        <div style="{{ chamferEdge }}"><div style="{{ chamferFill }}"></div><div style="{{ chamferInner }}"></div><div style="{{ notchTabR }}"></div><div style="{{ notchWedgeL }}"></div><div style="{{ notchWedgeR }}"></div><div style="{{ notchBar }}"></div></div>
         <div style="position:absolute;left:0;top:0;width:30px;height:30px;border-left:1.5px solid rgba(255,224,190,.85);border-top:1.5px solid rgba(255,224,190,.85);border-top-left-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 0 0, #000 22%, transparent 100%)"></div>
         <div style="position:absolute;right:0;bottom:0;width:30px;height:30px;border-right:1.5px solid rgba(174,225,255,.8);border-bottom:1.5px solid rgba(174,225,255,.8);border-bottom-right-radius:14px;pointer-events:none;z-index:4;mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%);-webkit-mask-image:radial-gradient(circle 34px at 100% 100%, #000 22%, transparent 100%)"></div>
         <div style="position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-width:0">
@@ -441,6 +544,7 @@ input{font-family:inherit}
       </div>
     </sc-for>
   </div>
+  </sc-if>
   </sc-if>
 </div>
 </sc-if>
@@ -805,6 +909,59 @@ class Component extends DCLogic {
     this.set({ toastText: text, toastAdd: !!add });
     this._tt = setTimeout(() => this.set({ toastText: '' }), 2600);
   }
+
+  // Notched-split card outline: one path traced to the card's live size, so the left tab can
+  // scale at 25% while slopes, notch depth and the right tab stay fixed px.
+  folderPath(W, H) {
+    const r = 24, h = -0.5, L = W * 0.25;   // stroke sits half a pixel outside the box, as in Figma
+    return `M${h} ${r} A${r-h} ${r-h} 0 0 1 ${r} ${h} H${L} L${L+42} ${25-h}
+      H${W-78} L${W-52} ${h} H${W-r} A${r-h} ${r-h} 0 0 1 ${W-h} ${r}
+      V${H-r} A${r-h} ${r-h} 0 0 1 ${W-r} ${H-h} H${r}
+      A${r-h} ${r-h} 0 0 1 ${h} ${H-r} Z`;
+  }
+  // Cached per card so React sees a stable ref and only calls it on mount/unmount.
+  frameRef(key) {
+    const refs = this._frameRefs || (this._frameRefs = {});
+    return refs[key] || (refs[key] = el => this.bindFrame(key, el));
+  }
+  bindFrame(key, el) {
+    const hosts = this._frameHosts || (this._frameHosts = {});
+    const ro = this._frameRO || (this._frameRO = new ResizeObserver(es => es.forEach(e => this.drawFrame(e.target))));
+    if (hosts[key] && hosts[key] !== el) { ro.unobserve(hosts[key]); delete hosts[key]; }
+    if (!el) return;
+    hosts[key] = el;
+    if (!el.firstChild) this.buildFrame(el);
+    ro.observe(el);
+  }
+  buildFrame(el) {
+    const NS = 'http://www.w3.org/2000/svg';
+    // many cards render at once, so gradient ids must be unique per instance
+    const id = 'rf-fc-' + (this._frameSeq = (this._frameSeq || 0) + 1);
+    const mk = (tag, attrs) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
+    const grad = (gid, color, from, to) => {
+      const g = mk('linearGradient', { id: gid, x1: 0, y1: 0, x2: 1, y2: 0 });
+      g.appendChild(mk('stop', { offset: 0, 'stop-color': color, 'stop-opacity': from }));
+      g.appendChild(mk('stop', { offset: 1, 'stop-color': color, 'stop-opacity': to }));
+      return g;
+    };
+    const svg = mk('svg', { 'aria-hidden': 'true', focusable: 'false' }), defs = mk('defs', {});
+    defs.appendChild(grad(id + '-b', '#fff', 0.6, 0.35));
+    defs.appendChild(grad(id + '-h', '#8ecbff', 0.9, 0.5));
+    svg.appendChild(defs);
+    svg.appendChild(mk('path', { class: 'rf-fc-base', fill: 'none', stroke: 'url(#' + id + '-b)', 'stroke-width': 1 }));
+    svg.appendChild(mk('path', { class: 'rf-fc-hov', fill: 'none', stroke: 'url(#' + id + '-h)', 'stroke-width': 1 }));
+    el.appendChild(svg);
+    this.drawFrame(el);
+  }
+  drawFrame(el) {
+    const W = el.clientWidth, H = el.clientHeight;
+    if (!W || !H) return;
+    const d = this.folderPath(W, H);
+    el.querySelectorAll('path').forEach(p => p.setAttribute('d', d));
+  }
+  onActivate(fn) {
+    return e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fn(); } };
+  }
   tabCss(head, pos, drop) {
     const r = head ? 15 : 13;
     return 'position:absolute;top:0;height:24px;box-sizing:border-box;' + pos + ';background:none;'
@@ -896,7 +1053,7 @@ class Component extends DCLogic {
       this.timers.push(setTimeout(() => this.setState({ boot: i }), 170 * i + (i > this.BOOT.length ? 220 : 0)));
     }
   }
-  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); }
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); if (this._frameRO) this._frameRO.disconnect(); }
 
   get data() { return (typeof window !== 'undefined' && window.RIFT_DATA) || { rifts: [], rewards: [] }; }
   set(p) { this.setState(p); }
@@ -1077,7 +1234,11 @@ class Component extends DCLogic {
         pinIcon: on ? '⦿' : '✚', pinStyle: this.pinRail(on, split, notch),
         pin: e => { e.stopPropagation(); this.toggleMon(type, name); },
         tipOn: () => this.set({ tip: key }), tipOff: () => { if (this.state.tip === key) this.set({ tip: '' }); },
-        tipShown: tip === key, tipText: on ? 'STOP MONITORING' : 'MONITOR SITUATION'
+        tipShown: tip === key, tipText: on ? 'STOP MONITORING' : 'MONITOR SITUATION',
+        // notched-split card: the + is its own <button>, and the outline is drawn per card
+        ctaClass: 'rf-fc-cta' + (on ? ' is-on' : ''), ctaGlyph: on ? '⦿' : '+',
+        pinOn: on, pinLabel: (on ? 'Stop monitoring ' : 'Monitor ') + name,
+        frameRef: this.frameRef(key)
       };
     };
     const cam = Object.assign({}, this.CAM0, this.camStore() || {}, this.state.cam || {});
@@ -1164,13 +1325,16 @@ class Component extends DCLogic {
       tabRiftStyle: this.tabStyle(browse === 'rift', split && !cond), tabDigStyle: this.tabStyle(browse === 'dig', split && !cond),
       riftTotal: String(d.rifts.length), digTotal: String(this.DIG_SITES.length),
       digCards: this.digData.sites.filter(s => !q || s.name.toLowerCase().includes(q)
-        || this.digRewardsFor(s.name).some(r => r.name.toLowerCase().includes(q))).map((s, i) => ({
-          name: s.name, sig: 'ARC-' + String(this.code(s.name) % 9000 + 1000), wrap: wipe(i, tip === 'dig:' + s.name),
-          group: (s.groupLabel || 'ARCHAEOLOGY').toUpperCase(),
-          phases: s.chapters.length + ' PHASES', dlc: (s.dlc || '').toUpperCase(),
-          open: () => this.set({ dig: s.name, q: '', railOpen: {} }),
-          ...pinFor('dig', s.name)
-        })),
+        || this.digRewardsFor(s.name).some(r => r.name.toLowerCase().includes(q))).map((s, i) => {
+          const open = () => this.set({ dig: s.name, q: '', railOpen: {} });
+          return {
+            name: s.name, sig: 'ARC-' + String(this.code(s.name) % 9000 + 1000), wrap: wipe(i, tip === 'dig:' + s.name),
+            group: (s.groupLabel || 'ARCHAEOLOGY').toUpperCase(),
+            phases: s.chapters.length + ' PHASES', dlc: (s.dlc || '').toUpperCase(),
+            open, key: this.onActivate(open), label: s.name + ', ' + s.chapters.length + ' phases',
+            ...pinFor('dig', s.name)
+          };
+        }),
       showDig: !!dig, digName: dig || '',
       digReq: digSite ? (digSite.req || 'No special requirement beyond a surveyed site inside your borders.') : '',
       digHasRestrict: !!(digSite && digSite.restrict), digRestrict: digSite ? digSite.restrict : '',
@@ -1310,16 +1474,8 @@ class Component extends DCLogic {
         : 'max-width:1180px;margin:0 auto;padding:28px 34px 110px;animation:hudFade .35s ease-out',
       browseGrid: split ? 'display:flex;flex-direction:column;gap:14px' : 'display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:760px',
       cardGrid: split ? 'display:flex;flex-direction:column;gap:' + (notch ? '20px' : '12px') : 'display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:16px',
-      chamferEdge: notch ? 'position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:14px;box-shadow:0 18px 50px rgba(0,6,16,.4)' : 'display:none',
-      chamferFill: notch ? 'position:absolute;inset:0;box-sizing:border-box;border-radius:14px;clip-path:polygon(0 0, calc(34% - 2px) 0, calc(34% + 10px) 24px, calc(100% - 51px) 24px, calc(100% - 39px) 0, 100% 0, 100% 100%, 0 100%);background-image:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));background-size:100% calc(100% + 26px);background-position:0 -26px;backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.1);border-top:none' : 'display:none',
-      chamferInner: notch ? this.tabCss(0, 'left:0;width:34%', 'right') : 'display:none',
-      notchTabR: notch ? this.tabCss(0, 'right:0;width:41px', 'left') : 'display:none',
-      notchWedgeL: notch ? this.wedge(0, 'left:calc(34% - 2px)', false) : 'display:none',
-      notchWedgeR: notch ? this.wedge(0, 'right:39px', true) : 'display:none',
-      notchBar: notch ? 'z-index:1;position:absolute;top:12px;left:34%;right:41px;height:12px;box-sizing:border-box;clip-path:polygon(4px 0, calc(100% - 4px) 0, calc(100% - 10px) 100%, 10px 100%);border-top:1px solid rgba(176,214,255,.26);background:rgba(13,29,47,.28);backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%)' : 'display:none',
-      cardShell: notch
-        ? 'position:relative;border-radius:14px;background:transparent;border:none;box-shadow:none;padding:30px 16px 18px;min-height:122px;height:100%;box-sizing:border-box;display:flex;flex-direction:row;align-items:stretch;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .24s cubic-bezier(.16,.86,.24,1)'
-        : 'position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:14px 16px;min-height:'
+      notchCards: notch, plainCards: !notch,
+      cardShell: 'position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:14px 16px;min-height:'
           + (split ? '86px' : '152px') + ';height:100%;box-sizing:border-box;display:flex;flex-direction:row;align-items:stretch;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .24s cubic-bezier(.16,.86,.24,1)',
 
       vidRef: el => { this.vid = el; },
@@ -1355,17 +1511,20 @@ class Component extends DCLogic {
       hasCatHint: cat !== 'ALL',
       clearCat: () => this.set({ cat: 'ALL', catOpen: false }),
 
-      riftCards: filtered.map((r, i) => ({
-        wrap: wipe(i, tip === 'rift:' + r.name),
-        ...pinFor('rift', r.name),
-        name: r.name, group: (r.group || 'RIFT').toUpperCase(),
-        sig: 'SIG-' + String(this.code(r.name) % 9000 + 1000),
-        chapters: r.chapters.length + ' CHAPTERS',
-        rewardCount: cat === 'ALL'
-          ? this.rewardsFor(r.name).length + ' REWARDS'
-          : this.rewardsFor(r.name).filter(x => (x.cat || 'Other').trim() === cat).length + ' MATCH',
-        open: () => this.set({ rift: r.name, reward: null, cur: 0, railOpen: {}, q: '' })
-      })),
+      riftCards: filtered.map((r, i) => {
+        const open = () => this.set({ rift: r.name, reward: null, cur: 0, railOpen: {}, q: '' });
+        return {
+          wrap: wipe(i, tip === 'rift:' + r.name),
+          ...pinFor('rift', r.name),
+          name: r.name, group: (r.group || 'RIFT').toUpperCase(),
+          sig: 'SIG-' + String(this.code(r.name) % 9000 + 1000),
+          chapters: r.chapters.length + ' CHAPTERS',
+          rewardCount: cat === 'ALL'
+            ? this.rewardsFor(r.name).length + ' REWARDS'
+            : this.rewardsFor(r.name).filter(x => (x.cat || 'Other').trim() === cat).length + ' MATCH',
+          open, key: this.onActivate(open), label: r.name + ', ' + r.chapters.length + ' chapters'
+        };
+      }),
 
       riftName: rift ? rift.name : '', riftGroup: rift ? (rift.group || '').toUpperCase() : '',
       riftReq: rift ? this.clean(rift.req, '') : '', riftRestrict: rift ? this.clean(rift.restrict, '') : '',

@@ -30,6 +30,39 @@ system rather than two shapes stacked.
 
 ---
 
+## 2026-09-26 — The notched folder card follows Figma 82:17
+
+**Decided:** The "Notched split" card in `design_handoff_rift_finder/Rift Finder Holo.dc.html`
+is drawn to Figma node `82:17`:
+
+- **Geometry:** the left tab ends at `25%` of the card width and scales with it. Everything else
+  is fixed px: slopes `42×25` and `26×25`, notch depth `25`, right tab `52` (matching the +
+  column), corner radius `24`.
+- **Width:** `100%`, clamped to `320–920px`.
+- **Outline:** the Figma white gradient stroke (`#fff` 60% → 35%), drawn as one SVG path per card
+  and redrawn on resize. It replaces the blue hairline built from tab and wedge `<div>`s.
+- **Corner brackets:** none on the notched card. Grid and Split column keep theirs.
+- **Hover and focus:** lift `-2px` (none under reduced motion); deeper shadow; a cyan outline
+  (`#8ecbff` 90% → 50%) fades in with a soft glow; a cyan wash over the fill; the bar hairline,
+  group label and + column turn cyan. Keyboard focus adds a 2px outline stroke. The + is its own
+  button and never opens the card.
+
+The full spec is in the handoff README under "The notched folder shape" and "Hover and focus".
+The header panel keeps its old construction (38% / 76px / 88px).
+
+**Why:** The old card broke at 34% on both sides, so the notch and right tab stretched with
+width. The + divider never lined up with the right tab, and the hairline was assembled from six
+layers that didn't meet cleanly at the slopes. A single path from one function can't drift, and
+fixing everything except the left tab keeps the notch looking the same from 320 to 920px.
+
+**Open:** Figma's corner curve measures closer to ~30px than the specified `24px`; `24` was kept
+per spec. The monitored-state glyph (`⦿`) is carried over and not yet designed in Figma.
+
+**What would overturn it:** a Figma revision of 82:17, or the header panel moving to the same
+construction (which would supersede the header half of the README section).
+
+---
+
 ## 2026-09-20 — This repository is the source of truth
 
 **Decided:** The Git repository, hosted on GitHub (private), is authoritative for this
