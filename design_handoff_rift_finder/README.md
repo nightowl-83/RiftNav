@@ -828,6 +828,35 @@ The dropdowns and menus sit inside animated ancestors that stop `backdrop-filter
 - **Dig options:** the heading is the option's `short`, and the rest of its text is secondary.
 - **Duplicate cost:** a bare amount a path appends after a choice (`· (-100 threads)`) is dropped when the choice's own note already carries `cost:`.
 
+**Short names are names (U2, follow-up).**
+- **Generated names:** a reward's short name is generated from its data.
+- **Hand-written names:** where the generated name would be a truncation ("…") or run over 40 characters, it comes from `data/overrides/reward_names.json` instead, reviewed by hand (119 names).
+- **No chapter references:** "at chapter N" is wiki jargon and is stripped from the short names and effect text the UI shows. It stays in the data.
+- **Headline outcomes:** these use short names too. A conditional item carries `· CONDITIONAL` on its chip, so the condition isn't lost.
+
+**One card per reward (N1).**
+- **Grouping:** the same reward reachable by several routes (same short name and type on one rift) is one card, with meta `N ROUTES · SHORTEST n STEPS`.
+- **Reader:** opens the shortest route.
+- **Counts and search:** rift card counts and search results use the same grouping, so Celestial Tear appears once, not three times.
+
+**Rift count (N2).** One definition everywhere, `32 RIFTS · 4 SITUATIONS` (`riftCountText()`), used in:
+- the top bar;
+- the index subtitle (`AWAITING QUERY // 32 RIFTS · 4 SITUATIONS · 110 DIG SITES`);
+- the browse subtitle (`SCAN COMPLETE // … IN RANGE`, counting the filtered list);
+- the home tile.
+
+**DLC label (N3).** On dig cards, DLC is muted text, `DLC · Ancient Relics` (11px mono, `#6f8ea6`, no outline), pushed right. It's hidden for the base game. It no longer looks like a yield chip.
+
+**Headline ranking (N4).** Unconditional payouts rank above conditional ones ("if you have…", "if…", "only…", "unless…", or `conditional` in the data). Ties break by type ranking.
+
+**Footer (B3, P5, follow-up).**
+- **768–1023px:** the footer shows `RIFT NAV // HOLO v5.0` instead of the long product string. The target text takes the remaining width and truncates with an ellipsis.
+- **Phones:** the footer is solid `#08131f`.
+
+**Touch and names (P3, P4, follow-up).**
+- **Toggle:** on touch screens the Rifts / Dig sites toggle buttons are at least 44px tall.
+- **Back button:** the compact bar's `‹` is labelled "Back to galaxy". Every button now has an accessible name.
+
 **Filter (U4).**
 - **Reward types only:** the rift filter lists reward types only (no Warnings, Other or Unlocks); the dig filter drops Risks and Other.
 - **Card counts:** rift cards count real rewards (`N REWARDS`). A rift with none shows what it leads to (`LEADS TO …`, from `unlocks` or its follow-up rewards), else `NO REWARD`, never `0 REWARDS`. No rift in the current data needs the fallback.

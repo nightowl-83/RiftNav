@@ -6,7 +6,7 @@ The UI's data contract is kept: every field it already reads is present with the
 meaning. New fields are only ever added. Player-facing wording (reward codes expanded, ranges
 written min–max) is produced here, in the build, with the verbatim line kept beside it.
 """
-import json, os, re
+import hashlib, json, os, re
 from collections import deque
 from paths import DATA, UI
 from reward_text import group_lines
@@ -71,6 +71,17 @@ def s(v):
 
 
 SHORT_MAX = 60
+OVERRIDES = os.path.join(DATA, "overrides", "reward_names.json")
+CHAPTER_REF = re.compile(r"\s+at chapter\s+[\w/-]+", re.I)   # internal wiki jargon; kept in the data, not shown
+
+
+def reward_key(x):
+    """Stable id for a reward: survives rebuilds and rid renumbering."""
+    return f"{x['entity_uid']}#{x['chapter']}#{hashlib.sha1(x['raw'].encode()).hexdigest()[:10]}"
+
+
+def load_name_overrides():
+    return {k: v["short"] for k, v in json.load(open(OVERRIDES))["names"].items()} if os.path.exists(OVERRIDES) else {}
 OPTION_PREFIX = re.compile(r"^\s*(?:choice(?:\s+of(?:\s+one)?)?|random|or)\b\s*(?:-\s*[^:]+)?\s*:?\s*", re.I)
 
 
@@ -213,6 +224,16 @@ def main(rifts, arch, catalogue, T):
     r21 = json.load(open(f"{DATA}/astral_rifts.v2.1.json"))
     finder = [{"entity": f["entity"], "reward": f["reward"], "path": f["path"]} for f in r21["reward_finder"]]
     relic_by_id = {r["id"]: r for r in catalogue}
+    names = load_name_overrides()
+    used = set()
+
+    def names_for(x):
+        short, effect = short_name(T.text(x["name"]), x["text"])
+        k = reward_key(x)
+        if k in names:
+            short = names[k]; used.add(k)
+            effect = effect or x["text"]
+        return CHAPTER_REF.sub("", short).strip(), CHAPTER_REF.sub("", effect).strip(), k
 
     # ---------------- rifts ----------------
     ui_rifts, chapters_by_rift = [], {}
@@ -241,9 +262,9 @@ def main(rifts, arch, catalogue, T):
     for x in rifts["rewards"]:
         path, how = rift_path(x, chapters_by_rift[x["entity"]], finder)
         path_kinds[how] += 1
-        short, effect = short_name(T.text(x["name"]), x["text"])
+        short, effect, k = names_for(x)
         row = {"name": T.text(x["name"]), "rift": x["entity"], "path": path, "cat": RIFT_CAT[x["type"]],
-               "short": short, "effect": effect,
+               "short": short, "effect": effect, "key": k,
                "rid": x["rid"], "type": x["type"], "rewardGroup": x["group"],
                "rewardGroupLabel": x["group_label"], "chapter": x["chapter"], "source": x["source"],
                "polarity": x["polarity"], "conditional": x["conditional"], "gate": x["gate"],
@@ -290,9 +311,9 @@ def main(rifts, arch, catalogue, T):
     ids = {e["name"]: e["id"] for e in arch["entities"]}
     dig_rewards = []
     for x in arch["rewards"]:
-        short, effect = short_name(T.text(x["name"]), x["text"])
+        short, effect, k = names_for(x)
         row = {"cat": DIG_CAT[x["type"]], "name": T.text(x["name"]), "site": x["entity"],
-               "short": short, "effect": effect,
+               "short": short, "effect": effect, "key": k,
                "siteId": ids[x["entity"]], "chapter": x["chapter"], "groupLabel": labels[x["entity"]],
                "rid": x["rid"], "type": x["type"], "rewardGroup": x["group"],
                "rewardGroupLabel": x["group_label"], "source": x["source"], "polarity": x["polarity"],
@@ -315,6 +336,12 @@ def main(rifts, arch, catalogue, T):
                "groups": arch["groups"], "meta": dig_meta, "counts": dig_counts,
                "relics": [relic_card(r) for r in catalogue if any(
                    x.get("relic_id") == r["id"] for x in arch["rewards"])]}
+
+    stale = sorted(set(names) - used)
+    if stale:
+        raise SystemExit(f"reward_names.json has {len(stale)} ids that match no reward (data changed?): {stale[:3]}")
+    rift_meta["nameOverrides"] = sum(1 for x in ui_rewards if x["key"] in names)
+    dig_meta["nameOverrides"] = sum(1 for x in dig_rewards if x["key"] in names)
 
     for fn, var, obj, src in (
             ("rift-data.js", "RIFT_DATA", rift_obj,

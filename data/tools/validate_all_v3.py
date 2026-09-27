@@ -187,6 +187,10 @@ check(f"every rift reward path resolves to real chapters and choices ({len(RD['r
       not bad_paths, str(bad_paths[:3]))
 rows_all=RD["rewards"]+DD["rewards"]
 bad_short=[(x.get("short"),x["name"]) for x in rows_all if not x.get("short") or len(x["short"])>60]
+not_names=[x["short"] for x in rows_all if x["short"].endswith("…") or len(x["short"])>40]
+check(f"short names are names: none truncated with '…', none over 40 characters", not not_names, str(not_names[:3]))
+check("no chapter references in UI short names or effect text ('at chapter N' is wiki jargon)",
+      not [x for x in rows_all if re.search(r"\bchapter\s", x["short"], re.I) or re.search(r"\bat chapter\s", x.get("effect",""), re.I)])
 check(f"every rift and dig reward has a short name of 1-60 characters ({len(rows_all)})", not bad_short, str(bad_short[:3]))
 opts=[o for x in RD["rifts"] for c in x["chapters"] for g in c["rewardChoices"] for o in g["options"]]+\
      [o for x in DD["sites"] for c in x["chapters"] for g in c["choices"] for o in g["options"]]

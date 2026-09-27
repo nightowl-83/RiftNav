@@ -74,7 +74,7 @@ input{font-family:inherit}
 .rf-yields{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;min-width:0}
 .rf-chip{display:inline-flex;align-items:center;max-width:100%;box-sizing:border-box;padding:3px 9px;border-radius:999px;font:400 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;color:#cfe2f3;border:1px solid rgba(176,214,255,.24);background:rgba(10,24,40,.5)}
 .rf-chip--relic{font-size:12px;letter-spacing:.04em;color:#ffd9b0;border-color:rgba(255,217,176,.55);background:rgba(255,217,176,.1)}
-.rf-chip--dlc{color:#7fe0d4;border-color:rgba(127,224,212,.35);background:transparent}
+.rf-dlc{align-self:center;margin-left:auto;font:400 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;color:#6f8ea6;white-space:nowrap}
 .rf-chip-t{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rf-dig-meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px 26px}
 .rf-dig-meta>div{display:flex;flex-direction:column;gap:5px}
@@ -173,7 +173,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 .rf-top-menu,.rf-nav-pop,.rf-foot-short,.rf-cbar-caticon{display:none}
 /* B3: the footer is always one line; a long target name is truncated rather than wrapped over the content */
 .rf-foot>span{white-space:nowrap}
-.rf-foot-status{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.rf-foot-status{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;text-align:right}
 @media (max-width:1089px){
   /* B1: step reader columns stack; nothing stays pinned. Order: step card + Prev/Next, event log, target, mission parameters */
   .rf-read{flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important}
@@ -187,6 +187,9 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   /* P1: Notched split browse column goes full width, 320–920px, centred */
   .rf-home-notch{box-sizing:border-box!important;width:100%!important;max-width:960px!important;min-width:0!important;margin:0 auto!important;padding-left:20px!important;padding-right:20px!important}
   .rf-top-stats{display:none!important}
+  /* B3: tablet footer gives the target text the room and truncates it; the long product string steps aside */
+  .rf-foot-long{display:none}
+  .rf-foot-short{display:inline}
 }
 @media (max-width:767px){
   /* B2: top bar keeps the logo on one line; Camera and Classic/Holo move into one menu */
@@ -196,7 +199,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   .rf-nav-pop{display:flex;flex-direction:column;align-items:stretch;gap:10px;position:absolute;top:calc(100% + 8px);right:16px;z-index:960;padding:12px;border-radius:14px;background:linear-gradient(160deg,rgba(18,40,64,.97),rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55)}
   .rf-nav-pop .rf-mode{justify-content:space-between}
   /* B3: one short line, solid like the top bar; the scroll area clears it */
-  .rf-foot{padding:0 16px!important;white-space:nowrap;overflow:hidden;background:linear-gradient(180deg,rgba(9,21,36,.97),rgba(6,14,26,.95))!important}
+  .rf-foot{padding:0 16px!important;white-space:nowrap;overflow:hidden;background:#08131f!important}  /* P5: solid on phones */
   .rf-foot-long,.rf-foot-status{display:none}
   .rf-foot-short{display:inline}
   .rf-scroll{box-sizing:border-box;padding-bottom:34px}
@@ -212,7 +215,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 @media (pointer:coarse){
   /* P3: 44px minimum touch targets */
   .rf-tgl{flex-direction:row!important;align-items:stretch!important;height:auto!important}
-  .rf-tgl>span{flex:1 1 0;display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;box-sizing:border-box}
+  .rf-tgl>span,.rf-tgl>button{flex:1 1 0;display:inline-flex!important;align-items:center;justify-content:center;min-height:44px!important;box-sizing:border-box;padding-top:0!important;padding-bottom:0!important}
   .rf-mode>*{display:inline-flex!important;align-items:center;min-height:44px;box-sizing:border-box}
   .rf-cam,.rf-back,.rf-top-menu,.rf-fc-cta{min-height:44px!important}
   .rf-cam,.rf-back{height:auto!important}
@@ -398,7 +401,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 
 <sc-if value="{{ compactAny }}" hint-placeholder-val="{{ false }}">
 <div class="rf-cbar" style="{{ compactBar }}">
-  <button class="rf-back" onClick="{{ goGalaxy }}" style="flex:none;height:34px;border-radius:10px;background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:0 13px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹</button>
+  <button class="rf-back" aria-label="Back to galaxy" onClick="{{ goGalaxy }}" style="flex:none;height:34px;border-radius:10px;background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:0 13px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹</button>
   <div class="rf-tgl rf-cbar-tgl" style="{{ compactToggle }}">
     <button type="button" aria-pressed="{{ tabRiftOn }}" onClick="{{ browseRifts }}" style="{{ tabRiftStyle }}">ASTRAL RIFTS</button>
     <button type="button" aria-pressed="{{ tabDigOn }}" onClick="{{ browseDigs }}" style="{{ tabDigStyle }}">DIG SITES</button>
@@ -532,7 +535,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
       <div style="position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:1.5px solid rgba(255,224,190,.75);border-top:1.5px solid rgba(255,224,190,.75);border-top-left-radius:14px;pointer-events:none"></div>
       <div style="font-size:11px;letter-spacing:.22em;color:#8ecbff">BROWSE</div>
       <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:22px;font-weight:600;letter-spacing:.04em;color:#f6fbff">ASTRAL RIFTS</div>
-      <div style="margin-top:8px;font-size:11px;letter-spacing:.12em;color:#8ba7bf">{{ riftTotal }} SIGNATURES ›</div>
+      <div style="margin-top:8px;font-size:11px;letter-spacing:.12em;color:#8ba7bf">{{ riftTotal }} ›</div>
     </button>
     <button type="button" onClick="{{ browseDigs }}" style="font:inherit;color:inherit;text-align:left;width:100%;margin:0;position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:22px;min-height:140px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;animation:wipeIn .55s cubic-bezier(.2,.75,.2,1) both;animation-delay:.43s" style-hover="border-color:rgba(174,225,255,.6);transform:translateY(-2px);box-shadow:0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18)">
       <div style="position:absolute;right:-1px;bottom:-1px;width:20px;height:20px;border-right:1.5px solid rgba(174,225,255,.7);border-bottom:1.5px solid rgba(174,225,255,.7);border-bottom-right-radius:14px;pointer-events:none"></div>
@@ -680,7 +683,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
             <div style="margin-top:9px;height:1px;background:rgba(176,214,255,.18)"></div>
             <div class="rf-yields" aria-label="{{ c.yieldsLabel }}">
               <sc-for list="{{ c.yields }}" as="y" hint-placeholder-count="2"><span class="{{ y.cls }}"><span class="rf-chip-t">{{ y.t }}</span></span></sc-for>
-              <sc-if value="{{ c.hasDlc }}" hint-placeholder-val="{{ false }}"><span class="rf-chip rf-chip--dlc"><span class="rf-chip-t">{{ c.dlc }}</span></span></sc-if>
+              <sc-if value="{{ c.hasDlc }}" hint-placeholder-val="{{ false }}"><span class="rf-dlc">DLC · {{ c.dlc }}</span></sc-if>
             </div>
           </div>
         </div>
@@ -711,7 +714,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
             <div style="margin-top:9px;height:1px;background:rgba(176,214,255,.18)"></div>
             <div class="rf-yields" aria-label="{{ c.yieldsLabel }}">
               <sc-for list="{{ c.yields }}" as="y" hint-placeholder-count="2"><span class="{{ y.cls }}"><span class="rf-chip-t">{{ y.t }}</span></span></sc-for>
-              <sc-if value="{{ c.hasDlc }}" hint-placeholder-val="{{ false }}"><span class="rf-chip rf-chip--dlc"><span class="rf-chip-t">{{ c.dlc }}</span></span></sc-if>
+              <sc-if value="{{ c.hasDlc }}" hint-placeholder-val="{{ false }}"><span class="rf-dlc">DLC · {{ c.dlc }}</span></sc-if>
             </div>
           </div>
         </div>
@@ -1325,6 +1328,11 @@ class Component extends DCLogic {
   }
 
   get data() { return (typeof window !== 'undefined' && window.RIFT_DATA) || { rifts: [], rewards: [] }; }
+  // N2: "32 rifts · 4 situations" everywhere (top bar, index subtitle, browse subtitle, home tile)
+  riftCountText(list) {
+    const rifts = list.filter(r => r.kind !== 'astral_rift_situation').length, sit = list.length - rifts;
+    return rifts + (rifts === 1 ? ' RIFT' : ' RIFTS') + (sit ? ' · ' + sit + (sit === 1 ? ' SITUATION' : ' SITUATIONS') : '');
+  }
   get stats() {
     const c = this.data.counts || {};
     return { rifts: c.rifts ?? this.data.rifts.length, situations: c.situations ?? 0,
@@ -1387,6 +1395,19 @@ class Component extends DCLogic {
     return t.replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').replace(/^\s*[·,;]\s*/, '').trim();
   }
 
+  // N1: the same reward reached by several routes is one reward. Groups by short name + type;
+  // the representative is the shortest route, which the reader opens by default.
+  rewardGroups(rift) {
+    if (!rift) return [];
+    const all = this.rewardsFor(rift.name), groups = [], at = {};
+    all.forEach((r, idx) => {
+      const k = (this.shortOf(r) + '|' + r.type).toLowerCase(), n = this.steps(rift, r).length;
+      if (at[k] == null) { at[k] = groups.length; groups.push({ r, idx, steps: n, routes: 1 }); return; }
+      const g = groups[at[k]]; g.routes++;
+      if (n < g.steps) { g.r = r; g.idx = idx; g.steps = n; }
+    });
+    return groups;
+  }
   withKeys(o) { o.goKey = this.onActivate(o.go); o.closeKey = this.onActivate(o.close); return o; }
   shortOf(r) { return r ? (r.short || this.dispName(r.name)) : ''; }
   dispName(name) {
@@ -1460,6 +1481,12 @@ class Component extends DCLogic {
     const idx = r => { const k = this.yieldKey(r.type); return k ? this.YIELD_ORDER.indexOf(k) : 99; };
     const chap = r => { const n = parseInt(r.chapter, 10); return isNaN(n) ? 99 : n; };
     return rows.filter(r => this.yieldKey(r.type) && !this.RISK_RX.test(r.raw)).slice().sort((a, b) => idx(a) - idx(b) || chap(a) - chap(b));
+  }
+  // conditional: "if you have…", "if …", "only…", "unless…"; headline outcomes rank these below the rest
+  isConditional(r) { return !!r.conditional || /\b(if|unless|only)\b/i.test(r.raw || ''); }
+  rankedHeadline(rows) {
+    const rank = this.ranked(rows);
+    return rank.filter(r => !this.isConditional(r)).concat(rank.filter(r => this.isConditional(r)));
   }
   yieldsFor(rows) {
     const out = [], seen = {};
@@ -1688,7 +1715,7 @@ class Component extends DCLogic {
     const digRelics = digSite ? this.digRelicCards(digSite) : [];
     // headline outcomes: ranked by type, not list order; the relic has its own card above
     const digHeadline = digSite
-      ? this.ranked(this.digRewardsFor(digSite.name)).filter(r => !(digRelics.length && r.type === 'relic'))
+      ? this.rankedHeadline(this.digRewardsFor(digSite.name)).filter(r => !(digRelics.length && r.type === 'relic'))
           .filter((r, i, a) => a.findIndex(x => x.text === r.text) === i).slice(0, 4)
       : [];
     const digCatOn = digCat !== 'ALL';
@@ -1702,7 +1729,7 @@ class Component extends DCLogic {
       const base = !s.dlc || /^base game$/i.test(s.dlc);
       return {
         name: s.name, sig: 'ARC-' + String(this.code(s.name) % 9000 + 1000), wrap: wipe(digIdx++, tip === 'dig:' + s.name),
-        phases: s.chapters.length + ' PHASES', yields, hasDlc: !base, dlc: (s.dlc || '').toUpperCase(),
+        phases: s.chapters.length + ' PHASES', yields, hasDlc: !base, dlc: s.dlc || '',
         yieldsLabel: yields.length ? 'Yields: ' + yields.map(y => y.t.replace('◆ ', 'relic ')).join(', ') : 'No notable yields',
         open, key: this.onActivate(open),
         label: s.name + ', ' + s.chapters.length + ' phases' + (yields.length ? ', yields ' + yields.map(y => y.t.replace('◆ ', 'relic ').toLowerCase()).join(', ') : ''),
@@ -1723,7 +1750,8 @@ class Component extends DCLogic {
     const digMatches = q ? this.DIG_SITES.filter(n => n.toLowerCase().includes(q))
       .concat(this.DIG_SITES.filter(n => !n.toLowerCase().includes(q) && this.digRewardsFor(n).some(strong)))
       .concat(this.DIG_SITES.filter(n => !n.toLowerCase().includes(q) && !this.digRewardsFor(n).some(strong) && this.digRewardsFor(n).some(hit))) : [];
-    const riftRewardMatches = q ? rank(d.rewards).slice(0, 5) : [];
+    const riftRewardMatches = q ? rank(d.rewards).filter((r, i, a) =>
+      a.findIndex(x => x.rift === r.rift && this.shortOf(x) === this.shortOf(r)) === i).slice(0, 5) : [];
     const digRewardMatches = q
       ? rank(this.digData.rewards).slice(0, 4)
       : [];
@@ -1775,8 +1803,8 @@ class Component extends DCLogic {
       copyLabel: this.state.copied ? 'COPIED' : 'COPY ALL JSON',
       copyPresets: () => { const txt = JSON.stringify(presets, null, 2); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).catch(() => window.prompt('Copy presets JSON', txt)); this.set({ copied: true }); setTimeout(() => this.set({ copied: false }), 1600); },
       homeTitle: browse === 'rift' ? 'SELECT RIFT' : (browse === 'dig' ? 'SELECT DIG SITE' : 'GALACTIC INDEX'),
-      homeSub: browse === 'rift' ? 'SCAN COMPLETE // ' + filtered.length + ' SIGNATURES IN RANGE'
-        : (browse === 'dig' ? 'SURVEY COMPLETE // ' + this.DIG_SITES.length + ' SITES CATALOGUED' : 'AWAITING QUERY // ' + d.rifts.length + ' RIFTS · ' + this.DIG_SITES.length + ' DIG SITES'),
+      homeSub: browse === 'rift' ? 'SCAN COMPLETE // ' + this.riftCountText(filtered) + ' IN RANGE'
+        : (browse === 'dig' ? 'SURVEY COMPLETE // ' + this.DIG_SITES.length + ' SITES CATALOGUED' : 'AWAITING QUERY // ' + this.riftCountText(d.rifts) + ' · ' + this.DIG_SITES.length + ' DIG SITES'),
       hasSearch: !!q && !browse, searchRows, noSearch: searchRows.length === 0,
       browseNone: !browse, browseAny: !!browse, browseRift: browse === 'rift', browseDig: browse === 'dig',
       browseRifts: () => this.set({ browse: 'rift', q: '' }),
@@ -1784,7 +1812,7 @@ class Component extends DCLogic {
       goGalaxy: () => this.set({ browse: null, rift: null, dig: null, reward: null, cur: 0, railOpen: {}, q: '', cat: 'ALL', digCat: 'ALL', catOpen: false }),
       tabRiftOn: browse === 'rift', tabDigOn: browse === 'dig',
       tabRiftStyle: this.tabStyle(browse === 'rift', split && !cond), tabDigStyle: this.tabStyle(browse === 'dig', split && !cond),
-      riftTotal: String(d.rifts.length), digTotal: String(this.DIG_SITES.length),
+      riftTotal: this.riftCountText(d.rifts), digTotal: String(this.DIG_SITES.length),
       digSections, digEmpty: digSections.length === 0,
       showDig: !!dig, digName: dig || '',
       digReq: digSite ? (digSite.req || 'No special requirement beyond a surveyed site inside your borders.') : '',
@@ -1803,8 +1831,8 @@ class Component extends DCLogic {
       digHasHeadline: digHeadline.length > 0,
       digHeadline: digHeadline.map(r => {
         const opt = /^\s*(choice\b|or\b|random\b)/i.test(r.raw);
-        const t = this.splitCond(String(r.text || r.name).replace(/^\s*(choice\s*(of one|of)?|or|random)\s*(-\s*[^:]+)?\s*:?\s*/i, '')).t;
-        return { cat: (this.TYPE_SHORT[r.type] || (r.cat || '').toUpperCase()) + (opt ? ' · ONE OPTION' : ''),
+        const t = r.short || this.splitCond(String(r.text || r.name).replace(/^\s*(choice\s*(of one|of)?|or|random)\s*(-\s*[^:]+)?\s*:?\s*/i, '')).t;
+        return { cat: (this.TYPE_SHORT[r.type] || (r.cat || '').toUpperCase()) + (opt ? ' · ONE OPTION' : (this.isConditional(r) ? ' · CONDITIONAL' : '')),
                  chapter: 'PHASE ' + (r.chapter || '—'), name: t.charAt(0).toUpperCase() + t.slice(1) };
       }),
       digTimeline: digSite ? this.digTimelineFor(digSite) : [],
@@ -1938,7 +1966,7 @@ class Component extends DCLogic {
       booting: this.state.boot <= this.BOOT.length + 1,
       bootLines: this.BOOT.slice(0, this.state.boot).map(t => ({ t: t.replace(/\{(\w+)\}/g, (m, k) => stats[k]) })),
       // header stats come from the generated data (rift-data.js counts), never hard-coded
-      statRifts: stats.rifts + ' RIFTS', statChapters: stats.chapters + ' CHAPTERS', statRewards: stats.rewards + ' REWARDS',
+      statRifts: this.riftCountText(d.rifts), statChapters: stats.chapters + ' CHAPTERS', statRewards: stats.rewards + ' REWARDS',
       statTitle: stats.rifts + ' rifts and ' + stats.situations + ' rift situations. Chapters and rewards count both.',
       bootReady: this.state.boot > this.BOOT.length,
       bootBarStyle: 'height:3px;border-radius:9px;background:linear-gradient(90deg,#8ecbff,#ffd9b0);box-shadow:0 0 14px rgba(174,225,255,.6);transition:width .18s linear;width:'
@@ -1976,7 +2004,7 @@ class Component extends DCLogic {
           sig: 'SIG-' + String(this.code(r.name) % 9000 + 1000),
           chapters: r.chapters.length + ' CHAPTERS',
           rewardCount: (() => {
-            const rs = this.rewardsFor(r.name);
+            const rs = this.rewardGroups(r).map(g => g.r);
             if (riftCat !== 'ALL') return rs.filter(x => (x.cat || 'Other').trim() === riftCat).length + ' MATCH';
             const real = rs.filter(x => ['Warnings', 'Other', 'Unlocks'].indexOf(x.cat) < 0).length;
             if (real) return real + (real === 1 ? ' REWARD' : ' REWARDS');
@@ -1992,21 +2020,22 @@ class Component extends DCLogic {
       riftKind: rift ? (rift.kind === 'astral_rift_situation' ? 'RIFT SITUATION' : (rift.group || 'Astral').toUpperCase() + ' RIFT') : '',
       riftReq: rift ? this.clean(rift.req, '') : '', riftRestrict: rift ? this.clean(rift.restrict, '') : '',
       hasRestrict: !!(rift && rift.restrict),
-      rewardCountLabel: riftRewards.length + ' DOCUMENTED',
+      rewardCountLabel: this.rewardGroups(rift).length + ' DOCUMENTED',
 
-      rewardCards: riftRewards.map((r, idx) => {
+      rewardCards: this.rewardGroups(rift).map(g => {
+        const r = g.r, idx = g.idx;
         const st = this.steps(rift, r);
         const dif = st.map(x => x.diff).filter(n => typeof n === 'number');
         const hard = dif.length ? Math.max.apply(null, dif) : 0;
         return {
           name: this.shortOf(r), cat: (r.cat || '').toUpperCase(), code: 'RWD-' + String(this.code(r.name) % 900 + 100),
           relics: r.type === 'relic' ? [this.relicCard(r.relic, { compact: true, hideName: true, note: r.relicNote })] : [],
-          meta: st.length + ' STEPS' + (hard ? ' / ROLL ' + hard : ' / NO ROLLS'),
+          meta: (g.routes > 1 ? g.routes + ' ROUTES · SHORTEST ' : '') + st.length + ' STEPS' + (hard ? ' / ROLL ' + hard : ' / NO ROLLS'),
           barStyle: 'height:3px;border-radius:9px;background:' + (hard >= 5 ? 'linear-gradient(90deg,#ffb87a,#ffd9b0)' : 'linear-gradient(90deg,#8ecbff,#d6ecff)')
             + ';width:' + Math.min(100, Math.round((st.length / 9) * 100)) + '%',
           open: () => this.set({ reward: idx, cur: 0, railOpen: {} }),
           key: this.onActivate(() => this.set({ reward: idx, cur: 0, railOpen: {} })),
-          aria: this.shortOf(r) + ', ' + (r.cat || 'reward') + ', ' + st.length + ' steps'
+          aria: this.shortOf(r) + ', ' + (r.cat || 'reward') + ', ' + (g.routes > 1 ? g.routes + ' routes, shortest ' : '') + st.length + ' steps'
         };
       }),
 

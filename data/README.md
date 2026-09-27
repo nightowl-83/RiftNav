@@ -98,7 +98,7 @@ figure is wrong at every game stage but one.
 
 ```
 python3 data/tools/build_all_v3.py     # all four JSON files, then the two UI .js files
-python3 data/tools/validate_all_v3.py  # 85 checks
+python3 data/tools/validate_all_v3.py  # 87 checks
 ```
 
 Inputs, in the order the build uses them:
@@ -108,6 +108,7 @@ Inputs, in the order the build uses them:
 | `astral_rifts.v2.1.json`, `archaeological_sites.v2.1.json` | the captured rift and site data |
 | `tools/situations.py` | the four rift situations |
 | `tools/corrections.py` | sourced fixes to the v2.1 inputs, each citing a wiki revision and an evidence hash. Never edit the JSON instead |
+| `overrides/reward_names.json` | hand-written short names, keyed `{entity uid}#{chapter}#{sha1(raw)[:10]}`, for rewards whose generated short name would be a truncation or over 40 characters. The build fails if an id no longer matches a reward |
 | `tools/capture/relics.wiki.json` | the relic capture. Re-capture with `tools/capture/capture_relics.js` in a browser tab on the wiki (the wiki blocks scripted API clients); the build refuses a file that doesn't match its own hash |
 
 The tools find the repo from their own location; set `STELLARIS_ROOT` to point them elsewhere.

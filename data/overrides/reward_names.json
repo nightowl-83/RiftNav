@@ -1,0 +1,719 @@
+{
+ "_about": "Hand-written short names for rewards whose generated short name was a truncation or over 40 characters. Keyed by '{entity uid}#{chapter}#{sha1(raw)[:10]}'. Read by data/tools/build_ui_data.py; 'was' and 'text' are for review only.",
+ "names": {
+  "rift:ruined-planet#4-A#23e359aaa4": {
+   "short": "+0.5 basic resource per job",
+   "entity": "Ruined Planet",
+   "was": "Grants +0.5 basic resource per job at chapter 7",
+   "text": "grants +0.5 basic resource per job at chapter 7"
+  },
+  "rift:ruined-planet#4-A#30f7983820": {
+   "short": "+25% rift speed, −50% fail chance",
+   "entity": "Ruined Planet",
+   "was": "Grants +25% rift exploration speed and -50% rift fail…",
+   "text": "grants +25% rift exploration speed and -50% rift fail chance at chapter 7"
+  },
+  "rift:ruined-planet#4-B#f692f7847c": {
+   "short": "+10% armor HP and hardening",
+   "entity": "Ruined Planet",
+   "was": "Grants +10% armor HP and hardening at chapter 7",
+   "text": "grants +10% armor HP and hardening at chapter 7"
+  },
+  "rift:ruined-planet#4-B#3bb17dcd2b": {
+   "short": "+10% shield HP and hardening",
+   "entity": "Ruined Planet",
+   "was": "Grants +10% shield HP and hardening at chapter 7",
+   "text": "grants +10% shield HP and hardening at chapter 7"
+  },
+  "rift:ruined-planet#5-B#fa4705fbb6": {
+   "short": "Formless contact (Crystal Rift hint)",
+   "entity": "Ruined Planet",
+   "was": "Formless contact one year later hinting at The Crystal Rift",
+   "text": "Follow-up: Formless contact one year later hinting at The Crystal Rift."
+  },
+  "rift:ruined-planet#6-B#5be470191c": {
+   "short": "Energy and a trait-immune Official",
+   "entity": "Ruined Planet",
+   "was": "Energy and an aged Official immune to negative traits",
+   "text": "Energy and an aged Official immune to negative traits"
+  },
+  "rift:ruined-planet#7#fa4705fbb6": {
+   "short": "Formless contact (Crystal Rift hint)",
+   "entity": "Ruined Planet",
+   "was": "Formless contact one year later hinting at The Crystal Rift",
+   "text": "Follow-up: Formless contact one year later hinting at The Crystal Rift."
+  },
+  "rift:genesis#4#2ea547d447": {
+   "short": "One pop of the new species",
+   "entity": "Genesis",
+   "was": "One pop of the new species on a random colony",
+   "text": "One pop of the new species on a random colony, with the three traits you picked and that colony's climate preference"
+  },
+  "rift:genesis#4#c77ce8c55a": {
+   "short": "Genesis Insight (Gestalt only)",
+   "entity": "Genesis",
+   "was": "Genesis Insight (Gestalt Consciousness only)",
+   "text": "Genesis Insight (Gestalt Consciousness only)"
+  },
+  "rift:strange-station#4-A#775885b254": {
+   "short": "Contact with the Mirror Empire",
+   "entity": "Strange Station",
+   "was": "Permanent communications with the Mirror Empire",
+   "text": "Permanent communications with the Mirror Empire"
+  },
+  "rift:strange-station#4-A#1be93c7b0c": {
+   "short": "Fractured Ambassadors (Gestalt only)",
+   "entity": "Strange Station",
+   "was": "Fractured Ambassadors (Gestalt Consciousness only)",
+   "text": "Fractured Ambassadors (Gestalt Consciousness only)"
+  },
+  "rift:entertainment-nexus#8-D#6554ccfdec": {
+   "short": "10% toward a Robotics tech",
+   "entity": "Entertainment Nexus",
+   "was": "10% progress toward a random Robotics technology",
+   "text": "10% progress toward a random Robotics technology"
+  },
+  "rift:the-crystal-rift#3-B#683e2e59b2": {
+   "short": "25% toward a Particles tech",
+   "entity": "The Crystal Rift",
+   "was": "25% progress toward a random Particles technology",
+   "text": "25% progress toward a random Particles technology"
+  },
+  "rift:the-crystal-rift#3-B#d5dd991982": {
+   "short": "25% toward a Field Manipulation tech",
+   "entity": "The Crystal Rift",
+   "was": "25% progress toward a random Field Manipulation technology",
+   "text": "25% progress toward a random Field Manipulation technology"
+  },
+  "rift:the-crystal-rift#wormhole#9c852b7ed7": {
+   "short": "Azilash goes nova",
+   "entity": "The Crystal Rift",
+   "was": "If the Aberrants destroy the Formless first",
+   "text": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost"
+  },
+  "rift:psionic-stranger#5-A#7c54e90f7d": {
+   "short": "75% toward a Psionics tech",
+   "entity": "Psionic Stranger",
+   "was": "75% progress toward a random Psionics technology",
+   "text": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materialist / Fanatic Materialist empires)"
+  },
+  "rift:siege-on-paradise#baol-ashes#f18efa1410": {
+   "short": "'Dust to Dust' research follow-up",
+   "entity": "Siege on Paradise",
+   "was": "2-4 years later the 'Dust to Dust' event gives Society…",
+   "text": "Follow-up: 2-4 years later the 'Dust to Dust' event gives Society and Engineering research and removes the deposit."
+  },
+  "rift:siege-on-paradise#baol-cloak#4fd3c98099": {
+   "short": "Astral Cloaking edict",
+   "entity": "Siege on Paradise",
+   "was": "Astral Cloaking (+1 Cloaking Strength while active)",
+   "text": "Astral Cloaking (+1 Cloaking Strength while active)"
+  },
+  "rift:siege-on-paradise#grunur-sharing#5671168689": {
+   "short": "25% toward a Military Theory tech",
+   "entity": "Siege on Paradise",
+   "was": "25% progress toward a random Military Theory technology",
+   "text": "25% progress toward a random Military Theory technology"
+  },
+  "rift:siege-on-paradise#grunur-end#7f43f13b3c": {
+   "short": "Leader returns with Rift Warped",
+   "entity": "Siege on Paradise",
+   "was": "The leader returns with Rift Warped and gains Expertise",
+   "text": "Follow-up: The leader returns with Rift Warped and gains Expertise: Propulsion I (or Expertise: Voidcraft I if they already have it)."
+  },
+  "rift:bleached-planet#4#5aa9ccc226": {
+   "short": "25% toward a Biology tech",
+   "entity": "Bleached Planet",
+   "was": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
+  },
+  "rift:chemical-wasteland#3/4-A#5aa9ccc226": {
+   "short": "25% toward a Biology tech",
+   "entity": "Chemical Wasteland",
+   "was": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
+  },
+  "rift:chemical-wasteland#5-A#2fc2d88e27": {
+   "short": "25% toward a Computing tech",
+   "entity": "Chemical Wasteland",
+   "was": "25% progress toward a random Computing technology",
+   "text": "25% progress toward a random Computing technology"
+  },
+  "rift:chemical-wasteland#6-D#39589a485d": {
+   "short": "Repurposed Cleaning Drone",
+   "entity": "Chemical Wasteland",
+   "was": "Repurposed Cleaning Drone (+25% Planetary Build Speed)",
+   "text": "Repurposed Cleaning Drone (+25% Planetary Build Speed)"
+  },
+  "rift:chemical-wasteland#6-E#f52709b65d": {
+   "short": "Next Quantum Firewalls or Hacking",
+   "entity": "Chemical Wasteland",
+   "was": "Next-tier Quantum Firewalls / Quantum Hacking",
+   "text": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech"
+  },
+  "rift:desert-ruins#7-A#c6b8912e12": {
+   "short": "Psychic trait (if Latent Psionic)",
+   "entity": "Desert Ruins",
+   "was": "Psychic (if the leader has Latent Psionic)",
+   "text": "Psychic (if the leader has Latent Psionic)"
+  },
+  "rift:dimensional-conflict#2-B#5aa9ccc226": {
+   "short": "25% toward a Biology tech",
+   "entity": "Dimensional Conflict",
+   "was": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
+  },
+  "rift:dimensional-dump#4#92b07efa38": {
+   "short": "Level 6 Rift Warped Commander",
+   "entity": "Dimensional Dump",
+   "was": "Level 6 Commander with the Rift Warped trait and a random…",
+   "text": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 year)"
+  },
+  "rift:entangled-dark-matter#4/5-A#5616ffce91": {
+   "short": "Five psionic scientist traits",
+   "entity": "Entangled Dark Matter",
+   "was": "Psychic + Planar Theorist + Riftwalker + Foreign…",
+   "text": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientist (upgraded versions if already Psychic)"
+  },
+  "rift:entangled-dark-matter#4/5-A#6e43115952": {
+   "short": "Foreign Consciousness (Gestalt)",
+   "entity": "Entangled Dark Matter",
+   "was": "Foreign Consciousness (+5% research) for Gestalt empires",
+   "text": "Foreign Consciousness (+5% research) for Gestalt empires"
+  },
+  "rift:entangled-dark-matter#5/6-B#dd245f1fa6": {
+   "short": "+25 Physics and Engineering deposit",
+   "entity": "Entangled Dark Matter",
+   "was": "+25 Physics and +25 Engineering on the rift",
+   "text": "+25 Physics and +25 Engineering on the rift for 10 years"
+  },
+  "rift:lone-object#3/4/5-fail#63420670d2": {
+   "short": "Hostile Crystalline fleet spawns",
+   "entity": "Lone Object",
+   "was": "Spawns a hostile fleet of 10-30 Crystalline entity ships",
+   "text": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)"
+  },
+  "rift:rockworms#2#fdbb8f209d": {
+   "short": "15% toward a Biology tech",
+   "entity": "Rockworms",
+   "was": "15% progress toward a random Biology technology",
+   "text": "15% progress toward a random Biology technology"
+  },
+  "rift:rockworms#4/5/6-B-fail#fdbb8f209d": {
+   "short": "15% toward a Biology tech",
+   "entity": "Rockworms",
+   "was": "15% progress toward a random Biology technology",
+   "text": "15% progress toward a random Biology technology"
+  },
+  "rift:rockworms#4/5/6-B-fail#20a494e98f": {
+   "short": "Scientist returns Partially Digested",
+   "entity": "Rockworms",
+   "was": "Scientist dies and returns a year later with the Partially…",
+   "text": "Scientist dies and returns a year later with the Partially Digested trait"
+  },
+  "rift:the-advisor#3/4-A#424165b6c7": {
+   "short": "Scientist away 5 years (Rift Warped)",
+   "entity": "The Advisor",
+   "was": "Scientist disappears and returns in 5 years with Rift…",
+   "text": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer"
+  },
+  "rift:the-advisor#4/5-A#79a99ba13f": {
+   "short": "20% toward a Computing tech",
+   "entity": "The Advisor",
+   "was": "20% progress toward a random Computing technology",
+   "text": "20% progress toward a random Computing technology"
+  },
+  "rift:the-corridors#4-A#e79d5da0ec": {
+   "short": "Procedural Space modifier",
+   "entity": "The Corridors",
+   "was": "Procedural Space (+1 district, +1 branch office)",
+   "text": "Procedural Space (+1 district, +1 branch office)"
+  },
+  "rift:the-corridors#4-A-fail#7458e072fb": {
+   "short": "Scientist returns with new traits",
+   "entity": "The Corridors",
+   "was": "Scientist returns in 5 years with Rift Warped plus one of…",
+   "text": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer"
+  },
+  "rift:the-garden#plant_material#5aa9ccc226": {
+   "short": "25% toward a Biology tech",
+   "entity": "The Garden",
+   "was": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
+  },
+  "rift:the-garden#plant_material#67557b9fd3": {
+   "short": "Scientist returns as a plantoid",
+   "entity": "The Garden",
+   "was": "Scientist dies and returns as a plantoid in 5 years",
+   "text": "Scientist dies and returns as a plantoid in 5 years"
+  },
+  "rift:the-garden#escape#5aa9ccc226": {
+   "short": "25% toward a Biology tech",
+   "entity": "The Garden",
+   "was": "25% progress toward a random Biology technology",
+   "text": "25% progress toward a random Biology technology"
+  },
+  "rift:the-tower#4a#c0d97e598b": {
+   "short": "New long-lived Society scientist",
+   "entity": "The Tower",
+   "was": "New scientist in 1 year with Society Focus + Increased…",
+   "text": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire)"
+  },
+  "rift:tiny-planet#tidal#05e07d3008": {
+   "short": "Intentional Tidal Locking decision",
+   "entity": "Tiny Planet",
+   "was": "Intentional Tidal Locking planetary decision",
+   "text": "Intentional Tidal Locking planetary decision"
+  },
+  "rift:volcanic-plane#5b#3cf5c00595": {
+   "short": "Obelisk demands pops for 6 years",
+   "entity": "Volcanic Plane",
+   "was": "About 6 years later the obelisk demands 1 pop per year",
+   "text": "Follow-up: about 6 years later the obelisk demands 1 pop per year for 6 years. Accept → Restoring the Balance (+10% Energy for 6 years). Refuse → Obelisk's Curse (-6% happiness for 6 years; +6 deviancy for gestalts)."
+  },
+  "rift:volcanic-plane#5c#1d8116b792": {
+   "short": "Scientist returns traumatized",
+   "entity": "Volcanic Plane",
+   "was": "After 1 year the scientist returns with Paranoia +…",
+   "text": "Follow-up: after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obelisk's Curse (+10% Energy, but sacrifices 1 pop per year while on the council)."
+  },
+  "situation:a-rift-in-space#1#0f009ea114": {
+   "short": "25% toward Rift Sphere",
+   "entity": "A Rift in Space",
+   "was": "25% progress toward Rift Sphere technology",
+   "text": "25% progress toward Rift Sphere technology"
+  },
+  "situation:a-rift-in-space#2#80b4d6b1ef": {
+   "short": "New pre-FTL planet in the system",
+   "entity": "A Rift in Space",
+   "was": "A new pre-FTL planet appears in the rift system",
+   "text": "A new pre-FTL planet appears in the rift system"
+  },
+  "situation:a-rift-in-space#2#ec6b4c42ea": {
+   "short": "New species on your nearest colony",
+   "entity": "A Rift in Space",
+   "was": "A new random species appears on your nearest colony",
+   "text": "OR a new random species appears on your nearest colony"
+  },
+  "situation:destroy-the-crystal-sphere#1#3ffb05d7ee": {
+   "short": "Unnamed Xenophobe/Genocidal reward",
+   "entity": "Destroy the Crystal Sphere",
+   "was": "Xenophobe and Genocidal empires receive a separate reward…",
+   "text": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name"
+  },
+  "situation:the-seal#1#2b30ca3d26": {
+   "short": "+10% damage vs. extradimensionals",
+   "entity": "The Seal",
+   "was": "+10% damage against extradimensional invaders",
+   "text": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)"
+  },
+  "site:ancient-capital-site#3#93d274bda9": {
+   "short": "50% toward a gene-tailoring tech",
+   "entity": "Ancient Capital Site",
+   "was": "50% progress toward the least advanced unresearched of…",
+   "text": "50% progress toward the least advanced unresearched of Gene Seed Purification, Targeted Gene Expressions, Glandular Acclimation, Gene Tailoring, Genome Mapping"
+  },
+  "site:ancient-facility#3#bd166a155c": {
+   "short": "+20% Universal Macrophage progress",
+   "entity": "Ancient Facility",
+   "was": "+20% progress toward Universal Macrophage plus Adaptive…",
+   "text": "OR +20% progress toward Universal Macrophage plus Adaptive Evolution situation progress if Evolutionary Predators - needs an organic main species"
+  },
+  "site:anomalous-cube#1#f26d65068f": {
+   "short": "Anomalous Cube Fallen Empire chosen",
+   "entity": "Anomalous Cube",
+   "was": "Designates the Anomalous Cube Fallen Empire",
+   "text": "Designates the Anomalous Cube Fallen Empire"
+  },
+  "site:anomalous-cube#4#93f5c26b5c": {
+   "short": "1 Living Metal deposit",
+   "entity": "Anomalous Cube",
+   "was": "Adds a 1 Living Metal deposit to the planet",
+   "text": "Adds a 1 Living Metal deposit to the planet"
+  },
+  "site:anomalous-cube#4#c7e42fc1c5": {
+   "short": "+25% Living Metal tech, −50% edicts",
+   "entity": "Anomalous Cube",
+   "was": "+25% Living Metal technology progress and -50% edict cost",
+   "text": "OR +25% Living Metal technology progress and -50% edict cost"
+  },
+  "site:message-in-a-bottle#5#6195551a3d": {
+   "short": "Harmonious Crew modifier",
+   "entity": "Message in a Bottle",
+   "was": "Harmonious Crew empire modifier (ship speed)",
+   "text": "Harmonious Crew empire modifier (ship speed)"
+  },
+  "site:under-the-ice#4#840b4fcb81": {
+   "short": "Genome Mapping and Epigenetic progress",
+   "entity": "Under the Ice",
+   "was": "+60% Genome Mapping and +40% Epigenetic Triggers progress",
+   "text": "OR +60% Genome Mapping and +40% Epigenetic Triggers progress if both are researched (nothing if Xenophobe)"
+  },
+  "site:under-the-ice#5#e2405541f7": {
+   "short": "In Memory (Memorialists)",
+   "entity": "Under the Ice",
+   "was": "In Memory (10 years, +10% monthly Unity) for Memorialists",
+   "text": "In Memory (10 years, +10% monthly Unity) for Memorialists"
+  },
+  "site:ancient-robot-world#5#b62871370b": {
+   "short": "Contingency endgame options",
+   "entity": "Ancient Robot World",
+   "was": "Mutually exclusive endgame options that affect the…",
+   "text": "Mutually exclusive endgame options that affect the Contingency crisis"
+  },
+  "site:debris-belt#3#cd553bcd60": {
+   "short": "Scientist turns Maniacal or Paranoid",
+   "entity": "Debris Belt",
+   "was": "Scientist gains Maniacal or Paranoid (33% each)",
+   "text": "Scientist gains Maniacal or Paranoid (33% each)"
+  },
+  "site:never-forget#3#ff424833a4": {
+   "short": "A Life Worthwhile modifier",
+   "entity": "Never Forget",
+   "was": "A Life Worthwhile empire modifier (+5% happiness)",
+   "text": "A Life Worthwhile empire modifier (+5% happiness)"
+  },
+  "site:one-last-hope#4#0a613fefdd": {
+   "short": "Next habitability tech at 60%",
+   "entity": "One Last Hope",
+   "was": "The next habitability technology as a research option with…",
+   "text": "OR the next habitability technology as a research option with 60%+ progress"
+  },
+  "site:the-signal#3#86b9639e5d": {
+   "short": "Larionessi Consciousness vassal",
+   "entity": "The Signal",
+   "was": "The Larionessi Consciousness as a unique vassal empire",
+   "text": "OR the Larionessi Consciousness as a unique vassal empire"
+  },
+  "site:vagrosian-ruins#7#a1a5b42521": {
+   "short": "54,000 XP and Ancestral Inheritance",
+   "entity": "Vagrosian Ruins",
+   "was": "Either way 54,000 experience and the Ancestral Inheritance…",
+   "text": "Either way 54,000 experience and the Ancestral Inheritance trait"
+  },
+  "site:from-gateway-sent#4#00bed6b5f8": {
+   "short": "Gateway Activation special project",
+   "entity": "From Gateway Sent",
+   "was": "Special project granting the rare technology Gateway…",
+   "text": "Special project granting the rare technology Gateway Activation"
+  },
+  "site:the-ruined-cradle#5#fd356b08a4": {
+   "short": "±20 Embodied Identity progress",
+   "entity": "The Ruined Cradle",
+   "was": "±20 progress toward the Embodied Identity situation",
+   "text": "±20 progress toward the Embodied Identity situation"
+  },
+  "site:factory-setting#1#02a5e51d5c": {
+   "short": "Can start Embodied Identity",
+   "entity": "Factory Setting",
+   "was": "Option to start the Embodied Identity situation",
+   "text": "Option to start the Embodied Identity situation if not already running"
+  },
+  "site:something-waiting#4#956adfb4de": {
+   "short": "Tier 1 tech at 85% progress",
+   "entity": "Something Waiting",
+   "was": "A random tier 1 technology as a research option at 85%…",
+   "text": "A random tier 1 technology as a research option at 85% progress"
+  },
+  "site:buried-deep#2#a354c2c4a1": {
+   "short": "Tier 1 tech at 85% progress",
+   "entity": "Buried Deep",
+   "was": "A random tier 1 technology at 85% progress",
+   "text": "A random tier 1 technology at 85% progress"
+  },
+  "site:in-memoriam#4#a354c2c4a1": {
+   "short": "Tier 1 tech at 85% progress",
+   "entity": "In Memoriam",
+   "was": "A random tier 1 technology at 85% progress",
+   "text": "A random tier 1 technology at 85% progress"
+  },
+  "site:the-last-stand#3#a354c2c4a1": {
+   "short": "Tier 1 tech at 85% progress",
+   "entity": "The Last Stand",
+   "was": "A random tier 1 technology at 85% progress",
+   "text": "A random tier 1 technology at 85% progress"
+  },
+  "site:dark-secret#4#af364df082": {
+   "short": "Spurred by the Past modifier",
+   "entity": "Dark Secret",
+   "was": "Spurred by the Past empire modifier (happiness)",
+   "text": "Spurred by the Past empire modifier (happiness)"
+  },
+  "site:benign-cover-up-bury-the-hatchet#2#4deef0e77e": {
+   "short": "Devolving Beam at +25%",
+   "entity": "Benign Cover-Up / Bury The Hatchet",
+   "was": "Devolving Beam (rare) as a research option at +25% progress",
+   "text": "Devolving Beam (rare) as a research option at +25% progress"
+  },
+  "site:benign-cover-up-bury-the-hatchet#2#a3e58ef1af": {
+   "short": "Full Circle or Goes Around modifier",
+   "entity": "Benign Cover-Up / Bury The Hatchet",
+   "was": "Replaces Spurred by the Past with Full Circle",
+   "text": "Replaces Spurred by the Past with Full Circle (Benign Cover-Up) or Goes Around, Comes Around (Bury The Hatchet)"
+  },
+  "site:the-aftermath-of-battle#4#a7128c70a0": {
+   "short": "Restore the ship: warship or habitat",
+   "entity": "The Aftermath of Battle",
+   "was": "Special project to restore the crashed ship as a warship",
+   "text": "Special project to restore the crashed ship as a warship (up to battleship) or as a habitat (grants Orbital Habitats technology)"
+  },
+  "site:crashed-slaver-ship#4#3c7d841dee": {
+   "short": "Quantum Firewalls at 40%",
+   "entity": "Crashed Slaver Ship",
+   "was": "Quantum Firewalls as a research option at 40% progress",
+   "text": "Quantum Firewalls as a research option at 40% progress"
+  },
+  "site:crashed-slaver-ship#4#8adeb04d74": {
+   "short": "Improved Decryption (+1 Codebreaking)",
+   "entity": "Crashed Slaver Ship",
+   "was": "Improved Decryption Processes (+1 Codebreaking)",
+   "text": "Improved Decryption Processes (+1 Codebreaking)"
+  },
+  "site:the-propaganda-station#4#e26c805e1b": {
+   "short": "+10% Xenophile/Xenophobe attraction",
+   "entity": "The Propaganda Station",
+   "was": "+10% attraction to Xenophile or Xenophobe ethics for one…",
+   "text": "+10% attraction to Xenophile or Xenophobe ethics for one year"
+  },
+  "site:celebration#6#721fcdf4d9": {
+   "short": "Habitable adAkkaria homeworld",
+   "entity": "Celebration",
+   "was": "Turn the adAkkaria Convention homeworld into a habitable…",
+   "text": "OR turn the adAkkaria Convention homeworld into a habitable planet with the Patriotic Institute of Celebration building"
+  },
+  "site:the-ancient-shelters#3#aa5c6b0a47": {
+   "short": "+20% Node Reformatting or Linguistics",
+   "entity": "The Ancient Shelters",
+   "was": "+20% progress on Rudimentary Node Reformatting…",
+   "text": "+20% progress on Rudimentary Node Reformatting or Xeno-Linguistics (with Galactic Paragons), otherwise Rudimentary Node Culling or Xeno Diplomacy"
+  },
+  "site:anyone-home#4#9050bda0df": {
+   "short": "+25% Ancient Refinery",
+   "entity": "Anyone Home?",
+   "was": "+25% Ancient Refinery technology progress",
+   "text": "+25% Ancient Refinery technology progress"
+  },
+  "site:anyone-home#4#cf86f5f2e1": {
+   "short": "Hostile Environment Adaptation",
+   "entity": "Anyone Home?",
+   "was": "Hostile Environment Adaptation technology with conditional…",
+   "text": "Random: Hostile Environment Adaptation technology with conditional extras"
+  },
+  "site:asteroid-blast-door#4#4b4ea20bc9": {
+   "short": "+25% Ancient Target Scrambler",
+   "entity": "Asteroid Blast Door",
+   "was": "+25% Ancient Target Scrambler technology progress",
+   "text": "+25% Ancient Target Scrambler technology progress"
+  },
+  "site:crashed-starship#6#8dc2d5d9ae": {
+   "short": "+25% Ancient Pulse Armor",
+   "entity": "Crashed Starship",
+   "was": "+25% Ancient Pulse Armor technology progress",
+   "text": "+25% Ancient Pulse Armor technology progress"
+  },
+  "site:deja-vu-dig#3#fefbdffb19": {
+   "short": "Subterranean Colonization tech",
+   "entity": "Déjà Vu Dig",
+   "was": "Subterranean Colonization technology (conditional)",
+   "text": "OR Subterranean Colonization technology (conditional)"
+  },
+  "site:deja-vu-dig#3#01ff59c7a4": {
+   "short": "Tomb World Adaptation tech",
+   "entity": "Déjà Vu Dig",
+   "was": "Tomb World Adaptation technology (conditional)",
+   "text": "OR Tomb World Adaptation technology (conditional)"
+  },
+  "site:dotted-archipelago#3#5f28e16499": {
+   "short": "Vitality Boosters tech",
+   "entity": "Dotted Archipelago",
+   "was": "Vitality Boosters technology (conditional)",
+   "text": "OR Vitality Boosters technology (conditional)"
+  },
+  "site:gas-giant-structure#4#09f65886d8": {
+   "short": "+25% Ancient Rampart",
+   "entity": "Gas Giant Structure",
+   "was": "+25% Ancient Rampart (rare) technology progress",
+   "text": "+25% Ancient Rampart (rare) technology progress"
+  },
+  "site:get-inside#3#56ff742d1c": {
+   "short": "Adaptation, Deep Crust or Moral Codes",
+   "entity": "Get Inside",
+   "was": "Hostile Environment Adaptation, Deep Crust Engineering",
+   "text": "Random: Hostile Environment Adaptation, Deep Crust Engineering, or (Gestalt) Unity of Purpose / (non-Gestalt) Artificial Moral Codes technology"
+  },
+  "site:hole-in-the-ground#3#3da9b1c142": {
+   "short": "Shields, Deep Core Mining or Xenology",
+   "entity": "Hole in the Ground",
+   "was": "Advanced Shields technology, Deep Core Mining technology",
+   "text": "Random: Advanced Shields technology, Deep Core Mining technology (or 100 Volatile Motes if already researched), or Xenology technology"
+  },
+  "site:moon-bump#2#2f6095617e": {
+   "short": "Next colonization tech (50% / 25%)",
+   "entity": "Moon Bump",
+   "was": "The next colonization technology (50% / 25%)",
+   "text": "OR the next colonization technology (50% / 25%)"
+  },
+  "site:mutant-fossils#3#16d194b144": {
+   "short": "+25% Ancient Nano-Missile Launcher",
+   "entity": "Mutant Fossils",
+   "was": "+25% Ancient Nano-Missile Cloud Launcher technology progress",
+   "text": "+25% Ancient Nano-Missile Cloud Launcher technology progress"
+  },
+  "site:planetary-machinery#6#7d1ae60c86": {
+   "short": "Defragmentor via special project",
+   "entity": "Planetary Machinery",
+   "was": "Special project granting The Defragmentor relic plus the…",
+   "text": "Choice: special project granting The Defragmentor relic plus the C.A.R.E Interactive Interface modifier (+10% Energy from jobs)"
+  },
+  "site:planetary-machinery#6#006c3cb9c3": {
+   "short": "Defragmentor by fighting warforms",
+   "entity": "Planetary Machinery",
+   "was": "100 Influence and fight two mega-warforms for The…",
+   "text": "OR 100 Influence and fight two mega-warforms for The Defragmentor relic plus a large minor artifact payout"
+  },
+  "site:popular-rock#2#0a7a321d01": {
+   "short": "Self-Aware Colony Ships progress",
+   "entity": "Popular Rock",
+   "was": "Self-Aware Colony Ships technology (50% progress",
+   "text": "OR Self-Aware Colony Ships technology (50% progress if already an option, 25% if not)"
+  },
+  "site:robot-debris#3#1be01b3f83": {
+   "short": "+25% Ancient Macro Batteries",
+   "entity": "Robot Debris",
+   "was": "+25% Ancient Macro Batteries technology progress",
+   "text": "+25% Ancient Macro Batteries technology progress"
+  },
+  "site:ruined-station#4#feaa4fbd2c": {
+   "short": "Rudari Death Laser modifier",
+   "entity": "Ruined Station",
+   "was": "Rudari Death Laser empire modifier (weapons range)",
+   "text": "Rudari Death Laser empire modifier (weapons range)"
+  },
+  "site:ruins#3#1f12702525": {
+   "short": "+25% Ancient Web Slinger",
+   "entity": "Ruins",
+   "was": "+25% Ancient Defensive Web Slinger technology progress",
+   "text": "+25% Ancient Defensive Web Slinger technology progress"
+  },
+  "site:ruins#3#aedfaff291": {
+   "short": "Level 3 Alien Site anomaly",
+   "entity": "Ruins",
+   "was": "Adds an Alien Site level 3 anomaly to a random body in the…",
+   "text": "Adds an Alien Site level 3 anomaly to a random body in the system"
+  },
+  "site:seeds-of-destruction#4#b06095b725": {
+   "short": "Sage Rage or 100 Influence",
+   "entity": "Seeds of Destruction",
+   "was": "Sage Rage empire modifier (army damage), or 100 Influence",
+   "text": "Choice: Sage Rage empire modifier (army damage), or 100 Influence"
+  },
+  "site:strange-asteroid#2#5a1e69fb19": {
+   "short": "+25% Ancient Saturator Artillery",
+   "entity": "Strange Asteroid",
+   "was": "+25% Ancient Saturator Artillery technology progress",
+   "text": "+25% Ancient Saturator Artillery technology progress"
+  },
+  "site:strange-flows#3#cbd02511c6": {
+   "short": "+25% Ancient Ruination Glare",
+   "entity": "Strange Flows",
+   "was": "+25% Ancient Ruination Glare technology progress",
+   "text": "+25% Ancient Ruination Glare technology progress"
+  },
+  "site:subterranean-hollows#3#4ef20016c8": {
+   "short": "Hostile Environment Adaptation",
+   "entity": "Subterranean Hollows",
+   "was": "Hostile Environment Adaptation technology",
+   "text": "Hostile Environment Adaptation technology"
+  },
+  "site:subterranean-hollows#3#1c6d5b1c71": {
+   "short": "+25% Ancient Driller Drones",
+   "entity": "Subterranean Hollows",
+   "was": "+25% Ancient Driller Drones technology progress",
+   "text": "+25% Ancient Driller Drones technology progress"
+  },
+  "site:target-from-orbit#3#96a7332ce4": {
+   "short": "+25% Ancient Suspension Field",
+   "entity": "Target from Orbit",
+   "was": "+25% Ancient Suspension Field technology progress",
+   "text": "+25% Ancient Suspension Field technology progress"
+  },
+  "site:too-angled#3#a467c13174": {
+   "short": "+25% Ancient Cavitation Collapser",
+   "entity": "Too Angled",
+   "was": "+25% Ancient Cavitation Collapser technology progress",
+   "text": "+25% Ancient Cavitation Collapser technology progress"
+  },
+  "site:whispers-in-the-stone#5#ebf1bb4551": {
+   "short": "Kha'Lanka Crystal Plant upgrade",
+   "entity": "Whispers in the Stone",
+   "was": "Option to upgrade to the Kha'Lanka Crystal Plant",
+   "text": "Option to upgrade to the Kha'Lanka Crystal Plant"
+  },
+  "site:the-sentinels#1#e83288ee76": {
+   "short": "Scientist missing 30–40 days",
+   "entity": "The Sentinels",
+   "was": "The scientist goes missing for 30-40 days",
+   "text": "The scientist goes missing for 30-40 days"
+  },
+  "site:the-sentinels#2#ebb5810220": {
+   "short": "Rescue: 100 Influence, 500 Energy",
+   "entity": "The Sentinels",
+   "was": "Rescue costs 100 Influence and 500 Energy",
+   "text": "Rescue costs 100 Influence and 500 Energy, or you lose 3 clues; either path gives +5 clues and the scientist returns Maimed"
+  },
+  "site:the-sentinels#3#01eafb55fa": {
+   "short": "8–9 Sentinel armies",
+   "entity": "The Sentinels",
+   "was": "Negotiate for 8-9 Sentinel armies as planetary protection",
+   "text": "Choice: negotiate for 8-9 Sentinel armies as planetary protection"
+  },
+  "site:the-sentinels#3#4f19d4c0b6": {
+   "short": "Sentinels Metal (if you win)",
+   "entity": "The Sentinels",
+   "was": "Winning the fight gives the Sentinels Metal planetary…",
+   "text": "Winning the fight gives the Sentinels Metal planetary feature"
+  },
+  "site:the-sentinels#3#71ec230aab": {
+   "short": "Into the Earth project (if you lose)",
+   "entity": "The Sentinels",
+   "was": "Losing opens the Into the Earth project with science /…",
+   "text": "Losing opens the Into the Earth project with science / entertainment / hunting / lab-rat modifiers"
+  },
+  "site:green-skies#4#f72f8f1012": {
+   "short": "Pay 2,000 Energy or fight pirates",
+   "entity": "Green Skies",
+   "was": "Pay 2,000 Energy, or fight a small pirate fleet",
+   "text": "Choice: pay 2,000 Energy, or fight a small pirate fleet"
+  },
+  "site:green-skies#4#dae439532e": {
+   "short": "One option kills the scientist",
+   "entity": "Green Skies",
+   "was": "There is also an option that kills the scientist",
+   "text": "There is also an option that kills the scientist"
+  },
+  "site:repowered-complex#3#7b75e25257": {
+   "short": "+50% toward a storm tech",
+   "entity": "Repowered Complex",
+   "was": "+50% progress on the first unresearched of Planetary Storm…",
+   "text": "+50% progress on the first unresearched of Planetary Storm Negation, Storm Manipulation, Cosmic Weather Models, Planetary Storm Nullification, Advanced Storm Manipulation, Storm Dampening Generators, Payload Padding, Probability Current"
+  },
+  "rift:ruined-planet#5-A#c5a88f1a9a": {
+   "short": "+5% Sublight Speed",
+   "entity": "Ruined Planet",
+   "was": "adds +5% Sublight Speed at chapter 7",
+   "text": "adds +5% Sublight Speed at chapter 7"
+  },
+  "rift:ruined-planet#5-A#a7e5feaef6": {
+   "short": "+5% Ship Build Speed",
+   "entity": "Ruined Planet",
+   "was": "adds +5% Ship Build Speed at chapter 7",
+   "text": "adds +5% Ship Build Speed at chapter 7"
+  },
+  "rift:ruined-planet#7#5d509bf9ef": {
+   "short": "Energy offering bonus",
+   "entity": "Ruined Planet",
+   "was": "Chapter 5 energy: +5% Ship Build Speed",
+   "text": "Chapter 5 energy: +5% Ship Build Speed"
+  }
+ }
+}
