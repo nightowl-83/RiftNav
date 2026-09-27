@@ -6,6 +6,30 @@ supersedes it and say so.
 
 ---
 
+## 2026-09-26 — Folder outline softened, corner accents, header panel shares the card shape
+
+**Decided:** Refines the "notched folder card follows Figma 82:17" entry below, and supersedes its
+**Outline** bullet and its line saying the header panel keeps its old construction.
+
+- **Outline:** softer than Figma. White gradient `#fff` 30% → 16% left to right (was 60% → 35%).
+  Hover outline `#8ecbff` 70% → 35% (was 90% → 50%).
+- **Corner accents:** a third path on the same outline, 1px, `rgba(255,255,255,.42)`, masked to a
+  72px radial falloff (stops 100% / 60% at .3 / 18% at .65 / 0%) at the four outer corners. On hover
+  it goes to `rgba(191,230,255,.6)`.
+- **Header panel:** the browse-screen panel (title, search, Filter, Monitoring) uses the same
+  shape, stroke and corners as the cards, including the 52px right tab, so the notches line up
+  down the column. Height from content, padding `44px 24px 22px`, width 320–920px, no hover.
+
+**Why:** At the Figma stroke strength the outline competed with the content. Mike wanted it pulled
+back but with the corners still carrying some emphasis. A first pass (75%, 1.25px, 40px falloff) read
+as a separate element stuck on each corner. Matching the line weight and stretching the falloff makes
+it read as light catching the edge. The header shares the construction so the column reads as one
+system rather than two shapes stacked.
+
+**What would overturn it:** a Figma revision that defines the header panel or a stroke treatment.
+
+---
+
 ## 2026-09-20 — This repository is the source of truth
 
 **Decided:** The Git repository, hosted on GitHub (private), is authoritative for this

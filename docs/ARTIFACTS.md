@@ -32,6 +32,7 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 | Name | URL | Purpose | Date |
 |---|---|---|---|
 | Stellaris Helper Style Guide | https://claude.ai/code/artifact/8b4f99af-a76c-4f44-84c2-92a208920505 | Live design system built from the Mobbin/GitHub reference screens — tokens, type scale, components, rift patterns | 2026-08-21 |
+| Folder Card Fix | https://claude.ai/artifact/QgUXDCxutvEKSuoWZMXNFU | Notched split folder card: before/after, overlay against Figma 82:17, and the hover spec | 2026-09-26 |
 
 ## Research outputs
 
