@@ -63,6 +63,58 @@ input{font-family:inherit}
 .rf-fcw:hover .rf-fc-cta,.rf-fc:focus-visible~.rf-fc-cta{border-left-color:rgba(142,203,255,.35);color:#d6f3ff}
 .rf-fcw .rf-fc-cta:hover{background:rgba(163,229,255,.1);color:#fff}
 @media (prefers-reduced-motion: reduce){.rf-fcw,.rf-fcw:hover,.rf-fcw:has(>.rf-fc:focus-visible),.rf-fcw:active{transform:none}}
+/* Responsive (audit B1–B4, P1, P3). Inline styles set the desktop layout; these rules adjust it at smaller sizes. */
+.rf-top-menu,.rf-nav-pop,.rf-foot-short,.rf-cbar-caticon{display:none}
+/* B3: the footer is always one line; a long target name is truncated rather than wrapped over the content */
+.rf-foot>span{white-space:nowrap}
+.rf-foot-status{min-width:0;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:1089px){
+  /* B1: step reader columns stack; nothing stays pinned. Order: step card + Prev/Next, event log, target, mission parameters */
+  .rf-read{flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important}
+  .rf-read-main{order:1;flex:none!important}
+  .rf-read-log{order:2;position:static!important;flex:none!important;max-width:none!important}
+  .rf-read-logscroll{max-height:none!important;overflow:visible!important}
+  .rf-read-side{order:3;position:static!important;flex:none!important;max-width:none!important}
+  .rf-read-radar{order:1}
+}
+@media (max-width:1023px){
+  /* P1: Notched split browse column goes full width, 320–920px, centred */
+  .rf-home-notch{box-sizing:border-box!important;width:100%!important;max-width:960px!important;min-width:0!important;margin:0 auto!important;padding-left:20px!important;padding-right:20px!important}
+  .rf-top-stats{display:none!important}
+}
+@media (max-width:767px){
+  /* B2: top bar keeps the logo on one line; Camera and Classic/Holo move into one menu */
+  .rf-top{padding:0 16px!important;gap:12px!important;background:linear-gradient(180deg,rgba(9,21,36,.97),rgba(6,14,26,.95))!important}
+  .rf-top-guide,.rf-top-ctl{display:none!important}
+  .rf-top-menu{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;flex:none;width:40px;height:34px;border-radius:10px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);color:#cfe6ff;font:16px/1 inherit;cursor:pointer;padding:0}
+  .rf-nav-pop{display:flex;flex-direction:column;align-items:stretch;gap:10px;position:absolute;top:calc(100% + 8px);right:16px;z-index:960;padding:12px;border-radius:14px;background:linear-gradient(160deg,rgba(18,40,64,.97),rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55)}
+  .rf-nav-pop .rf-mode{justify-content:space-between}
+  /* B3: one short line, solid like the top bar; the scroll area clears it */
+  .rf-foot{padding:0 16px!important;white-space:nowrap;overflow:hidden;background:linear-gradient(180deg,rgba(9,21,36,.97),rgba(6,14,26,.95))!important}
+  .rf-foot-long,.rf-foot-status{display:none}
+  .rf-foot-short{display:inline}
+  .rf-scroll{box-sizing:border-box;padding-bottom:34px}
+  .rf-main:not(.rf-home-notch){padding-left:16px!important;padding-right:16px!important}
+  /* B4: compact bar on phones — search takes the room, filter becomes an icon with its count */
+  .rf-cbar{padding:11px 16px!important;gap:8px!important}
+  .rf-cbar-tgl,.rf-cbar-gap,.rf-cbar-catlabel,.rf-cbar-cat>span:last-child,.rf-cbar-mon>span:first-child{display:none!important}
+  .rf-cbar-search{flex:1 1 auto!important;min-width:120px!important;max-width:none!important}
+  .rf-cbar-cat{padding:0 11px!important;gap:6px!important}
+  .rf-cbar-caticon{display:block;width:12px;height:11px;background:currentColor;clip-path:polygon(0 0,100% 0,62% 48%,62% 100%,38% 86%,38% 48%)}
+  .rf-cbar-mon{padding:0 11px!important}
+}
+@media (pointer:coarse){
+  /* P3: 44px minimum touch targets */
+  .rf-tgl{flex-direction:row!important;align-items:stretch!important;height:auto!important}
+  .rf-tgl>span{flex:1 1 0;display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;box-sizing:border-box}
+  .rf-mode>*{display:inline-flex!important;align-items:center;min-height:44px;box-sizing:border-box}
+  .rf-cam,.rf-back,.rf-top-menu,.rf-fc-cta{min-height:44px!important}
+  .rf-cam,.rf-back{height:auto!important}
+  .rf-top-menu{width:44px;height:44px}
+  .rf-filter{min-height:44px!important;height:auto!important}
+  .rf-cbar .rf-back,.rf-cbar .rf-filter,.rf-cbar-mon,.rf-cbar-search{height:44px!important}
+  .rf-cbar-tgl{height:44px!important}
+}
 </style>
 </helmet>
 
@@ -169,28 +221,38 @@ input{font-family:inherit}
 </div>
 </sc-if>
 
-<div ref="{{ scrollRef }}" style="position:relative;z-index:3;height:100vh;overflow-y:auto;overflow-x:hidden" data-comment-anchor="2d16638850-div">
+<div ref="{{ scrollRef }}" class="rf-scroll" style="position:relative;z-index:3;height:100vh;overflow-y:auto;overflow-x:hidden" data-comment-anchor="2d16638850-div">
 
-<div style="display:flex;align-items:center;gap:20px;height:56px;margin:0 auto;padding:0 34px;position:sticky;top:0;z-index:900;background:linear-gradient(180deg, rgba(10,24,40,.62), rgba(6,14,26,.38));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid rgba(176,214,255,.16);box-shadow:0 12px 40px rgba(0,6,16,.35)" data-comment-anchor="8f2f97ae57-div">
-  <div style="display:flex;align-items:center;gap:10px">
+<div class="rf-top" style="display:flex;align-items:center;gap:20px;height:56px;margin:0 auto;padding:0 34px;position:sticky;top:0;z-index:900;background:linear-gradient(180deg, rgba(10,24,40,.62), rgba(6,14,26,.38));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid rgba(176,214,255,.16);box-shadow:0 12px 40px rgba(0,6,16,.35)" data-comment-anchor="8f2f97ae57-div">
+  <div class="rf-top-logo" style="display:flex;align-items:center;gap:10px;white-space:nowrap">
     <div style="width:13px;height:13px;border:1px solid #8ecbff;transform:rotate(45deg);box-shadow:0 0 10px rgba(142,203,255,.7)"></div>
     <span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:15px;letter-spacing:.18em;color:#f2f9ff">RIFT NAV</span>
-    <span style="font-size:10px;letter-spacing:.22em;color:#7fa3c0">// HOLO DECK</span>
+    <span class="rf-top-sub" style="font-size:10px;letter-spacing:.22em;color:#7fa3c0">// HOLO DECK</span>
   </div>
-  <div style="display:flex;gap:18px;font-size:10px;letter-spacing:.16em;color:#7fa3c0">
+  <div class="rf-top-stats" style="display:flex;gap:18px;font-size:10px;letter-spacing:.16em;color:#7fa3c0;white-space:nowrap">
     <span>32 RIFTS</span><span>289 CHAPTERS</span><span>71 REWARDS</span>
   </div>
-  <div style="margin-left:auto;display:flex;align-items:center;gap:14px">
-    <button onClick="{{ toggleCtl }}" style="{{ camBtnStyle }}" data-comment-anchor="e431cc6c63-button">{{ ctlLabel }}</button>
-    <div style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)">
+  <div class="rf-top-ctl" style="margin-left:auto;display:flex;align-items:center;gap:14px">
+    <button class="rf-cam" onClick="{{ toggleCtl }}" style="{{ camBtnStyle }}" data-comment-anchor="e431cc6c63-button">{{ ctlLabel }}</button>
+    <div class="rf-mode" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)">
       <a href="Rift%20Finder%20HUD.dc.html" style="font-size:9px;letter-spacing:.18em;padding:6px 12px;border-radius:8px;color:#8ba7bf;text-decoration:none" style-hover="color:#e8f2fb;background:rgba(176,214,255,.1)">CLASSIC</a>
       <span style="font-size:9px;letter-spacing:.18em;padding:6px 12px;border-radius:8px;color:#fff8ef;background:linear-gradient(180deg, rgba(255,214,170,.24), rgba(142,203,255,.1));border:1px solid rgba(255,224,190,.5)">HOLO</span>
     </div>
-    <div style="display:flex;align-items:center;gap:10px">
+    <div class="rf-top-guide" style="display:flex;align-items:center;gap:10px;white-space:nowrap">
       <span style="width:6px;height:6px;border-radius:999px;background:#ffd9b0;box-shadow:0 0 10px #ffd9b0;animation:blink 2.4s infinite"></span>
       <span style="font-size:10px;letter-spacing:.2em;color:#ffd9b0">GUIDE ONLINE</span>
     </div>
   </div>
+  <button type="button" class="rf-top-menu" aria-label="Menu" aria-expanded="{{ navOpen }}" onClick="{{ toggleNav }}"><span aria-hidden="true">{{ navGlyph }}</span></button>
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="rf-nav-pop">
+      <button class="rf-cam" onClick="{{ navCam }}" style="{{ camBtnStyle }}">{{ ctlLabel }}</button>
+      <div class="rf-mode" style="display:flex;align-items:center;gap:2px;padding:3px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)">
+        <a href="Rift%20Finder%20HUD.dc.html" style="font-size:9px;letter-spacing:.18em;padding:6px 12px;border-radius:8px;color:#8ba7bf;text-decoration:none" style-hover="color:#e8f2fb;background:rgba(176,214,255,.1)">CLASSIC</a>
+        <span style="font-size:9px;letter-spacing:.18em;padding:6px 12px;border-radius:8px;color:#fff8ef;background:linear-gradient(180deg, rgba(255,214,170,.24), rgba(142,203,255,.1));border:1px solid rgba(255,224,190,.5)">HOLO</span>
+      </div>
+    </div>
+  </sc-if>
 </div>
 
 <sc-if value="{{ monStripAny }}" hint-placeholder-val="{{ false }}">
@@ -229,13 +291,13 @@ input{font-family:inherit}
 </sc-if>
 
 <sc-if value="{{ compactAny }}" hint-placeholder-val="{{ false }}">
-<div style="{{ compactBar }}">
-  <button onClick="{{ goGalaxy }}" style="flex:none;height:34px;border-radius:10px;background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:0 13px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹</button>
-  <div style="{{ compactToggle }}">
+<div class="rf-cbar" style="{{ compactBar }}">
+  <button class="rf-back" onClick="{{ goGalaxy }}" style="flex:none;height:34px;border-radius:10px;background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:0 13px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹</button>
+  <div class="rf-tgl rf-cbar-tgl" style="{{ compactToggle }}">
     <span onClick="{{ browseRifts }}" style="{{ tabRiftStyle }}">ASTRAL RIFTS</span>
     <span onClick="{{ browseDigs }}" style="{{ tabDigStyle }}">DIG SITES</span>
   </div>
-  <div style="{{ compactSearch }}">
+  <div class="rf-cbar-search" style="{{ compactSearch }}">
     <input value="{{ q }}" onInput="{{ onQ }}" placeholder="QUERY DESIGNATION…" style="width:100%;height:100%;box-sizing:border-box;border-radius:11px;background:rgba(10,24,40,.5);border:1px solid rgba(176,214,255,.24);color:#e8f2fb;font-size:12px;letter-spacing:.12em;padding:0 14px;outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)">
     <sc-if value="{{ hasSearch }}" hint-placeholder-val="{{ false }}">
       <div style="position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:40;display:flex;flex-direction:column;gap:2px;padding:8px;border-radius:14px;background:linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16)">
@@ -250,15 +312,16 @@ input{font-family:inherit}
     </sc-if>
   </div>
   <sc-if value="{{ showCatMenu }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ toggleCatMenu }}" style="flex:none;position:relative;height:34px;display:flex;align-items:center;gap:8px;padding:0 13px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);color:#cfe6ff;cursor:pointer;white-space:nowrap">
-      <span style="font-size:10px;letter-spacing:.16em;max-width:150px;overflow:hidden;text-overflow:ellipsis">{{ activeCatLabel }}</span>
+    <div class="rf-filter rf-cbar-cat" onClick="{{ toggleCatMenu }}" style="flex:none;position:relative;height:34px;display:flex;align-items:center;gap:8px;padding:0 13px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);color:#cfe6ff;cursor:pointer;white-space:nowrap">
+      <span class="rf-cbar-caticon" aria-hidden="true"></span>
+      <span class="rf-cbar-catlabel" style="font-size:10px;letter-spacing:.16em;max-width:150px;overflow:hidden;text-overflow:ellipsis">{{ activeCatLabel }}</span>
       <span style="font-size:9px;color:#ffd9b0">{{ activeCatCount }}</span>
       <span style="{{ caretStyle }}">▾</span>
     </div>
   </sc-if>
-  <span style="flex:1"></span>
+  <span class="rf-cbar-gap" style="flex:1"></span>
   <sc-if value="{{ hasMonitor }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ toggleMonMenu }}" style="flex:none;height:34px;display:flex;align-items:center;gap:8px;padding:0 13px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);color:#a8c4dc;cursor:pointer;white-space:nowrap">
+    <div class="rf-cbar-mon" onClick="{{ toggleMonMenu }}" style="flex:none;height:34px;display:flex;align-items:center;gap:8px;padding:0 13px;border-radius:11px;background:rgba(8,18,32,.42);border:1px solid rgba(176,214,255,.2);color:#a8c4dc;cursor:pointer;white-space:nowrap">
       <span style="font-size:9px;letter-spacing:.2em">MONITORING</span>
       <span style="font-size:10px;letter-spacing:.14em;color:#ffd9b0">{{ monCount }}</span>
     </div>
@@ -267,7 +330,7 @@ input{font-family:inherit}
 </sc-if>
 
 <sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
-<div style="{{ homeWrap }}">
+<div class="{{ homeClass }}" style="{{ homeWrap }}">
   <div style="{{ stickyWrap }}" data-comment-anchor="7c299f1aa1-div">
   <sc-if value="{{ headNotch }}" hint-placeholder-val="{{ false }}">
     <div class="rf-fc-shadow"></div><div class="rf-fc-fill"></div><div class="rf-fc-bar"></div>
@@ -275,7 +338,7 @@ input{font-family:inherit}
   </sc-if>
   <sc-if value="{{ browseAny }}" hint-placeholder-val="{{ false }}">
     <div style="{{ backRow }}">
-      <button onClick="{{ goGalaxy }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:8px 15px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹ GALAXY</button>
+      <button class="rf-back" onClick="{{ goGalaxy }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:8px 15px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹ GALAXY</button>
     </div>
   </sc-if>
   <div style="{{ headRow }}">
@@ -285,7 +348,7 @@ input{font-family:inherit}
     <span style="{{ subStyle }}">{{ homeSub }}</span>
   </div>
   <sc-if value="{{ browseAny }}" hint-placeholder-val="{{ false }}">
-    <div style="{{ toggleShell }}">
+    <div class="rf-tgl" style="{{ toggleShell }}">
       <span onClick="{{ browseRifts }}" style="{{ tabRiftStyle }}">ASTRAL RIFTS</span>
       <span onClick="{{ browseDigs }}" style="{{ tabDigStyle }}">DIG SITES</span>
     </div>
@@ -331,7 +394,7 @@ input{font-family:inherit}
     </div>
   </sc-if>
   <sc-if value="{{ showCatMenu }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ toggleCatMenu }}" style="{{ catTriggerStyle }}">
+    <div class="rf-filter" onClick="{{ toggleCatMenu }}" style="{{ catTriggerStyle }}">
       <span style="{{ catValStyle }}">{{ activeCatLabel }}</span>
       <span style="font-size:9px;color:#ffd9b0">{{ activeCatCount }}</span>
       <span style="{{ caretStyle }}">▾</span>
@@ -340,7 +403,7 @@ input{font-family:inherit}
       <button onClick="{{ clearCat }}" style="order:2;background:transparent;border:none;font-family:inherit;font-size:9px;letter-spacing:.18em;color:#ffb87a;cursor:pointer;padding:0">✕ CLEAR</button>
     </sc-if>
     <sc-if value="{{ catOpen }}" hint-placeholder-val="{{ false }}">
-      <div style="position:absolute;top:calc(100% + 9px);right:0;width:min(620px, 100%);display:grid;grid-template-columns:repeat(auto-fill,minmax(184px,1fr));gap:4px;padding:10px;border-radius:14px;background:linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out;z-index:600">
+      <div style="position:absolute;top:calc(100% + 9px);right:0;width:min(620px, 100%);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(184px,100%),1fr));gap:4px;padding:10px;border-radius:14px;background:linear-gradient(160deg, rgba(18,40,64,.97), rgba(5,13,24,.99));border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out;z-index:600">
         <sc-for list="{{ catRows }}" as="c" hint-placeholder-count="8">
           <div onClick="{{ c.pick }}" style="{{ c.style }}">
             <span>{{ c.label }}</span>
@@ -555,9 +618,9 @@ input{font-family:inherit}
 </sc-if>
 
 <sc-if value="{{ showDig }}" hint-placeholder-val="{{ false }}">
-<div style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
+<div class="rf-main" style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px">
-    <button onClick="{{ close }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 16px;cursor:pointer">‹ ABORT / ALL DIG SITES</button>
+    <button class="rf-back" onClick="{{ close }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 16px;cursor:pointer">‹ ABORT / ALL DIG SITES</button>
     <button onClick="{{ monitorDig }}" style="{{ monitorDigStyle }}">{{ monitorDigLabel }}</button>
   </div>
   <div style="display:flex;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:10px">
@@ -590,7 +653,7 @@ input{font-family:inherit}
   <sc-if value="{{ digHasHeadline }}" hint-placeholder-val="{{ false }}">
   <div style="margin-bottom:30px">
     <div style="font-size:10px;letter-spacing:.22em;color:#a8c4dc;margin-bottom:12px">NOTABLE PAYOUTS</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:12px">
       <sc-for list="{{ digHeadline }}" as="h" hint-placeholder-count="2">
         <div style="position:relative;border-radius:13px;padding:14px 16px;background:linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(174,225,255,.24);box-shadow:0 16px 44px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.14)">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
@@ -605,7 +668,7 @@ input{font-family:inherit}
   </sc-if>
 
   <div style="font-size:10px;letter-spacing:.22em;color:#8ecbff;margin-bottom:18px">EXCAVATION PHASES // {{ digPhases }}</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(336px,1fr));gap:18px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(336px,100%),1fr));gap:18px">
     <sc-for list="{{ digChapters }}" as="ch" hint-placeholder-count="6">
       <div style="{{ ch.cardStyle }}">
         <div style="position:absolute;left:-1px;top:-1px;width:22px;height:22px;border-left:1.5px solid rgba(255,224,190,.8);border-top:1.5px solid rgba(255,224,190,.8);border-top-left-radius:16px;pointer-events:none"></div>
@@ -646,9 +709,9 @@ input{font-family:inherit}
 </sc-if>
 
 <sc-if value="{{ showTargets }}" hint-placeholder-val="{{ false }}">
-<div style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
+<div class="rf-main" style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px">
-  <button onClick="{{ close }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 16px;cursor:pointer">‹ ABORT / ALL RIFTS</button>
+  <button class="rf-back" onClick="{{ close }}" style="border-radius:10px;background:rgba(10,24,40,.45);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:9px 16px;cursor:pointer">‹ ABORT / ALL RIFTS</button>
   <button onClick="{{ monitorRift }}" style="{{ monitorRiftStyle }}">{{ monitorRiftLabel }}</button>
   </div>
   <div style="display:flex;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:10px">
@@ -667,7 +730,7 @@ input{font-family:inherit}
   </div>
   <div style="height:1px;background:linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent);margin:22px 0 26px"></div>
   <div style="font-size:10px;letter-spacing:.22em;color:#8ecbff;margin-bottom:18px">SELECT TARGET REWARD // {{ rewardCountLabel }}</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(336px,1fr));gap:18px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(336px,100%),1fr));gap:18px">
     <sc-for list="{{ rewardCards }}" as="r" hint-placeholder-count="6">
       <div onClick="{{ r.open }}" style="position:relative;border-radius:16px;background:linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14);padding:24px;min-height:194px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease" style-hover="border-color:rgba(174,225,255,.62);box-shadow:0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2);transform:translateY(-2px)">
         <div style="position:absolute;left:-1px;top:-1px;width:22px;height:22px;border-left:1.5px solid rgba(255,224,190,.8);border-top:1.5px solid rgba(255,224,190,.8);border-top-left-radius:16px;pointer-events:none"></div>
@@ -692,15 +755,15 @@ input{font-family:inherit}
 </sc-if>
 
 <sc-if value="{{ showRead }}" hint-placeholder-val="{{ false }}">
-<div style="max-width:1460px;margin:0 auto;display:flex;flex-wrap:wrap;gap:22px;padding:28px 34px 96px;align-items:flex-start;animation:hudFade .35s ease-out">
+<div class="rf-main rf-read" style="max-width:1460px;margin:0 auto;display:flex;flex-wrap:wrap;gap:22px;padding:28px 34px 96px;align-items:flex-start;animation:hudFade .35s ease-out">
 
-  <div style="{{ sideStyle }}">
+  <div class="rf-read-log" style="{{ sideStyle }}">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
       <span style="font-family:'Chakra Petch',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;color:#8ecbff">EVENT LOG</span>
       <span style="flex:1;height:1px;background:rgba(176,214,255,.22)"></span>
     </div>
 
-    <div style="max-height:calc(100vh - 208px);overflow:auto;padding-right:4px">
+    <div class="rf-read-logscroll" style="max-height:calc(100vh - 208px);overflow:auto;padding-right:4px">
       <sc-for list="{{ rail }}" as="t" hint-placeholder-count="7">
         <div style="{{ t.wrapStyle }}">
           <div onClick="{{ t.go }}" style="display:flex;gap:10px;align-items:baseline;padding:11px 13px;cursor:pointer">
@@ -727,7 +790,7 @@ input{font-family:inherit}
     <button onClick="{{ close }}" style="margin-top:12px;width:100%;border-radius:11px;background:rgba(30,14,10,.4);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,150,110,.34);color:#ffb87a;font-family:inherit;font-size:10px;letter-spacing:.2em;padding:11px 0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:border-color .22s ease,color .22s ease,background-color .22s ease" style-hover="border-color:rgba(255,160,120,.7);color:#ffd0a8;background:rgba(52,20,12,.5)">✕ ABORT RIFT</button>
   </div>
 
-  <div style="flex:100 1 470px;min-width:0">
+  <div class="rf-read-main" style="flex:100 1 470px;min-width:0">
     <sc-if value="{{ rc.isStep }}" hint-placeholder-val="{{ true }}">
       <div style="position:relative;border-radius:18px;background:linear-gradient(165deg, rgba(24,52,80,.5), rgba(6,16,28,.62));backdrop-filter:blur(26px) saturate(145%);-webkit-backdrop-filter:blur(26px) saturate(145%);border:1px solid rgba(176,214,255,.22);box-shadow:0 30px 80px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.16);padding:36px 38px 38px">
         <div style="position:absolute;left:-1px;top:-1px;width:28px;height:28px;border-left:1.5px solid rgba(255,224,190,.85);border-top:1.5px solid rgba(255,224,190,.85);border-top-left-radius:18px;pointer-events:none;box-shadow:-2px -2px 16px rgba(255,206,150,.18)"></div>
@@ -797,7 +860,7 @@ input{font-family:inherit}
     </div>
   </div>
 
-  <div style="position:sticky;top:84px;flex:1 1 262px;min-width:0;max-width:302px;display:flex;flex-direction:column;gap:18px">
+  <div class="rf-read-side" style="position:sticky;top:84px;flex:1 1 262px;min-width:0;max-width:302px;display:flex;flex-direction:column;gap:18px">
     <div style="position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(24,52,80,.46), rgba(6,16,28,.56));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 20px 56px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14);padding:18px">
       <div style="position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:1.5px solid rgba(255,224,190,.8);border-top:1.5px solid rgba(255,224,190,.8);border-top-left-radius:14px;pointer-events:none"></div>
       <div style="position:absolute;right:-1px;bottom:-1px;width:20px;height:20px;border-right:1.5px solid rgba(174,225,255,.7);border-bottom:1.5px solid rgba(174,225,255,.7);border-bottom-right-radius:14px;pointer-events:none"></div>
@@ -816,7 +879,7 @@ input{font-family:inherit}
       </button>
     </div>
 
-    <div style="position:relative;height:186px;border-radius:14px;border:1px solid rgba(176,214,255,.18);background:radial-gradient(80% 80% at 50% 50%, rgba(142,203,255,.16), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;overflow:hidden">
+    <div class="rf-read-radar" style="position:relative;height:186px;border-radius:14px;border:1px solid rgba(176,214,255,.18);background:radial-gradient(80% 80% at 50% 50%, rgba(142,203,255,.16), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;overflow:hidden">
       <div style="position:absolute;width:152px;height:152px;border:1px solid rgba(174,225,255,.3);border-radius:999px"></div>
       <div style="position:absolute;width:114px;height:114px;border:1px dashed rgba(255,224,190,.4);border-radius:999px;animation:spin 24s linear infinite"></div>
       <div style="position:absolute;width:74px;height:74px;border:1px solid rgba(174,225,255,.5);border-top-color:transparent;border-radius:999px;animation:spinR 9s linear infinite"></div>
@@ -841,9 +904,10 @@ input{font-family:inherit}
 </div>
 </sc-if>
 
-<div style="display:flex;align-items:center;gap:16px;height:34px;padding:0 34px;border-top:1px solid rgba(176,214,255,.12);font-size:9px;letter-spacing:.18em;color:#7f9cb4;background:rgba(4,10,20,.55);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);position:fixed;left:0;right:0;bottom:0;z-index:880" data-comment-anchor="b696c1d46c-div">
-  <span>ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0</span>
-  <span style="margin-left:auto">{{ statusLine }}</span>
+<div class="rf-foot" style="display:flex;align-items:center;gap:16px;height:34px;padding:0 34px;border-top:1px solid rgba(176,214,255,.12);font-size:9px;letter-spacing:.18em;color:#7f9cb4;background:rgba(4,10,20,.55);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);position:fixed;left:0;right:0;bottom:0;z-index:880" data-comment-anchor="b696c1d46c-div">
+  <span class="rf-foot-long">ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0</span>
+  <span class="rf-foot-short">RIFT NAV // HOLO v5.0</span>
+  <span class="rf-foot-status" style="margin-left:auto">{{ statusLine }}</span>
 </div>
 
 </div>
@@ -856,11 +920,12 @@ input{font-family:inherit}
 </div>
 </sc-if>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Grid&quot;,&quot;options&quot;:[&quot;Grid&quot;,&quot;Split column&quot;,&quot;Notched split&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;backdrop&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Galaxy map&quot;,&quot;options&quot;:[&quot;Galaxy map&quot;,&quot;Video&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backdrop&quot;},&quot;filterUI&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Menu&quot;,&quot;options&quot;:[&quot;Menu&quot;,&quot;One line&quot;,&quot;Chips&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home filters&quot;},&quot;videoDim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:46,&quot;min&quot;:0,&quot;max&quot;:85,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Video backdrop&quot;},&quot;holoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;cornerBrackets&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Notched split&quot;,&quot;options&quot;:[&quot;Grid&quot;,&quot;Split column&quot;,&quot;Notched split&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;backdrop&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Galaxy map&quot;,&quot;options&quot;:[&quot;Galaxy map&quot;,&quot;Video&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backdrop&quot;},&quot;filterUI&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Menu&quot;,&quot;options&quot;:[&quot;Menu&quot;,&quot;One line&quot;,&quot;Chips&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home filters&quot;},&quot;videoDim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:46,&quot;min&quot;:0,&quot;max&quot;:85,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Video backdrop&quot;},&quot;holoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;cornerBrackets&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;}}">
 class Component extends DCLogic {
   state = { rift: null, reward: null, cur: 0, railOpen: {}, q: '', boot: 0, cat: 'ALL', catOpen: false, browse: null, dig: null, cam: null, ctlOpen: false, presetName: '', presets: null, copied: false, monitored: [], condensed: false, narrow: false, monMenuOpen: false, tip: '', toastText: '', toastAdd: true, progress: {} };
 
   componentDidMount() {
+    this.startBoot();
     if (this._rz) return;
     this._rz = () => {
       const n = window.innerWidth < 720;
@@ -871,7 +936,25 @@ class Component extends DCLogic {
     };
     window.addEventListener('resize', this._rz, { passive: true });
     this._rz();
+    this._hudRz = () => this.checkHud();
+    window.addEventListener('resize', this._hudRz, { passive: true });
+    this.checkHud();
   }
+  componentDidUpdate() { this.checkHud(); }
+  // B5: one check for both corner HUDs. Measure the current screen's content (.rf-main children)
+  // and hide the HUDs when it reaches into the 180px corner column they occupy.
+  checkHud() {
+    cancelAnimationFrame(this._hudRaf);
+    this._hudRaf = requestAnimationFrame(() => {
+      const main = document.querySelector('.rf-main');
+      const vw = window.innerWidth, hudLeft = vw - this.HUD_W;
+      let right = 0;
+      if (main) [].forEach.call(main.children, c => { const r = c.getBoundingClientRect(); if (r.width && r.height) right = Math.max(right, r.right); });
+      const clear = vw >= 768 && !!main && right <= hudLeft - 16;
+      if (clear !== this.state.hudClear) this.setState({ hudClear: clear });
+    });
+  }
+  HUD_W = 180;
   bindCtl(el) {
     if (!el || this._ctl === el) return;
     this._ctl = el;
@@ -899,7 +982,11 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this._el && this._sc) this._el.removeEventListener('scroll', this._sc);
     if (this._rz) window.removeEventListener('resize', this._rz);
+    if (this._hudRz) window.removeEventListener('resize', this._hudRz);
+    cancelAnimationFrame(this._hudRaf);
     if (this._ro) this._ro.disconnect();
+    if (this._frameRO) this._frameRO.disconnect();
+    (this.timers || []).forEach(clearTimeout);
     clearTimeout(this._tt);
   }
 
@@ -1008,7 +1095,8 @@ class Component extends DCLogic {
       + ';color:' + (on ? '#fff8ef' : '#8ba7bf') + ';transition:background-color .2s ease,color .2s ease,padding .2s ease';
   }
 
-  CAM0 = { pitch: 0.5, dist: 2.6, ang: 0, zoom: 1.7, yOff: -0.06, glow: 1.4, core: 0.35, speed: 1 };
+  // Default camera: "PRESET 1", chosen by Mike 2026-09-26
+  CAM0 = { pitch: -0.4208, dist: 1.8, ang: -0.6416, zoom: 1.34, yOff: 0.085, glow: 1.15, core: 0.31, speed: 0.3 };
   CTL = [
     ['pitch', 'TILT', -1.5708, 1.5708, 0.01, v => Math.round(v * 57.2958) + '°'],
     ['dist', 'DISTANCE', 1.2, 12, 0.1, v => v.toFixed(1)],
@@ -1019,8 +1107,8 @@ class Component extends DCLogic {
     ['glow', 'CORE GLOW', 0, 3, 0.05, v => v.toFixed(2)],
     ['core', 'CORE STARS', 0, 0.8, 0.01, v => Math.round(v * 100) + '%']
   ];
-  camStore() { try { return JSON.parse(localStorage.getItem('rf-holo-cam') || 'null'); } catch (e) { return null; } }
-  setCam(patch) { const cam = Object.assign({}, this.CAM0, this.camStore() || {}, this.state.cam || {}, patch); localStorage.setItem('rf-holo-cam', JSON.stringify(cam)); this.set({ cam }); }
+  camStore() { try { return JSON.parse(localStorage.getItem('rf-holo-cam-v2') || 'null'); } catch (e) { return null; } }
+  setCam(patch) { const cam = Object.assign({}, this.CAM0, this.camStore() || {}, this.state.cam || {}, patch); localStorage.setItem('rf-holo-cam-v2', JSON.stringify(cam)); this.set({ cam }); }
   setPresets(presets) { localStorage.setItem('rf-holo-presets', JSON.stringify(presets)); this.set({ presets }); }
 
   CHAMFER = 'polygon(14px 0, 34% 0, calc(34% + 15px) 15px, calc(100% - 16px) 15px, 100% 31px,'
@@ -1048,7 +1136,9 @@ class Component extends DCLogic {
     'GUIDE PROJECTION ........... OK'
   ];
 
-  componentDidMount() {
+  // Called from componentDidMount. (A second componentDidMount here used to override the first,
+  // so the resize listener never ran.)
+  startBoot() {
     const v = this.vid;
     if (v) {
       v.muted = true; v.loop = false; v.playsInline = true;
@@ -1062,7 +1152,6 @@ class Component extends DCLogic {
       this.timers.push(setTimeout(() => this.setState({ boot: i }), 170 * i + (i > this.BOOT.length ? 220 : 0)));
     }
   }
-  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); if (this._frameRO) this._frameRO.disconnect(); }
 
   get data() { return (typeof window !== 'undefined' && window.RIFT_DATA) || { rifts: [], rewards: [] }; }
   set(p) { this.setState(p); }
@@ -1291,6 +1380,8 @@ class Component extends DCLogic {
     return {
       useVideo: !useMap, useMap, mapMode, cam,
       ctlOpen: this.state.ctlOpen, ctlLabel: this.state.ctlOpen ? '✕ CLOSE CAMERA' : '◎ CAMERA', toggleCtl: () => this.set({ ctlOpen: !this.state.ctlOpen }),
+      navOpen: !!this.state.navOpen, navGlyph: this.state.navOpen ? '✕' : '☰', toggleNav: () => this.set({ navOpen: !this.state.navOpen }),
+      navCam: () => this.set({ navOpen: false, ctlOpen: !this.state.ctlOpen }),
       camBtnStyle: 'border-radius:9px;font-family:inherit;font-size:9px;letter-spacing:.18em;padding:6px 12px;cursor:pointer;'
         + 'transition:border-color .2s ease,color .2s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);'
         + (this.state.ctlOpen
@@ -1300,23 +1391,10 @@ class Component extends DCLogic {
         const f = (v, m) => { const n = Math.round(v * 57.3) % m; return (n < 0 ? '-' : '') + String(Math.abs(n)).padStart(3, '0'); };
         return 'X' + f(cam.ang, 360) + ' / Y' + f(cam.pitch, 180);
       })(),
-      cornerHudStyle: (() => {
-        const vw = this.state.vw || (typeof window !== 'undefined' ? window.innerWidth : 1440);
-        // only draw once the corner is genuinely clear of the content column
-        const contentRight = split
-          ? Math.min(vw * 0.37, 520) + 34
-          : (vw > 1180 ? (vw + 1180) / 2 - 34 : vw - 34);
-        const clear = vw >= 768 && contentRight <= vw - 196;
-        return 'position:fixed;right:0;bottom:34px;width:180px;height:180px;z-index:860;pointer-events:none;'
-          + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (clear ? 'block' : 'none');
-      })(),
-      cornerHudTopStyle: (() => {
-        const vw = this.state.vw || 1440, split = (this.props.layout || 'Grid') === 'Split column';
-        const contentRight = split ? Math.min(vw, 1180) : (vw > 1180 ? (vw + 1180) / 2 - 34 : vw - 34);
-        const clear = vw >= 768 && contentRight <= vw - 196;
-        return 'position:fixed;right:0;top:56px;width:180px;height:210px;z-index:860;pointer-events:none;'
-          + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (clear ? 'block' : 'none');
-      })(),
+      cornerHudStyle: 'position:fixed;right:0;bottom:34px;width:' + this.HUD_W + 'px;height:180px;z-index:860;pointer-events:none;'
+        + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (this.state.hudClear ? 'block' : 'none'),
+      cornerHudTopStyle: 'position:fixed;right:0;top:56px;width:' + this.HUD_W + 'px;height:210px;z-index:860;pointer-events:none;'
+        + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (this.state.hudClear ? 'block' : 'none'),
       ctlRows, presetName: this.state.presetName, onPresetName: e => this.set({ presetName: e.target.value }),
       snapPreset: () => { const name = this.state.presetName.trim() || 'PRESET ' + (presets.length + 1); this.setPresets(presets.concat([{ name, cam: Object.assign({}, cam) }])); this.set({ presetName: '' }); },
       resetCam: () => this.setCam(this.CAM0),
@@ -1380,7 +1458,7 @@ class Component extends DCLogic {
       showCatMenu: browse === 'rift' && filterUI === 'Menu',
       scrollRef: el => this.bindScroll(el),
       ctlRef: el => this.bindCtl(el),
-      compactAny: browse === 'rift' || browse === 'dig',
+      compactAny: (browse === 'rift' || browse === 'dig') && !rift && !dig,
       compactBar: 'position:fixed;left:0;right:0;top:56px;z-index:840;box-sizing:border-box;display:flex;align-items:center;flex-wrap:nowrap;gap:10px;padding:11px 34px;'
         + 'background:linear-gradient(180deg, rgba(7,17,30,.97), rgba(7,16,28,.92));backdrop-filter:blur(26px) saturate(140%);-webkit-backdrop-filter:blur(26px) saturate(140%);'
         + 'border-bottom:1px solid rgba(176,214,255,.18);box-shadow:0 16px 34px rgba(0,6,16,.55);'
@@ -1476,9 +1554,10 @@ class Component extends DCLogic {
       homeWrap: split
         ? 'width:min(37vw,520px);min-width:320px;margin:0;padding:28px 26px 110px 34px;animation:hudFade .35s ease-out'
         : 'max-width:1180px;margin:0 auto;padding:28px 34px 110px;animation:hudFade .35s ease-out',
-      browseGrid: split ? 'display:flex;flex-direction:column;gap:14px' : 'display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:760px',
-      cardGrid: split ? 'display:flex;flex-direction:column;gap:' + (notch ? '20px' : '12px') : 'display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:16px',
+      browseGrid: split ? 'display:flex;flex-direction:column;gap:14px' : 'display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px;max-width:760px',
+      cardGrid: split ? 'display:flex;flex-direction:column;gap:' + (notch ? '20px' : '12px') : 'display:grid;grid-template-columns:repeat(auto-fill,minmax(min(266px,100%),1fr));gap:16px',
       notchCards: notch, plainCards: !notch,
+      homeClass: 'rf-main' + (notch ? ' rf-home-notch' : ''),
       cardShell: 'position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:14px 16px;min-height:'
           + (split ? '86px' : '152px') + ';height:100%;box-sizing:border-box;display:flex;flex-direction:row;align-items:stretch;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .24s cubic-bezier(.16,.86,.24,1)',
 

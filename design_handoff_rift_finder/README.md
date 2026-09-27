@@ -365,13 +365,14 @@ Items use `catItem(c, 'chip')`: `display: flex; align-items: center; gap: 8px; p
 
 ### Corner bracket collision rule
 
-Brackets only render when they are genuinely clear of the content column:
+Both HUD clusters share one check, `checkHud()`, which measures the real content rather than using layout constants. After every render and on resize, it takes the right edge of the current screen's content (the union of the `.rf-main` wrapper's children, from `getBoundingClientRect`). Both clusters show only when that edge stays at least 16px clear of the 180px corner column:
 
 ```js
-contentRight = split ? min(vw * 0.37, 520) + 34
-                     : (vw > 1180 ? (vw + 1180) / 2 - 34 : vw - 34)
-visible = vw >= 768 && contentRight <= vw - 196
+right   = max(child.getBoundingClientRect().right for child of .rf-main)
+visible = vw >= 768 && right <= vw - 180 - 16
 ```
+
+In practice they show beside the narrow browse column and home panel at desktop widths, and hide on the rift, reader and dig detail screens, where content runs to the right edge.
 
 Bottom cluster: `position: fixed; right: 0; bottom: 34px; width: 180px; height: 180px; z-index: 860`.
 Top cluster: `position: fixed; right: 0; top: 56px; width: 180px; height: 210px; z-index: 860`.
@@ -420,7 +421,7 @@ Contents: 13px diamond mark → `RIFT NAV` (Chakra Petch 15px/700, `.18em`, `#f2
 
 ## 3. Compact scroll bar
 
-On the browse screens, scrolling past **130px** cross-fades in a fixed compact bar; it fades back out below **90px** (hysteresis — do not use a single threshold, it causes jitter).
+On the browse lists only (not the rift, reader or dig detail screens), scrolling past **130px** cross-fades in a fixed compact bar; it fades back out below **90px** (hysteresis — do not use a single threshold, it causes jitter).
 
 ```css
 position: fixed; left: 0; right: 0; top: 56px; z-index: 840;
@@ -610,8 +611,11 @@ Left: `ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0`. Right: context status — `G
   narrow:    boolean                // viewport < 720px
   monTight:  boolean                // control row wrapped to a second line
   vw:        number
+  hudClear:  boolean                // corner HUDs have room (checkHud)
+  navOpen:   boolean                // phone menu (Camera, Classic/Holo) open
 
-  // camera (dev tool)
+  // camera (dev tool). Saved to localStorage 'rf-holo-cam-v2'; the key changes whenever CAM0
+  // changes so old saved views don't override the new default (CAM0 is PRESET 1)
   cam: object | null
   ctlOpen: boolean
   presetName: string
@@ -792,13 +796,23 @@ Standard easings: `cubic-bezier(.16,.86,.24,1)` for layout motion (`.3s`–`.8s`
 
 # Responsive behavior
 
+Desktop layout is set by inline styles. The responsive rules live in one block of classed `@media` rules at the end of the helmet `<style>` (search for "Responsive (audit"). Verified at 1440×900, 1180×820, 820×1180, 390×844 and 360×740. At all five sizes there is no horizontal scroll, nothing is clipped at the right edge, no panel draws over another while scrolling, the footer never covers content, and the corner HUD never covers a card.
+
 | Breakpoint | Behavior |
 |---|---|
+| `< 1090px` | **Step reader stacks** (`.rf-read`). The Event Log and Target/Mission columns go `position: static`, so nothing stays pinned. Order: step card and Prev/Next, then event log, then target information and mission parameters (radar last). The event log's inner scroll is removed so the page scrolls as one. The breakpoint is where the three columns (246 + 470 + 262px plus gaps and padding) stop fitting side by side. Above it the desktop layout is unchanged. |
+| `< 1024px` | **Notched split browse column** (`.rf-home-notch`) goes full width: `width: 100%; max-width: 960px` (cards and header stay within 320–920px), centred, 20px side padding. The top bar's stats are hidden. |
+| `< 768px` | **Top bar:** 16px padding, near-opaque background. Stats and `GUIDE ONLINE` are hidden. Camera and Classic/Holo move into one ☰ menu button at the right (`.rf-top-menu`, popover `.rf-nav-pop`). `RIFT NAV` never wraps. |
+| `< 768px` | **Footer:** one short line, `RIFT NAV // HOLO v5.0`, on the same background as the top bar. The status text is hidden. `.rf-scroll` gets `padding-bottom: 34px` (the footer height). |
+| `< 768px` | **Compact bar:** back button, search (takes the remaining width, `min-width: 120px`) and the reward filter collapsed to a funnel icon with its count. The Rifts/Dig sites toggle and the Monitoring label are dropped from the bar; the toggle is still in the header. |
+| `< 768px` | Detail pages (`.rf-main`) use 16px side padding. Grid minimums use `minmax(min(Npx, 100%), 1fr)`, so a single column can shrink below its desktop minimum. |
+| `< 768px` | Corner HUDs hidden. |
 | `< 720px` | `narrow = true`. Monitoring strip → dropdown. Search field drops its `min-width: 160px`. |
-| `< 768px` | Corner HUD brackets hidden. |
-| Content column within 196px of the right edge | Corner HUD brackets hidden (see formula above). |
+| All sizes | **Footer** stays on one line; a long target name is truncated with an ellipsis rather than wrapped. |
+| All sizes | **Compact bar** only on the browse lists (`browse` set, no rift or dig site open), never on the rift, reader or dig detail screens. |
 | Control row wraps to a second line | `monTight = true`, monitoring dropdown hides its text label and keeps only the count. Measured with a `ResizeObserver` checking whether children share an `offsetTop`. Requires ~90px of recovered width before reverting (hysteresis). |
 | Scroll > 130px / < 90px | Compact bar in / out. |
+| `pointer: coarse` | **Touch targets** are at least 44px tall: the Rifts/Dig sites toggle (options side by side), Classic/Holo, Camera, the menu button, back buttons, filter buttons, the compact bar controls and the + monitor buttons. |
 
 ---
 
