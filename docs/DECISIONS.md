@@ -6,6 +6,48 @@ supersedes it and say so.
 
 ---
 
+## 2026-09-27 — UI work happens in the repo; Claude Design is a snapshot
+
+**Decided:** The Rift Nav UI is edited in `design_handoff_rift_finder/` by Claude Code. The Claude
+Design project is a 2026-09-26 snapshot and is no longer where work happens.
+
+**Why:** The audit fixes, the generated v3 data and the dig redesign all landed in the repo. Keeping
+Claude Design current would mean syncing files in both directions, with two chances to undo work.
+The repo is already the source of truth for everything else.
+
+**What would overturn it:** wanting to explore visual options on a canvas. Then copy the repo files
+into Claude Design first, and bring the result back through a commit.
+
+---
+
+## 2026-09-27 — Defaults: Notched split layout, PRESET 1 camera
+
+**Decided:** The `layout` prop defaults to Notched split. `CAM0` is PRESET 1
+(pitch −0.4208, dist 1.8, ang −0.6416, zoom 1.34, yOff 0.085, glow 1.15, core 0.31, speed 0.3).
+The saved-camera key is `rf-holo-cam-v2`, so earlier saved cameras don't override the new default.
+
+**Why:** Mike's choice of layout and camera. The key was renamed because a saved camera in the
+browser silently beats any new default.
+
+**Rule going forward:** whenever `CAM0` changes, bump the storage key again.
+
+---
+
+## 2026-09-27 — Reward short names are hand-reviewed overrides
+
+**Decided:** Short reward names that the build can't derive cleanly live in
+`data/overrides/reward_names.json`, keyed by entity, chapter and a hash of the raw line. The build
+reads them; Mike approves new ones.
+
+**Why:** Names generated from wiki text came out as truncations ("…rift fail…"). A reviewed
+overrides file keeps names readable and survives rebuilds, while the generated `.js` files stay
+hands-off.
+
+**Consequence:** if the wiki text for a reward changes, its hash changes and the build falls back
+to the generated name. Rebuilds should list any override that no longer matches.
+
+---
+
 ## 2026-09-27 — UI data files are generated from v3
 
 **Decided:** `design_handoff_rift_finder/rift-data.js` and `dig-data.js` are build outputs. They are

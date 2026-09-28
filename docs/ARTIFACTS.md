@@ -7,23 +7,22 @@ Add a row whenever a Claude Design page, published artifact, or research output 
 
 ---
 
-## Claude Design — Rift Nav (the UI)
+## Rift Nav (the UI)
 
-**Project canvas:** https://claude.ai/design/p/03be95db-3869-4f61-81e5-31ca2661406c
+**Where the UI lives now (since 2026-09-27): `design_handoff_rift_finder/` in this repo.** Claude Code
+edits `Rift Finder Holo.dc.html` directly; all audit work (steps 1–4 and the follow-up) happened there.
+Default layout is Notched split; default camera is PRESET 1.
+
+**Claude Design project (snapshot, not current):** https://claude.ai/design/p/03be95db-3869-4f61-81e5-31ca2661406c
 
 | Page | Status |
 |---|---|
 | `Astral Rifts Wireframes` | superseded |
 | `Rift Finder` | superseded |
 | `Rift Finder HUD` | superseded |
-| **`Rift Finder Holo.dc.html`** | **current — work here** |
+| `Rift Finder Holo.dc.html` | **snapshot from 2026-09-26** — predates the audit fixes, v3 data and dig redesign. Don't work here without first copying the repo files in. |
 
-Canvas controls present on the current page: `videoDim` (46%), `holoScan`, `cornerBrackets`,
-`skipBoot`.
-
-Header copy in the design reads: `32 RIFTS · 289 CHAPTERS · 71 REWARDS`. **All three numbers are
-now wrong.** As of v3 (2026-09-26) rifts are 36 entities / 294 chapters / 157 rewards, and the
-combined dataset is 146 / 723 / 341. Update when the design is next touched.
+Canvas controls on the page: `layout`, `backdrop`, `filterUI`, `videoDim`, `holoScan`, `cornerBrackets`, `skipBoot`.
 
 **The bundled UI data is generated from v3** (since 2026-09-27). `rift-data.js` and `dig-data.js` are
 written by `data/tools/build_ui_data.py` and carry a generated-file header; the header stats in
@@ -37,6 +36,7 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 |---|---|---|---|
 | Stellaris Helper Style Guide | https://claude.ai/code/artifact/8b4f99af-a76c-4f44-84c2-92a208920505 | Live design system built from the Mobbin/GitHub reference screens — tokens, type scale, components, rift patterns | 2026-08-21 |
 | Folder Card Fix | https://claude.ai/artifact/QgUXDCxutvEKSuoWZMXNFU | Notched split folder card: before/after, overlay against Figma 82:17, and the hover spec | 2026-09-26 |
+| Rift Nav Audit | https://claude.ai/artifact/FvjddSmQviCrPB8VAvqVgY | UI/UX audit of the Notched split build at 5 screen sizes, dig site and relic deep dive, and two re-audits showing every finding fixed | 2026-09-27 |
 
 ## Research outputs
 
