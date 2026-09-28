@@ -9,8 +9,8 @@
  "coverage": {
   "entities": 36,
   "chapters": 294,
-  "rewards": 157,
-  "payouts": 362,
+  "rewards": 160,
+  "payouts": 359,
   "chains": 0,
   "structural_lines_ignored": 5,
   "unclassified": 0
@@ -283,13 +283,12 @@
       "r0014",
       "r0015",
       "r0016",
-      "r0017"
+      "r0017",
+      "r0018",
+      "r0019",
+      "r0020"
      ],
-     "payout_ids": [
-      "p0012",
-      "p0013",
-      "p0014"
-     ],
+     "payout_ids": [],
      "chain_ids": []
     }
    ],
@@ -322,13 +321,13 @@
       "\"We play no games. Activate an E.M.P.\" (diff 3) → END (ends the rift immediately) also grants: Large astral threads (140 / 150 / 160); 48x Alloys output (700-30,000)"
      ],
      "reward_ids": [
-      "r0018",
-      "r0019"
+      "r0021",
+      "r0022"
      ],
      "payout_ids": [
-      "p0015",
-      "p0016",
-      "p0017"
+      "p0012",
+      "p0013",
+      "p0014"
      ],
      "chain_ids": []
     },
@@ -344,11 +343,11 @@
       "\"Intuition.\" (diff 3) → 3 (species gains Ingenious)"
      ],
      "reward_ids": [
-      "r0020",
-      "r0021"
+      "r0023",
+      "r0024"
      ],
      "payout_ids": [
-      "p0018"
+      "p0015"
      ],
      "chain_ids": []
     },
@@ -364,11 +363,11 @@
       "\"Challenge every frontier.\" (diff 3) → 4 (species gains Starborn)"
      ],
      "reward_ids": [
-      "r0022",
-      "r0023"
+      "r0025",
+      "r0026"
      ],
      "payout_ids": [
-      "p0019"
+      "p0016"
      ],
      "chain_ids": []
     },
@@ -387,13 +386,13 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0024",
-      "r0025",
-      "r0026"
+      "r0027",
+      "r0028",
+      "r0029"
      ],
      "payout_ids": [
-      "p0020",
-      "p0021"
+      "p0017",
+      "p0018"
      ],
      "chain_ids": []
     }
@@ -427,7 +426,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0022"
+      "p0019"
      ],
      "chain_ids": []
     },
@@ -443,8 +442,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0023",
-      "p0024"
+      "p0020",
+      "p0021"
      ],
      "chain_ids": []
     },
@@ -460,8 +459,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0025",
-      "p0026"
+      "p0022",
+      "p0023"
      ],
      "chain_ids": []
     },
@@ -478,7 +477,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0027"
+      "p0024"
      ],
      "chain_ids": []
     },
@@ -497,13 +496,13 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0027",
-      "r0028",
-      "r0029",
-      "r0030"
+      "r0030",
+      "r0031",
+      "r0032",
+      "r0033"
      ],
      "payout_ids": [
-      "p0028"
+      "p0025"
      ],
      "chain_ids": []
     },
@@ -520,11 +519,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0031"
+      "r0034"
      ],
      "payout_ids": [
-      "p0029",
-      "p0030"
+      "p0026",
+      "p0027"
      ],
      "chain_ids": []
     }
@@ -557,7 +556,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0031"
+      "p0028"
      ],
      "chain_ids": []
     },
@@ -573,7 +572,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0032"
+      "p0029"
      ],
      "chain_ids": []
     },
@@ -590,8 +589,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0033",
-      "p0034"
+      "p0030",
+      "p0031"
      ],
      "chain_ids": []
     },
@@ -607,10 +606,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0032"
+      "r0035"
      ],
      "payout_ids": [
-      "p0035"
+      "p0032"
      ],
      "chain_ids": []
     },
@@ -627,7 +626,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0036"
+      "p0033"
      ],
      "chain_ids": []
     },
@@ -643,7 +642,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0037"
+      "p0034"
      ],
      "chain_ids": []
     },
@@ -660,8 +659,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0038",
-      "p0039"
+      "p0035",
+      "p0036"
      ],
      "chain_ids": []
     },
@@ -677,10 +676,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0033"
+      "r0036"
      ],
      "payout_ids": [
-      "p0040"
+      "p0037"
      ],
      "chain_ids": []
     }
@@ -713,7 +712,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0041"
+      "p0038"
      ],
      "chain_ids": []
     },
@@ -729,7 +728,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0042"
+      "p0039"
      ],
      "chain_ids": []
     },
@@ -745,7 +744,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0043"
+      "p0040"
      ],
      "chain_ids": []
     },
@@ -761,7 +760,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0044"
+      "p0041"
      ],
      "chain_ids": []
     },
@@ -777,7 +776,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0045"
+      "p0042"
      ],
      "chain_ids": []
     },
@@ -795,7 +794,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0046"
+      "p0043"
      ],
      "chain_ids": []
     },
@@ -812,8 +811,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0047",
-      "p0048"
+      "p0044",
+      "p0045"
      ],
      "chain_ids": []
     },
@@ -830,8 +829,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0049",
-      "p0050"
+      "p0046",
+      "p0047"
      ],
      "chain_ids": []
     },
@@ -848,8 +847,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0051",
-      "p0052"
+      "p0048",
+      "p0049"
      ],
      "chain_ids": []
     },
@@ -867,12 +866,12 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0034",
-      "r0035"
+      "r0037",
+      "r0038"
      ],
      "payout_ids": [
-      "p0053",
-      "p0054"
+      "p0050",
+      "p0051"
      ],
      "chain_ids": []
     },
@@ -888,10 +887,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0036"
+      "r0039"
      ],
      "payout_ids": [
-      "p0055"
+      "p0052"
      ],
      "chain_ids": []
     },
@@ -908,11 +907,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0037",
-      "r0038"
+      "r0040",
+      "r0041"
      ],
      "payout_ids": [
-      "p0056"
+      "p0053"
      ],
      "chain_ids": []
     },
@@ -928,10 +927,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0039"
+      "r0042"
      ],
      "payout_ids": [
-      "p0057"
+      "p0054"
      ],
      "chain_ids": []
     },
@@ -948,11 +947,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0040",
-      "r0041"
+      "r0043",
+      "r0044"
      ],
      "payout_ids": [
-      "p0058"
+      "p0055"
      ],
      "chain_ids": []
     },
@@ -969,8 +968,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0059",
-      "p0060"
+      "p0056",
+      "p0057"
      ],
      "chain_ids": []
     }
@@ -1004,8 +1003,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0061",
-      "p0062"
+      "p0058",
+      "p0059"
      ],
      "chain_ids": []
     },
@@ -1023,8 +1022,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0063",
-      "p0064"
+      "p0060",
+      "p0061"
      ],
      "chain_ids": []
     },
@@ -1041,8 +1040,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0065",
-      "p0066"
+      "p0062",
+      "p0063"
      ],
      "chain_ids": []
     },
@@ -1058,11 +1057,11 @@
       "\"Preserve field manipulation data.\" (diff 1) → 4 also grants: 25% progress toward a random Field Manipulation technology"
      ],
      "reward_ids": [
-      "r0042",
-      "r0043"
+      "r0045",
+      "r0046"
      ],
      "payout_ids": [
-      "p0067"
+      "p0064"
      ],
      "chain_ids": []
     },
@@ -1077,8 +1076,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0068",
-      "p0069"
+      "p0065",
+      "p0066"
      ],
      "chain_ids": []
     },
@@ -1093,7 +1092,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0070"
+      "p0067"
      ],
      "chain_ids": []
     },
@@ -1108,7 +1107,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0044"
+      "r0047"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -1126,9 +1125,9 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0045",
-      "r0046",
-      "r0047"
+      "r0048",
+      "r0049",
+      "r0050"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -1162,7 +1161,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0071"
+      "p0068"
      ],
      "chain_ids": []
     },
@@ -1178,7 +1177,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0072"
+      "p0069"
      ],
      "chain_ids": []
     },
@@ -1195,7 +1194,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0073"
+      "p0070"
      ],
      "chain_ids": []
     },
@@ -1211,7 +1210,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0074"
+      "p0071"
      ],
      "chain_ids": []
     },
@@ -1229,9 +1228,9 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0075",
-      "p0076",
-      "p0077"
+      "p0072",
+      "p0073",
+      "p0074"
      ],
      "chain_ids": []
     },
@@ -1248,7 +1247,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0078"
+      "p0075"
      ],
      "chain_ids": []
     },
@@ -1264,10 +1263,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0048"
+      "r0051"
      ],
      "payout_ids": [
-      "p0079"
+      "p0076"
      ],
      "chain_ids": []
     }
@@ -1301,7 +1300,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0080"
+      "p0077"
      ],
      "chain_ids": []
     },
@@ -1317,7 +1316,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0081"
+      "p0078"
      ],
      "chain_ids": []
     },
@@ -1334,7 +1333,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0082"
+      "p0079"
      ],
      "chain_ids": []
     },
@@ -1350,7 +1349,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0083"
+      "p0080"
      ],
      "chain_ids": []
     },
@@ -1366,8 +1365,8 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0049",
-      "r0050"
+      "r0052",
+      "r0053"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -1387,9 +1386,9 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0084",
-      "p0085",
-      "p0086"
+      "p0081",
+      "p0082",
+      "p0083"
      ],
      "chain_ids": []
     },
@@ -1405,10 +1404,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0051"
+      "r0054"
      ],
      "payout_ids": [
-      "p0087"
+      "p0084"
      ],
      "chain_ids": []
     },
@@ -1424,10 +1423,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0052"
+      "r0055"
      ],
      "payout_ids": [
-      "p0088"
+      "p0085"
      ],
      "chain_ids": []
     },
@@ -1443,10 +1442,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0053"
+      "r0056"
      ],
      "payout_ids": [
-      "p0089"
+      "p0086"
      ],
      "chain_ids": []
     },
@@ -1462,10 +1461,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0054"
+      "r0057"
      ],
      "payout_ids": [
-      "p0090"
+      "p0087"
      ],
      "chain_ids": []
     },
@@ -1481,7 +1480,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0091"
+      "p0088"
      ],
      "chain_ids": []
     },
@@ -1498,7 +1497,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0092"
+      "p0089"
      ],
      "chain_ids": []
     },
@@ -1516,7 +1515,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0093"
+      "p0090"
      ],
      "chain_ids": []
     },
@@ -1533,7 +1532,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0094"
+      "p0091"
      ],
      "chain_ids": []
     },
@@ -1548,7 +1547,7 @@
       "\"A worthy exchange.\" (diff 0) → grunur-weapons"
      ],
      "reward_ids": [
-      "r0055"
+      "r0058"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -1566,7 +1565,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0095"
+      "p0092"
      ],
      "chain_ids": []
     },
@@ -1583,7 +1582,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0096"
+      "p0093"
      ],
      "chain_ids": []
     },
@@ -1599,7 +1598,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0097"
+      "p0094"
      ],
      "chain_ids": []
     },
@@ -1615,10 +1614,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0056"
+      "r0059"
      ],
      "payout_ids": [
-      "p0098"
+      "p0095"
      ],
      "chain_ids": []
     },
@@ -1635,11 +1634,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0057"
+      "r0060"
      ],
      "payout_ids": [
-      "p0099",
-      "p0100"
+      "p0096",
+      "p0097"
      ],
      "chain_ids": []
     },
@@ -1657,12 +1656,12 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0058",
-      "r0059"
+      "r0061",
+      "r0062"
      ],
      "payout_ids": [
-      "p0101",
-      "p0102"
+      "p0098",
+      "p0099"
      ],
      "chain_ids": []
     }
@@ -1696,7 +1695,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0103"
+      "p0100"
      ],
      "chain_ids": []
     },
@@ -1713,7 +1712,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0104"
+      "p0101"
      ],
      "chain_ids": []
     },
@@ -1730,7 +1729,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0105"
+      "p0102"
      ],
      "chain_ids": []
     },
@@ -1746,7 +1745,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0106"
+      "p0103"
      ],
      "chain_ids": []
     },
@@ -1763,7 +1762,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0107"
+      "p0104"
      ],
      "chain_ids": []
     },
@@ -1780,11 +1779,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0060"
+      "r0063"
      ],
      "payout_ids": [
-      "p0108",
-      "p0109"
+      "p0105",
+      "p0106"
      ],
      "chain_ids": []
     },
@@ -1800,10 +1799,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0061"
+      "r0064"
      ],
      "payout_ids": [
-      "p0110"
+      "p0107"
      ],
      "chain_ids": []
     },
@@ -1820,11 +1819,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0062"
+      "r0065"
      ],
      "payout_ids": [
-      "p0111",
-      "p0112"
+      "p0108",
+      "p0109"
      ],
      "chain_ids": []
     }
@@ -1857,7 +1856,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0113"
+      "p0110"
      ],
      "chain_ids": []
     },
@@ -1874,7 +1873,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0114"
+      "p0111"
      ],
      "chain_ids": []
     },
@@ -1891,7 +1890,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0115"
+      "p0112"
      ],
      "chain_ids": []
     },
@@ -1908,7 +1907,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0116"
+      "p0113"
      ],
      "chain_ids": []
     },
@@ -1923,7 +1922,7 @@
       "\"Retreat to the Rift Sphere.\" (diff 1) → 5-B"
      ],
      "reward_ids": [
-      "r0063"
+      "r0066"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -1941,7 +1940,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0117"
+      "p0114"
      ],
      "chain_ids": []
     },
@@ -1958,7 +1957,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0118"
+      "p0115"
      ],
      "chain_ids": []
     },
@@ -1975,11 +1974,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0064",
-      "r0065"
+      "r0067",
+      "r0068"
      ],
      "payout_ids": [
-      "p0119"
+      "p0116"
      ],
      "chain_ids": []
     },
@@ -1995,10 +1994,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0066"
+      "r0069"
      ],
      "payout_ids": [
-      "p0120"
+      "p0117"
      ],
      "chain_ids": []
     }
@@ -2032,7 +2031,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0121"
+      "p0118"
      ],
      "chain_ids": []
     },
@@ -2049,7 +2048,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0122"
+      "p0119"
      ],
      "chain_ids": []
     },
@@ -2066,7 +2065,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0123"
+      "p0120"
      ],
      "chain_ids": []
     },
@@ -2082,7 +2081,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0124"
+      "p0121"
      ],
      "chain_ids": []
     },
@@ -2099,7 +2098,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0125"
+      "p0122"
      ],
      "chain_ids": []
     },
@@ -2116,8 +2115,8 @@
       "\"Retrieve the avian specimen.\" (diff 6) → 5-B [both branches done; Evolutionary Predators] also grants: Avian DNA + 10 Adaptive Evolution"
      ],
      "reward_ids": [
-      "r0067",
-      "r0068"
+      "r0070",
+      "r0071"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -2135,10 +2134,10 @@
       "\"Retrieve the avian specimen.\" (diff 6) → 5-B [both branches done; Evolutionary Predators] also grants: Avian DNA + 10 Adaptive Evolution"
      ],
      "reward_ids": [
-      "r0069"
+      "r0072"
      ],
      "payout_ids": [
-      "p0126"
+      "p0123"
      ],
      "chain_ids": []
     },
@@ -2154,7 +2153,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0127"
+      "p0124"
      ],
      "chain_ids": []
     },
@@ -2171,7 +2170,7 @@
       "\"Fascinating.\" (diff 5) → 6-B [not Biological or Lithoid]"
      ],
      "reward_ids": [
-      "r0070"
+      "r0073"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -2190,7 +2189,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0128"
+      "p0125"
      ],
      "chain_ids": []
     },
@@ -2207,11 +2206,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0071"
+      "r0074"
      ],
      "payout_ids": [
-      "p0129",
-      "p0130"
+      "p0126",
+      "p0127"
      ],
      "chain_ids": []
     },
@@ -2229,9 +2228,9 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0131",
-      "p0132",
-      "p0133"
+      "p0128",
+      "p0129",
+      "p0130"
      ],
      "chain_ids": []
     },
@@ -2248,8 +2247,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0134",
-      "p0135"
+      "p0131",
+      "p0132"
      ],
      "chain_ids": []
     },
@@ -2266,11 +2265,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0072",
-      "r0073"
+      "r0075",
+      "r0076"
      ],
      "payout_ids": [
-      "p0136"
+      "p0133"
      ],
      "chain_ids": []
     },
@@ -2286,10 +2285,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0074"
+      "r0077"
      ],
      "payout_ids": [
-      "p0137"
+      "p0134"
      ],
      "chain_ids": []
     },
@@ -2305,10 +2304,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0075"
+      "r0078"
      ],
      "payout_ids": [
-      "p0138"
+      "p0135"
      ],
      "chain_ids": []
     }
@@ -2341,7 +2340,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0139"
+      "p0136"
      ],
      "chain_ids": []
     },
@@ -2357,7 +2356,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0140"
+      "p0137"
      ],
      "chain_ids": []
     },
@@ -2373,7 +2372,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0141"
+      "p0138"
      ],
      "chain_ids": []
     },
@@ -2390,7 +2389,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0142"
+      "p0139"
      ],
      "chain_ids": []
     },
@@ -2406,7 +2405,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0143"
+      "p0140"
      ],
      "chain_ids": []
     },
@@ -2435,7 +2434,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0144"
+      "p0141"
      ],
      "chain_ids": []
     },
@@ -2452,7 +2451,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0145"
+      "p0142"
      ],
      "chain_ids": []
     },
@@ -2468,7 +2467,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0146"
+      "p0143"
      ],
      "chain_ids": []
     },
@@ -2485,7 +2484,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0147"
+      "p0144"
      ],
      "chain_ids": []
     },
@@ -2515,7 +2514,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0148"
+      "p0145"
      ],
      "chain_ids": []
     },
@@ -2532,11 +2531,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0076",
-      "r0077"
+      "r0079",
+      "r0080"
      ],
      "payout_ids": [
-      "p0149"
+      "p0146"
      ],
      "chain_ids": []
     },
@@ -2552,10 +2551,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0078"
+      "r0081"
      ],
      "payout_ids": [
-      "p0150"
+      "p0147"
      ],
      "chain_ids": []
     }
@@ -2589,7 +2588,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0151"
+      "p0148"
      ],
      "chain_ids": []
     },
@@ -2605,10 +2604,10 @@
       "\"Fascinating.\" (diff 1) → 3"
      ],
      "reward_ids": [
-      "r0079"
+      "r0082"
      ],
      "payout_ids": [
-      "p0152"
+      "p0149"
      ],
      "chain_ids": []
     },
@@ -2623,7 +2622,7 @@
       "\"Fascinating.\" (diff 1) → 3"
      ],
      "reward_ids": [
-      "r0080"
+      "r0083"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -2641,7 +2640,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0153"
+      "p0150"
      ],
      "chain_ids": []
     },
@@ -2657,10 +2656,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0081"
+      "r0084"
      ],
      "payout_ids": [
-      "p0154"
+      "p0151"
      ],
      "chain_ids": []
     },
@@ -2677,8 +2676,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0155",
-      "p0156"
+      "p0152",
+      "p0153"
      ],
      "chain_ids": []
     }
@@ -2712,7 +2711,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0157"
+      "p0154"
      ],
      "chain_ids": []
     },
@@ -2729,7 +2728,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0158"
+      "p0155"
      ],
      "chain_ids": []
     },
@@ -2749,11 +2748,11 @@
      ],
      "reward_ids": [],
      "payout_ids": [
+      "p0156",
+      "p0157",
+      "p0158",
       "p0159",
-      "p0160",
-      "p0161",
-      "p0162",
-      "p0163"
+      "p0160"
      ],
      "chain_ids": []
     },
@@ -2769,7 +2768,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0164"
+      "p0161"
      ],
      "chain_ids": []
     },
@@ -2786,11 +2785,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0082"
+      "r0085"
      ],
      "payout_ids": [
-      "p0165",
-      "p0166"
+      "p0162",
+      "p0163"
      ],
      "chain_ids": []
     }
@@ -2824,7 +2823,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0167"
+      "p0164"
      ],
      "chain_ids": []
     },
@@ -2841,7 +2840,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0168"
+      "p0165"
      ],
      "chain_ids": []
     },
@@ -2857,7 +2856,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0169"
+      "p0166"
      ],
      "chain_ids": []
     },
@@ -2874,8 +2873,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0170",
-      "p0171"
+      "p0167",
+      "p0168"
      ],
      "chain_ids": []
     },
@@ -2892,7 +2891,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0172"
+      "p0169"
      ],
      "chain_ids": []
     },
@@ -2910,12 +2909,12 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0083",
-      "r0084"
+      "r0086",
+      "r0087"
      ],
      "payout_ids": [
-      "p0173",
-      "p0174"
+      "p0170",
+      "p0171"
      ],
      "chain_ids": []
     },
@@ -2933,7 +2932,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0175"
+      "p0172"
      ],
      "chain_ids": []
     },
@@ -2950,8 +2949,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0176",
-      "p0177"
+      "p0173",
+      "p0174"
      ],
      "chain_ids": []
     },
@@ -2967,10 +2966,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0085"
+      "r0088"
      ],
      "payout_ids": [
-      "p0178"
+      "p0175"
      ],
      "chain_ids": []
     }
@@ -3003,7 +3002,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0179"
+      "p0176"
      ],
      "chain_ids": []
     },
@@ -3020,7 +3019,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0180"
+      "p0177"
      ],
      "chain_ids": []
     },
@@ -3036,12 +3035,12 @@
       "\"Neither Avian nor Arthropoid. Very peculiar.\" (diff 2) → END (ends the rift early) also grants: Medium DNA reward; 48x Engineering research output (1,000-1,000,000)"
      ],
      "reward_ids": [
-      "r0086"
+      "r0089"
      ],
      "payout_ids": [
-      "p0181",
-      "p0182",
-      "p0183"
+      "p0178",
+      "p0179",
+      "p0180"
      ],
      "chain_ids": []
     },
@@ -3057,10 +3056,10 @@
       "\"Impressive.\" (diff 2) → 4-B"
      ],
      "reward_ids": [
-      "r0087"
+      "r0090"
      ],
      "payout_ids": [
-      "p0184"
+      "p0181"
      ],
      "chain_ids": []
     },
@@ -3077,8 +3076,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0185",
-      "p0186"
+      "p0182",
+      "p0183"
      ],
      "chain_ids": []
     },
@@ -3095,8 +3094,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0187",
-      "p0188"
+      "p0184",
+      "p0185"
      ],
      "chain_ids": []
     }
@@ -3130,7 +3129,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0189"
+      "p0186"
      ],
      "chain_ids": []
     },
@@ -3147,7 +3146,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0190"
+      "p0187"
      ],
      "chain_ids": []
     },
@@ -3164,7 +3163,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0191"
+      "p0188"
      ],
      "chain_ids": []
     },
@@ -3181,8 +3180,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0192",
-      "p0193"
+      "p0189",
+      "p0190"
      ],
      "chain_ids": []
     },
@@ -3202,14 +3201,14 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0088"
+      "r0091"
      ],
      "payout_ids": [
+      "p0191",
+      "p0192",
+      "p0193",
       "p0194",
-      "p0195",
-      "p0196",
-      "p0197",
-      "p0198"
+      "p0195"
      ],
      "chain_ids": []
     },
@@ -3224,7 +3223,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0089"
+      "r0092"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -3259,7 +3258,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0199"
+      "p0196"
      ],
      "chain_ids": []
     },
@@ -3275,7 +3274,7 @@
       "\"Explore the worms' tunnels.\" (diff 5) → 2/3 (can fail)"
      ],
      "reward_ids": [
-      "r0090"
+      "r0093"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -3293,7 +3292,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0200"
+      "p0197"
      ],
      "chain_ids": []
     },
@@ -3309,12 +3308,12 @@
       "\"We've pushed our luck...\" (diff 1) → END (safe exit, ends the rift) also grants: 6x Unity output (100-100,000); 15% Biology tech progress; +20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators"
      ],
      "reward_ids": [
-      "r0091",
-      "r0092"
+      "r0094",
+      "r0095"
      ],
      "payout_ids": [
-      "p0201",
-      "p0202"
+      "p0198",
+      "p0199"
      ],
      "chain_ids": []
     },
@@ -3331,8 +3330,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0203",
-      "p0204"
+      "p0200",
+      "p0201"
      ],
      "chain_ids": []
     },
@@ -3348,7 +3347,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0205"
+      "p0202"
      ],
      "chain_ids": []
     },
@@ -3365,11 +3364,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0093",
-      "r0094"
+      "r0096",
+      "r0097"
      ],
      "payout_ids": [
-      "p0206"
+      "p0203"
      ],
      "chain_ids": []
     },
@@ -3386,11 +3385,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0095",
-      "r0096"
+      "r0098",
+      "r0099"
      ],
      "payout_ids": [
-      "p0207"
+      "p0204"
      ],
      "chain_ids": []
     }
@@ -3424,7 +3423,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0208"
+      "p0205"
      ],
      "chain_ids": []
     },
@@ -3441,7 +3440,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0209"
+      "p0206"
      ],
      "chain_ids": []
     },
@@ -3457,7 +3456,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0210"
+      "p0207"
      ],
      "chain_ids": []
     },
@@ -3473,7 +3472,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0211"
+      "p0208"
      ],
      "chain_ids": []
     },
@@ -3491,8 +3490,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0212",
-      "p0213"
+      "p0209",
+      "p0210"
      ],
      "chain_ids": []
     },
@@ -3510,7 +3509,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0214"
+      "p0211"
      ],
      "chain_ids": []
     },
@@ -3527,8 +3526,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0215",
-      "p0216"
+      "p0212",
+      "p0213"
      ],
      "chain_ids": []
     },
@@ -3545,11 +3544,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0097"
+      "r0100"
      ],
      "payout_ids": [
-      "p0217",
-      "p0218"
+      "p0214",
+      "p0215"
      ],
      "chain_ids": []
     },
@@ -3566,11 +3565,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0098"
+      "r0101"
      ],
      "payout_ids": [
-      "p0219",
-      "p0220"
+      "p0216",
+      "p0217"
      ],
      "chain_ids": []
     },
@@ -3587,11 +3586,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0099"
+      "r0102"
      ],
      "payout_ids": [
-      "p0221",
-      "p0222"
+      "p0218",
+      "p0219"
      ],
      "chain_ids": []
     }
@@ -3625,7 +3624,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0223"
+      "p0220"
      ],
      "chain_ids": []
     },
@@ -3642,7 +3641,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0224"
+      "p0221"
      ],
      "chain_ids": []
     },
@@ -3659,7 +3658,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0225"
+      "p0222"
      ],
      "chain_ids": []
     },
@@ -3674,7 +3673,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0100"
+      "r0103"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -3692,7 +3691,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0226"
+      "p0223"
      ],
      "chain_ids": []
     },
@@ -3710,12 +3709,12 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0101",
-      "r0102"
+      "r0104",
+      "r0105"
      ],
      "payout_ids": [
-      "p0227",
-      "p0228"
+      "p0224",
+      "p0225"
      ],
      "chain_ids": []
     },
@@ -3731,7 +3730,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0229"
+      "p0226"
      ],
      "chain_ids": []
     }
@@ -3765,7 +3764,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0230"
+      "p0227"
      ],
      "chain_ids": []
     },
@@ -3781,7 +3780,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0231"
+      "p0228"
      ],
      "chain_ids": []
     },
@@ -3797,7 +3796,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0232"
+      "p0229"
      ],
      "chain_ids": []
     },
@@ -3825,7 +3824,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0103"
+      "r0106"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -3841,7 +3840,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0104"
+      "r0107"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -3858,7 +3857,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0233"
+      "p0230"
      ],
      "chain_ids": []
     }
@@ -3892,7 +3891,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0234"
+      "p0231"
      ],
      "chain_ids": []
     },
@@ -3909,8 +3908,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0235",
-      "p0236"
+      "p0232",
+      "p0233"
      ],
      "chain_ids": []
     },
@@ -3927,12 +3926,12 @@
       "\"Explore the crystalline orifice.\" (diff 5) → 3/4 also grants: +200 Rare Crystals if you spent gases earlier"
      ],
      "reward_ids": [
-      "r0105"
+      "r0108"
      ],
      "payout_ids": [
-      "p0237",
-      "p0238",
-      "p0239"
+      "p0234",
+      "p0235",
+      "p0236"
      ],
      "chain_ids": []
     },
@@ -3949,8 +3948,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0240",
-      "p0241"
+      "p0237",
+      "p0238"
      ],
      "chain_ids": []
     },
@@ -3966,10 +3965,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0106"
+      "r0109"
      ],
      "payout_ids": [
-      "p0242"
+      "p0239"
      ],
      "chain_ids": []
     },
@@ -3985,10 +3984,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0107"
+      "r0110"
      ],
      "payout_ids": [
-      "p0243"
+      "p0240"
      ],
      "chain_ids": []
     },
@@ -4005,11 +4004,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0108",
-      "r0109"
+      "r0111",
+      "r0112"
      ],
      "payout_ids": [
-      "p0244"
+      "p0241"
      ],
      "chain_ids": []
     }
@@ -4043,7 +4042,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0245"
+      "p0242"
      ],
      "chain_ids": []
     },
@@ -4060,7 +4059,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0246"
+      "p0243"
      ],
      "chain_ids": []
     },
@@ -4076,7 +4075,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0247"
+      "p0244"
      ],
      "chain_ids": []
     },
@@ -4092,10 +4091,10 @@
       "\"Study this place.\" (diff 4) → creature also grants: Symbiotic Fruit specimen [Grand Archive DLC]"
      ],
      "reward_ids": [
-      "r0110"
+      "r0113"
      ],
      "payout_ids": [
-      "p0248"
+      "p0245"
      ],
      "chain_ids": []
     },
@@ -4114,7 +4113,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0249"
+      "p0246"
      ],
      "chain_ids": []
     },
@@ -4130,7 +4129,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0250"
+      "p0247"
      ],
      "chain_ids": []
     },
@@ -4146,7 +4145,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0251"
+      "p0248"
      ],
      "chain_ids": []
     },
@@ -4163,7 +4162,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0252"
+      "p0249"
      ],
      "chain_ids": []
     },
@@ -4179,8 +4178,8 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0111",
-      "r0112"
+      "r0114",
+      "r0115"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -4198,11 +4197,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0113",
-      "r0114"
+      "r0116",
+      "r0117"
      ],
      "payout_ids": [
-      "p0253"
+      "p0250"
      ],
      "chain_ids": []
     },
@@ -4218,10 +4217,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0115"
+      "r0118"
      ],
      "payout_ids": [
-      "p0254"
+      "p0251"
      ],
      "chain_ids": []
     }
@@ -4255,7 +4254,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0255"
+      "p0252"
      ],
      "chain_ids": []
     },
@@ -4271,7 +4270,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0256"
+      "p0253"
      ],
      "chain_ids": []
     },
@@ -4287,7 +4286,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0257"
+      "p0254"
      ],
      "chain_ids": []
     },
@@ -4303,7 +4302,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0258"
+      "p0255"
      ],
      "chain_ids": []
     },
@@ -4319,7 +4318,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0259"
+      "p0256"
      ],
      "chain_ids": []
     },
@@ -4348,10 +4347,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0116"
+      "r0119"
      ],
      "payout_ids": [
-      "p0260"
+      "p0257"
      ],
      "chain_ids": []
     },
@@ -4367,10 +4366,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0117"
+      "r0120"
      ],
      "payout_ids": [
-      "p0261"
+      "p0258"
      ],
      "chain_ids": []
     }
@@ -4403,7 +4402,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0262"
+      "p0259"
      ],
      "chain_ids": []
     },
@@ -4420,7 +4419,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0263"
+      "p0260"
      ],
      "chain_ids": []
     },
@@ -4436,7 +4435,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0264"
+      "p0261"
      ],
      "chain_ids": []
     },
@@ -4453,8 +4452,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0265",
-      "p0266"
+      "p0262",
+      "p0263"
      ],
      "chain_ids": []
     },
@@ -4471,11 +4470,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0118"
+      "r0121"
      ],
      "payout_ids": [
-      "p0267",
-      "p0268"
+      "p0264",
+      "p0265"
      ],
      "chain_ids": []
     },
@@ -4490,7 +4489,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0119"
+      "r0122"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -4526,7 +4525,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0269"
+      "p0266"
      ],
      "chain_ids": []
     },
@@ -4544,8 +4543,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0270",
-      "p0271"
+      "p0267",
+      "p0268"
      ],
      "chain_ids": []
     },
@@ -4564,8 +4563,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0272",
-      "p0273"
+      "p0269",
+      "p0270"
      ],
      "chain_ids": []
     },
@@ -4581,7 +4580,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0274"
+      "p0271"
      ],
      "chain_ids": []
     },
@@ -4597,8 +4596,8 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0120",
-      "r0121"
+      "r0123",
+      "r0124"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -4615,7 +4614,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0275"
+      "p0272"
      ],
      "chain_ids": []
     },
@@ -4631,7 +4630,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0276"
+      "p0273"
      ],
      "chain_ids": []
     }
@@ -4665,7 +4664,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0277"
+      "p0274"
      ],
      "chain_ids": []
     },
@@ -4681,7 +4680,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0278"
+      "p0275"
      ],
      "chain_ids": []
     },
@@ -4697,10 +4696,10 @@
       "\"(continue)\" → 3"
      ],
      "reward_ids": [
-      "r0122"
+      "r0125"
      ],
      "payout_ids": [
-      "p0279"
+      "p0276"
      ],
      "chain_ids": []
     },
@@ -4717,11 +4716,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0123"
+      "r0126"
      ],
      "payout_ids": [
-      "p0280",
-      "p0281"
+      "p0277",
+      "p0278"
      ],
      "chain_ids": []
     },
@@ -4738,8 +4737,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0282",
-      "p0283"
+      "p0279",
+      "p0280"
      ],
      "chain_ids": []
     },
@@ -4756,7 +4755,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0284"
+      "p0281"
      ],
      "chain_ids": []
     },
@@ -4772,7 +4771,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0285"
+      "p0282"
      ],
      "chain_ids": []
     },
@@ -4788,7 +4787,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0286"
+      "p0283"
      ],
      "chain_ids": []
     },
@@ -4803,7 +4802,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0124"
+      "r0127"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -4837,7 +4836,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0287"
+      "p0284"
      ],
      "chain_ids": []
     },
@@ -4853,7 +4852,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0288"
+      "p0285"
      ],
      "chain_ids": []
     },
@@ -4873,7 +4872,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0289"
+      "p0286"
      ],
      "chain_ids": []
     },
@@ -4892,7 +4891,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0290"
+      "p0287"
      ],
      "chain_ids": []
     },
@@ -4908,7 +4907,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0291"
+      "p0288"
      ],
      "chain_ids": []
     },
@@ -4927,12 +4926,12 @@
       "\"Deploy remote research devices.\" (diff 3) → model"
      ],
      "reward_ids": [
-      "r0125"
+      "r0128"
      ],
      "payout_ids": [
-      "p0292",
-      "p0293",
-      "p0294"
+      "p0289",
+      "p0290",
+      "p0291"
      ],
      "chain_ids": []
     },
@@ -4950,12 +4949,12 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0126"
+      "r0129"
      ],
      "payout_ids": [
-      "p0295",
-      "p0296",
-      "p0297"
+      "p0292",
+      "p0293",
+      "p0294"
      ],
      "chain_ids": []
     },
@@ -4972,11 +4971,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0127"
+      "r0130"
      ],
      "payout_ids": [
-      "p0298",
-      "p0299"
+      "p0295",
+      "p0296"
      ],
      "chain_ids": []
     },
@@ -4992,10 +4991,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0128"
+      "r0131"
      ],
      "payout_ids": [
-      "p0300"
+      "p0297"
      ],
      "chain_ids": []
     },
@@ -5012,11 +5011,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0129"
+      "r0132"
      ],
      "payout_ids": [
-      "p0301",
-      "p0302"
+      "p0298",
+      "p0299"
      ],
      "chain_ids": []
     }
@@ -5049,7 +5048,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0303"
+      "p0300"
      ],
      "chain_ids": []
     },
@@ -5066,7 +5065,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0304"
+      "p0301"
      ],
      "chain_ids": []
     },
@@ -5082,7 +5081,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0305"
+      "p0302"
      ],
      "chain_ids": []
     },
@@ -5099,8 +5098,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0306",
-      "p0307"
+      "p0303",
+      "p0304"
      ],
      "chain_ids": []
     },
@@ -5118,8 +5117,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0308",
-      "p0309"
+      "p0305",
+      "p0306"
      ],
      "chain_ids": []
     },
@@ -5136,8 +5135,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0310",
-      "p0311"
+      "p0307",
+      "p0308"
      ],
      "chain_ids": []
     },
@@ -5154,7 +5153,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0312"
+      "p0309"
      ],
      "chain_ids": []
     },
@@ -5170,10 +5169,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0130"
+      "r0133"
      ],
      "payout_ids": [
-      "p0313"
+      "p0310"
      ],
      "chain_ids": []
     },
@@ -5189,7 +5188,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0314"
+      "p0311"
      ],
      "chain_ids": []
     },
@@ -5205,10 +5204,10 @@
       "\"Analyze the severed organ.\" → 7"
      ],
      "reward_ids": [
-      "r0131"
+      "r0134"
      ],
      "payout_ids": [
-      "p0315"
+      "p0312"
      ],
      "chain_ids": []
     },
@@ -5225,11 +5224,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0132"
+      "r0135"
      ],
      "payout_ids": [
-      "p0316",
-      "p0317"
+      "p0313",
+      "p0314"
      ],
      "chain_ids": []
     },
@@ -5245,10 +5244,10 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0133"
+      "r0136"
      ],
      "payout_ids": [
-      "p0318"
+      "p0315"
      ],
      "chain_ids": []
     }
@@ -5282,7 +5281,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0319"
+      "p0316"
      ],
      "chain_ids": []
     },
@@ -5299,7 +5298,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0320"
+      "p0317"
      ],
      "chain_ids": []
     },
@@ -5314,7 +5313,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0321"
+      "p0318"
      ],
      "chain_ids": []
     },
@@ -5331,8 +5330,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0322",
-      "p0323"
+      "p0319",
+      "p0320"
      ],
      "chain_ids": []
     },
@@ -5349,7 +5348,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0324"
+      "p0321"
      ],
      "chain_ids": []
     },
@@ -5365,7 +5364,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0325"
+      "p0322"
      ],
      "chain_ids": []
     },
@@ -5385,14 +5384,14 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0134",
-      "r0135"
+      "r0137",
+      "r0138"
      ],
      "payout_ids": [
-      "p0326",
-      "p0327",
-      "p0328",
-      "p0329"
+      "p0323",
+      "p0324",
+      "p0325",
+      "p0326"
      ],
      "chain_ids": []
     },
@@ -5409,11 +5408,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0136",
-      "r0137"
+      "r0139",
+      "r0140"
      ],
      "payout_ids": [
-      "p0330"
+      "p0327"
      ],
      "chain_ids": []
     }
@@ -5447,7 +5446,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0331"
+      "p0328"
      ],
      "chain_ids": []
     },
@@ -5463,7 +5462,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0332"
+      "p0329"
      ],
      "chain_ids": []
     },
@@ -5479,7 +5478,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0333"
+      "p0330"
      ],
      "chain_ids": []
     },
@@ -5496,7 +5495,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0334"
+      "p0331"
      ],
      "chain_ids": []
     },
@@ -5512,7 +5511,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0335"
+      "p0332"
      ],
      "chain_ids": []
     },
@@ -5528,7 +5527,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0336"
+      "p0333"
      ],
      "chain_ids": []
     },
@@ -5545,11 +5544,11 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0138",
-      "r0139"
+      "r0141",
+      "r0142"
      ],
      "payout_ids": [
-      "p0337"
+      "p0334"
      ],
      "chain_ids": []
     }
@@ -5583,7 +5582,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0338"
+      "p0335"
      ],
      "chain_ids": []
     },
@@ -5599,7 +5598,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0339"
+      "p0336"
      ],
      "chain_ids": []
     },
@@ -5615,7 +5614,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0340"
+      "p0337"
      ],
      "chain_ids": []
     },
@@ -5632,8 +5631,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0341",
-      "p0342"
+      "p0338",
+      "p0339"
      ],
      "chain_ids": []
     },
@@ -5649,7 +5648,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0343"
+      "p0340"
      ],
      "chain_ids": []
     },
@@ -5665,7 +5664,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0344"
+      "p0341"
      ],
      "chain_ids": []
     },
@@ -5681,7 +5680,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0345"
+      "p0342"
      ],
      "chain_ids": []
     },
@@ -5698,8 +5697,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0346",
-      "p0347"
+      "p0343",
+      "p0344"
      ],
      "chain_ids": []
     },
@@ -5715,7 +5714,7 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0348"
+      "p0345"
      ],
      "chain_ids": []
     },
@@ -5734,9 +5733,9 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0349",
-      "p0350",
-      "p0351"
+      "p0346",
+      "p0347",
+      "p0348"
      ],
      "chain_ids": []
     },
@@ -5751,7 +5750,7 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0140"
+      "r0143"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -5768,8 +5767,8 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0141",
-      "r0142"
+      "r0144",
+      "r0145"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -5790,14 +5789,14 @@
       "Ends the rift."
      ],
      "reward_ids": [
-      "r0143",
-      "r0144"
+      "r0146",
+      "r0147"
      ],
      "payout_ids": [
-      "p0352",
-      "p0353",
-      "p0354",
-      "p0355"
+      "p0349",
+      "p0350",
+      "p0351",
+      "p0352"
      ],
      "chain_ids": []
     },
@@ -5814,8 +5813,8 @@
      ],
      "reward_ids": [],
      "payout_ids": [
-      "p0356",
-      "p0357"
+      "p0353",
+      "p0354"
      ],
      "chain_ids": []
     }
@@ -5846,10 +5845,10 @@
      ],
      "choices": [],
      "reward_ids": [
-      "r0145"
+      "r0148"
      ],
      "payout_ids": [
-      "p0358"
+      "p0355"
      ],
      "chain_ids": []
     },
@@ -5864,9 +5863,9 @@
      ],
      "choices": [],
      "reward_ids": [
-      "r0146",
-      "r0147",
-      "r0148"
+      "r0149",
+      "r0150",
+      "r0151"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -5897,7 +5896,7 @@
      ],
      "choices": [],
      "reward_ids": [
-      "r0149"
+      "r0152"
      ],
      "payout_ids": [],
      "chain_ids": []
@@ -5932,13 +5931,13 @@
      ],
      "choices": [],
      "reward_ids": [
-      "r0150",
-      "r0151"
+      "r0153",
+      "r0154"
      ],
      "payout_ids": [
-      "p0359",
-      "p0360",
-      "p0361"
+      "p0356",
+      "p0357",
+      "p0358"
      ],
      "chain_ids": []
     }
@@ -5974,15 +5973,15 @@
      ],
      "choices": [],
      "reward_ids": [
-      "r0152",
-      "r0153",
-      "r0154",
       "r0155",
       "r0156",
-      "r0157"
+      "r0157",
+      "r0158",
+      "r0159",
+      "r0160"
      ],
      "payout_ids": [
-      "p0362"
+      "p0359"
      ],
      "chain_ids": []
     }
@@ -6254,8 +6253,44 @@
    "gate": null,
    "polarity": "grant",
    "source": "chapter",
-   "raw": "Black Curtain + resources: +0.5 basic resource from the matching job category",
+   "raw": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability",
    "rid": "r0015",
+   "group": "empire",
+   "group_label": "Empire",
+   "name": "Black Curtain + astral threads",
+   "text": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability"
+  },
+  {
+   "entity": "Ruined Planet",
+   "entity_uid": "rift:ruined-planet",
+   "kind": "astral_rift",
+   "chapter": "7",
+   "chapter_index": 10,
+   "type": "modifier",
+   "conditional": false,
+   "gate": null,
+   "polarity": "grant",
+   "source": "chapter",
+   "raw": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening",
+   "rid": "r0016",
+   "group": "empire",
+   "group_label": "Empire",
+   "name": "Starlight Vanguard + astral threads",
+   "text": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening"
+  },
+  {
+   "entity": "Ruined Planet",
+   "entity_uid": "rift:ruined-planet",
+   "kind": "astral_rift",
+   "chapter": "7",
+   "chapter_index": 10,
+   "type": "modifier",
+   "conditional": false,
+   "gate": null,
+   "polarity": "grant",
+   "source": "chapter",
+   "raw": "Black Curtain + resources: +0.5 basic resource from the matching job category",
+   "rid": "r0017",
    "group": "empire",
    "group_label": "Empire",
    "name": "Black Curtain + resources",
@@ -6273,7 +6308,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Starlight Vanguard + alloys: +10% Armor HP, +10% Armor Hardening",
-   "rid": "r0016",
+   "rid": "r0018",
    "group": "empire",
    "group_label": "Empire",
    "name": "Starlight Vanguard + alloys",
@@ -6290,8 +6325,26 @@
    "gate": null,
    "polarity": "grant",
    "source": "chapter",
+   "raw": "Chapter 5 astral threads: +5% Sublight Speed",
+   "rid": "r0019",
+   "group": "empire",
+   "group_label": "Empire",
+   "name": "Chapter 5 astral threads",
+   "text": "Chapter 5 astral threads: +5% Sublight Speed"
+  },
+  {
+   "entity": "Ruined Planet",
+   "entity_uid": "rift:ruined-planet",
+   "kind": "astral_rift",
+   "chapter": "7",
+   "chapter_index": 10,
+   "type": "modifier",
+   "conditional": false,
+   "gate": null,
+   "polarity": "grant",
+   "source": "chapter",
    "raw": "Chapter 5 energy: +5% Ship Build Speed",
-   "rid": "r0017",
+   "rid": "r0020",
    "group": "empire",
    "group_label": "Empire",
    "name": "Chapter 5 energy",
@@ -6309,7 +6362,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "species gains Strong",
-   "rid": "r0018",
+   "rid": "r0021",
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Strong",
@@ -6327,7 +6380,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "species gains Natural Intellectuals",
-   "rid": "r0019",
+   "rid": "r0022",
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Natural Intellectuals",
@@ -6345,7 +6398,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "species gains Proles",
-   "rid": "r0020",
+   "rid": "r0023",
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Proles",
@@ -6363,7 +6416,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "species gains Ingenious",
-   "rid": "r0021",
+   "rid": "r0024",
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Ingenious",
@@ -6381,7 +6434,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "species gains Conservative",
-   "rid": "r0022",
+   "rid": "r0025",
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Conservative",
@@ -6399,7 +6452,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "species gains Starborn",
-   "rid": "r0023",
+   "rid": "r0026",
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Starborn",
@@ -6417,7 +6470,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Genesis Core specimen [Grand Archive DLC]",
-   "rid": "r0024",
+   "rid": "r0027",
    "group": "loot",
    "group_label": "Loot",
    "name": "Genesis Core",
@@ -6435,7 +6488,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "One pop of the new species on a random colony, with the three traits you picked and that colony's climate preference",
-   "rid": "r0025",
+   "rid": "r0028",
    "group": "forces",
    "group_label": "Forces",
    "name": "One pop of the new species on a random colony, with the three traits you picked and that c",
@@ -6453,7 +6506,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Genesis Insight (Gestalt Consciousness only)",
-   "rid": "r0026",
+   "rid": "r0029",
    "group": "empire",
    "group_label": "Empire",
    "name": "Genesis Insight (Gestalt Consciousness only)",
@@ -6471,7 +6524,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Interdimensional Treaty specimen [Grand Archive DLC]",
-   "rid": "r0027",
+   "rid": "r0030",
    "group": "loot",
    "group_label": "Loot",
    "name": "Interdimensional Treaty",
@@ -6489,7 +6542,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+50% Governing Ethics Attraction for 10 years",
-   "rid": "r0028",
+   "rid": "r0031",
    "group": "empire",
    "group_label": "Empire",
    "name": "+50% Governing Ethics Attraction",
@@ -6507,7 +6560,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Permanent communications with the Mirror Empire",
-   "rid": "r0029",
+   "rid": "r0032",
    "group": "empire",
    "group_label": "Empire",
    "name": "Permanent communications with the Mirror Empire",
@@ -6525,7 +6578,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Fractured Ambassadors (Gestalt Consciousness only)",
-   "rid": "r0030",
+   "rid": "r0033",
    "group": "empire",
    "group_label": "Empire",
    "name": "Fractured Ambassadors (Gestalt Consciousness only)",
@@ -6543,7 +6596,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Interdimensional Treaty specimen [Grand Archive DLC]",
-   "rid": "r0031",
+   "rid": "r0034",
    "group": "loot",
    "group_label": "Loot",
    "name": "Interdimensional Treaty",
@@ -6561,7 +6614,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Scientist becomes 5 years younger",
-   "rid": "r0032",
+   "rid": "r0035",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Scientist becomes 5 years younger",
@@ -6579,7 +6632,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "A Star is Born: +10% Physics research for 10 years",
-   "rid": "r0033",
+   "rid": "r0036",
    "group": "empire",
    "group_label": "Empire",
    "name": "A Star is Born",
@@ -6597,7 +6650,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Random Biology (Genetics) technology",
-   "rid": "r0034",
+   "rid": "r0037",
    "group": "research",
    "group_label": "Research",
    "name": "Random Biology (Genetics) technology",
@@ -6615,7 +6668,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Wormhole Fur specimen [Grand Archive DLC]",
-   "rid": "r0035",
+   "rid": "r0038",
    "group": "loot",
    "group_label": "Loot",
    "name": "Wormhole Fur",
@@ -6633,7 +6686,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Wormhole Stabilization if researchable, otherwise 50% progress toward a random Particles technology",
-   "rid": "r0036",
+   "rid": "r0039",
    "group": "research",
    "group_label": "Research",
    "name": "Wormhole Stabilization",
@@ -6651,7 +6704,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Mutative Digestive Fluids specimen [Grand Archive DLC]",
-   "rid": "r0037",
+   "rid": "r0040",
    "group": "loot",
    "group_label": "Loot",
    "name": "Mutative Digestive Fluids",
@@ -6669,7 +6722,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts; otherwise a random Biology (Farming) technology",
-   "rid": "r0038",
+   "rid": "r0041",
    "group": "research",
    "group_label": "Research",
    "name": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts",
@@ -6687,7 +6740,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "10% progress toward a random Robotics technology",
-   "rid": "r0039",
+   "rid": "r0042",
    "group": "research",
    "group_label": "Research",
    "name": "10% progress toward a random Robotics technology",
@@ -6705,7 +6758,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Extreme Contortionist DNA specimen [Grand Archive DLC]",
-   "rid": "r0040",
+   "rid": "r0043",
    "group": "loot",
    "group_label": "Loot",
    "name": "Extreme Contortionist DNA",
@@ -6723,7 +6776,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)",
-   "rid": "r0041",
+   "rid": "r0044",
    "group": "empire",
    "group_label": "Empire",
    "name": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)",
@@ -6741,7 +6794,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "25% progress toward a random Particles technology",
-   "rid": "r0042",
+   "rid": "r0045",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Particles technology",
@@ -6759,7 +6812,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "25% progress toward a random Field Manipulation technology",
-   "rid": "r0043",
+   "rid": "r0046",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Field Manipulation technology",
@@ -6777,7 +6830,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+10 Unity and +10 Physics on the rift",
-   "rid": "r0044",
+   "rid": "r0047",
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Unity and +10 Physics on the rift",
@@ -6795,7 +6848,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Azilash: neutral Formless starbase, 8 hostile Aberrant fleets, deposits of 1 astral thread / 10 rare crystals / 10 physics",
-   "rid": "r0045",
+   "rid": "r0048",
    "group": "empire",
    "group_label": "Empire",
    "name": "Azilash",
@@ -6813,7 +6866,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or the Eternal Throne relic",
-   "rid": "r0046",
+   "rid": "r0049",
    "group": "loot",
    "group_label": "Loot",
    "name": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or ",
@@ -6832,7 +6885,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost",
-   "rid": "r0047",
+   "rid": "r0050",
    "group": "risk",
    "group_label": "Risk",
    "name": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost",
@@ -6850,7 +6903,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materialist / Fanatic Materialist empires)",
-   "rid": "r0048",
+   "rid": "r0051",
    "group": "research",
    "group_label": "Research",
    "name": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materiali",
@@ -6868,7 +6921,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Follow-up: 2-4 years later the 'Dust to Dust' event gives Society and Engineering research and removes the deposit.",
-   "rid": "r0049",
+   "rid": "r0052",
    "group": "empire",
    "group_label": "Empire",
    "name": "2-4 years later the 'Dust to Dust' event gives Society and Engineering research and remove",
@@ -6886,7 +6939,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+25 Society research on the rift",
-   "rid": "r0050",
+   "rid": "r0053",
    "group": "empire",
    "group_label": "Empire",
    "name": "+25 Society research on the rift",
@@ -6904,7 +6957,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Option to recruit the paragon Oakenstalk",
-   "rid": "r0051",
+   "rid": "r0054",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Option to recruit the paragon Oakenstalk",
@@ -6922,7 +6975,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Astral Cloaking (+1 Cloaking Strength while active)",
-   "rid": "r0052",
+   "rid": "r0055",
    "group": "empire",
    "group_label": "Empire",
    "name": "Astral Cloaking (+1 Cloaking Strength while active)",
@@ -6940,7 +6993,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Astral Shield Experimentation: +5% Shield HP, +5% Shield Hardening",
-   "rid": "r0053",
+   "rid": "r0056",
    "group": "empire",
    "group_label": "Empire",
    "name": "Astral Shield Experimentation",
@@ -6958,7 +7011,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pacifist ethic)",
-   "rid": "r0054",
+   "rid": "r0057",
    "group": "forces",
    "group_label": "Forces",
    "name": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pac",
@@ -6976,7 +7029,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Military Theory technology",
-   "rid": "r0055",
+   "rid": "r0058",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Military Theory technology",
@@ -6994,7 +7047,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Grunur Weapons Interface: +10% Ship Fire Rate",
-   "rid": "r0056",
+   "rid": "r0059",
    "group": "empire",
    "group_label": "Empire",
    "name": "Grunur Weapons Interface",
@@ -7012,7 +7065,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Flamestorm Troopers",
-   "rid": "r0057",
+   "rid": "r0060",
    "group": "forces",
    "group_label": "Forces",
    "name": "Flamestorm Troopers",
@@ -7030,7 +7083,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist is lost for 5-7 years",
-   "rid": "r0058",
+   "rid": "r0061",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist is lost for 5-7 years",
@@ -7048,7 +7101,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Follow-up: The leader returns with Rift Warped and gains Expertise: Propulsion I (or Expertise: Voidcraft I if they already have it).",
-   "rid": "r0059",
+   "rid": "r0062",
    "group": "empire",
    "group_label": "Empire",
    "name": "The leader returns with Rift Warped and gains Expertise",
@@ -7066,7 +7119,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Reptilian DNA if Evolutionary Predators is active",
-   "rid": "r0060",
+   "rid": "r0063",
    "group": "forces",
    "group_label": "Forces",
    "name": "Reptilian DNA",
@@ -7084,7 +7137,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Warpling Armies",
-   "rid": "r0061",
+   "rid": "r0064",
    "group": "forces",
    "group_label": "Forces",
    "name": "Warpling Armies",
@@ -7102,7 +7155,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist dies within 1 month",
-   "rid": "r0062",
+   "rid": "r0065",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies within 1 month",
@@ -7120,7 +7173,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology",
-   "rid": "r0063",
+   "rid": "r0066",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
@@ -7138,7 +7191,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Spark of Genius",
-   "rid": "r0064",
+   "rid": "r0067",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Spark of Genius",
@@ -7156,7 +7209,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Black Light Blinded",
-   "rid": "r0065",
+   "rid": "r0068",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Black Light Blinded",
@@ -7174,7 +7227,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+10 Physics on the rift",
-   "rid": "r0066",
+   "rid": "r0069",
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Physics on the rift",
@@ -7192,7 +7245,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology",
-   "rid": "r0067",
+   "rid": "r0070",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
@@ -7210,7 +7263,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Avian DNA + 10 Adaptive Evolution",
-   "rid": "r0068",
+   "rid": "r0071",
    "group": "forces",
    "group_label": "Forces",
    "name": "Avian DNA + 10 Adaptive Evolution",
@@ -7228,7 +7281,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Avian DNA + 10 Adaptive Evolution",
-   "rid": "r0069",
+   "rid": "r0072",
    "group": "forces",
    "group_label": "Forces",
    "name": "Avian DNA + 10 Adaptive Evolution",
@@ -7246,7 +7299,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Computing technology",
-   "rid": "r0070",
+   "rid": "r0073",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Computing technology",
@@ -7264,7 +7317,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Automated Disinfection",
-   "rid": "r0071",
+   "rid": "r0074",
    "group": "empire",
    "group_label": "Empire",
    "name": "Automated Disinfection",
@@ -7282,7 +7335,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)",
-   "rid": "r0072",
+   "rid": "r0075",
    "group": "empire",
    "group_label": "Empire",
    "name": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)",
@@ -7300,7 +7353,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Repurposed Cleaning Drone (+25% Planetary Build Speed)",
-   "rid": "r0073",
+   "rid": "r0076",
    "group": "empire",
    "group_label": "Empire",
    "name": "Repurposed Cleaning Drone (+25% Planetary Build Speed)",
@@ -7318,7 +7371,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech",
-   "rid": "r0074",
+   "rid": "r0077",
    "group": "research",
    "group_label": "Research",
    "name": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech",
@@ -7336,7 +7389,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Sanitary Drone Assistant",
-   "rid": "r0075",
+   "rid": "r0078",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Sanitary Drone Assistant",
@@ -7354,7 +7407,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Time Crystal",
-   "rid": "r0076",
+   "rid": "r0079",
    "group": "loot",
    "group_label": "Loot",
    "name": "Time Crystal",
@@ -7373,7 +7426,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Psychic (if the leader has Latent Psionic)",
-   "rid": "r0077",
+   "rid": "r0080",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Psychic (if the leader has Latent Psionic)",
@@ -7391,7 +7444,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist dies",
-   "rid": "r0078",
+   "rid": "r0081",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies",
@@ -7409,7 +7462,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Leviathan Scale specimen [Grand Archive DLC]",
-   "rid": "r0079",
+   "rid": "r0082",
    "group": "loot",
    "group_label": "Loot",
    "name": "Leviathan Scale",
@@ -7427,7 +7480,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology",
-   "rid": "r0080",
+   "rid": "r0083",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
@@ -7445,7 +7498,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Daedalus Seal",
-   "rid": "r0081",
+   "rid": "r0084",
    "group": "loot",
    "group_label": "Loot",
    "name": "Daedalus Seal",
@@ -7464,7 +7517,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 year)",
-   "rid": "r0082",
+   "rid": "r0085",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 ",
@@ -7482,7 +7535,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientist (upgraded versions if already Psychic)",
-   "rid": "r0083",
+   "rid": "r0086",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientis",
@@ -7500,7 +7553,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Foreign Consciousness (+5% research) for Gestalt empires",
-   "rid": "r0084",
+   "rid": "r0087",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Foreign Consciousness (+5% research) for Gestalt empires",
@@ -7518,7 +7571,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+25 Physics and +25 Engineering on the rift for 10 years",
-   "rid": "r0085",
+   "rid": "r0088",
    "group": "empire",
    "group_label": "Empire",
    "name": "+25 Physics and +25 Engineering on the rift",
@@ -7536,7 +7589,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Medium DNA reward",
-   "rid": "r0086",
+   "rid": "r0089",
    "group": "forces",
    "group_label": "Forces",
    "name": "Medium DNA reward",
@@ -7554,7 +7607,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Lonely Planet empire modifier: +15% Propulsion for 15 years",
-   "rid": "r0087",
+   "rid": "r0090",
    "group": "empire",
    "group_label": "Empire",
    "name": "Lonely Planet empire modifier",
@@ -7572,7 +7625,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Random Psionics technology if the leader is Psychic",
-   "rid": "r0088",
+   "rid": "r0091",
    "group": "research",
    "group_label": "Research",
    "name": "Random Psionics technology",
@@ -7590,7 +7643,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)",
-   "rid": "r0089",
+   "rid": "r0092",
    "group": "risk",
    "group_label": "Risk",
    "name": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)",
@@ -7608,7 +7661,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "15% progress toward a random Biology technology",
-   "rid": "r0090",
+   "rid": "r0093",
    "group": "research",
    "group_label": "Research",
    "name": "15% progress toward a random Biology technology",
@@ -7626,7 +7679,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "15% Biology tech progress",
-   "rid": "r0091",
+   "rid": "r0094",
    "group": "research",
    "group_label": "Research",
    "name": "15% Biology tech progress",
@@ -7644,7 +7697,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "+20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators",
-   "rid": "r0092",
+   "rid": "r0095",
    "group": "forces",
    "group_label": "Forces",
    "name": "+20 Adaptive Evolution and Lithoid DNA",
@@ -7662,7 +7715,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rockworm Hive planetary decision",
-   "rid": "r0093",
+   "rid": "r0096",
    "group": "empire",
    "group_label": "Empire",
    "name": "Rockworm Hive planetary decision",
@@ -7680,7 +7733,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators",
-   "rid": "r0094",
+   "rid": "r0097",
    "group": "forces",
    "group_label": "Forces",
    "name": "+20 Adaptive Evolution and Lithoid DNA",
@@ -7698,7 +7751,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "15% progress toward a random Biology technology",
-   "rid": "r0095",
+   "rid": "r0098",
    "group": "research",
    "group_label": "Research",
    "name": "15% progress toward a random Biology technology",
@@ -7716,7 +7769,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist dies and returns a year later with the Partially Digested trait",
-   "rid": "r0096",
+   "rid": "r0099",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies and returns a year later with the Partially Digested trait",
@@ -7734,7 +7787,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Celestial Tear",
-   "rid": "r0097",
+   "rid": "r0100",
    "group": "loot",
    "group_label": "Loot",
    "name": "Celestial Tear",
@@ -7753,7 +7806,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Celestial Tear",
-   "rid": "r0098",
+   "rid": "r0101",
    "group": "loot",
    "group_label": "Loot",
    "name": "Celestial Tear",
@@ -7772,7 +7825,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Celestial Tear",
-   "rid": "r0099",
+   "rid": "r0102",
    "group": "loot",
    "group_label": "Loot",
    "name": "Celestial Tear",
@@ -7791,7 +7844,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer",
-   "rid": "r0100",
+   "rid": "r0103",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius /",
@@ -7809,7 +7862,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "20% progress toward a random Computing technology",
-   "rid": "r0101",
+   "rid": "r0104",
    "group": "research",
    "group_label": "Research",
    "name": "20% progress toward a random Computing technology",
@@ -7827,7 +7880,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Advisor Core",
-   "rid": "r0102",
+   "rid": "r0105",
    "group": "loot",
    "group_label": "Loot",
    "name": "Advisor Core",
@@ -7847,7 +7900,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Procedural Space (+1 district, +1 branch office)",
-   "rid": "r0103",
+   "rid": "r0106",
    "group": "empire",
    "group_label": "Empire",
    "name": "Procedural Space (+1 district, +1 branch office)",
@@ -7865,7 +7918,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer",
-   "rid": "r0104",
+   "rid": "r0107",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / R",
@@ -7883,7 +7936,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Dimensional Endothelial Lining specimen [Grand Archive DLC]",
-   "rid": "r0105",
+   "rid": "r0108",
    "group": "loot",
    "group_label": "Loot",
    "name": "Dimensional Endothelial Lining",
@@ -7901,7 +7954,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rift Fluid Samples: +10% Biology research speed (10 years, or 5 if you cut the rig loose)",
-   "rid": "r0106",
+   "rid": "r0109",
    "group": "empire",
    "group_label": "Empire",
    "name": "Rift Fluid Samples",
@@ -7919,7 +7972,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Plasmic Core",
-   "rid": "r0107",
+   "rid": "r0110",
    "group": "loot",
    "group_label": "Loot",
    "name": "Plasmic Core",
@@ -7938,7 +7991,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist and science ship are destroyed",
-   "rid": "r0108",
+   "rid": "r0111",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist and science ship are destroyed",
@@ -7956,7 +8009,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rift Fluid Samples: +10% Biology research speed (10 years)",
-   "rid": "r0109",
+   "rid": "r0112",
    "group": "empire",
    "group_label": "Empire",
    "name": "Rift Fluid Samples",
@@ -7974,7 +8027,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Symbiotic Fruit specimen",
-   "rid": "r0110",
+   "rid": "r0113",
    "group": "loot",
    "group_label": "Loot",
    "name": "Symbiotic Fruit",
@@ -7992,7 +8045,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Infinity Root",
-   "rid": "r0111",
+   "rid": "r0114",
    "group": "loot",
    "group_label": "Loot",
    "name": "Infinity Root",
@@ -8011,7 +8064,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Plantoid leader",
-   "rid": "r0112",
+   "rid": "r0115",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Plantoid leader",
@@ -8029,7 +8082,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology",
-   "rid": "r0113",
+   "rid": "r0116",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
@@ -8047,7 +8100,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist dies and returns as a plantoid in 5 years",
-   "rid": "r0114",
+   "rid": "r0117",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies and returns as a plantoid in 5 years",
@@ -8065,7 +8118,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology",
-   "rid": "r0115",
+   "rid": "r0118",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
@@ -8083,7 +8136,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "9 Fractal Seed planetary decisions",
-   "rid": "r0116",
+   "rid": "r0119",
    "group": "empire",
    "group_label": "Empire",
    "name": "9 Fractal Seed planetary decisions",
@@ -8101,7 +8154,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "3 Fractal Seed planetary decisions",
-   "rid": "r0117",
+   "rid": "r0120",
    "group": "empire",
    "group_label": "Empire",
    "name": "3 Fractal Seed planetary decisions",
@@ -8119,7 +8172,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist ages 20 years",
-   "rid": "r0118",
+   "rid": "r0121",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist ages 20 years",
@@ -8137,7 +8190,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Speed; active grants a large lump of every resource",
-   "rid": "r0119",
+   "rid": "r0122",
    "group": "loot",
    "group_label": "Loot",
    "name": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Sp",
@@ -8156,7 +8209,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire)",
-   "rid": "r0120",
+   "rid": "r0123",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire",
@@ -8174,7 +8227,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Random Society technology (if you confiscate their documents instead)",
-   "rid": "r0121",
+   "rid": "r0124",
    "group": "research",
    "group_label": "Research",
    "name": "Random Society technology (if you confiscate their documents instead)",
@@ -8192,7 +8245,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Vortex Fuel: +10% Energy for 10 years",
-   "rid": "r0122",
+   "rid": "r0125",
    "group": "empire",
    "group_label": "Empire",
    "name": "Vortex Fuel",
@@ -8210,7 +8263,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist dies",
-   "rid": "r0123",
+   "rid": "r0126",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies",
@@ -8228,7 +8281,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Ever Spinning Top",
-   "rid": "r0124",
+   "rid": "r0127",
    "group": "loot",
    "group_label": "Loot",
    "name": "Ever Spinning Top",
@@ -8247,7 +8300,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Mini Moon Dust specimen [Grand Archive DLC]",
-   "rid": "r0125",
+   "rid": "r0128",
    "group": "loot",
    "group_label": "Loot",
    "name": "Mini Moon Dust",
@@ -8265,7 +8318,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+10 Society on the rift",
-   "rid": "r0126",
+   "rid": "r0129",
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Society on the rift",
@@ -8283,7 +8336,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Intentional Tidal Locking planetary decision",
-   "rid": "r0127",
+   "rid": "r0130",
    "group": "empire",
    "group_label": "Empire",
    "name": "Intentional Tidal Locking planetary decision",
@@ -8301,7 +8354,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Display Microplanet Husk decision",
-   "rid": "r0128",
+   "rid": "r0131",
    "group": "empire",
    "group_label": "Empire",
    "name": "Display Microplanet Husk decision",
@@ -8319,7 +8372,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+15 Society on the rift for 10 years",
-   "rid": "r0129",
+   "rid": "r0132",
    "group": "empire",
    "group_label": "Empire",
    "name": "+15 Society on the rift",
@@ -8337,7 +8390,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Random Biology (Farming) technology",
-   "rid": "r0130",
+   "rid": "r0133",
    "group": "research",
    "group_label": "Research",
    "name": "Random Biology (Farming) technology",
@@ -8355,7 +8408,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist gains the Maimed trait unless robotic",
-   "rid": "r0131",
+   "rid": "r0134",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist gains the Maimed trait",
@@ -8373,7 +8426,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Random Biology (Farming) technology",
-   "rid": "r0132",
+   "rid": "r0135",
    "group": "research",
    "group_label": "Research",
    "name": "Random Biology (Farming) technology",
@@ -8391,7 +8444,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Formula Pink: +20 opinion from non-robotic/lithoid/toxoid empires, +10% army health, -50% morale damage",
-   "rid": "r0133",
+   "rid": "r0136",
    "group": "empire",
    "group_label": "Empire",
    "name": "Formula Pink",
@@ -8409,7 +8462,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Obsidian Obelisk Fragment specimen [Grand Archive DLC]",
-   "rid": "r0134",
+   "rid": "r0137",
    "group": "loot",
    "group_label": "Loot",
    "name": "Obsidian Obelisk Fragment",
@@ -8427,7 +8480,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Follow-up: about 6 years later the obelisk demands 1 pop per year for 6 years. Accept → Restoring the Balance (+10% Energy for 6 years). Refuse → Obelisk's Curse (-6% happiness for 6 years; +6 deviancy for gestalts).",
-   "rid": "r0135",
+   "rid": "r0138",
    "group": "risk",
    "group_label": "Risk",
    "name": "about 6 years later the obelisk demands 1 pop per year",
@@ -8445,7 +8498,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Scientist is lost",
-   "rid": "r0136",
+   "rid": "r0139",
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist is lost",
@@ -8463,7 +8516,7 @@
    "polarity": "cost",
    "source": "chapter",
    "raw": "Follow-up: after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obelisk's Curse (+10% Energy, but sacrifices 1 pop per year while on the council).",
-   "rid": "r0137",
+   "rid": "r0140",
    "group": "risk",
    "group_label": "Risk",
    "name": "after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obe",
@@ -8481,7 +8534,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "The Writer's Sphere specimen [Grand Archive DLC]",
-   "rid": "r0138",
+   "rid": "r0141",
    "group": "loot",
    "group_label": "Loot",
    "name": "The Writer's Sphere",
@@ -8499,7 +8552,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+10% Physics research for 10 years",
-   "rid": "r0139",
+   "rid": "r0142",
    "group": "empire",
    "group_label": "Empire",
    "name": "+10% Physics research",
@@ -8517,7 +8570,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)",
-   "rid": "r0140",
+   "rid": "r0143",
    "group": "empire",
    "group_label": "Empire",
    "name": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)",
@@ -8535,7 +8588,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Extradimensional Fungus specimen [Grand Archive DLC]",
-   "rid": "r0141",
+   "rid": "r0144",
    "group": "loot",
    "group_label": "Loot",
    "name": "Extradimensional Fungus",
@@ -8553,7 +8606,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Extra Dimensional Spores: +25% Exotic Gases",
-   "rid": "r0142",
+   "rid": "r0145",
    "group": "empire",
    "group_label": "Empire",
    "name": "Extra Dimensional Spores",
@@ -8571,7 +8624,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+10 Society on the rift",
-   "rid": "r0143",
+   "rid": "r0146",
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Society on the rift",
@@ -8589,7 +8642,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Reconverted Leader (+1 envoy) if you convert the scientist to an envoy in the follow-up event",
-   "rid": "r0144",
+   "rid": "r0147",
    "group": "empire",
    "group_label": "Empire",
    "name": "Reconverted Leader (+1 envoy)",
@@ -8607,7 +8660,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward Rift Sphere technology",
-   "rid": "r0145",
+   "rid": "r0148",
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward Rift Sphere technology",
@@ -8625,7 +8678,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "A new pre-FTL planet appears in the rift system",
-   "rid": "r0146",
+   "rid": "r0149",
    "group": "empire",
    "group_label": "Empire",
    "name": "A new pre-FTL planet appears in the rift system",
@@ -8643,7 +8696,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "OR a new random species appears on your nearest colony",
-   "rid": "r0147",
+   "rid": "r0150",
    "group": "forces",
    "group_label": "Forces",
    "name": "OR a new random species appears on your nearest colony",
@@ -8661,7 +8714,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Temporal Distortions modifier for 1 year: +100% resources from jobs, +100% pop growth speed, +100% pop assembly speed, +100% building build speed",
-   "rid": "r0148",
+   "rid": "r0151",
    "group": "empire",
    "group_label": "Empire",
    "name": "Temporal Distortions modifier for 1 year",
@@ -8679,7 +8732,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Spawns The Crystal Rift",
-   "rid": "r0149",
+   "rid": "r0152",
    "group": "empire",
    "group_label": "Empire",
    "name": "Spawns The Crystal Rift",
@@ -8697,7 +8750,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Peace in This Dimension modifier for 10 years: +10% happiness",
-   "rid": "r0150",
+   "rid": "r0153",
    "group": "empire",
    "group_label": "Empire",
    "name": "Peace in This Dimension modifier",
@@ -8715,7 +8768,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name",
-   "rid": "r0151",
+   "rid": "r0154",
    "group": "empire",
    "group_label": "Empire",
    "name": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name",
@@ -8733,7 +8786,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Formless Haven: a size 40 Gaia world in the Azilash system",
-   "rid": "r0152",
+   "rid": "r0155",
    "group": "empire",
    "group_label": "Empire",
    "name": "Formless Haven",
@@ -8751,7 +8804,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Zadigal paragon",
-   "rid": "r0153",
+   "rid": "r0156",
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Zadigal paragon",
@@ -8769,7 +8822,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Recurring every 10 years, choose one: 16 extradimensional cruisers, 100 Astral Threads, or a random Physics technology",
-   "rid": "r0154",
+   "rid": "r0157",
    "group": "empire",
    "group_label": "Empire",
    "name": "Recurring every 10 years, choose one",
@@ -8787,7 +8840,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Eternal Throne relic (conditional: via subjugation or victory)",
-   "rid": "r0155",
+   "rid": "r0158",
    "group": "loot",
    "group_label": "Loot",
    "name": "Eternal Throne relic (conditional",
@@ -8806,7 +8859,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Luminarium subject type (conditional: if subjugation succeeds)",
-   "rid": "r0156",
+   "rid": "r0159",
    "group": "empire",
    "group_label": "Empire",
    "name": "Luminarium subject type (conditional",
@@ -8824,7 +8877,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)",
-   "rid": "r0157",
+   "rid": "r0160",
    "group": "empire",
    "group_label": "Empire",
    "name": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)",
@@ -8998,51 +9051,6 @@
    "text": "Research and Unity"
   },
   {
-   "entity": "Ruined Planet",
-   "entity_uid": "rift:ruined-planet",
-   "kind": "astral_rift",
-   "chapter": "7",
-   "chapter_index": 10,
-   "type": "threads",
-   "conditional": false,
-   "gate": null,
-   "polarity": "grant",
-   "source": "chapter",
-   "raw": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability",
-   "pid": "p0012",
-   "text": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability"
-  },
-  {
-   "entity": "Ruined Planet",
-   "entity_uid": "rift:ruined-planet",
-   "kind": "astral_rift",
-   "chapter": "7",
-   "chapter_index": 10,
-   "type": "threads",
-   "conditional": false,
-   "gate": null,
-   "polarity": "grant",
-   "source": "chapter",
-   "raw": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening",
-   "pid": "p0013",
-   "text": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening"
-  },
-  {
-   "entity": "Ruined Planet",
-   "entity_uid": "rift:ruined-planet",
-   "kind": "astral_rift",
-   "chapter": "7",
-   "chapter_index": 10,
-   "type": "threads",
-   "conditional": false,
-   "gate": null,
-   "polarity": "grant",
-   "source": "chapter",
-   "raw": "Chapter 5 astral threads: +5% Sublight Speed",
-   "pid": "p0014",
-   "text": "Chapter 5 astral threads: +5% Sublight Speed"
-  },
-  {
    "entity": "Genesis",
    "entity_uid": "rift:genesis",
    "kind": "astral_rift",
@@ -9054,7 +9062,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0015",
+   "pid": "p0012",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9069,7 +9077,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0016",
+   "pid": "p0013",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9084,7 +9092,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "48x Alloys output (700-30,000)",
-   "pid": "p0017",
+   "pid": "p0014",
    "text": "48x Alloys output (700-30,000)"
   },
   {
@@ -9099,7 +9107,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0018",
+   "pid": "p0015",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9114,7 +9122,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0019",
+   "pid": "p0016",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9129,7 +9137,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0020",
+   "pid": "p0017",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9144,7 +9152,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000) — Gestalt Consciousness",
-   "pid": "p0021",
+   "pid": "p0018",
    "text": "24x Society research output (500-1,000,000) — Gestalt Consciousness"
   },
   {
@@ -9159,7 +9167,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0022",
+   "pid": "p0019",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9174,7 +9182,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0023",
+   "pid": "p0020",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9189,7 +9197,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Moderate Society research (moderate Unity for Gestalts)",
-   "pid": "p0024",
+   "pid": "p0021",
    "text": "Moderate Society research (moderate Unity for Gestalts)"
   },
   {
@@ -9204,7 +9212,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0025",
+   "pid": "p0022",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9219,7 +9227,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Moderate Engineering research (moderate Unity for Gestalts)",
-   "pid": "p0026",
+   "pid": "p0023",
    "text": "Moderate Engineering research (moderate Unity for Gestalts)"
   },
   {
@@ -9234,7 +9242,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0027",
+   "pid": "p0024",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9249,7 +9257,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large Society research",
-   "pid": "p0028",
+   "pid": "p0025",
    "text": "Large Society research"
   },
   {
@@ -9264,7 +9272,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0029",
+   "pid": "p0026",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -9279,7 +9287,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large Unity",
-   "pid": "p0030",
+   "pid": "p0027",
    "text": "Large Unity"
   },
   {
@@ -9294,7 +9302,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "100 Dark Matter",
-   "pid": "p0031",
+   "pid": "p0028",
    "text": "100 Dark Matter"
   },
   {
@@ -9309,7 +9317,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0032",
+   "pid": "p0029",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9324,7 +9332,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0033",
+   "pid": "p0030",
    "text": "24x Physics research output (500-1,000,000)"
   },
   {
@@ -9339,7 +9347,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-10 Astral Threads",
-   "pid": "p0034",
+   "pid": "p0031",
    "text": "-10 Astral Threads"
   },
   {
@@ -9354,7 +9362,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Physics research output (2,000-2,000,000)",
-   "pid": "p0035",
+   "pid": "p0032",
    "text": "96x Physics research output (2,000-2,000,000)"
   },
   {
@@ -9369,7 +9377,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0036",
+   "pid": "p0033",
    "text": "24x Physics research output (500-1,000,000)"
   },
   {
@@ -9384,7 +9392,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0037",
+   "pid": "p0034",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -9399,7 +9407,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0038",
+   "pid": "p0035",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9414,7 +9422,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Physics research output (1,000-1,000,000)",
-   "pid": "p0039",
+   "pid": "p0036",
    "text": "48x Physics research output (1,000-1,000,000)"
   },
   {
@@ -9429,7 +9437,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0040",
+   "pid": "p0037",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9444,7 +9452,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0041",
+   "pid": "p0038",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9459,7 +9467,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0042",
+   "pid": "p0039",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9474,7 +9482,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0043",
+   "pid": "p0040",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9489,7 +9497,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0044",
+   "pid": "p0041",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9504,7 +9512,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rare Crystals",
-   "pid": "p0045",
+   "pid": "p0042",
    "text": "Rare Crystals"
   },
   {
@@ -9519,7 +9527,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0046",
+   "pid": "p0043",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9534,7 +9542,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0047",
+   "pid": "p0044",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9549,7 +9557,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0048",
+   "pid": "p0045",
    "text": "-1000 Energy"
   },
   {
@@ -9564,7 +9572,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0049",
+   "pid": "p0046",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9579,7 +9587,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Food",
-   "pid": "p0050",
+   "pid": "p0047",
    "text": "-1000 Food"
   },
   {
@@ -9594,7 +9602,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0051",
+   "pid": "p0048",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9609,7 +9617,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0052",
+   "pid": "p0049",
    "text": "-1000 Energy"
   },
   {
@@ -9624,7 +9632,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0053",
+   "pid": "p0050",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9639,7 +9647,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Society research",
-   "pid": "p0054",
+   "pid": "p0051",
    "text": "Society research"
   },
   {
@@ -9654,7 +9662,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0055",
+   "pid": "p0052",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9669,7 +9677,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0056",
+   "pid": "p0053",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9684,7 +9692,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0057",
+   "pid": "p0054",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9699,7 +9707,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0058",
+   "pid": "p0055",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9714,7 +9722,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0059",
+   "pid": "p0056",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9729,7 +9737,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0060",
+   "pid": "p0057",
    "text": "Physics research"
   },
   {
@@ -9744,7 +9752,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0061",
+   "pid": "p0058",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9759,7 +9767,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-1000 Energy",
-   "pid": "p0062",
+   "pid": "p0059",
    "text": "-1000 Energy"
   },
   {
@@ -9774,7 +9782,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0063",
+   "pid": "p0060",
    "text": "24x Physics research output (500-1,000,000)"
   },
   {
@@ -9789,7 +9797,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0064",
+   "pid": "p0061",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9804,7 +9812,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0065",
+   "pid": "p0062",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9819,7 +9827,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Unity output (2,000-2,000,000)",
-   "pid": "p0066",
+   "pid": "p0063",
    "text": "96x Unity output (2,000-2,000,000)"
   },
   {
@@ -9834,7 +9842,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0067",
+   "pid": "p0064",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -9849,7 +9857,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0068",
+   "pid": "p0065",
    "text": "24x Physics research output (500-1,000,000)"
   },
   {
@@ -9864,7 +9872,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0069",
+   "pid": "p0066",
    "text": "24x Society research output (500-1,000,000)"
   },
   {
@@ -9879,7 +9887,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-500 Astral Threads",
-   "pid": "p0070",
+   "pid": "p0067",
    "text": "-500 Astral Threads"
   },
   {
@@ -9894,7 +9902,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0071",
+   "pid": "p0068",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9909,7 +9917,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0072",
+   "pid": "p0069",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9924,7 +9932,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0073",
+   "pid": "p0070",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9939,7 +9947,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0074",
+   "pid": "p0071",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -9954,7 +9962,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Minerals",
-   "pid": "p0075",
+   "pid": "p0072",
    "text": "Minerals"
   },
   {
@@ -9969,7 +9977,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rare Crystals",
-   "pid": "p0076",
+   "pid": "p0073",
    "text": "Rare Crystals"
   },
   {
@@ -9984,7 +9992,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0077",
+   "pid": "p0074",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -9999,7 +10007,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0078",
+   "pid": "p0075",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10014,7 +10022,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Follow-up: 3-5 years later: 'A Message from Beyond' (75% progress toward a random Particles technology + large astral threads) if you advised against breaching the Shroud; or 'The Shroud's Promise' (Zroni Insight Storm Safeguard — space storm effects halved, +5% Particles research, Energy, Rare Crystals and large astral threads) if you encouraged it.",
-   "pid": "p0079",
+   "pid": "p0076",
    "text": "Follow-up: 3-5 years later: 'A Message from Beyond' (75% progress toward a random Particles technology + large astral threads) if you advised against breaching the Shroud; or 'The Shroud's Promise' (Zroni Insight Storm Safeguard — space storm effects halved, +5% Particles research, Energy, Rare Crystals and large astral threads) if you encouraged it."
   },
   {
@@ -10029,7 +10037,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0080",
+   "pid": "p0077",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10044,7 +10052,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0081",
+   "pid": "p0078",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10059,7 +10067,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0082",
+   "pid": "p0079",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10074,7 +10082,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0083",
+   "pid": "p0080",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10089,7 +10097,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0084",
+   "pid": "p0081",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10104,7 +10112,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Astral Threads",
-   "pid": "p0085",
+   "pid": "p0082",
    "text": "-50 Astral Threads"
   },
   {
@@ -10119,7 +10127,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0086",
+   "pid": "p0083",
    "text": "-100 Astral Threads"
   },
   {
@@ -10134,7 +10142,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0087",
+   "pid": "p0084",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10149,7 +10157,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0088",
+   "pid": "p0085",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10164,7 +10172,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0089",
+   "pid": "p0086",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10179,7 +10187,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0090",
+   "pid": "p0087",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10194,7 +10202,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0091",
+   "pid": "p0088",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10209,7 +10217,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0092",
+   "pid": "p0089",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10224,7 +10232,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0093",
+   "pid": "p0090",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10239,7 +10247,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0094",
+   "pid": "p0091",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10254,7 +10262,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0095",
+   "pid": "p0092",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10269,7 +10277,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0096",
+   "pid": "p0093",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10284,7 +10292,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0097",
+   "pid": "p0094",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10299,7 +10307,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0098",
+   "pid": "p0095",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10314,7 +10322,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0099",
+   "pid": "p0096",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10329,7 +10337,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0100",
+   "pid": "p0097",
    "text": "24x Society research output (500-1,000,000)"
   },
   {
@@ -10344,7 +10352,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0101",
+   "pid": "p0098",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10359,7 +10367,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Engineering research output (500-1,000,000)",
-   "pid": "p0102",
+   "pid": "p0099",
    "text": "24x Engineering research output (500-1,000,000)"
   },
   {
@@ -10374,7 +10382,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0103",
+   "pid": "p0100",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10389,7 +10397,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0104",
+   "pid": "p0101",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10404,7 +10412,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0105",
+   "pid": "p0102",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10419,7 +10427,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0106",
+   "pid": "p0103",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10434,7 +10442,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Society research output (250-100,000)",
-   "pid": "p0107",
+   "pid": "p0104",
    "text": "12x Society research output (250-100,000)"
   },
   {
@@ -10449,7 +10457,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0108",
+   "pid": "p0105",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10464,7 +10472,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Physics research output (1,000-1,000,000)",
-   "pid": "p0109",
+   "pid": "p0106",
    "text": "48x Physics research output (1,000-1,000,000)"
   },
   {
@@ -10479,7 +10487,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0110",
+   "pid": "p0107",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10494,7 +10502,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0111",
+   "pid": "p0108",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10509,7 +10517,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0112",
+   "pid": "p0109",
    "text": "24x Physics research output (500-1,000,000)"
   },
   {
@@ -10524,7 +10532,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0113",
+   "pid": "p0110",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10539,7 +10547,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0114",
+   "pid": "p0111",
    "text": "24x Society research output (500-1,000,000)"
   },
   {
@@ -10554,7 +10562,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0115",
+   "pid": "p0112",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10569,7 +10577,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0116",
+   "pid": "p0113",
    "text": "18x Society research output (350-100,000)"
   },
   {
@@ -10584,7 +10592,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0117",
+   "pid": "p0114",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10599,7 +10607,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0118",
+   "pid": "p0115",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10614,7 +10622,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0119",
+   "pid": "p0116",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10629,7 +10637,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0120",
+   "pid": "p0117",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10644,7 +10652,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0121",
+   "pid": "p0118",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10659,7 +10667,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0122",
+   "pid": "p0119",
    "text": "18x Engineering research output (350-100,000)"
   },
   {
@@ -10674,7 +10682,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0123",
+   "pid": "p0120",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10689,7 +10697,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0124",
+   "pid": "p0121",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10704,7 +10712,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0125",
+   "pid": "p0122",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10719,7 +10727,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0126",
+   "pid": "p0123",
    "text": "18x Engineering research output (350-100,000)"
   },
   {
@@ -10734,7 +10742,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0127",
+   "pid": "p0124",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10749,7 +10757,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0128",
+   "pid": "p0125",
    "text": "18x Society research output (350-100,000)"
   },
   {
@@ -10764,7 +10772,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0129",
+   "pid": "p0126",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10779,7 +10787,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000) — Gestalt Consciousness",
-   "pid": "p0130",
+   "pid": "p0127",
    "text": "24x Society research output (500-1,000,000) — Gestalt Consciousness"
   },
   {
@@ -10794,7 +10802,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0131",
+   "pid": "p0128",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10809,7 +10817,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Energy output (350-10,000)",
-   "pid": "p0132",
+   "pid": "p0129",
    "text": "24x Energy output (350-10,000)"
   },
   {
@@ -10824,7 +10832,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Energy output (700-30,000) — Barbaric Despoilers or Genocidal (replaces the smaller energy reward)",
-   "pid": "p0133",
+   "pid": "p0130",
    "text": "48x Energy output (700-30,000) — Barbaric Despoilers or Genocidal (replaces the smaller energy reward)"
   },
   {
@@ -10839,7 +10847,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0134",
+   "pid": "p0131",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10854,7 +10862,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Alloys output (250-5,000)",
-   "pid": "p0135",
+   "pid": "p0132",
    "text": "18x Alloys output (250-5,000)"
   },
   {
@@ -10869,7 +10877,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0136",
+   "pid": "p0133",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10884,7 +10892,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0137",
+   "pid": "p0134",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10899,7 +10907,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0138",
+   "pid": "p0135",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -10914,7 +10922,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0139",
+   "pid": "p0136",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10929,7 +10937,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0140",
+   "pid": "p0137",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10944,7 +10952,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0141",
+   "pid": "p0138",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10959,7 +10967,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0142",
+   "pid": "p0139",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10974,7 +10982,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0143",
+   "pid": "p0140",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -10989,7 +10997,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0144",
+   "pid": "p0141",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11004,7 +11012,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0145",
+   "pid": "p0142",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11019,7 +11027,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0146",
+   "pid": "p0143",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11034,7 +11042,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0147",
+   "pid": "p0144",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11049,7 +11057,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0148",
+   "pid": "p0145",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11064,7 +11072,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Astral threads scaled to how few mistakes you made (roughly 50 / 100 / 150)",
-   "pid": "p0149",
+   "pid": "p0146",
    "text": "Astral threads scaled to how few mistakes you made (roughly 50 / 100 / 150)"
   },
   {
@@ -11079,7 +11087,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0150",
+   "pid": "p0147",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11094,7 +11102,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0151",
+   "pid": "p0148",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11109,7 +11117,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Alloys output (100-1,000)",
-   "pid": "p0152",
+   "pid": "p0149",
    "text": "6x Alloys output (100-1,000)"
   },
   {
@@ -11124,7 +11132,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0153",
+   "pid": "p0150",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -11139,7 +11147,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "No astral threads",
-   "pid": "p0154",
+   "pid": "p0151",
    "text": "No astral threads"
   },
   {
@@ -11154,7 +11162,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0155",
+   "pid": "p0152",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11169,7 +11177,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Dark Matter output (350-10,000)",
-   "pid": "p0156",
+   "pid": "p0153",
    "text": "24x Dark Matter output (350-10,000)"
   },
   {
@@ -11184,7 +11192,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0157",
+   "pid": "p0154",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11199,7 +11207,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0158",
+   "pid": "p0155",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11214,7 +11222,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0159",
+   "pid": "p0156",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -11229,7 +11237,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Minerals output (350-10,000)",
-   "pid": "p0160",
+   "pid": "p0157",
    "text": "24x Minerals output (350-10,000)"
   },
   {
@@ -11244,7 +11252,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Alloys output (350-10,000)",
-   "pid": "p0161",
+   "pid": "p0158",
    "text": "24x Alloys output (350-10,000)"
   },
   {
@@ -11259,7 +11267,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Engineering research output (2,000-2,000,000) — only if you chose 'recover its gear' in chapter 1",
-   "pid": "p0162",
+   "pid": "p0159",
    "text": "96x Engineering research output (2,000-2,000,000) — only if you chose 'recover its gear' in chapter 1"
   },
   {
@@ -11274,7 +11282,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "On failure: scientist is killed; you still get large astral threads and alloys",
-   "pid": "p0163",
+   "pid": "p0160",
    "text": "On failure: scientist is killed; you still get large astral threads and alloys"
   },
   {
@@ -11289,7 +11297,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0164",
+   "pid": "p0161",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11304,7 +11312,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0165",
+   "pid": "p0162",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11319,7 +11327,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0166",
+   "pid": "p0163",
    "text": "24x Society research output (500-1,000,000)"
   },
   {
@@ -11334,7 +11342,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Dark Matter output (100-1,000)",
-   "pid": "p0167",
+   "pid": "p0164",
    "text": "6x Dark Matter output (100-1,000)"
   },
   {
@@ -11349,7 +11357,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0168",
+   "pid": "p0165",
    "text": "18x Engineering research output (350-100,000)"
   },
   {
@@ -11364,7 +11372,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0169",
+   "pid": "p0166",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11379,7 +11387,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0170",
+   "pid": "p0167",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11394,7 +11402,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Dark Matter output (700-30,000)",
-   "pid": "p0171",
+   "pid": "p0168",
    "text": "48x Dark Matter output (700-30,000)"
   },
   {
@@ -11409,7 +11417,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0172",
+   "pid": "p0169",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11424,7 +11432,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0173",
+   "pid": "p0170",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11439,7 +11447,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "On failure (Unfortunate Complications): you get large astral threads and dark matter instead of the traits",
-   "pid": "p0174",
+   "pid": "p0171",
    "text": "On failure (Unfortunate Complications): you get large astral threads and dark matter instead of the traits"
   },
   {
@@ -11454,7 +11462,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0175",
+   "pid": "p0172",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11469,7 +11477,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0176",
+   "pid": "p0173",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11484,7 +11492,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Dark Matter output (700-30,000)",
-   "pid": "p0177",
+   "pid": "p0174",
    "text": "48x Dark Matter output (700-30,000)"
   },
   {
@@ -11499,7 +11507,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0178",
+   "pid": "p0175",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11514,7 +11522,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0179",
+   "pid": "p0176",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11529,7 +11537,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0180",
+   "pid": "p0177",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11544,7 +11552,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0181",
+   "pid": "p0178",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11559,7 +11567,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "48x Society research (organic shipset) or 48x Engineering research (mechanical shipset)",
-   "pid": "p0182",
+   "pid": "p0179",
    "text": "48x Society research (organic shipset) or 48x Engineering research (mechanical shipset)"
   },
   {
@@ -11574,7 +11582,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "48x Engineering research output (1,000-1,000,000)",
-   "pid": "p0183",
+   "pid": "p0180",
    "text": "48x Engineering research output (1,000-1,000,000)"
   },
   {
@@ -11589,7 +11597,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0184",
+   "pid": "p0181",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11604,7 +11612,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0185",
+   "pid": "p0182",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11619,7 +11627,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000)",
-   "pid": "p0186",
+   "pid": "p0183",
    "text": "18x Unity output (250-1,000,000)"
   },
   {
@@ -11634,7 +11642,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0187",
+   "pid": "p0184",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11649,7 +11657,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000)",
-   "pid": "p0188",
+   "pid": "p0185",
    "text": "18x Unity output (250-1,000,000)"
   },
   {
@@ -11664,7 +11672,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0189",
+   "pid": "p0186",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11679,7 +11687,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0190",
+   "pid": "p0187",
    "text": "18x Society research output (350-100,000)"
   },
   {
@@ -11694,7 +11702,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0191",
+   "pid": "p0188",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11709,7 +11717,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0192",
+   "pid": "p0189",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -11724,7 +11732,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0193",
+   "pid": "p0190",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11739,7 +11747,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Minerals output (150-2,000)",
-   "pid": "p0194",
+   "pid": "p0191",
    "text": "12x Minerals output (150-2,000)"
   },
   {
@@ -11754,7 +11762,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Alloys output (100-1,000)",
-   "pid": "p0195",
+   "pid": "p0192",
    "text": "6x Alloys output (100-1,000)"
   },
   {
@@ -11769,7 +11777,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "500 Rare Crystals",
-   "pid": "p0196",
+   "pid": "p0193",
    "text": "500 Rare Crystals"
   },
   {
@@ -11784,7 +11792,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Unity output (150-100,000)",
-   "pid": "p0197",
+   "pid": "p0194",
    "text": "12x Unity output (150-100,000)"
   },
   {
@@ -11799,7 +11807,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0198",
+   "pid": "p0195",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -11814,7 +11822,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0199",
+   "pid": "p0196",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11829,7 +11837,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0200",
+   "pid": "p0197",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11844,7 +11852,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0201",
+   "pid": "p0198",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11859,7 +11867,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "6x Unity output (100-100,000)",
-   "pid": "p0202",
+   "pid": "p0199",
    "text": "6x Unity output (100-100,000)"
   },
   {
@@ -11874,7 +11882,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0203",
+   "pid": "p0200",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11889,7 +11897,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Exotic Gases",
-   "pid": "p0204",
+   "pid": "p0201",
    "text": "-100 Exotic Gases"
   },
   {
@@ -11904,7 +11912,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0205",
+   "pid": "p0202",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11919,7 +11927,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0206",
+   "pid": "p0203",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -11934,7 +11942,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0207",
+   "pid": "p0204",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11949,7 +11957,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0208",
+   "pid": "p0205",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11964,7 +11972,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0209",
+   "pid": "p0206",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11979,7 +11987,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0210",
+   "pid": "p0207",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -11994,7 +12002,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0211",
+   "pid": "p0208",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -12009,7 +12017,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0212",
+   "pid": "p0209",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12024,7 +12032,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Physics research output (350-100,000)",
-   "pid": "p0213",
+   "pid": "p0210",
    "text": "18x Physics research output (350-100,000)"
   },
   {
@@ -12039,7 +12047,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0214",
+   "pid": "p0211",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12054,7 +12062,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0215",
+   "pid": "p0212",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12069,7 +12077,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Physics research output (350-100,000)",
-   "pid": "p0216",
+   "pid": "p0213",
    "text": "18x Physics research output (350-100,000)"
   },
   {
@@ -12084,7 +12092,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0217",
+   "pid": "p0214",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12099,7 +12107,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Society research output (500-1,000,000)",
-   "pid": "p0218",
+   "pid": "p0215",
    "text": "24x Society research output (500-1,000,000)"
   },
   {
@@ -12114,7 +12122,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0219",
+   "pid": "p0216",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12129,7 +12137,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Society research output (1,000-1,000,000)",
-   "pid": "p0220",
+   "pid": "p0217",
    "text": "48x Society research output (1,000-1,000,000)"
   },
   {
@@ -12144,7 +12152,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0221",
+   "pid": "p0218",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12159,7 +12167,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Society research output (2,000-2,000,000)",
-   "pid": "p0222",
+   "pid": "p0219",
    "text": "96x Society research output (2,000-2,000,000)"
   },
   {
@@ -12174,7 +12182,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0223",
+   "pid": "p0220",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12189,7 +12197,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0224",
+   "pid": "p0221",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12204,7 +12212,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0225",
+   "pid": "p0222",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12219,7 +12227,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Engineering research output (500-1,000,000)",
-   "pid": "p0226",
+   "pid": "p0223",
    "text": "24x Engineering research output (500-1,000,000)"
   },
   {
@@ -12234,7 +12242,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0227",
+   "pid": "p0224",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12249,7 +12257,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Alloys output (250-5,000)",
-   "pid": "p0228",
+   "pid": "p0225",
    "text": "18x Alloys output (250-5,000)"
   },
   {
@@ -12264,7 +12272,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Engineering research output (500-1,000,000)",
-   "pid": "p0229",
+   "pid": "p0226",
    "text": "24x Engineering research output (500-1,000,000)"
   },
   {
@@ -12279,7 +12287,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0230",
+   "pid": "p0227",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12294,7 +12302,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0231",
+   "pid": "p0228",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12309,7 +12317,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Physics research output (350-100,000)",
-   "pid": "p0232",
+   "pid": "p0229",
    "text": "18x Physics research output (350-100,000)"
   },
   {
@@ -12324,7 +12332,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0233",
+   "pid": "p0230",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12339,7 +12347,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0234",
+   "pid": "p0231",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12354,7 +12362,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0235",
+   "pid": "p0232",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12369,7 +12377,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Exotic Gases",
-   "pid": "p0236",
+   "pid": "p0233",
    "text": "-50 Exotic Gases"
   },
   {
@@ -12384,7 +12392,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0237",
+   "pid": "p0234",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12399,7 +12407,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "+200 Exotic Gases if you spent gases earlier",
-   "pid": "p0238",
+   "pid": "p0235",
    "text": "+200 Exotic Gases if you spent gases earlier"
   },
   {
@@ -12414,7 +12422,7 @@
    "polarity": "grant",
    "source": "choice",
    "raw": "+200 Rare Crystals if you spent gases earlier",
-   "pid": "p0239",
+   "pid": "p0236",
    "text": "+200 Rare Crystals if you spent gases earlier"
   },
   {
@@ -12429,7 +12437,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0240",
+   "pid": "p0237",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12444,7 +12452,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Exotic Gases",
-   "pid": "p0241",
+   "pid": "p0238",
    "text": "-100 Exotic Gases"
   },
   {
@@ -12459,7 +12467,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0242",
+   "pid": "p0239",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12474,7 +12482,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0243",
+   "pid": "p0240",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12489,7 +12497,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0244",
+   "pid": "p0241",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12504,7 +12512,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0245",
+   "pid": "p0242",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12519,7 +12527,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0246",
+   "pid": "p0243",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12534,7 +12542,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0247",
+   "pid": "p0244",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12549,7 +12557,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "25% progress toward a random Biology technology if nothing was burnt, otherwise small astral threads",
-   "pid": "p0248",
+   "pid": "p0245",
    "text": "25% progress toward a random Biology technology if nothing was burnt, otherwise small astral threads"
   },
   {
@@ -12564,7 +12572,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0249",
+   "pid": "p0246",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12579,7 +12587,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0250",
+   "pid": "p0247",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12594,7 +12602,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0251",
+   "pid": "p0248",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12609,7 +12617,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0252",
+   "pid": "p0249",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12624,7 +12632,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0253",
+   "pid": "p0250",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -12639,7 +12647,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0254",
+   "pid": "p0251",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12654,7 +12662,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0255",
+   "pid": "p0252",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12669,7 +12677,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0256",
+   "pid": "p0253",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12684,7 +12692,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0257",
+   "pid": "p0254",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12699,7 +12707,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0258",
+   "pid": "p0255",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12714,7 +12722,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0259",
+   "pid": "p0256",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12729,7 +12737,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0260",
+   "pid": "p0257",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12744,7 +12752,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0261",
+   "pid": "p0258",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12759,7 +12767,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0262",
+   "pid": "p0259",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12774,7 +12782,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Engineering research output (350-100,000)",
-   "pid": "p0263",
+   "pid": "p0260",
    "text": "18x Engineering research output (350-100,000)"
   },
   {
@@ -12789,7 +12797,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0264",
+   "pid": "p0261",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -12804,7 +12812,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Engineering research output (2,000-2,000,000)",
-   "pid": "p0265",
+   "pid": "p0262",
    "text": "96x Engineering research output (2,000-2,000,000)"
   },
   {
@@ -12819,7 +12827,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0266",
+   "pid": "p0263",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12834,7 +12842,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "96x Engineering research output (2,000-2,000,000)",
-   "pid": "p0267",
+   "pid": "p0264",
    "text": "96x Engineering research output (2,000-2,000,000)"
   },
   {
@@ -12849,7 +12857,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0268",
+   "pid": "p0265",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12864,7 +12872,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0269",
+   "pid": "p0266",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12879,7 +12887,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0270",
+   "pid": "p0267",
    "text": "18x Society research output (350-100,000)"
   },
   {
@@ -12894,7 +12902,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Alloys",
-   "pid": "p0271",
+   "pid": "p0268",
    "text": "-100 Alloys"
   },
   {
@@ -12909,7 +12917,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0272",
+   "pid": "p0269",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12924,7 +12932,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Alloys",
-   "pid": "p0273",
+   "pid": "p0270",
    "text": "-100 Alloys"
   },
   {
@@ -12939,7 +12947,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Unity output (1,000-1,000,000)",
-   "pid": "p0274",
+   "pid": "p0271",
    "text": "48x Unity output (1,000-1,000,000)"
   },
   {
@@ -12954,7 +12962,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Unity output (1,000-1,000,000)",
-   "pid": "p0275",
+   "pid": "p0272",
    "text": "48x Unity output (1,000-1,000,000)"
   },
   {
@@ -12969,7 +12977,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0276",
+   "pid": "p0273",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -12984,7 +12992,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0277",
+   "pid": "p0274",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -12999,7 +13007,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0278",
+   "pid": "p0275",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13014,7 +13022,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Engineering research",
-   "pid": "p0279",
+   "pid": "p0276",
    "text": "Engineering research"
   },
   {
@@ -13029,7 +13037,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases",
-   "pid": "p0280",
+   "pid": "p0277",
    "text": "Exotic Gases"
   },
   {
@@ -13044,7 +13052,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0281",
+   "pid": "p0278",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13059,7 +13067,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0282",
+   "pid": "p0279",
    "text": "Physics research"
   },
   {
@@ -13074,7 +13082,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0283",
+   "pid": "p0280",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13089,7 +13097,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0284",
+   "pid": "p0281",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13104,7 +13112,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0285",
+   "pid": "p0282",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -13119,7 +13127,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0286",
+   "pid": "p0283",
    "text": "Physics research"
   },
   {
@@ -13134,7 +13142,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Physics research output (250-100,000)",
-   "pid": "p0287",
+   "pid": "p0284",
    "text": "12x Physics research output (250-100,000)"
   },
   {
@@ -13149,7 +13157,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0288",
+   "pid": "p0285",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13164,7 +13172,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Society research output (350-100,000)",
-   "pid": "p0289",
+   "pid": "p0286",
    "text": "18x Society research output (350-100,000)"
   },
   {
@@ -13179,7 +13187,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0290",
+   "pid": "p0287",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13194,7 +13202,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Physics research output (500-1,000,000)",
-   "pid": "p0291",
+   "pid": "p0288",
    "text": "24x Physics research output (500-1,000,000)"
   },
   {
@@ -13209,7 +13217,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Physics research output (250-100,000)",
-   "pid": "p0292",
+   "pid": "p0289",
    "text": "12x Physics research output (250-100,000)"
   },
   {
@@ -13224,7 +13232,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "5 Minerals",
-   "pid": "p0293",
+   "pid": "p0290",
    "text": "5 Minerals"
   },
   {
@@ -13239,7 +13247,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Unity output — Homicidal or Barbaric Despoilers",
-   "pid": "p0294",
+   "pid": "p0291",
    "text": "24x Unity output — Homicidal or Barbaric Despoilers"
   },
   {
@@ -13254,7 +13262,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0295",
+   "pid": "p0292",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13269,7 +13277,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Society research output (250-100,000)",
-   "pid": "p0296",
+   "pid": "p0293",
    "text": "12x Society research output (250-100,000)"
   },
   {
@@ -13284,7 +13292,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "24x Unity output — Homicidal or Barbaric Despoilers",
-   "pid": "p0297",
+   "pid": "p0294",
    "text": "24x Unity output — Homicidal or Barbaric Despoilers"
   },
   {
@@ -13299,7 +13307,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0298",
+   "pid": "p0295",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13314,7 +13322,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Unity output (250-100,000)",
-   "pid": "p0299",
+   "pid": "p0296",
    "text": "12x Unity output (250-100,000)"
   },
   {
@@ -13329,7 +13337,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0300",
+   "pid": "p0297",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13344,7 +13352,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0301",
+   "pid": "p0298",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13359,7 +13367,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Society research output (250-100,000)",
-   "pid": "p0302",
+   "pid": "p0299",
    "text": "12x Society research output (250-100,000)"
   },
   {
@@ -13374,7 +13382,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0303",
+   "pid": "p0300",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13389,7 +13397,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0304",
+   "pid": "p0301",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13404,7 +13412,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases if Robotic/Lithoid/Toxoid, otherwise Society research",
-   "pid": "p0305",
+   "pid": "p0302",
    "text": "Exotic Gases if Robotic/Lithoid/Toxoid, otherwise Society research"
   },
   {
@@ -13419,7 +13427,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases",
-   "pid": "p0306",
+   "pid": "p0303",
    "text": "Exotic Gases"
   },
   {
@@ -13434,7 +13442,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0307",
+   "pid": "p0304",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13449,7 +13457,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Exotic Gases",
-   "pid": "p0308",
+   "pid": "p0305",
    "text": "Exotic Gases"
   },
   {
@@ -13464,7 +13472,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0309",
+   "pid": "p0306",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13479,7 +13487,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "5000 Minerals",
-   "pid": "p0310",
+   "pid": "p0307",
    "text": "5000 Minerals"
   },
   {
@@ -13494,7 +13502,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "1000 Exotic Gases",
-   "pid": "p0311",
+   "pid": "p0308",
    "text": "1000 Exotic Gases"
   },
   {
@@ -13509,7 +13517,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0312",
+   "pid": "p0309",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13524,7 +13532,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0313",
+   "pid": "p0310",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13539,7 +13547,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0314",
+   "pid": "p0311",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13554,7 +13562,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0315",
+   "pid": "p0312",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13569,7 +13577,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0316",
+   "pid": "p0313",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13584,7 +13592,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Society research",
-   "pid": "p0317",
+   "pid": "p0314",
    "text": "Society research"
   },
   {
@@ -13599,7 +13607,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0318",
+   "pid": "p0315",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13614,7 +13622,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0319",
+   "pid": "p0316",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13629,7 +13637,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0320",
+   "pid": "p0317",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13644,7 +13652,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Astral Threads",
-   "pid": "p0321",
+   "pid": "p0318",
    "text": "-100 Astral Threads"
   },
   {
@@ -13659,7 +13667,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0322",
+   "pid": "p0319",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -13674,7 +13682,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-100 Exotic Gases",
-   "pid": "p0323",
+   "pid": "p0320",
    "text": "-100 Exotic Gases"
   },
   {
@@ -13689,7 +13697,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0324",
+   "pid": "p0321",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13704,7 +13712,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0325",
+   "pid": "p0322",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -13719,7 +13727,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Minerals output (150-2,000)",
-   "pid": "p0326",
+   "pid": "p0323",
    "text": "12x Minerals output (150-2,000)"
   },
   {
@@ -13734,7 +13742,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Alloys output (150-2,000)",
-   "pid": "p0327",
+   "pid": "p0324",
    "text": "12x Alloys output (150-2,000)"
   },
   {
@@ -13749,7 +13757,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "12x Unity output (150-2,000)",
-   "pid": "p0328",
+   "pid": "p0325",
    "text": "12x Unity output (150-2,000)"
   },
   {
@@ -13764,7 +13772,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0329",
+   "pid": "p0326",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13779,7 +13787,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0330",
+   "pid": "p0327",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13794,7 +13802,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0331",
+   "pid": "p0328",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13809,7 +13817,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0332",
+   "pid": "p0329",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13824,7 +13832,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Physics research",
-   "pid": "p0333",
+   "pid": "p0330",
    "text": "Physics research"
   },
   {
@@ -13839,7 +13847,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Medium astral threads (90 / 100 / 110)",
-   "pid": "p0334",
+   "pid": "p0331",
    "text": "Medium astral threads (90 / 100 / 110)"
   },
   {
@@ -13854,7 +13862,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Rare Crystals",
-   "pid": "p0335",
+   "pid": "p0332",
    "text": "Rare Crystals"
   },
   {
@@ -13869,7 +13877,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Society research",
-   "pid": "p0336",
+   "pid": "p0333",
    "text": "Society research"
   },
   {
@@ -13884,7 +13892,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0337",
+   "pid": "p0334",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -13899,7 +13907,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "6x Exotic Gases output (100-1,000)",
-   "pid": "p0338",
+   "pid": "p0335",
    "text": "6x Exotic Gases output (100-1,000)"
   },
   {
@@ -13914,7 +13922,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0339",
+   "pid": "p0336",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13929,7 +13937,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0340",
+   "pid": "p0337",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13944,7 +13952,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0341",
+   "pid": "p0338",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13959,7 +13967,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-25 Alloys",
-   "pid": "p0342",
+   "pid": "p0339",
    "text": "-25 Alloys"
   },
   {
@@ -13974,7 +13982,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0343",
+   "pid": "p0340",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -13989,7 +13997,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0344",
+   "pid": "p0341",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -14004,7 +14012,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0345",
+   "pid": "p0342",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -14019,7 +14027,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0346",
+   "pid": "p0343",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -14034,7 +14042,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Minerals",
-   "pid": "p0347",
+   "pid": "p0344",
    "text": "-50 Minerals"
   },
   {
@@ -14049,7 +14057,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0348",
+   "pid": "p0345",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -14064,7 +14072,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Small astral threads (40 / 50 / 60)",
-   "pid": "p0349",
+   "pid": "p0346",
    "text": "Small astral threads (40 / 50 / 60)"
   },
   {
@@ -14079,7 +14087,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-25 Alloys",
-   "pid": "p0350",
+   "pid": "p0347",
    "text": "-25 Alloys"
   },
   {
@@ -14094,7 +14102,7 @@
    "polarity": "cost",
    "source": "choice",
    "raw": "-50 Minerals",
-   "pid": "p0351",
+   "pid": "p0348",
    "text": "-50 Minerals"
   },
   {
@@ -14109,7 +14117,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Exotic Gases output (250-5,000)",
-   "pid": "p0352",
+   "pid": "p0349",
    "text": "18x Exotic Gases output (250-5,000)"
   },
   {
@@ -14124,7 +14132,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Energy output (250-5,000)",
-   "pid": "p0353",
+   "pid": "p0350",
    "text": "18x Energy output (250-5,000)"
   },
   {
@@ -14139,7 +14147,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000) — Gestalt",
-   "pid": "p0354",
+   "pid": "p0351",
    "text": "18x Unity output (250-1,000,000) — Gestalt"
   },
   {
@@ -14154,7 +14162,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "Large astral threads (140 / 150 / 160)",
-   "pid": "p0355",
+   "pid": "p0352",
    "text": "Large astral threads (140 / 150 / 160)"
   },
   {
@@ -14169,7 +14177,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "48x Food output (700-30,000)",
-   "pid": "p0356",
+   "pid": "p0353",
    "text": "48x Food output (700-30,000)"
   },
   {
@@ -14184,7 +14192,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "18x Unity output (250-1,000,000)",
-   "pid": "p0357",
+   "pid": "p0354",
    "text": "18x Unity output (250-1,000,000)"
   },
   {
@@ -14199,7 +14207,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "100 Astral Threads",
-   "pid": "p0358",
+   "pid": "p0355",
    "text": "100 Astral Threads"
   },
   {
@@ -14214,7 +14222,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "100 Astral Threads",
-   "pid": "p0359",
+   "pid": "p0356",
    "text": "100 Astral Threads"
   },
   {
@@ -14229,7 +14237,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "500 Exotic Gases",
-   "pid": "p0360",
+   "pid": "p0357",
    "text": "500 Exotic Gases"
   },
   {
@@ -14244,7 +14252,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "500 Rare Crystals",
-   "pid": "p0361",
+   "pid": "p0358",
    "text": "500 Rare Crystals"
   },
   {
@@ -14259,7 +14267,7 @@
    "polarity": "grant",
    "source": "chapter",
    "raw": "1000 Astral Threads (conditional: if you defeat the Formless)",
-   "pid": "p0362",
+   "pid": "p0359",
    "text": "1000 Astral Threads (conditional: if you defeat the Formless)"
   }
  ],

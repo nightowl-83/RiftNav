@@ -803,8 +803,20 @@ These rules override any smaller or older figure elsewhere in this document.
 **Keyboard (P4).**
 - **Real buttons:** the home Astral Rifts and Dig Sites tiles, the Rifts / Dig sites toggle (`aria-pressed`), the reward filter trigger (`aria-expanded`) and its options, Prev / Next / claim, Retarget, Abort and Monitor.
 - **`role="button"` with Enter / Space (`onActivate`):** reward cards on a rift, event-log rows, the event log's claim row, search results and the monitoring tabs.
-- **Focus style:** every focusable control shows `outline: 2px solid #8ecbff; outline-offset: 2px` on `:focus-visible`. The folder card keeps its own focus treatment (the 2px cyan outline stroke), and nothing else uses `outline: none` without a replacement.
+- **Focus style:** every focusable control shows `outline: 2px solid #8ecbff; outline-offset: 2px` on `:focus-visible`. The folder card keeps its own focus treatment (the 2px cyan outline stroke), and nothing else uses `outline: none` without a replacement. The one exception is screen headings, which take focus programmatically but aren't controls (see below).
 - **Verified:** home → rift → reward → every step → claim, using only Tab, Enter and Space.
+
+**Focus after a screen change (follow-up).**
+- **Going deeper:** opening a rift, dig site or reward moves focus to the new screen's heading (`.rf-sh`, `tabindex="-1"`), so screen readers announce it and Tab continues from there instead of the top of the page.
+- **Going back:** Abort, Retarget and All rifts / All dig sites return focus to the card that opened the screen. Cards are matched by `aria-label`, falling back to their text.
+- **Controls that stay on screen keep focus:**
+  - the Rifts / Dig sites toggle;
+  - monitoring tabs;
+  - Next / Back while stepping.
+- **Final card:** reaching it moves focus to the reward-name heading, because the Next button becomes "Return to rift index".
+- **Focus loss:** if the control you used disappears, focus goes to the heading.
+- **Outline:** headings show no outline. They aren't controls.
+- **Verified:** at all four review sizes, with real Enter key presses and with mouse clicks.
 
 **Overlays (P5).** Surfaces that sit over other content are near-opaque; cards keep their glass.
 

@@ -714,6 +714,12 @@
    "entity": "Ruined Planet",
    "was": "Chapter 5 energy: +5% Ship Build Speed",
    "text": "Chapter 5 energy: +5% Ship Build Speed"
+  },
+  "rift:ruined-planet#7#e26ca800fe": {
+   "short": "Astral threads offering bonus",
+   "entity": "Ruined Planet",
+   "was": "Chapter 5 astral threads",
+   "text": "Chapter 5 astral threads: +5% Sublight Speed"
   }
  }
 }

@@ -18,6 +18,8 @@ RESEARCH  = r"physics|society|engineering|unity"
 RULES = [
  # -- priority: explicit structural markers, so a substring elsewhere in the line cannot win
  ("recurring",   r"^recurring every|\brepeats every\b", None),
+ # offering bonuses: "Black Curtain + astral threads: +25% …" names what was offered, not what you get
+ ("modifier",    r"^(?:[\w' -]+ \+ |chapter \d+ )(?:astral threads|resources|alloys|energy|minerals)\s*:", None),
  # -- archaeology forms: reward CODES appear as prefixes (art1 / mat2 / rsh3 / uni1 / inf2)
  #    and the bulk currency is minor artifacts, not astral threads
  ("artifacts",   r"^art\d\b|\b\d+ minor artifacts\b|^minor artifacts\b", None),

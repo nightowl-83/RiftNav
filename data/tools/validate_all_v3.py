@@ -5,6 +5,7 @@ from paths import DATA, UI
 import relics as relic_catalogue
 from reward_text import CODE_RX
 L=lambda f: json.load(open(f"{DATA}/{f}"))
+OFFERING=re.compile(r"^(?:[\w' -]+ \+ |chapter \d+ )(?:astral threads|resources|alloys|energy|minerals)\s*:\s*[+-]\d", re.I)
 fails=[]
 def check(label, cond, detail=""):
     print(("  PASS  " if cond else "  FAIL  ")+label+(f"   {detail}" if detail and not cond else ""))
@@ -43,6 +44,9 @@ for d,n in ((r3,"rifts"),(a3,"sites"),(m3,"merged")):
     check(f"{n}: payout types are declared",
           {p["type"] for p in d["payouts"]} <= set(d["payout_types"]),
           str({p["type"] for p in d["payouts"]} - set(d["payout_types"])))
+    # "Black Curtain + astral threads: +25% …" names what was offered; the effect is a modifier
+    offer=[p["raw"] for p in d["payouts"] if OFFERING.search(p["raw"])]
+    check(f"{n}: no offering bonus is typed as a payout", not offer, str(offer[:3]))
 
 print("\n== 3. Ids and back-references ==")
 for d,n in ((r3,"rifts"),(a3,"sites"),(m3,"merged")):

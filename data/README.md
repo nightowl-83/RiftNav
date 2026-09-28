@@ -58,9 +58,9 @@ The page is tagged for game version **4.5**, newer than the 3.14 the rest of the
 
 Four arrays, one purpose each:
 
-- **`rewards[]`** — the ~341 things a player actually chases. Two levels: `group` (6, for chip
+- **`rewards[]`** — the ~343 things a player actually chases. Two levels: `group` (6, for chip
   rows) and `type` (20, for icons and detail labels). Render whichever depth a view needs.
-- **`payouts[]`** — 815 bulk currency lines (astral threads, minor artifacts, research,
+- **`payouts[]`** — 812 bulk currency lines (astral threads, minor artifacts, research,
   resources). Deliberately out of the reward index; this is what stopped the finder being
   mostly astral threads.
 - **`chains[]`** — 30 graph edges: which dig reveals which next dig. Not rewards to your
@@ -98,7 +98,7 @@ figure is wrong at every game stage but one.
 
 ```
 python3 data/tools/build_all_v3.py     # all four JSON files, then the two UI .js files
-python3 data/tools/validate_all_v3.py  # 87 checks
+python3 data/tools/validate_all_v3.py  # 90 checks
 ```
 
 Inputs, in the order the build uses them:
@@ -150,7 +150,10 @@ least two options, and every line is either guaranteed or in exactly one group.
 `unclassified` — currently **zero across both datasets**. Keep it there: that is what makes
 coverage provable instead of asserted. Add new rules to the **priority block at the top**, not
 the bottom — a substring elsewhere in a line will otherwise win (this is how "100 Astral
-Threads" inside a *cost* clause once got typed as a payout).
+Threads" inside a *cost* clause once got typed as a payout). The same goes for offering
+bonuses: "Black Curtain + astral threads: +25% Astral Rift Exploration Speed" names what was
+offered, and the effect is a modifier. A priority rule catches the "X + currency: effect" form, and
+the validator fails if one is ever typed as a payout.
 
 ## Provenance
 
