@@ -6,6 +6,37 @@ supersedes it and say so.
 
 ---
 
+## 2026-09-27 — Mobile navigation: one switch, a bottom dock, drawers
+
+**Decided:** Below 1024px wide or on any touch screen, the Rift Nav uses the mobile navigation: a bottom
+dock, a full-screen search and one bottom-drawer component. A single `matchMedia('(max-width: 1023px),
+(pointer: coarse)')` flag (`state.mob`, root class `.is-mob`) drives both the markup and the styles.
+Desktop-only blocks are marked `.rf-d`. The desktop layout is unchanged, except for one rule: every
+dropdown or menu closes on an outside click, Escape, scrolling and a screen change, at every size. The
+filter drawer marks a choice and applies it with "Show N"; it doesn't apply on tap.
+
+**Why:** Mike's iPhone test showed the controls piling up at the top, the filter stranded over the list,
+and content starting two-thirds of the way down the screen. A dock puts frequent actions in the thumb
+zone. One flag keeps markup and CSS from disagreeing about which layout is showing. "Show N" answers
+"how many will I see?" before committing.
+
+**What would overturn it:** real-device testing showing the dock clashing with Safari's toolbar, or
+Mike preferring filter-on-tap. The spec is in `design_handoff_rift_finder/README.md` ("Mobile navigation").
+
+---
+
+## 2026-09-27 — Never block zoom; 16px fields instead
+
+**Decided:** To stop iOS zooming into a focused field, every `input`, `select` and `textarea` is at
+least 16px on mobile. The viewport meta never gets `maximum-scale` or `user-scalable=no`.
+
+**Why:** Blocking zoom also takes pinch-zoom away from people who need it. 16px is the size at which
+Safari stops auto-zooming.
+
+**What would overturn it:** nothing short of a change in Safari's behaviour.
+
+---
+
 ## 2026-09-27 — UI work happens in the repo; Claude Design is a snapshot
 
 **Decided:** The Rift Nav UI is edited in `design_handoff_rift_finder/` by Claude Code. The Claude

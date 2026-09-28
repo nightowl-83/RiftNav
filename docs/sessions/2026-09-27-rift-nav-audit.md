@@ -56,3 +56,75 @@ are hand-reviewed overrides.
 - Rift Nav Audit: https://claude.ai/artifact/FvjddSmQviCrPB8VAvqVgY
 - Folder Card Fix: https://claude.ai/artifact/QgUXDCxutvEKSuoWZMXNFU
 - Figma folder card: https://www.figma.com/design/1MdYxgxTFL90Cp1HXiBwAz/Rift-Helper-UI?node-id=82-17
+
+---
+
+# Continuation — mobile navigation rework (from Mike's iPhone test)
+
+**Date:** 2026-09-27 (late; commit timestamps read 09-28 UTC)
+**Surface:** Claude Code (desktop app), editing `design_handoff_rift_finder/Rift Finder Holo.dc.html`
+**Status at close:** settled and pushed (`969c771`). One behaviour, the keyboard opening on tap, still needs a real iPhone.
+
+## What we set out to do
+
+Implement the "Rift Nav Mobile Dock" proposal (see `docs/ARTIFACTS.md`): move search, filter, monitoring
+and the reader's controls out of the crowded top of the screen into a bottom dock and bottom drawers, stop
+iOS zooming into the search field, and get rift/dig detail content up the screen.
+
+## What actually changed
+
+Everything is in `969c771` ("Mobile: bottom dock, full-screen search, drawers, compact detail headers").
+It touched only the screen file and `design_handoff_rift_finder/README.md`, which has a new "Mobile
+navigation" section with the full spec.
+
+- **One switch:** `matchMedia('(max-width: 1023px), (pointer: coarse)')` sets `state.mob`, and the root gets
+  `.is-mob`. Desktop-only blocks carry `.rf-d`, which is hidden under `.is-mob`.
+- **Bottom dock:** Filter · Search · Monitoring on browse; Search · Monitoring on detail screens; Log ·
+  Prev · Next in the reader. It sits 16px above the safe area, and the viewport meta gained
+  `viewport-fit=cover`. It shrinks to icons while scrolling down. The footer and compact bar are hidden on
+  mobile.
+- **Full-screen search:** a 16px field, scope chips (All / Rifts / Dig sites / Rewards / Relics) and results
+  grouped by type. It shares `searchIndex()` with the desktop dropdown.
+- **One bottom-drawer component** for the filter, monitoring, event log, mission parameters and target
+  details. It has dialog semantics, keeps focus inside, returns focus to the opener, and closes on scrim,
+  swipe, Escape, selection and screen change.
+- **Menus close everywhere, desktop included:** on an outside click, Escape, scrolling and a screen change.
+  The compact bar's menus now open under its own triggers.
+- **Detail headers:** the back link moved into the top bar, a compact MONITOR toggle sits beside the title,
+  and requirements take one expandable `REQUIRES …` line. The Microverse's first reward moved from about
+  65% to 31% of the screen height at 390×844.
+- **Reader:** a mission strip above the card; Abort and Mission parameters moved into the ⋯ menu; the target
+  card, radar and log column are hidden on mobile.
+- **Fixed on the way:** the phone browse title was squeezed beside the toggle (it now stacks at 767px and
+  below; this also resolves open item N6 above), and the toast wrapped onto three lines.
+- **Not changed:** the data (`data/*.json`, `rift-data.js`, `dig-data.js`), so there was no rebuild and no
+  validator run this part of the session.
+
+**Verified** in headless Chrome over CDP, with real key, mouse and touch input, at 390×844 and 820×1180
+(touch) and 1440×900 and 1180×820 (desktop regression walk: no horizontal scroll, nothing off screen, no
+undersized text). The scratch scripts were not committed.
+
+## Decisions made
+
+Two are in `docs/DECISIONS.md`: the mobile navigation model, and "never block zoom; 16px fields instead".
+
+## What's still open
+
+1. **iPhone keyboard:** on a real iPhone in Safari, check that tapping Search raises the keyboard
+   immediately. The code focuses the field inside the tap, which is what iOS needs, but headless Chrome
+   can't prove it.
+2. **Abort:** the spec mentioned an "existing confirm behavior", but there is none. Abort still goes straight
+   back to the rift list. Decide whether to add a confirmation.
+3. **Filter drawer model:** tapping a type marks it and "Show N" applies it. This was an interpretation;
+   the spec also listed "a selection" as a close trigger. Confirm it on the phone.
+4. **N5** from the list above (toggle accessible names) wasn't re-checked in this pass.
+
+## Next three things
+
+1. Test the build on Mike's iPhone in Safari: dock, search keyboard, drawer swipe, home-indicator clearance.
+2. Decide on an Abort confirmation.
+3. Resume the Holo Deck background direction (`docs/sessions/2026-09-06-holo-deck.md` §7).
+
+## Links
+
+- Rift Nav Mobile Dock (the spec and sketches): https://claude.ai/artifact/9kSf28hfwDHdugvtk5B4tM
