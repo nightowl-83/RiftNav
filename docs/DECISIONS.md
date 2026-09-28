@@ -6,6 +6,35 @@ supersedes it and say so.
 
 ---
 
+## 2026-09-27 — Test site: Cloudflare Pages behind one shared password
+
+**Decided:** The build is shared with testers from Cloudflare Pages, deployed from this repo with
+`design_handoff_rift_finder` as the output directory, and gated by `functions/_middleware.js`
+(basic auth against the `SITE_PASSWORD` secret, `noindex`, `no-store`). It is not shared as a claude.ai
+artifact.
+
+**Why:** Pages deploys on every push with no build step, and one secret is easy to hand out and easy to
+revoke. The artifact route can't work: the dc runtime needs `unsafe-eval` for Babel, and the artifact
+CSP forbids it.
+
+**What would overturn it:** precompiling the JSX so the page runs without `eval` (which would make an
+artifact or any static host viable), or needing per-person accounts.
+
+---
+
+## 2026-09-27 — Bug reports come in through the Bug Drop
+
+**Decided:** Phone bug reports and photos go through the "Rift Nav Bug Drop" artifact (QR code → form →
+its own database and asset store), not typed notes in chat. Claude reads the `reports` collection, marks
+each one `seen` and writes a `reply` once it's acted on.
+
+**Why:** Typing long notes on a phone is the friction Mike wanted gone. The photos stay attached to the
+report, and the collection works as a lightweight queue across sessions and machines.
+
+**What would overturn it:** a real issue tracker (e.g. GitHub Issues) becoming the place the group files bugs.
+
+---
+
 ## 2026-09-27 — Mobile navigation: one switch, a bottom dock, drawers
 
 **Decided:** Below 1024px wide or on any touch screen, the Rift Nav uses the mobile navigation: a bottom

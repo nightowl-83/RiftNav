@@ -128,3 +128,63 @@ Two are in `docs/DECISIONS.md`: the mobile navigation model, and "never block zo
 ## Links
 
 - Rift Nav Mobile Dock (the spec and sketches): https://claude.ai/artifact/9kSf28hfwDHdugvtk5B4tM
+
+---
+
+# Continuation — test hosting and bug intake (Claude, cloud session)
+
+**Date:** 2026-09-27
+**Surface:** Claude (cloud session linked to the Mac), alongside the Claude Code work above
+**Status at close:** the password gate is pushed (`6d3250b`). The Bug Drop is live. The Cloudflare setup itself is Mike's to do.
+
+## What we set out to do
+
+Let Mike put the build in front of the people he plays with, behind a password, and give him a way to
+send bug photos from his phone straight into this project.
+
+## What actually changed
+
+- **Phone Test artifact (dead end):** we tried publishing the UI as a claude.ai artifact so it could be
+  opened on a phone. It loads blank: the dc runtime (`support.js`) compiles JSX with Babel through
+  `new Function`, which the artifact CSP blocks (`unsafe-eval`). This was confirmed locally. Don't retry
+  this route without first precompiling the JSX.
+- **Password gate (`6d3250b`):** `functions/_middleware.js` is Cloudflare Pages basic auth. It accepts any
+  username plus the shared password from the `SITE_PASSWORD` secret, compared as SHA-256 digests in constant
+  time. It sends `/` to `/Rift%20Finder%20Holo.dc.html` and sets `Cache-Control: private, no-store` and
+  `X-Robots-Tag: noindex`. On the Pages project: connect the GitHub repo, no build command, output
+  directory `design_handoff_rift_finder`, and the encrypted secret `SITE_PASSWORD`. To revoke everyone,
+  change the secret and redeploy.
+- **Bug Drop artifact:** a phone-friendly form, opened from a QR code, that stores reports in its own
+  database (`reports` collection: `createdAt, kind, screen, note, images[], device, browser, viewport,
+  status, reply`) with photos in its asset store. Claude reads it with ArtifactData `list` on `reports`,
+  then fetches each image with Artifact `read` (`url` + `path` = asset id, **one call per id**; `paths`
+  fails for assets). The first report (`pd16ywlh5w2zi7r04e2g`) was Mike's iPhone notes. It became the
+  Mobile Dock proposal and is marked `seen` with a reply.
+
+## Decisions made
+
+Two new entries in `docs/DECISIONS.md`: the test site is Cloudflare Pages behind a shared password, and
+bug reports come in through the Bug Drop.
+
+## What's still open
+
+1. **Cloudflare setup:** Mike creates the Pages project and sets `SITE_PASSWORD`. Until then there's no
+   shared URL.
+2. **Mobile polish from the verification pass:** "STEP 1 OF 3" shows in both the mission strip and the
+   step card. On phones the reward cards are about 200px tall and mostly empty.
+3. **CLASSIC link:** it points to `Rift Finder HUD.dc.html`, which isn't in `design_handoff_rift_finder/`
+   (it 404s on the hosted site).
+4. **Figma:** it still lacks the folder card hover state and the header panel.
+5. **Phone Test artifact:** it's dead and can be deleted from claude.ai if Mike wants.
+
+## Next three things
+
+1. Stand up the Cloudflare Pages site and share the URL and password with the group.
+2. Test on the iPhone. File anything odd through the Bug Drop, then have Claude read the reports.
+3. Fix the duplicate step count and the tall phone reward cards.
+
+## Links
+
+- Rift Nav Bug Drop: https://claude.ai/artifact/NBFJNT3LBjFFpR14nfkZV2
+- Rift Nav Phone Test (broken, CSP): https://claude.ai/artifact/Syk8scgbf83q5fWCQTznth
+

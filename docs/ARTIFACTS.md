@@ -38,6 +38,8 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 | Folder Card Fix | https://claude.ai/artifact/QgUXDCxutvEKSuoWZMXNFU | Notched split folder card: before/after, overlay against Figma 82:17, and the hover spec | 2026-09-26 |
 | Rift Nav Audit | https://claude.ai/artifact/FvjddSmQviCrPB8VAvqVgY | UI/UX audit of the Notched split build at 5 screen sizes, dig site and relic deep dive, and two re-audits showing every finding fixed | 2026-09-27 |
 | Rift Nav Mobile Dock | https://claude.ai/artifact/9kSf28hfwDHdugvtk5B4tM | Mobile navigation proposal from the iPhone test: bottom dock, full-screen search, drawers, compact detail headers, step reader strip. Implemented in `969c771` | 2026-09-27 |
+| Rift Nav Bug Drop | https://claude.ai/artifact/NBFJNT3LBjFFpR14nfkZV2 | Phone bug intake (QR code): reports in the `reports` db collection, photos in the asset store. Read with ArtifactData; fetch images one asset id at a time | 2026-09-27 |
+| Rift Nav Phone Test | https://claude.ai/artifact/Syk8scgbf83q5fWCQTznth | **Broken; don't use.** Loads blank because the artifact CSP blocks the `unsafe-eval` that the dc runtime needs. Test through the Cloudflare Pages site instead | 2026-09-27 |
 
 ## Research outputs
 
