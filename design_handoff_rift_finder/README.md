@@ -969,16 +969,84 @@ Desktop layout is set by inline styles. The responsive rules live in one block o
 | `< 1090px` | **Step reader stacks** (`.rf-read`). The Event Log and Target/Mission columns go `position: static`, so nothing stays pinned. Order: step card and Prev/Next, then event log, then target information and mission parameters (radar last). The event log's inner scroll is removed so the page scrolls as one. The breakpoint is where the three columns (246 + 470 + 262px plus gaps and padding) stop fitting side by side. Above it the desktop layout is unchanged. |
 | `< 1024px` | **Notched split browse column** (`.rf-home-notch`) goes full width: `width: 100%; max-width: 960px` (cards and header stay within 320–920px), centred, 20px side padding. The top bar's stats are hidden. |
 | `< 768px` | **Top bar:** 16px padding, near-opaque background. Stats and `GUIDE ONLINE` are hidden. Camera and Classic/Holo move into one ☰ menu button at the right (`.rf-top-menu`, popover `.rf-nav-pop`). `RIFT NAV` never wraps. |
-| `< 768px` | **Footer:** one short line, `RIFT NAV // HOLO v5.0`, on the same background as the top bar. The status text is hidden. `.rf-scroll` gets `padding-bottom: 34px` (the footer height). |
-| `< 768px` | **Compact bar:** back button, search (takes the remaining width, `min-width: 120px`) and the reward filter collapsed to a funnel icon with its count. The Rifts/Dig sites toggle and the Monitoring label are dropped from the bar; the toggle is still in the header. |
+| `< 768px` | **Browse header** stacks the title above the Rifts/Dig sites toggle (`.rf-titlerow`), so the title keeps the full width. |
 | `< 768px` | Detail pages (`.rf-main`) use 16px side padding. Grid minimums use `minmax(min(Npx, 100%), 1fr)`, so a single column can shrink below its desktop minimum. |
 | `< 768px` | Corner HUDs hidden. |
-| `< 720px` | `narrow = true`. Monitoring strip → dropdown. Search field drops its `min-width: 160px`. |
-| All sizes | **Footer** stays on one line; a long target name is truncated with an ellipsis rather than wrapped. |
-| All sizes | **Compact bar** only on the browse lists (`browse` set, no rift or dig site open), never on the rift, reader or dig detail screens. |
+| `< 1024px` or touch | **Mobile navigation** (below). The footer, compact scroll bar, monitoring strip, header control row, desktop back/monitor row, access-requirements panel and the reader's side columns are hidden; the dock, drawers, full-screen search and compact detail headers replace them. |
+| `≥ 1024px`, no touch | **Footer** stays on one line; a long target name is truncated with an ellipsis rather than wrapped. |
+| `≥ 1024px`, no touch | **Compact bar** only on the browse lists (`browse` set, no rift or dig site open), never on the rift, reader or dig detail screens. Its filter and monitoring menus open under the compact bar's own triggers. |
 | Control row wraps to a second line | `monTight = true`, monitoring dropdown hides its text label and keeps only the count. Measured with a `ResizeObserver` checking whether children share an `offsetTop`. Requires ~90px of recovered width before reverting (hysteresis). |
 | Scroll > 130px / < 90px | Compact bar in / out. |
 | `pointer: coarse` | **Touch targets** are at least 44px tall: the Rifts/Dig sites toggle (options side by side), Classic/Holo, Camera, the menu button, back buttons, filter buttons, the compact bar controls and the + monitor buttons. |
+
+## Mobile navigation
+
+Applies below 1024px wide or on any touch screen. `componentDidMount` watches `matchMedia('(max-width: 1023px), (pointer: coarse)')` and sets `state.mob`. Markup reads `mob`, and the root gets `.is-mob`, which scopes every mobile style. Desktop-only blocks carry `.rf-d` (hidden under `.is-mob`). Verified at 390×844 and 820×1180 (touch), plus 1440×900 and 1180×820 for desktop regressions.
+
+**Bottom dock** (`.rf-dock`)
+
+- **Position:** a floating pill centred 16px above `env(safe-area-inset-bottom)`, `z-index: 930`. The viewport meta has `viewport-fit=cover` so the inset is real; zoom stays allowed.
+- **Glass:** `rgba(10,24,40,.72)`, `backdrop-filter: blur(24px) saturate(150%)`, 1px `rgba(176,214,255,.28)` border.
+- **Buttons:** secondary buttons are icon-only 44×44 circles with an amber count badge; the name and count are in the `aria-label` ("Filter, 1 active", "Monitoring, 2 items"). Only the primary button has a text label, 48px tall.
+- **Width:** 219px on browse with all three buttons.
+- **Contents by screen:**
+
+| Screen | Dock |
+|---|---|
+| Galactic index | Search |
+| Browse rifts / dig sites | Filter (badge when a type is chosen) · **Search** · Monitoring (count; hidden at 0) |
+| Rift and dig detail | **Search** · Monitoring |
+| Step reader | Log (`LOG 2/4`) · Prev (disabled on step 1) · **Next step** (amber; `◆ CLAIM` on the last step, `RIFT INDEX` after it) |
+
+- **Shrinking on scroll:** scrolling down more than 4px (past 24px) adds `.is-mini`, which hides the primary label and leaves a 48px circle. Scrolling up, or 450ms without scrolling, expands it again. Under reduced motion the label just switches, with no animation.
+- **Page clearance:** `.rf-scroll` gets `padding-bottom: calc(84px + env(safe-area-inset-bottom))`, so the last card scrolls clear of the dock (checked: last card bottom 748, dock top 768 at 390×844). The footer is hidden. The toast moves to 92px above the bottom.
+
+**Full-screen search** (`.rf-srch`)
+
+- **Opening:** the Search button opens a full-screen overlay (`role="dialog"`, `aria-modal`). It holds a 16px input, Cancel, scope chips (All · Rifts · Dig sites · Rewards · Relics) and results grouped by type with the existing badges.
+- **Relics group:** relic rewards from rifts and dig sites get their own group, with an amber badge.
+- **Always mounted:** the overlay stays mounted on mobile, hidden (`opacity: 0; pointer-events: none; aria-hidden`, controls `tabindex="-1"`). That way the tap can focus the field directly, and iOS only raises the keyboard for a focus made inside the tap.
+- **Separate query:** the overlay keeps its own query (`state.sq`), so it never filters the list behind it.
+- **Cancel or Escape:** restores the screen, the scroll position and focus on the Search button.
+- **Picking a result:** navigates and closes the overlay, and focus moves to the new screen's heading.
+- **Shared index:** `searchIndex(q, opts)` backs both the overlay and the desktop index dropdown. The desktop results are unchanged.
+
+**No iOS zoom:** under `.is-mob` every `input`, `select` and `textarea` is 16px with `letter-spacing: .04em`; placeholders keep the uppercase mono look. This covers the search field and the camera preset name. There is no `maximum-scale` and no `user-scalable=no`.
+
+**Bottom drawer** (`.rf-sheet` over `.rf-scrim`): one component for the reward-type filter, monitoring, the event log, mission parameters and the reader's target details.
+
+- **Look:** slides up (`rfSheetIn`, .28s), max-height 75vh, scrolls inside, with a grabber and a title. `backdrop-filter: blur(40px) saturate(170%)`, a `rgba(24,50,78,.58)` → `rgba(8,18,32,.78)` gradient and a 1px `rgba(176,214,255,.3)` top border, over a `rgba(2,6,12,.5)` scrim.
+- **Accessibility:** `role="dialog"`, `aria-modal`, `aria-labelledby` the title. The sheet takes focus when it opens, Tab and Shift+Tab stay inside, and focus returns to the button that opened it. The opener is taken from the tap event, because iOS Safari doesn't focus tapped buttons; a menu item that has closed falls back to the ⋯ button.
+- **Closes on:** scrim tap, a swipe down of more than 80px (from the grabber, or the list when it's scrolled to the top), Escape, a selection, and any screen change.
+- **Filter drawer:** choosing a type only marks it. **✕ Clear** resets the choice to all, **Cancel** keeps the current filter, and **Show N sites / rifts** applies it; N is the count for the marked type. On mobile the browse subtitle shows the active filter (`· FILTER: RELICS`).
+- **Monitoring drawer:** each item has a go row and a ✕ remove button. Picking an item navigates.
+- **Event log drawer:** one row per step plus the claim row. Picking a row jumps there.
+
+**Menus close everywhere, desktop included:** the reward-type menu, the monitoring menu and the ☰/⋯ menu (menus `.rf-pop`, triggers `.rf-pop-trig`) close on:
+
+- a click outside;
+- Escape, which returns focus to the trigger;
+- scrolling the main scroll container more than 60px from where the menu opened (a small scroll, such as focus bringing a menu item into view, is ignored);
+- any screen change.
+
+Opening one menu closes the others. In the compact bar, the menus now open under the compact bar's own triggers instead of the header row that has scrolled away.
+
+**Rift and dig detail headers**
+
+- **Back link:** `‹ ALL RIFTS` / `‹ ALL DIG SITES` replaces the logo in the top bar. In the reader it's `‹ {RIFT NAME}`, which goes back to the reward list.
+- **Monitor toggle:** Monitor situation becomes a compact toggle beside the title, `✚ MONITOR` / `⦿ MONITORING` (`aria-pressed`).
+- **Monitoring row:** the monitoring dropdown row above the page is gone; monitoring is in the dock.
+- **Requirements:** Access requirements collapse to one line, `REQUIRES …` (`.rf-req1`), with restrictions and notes appended. Tapping expands it, but only when the line is truncated.
+- **Spacing:** top padding goes to 16px, and the title uses `clamp(26px, 7.4vw, 40px)`.
+- **Result:** on The Microverse the first reward card starts at 31% of the screen height at 390×844 (it was about 65%), and at 22% at 820×1180.
+
+**Step reader**
+
+- **Mission strip:** `.rf-mstrip` sits above the step card. One line holds `STEP N OF M`, the target's short name and a `RETARGET` text link, with the progress bar under it. The target name opens a **Target** drawer with its effect and relic card, which replaces the removed target card.
+- **Dock:** Prev and Next move into the dock.
+- **⋯ menu:** holds Search, Mission parameters (opens as a drawer) and `✕ ABORT RIFT` in red. Abort behaves as it always has: it goes straight back to the rift list, with no confirmation step, as in the current build.
+- **Event log:** opens as a drawer from the dock's Log button.
+- **Removed on mobile:** the event log column, the target card, the radar and the mission-parameters card.
 
 ---
 
