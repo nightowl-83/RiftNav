@@ -31,13 +31,14 @@ The prototype uses a small custom template runtime (`support.js`). Ignore it —
 
 ## Prop: `layout`
 
-Type: `'Grid' | 'Split column' | 'Notched split'`, default `'Grid'`.
+Type: `'Grid' | 'Split column' | 'Notched split' | 'Split tabs'`. The default is `'Notched split'` on `main` and `'Split tabs'` on the `split-tabs` branch.
 
-Controls the home/browse screen only (rift detail, dig detail, and the step-by-step reader are identical across all three). Derived booleans used throughout:
+The first three control the home/browse screen only; rift detail, dig detail and the step-by-step reader are identical across them. Split tabs also changes what happens when something is opened (see [Split tabs](#split-tabs)). Derived booleans used throughout:
 
 ```
-split = layout === 'Split column' || layout === 'Notched split'
-notch = layout === 'Notched split'
+split      = layout is 'Split column', 'Notched split' or 'Split tabs'
+notch      = layout is 'Notched split' or 'Split tabs'
+tabsLayout = layout === 'Split tabs' && !state.mob   // phones and touch screens keep the dock
 ```
 
 ### Grid (default)
@@ -83,6 +84,75 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 | Card background/border | **none** on the card element itself. The shape comes from layers underneath plus one SVG outline (see below) |
 | Corner brackets | **none** on the notched card (Grid and Split column keep them) |
 | Header panel | Same frame as the card (no hover, no + column). Padding `44px 24px 22px`, height from content, `width: 100%; min-width: 320px; max-width: 920px` |
+
+### Split tabs
+
+Desktop only. On phones and touch screens (`state.mob`) `tabsLayout` is false, and the app behaves exactly as Notched split with the mobile dock. Based on the "Test build" board of the Rift Nav — Split Browse Prototypes canvas.
+
+**Browsing** (nothing open) looks and works exactly like Notched split: the same header, search, filter, cards and + buttons. Opening a rift or dig site no longer replaces the page. The browse column collapses into a **rail** on the left, and the detail opens on the right inside a **tabbed panel**.
+
+**Tabs** (`state.tabs: [{type: 'rift'|'dig', name}]`, `state.activeTab` = `type + ':' + name`)
+
+- **Limit:** at most 5 tabs. Opening something that's already open just brings its tab forward. A 6th closes the oldest tab that isn't active.
+- **Each tab keeps its place:** target reward, reader step and open log rows, in `state.progress`. `switchTo(type, name)` saves the current place and restores the new one. The monitoring tabs use the same helper, so both behave the same.
+- **Tab adding:** whatever sets `rift` or `dig` gets a tab, via `syncTabs()` in `componentDidUpdate`.
+- **Tab shape:** a folder tab over the panel, max 250px, holding the 26px code tile, the name (ellipsis), an amber dot when a target reward is set, and a close button.
+- **Active tab:** a 2px amber top edge, and it merges into the panel (the panel's top-left corner is square).
+- **Right of the tabs:** `{n} / 5 OPEN` and a ghost `CLOSE ALL`.
+- **Closing:** closing the active tab opens its neighbour (the tab that takes its place, else the one before it). Closing the last tab, or CLOSE ALL, returns to browsing.
+- **Removed:** the monitoring strip above the detail. The tabs replace it.
+- **What renders in the panel:** rift detail, dig detail and the step reader all render inside it (`role="tabpanel"`), which scrolls on its own.
+- **Sizing:** the panel is a size container (`container-type: inline-size; container-name: rfpanel`), and the reader stacks its columns with `@container rfpanel (max-width: 1089px)`, not a viewport query. Panel widths: 1274px at 1440 in icon mode (1028 in list mode), 1114 at 1280, and 1014 at 1180 (768 in list mode).
+- **Back buttons:** the standalone `‹ ABORT / ALL RIFTS` and `‹ ABORT / ALL DIG SITES` are hidden; the tab's close button replaces them.
+- **Reader Abort:** `ABORT RIFT` clears the target (`goBack`) and the tab stays open. The reader's last button reads `RETURN TO REWARDS ›` and does the same.
+
+**Rail, icon mode** (default; 84px): the choice of mode is remembered in `localStorage['rf-split-mode']`.
+
+- **Top controls:** a vertical Icons / List switch, a RIFT / DIG switch (the existing `browse` state), and a search button that switches to List mode with the field focused. While a search or type filter is active, a small amber `SEARCH ×` or `FILTER ×` chip under it clears both.
+- **Tiles:** 48px, grouped under section labels. Rifts: `UNIQ`, `PREC`, `GEN`, `SIT`. Dig sites follow `DIG_DATA.groups`: `BASE`, `UNIQ`, `ORIG`, `PREC`, `RELIC`, `DLC`.
+- **Tile markers:** a group dot top right; an amber ring bottom right if monitored; a cyan tick on the left if open in a tab; and an amber tile with a longer tick for the active tab. The tiles scroll.
+- **Tooltip:** it lives in the rail, outside the scroller, so it's never clipped. It's placed from the tile's bounding box relative to the rail, divided by the rail's rendered scale, and clamped 24px inside the rail. It shows on hover and focus, and hides on scroll and blur.
+- **Tile names:** each tile is a button, with `aria-label="{name}"` or `"{name}, open in a tab"`, and `aria-current` on the active one.
+
+**Two-letter codes** (`codeFor(type, name)`)
+
+- **Base rule:** the first letters of the first two words, skipping "The", "A", "in", "on" and "of". A one-word name uses its first two letters. Text after a colon is ignored.
+- **Clashes:** they're resolved per type. The first name keeps the code. The next takes the first free one of: its first letter plus the third word's first letter, its first letter plus a later letter of word two, or its first letter plus a later letter of word one. Doubled letters (AA, SS) are skipped.
+- **Reviewed exceptions** (`CODE_FIX`): Dimensional Dump = DD; Coordinates A / B / C = CA / CB / CC; Copper and Chrome = CP.
+- **Result:** all 36 rift codes and all 110 dig-site codes are unique. For example, Destroy the Crystal Sphere = DS (next to Dimensional Conflict = DC), and Moon Base = MA (next to Message in a Bottle = MB).
+
+**Rail, list mode** (330px)
+
+- **Header:** a horizontal Icons / List switch, `SELECT RIFT` or `SELECT DIG SITE`, and `{shown}/{total}`.
+- **Search field:** matches names and also reward names, short names, types and relic names. When a rift or site matches only through its rewards, its meta reads `{n} MATCHING` instead of `{n} REWARDS`.
+- **Filters:** a RIFT / DIG switch, and a compact reward-type `<select>`.
+- **Rows:** one line each, with a 36px code tile, the name, `{n} CH · {n} REWARDS` (`PH` for dig sites), the monitored ring and the group dot. An open row has a faint cyan fill; the active row is amber.
+- **Shared state:** both modes share the browse screen's `q`, `cat` and `digCat`, so switching modes never loses a search. In Split tabs the browse cards match rewards too, so the cards and the rail always agree.
+
+**Motion:**
+
+- The rail slides in (`railIn`, 18px, .3s).
+- Tabs rise in (`tabIn`, 8px, .25s).
+- Panel content uses the existing `hudIn`.
+- The tooltip fades in over .12s.
+- All of it follows `prefers-reduced-motion` like the rest of the file.
+
+**Keyboard and focus**
+
+- **Tab strip:** `role="tablist"`, and each tab button is `role="tab"` with `aria-selected`, `aria-controls="rf-tabpanel"` and a roving tabindex (only the active tab is 0).
+- **Keys:** ←/→ (and Home/End) move focus between tabs; Enter or Space activates.
+- **Close buttons:** separate buttons, labelled "Close {name}".
+- **After closing:** focus moves to the neighbouring tab, or to the first card when returning to browsing.
+- **List search:** the field draws the focus ring for its input.
+
+**Verified** headless at 1440×900, 1280×800 and 1180×820, plus 390×844 to confirm mobile is unchanged.
+
+- **Tab place:** three rifts and a dig site opened; a target set and the reader moved to step 2; after switching away and back, the target and "STEP 2 OF 3" were kept.
+- **6th tab:** opening a 6th closed the oldest inactive tab.
+- **Close all:** returned to browsing with focus on the first card.
+- **Tooltips:** at the top and bottom of the scroller, they stayed inside the rail and the viewport.
+- **"relic" in list mode:** listed exactly the 10 rifts and 12 dig sites with a relic reward, with MATCHING counts.
+- **Overflow:** no horizontal scroll and nothing off screen at any size.
 
 ---
 

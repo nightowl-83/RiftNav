@@ -344,6 +344,111 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   .rf-step h2{font-size:28px!important}
   .rf-final h2{font-size:32px!important}
 }
+
+/* Split tabs (desktop only; mobile keeps the dock). Browsing looks like Notched split; opening a rift
+   or dig site collapses the list into a rail on the left and opens the detail in a tabbed panel. */
+@keyframes railIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes tabIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes tipIn{from{opacity:0;transform:translate(-4px,-50%)}to{opacity:1;transform:translate(0,-50%)}}
+.rf-split-off{display:contents}
+.rf-split{position:relative;display:flex;gap:26px;box-sizing:border-box;height:calc(100vh - 90px);padding:18px 32px 18px 24px}
+.rf-rail{position:relative;z-index:6;flex:none;box-sizing:border-box;display:flex;flex-direction:column;border-radius:18px;background:linear-gradient(160deg,rgba(22,48,74,.42),rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4),inset 0 1px 0 rgba(255,255,255,.13);animation:railIn .3s cubic-bezier(.2,.7,.2,1)}
+.rf-rail--icons{width:84px;align-items:center;gap:8px;padding:12px 0 0}
+.rf-rail--list{width:330px;gap:11px;padding:14px 12px 0}
+.rf-seg{flex:none;display:flex;flex-direction:column;gap:2px;padding:3px;border-radius:12px;border:1px solid rgba(176,214,255,.18);background:rgba(6,16,28,.45)}
+.rf-seg--row{flex-direction:row}
+.rf-segb{min-width:36px;height:32px;box-sizing:border-box;margin:0;padding:0 8px;border-radius:9px;border:1px solid transparent;background:transparent;color:#7f9cb4;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.1em;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.rf-segb:hover{color:#e8f2fb}
+.rf-segb.is-on{color:#fff8ef;border-color:rgba(255,224,190,.5);background:rgba(255,214,170,.16)}
+.rf-rail-srch{flex:none;width:42px;height:36px;margin:0;padding:0;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid rgba(176,214,255,.24);background:linear-gradient(160deg,rgba(22,48,74,.5),rgba(6,16,28,.55));color:#cfe0ef;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.rf-rail-srch:hover{border-color:rgba(174,225,255,.55);color:#f6fbff}
+.rf-rail-chip{flex:none;height:24px;margin:0;padding:0 6px;border:0;border-radius:6px;background:rgba(255,214,170,.1);color:#ffd9b0;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;cursor:pointer}
+.rf-rail-chip:hover{background:rgba(255,214,170,.2)}
+.rf-rail-sep{flex:none;width:44px;height:1px;background:rgba(176,214,255,.18)}
+.rf-rail-scroll{flex:1 1 auto;min-height:0;width:100%;box-sizing:border-box;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;align-items:center;gap:6px;padding:2px 0 14px;scrollbar-width:none}
+.rf-rail-scroll::-webkit-scrollbar{display:none}
+.rf-rail-grp{flex:none;padding:8px 0 2px;font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;color:#6f8ea6;text-align:center}
+.rf-tile{position:relative;flex:none;width:48px;height:48px;box-sizing:border-box;margin:0;padding:0;border-radius:13px;display:flex;align-items:center;justify-content:center;font:600 16px 'Chakra Petch',sans-serif;letter-spacing:.06em;color:#dcecfa;cursor:pointer;border:1px solid rgba(176,214,255,.2);background:linear-gradient(160deg,rgba(22,48,74,.5),rgba(6,16,28,.6));box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:border-color .18s,background .18s}
+.rf-tile:hover{border-color:rgba(174,225,255,.6);color:#fff}
+.rf-tile.is-open::before{content:"";position:absolute;left:-11px;top:50%;width:3px;height:16px;margin-top:-8px;border-radius:3px;background:#8ecbff;box-shadow:0 0 8px rgba(142,203,255,.8)}
+.rf-tile.is-on{border-color:rgba(255,224,190,.75);color:#fff8ef;background:linear-gradient(160deg,rgba(255,214,170,.24),rgba(40,24,10,.38));box-shadow:0 0 22px rgba(255,200,150,.2),inset 0 1px 0 rgba(255,255,255,.22)}
+.rf-tile.is-on::before{background:#ffd9b0;height:26px;margin-top:-13px;box-shadow:0 0 10px rgba(255,217,176,.8)}
+.rf-tile-mon{position:absolute;bottom:4px;right:4px;width:7px;height:7px;box-sizing:border-box;border-radius:9px;border:1.5px solid #ffd9b0}
+.rf-gdot{position:absolute;top:5px;right:5px;width:5px;height:5px;border-radius:9px}
+.rf-gdot--inline{position:static;display:inline-block;flex:none}
+.rf-gdot--Unique,.rf-gdot--unique_system{background:#ffd9b0;box-shadow:0 0 8px #ffb87a}
+.rf-gdot--Precursor,.rf-gdot--precursor{background:#7fe0d4;box-shadow:0 0 8px #7fe0d4}
+.rf-gdot--General,.rf-gdot--base{background:#8ecbff;box-shadow:0 0 8px #8ecbff}
+.rf-gdot--Situation,.rf-gdot--ancient_relics{background:#ffb87a;box-shadow:0 0 8px #ffb87a}
+.rf-gdot--origin{background:#dffaf5;box-shadow:0 0 8px #7fe0d4}
+.rf-gdot--other_expansion{background:#a8c4dc;box-shadow:0 0 8px #8ba7bf}
+.rf-tip{position:absolute;left:78px;z-index:20;white-space:nowrap;padding:8px 12px;border-radius:9px;background:rgba(6,16,28,.96);border:1px solid rgba(176,214,255,.28);font:500 12px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.04em;color:#e8f2fb;pointer-events:none;box-shadow:0 12px 34px rgba(0,6,16,.55);transform:translate(0,-50%);animation:tipIn .12s ease-out}
+.rf-tip small{display:block;margin-top:3px;font-size:11px;letter-spacing:.16em;color:#8ba7bf}
+.rf-list-head{flex:none;display:flex;align-items:center;gap:10px;padding:0 2px}
+.rf-list-t{font:700 17px 'Chakra Petch',sans-serif;letter-spacing:.1em;color:#f6fbff;white-space:nowrap}
+.rf-list-n{margin-left:auto;font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;color:#8ba7bf;white-space:nowrap}
+.rf-list-field{flex:none;display:flex;align-items:center;gap:10px;height:40px;box-sizing:border-box;padding:0 6px 0 12px;border-radius:10px;border:1px solid rgba(176,214,255,.2);background:rgba(6,16,28,.45);color:#8ba7bf}
+.rf-list-field:focus-within{border-color:rgba(174,225,255,.6)}
+/* the field draws the focus ring for its input */
+.rf-list-field:has(.rf-list-in:focus-visible){outline:2px solid #8ecbff;outline-offset:2px}
+.rf-list-in:focus-visible{outline:none!important}
+.rf-list-in{flex:1;min-width:0;height:100%;margin:0;padding:0;background:transparent;border:0;outline:0;color:#e8f2fb;font:400 13px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.05em}
+.rf-list-in::placeholder{color:#5a7893}
+.rf-list-x{flex:none;width:28px;height:28px;margin:0;padding:0;display:flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:#7f9cb4;cursor:pointer}
+.rf-list-x:hover{background:rgba(255,184,122,.14);color:#ffb87a}
+.rf-list-tools{flex:none;display:flex;align-items:center;gap:8px}
+.rf-list-sel{flex:1;min-width:0;height:38px;box-sizing:border-box;margin:0;padding:0 10px;border-radius:10px;border:1px solid rgba(176,214,255,.2);background:rgba(6,16,28,.45);color:#cfe0ef;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.1em;cursor:pointer}
+.rf-list-sel.is-on{border-color:rgba(255,224,190,.5);color:#ffd9b0}
+.rf-list-sep{flex:none;height:1px;background:rgba(176,214,255,.14)}
+.rf-list-scroll{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;gap:2px;margin-right:-6px;padding:0 6px 12px 0}
+.rf-lrow{position:relative;flex:none;width:100%;box-sizing:border-box;display:flex;align-items:center;gap:12px;margin:0;padding:7px 12px 7px 7px;border-radius:12px;border:1px solid transparent;background:transparent;color:#e8f2fb;font:inherit;text-align:left;cursor:pointer;transition:background-color .15s,border-color .15s}
+.rf-lrow:hover{background:rgba(142,203,255,.07);border-color:rgba(176,214,255,.16)}
+.rf-lrow.is-open{background:rgba(142,203,255,.06)}
+.rf-lrow.is-on{background:linear-gradient(160deg,rgba(255,214,170,.16),rgba(40,24,10,.28));border-color:rgba(255,224,190,.5)}
+.rf-mini{flex:none;width:36px;height:36px;box-sizing:border-box;border-radius:9px;display:flex;align-items:center;justify-content:center;font:600 13px 'Chakra Petch',sans-serif;letter-spacing:.06em;color:#dcecfa;border:1px solid rgba(176,214,255,.24);background:rgba(10,26,44,.6)}
+.rf-lrow.is-on .rf-mini{border-color:rgba(255,224,190,.6);color:#fff8ef;background:rgba(255,214,170,.14)}
+.rf-lrow-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.rf-lrow-n{font:600 15px 'Chakra Petch',sans-serif;letter-spacing:.03em;color:#f6fbff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rf-lrow-m{font-size:11px;letter-spacing:.1em;color:#8ba7bf;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rf-lrow-rw{color:#ffd9b0}
+.rf-lrow-mon{flex:none;width:7px;height:7px;box-sizing:border-box;border-radius:9px;border:1.5px solid #ffd9b0}
+.rf-rail-empty{padding:24px 8px;font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;line-height:1.7;color:#8ba7bf;text-align:center}
+.rf-tabcol{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+.rf-tabbar{flex:none;display:flex;align-items:flex-end;gap:10px;height:52px;min-width:0}
+.rf-tablist{flex:0 1 auto;min-width:0;display:flex;align-items:flex-end;gap:4px}
+.rf-tab{position:relative;flex:0 1 250px;min-width:112px;max-width:250px;height:44px;box-sizing:border-box;display:flex;align-items:center;margin-bottom:-1px;padding:0 5px 0 3px;border:1px solid rgba(176,214,255,.16);border-bottom:0;border-radius:13px 13px 0 0;background:rgba(8,20,34,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);animation:tabIn .25s ease-out}
+.rf-tab.is-on{z-index:2;height:50px;border-color:rgba(176,214,255,.24);background:linear-gradient(180deg,rgba(26,56,86,.72),rgba(22,48,74,.6))}
+.rf-tab.is-on::before{content:"";position:absolute;left:14px;right:14px;top:-1px;height:2px;border-radius:2px;background:#ffd9b0;box-shadow:0 0 10px rgba(255,217,176,.7)}
+.rf-tab.is-on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:4px;background:rgba(26,56,86,.9)}
+.rf-tabsel{flex:1 1 auto;min-width:0;height:40px;display:flex;align-items:center;gap:9px;margin:0;padding:0 7px;border:0;border-radius:9px;background:transparent;color:#a8c4dc;font:600 14px 'Chakra Petch',sans-serif;letter-spacing:.03em;text-align:left;cursor:pointer}
+.rf-tab.is-on .rf-tabsel{color:#f6fbff}
+.rf-tabnm{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rf-tabmono{flex:none;width:26px;height:26px;box-sizing:border-box;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.04em;color:#dcecfa;border:1px solid rgba(176,214,255,.24);background:rgba(10,26,44,.6)}
+.rf-tab.is-on .rf-tabmono{border-color:rgba(255,224,190,.6);color:#fff8ef;background:rgba(255,214,170,.16)}
+.rf-tgt{flex:none;width:6px;height:6px;border-radius:9px;background:#ffb87a;box-shadow:0 0 8px #ffb87a}
+.rf-tabx{flex:none;width:28px;height:28px;margin:0;padding:0;display:flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:#7f9cb4;cursor:pointer}
+.rf-tabx:hover{background:rgba(255,184,122,.14);color:#ffb87a}
+.rf-tabn{flex:none;margin-left:auto;align-self:center;font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;color:#8ba7bf;white-space:nowrap}
+.rf-tabclose{flex:none;align-self:center;height:32px;margin:0;padding:0 10px;border:0;border-radius:10px;background:transparent;color:#8ba7bf;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;cursor:pointer}
+.rf-tabclose:hover{color:#ffb87a}
+.rf-tabpanel{position:relative;z-index:1;flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;border-radius:0 20px 20px 20px;border:1px solid rgba(176,214,255,.22);background:linear-gradient(170deg,rgba(24,52,80,.55),rgba(6,16,28,.55));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:0 18px 50px rgba(0,6,16,.4);container-type:inline-size;container-name:rfpanel}
+.rf-tabscroll{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden}
+.rf-tabscroll .rf-main{max-width:none!important;margin:0!important;padding:26px 34px 32px!important}
+.rf-tabscroll .rf-read{padding:22px 26px 28px!important}
+.rf-tabscroll .rf-back{display:none!important}
+.rf-tabscroll .rf-read-log,.rf-tabscroll .rf-read-side{top:16px!important}
+/* sized to the panel, not the viewport: the reader stacks when its three columns stop fitting */
+@container rfpanel (max-width:1089px){
+  .rf-read{flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important}
+  .rf-read-main{order:1;flex:none!important}
+  .rf-read-log{order:2;position:static!important;flex:none!important;max-width:none!important}
+  .rf-read-logscroll{max-height:none!important;overflow:visible!important}
+  .rf-read-side{order:3;position:static!important;flex:none!important;max-width:none!important}
+  .rf-read-radar{order:1}
+}
+@container rfpanel (max-width:760px){
+  .rf-tabscroll .rf-main{padding-left:22px!important;padding-right:22px!important}
+}
 </style>
 </helmet>
 
@@ -866,6 +971,87 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 </div>
 </sc-if>
 
+<div class="{{ splitCls }}">
+<sc-if value="{{ railIcons }}" hint-placeholder-val="{{ false }}">
+<nav class="rf-rail rf-rail--icons" aria-label="{{ railAria }}">
+  <div class="rf-seg" role="group" aria-label="List style">
+    <button type="button" class="rf-segb is-on" aria-pressed="true" aria-label="Icons"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg></button>
+    <button type="button" class="rf-segb" aria-pressed="false" aria-label="List with search" onClick="{{ toList }}"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5.5 3.5h8.5M5.5 8h8.5M5.5 12.5h8.5"></path><circle cx="2.5" cy="3.5" r=".8"></circle><circle cx="2.5" cy="8" r=".8"></circle><circle cx="2.5" cy="12.5" r=".8"></circle></svg></button>
+  </div>
+  <div class="rf-seg" role="group" aria-label="Show">
+    <button type="button" class="{{ railRiftCls }}" aria-pressed="{{ tabRiftOn }}" aria-label="Rifts" onClick="{{ railRifts }}">RIFT</button>
+    <button type="button" class="{{ railDigCls }}" aria-pressed="{{ tabDigOn }}" aria-label="Dig sites" onClick="{{ railDigs }}">DIG</button>
+  </div>
+  <button type="button" class="rf-rail-srch" aria-label="Search (opens the list)" onClick="{{ toListSearch }}"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5"></circle><path d="m11 11 3.5 3.5"></path></svg></button>
+  <sc-if value="{{ railFiltered }}" hint-placeholder-val="{{ false }}">
+    <button type="button" class="rf-rail-chip" aria-label="{{ railChipAria }}" onClick="{{ railClear }}">{{ railChipTag }} ×</button>
+  </sc-if>
+  <div class="rf-rail-sep"></div>
+  <div class="rf-rail-scroll" onScroll="{{ unhover }}">
+    <sc-for list="{{ railGroups }}" as="g" hint-placeholder-count="3">
+      <div class="rf-rail-grp" aria-hidden="true">{{ g.short }}</div>
+      <sc-for list="{{ g.items }}" as="t" hint-placeholder-count="6">
+        <button type="button" class="{{ t.tileCls }}" aria-label="{{ t.aria }}" aria-current="{{ t.cur }}" onClick="{{ t.pick }}" onMouseEnter="{{ t.enter }}" onMouseLeave="{{ unhover }}" onFocus="{{ t.enter }}" onBlur="{{ unhover }}"><span aria-hidden="true">{{ t.code }}</span><span class="{{ t.dotCls }}"></span><sc-if value="{{ t.mon }}" hint-placeholder-val="{{ false }}"><span class="rf-tile-mon"></span></sc-if></button>
+      </sc-for>
+    </sc-for>
+    <sc-if value="{{ railEmpty }}" hint-placeholder-val="{{ false }}"><div class="rf-rail-empty">NONE</div></sc-if>
+  </div>
+  <sc-if value="{{ hovShow }}" hint-placeholder-val="{{ false }}">
+    <div class="rf-tip" style="{{ hovStyle }}" aria-hidden="true">{{ hovName }}<small>{{ hovMeta }}</small></div>
+  </sc-if>
+</nav>
+</sc-if>
+<sc-if value="{{ railList }}" hint-placeholder-val="{{ false }}">
+<nav class="rf-rail rf-rail--list" aria-label="{{ railAria }}">
+  <div class="rf-list-head">
+    <div class="rf-seg rf-seg--row" role="group" aria-label="List style">
+      <button type="button" class="rf-segb" aria-pressed="false" aria-label="Icons" onClick="{{ toIcons }}"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg></button>
+      <button type="button" class="rf-segb is-on" aria-pressed="true" aria-label="List with search"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5.5 3.5h8.5M5.5 8h8.5M5.5 12.5h8.5"></path><circle cx="2.5" cy="3.5" r=".8"></circle><circle cx="2.5" cy="8" r=".8"></circle><circle cx="2.5" cy="12.5" r=".8"></circle></svg></button>
+    </div>
+    <span class="rf-list-t">{{ listTitle }}</span>
+    <span class="rf-list-n">{{ listCount }}</span>
+  </div>
+  <label class="rf-list-field"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5"></circle><path d="m11 11 3.5 3.5"></path></svg><span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">{{ listSearchLabel }}</span><input class="rf-list-in" type="text" autocomplete="off" spellcheck="false" placeholder="{{ listPlaceholder }}" value="{{ q }}" onInput="{{ onQ }}"><sc-if value="{{ hasQ }}" hint-placeholder-val="{{ false }}"><button type="button" class="rf-list-x" aria-label="Clear search" onClick="{{ clearQ }}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m2.5 2.5 7 7M9.5 2.5l-7 7"></path></svg></button></sc-if></label>
+  <div class="rf-list-tools">
+    <div class="rf-seg rf-seg--row" role="group" aria-label="Show">
+      <button type="button" class="{{ railRiftCls }}" aria-pressed="{{ tabRiftOn }}" aria-label="Rifts" onClick="{{ railRifts }}">RIFT</button>
+      <button type="button" class="{{ railDigCls }}" aria-pressed="{{ tabDigOn }}" aria-label="Dig sites" onClick="{{ railDigs }}">DIG</button>
+    </div>
+    <select class="{{ railSelCls }}" aria-label="Reward type" value="{{ railCatVal }}" onChange="{{ onRailCat }}">
+      <sc-for list="{{ railCatOpts }}" as="o" hint-placeholder-count="6"><option value="{{ o.value }}">{{ o.label }}</option></sc-for>
+    </select>
+  </div>
+  <div class="rf-list-sep"></div>
+  <div class="rf-list-scroll">
+    <sc-for list="{{ railRows }}" as="t" hint-placeholder-count="12">
+      <button type="button" class="{{ t.rowCls }}" aria-current="{{ t.cur }}" onClick="{{ t.pick }}">
+        <span class="rf-mini" aria-hidden="true">{{ t.code }}</span>
+        <span class="rf-lrow-txt"><span class="rf-lrow-n">{{ t.name }}</span><span class="rf-lrow-m">{{ t.chLabel }} · <span class="rf-lrow-rw">{{ t.rwLabel }}</span>{{ t.openNote }}</span></span>
+        <sc-if value="{{ t.mon }}" hint-placeholder-val="{{ false }}"><span class="rf-lrow-mon" role="img" aria-label="Monitoring"></span></sc-if>
+        <span class="{{ t.dotInline }}"></span>
+      </button>
+    </sc-for>
+    <sc-if value="{{ railEmpty }}" hint-placeholder-val="{{ false }}"><div class="rf-rail-empty">NO MATCH FOR “{{ q }}”</div></sc-if>
+  </div>
+</nav>
+</sc-if>
+<div class="{{ tabColCls }}">
+<sc-if value="{{ tabsShown }}" hint-placeholder-val="{{ false }}">
+<div class="rf-tabbar">
+  <div class="rf-tablist" role="tablist" aria-label="Open rifts and dig sites">
+    <sc-for list="{{ tabRows }}" as="b" hint-placeholder-count="3">
+      <div class="{{ b.cls }}">
+        <button type="button" class="rf-tabsel" role="tab" id="{{ b.id }}" aria-selected="{{ b.selected }}" aria-controls="rf-tabpanel" tabIndex="{{ b.tabIndex }}" onClick="{{ b.pick }}" onKeyDown="{{ b.key }}"><span class="rf-tabmono" aria-hidden="true">{{ b.code }}</span><span class="rf-tabnm">{{ b.name }}</span><sc-if value="{{ b.hasTarget }}" hint-placeholder-val="{{ false }}"><span class="rf-tgt" role="img" aria-label="target set"></span></sc-if></button>
+        <button type="button" class="rf-tabx" aria-label="{{ b.closeLabel }}" onClick="{{ b.close }}"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m2.5 2.5 7 7M9.5 2.5l-7 7"></path></svg></button>
+      </div>
+    </sc-for>
+  </div>
+  <span class="rf-tabn">{{ tabCountLabel }}</span>
+  <button type="button" class="rf-tabclose" onClick="{{ closeAllTabs }}">CLOSE ALL</button>
+</div>
+</sc-if>
+<div class="{{ panelCls }}" id="rf-tabpanel" role="{{ panelRole }}" aria-labelledby="{{ activeTabId }}">
+<div class="{{ panelScrollCls }}">
 <sc-if value="{{ showDig }}" hint-placeholder-val="{{ false }}">
 <div class="rf-main rf-dt" style="max-width:1180px;margin:0 auto;padding:40px 34px 110px;animation:hudIn .32s ease-out">
   <div class="rf-d" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px">
@@ -1091,7 +1277,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
         <div style="{{ railFinal.titleStyle }}">{{ railFinal.title }}</div>
       </div>
     </div>
-    <button onClick="{{ close }}" style="margin-top:12px;width:100%;border-radius:11px;background:rgba(30,14,10,.4);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,150,110,.34);color:#ffb87a;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:11px 0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:border-color .22s ease,color .22s ease,background-color .22s ease" style-hover="border-color:rgba(255,160,120,.7);color:#ffd0a8;background:rgba(52,20,12,.5)">✕ ABORT RIFT</button>
+    <button onClick="{{ abortRead }}" style="margin-top:12px;width:100%;border-radius:11px;background:rgba(30,14,10,.4);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,150,110,.34);color:#ffb87a;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:11px 0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:border-color .22s ease,color .22s ease,background-color .22s ease" style-hover="border-color:rgba(255,160,120,.7);color:#ffd0a8;background:rgba(52,20,12,.5)">✕ ABORT RIFT</button>
   </div>
 
   <div class="rf-read-main" style="flex:100 1 470px;min-width:0">
@@ -1231,6 +1417,10 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   </div>
 </div>
 </sc-if>
+</div>
+</div>
+</div>
+</div>
 
 <div class="rf-foot" style="display:flex;align-items:center;gap:16px;height:34px;padding:0 34px;border-top:1px solid rgba(176,214,255,.12);font-size:11px;letter-spacing:.18em;color:#7f9cb4;background:rgba(6,14,26,.94);backdrop-filter:blur(30px) saturate(140%);-webkit-backdrop-filter:blur(30px) saturate(140%);position:fixed;left:0;right:0;bottom:0;z-index:880" data-comment-anchor="b696c1d46c-div">
   <span class="rf-foot-long">ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0</span>
@@ -1356,10 +1546,12 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 </div>
 </sc-if>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Notched split&quot;,&quot;options&quot;:[&quot;Grid&quot;,&quot;Split column&quot;,&quot;Notched split&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;backdrop&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Galaxy map&quot;,&quot;options&quot;:[&quot;Galaxy map&quot;,&quot;Video&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backdrop&quot;},&quot;filterUI&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Menu&quot;,&quot;options&quot;:[&quot;Menu&quot;,&quot;One line&quot;,&quot;Chips&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home filters&quot;},&quot;videoDim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:46,&quot;min&quot;:0,&quot;max&quot;:85,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Video backdrop&quot;},&quot;holoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;cornerBrackets&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Split tabs&quot;,&quot;options&quot;:[&quot;Grid&quot;,&quot;Split column&quot;,&quot;Notched split&quot;,&quot;Split tabs&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;backdrop&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Galaxy map&quot;,&quot;options&quot;:[&quot;Galaxy map&quot;,&quot;Video&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backdrop&quot;},&quot;filterUI&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Menu&quot;,&quot;options&quot;:[&quot;Menu&quot;,&quot;One line&quot;,&quot;Chips&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home filters&quot;},&quot;videoDim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:46,&quot;min&quot;:0,&quot;max&quot;:85,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Video backdrop&quot;},&quot;holoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;cornerBrackets&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;}}">
 class Component extends DCLogic {
   state = { rift: null, reward: null, cur: 0, railOpen: {}, q: '', boot: 0, cat: 'ALL', catOpen: false, browse: null, dig: null, cam: null, ctlOpen: false, presetName: '', presets: null, copied: false, monitored: [], condensed: false, narrow: false, monMenuOpen: false, tip: '', toastText: '', toastAdd: true, progress: {},
-    mob: false, dockMini: false, searchOpen: false, sq: '', sScope: 'all', drawer: null, drawerCat: null, reqOpen: false };
+    mob: false, dockMini: false, searchOpen: false, sq: '', sScope: 'all', drawer: null, drawerCat: null, reqOpen: false,
+    tabs: [], activeTab: null, hov: null,
+    splitMode: (() => { try { return localStorage.getItem('rf-split-mode') === 'list' ? 'list' : 'icons'; } catch (e) { return 'icons'; } })() };
 
   componentDidMount() {
     this.startBoot();
@@ -1390,7 +1582,7 @@ class Component extends DCLogic {
     window.addEventListener('resize', this._hudRz, { passive: true });
     this.checkHud();
   }
-  componentDidUpdate() { this.checkHud(); this.closeOnScreenChange(); this.syncFocus(); }
+  componentDidUpdate() { this.checkHud(); this.syncTabs(); this.closeOnScreenChange(); this.syncFocus(); }
   // Focus after a screen change. Going deeper (opening a rift, dig site or reward), focus moves to the
   // new screen's heading, so screen readers announce it and Tab starts from it rather than the top of
   // the page. Going back, focus returns to the card that opened the screen. A change made from a
@@ -1414,6 +1606,7 @@ class Component extends DCLogic {
     }
     const now = this.screenOf(), was = this._screen, step = this.state.cur, stepWas = this._step;
     this._screen = now; this._step = step;
+    if (this._focusNext) { const f = this._focusNext; this._focusNext = null; clearTimeout(this._focusT); this._focusT = setTimeout(f, 0); return; }
     const lost = () => { const a = document.activeElement; return !a || a === document.body || !a.isConnected || !a.getClientRects().length; };
     if (was && was.key === now.key) {
       // Next / Back keep focus while stepping. Reaching the final card is a change of context (the
@@ -1448,6 +1641,133 @@ class Component extends DCLogic {
       if (el) el.focus();
     }, 0);
   }
+  // ---- switching between rifts and dig sites ----
+  // Each rift or dig site keeps its place (target reward, reader step, open log rows) in state.progress.
+  // switchTo saves where you are and restores where you were: the monitoring tabs and Split tabs both use it.
+  placeOf(type, name, prog) {
+    const at = (prog || this.state.progress || {})[type + ':' + name] || {};
+    return type === 'rift'
+      ? { rift: name, dig: null, browse: 'rift', reward: at.reward != null ? at.reward : null, cur: at.cur || 0, railOpen: at.railOpen || {} }
+      : { dig: name, rift: null, browse: 'dig', reward: null, cur: 0, railOpen: at.railOpen || {} };
+  }
+  savedProgress() {
+    const st = this.state, prog = Object.assign({}, st.progress);
+    if (st.rift) prog['rift:' + st.rift] = { reward: st.reward, cur: st.cur, railOpen: st.railOpen };
+    if (st.dig) prog['dig:' + st.dig] = { reward: null, cur: 0, railOpen: st.railOpen };
+    return prog;
+  }
+  switchTo(type, name, extra) {
+    const prog = this.savedProgress();
+    this.setState(Object.assign({ progress: prog, hov: null }, this.placeOf(type, name, prog), extra || {}));
+  }
+
+  // ---- Split tabs ----
+  tabsOn() { return (this.props.layout || 'Grid') === 'Split tabs' && !this.state.mob; }
+  tabKeyOf(t) { return t.type + ':' + t.name; }
+  // whatever opened a rift or dig site, it gets a tab: up to 5, a sixth closes the oldest inactive one
+  syncTabs() {
+    if (!this.tabsOn()) return;
+    const st = this.state, type = st.rift ? 'rift' : (st.dig ? 'dig' : null);
+    if (!type) return;
+    const name = st.rift || st.dig, key = type + ':' + name, tabs = st.tabs || [];
+    const has = tabs.some(t => this.tabKeyOf(t) === key);
+    if (has && st.activeTab === key) return;
+    let next = tabs.slice(), prog = null;
+    if (!has) {
+      next.push({ type, name });
+      while (next.length > 5) {
+        const drop = next.find(t => this.tabKeyOf(t) !== st.activeTab && this.tabKeyOf(t) !== key);
+        next = next.filter(t => t !== drop);
+        prog = prog || Object.assign({}, st.progress);
+        delete prog[this.tabKeyOf(drop)];
+      }
+    }
+    this.setState(Object.assign({ tabs: next, activeTab: key }, prog ? { progress: prog } : {}));
+  }
+  // closing the active tab opens its neighbour; closing the last one goes back to browsing
+  closeTab(key) {
+    const st = this.state, tabs = st.tabs || [], i = tabs.findIndex(t => this.tabKeyOf(t) === key);
+    if (i < 0) return;
+    const rest = tabs.filter((_, j) => j !== i);
+    if (!rest.length) { this.closeAllTabs(); return; }
+    const prog = Object.assign({}, st.progress);
+    delete prog[key];
+    const n = Math.min(i, rest.length - 1);
+    this._focusNext = () => { const b = document.querySelectorAll('.rf-tabsel')[n]; if (b) b.focus(); };
+    if (key !== st.activeTab) { this.setState({ tabs: rest, progress: prog }); return; }
+    const nb = rest[n];
+    this.setState(Object.assign({ tabs: rest, progress: prog, activeTab: this.tabKeyOf(nb), hov: null }, this.placeOf(nb.type, nb.name, prog)));
+  }
+  closeAllTabs() {
+    const prog = Object.assign({}, this.state.progress);
+    (this.state.tabs || []).forEach(t => { delete prog[this.tabKeyOf(t)]; });
+    this._focusNext = () => {
+      const c = [...document.querySelectorAll('.rf-main .rf-fc, .rf-main [role="button"][aria-label]')].find(el => el.getClientRects().length);
+      if (c) c.focus();
+    };
+    this.setState({ tabs: [], activeTab: null, progress: prog, rift: null, dig: null, reward: null, cur: 0, railOpen: {}, hov: null });
+  }
+  // ←/→ (and Home/End) move between tabs; Enter or Space activates
+  tabKeyNav(e) {
+    const k = e.key;
+    if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].indexOf(k) < 0) return;
+    const all = [...document.querySelectorAll('.rf-tabsel')], i = all.indexOf(e.currentTarget);
+    if (i < 0) return;
+    e.preventDefault();
+    const j = k === 'Home' ? 0 : k === 'End' ? all.length - 1 : (i + (k === 'ArrowRight' ? 1 : -1) + all.length) % all.length;
+    all[j].focus();
+  }
+  setSplitMode(m, focusSearch) {
+    try { localStorage.setItem('rf-split-mode', m); } catch (e) {}
+    this.setState({ splitMode: m, hov: null });
+    if (focusSearch) setTimeout(() => { const i = document.querySelector('.rf-list-in'); if (i) i.focus(); }, 0);
+  }
+  // the tooltip lives in the rail, outside the tile scroller, so it can't be clipped
+  railHover(e, tip) {
+    const el = e && e.currentTarget, nav = el && el.closest && el.closest('.rf-rail');
+    if (!nav) return;
+    const a = el.getBoundingClientRect(), b = nav.getBoundingClientRect();
+    const scale = nav.offsetHeight ? b.height / nav.offsetHeight : 1;
+    const y = Math.max(24, Math.min(nav.offsetHeight - 24, (a.top + a.height / 2 - b.top) / (scale || 1)));
+    this.setState({ hov: Object.assign({ y: Math.round(y) }, tip) });
+  }
+  // Two-letter codes: first letters of the first two words ("The", "A", "in", "on", "of" skipped); one word
+  // gives its first two letters. Clashes: the first name keeps the code, the next takes the first free of
+  // first + third word, first + later letters of word two, first + later letters of word one. CODE_FIX
+  // holds the reviewed exceptions (the coordinate series reads A/B/C).
+  CODE_FIX = { 'Dimensional Dump': 'DD', 'Coordinates A: Colonized Planet': 'CA', 'Coordinates B: Industrial Planet': 'CB',
+    'Coordinates C: Barren Planet': 'CC', 'Copper and Chrome': 'CP' };
+  codeCands(n) {
+    const IGN = { the: 1, a: 1, in: 1, on: 1, of: 1 };
+    const w = String(n).split(':')[0].replace(/[^A-Za-z0-9 ]/g, ' ').split(/\s+/).filter(Boolean);
+    const k = (w.filter(x => !IGN[x.toLowerCase()]).length ? w.filter(x => !IGN[x.toLowerCase()]) : w).map(x => x.toUpperCase());
+    const out = [], add = c => { if (c.length === 2 && c[0] !== c[1] && out.indexOf(c) < 0) out.push(c); };
+    if (!k.length) return ['··'];
+    if (k.length > 1) add(k[0][0] + k[1][0]); else add(k[0].slice(0, 2));
+    for (let j = 2; j < k.length; j++) add(k[0][0] + k[j][0]);
+    if (k.length > 1) for (const ch of k[1].slice(1)) add(k[0][0] + ch);
+    for (const ch of k[0].slice(1)) add(k[0][0] + ch);
+    for (let d = 2; d < 10; d++) add(k[0][0] + d);
+    return out;
+  }
+  makeCodes(names) {
+    const out = {}, used = new Set();
+    names.forEach(n => { if (this.CODE_FIX[n]) { out[n] = this.CODE_FIX[n]; used.add(out[n]); } });
+    const rest = names.filter(n => !out[n]), base = rest.map(n => this.codeCands(n)[0]);
+    rest.forEach((n, i) => { if (!used.has(base[i]) && base.indexOf(base[i]) === i) { out[n] = base[i]; used.add(base[i]); } });
+    rest.forEach(n => { if (out[n]) return; const c = this.codeCands(n).find(x => !used.has(x)) || '··'; used.add(c); out[n] = c; });
+    return out;
+  }
+  codeFor(type, name) {
+    const all = this._codes || (this._codes = {});
+    if (!all[type]) {
+      const names = type === 'rift' ? this.data.rifts.map(r => r.name) : this.DIG_SITES;
+      if (!names.length) return '··';
+      all[type] = this.makeCodes(names);
+    }
+    return all[type][name] || this.codeCands(name)[0];
+  }
+
   // ---- menus, drawers and the full-screen search (mobile navigation) ----
   // Every dropdown or menu closes on an outside click, Escape, scrolling the page and a screen change,
   // so nothing stays open detached from its trigger. Menus are .rf-pop, their triggers .rf-pop-trig.
@@ -1919,6 +2239,8 @@ class Component extends DCLogic {
   // the representative is the shortest route, which the reader opens by default.
   rewardGroups(rift) {
     if (!rift) return [];
+    const memo = this._rgMemo || (this._rgMemo = {});
+    if (memo[rift.name] && this.data.rewards.length) return memo[rift.name];
     const all = this.rewardsFor(rift.name), groups = [], at = {};
     all.forEach((r, idx) => {
       const k = (this.shortOf(r) + '|' + r.type).toLowerCase(), n = this.steps(rift, r).length;
@@ -1926,7 +2248,7 @@ class Component extends DCLogic {
       const g = groups[at[k]]; g.routes++;
       if (n < g.steps) { g.r = r; g.idx = idx; g.steps = n; }
     });
-    return groups;
+    return (memo[rift.name] = groups);
   }
   withKeys(o) { o.goKey = this.onActivate(o.go); o.closeKey = this.onActivate(o.close); return o; }
   shortOf(r) { return r ? (r.short || this.dispName(r.name)) : ''; }
@@ -2170,7 +2492,10 @@ class Component extends DCLogic {
     cats.sort();
     // on the dig list a category counts SITES, so "Relics" answers "which digs give a relic?"
     const sitesWith = c => this.digData.sites.filter(s => this.digRewardsFor(s.name).some(x => (x.cat || 'Other').trim() === c)).length;
-    const filtered = d.rifts.filter(r => (!q || r.name.toLowerCase().includes(q))
+    const tabsLayout = (this.props.layout || 'Grid') === 'Split tabs' && !this.state.mob;
+    const rwHit = r => [r.short, r.name, r.cat, r.relic && r.relic.name].some(v => v && String(v).toLowerCase().includes(q));
+    const riftHits = r => (!q || r.name.toLowerCase().includes(q)) ? 0 : this.rewardGroups(r).filter(g => rwHit(g.r)).length;
+    const filtered = d.rifts.filter(r => (!q || r.name.toLowerCase().includes(q) || (tabsLayout && riftHits(r) > 0))
       && (riftCat === 'ALL' || this.rewardsFor(r.name).some(x => (x.cat || 'Other').trim() === riftCat)));
     const catList = ['ALL'].concat(cats).map(c => ({
       value: c, on: cat === c, key: catKey,
@@ -2198,8 +2523,9 @@ class Component extends DCLogic {
     const browse = this.state.browse, dig = this.state.dig;
     const useMap = (this.props.backdrop || 'Galaxy map') !== 'Video';
     const lay = this.props.layout || 'Grid';
-    const split = lay === 'Split column' || lay === 'Notched split';
-    const notch = lay === 'Notched split';
+    const split = lay === 'Split column' || lay === 'Notched split' || lay === 'Split tabs';
+    // Split tabs browses exactly like Notched split
+    const notch = lay === 'Notched split' || lay === 'Split tabs';
     const wipe = (i, lift) => 'position:relative;z-index:' + (lift ? 900 : 'auto')
       + ';animation:wipeIn .8s cubic-bezier(.16,.86,.24,1) both;animation-delay:' + (0.42 + Math.min(i, 16) * 0.075).toFixed(3) + 's';
     const shrunk = !!this.state.condensed, cond = false;
@@ -2240,11 +2566,11 @@ class Component extends DCLogic {
       : [];
     const digCatOn = digCat !== 'ALL';
     const digShown = this.digData.sites.filter(s => (!q || s.name.toLowerCase().includes(q)
-        || this.digRewardsFor(s.name).some(r => r.name.toLowerCase().includes(q)))
+        || this.digRewardsFor(s.name).some(r => tabsLayout ? rwHit(r) : r.name.toLowerCase().includes(q)))
       && (!digCatOn || this.digRewardsFor(s.name).some(r => (r.cat || 'Other').trim() === digCat)));
     let digIdx = 0;
     const digCard = s => {
-      const open = () => this.set({ dig: s.name, q: '', railOpen: {} });
+      const open = tabsLayout ? () => this.switchTo('dig', s.name) : () => this.set({ dig: s.name, q: '', railOpen: {} });
       const rows = this.digRewardsFor(s.name), yields = this.yieldsFor(rows);
       const base = !s.dlc || /^base game$/i.test(s.dlc);
       return {
@@ -2262,9 +2588,52 @@ class Component extends DCLogic {
         cls: 'rf-sec' + (i === 0 ? ' rf-sec--first' : ''), cards: x.sites.map(digCard)
       }));
     // search (desktop index): the shared index, relic rewards kept with the other rewards
-    const searchRows = q ? [].concat(...this.searchIndex(q, { lim: { rift: 6, riftReward: 5, dig: 4, digReward: 4, relic: 0 } }).map(g => g.rows)) : [];
+    // Split tabs: a picked result opens in a tab
+    const tabGo = p => this.switchTo(p.rift ? 'rift' : 'dig', p.rift || p.dig, Object.assign({ q: '' }, p.rift && p.reward != null ? { reward: p.reward, cur: 0, railOpen: {} } : {}));
+    const searchRows = q ? [].concat(...this.searchIndex(q, { lim: { rift: 6, riftReward: 5, dig: 4, digReward: 4, relic: 0 }, go: tabsLayout ? tabGo : undefined }).map(g => g.rows)) : [];
     searchRows.forEach(r => { r.key = this.onActivate(r.pick); });
 
+
+    // ---- Split tabs ----
+    const tabsShown = tabsLayout && !!(rift || dig);
+    const tabsList = this.state.tabs || [], activeTab = this.state.activeTab, prog0 = this.state.progress || {};
+    const isOpenKey = k => tabsList.some(t => this.tabKeyOf(t) === k);
+    const railType = browse === 'dig' ? 'dig' : 'rift';
+    const railItem = (type, name, group, chLabel, total, hits) => {
+      const key = type + ':' + name, open = isOpenKey(key), on = key === activeTab;
+      const rwLabel = q && hits ? hits + ' MATCHING' : total + (total === 1 ? ' REWARD' : ' REWARDS');
+      return {
+        key, name, group, chLabel, rwLabel, code: this.codeFor(type, name), mon: this.isMon(type, name),
+        cur: on ? 'true' : 'false', aria: name + (open ? ', open in a tab' : ''), openNote: '',
+        tileCls: 'rf-tile' + (open ? ' is-open' : '') + (on ? ' is-on' : ''),
+        rowCls: 'rf-lrow' + (open ? ' is-open' : '') + (on ? ' is-on' : ''),
+        dotCls: 'rf-gdot rf-gdot--' + group, dotInline: 'rf-gdot rf-gdot--inline rf-gdot--' + group,
+        pick: () => this.switchTo(type, name),
+        enter: e => this.railHover(e, { name, meta: open ? 'OPEN IN A TAB' : chLabel + ' · ' + rwLabel })
+      };
+    };
+    const railItems = !tabsShown ? [] : (railType === 'rift'
+      ? filtered.map(r => {
+          const total = this.rewardGroups(r).filter(g => ['Warnings', 'Other', 'Unlocks'].indexOf(g.r.cat) < 0).length;
+          return railItem('rift', r.name, r.group || 'General', r.chapters.length + ' CH', total, riftHits(r));
+        })
+      : digShown.map(st => {
+          const rows = this.digRewardsFor(st.name).filter(r => r.type !== 'penalty');
+          const hits = q && !st.name.toLowerCase().includes(q) ? rows.filter(rwHit).length : 0;
+          return railItem('dig', st.name, st.group || 'other_expansion', st.chapters.length + ' PH', rows.length, hits);
+        }));
+    const DIG_SHORT = { base: 'BASE', unique_system: 'UNIQ', origin: 'ORIG', precursor: 'PREC', ancient_relics: 'RELIC', other_expansion: 'DLC' };
+    const railGroups = (railType === 'rift'
+      ? [['Unique', 'UNIQ'], ['Precursor', 'PREC'], ['General', 'GEN'], ['Situation', 'SIT']]
+      : (this.digData.groups || []).map(g => [g.key, DIG_SHORT[g.key] || String(g.key).slice(0, 4).toUpperCase()]))
+      .map(([g, short]) => ({ short, items: railItems.filter(i => i.group === g) })).filter(g => g.items.length);
+    const railCatKey = railType === 'dig' ? 'digCat' : 'cat', railCatVal = this.state[railCatKey] || 'ALL';
+    const railCats = [];
+    const RAIL_NOT = railType === 'dig' ? ['Risks, costs & losses', 'Other'] : ['Warnings', 'Other', 'Unlocks'];
+    (railType === 'dig' ? this.digData.rewards : d.rewards).forEach(r => { const c = (r.cat || 'Other').trim(); if (c && railCats.indexOf(c) < 0 && RAIL_NOT.indexOf(c) < 0) railCats.push(c); });
+    railCats.sort();
+    const hov = tabsShown && this.state.splitMode !== 'list' ? this.state.hov : null;
+    const activeIdx = tabsList.findIndex(t => this.tabKeyOf(t) === activeTab);
     // ---- mobile navigation ----
     const mob = !!this.state.mob, booting = this.state.boot <= this.BOOT.length + 1;
     const screen = rift ? (reward ? 'read' : 'rift') : (dig ? 'dig' : (browse ? 'browse' : 'home'));
@@ -2273,15 +2642,7 @@ class Component extends DCLogic {
     const monTabs = mon.map(m => this.withKeys({
       label: m.name.toUpperCase(),
       style: this.monTab((m.type === 'rift' && rift && rift.name === m.name) || (m.type === 'dig' && dig === m.name)),
-      go: () => {
-        const prog = Object.assign({}, this.state.progress);
-        if (rift) prog['rift:' + rift.name] = { reward: this.state.reward, cur: this.state.cur, railOpen: this.state.railOpen };
-        if (dig) prog['dig:' + dig] = { reward: null, cur: 0, railOpen: {} };
-        const at = prog[m.type + ':' + m.name] || { reward: null, cur: 0, railOpen: {} };
-        this.set(m.type === 'rift'
-          ? { progress: prog, rift: m.name, dig: null, browse: 'rift', q: '', reward: at.reward, cur: at.cur || 0, railOpen: at.railOpen || {} }
-          : { progress: prog, dig: m.name, rift: null, browse: 'dig', q: '', reward: null, cur: 0, railOpen: {} });
-      },
+      go: () => (tabsLayout ? this.switchTo(m.type, m.name) : this.switchTo(m.type, m.name, { q: '' })),
       rowStyle: 'display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;transition:background-color .18s ease;background:'
         + (((m.type === 'rift' && rift && rift.name === m.name) || (m.type === 'dig' && dig === m.name)) ? 'rgba(255,214,170,.14);color:#fff8ef' : 'transparent;color:#cfe6ff'),
       close: () => { this.set({ monitored: mon.filter(x => !(x.type === m.type && x.name === m.name)) }); this.toast('REMOVED FROM MONITORING // ' + m.name.toUpperCase(), false); },
@@ -2308,6 +2669,41 @@ class Component extends DCLogic {
     const reqLine = (...parts) => parts.filter(Boolean).join(' · ');
     const menuPanel = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(min(184px,100%),1fr));gap:4px;padding:10px;border-radius:14px;background:linear-gradient(160deg, rgba(16,36,58,.98), rgba(5,13,24,.985));backdrop-filter:blur(30px) saturate(140%);-webkit-backdrop-filter:blur(30px) saturate(140%);border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out;z-index:600;position:absolute';
     return {
+      // ---- Split tabs ----
+      tabsShown, splitCls: tabsShown ? 'rf-split' : 'rf-split-off', tabColCls: tabsShown ? 'rf-tabcol' : 'rf-split-off',
+      panelCls: tabsShown ? 'rf-tabpanel' : 'rf-split-off', panelScrollCls: tabsShown ? 'rf-tabscroll' : 'rf-split-off',
+      panelRole: tabsShown ? 'tabpanel' : 'none', activeTabId: tabsShown && activeIdx >= 0 ? 'rf-tab-' + activeIdx : '',
+      railIcons: tabsShown && this.state.splitMode !== 'list', railList: tabsShown && this.state.splitMode === 'list',
+      railAria: railType === 'rift' ? 'Rifts' : 'Dig sites',
+      toList: () => this.setSplitMode('list'), toListSearch: () => this.setSplitMode('list', true), toIcons: () => this.setSplitMode('icons'),
+      railRifts: () => this.set({ browse: 'rift', hov: null }), railDigs: () => this.set({ browse: 'dig', hov: null }),
+      railRiftCls: 'rf-segb' + (railType === 'rift' ? ' is-on' : ''), railDigCls: 'rf-segb' + (railType === 'dig' ? ' is-on' : ''),
+      railFiltered: !!q || railCatVal !== 'ALL', railChipTag: q ? 'SEARCH' : 'FILTER',
+      railChipAria: q ? 'Clear the search' : 'Clear the reward type filter',
+      railClear: () => this.set({ q: '', [railCatKey]: 'ALL' }),
+      railGroups, railRows: [].concat(...railGroups.map(g => g.items)), railEmpty: tabsShown && railItems.length === 0,
+      hovShow: !!hov, hovStyle: hov ? 'top:' + hov.y + 'px' : '', hovName: hov ? hov.name : '', hovMeta: hov ? hov.meta : '',
+      unhover: () => { if (this.state.hov) this.setState({ hov: null }); },
+      listTitle: railType === 'rift' ? 'SELECT RIFT' : 'SELECT DIG SITE',
+      listCount: railItems.length + '/' + (railType === 'rift' ? d.rifts.length : this.digData.sites.length),
+      listSearchLabel: railType === 'rift' ? 'Search rifts and rewards' : 'Search dig sites and rewards',
+      listPlaceholder: railType === 'rift' ? 'RIFT OR REWARD…' : 'SITE OR REWARD…',
+      hasQ: !!q, clearQ: () => this.set({ q: '' }),
+      railCatVal, railSelCls: 'rf-list-sel' + (railCatVal !== 'ALL' ? ' is-on' : ''),
+      railCatOpts: [{ value: 'ALL', label: railType === 'dig' ? 'ALL SITES' : 'ALL REWARD TYPES' }].concat(railCats.map(c => ({ value: c, label: c.toUpperCase() }))),
+      onRailCat: e => this.set({ [railCatKey]: e.target.value }),
+      tabRows: tabsList.map((t, i) => {
+        const key = this.tabKeyOf(t), on = key === activeTab, pr = prog0[key];
+        return {
+          id: 'rf-tab-' + i, code: this.codeFor(t.type, t.name), name: t.name,
+          cls: 'rf-tab' + (on ? ' is-on' : ''), selected: on ? 'true' : 'false', tabIndex: on ? 0 : -1,
+          hasTarget: t.type === 'rift' && (on ? this.state.reward != null : !!(pr && pr.reward != null)),
+          closeLabel: 'Close ' + t.name,
+          pick: () => this.switchTo(t.type, t.name), close: () => this.closeTab(key), key: e => this.tabKeyNav(e)
+        };
+      }),
+      tabCountLabel: tabsList.length + ' / 5 OPEN', closeAllTabs: () => this.closeAllTabs(),
+      abortRead: tabsLayout ? goBack : closeAll,
       // ---- mobile navigation ----
       mob, rootClass: 'rf-root' + (mob ? ' is-mob' : ''),
       showLogo: !(mob && (rift || dig)), topBackAny: mob && !!(rift || dig),
@@ -2433,7 +2829,7 @@ class Component extends DCLogic {
       digHasUnlocks: !!(digSite && digSite.unlocks && digSite.unlocks.length),
       digUnlocks: digSite ? (digSite.unlocks || []).map(n => {
         const ok = !!this.digBy(n);
-        return { name: n, isBtn: ok, isStatic: !ok, go: () => this.set({ dig: n, railOpen: {} }) };
+        return { name: n, isBtn: ok, isStatic: !ok, go: tabsLayout ? () => this.switchTo('dig', n) : () => this.set({ dig: n, railOpen: {} }) };
       }) : [],
       howOpen: !!this.state.howOpen, toggleHow: () => this.set({ howOpen: !this.state.howOpen }),
       rollRows: [
@@ -2497,7 +2893,7 @@ class Component extends DCLogic {
 
       hasMonitor: mon.length > 0,
       sideStyle: 'position:sticky;top:' + (mon.length > 0 && !narrow && (!!rift || !!dig) ? 127 : 84) + 'px;flex:1 1 246px;min-width:0;max-width:300px',
-      monStripAny: mon.length > 0 && !narrow && !mob && (!!rift || !!dig),
+      monStripAny: mon.length > 0 && !narrow && !mob && !tabsLayout && (!!rift || !!dig),
       toggleShell: 'flex:none;box-sizing:border-box;'
         + ((split && !cond)
           ? 'display:flex;flex-direction:column;align-items:stretch;gap:3px;padding:3px;'
@@ -2573,7 +2969,7 @@ class Component extends DCLogic {
       clearCat: () => this.set({ [catKey]: 'ALL', catOpen: false }),
 
       riftCards: filtered.map((r, i) => {
-        const open = () => this.set({ rift: r.name, reward: null, cur: 0, railOpen: {}, q: '' });
+        const open = tabsLayout ? () => this.switchTo('rift', r.name) : () => this.set({ rift: r.name, reward: null, cur: 0, railOpen: {}, q: '' });
         return {
           wrap: wipe(i, tip === 'rift:' + r.name),
           ...pinFor('rift', r.name),
@@ -2647,11 +3043,11 @@ class Component extends DCLogic {
 
       prev: () => this.set({ cur: Math.max(0, cur - 1) }),
       next: () => cur === total - 1
-        ? this.set({ rift: null, reward: null, cur: 0, railOpen: {}, q: '' })
+        ? (tabsLayout ? goBack() : this.set({ rift: null, reward: null, cur: 0, railOpen: {}, q: '' }))
         : this.set({ cur: cur + 1 }),
       prevStyle: this.glassBtn(cur === 0 ? 'dis' : 'ghost'),
       nextStyle: cur >= steps.length - 1 ? this.claimBtn(cur === total - 1) : this.glassBtn('primary'),
-      nextLabel: cur === steps.length - 1 ? '◆ CLAIM REWARD ›' : (cur === total - 1 ? 'RETURN TO RIFT INDEX ›' : 'NEXT STEP ›'),
+      nextLabel: cur === steps.length - 1 ? '◆ CLAIM REWARD ›' : (cur === total - 1 ? (tabsLayout ? 'RETURN TO REWARDS ›' : 'RETURN TO RIFT INDEX ›') : 'NEXT STEP ›'),
 
       railFinal: (() => {
         const isCur = cur >= steps.length;
