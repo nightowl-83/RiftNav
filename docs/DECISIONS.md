@@ -6,6 +6,25 @@ supersedes it and say so.
 
 ---
 
+## 2026-09-28 — New layouts are tested on a branch, as an extra `layout` option
+
+**Decided:** The "Split tabs" layout is built as a fourth `layout` option ("Split tabs") on the
+`split-tabs` branch, where it's the default. `main` keeps Notched split as the default until testing
+says otherwise. In the Split tabs layout, open rifts and dig sites share the existing
+`state.progress` store with monitoring, through one `switchTo(type, name)` helper. Mobile is
+unchanged. Testers reach the branch through its Cloudflare Pages preview URL (password-gated like
+production) or locally.
+
+**Why:** The layout changes how every detail screen works, so it has to be tried with real data
+before it replaces the default. A layout option keeps Grid, Split column and Notched split intact,
+and a branch keeps the people already using the main site unaffected. Reusing `progress` avoids a
+second, conflicting record of where each rift is.
+
+**What would overturn it:** testing showing tabs are extra clutter, in which case fall back to the
+list-only version (prototype B), or deciding to make Split tabs the default on main.
+
+---
+
 ## 2026-09-27 — Test site: Cloudflare Pages behind one shared password
 
 **Decided:** The build is shared with testers from Cloudflare Pages, deployed from this repo with

@@ -40,6 +40,7 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 | Rift Nav Mobile Dock | https://claude.ai/artifact/9kSf28hfwDHdugvtk5B4tM | Mobile navigation proposal from the iPhone test: bottom dock, full-screen search, drawers, compact detail headers, step reader strip. Implemented in `969c771` | 2026-09-27 |
 | Rift Nav Bug Drop | https://claude.ai/artifact/NBFJNT3LBjFFpR14nfkZV2 | Phone bug intake (QR code): reports in the `reports` db collection, photos in the asset store. Read with ArtifactData; fetch images one asset id at a time | 2026-09-27 |
 | Rift Nav Phone Test | https://claude.ai/artifact/Syk8scgbf83q5fWCQTznth | **Broken; don't use.** Loads blank because the artifact CSP blocks the `unsafe-eval` that the dc runtime needs. Test through the Cloudflare Pages site instead | 2026-09-27 |
+| Rift Nav — Split Browse Prototypes | https://claude.ai/artifact/HaAgwXd9qWinCuJ5uivkXv | Claude Design canvas: A icon rail, B condensed list, C icon rail + open tabs, a mobile recents strip, and a clickable "Test build" (C + list toggle, all 32 rifts). Source for `docs/prompts/2026-09-28-split-tabs.md` | 2026-09-28 |
 
 ## Research outputs
 
