@@ -97,8 +97,8 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 - **Compact bar:** forced visible while something is selected (`shrunk || inlineSel`). Its ‹ closes the selection. Its toggle, search and category menu work on the same `browse` / `q` / `cat` state, so the search filters the rows live. The monitoring count stays on the right. Under inline detail the search also matches rewards, so "relic" finds the 10 rifts with a relic reward.
 - **Column:** narrows to 340px (`.rf-inl-col`), starts below the bar (top 56 + 56 + 20px), and the card gap drops to 4px.
 - **Rows:** each card becomes a minimized row, a separate element (`.rf-mrow`). The full card isn't reshaped; it isn't rendered while rows show.
-  - **Shape:** 44px tall, radius 10px, background `rgba(2,8,16,.28)`. Hover `rgba(8,20,34,.45)`; selected `rgba(30,20,10,.42)`.
-  - **Icon:** a 30×22 folder icon (`FOLDER_ICON`, hard-coded; not derived from `folderPath`). Fill `rgba(142,203,255,.08)` and stroke `rgba(176,214,255,.5)`; hover stroke `rgba(142,203,255,.85)`; selected fill `rgba(255,214,170,.2)` and stroke `#ffd9b0`.
+  - **Shape:** 44px tall, radius 10px, background `rgba(2,8,16,.28)` with a faint 1px border `rgba(176,214,255,.07)`. Hover: background `rgba(8,20,34,.45)`, border `.14`. Selected: background `rgba(30,20,10,.42)`, border `rgba(255,224,190,.2)`.
+  - **Icon:** Material Symbols Rounded "folder" (weight 400, unfilled; `FOLDER_ICON`, viewBox `0 -960 960 960`) at 18px, so its line is 1.5px like the app's other line icons. Colour `#7f9cb4`; hover `#8ecbff`; selected `#ffd9b0` with a soft amber glow.
   - **Name:** Chakra Petch 15px/600, `#cfe0ef` (`#fff8ef` when selected), ellipsis.
   - **Pin:** the existing + / ⦿ pin as its own 32×32 button (`.rf-mpin`), labelled "Monitor {name}" / "Stop monitoring {name}" with `aria-pressed`. It toggles monitoring without opening the item.
   - **Selected row:** has `aria-current="true"` and scrolls into view (`block: 'nearest'`).

@@ -357,13 +357,13 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 .rf-inl-dim{position:fixed;inset:0;z-index:1;pointer-events:none;background:rgba(4,10,20,.5);opacity:0;transition:opacity .7s ease}
 .rf-inl-dim.is-on{opacity:1}
 .rf-mrow-w{position:relative}
-.rf-mrow{display:flex;align-items:center;gap:14px;width:100%;height:44px;box-sizing:border-box;margin:0;padding:0 46px 0 12px;border:0;border-radius:10px;background:rgba(2,8,16,.28);color:#cfe0ef;font:600 15px 'Chakra Petch',sans-serif;letter-spacing:.03em;text-align:left;cursor:pointer;scroll-margin-top:128px;scroll-margin-bottom:56px;transition:background-color .2s ease}
-.rf-mrow:hover{background:rgba(8,20,34,.45)}
-.rf-mrow.is-on{background:rgba(30,20,10,.42);color:#fff8ef}
-.rf-mrow-ico{flex:none;display:flex}
-.rf-mrow-ico path{fill:rgba(142,203,255,.08);stroke:rgba(176,214,255,.5);stroke-width:1.2;stroke-linejoin:round;transition:fill .2s ease,stroke .2s ease}
-.rf-mrow:hover .rf-mrow-ico path{stroke:rgba(142,203,255,.85)}
-.rf-mrow.is-on .rf-mrow-ico path{fill:rgba(255,214,170,.2);stroke:#ffd9b0}
+.rf-mrow{display:flex;align-items:center;gap:12px;width:100%;height:44px;box-sizing:border-box;margin:0;padding:0 46px 0 13px;border:1px solid rgba(176,214,255,.07);border-radius:10px;background:rgba(2,8,16,.28);color:#cfe0ef;font:600 15px 'Chakra Petch',sans-serif;letter-spacing:.03em;text-align:left;cursor:pointer;scroll-margin-top:128px;scroll-margin-bottom:56px;transition:background-color .2s ease}
+.rf-mrow:hover{background:rgba(8,20,34,.45);border-color:rgba(176,214,255,.14)}
+.rf-mrow.is-on{background:rgba(30,20,10,.42);border-color:rgba(255,224,190,.2);color:#fff8ef}
+.rf-mrow-ico{flex:none;display:flex;color:#7f9cb4;transition:color .2s ease}
+.rf-mrow-ico path{fill:currentColor}
+.rf-mrow:hover .rf-mrow-ico{color:#8ecbff}
+.rf-mrow.is-on .rf-mrow-ico{color:#ffd9b0;filter:drop-shadow(0 0 6px rgba(255,206,150,.35))}
 .rf-mrow-n{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rf-mpin{position:absolute;right:6px;top:50%;width:32px;height:32px;margin:-16px 0 0;padding:0;border:0;border-radius:8px;background:transparent;color:#8ecbff;font:200 19px/1 'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background-color .18s ease,color .18s ease}
 .rf-mpin:hover{background:rgba(163,229,255,.1);color:#fff}
@@ -774,7 +774,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
       <div style="{{ c.wrap }}">
       <sc-if value="{{ inlRows }}" hint-placeholder-val="{{ false }}">
       <div class="rf-mrow-w">
-        <button type="button" class="{{ c.rowCls }}" aria-current="{{ c.rowCur }}" onClick="{{ c.open }}"><span class="rf-mrow-ico" aria-hidden="true"><svg width="30" height="22" viewBox="0 0 30 22" focusable="false"><path d="{{ folderIcon }}"></path></svg></span><span class="rf-mrow-n">{{ c.name }}</span></button>
+        <button type="button" class="{{ c.rowCls }}" aria-current="{{ c.rowCur }}" onClick="{{ c.open }}"><span class="rf-mrow-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 -960 960 960" focusable="false"><path d="{{ folderIcon }}"></path></svg></span><span class="rf-mrow-n">{{ c.name }}</span></button>
         <button type="button" class="{{ c.mpinCls }}" aria-pressed="{{ c.pinOn }}" aria-label="{{ c.pinLabel }}" onClick="{{ c.pin }}"><span aria-hidden="true">{{ c.ctaGlyph }}</span></button>
       </div>
       </sc-if>
@@ -858,7 +858,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
       <div style="{{ c.wrap }}">
       <sc-if value="{{ inlRows }}" hint-placeholder-val="{{ false }}">
       <div class="rf-mrow-w">
-        <button type="button" class="{{ c.rowCls }}" aria-current="{{ c.rowCur }}" onClick="{{ c.open }}"><span class="rf-mrow-ico" aria-hidden="true"><svg width="30" height="22" viewBox="0 0 30 22" focusable="false"><path d="{{ folderIcon }}"></path></svg></span><span class="rf-mrow-n">{{ c.name }}</span></button>
+        <button type="button" class="{{ c.rowCls }}" aria-current="{{ c.rowCur }}" onClick="{{ c.open }}"><span class="rf-mrow-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 -960 960 960" focusable="false"><path d="{{ folderIcon }}"></path></svg></span><span class="rf-mrow-n">{{ c.name }}</span></button>
         <button type="button" class="{{ c.mpinCls }}" aria-pressed="{{ c.pinOn }}" aria-label="{{ c.pinLabel }}" onClick="{{ c.pin }}"><span aria-hidden="true">{{ c.ctaGlyph }}</span></button>
       </div>
       </sc-if>
@@ -1549,8 +1549,9 @@ class Component extends DCLogic {
   }
 
   // ---- inline detail (Notched split, desktop) ----
-  // The notched silhouette at icon scale, hard-coded (not derived from folderPath).
-  FOLDER_ICON = 'M-0.5 4 A4.5 4.5 0 0 1 4 -0.5 H7.5 L11.5 5.0 H20 L23 -0.5 H26 A4.5 4.5 0 0 1 30.5 4 V18 A4.5 4.5 0 0 1 26 22.5 H4 A4.5 4.5 0 0 1 -0.5 18 Z';
+  // Material Symbols Rounded "folder" (weight 400, unfilled), viewBox 0 -960 960 960. At 18px its line is
+  // 80/960 × 18 = 1.5px, the same weight as the app's other line icons.
+  FOLDER_ICON = 'M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z';
   inlineOn() { return (this.props.layout || 'Grid') === 'Notched split' && !this.state.mob; }
   reducedMotion() { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
   // close: the panel slides out, then the list expands back and focus returns to the card that was open
