@@ -41,6 +41,8 @@ When an artifact is published to claude.ai, add it here: name, URL, what it's fo
 | Rift Nav Bug Drop | https://claude.ai/artifact/NBFJNT3LBjFFpR14nfkZV2 | Phone bug intake (QR code): reports in the `reports` db collection, photos in the asset store. Read with ArtifactData; fetch images one asset id at a time | 2026-09-27 |
 | Rift Nav Phone Test | https://claude.ai/artifact/Syk8scgbf83q5fWCQTznth | **Broken; don't use.** Loads blank because the artifact CSP blocks the `unsafe-eval` that the dc runtime needs. Test through the Cloudflare Pages site instead | 2026-09-27 |
 | Rift Nav — Split Browse Prototypes | https://claude.ai/artifact/HaAgwXd9qWinCuJ5uivkXv | Claude Design canvas: A icon rail, B condensed list, C icon rail + open tabs, a mobile recents strip, and a clickable "Test build" (C + list toggle, all 32 rifts). Source for `docs/prompts/2026-09-28-split-tabs.md` | 2026-09-28 |
+| Sync Ledger | https://claude.ai/artifact/66KvEXdWfRziYjH3EyRj9v | Tracks this Mac vs GitHub vs the live site, where you left off, push steps, git cheat sheet, linked tools. Data in its `projects` db collection (doc `stellaris`); `/close-out` step 6 updates it; `scripts/sync-snapshot.sh` feeds it | 2026-10-07 |
+| Sync Ledger Layouts (canvas) | https://claude.ai/artifact/3bHPkeMn6GPtzRzAPjTwxB | Three Geist-styled layout options with the three copies stacked in a left column: A stacked cards + tabs, B pipeline timeline, C dark dashboard sidebar | 2026-10-07 |
 
 ## Research outputs
 

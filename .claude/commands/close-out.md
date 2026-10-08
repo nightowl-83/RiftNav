@@ -32,5 +32,22 @@ this session" instead, so the record is explicit.
    - `git push`
    - If the push fails on auth, say so plainly and tell me what to do — do not retry in a loop.
 
-6. **Report back** in three lines: what was committed, what's still open, and the single
+6. **Update the Sync Ledger** (https://claude.ai/artifact/66KvEXdWfRziYjH3EyRj9v) so it shows
+   where things stand after this push.
+   - Run `scripts/sync-snapshot.sh main --print` and keep its output.
+   - If the `ArtifactData` tool is available: `get` the document `projects/stellaris`, then
+     `update` it (pin `if_version` to the version you read) with:
+     - `snapshot`: the script output as an object — `taken`, `branch`, `sha`, `date`, `subject`,
+       `dirty` (number), `upstream`, `upsha`, `ahead` and `behind` (from `aheadbehind`), and
+       `branches`: one `{name, sha, date, vsMain, ahead, behind, tracked}` per `br=` line
+       (`tracked` is false when the last field is empty).
+     - `leftOff`: `summary` (one or two sentences on where this session stopped), `lastLog`
+       (the session log path you just wrote), `warnings`, `open` and `next` (from the log).
+     - `checklist`: `{}` and `updatedAt`: now.
+     Leave `host` and `tools` alone unless this session changed hosting or a linked tool.
+   - If `ArtifactData` isn't available (e.g. the CLI on another machine), print the script output
+     and tell me to paste it into the ledger's **Update from snapshot**. Don't skip this step
+     silently.
+
+7. **Report back** in three lines: what was committed, what's still open, and the single
    next thing to pick up.
