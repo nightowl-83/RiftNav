@@ -204,4 +204,59 @@ rrows=[x for x in RD["rewards"]+DD["rewards"] if x["type"]=="relic"]
 check(f"every UI relic reward carries relic details or a documented note ({len(rrows)})",
       all(x.get("relic") or x.get("relicNote") for x in rrows))
 
+print("\n== 10. Reward timing ==")
+YD = m3.get("timing_year_days")
+modes = set(m3.get("timing_modes") or [])
+check("merged file declares timing_modes and timing_year_days", bool(modes) and YD == 360)
+TR = [x for x in m3["rewards"] if "timing" in x]
+check(f"every reward carries a timing object ({len(m3['rewards'])})", len(TR) == len(m3["rewards"]))
+check("every timing.mode is declared", all(x["timing"]["mode"] in modes for x in TR),
+      str({x["timing"]["mode"] for x in TR} - modes))
+check("derived_from is one of default/text/relic_catalogue",
+      {x["timing"]["derived_from"] for x in TR} <= {"default","text","relic_catalogue"})
+
+# a mode must be backed by the field that produced it
+need = {"cycle":"cycle_days", "uses":"uses", "duration":"days", "delayed":"delay_days"}
+for mode, field in need.items():
+    rows = [x for x in TR if x["timing"]["mode"] == mode]
+    check(f"mode '{mode}' always carries {field} ({len(rows)})",
+          all(x["timing"][field] is not None for x in rows),
+          str([x["name"] for x in rows if x["timing"][field] is None][:3]))
+check("mode 'instant' never carries a duration or cycle",
+      not [x for x in TR if x["timing"]["mode"]=="instant"
+           and (x["timing"]["days"] or x["timing"]["cycle_days"])])
+
+# days/years must agree, since both are published
+def agree(d, y):
+    return d is None and y is None or (d is not None and y is not None and abs(d/YD - y) < 0.011)
+check("days and years agree for every reward",
+      all(agree(x["timing"]["days"], x["timing"]["years"]) and
+          agree(x["timing"]["cycle_days"], x["timing"]["cycle_years"]) and
+          agree(x["timing"]["delay_days"], x["timing"]["delay_years"]) for x in TR))
+
+# activation is relic-only, and its cooldown must be whole Stellaris years
+act = [x for x in TR if x["timing"]["activation"]]
+check(f"activation appears only on relic-linked rewards ({len(act)})",
+      all(x.get("relic_id") for x in act),
+      str([x["name"] for x in act if not x.get("relic_id")][:3]))
+check("every activation cooldown is a whole number of 360-day years",
+      all(x["timing"]["activation"]["cooldown_days"] % YD == 0 for x in act))
+check("every activation carries a cost list", all(isinstance(x["timing"]["activation"]["cost"], list) for x in act))
+
+# regression guards for the two rows that motivated this work
+seal = [x for x in TR if x["entity"]=="The Seal" and x["timing"]["mode"]=="cycle"]
+check("The Seal's repeating choice is mode 'cycle' with a 10-year cycle",
+      len(seal)==1 and seal[0]["timing"]["cycle_years"]==10)
+# the 'recurring' type predates timing and is still rendered by the UI (TYPE_SHORT, yieldKey),
+# so it stays. What must not happen is the two disagreeing.
+rec=[x for x in TR if x["type"]=="recurring"]
+check(f"every 'recurring'-typed reward also has timing.mode 'cycle' ({len(rec)})",
+      all(x["timing"]["mode"]=="cycle" for x in rec),
+      str([(x["name"],x["timing"]["mode"]) for x in rec if x["timing"]["mode"]!="cycle"][:3]))
+check("no reward has timing.mode 'cycle' without the 'recurring' type (or vice versa)",
+      {x["rid"] for x in TR if x["timing"]["mode"]=="cycle"}=={x["rid"] for x in rec})
+check("a text-derived mode always records the substring it came from",
+      all(x["timing"]["match"] for x in TR if x["timing"]["derived_from"]=="text"))
+print(f"  rewards with a real temporal shape: {sum(1 for x in TR if x['timing']['mode']!='instant' or x['timing']['activation'])} of {len(TR)}")
+
 print(f"\n{'ALL CHECKS PASSED' if not fails else str(len(fails))+' FAILED: '+str(fails)}")

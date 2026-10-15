@@ -52,6 +52,39 @@ Design vernacular already in the product — reuse it, don't invent parallel ter
 RIFT NAV · HOLO DECK · GUIDE ONLINE · SELECT RIFT · SCAN COMPLETE · SIG-#### · RETARGET ·
 ABORT RIFT · EVENT LOG · CLASSIC/HOLO toggle.
 
+## Committing from Cowork needs one extra step
+
+**A Cowork session cannot stage or commit until file deletion is granted for the folder.**
+
+Why: `git add` writes `.git/index.lock` and then *renames* it over `.git/index`. A rename has to
+unlink the destination, and the Cowork folder mount blocks deletes by default. So `git add`
+silently stages nothing and leaves the lock behind, and the next git command trips over it.
+Nothing is lost — the working tree is intact — but the close-out cannot finish.
+
+The fix, in order:
+
+1. Claude calls `device_request_delete_permission` for the repo folder. Mike approves the prompt.
+2. Deletion then works for the rest of that session, and `git add` / `commit` / `push` behave normally.
+
+The grant **expires with the session**, so it is needed again next time. If it is declined or
+nobody is around to approve it, write every file as normal and leave the commit to Mike:
+
+```bash
+cd ~/Desktop/Projects/Stellaris && git add -A && git commit && git push
+```
+
+If a session already hit the blocker, stale locks may be left behind. Clear them on the Mac:
+
+```bash
+rm -rf .git/_stale .git/objects/maintenance.lock
+find .git/objects -name 'tmp_obj_*' -delete
+git gc --prune=now
+```
+
+**Claude Code on the Mac is not affected** — it writes to the filesystem directly. This is a
+Cowork-only constraint, and it sits alongside the other one: `/pick-up` and `/close-out` are
+Claude Code commands that do not exist in Cowork, where you say "pick up" / "close out" instead.
+
 ## Session protocol — important
 
 Claude Code conversation history is **local to one machine and is not synced anywhere**. The

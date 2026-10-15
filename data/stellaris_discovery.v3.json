@@ -3,7 +3,7 @@
  "kind": "mixed",
  "schema": "stellaris-discovery/3.0",
  "version": "3.0",
- "generated": "2026-09-27",
+ "generated": "2026-10-15",
  "wiki_version": "3.14",
  "source": "https://stellaris.paradoxwikis.com/Astral_rift , per-rift pages , https://stellaris.paradoxwikis.com/Astral_rift_situations , Template:Reward ; https://stellaris.paradoxwikis.com/Archaeological_site (all data inline on that page) plus https://stellaris.paradoxwikis.com/Template:Reward for code expansion",
  "coverage": {
@@ -86,6 +86,16 @@
   "research",
   "resource"
  ],
+ "timing_modes": [
+  "cycle",
+  "uses",
+  "duration",
+  "delayed",
+  "while_active",
+  "permanent",
+  "instant"
+ ],
+ "timing_year_days": 360,
  "entities": [
   {
    "id": "ruined-planet",
@@ -14516,6 +14526,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "grants +0.5 basic resource per job at chapter 7",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "grants +0.5 basic resource per job at chapter 7"
   },
   {
@@ -14534,6 +14557,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "grants +25% rift exploration speed and -50% rift fail chance at chapter 7",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "grants +25% rift exploration speed and -50% rift fail chance at chapter 7"
   },
   {
@@ -14552,6 +14588,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "grants +10% armor HP and hardening at chapter 7",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "grants +10% armor HP and hardening at chapter 7"
   },
   {
@@ -14570,6 +14619,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "grants +10% shield HP and hardening at chapter 7",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "grants +10% shield HP and hardening at chapter 7"
   },
   {
@@ -14588,6 +14650,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "adds +5% Sublight Speed at chapter 7",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "adds +5% Sublight Speed at chapter 7"
   },
   {
@@ -14606,6 +14681,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "adds +5% Ship Build Speed at chapter 7",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "adds +5% Ship Build Speed at chapter 7"
   },
   {
@@ -14624,6 +14712,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Formless contact one year later hinting at The Crystal Rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Follow-up: Formless contact one year later hinting at The Crystal Rift."
   },
   {
@@ -14642,6 +14743,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Level 3 Scientist with Rift Warped",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Level 3 Scientist with Rift Warped"
   },
   {
@@ -14660,6 +14774,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Level 3 Commander with Rift Warped",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Level 3 Commander with Rift Warped"
   },
   {
@@ -14678,6 +14805,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Level 3 Official with Rift Warped",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Level 3 Official with Rift Warped"
   },
   {
@@ -14696,6 +14836,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Energy and an aged Official immune to negative traits",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Energy and an aged Official immune to negative traits"
   },
   {
@@ -14714,6 +14867,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Formless contact one year later hinting at The Crystal Rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Follow-up: Formless contact one year later hinting at The Crystal Rift."
   },
   {
@@ -14732,6 +14898,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Black Curtain base",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Black Curtain base: +5% Pop Growth Speed and +5% Habitability"
   },
   {
@@ -14750,6 +14929,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Starlight Vanguard base",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Starlight Vanguard base: +10% Kinetic Weapon Damage"
   },
   {
@@ -14768,6 +14960,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Black Curtain + astral threads",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Black Curtain + astral threads: +25% Astral Rift Exploration Speed, -50% Astral Rift Fail Probability"
   },
   {
@@ -14786,6 +14991,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Starlight Vanguard + astral threads",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Starlight Vanguard + astral threads: +10% Shield HP, +10% Shield Hardening"
   },
   {
@@ -14804,6 +15022,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Black Curtain + resources",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Black Curtain + resources: +0.5 basic resource from the matching job category"
   },
   {
@@ -14822,6 +15053,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Starlight Vanguard + alloys",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Starlight Vanguard + alloys: +10% Armor HP, +10% Armor Hardening"
   },
   {
@@ -14840,6 +15084,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Chapter 5 astral threads",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Chapter 5 astral threads: +5% Sublight Speed"
   },
   {
@@ -14858,6 +15115,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Chapter 5 energy",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Chapter 5 energy: +5% Ship Build Speed"
   },
   {
@@ -14876,6 +15146,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Strong",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "species gains Strong"
   },
   {
@@ -14894,6 +15177,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Natural Intellectuals",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "species gains Natural Intellectuals"
   },
   {
@@ -14912,6 +15208,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Proles",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "species gains Proles"
   },
   {
@@ -14930,6 +15239,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Ingenious",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "species gains Ingenious"
   },
   {
@@ -14948,6 +15270,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Conservative",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "species gains Conservative"
   },
   {
@@ -14966,6 +15301,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "species gains Starborn",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "species gains Starborn"
   },
   {
@@ -14984,6 +15332,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Genesis Core",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Genesis Core specimen [Grand Archive DLC]"
   },
   {
@@ -15002,6 +15363,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "One pop of the new species on a random colony, with the three traits you picked and that c",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "One pop of the new species on a random colony, with the three traits you picked and that colony's climate preference"
   },
   {
@@ -15020,6 +15394,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Genesis Insight (Gestalt Consciousness only)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Genesis Insight (Gestalt Consciousness only)"
   },
   {
@@ -15038,6 +15425,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Interdimensional Treaty",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Interdimensional Treaty specimen [Grand Archive DLC]"
   },
   {
@@ -15056,6 +15456,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+50% Governing Ethics Attraction",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "+50% Governing Ethics Attraction for 10 years"
   },
   {
@@ -15074,6 +15487,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Permanent communications with the Mirror Empire",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "Permanent"
+   },
    "text": "Permanent communications with the Mirror Empire"
   },
   {
@@ -15092,6 +15518,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Fractured Ambassadors (Gestalt Consciousness only)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Fractured Ambassadors (Gestalt Consciousness only)"
   },
   {
@@ -15110,6 +15549,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Interdimensional Treaty",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Interdimensional Treaty specimen [Grand Archive DLC]"
   },
   {
@@ -15128,6 +15580,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Scientist becomes 5 years younger",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist becomes 5 years younger"
   },
   {
@@ -15146,6 +15611,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "A Star is Born",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "A Star is Born: +10% Physics research for 10 years"
   },
   {
@@ -15164,6 +15642,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random Biology (Genetics) technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random Biology (Genetics) technology"
   },
   {
@@ -15182,6 +15673,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Wormhole Fur",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Wormhole Fur specimen [Grand Archive DLC]"
   },
   {
@@ -15200,6 +15704,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Wormhole Stabilization",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Wormhole Stabilization if researchable, otherwise 50% progress toward a random Particles technology"
   },
   {
@@ -15218,6 +15735,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Mutative Digestive Fluids",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Mutative Digestive Fluids specimen [Grand Archive DLC]"
   },
   {
@@ -15236,6 +15766,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Revolutionary Medi-Gel (+25% Medical Worker output) for organic non-Gestalts; otherwise a random Biology (Farming) technology"
   },
   {
@@ -15254,6 +15797,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "10% progress toward a random Robotics technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "10% progress toward a random Robotics technology"
   },
   {
@@ -15272,6 +15828,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Extreme Contortionist DNA",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Extreme Contortionist DNA specimen [Grand Archive DLC]"
   },
   {
@@ -15290,6 +15859,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spontaneous Crystallization (converts 1% of minerals into rare crystals)"
   },
   {
@@ -15308,6 +15890,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Particles technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Particles technology"
   },
   {
@@ -15326,6 +15921,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Field Manipulation technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Field Manipulation technology"
   },
   {
@@ -15344,6 +15952,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Unity and +10 Physics on the rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+10 Unity and +10 Physics on the rift"
   },
   {
@@ -15362,6 +15983,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Azilash",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Azilash: neutral Formless starbase, 8 hostile Aberrant fleets, deposits of 1 astral thread / 10 rare crystals / 10 physics"
   },
   {
@@ -15380,6 +16014,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or ",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 333,
+       "resource": "astral threads"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "The Seal — clearing the Aberrants can yield a legendary paragon, a Luminarium subject, or the Eternal Throne relic",
    "relic_id": "eternal-throne"
   },
@@ -15399,6 +16055,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "If the Aberrants destroy the Formless first, Azilash goes nova and is lost"
   },
   {
@@ -15417,6 +16086,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materiali",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "75% progress toward a random Psionics technology (Energy instead for Gestalt and Materialist / Fanatic Materialist empires)"
   },
   {
@@ -15435,6 +16117,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "2-4 years later the 'Dust to Dust' event gives Society and Engineering research and remove",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 1080,
+    "delay_years": 3.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Follow-up: 2-4 years later the 'Dust to Dust' event gives Society and Engineering research and removes the deposit."
   },
   {
@@ -15453,6 +16148,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25 Society research on the rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25 Society research on the rift"
   },
   {
@@ -15471,6 +16179,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Option to recruit the paragon Oakenstalk",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Option to recruit the paragon Oakenstalk"
   },
   {
@@ -15489,6 +16210,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Astral Cloaking (+1 Cloaking Strength while active)",
+   "timing": {
+    "mode": "while_active",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "while active"
+   },
    "text": "Astral Cloaking (+1 Cloaking Strength while active)"
   },
   {
@@ -15507,6 +16241,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Astral Shield Experimentation",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Astral Shield Experimentation: +5% Shield HP, +5% Shield Hardening"
   },
   {
@@ -15525,6 +16272,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pac",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "3 Baol pops (Gaia preference; Venerable, Agrarian, Communal, Delicious, Slow Breeders; Pacifist ethic)"
   },
   {
@@ -15543,6 +16303,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Military Theory technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Military Theory technology"
   },
   {
@@ -15561,6 +16334,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Grunur Weapons Interface",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Grunur Weapons Interface: +10% Ship Fire Rate"
   },
   {
@@ -15579,6 +16365,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Flamestorm Troopers",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Flamestorm Troopers"
   },
   {
@@ -15597,6 +16396,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist is lost for 5-7 years",
+   "timing": {
+    "mode": "duration",
+    "days": 2160,
+    "years": 6.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 5-7 years"
+   },
    "text": "Scientist is lost for 5-7 years"
   },
   {
@@ -15615,6 +16427,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "The leader returns with Rift Warped and gains Expertise",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Follow-up: The leader returns with Rift Warped and gains Expertise: Propulsion I (or Expertise: Voidcraft I if they already have it)."
   },
   {
@@ -15633,6 +16458,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Reptilian DNA",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Reptilian DNA if Evolutionary Predators is active"
   },
   {
@@ -15651,6 +16489,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Warpling Armies",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Warpling Armies"
   },
   {
@@ -15669,6 +16520,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies within 1 month",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 30,
+    "delay_years": 0.08,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Scientist dies within 1 month"
   },
   {
@@ -15687,6 +16551,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Biology technology"
   },
   {
@@ -15705,6 +16582,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Spark of Genius",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spark of Genius"
   },
   {
@@ -15723,6 +16613,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Black Light Blinded",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Black Light Blinded"
   },
   {
@@ -15741,6 +16644,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Physics on the rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+10 Physics on the rift"
   },
   {
@@ -15759,6 +16675,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Biology technology"
   },
   {
@@ -15777,6 +16706,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Avian DNA + 10 Adaptive Evolution",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Avian DNA + 10 Adaptive Evolution"
   },
   {
@@ -15795,6 +16737,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Avian DNA + 10 Adaptive Evolution",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Avian DNA + 10 Adaptive Evolution"
   },
   {
@@ -15813,6 +16768,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Computing technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Computing technology"
   },
   {
@@ -15831,6 +16799,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Automated Disinfection",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Automated Disinfection"
   },
   {
@@ -15849,6 +16830,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Colonization Drones (+25% colony development speed, +25% clear blocker speed)"
   },
   {
@@ -15867,6 +16861,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Repurposed Cleaning Drone (+25% Planetary Build Speed)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Repurposed Cleaning Drone (+25% Planetary Build Speed)"
   },
   {
@@ -15885,6 +16892,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Next-tier Quantum Firewalls / Quantum Hacking, else a random Computing tech"
   },
   {
@@ -15903,6 +16923,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Sanitary Drone Assistant",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Sanitary Drone Assistant"
   },
   {
@@ -15921,6 +16954,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Time Crystal",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Time Crystal",
    "relic_id": "time-crystal"
   },
@@ -15940,6 +16995,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Psychic (if the leader has Latent Psionic)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Psychic (if the leader has Latent Psionic)"
   },
   {
@@ -15958,6 +17026,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist dies"
   },
   {
@@ -15976,6 +17057,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Leviathan Scale",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Leviathan Scale specimen [Grand Archive DLC]"
   },
   {
@@ -15994,6 +17088,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Biology technology"
   },
   {
@@ -16012,6 +17119,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Daedalus Seal",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 1800,
+     "cooldown_years": 5.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Daedalus Seal",
    "relic_id": "daedalus-seal"
   },
@@ -16031,6 +17160,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 ",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 360,
+    "delay_years": 1.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Level 6 Commander with the Rift Warped trait and a random specialization (arrives after 1 year)"
   },
   {
@@ -16049,6 +17191,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientis",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Psychic + Planar Theorist + Riftwalker + Foreign Consciousness + Resilient on the scientist (upgraded versions if already Psychic)"
   },
   {
@@ -16067,6 +17222,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Foreign Consciousness (+5% research) for Gestalt empires",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Foreign Consciousness (+5% research) for Gestalt empires"
   },
   {
@@ -16085,6 +17253,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25 Physics and +25 Engineering on the rift",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "+25 Physics and +25 Engineering on the rift for 10 years"
   },
   {
@@ -16103,6 +17284,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Medium DNA reward",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Medium DNA reward"
   },
   {
@@ -16121,6 +17315,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Lonely Planet empire modifier",
+   "timing": {
+    "mode": "duration",
+    "days": 5400,
+    "years": 15.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 15 years"
+   },
    "text": "Lonely Planet empire modifier: +15% Propulsion for 15 years"
   },
   {
@@ -16139,6 +17346,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random Psionics technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random Psionics technology if the leader is Psychic"
   },
   {
@@ -16157,6 +17377,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spawns a hostile fleet of 10-30 Crystalline entity ships (scales toward endgame)"
   },
   {
@@ -16175,6 +17408,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "15% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "15% progress toward a random Biology technology"
   },
   {
@@ -16193,6 +17439,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "15% Biology tech progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "15% Biology tech progress"
   },
   {
@@ -16211,6 +17470,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "+20 Adaptive Evolution and Lithoid DNA",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators"
   },
   {
@@ -16229,6 +17501,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Rockworm Hive planetary decision",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rockworm Hive planetary decision"
   },
   {
@@ -16247,6 +17532,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "+20 Adaptive Evolution and Lithoid DNA",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+20 Adaptive Evolution and Lithoid DNA if Evolutionary Predators"
   },
   {
@@ -16265,6 +17563,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "15% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "15% progress toward a random Biology technology"
   },
   {
@@ -16283,6 +17594,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies and returns a year later with the Partially Digested trait",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist dies and returns a year later with the Partially Digested trait"
   },
   {
@@ -16301,6 +17625,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Celestial Tear",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Celestial Tear",
    "relic_id": "celestial-tear"
   },
@@ -16320,6 +17666,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Celestial Tear",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Celestial Tear",
    "relic_id": "celestial-tear"
   },
@@ -16339,6 +17707,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Celestial Tear",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Celestial Tear",
    "relic_id": "celestial-tear"
   },
@@ -16358,6 +17748,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius /",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 1800,
+    "delay_years": 5.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Scientist disappears and returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer"
   },
   {
@@ -16376,6 +17779,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "20% progress toward a random Computing technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "20% progress toward a random Computing technology"
   },
   {
@@ -16394,6 +17810,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Advisor Core",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Advisor Core",
    "relic_id": null,
    "relic_link_exception": "The Relics page (revision 119679) has no 'Advisor Core' entry. The Advisor rift's reward line names it, but there is no catalogue record to link it to."
@@ -16414,6 +17843,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Procedural Space (+1 district, +1 branch office)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Procedural Space (+1 district, +1 branch office)"
   },
   {
@@ -16432,6 +17874,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / R",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 1800,
+    "delay_years": 5.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Scientist returns in 5 years with Rift Warped plus one of Spark of Genius / Meticulous / Roamer"
   },
   {
@@ -16450,6 +17905,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Dimensional Endothelial Lining",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Dimensional Endothelial Lining specimen [Grand Archive DLC]"
   },
   {
@@ -16468,6 +17936,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Rift Fluid Samples",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rift Fluid Samples: +10% Biology research speed (10 years, or 5 if you cut the rig loose)"
   },
   {
@@ -16486,6 +17967,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Plasmic Core",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Plasmic Core",
    "relic_id": "plasmic-core"
   },
@@ -16505,6 +18008,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist and science ship are destroyed",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist and science ship are destroyed"
   },
   {
@@ -16523,6 +18039,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Rift Fluid Samples",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rift Fluid Samples: +10% Biology research speed (10 years)"
   },
   {
@@ -16541,6 +18070,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Symbiotic Fruit",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Symbiotic Fruit specimen"
   },
   {
@@ -16559,6 +18101,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Infinity Root",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 100,
+       "resource": "astral threads"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Infinity Root",
    "relic_id": "infinity-root"
   },
@@ -16578,6 +18142,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Plantoid leader",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Plantoid leader"
   },
   {
@@ -16596,6 +18173,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Biology technology"
   },
   {
@@ -16614,6 +18204,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies and returns as a plantoid in 5 years",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 1800,
+    "delay_years": 5.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Scientist dies and returns as a plantoid in 5 years"
   },
   {
@@ -16632,6 +18235,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward a random Biology technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward a random Biology technology"
   },
   {
@@ -16650,6 +18266,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "9 Fractal Seed planetary decisions",
+   "timing": {
+    "mode": "uses",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": 9,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "9 Fractal Seed planetary decisions"
+   },
    "text": "9 Fractal Seed planetary decisions"
   },
   {
@@ -16668,6 +18297,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "3 Fractal Seed planetary decisions",
+   "timing": {
+    "mode": "uses",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": 3,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "3 Fractal Seed planetary decisions"
+   },
    "text": "3 Fractal Seed planetary decisions"
   },
   {
@@ -16686,6 +18328,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist ages 20 years",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist ages 20 years"
   },
   {
@@ -16704,6 +18359,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Sp",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "The Continuum — passive +5% Energy, Minerals, Food, Alloys, Consumer Goods and Research Speed; active grants a large lump of every resource",
    "relic_id": "the-continuum"
   },
@@ -16723,6 +18400,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 360,
+    "delay_years": 1.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "New scientist in 1 year with Society Focus + Increased Lifespan (if invited to your empire)"
   },
   {
@@ -16741,6 +18431,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random Society technology (if you confiscate their documents instead)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random Society technology (if you confiscate their documents instead)"
   },
   {
@@ -16759,6 +18462,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Vortex Fuel",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "Vortex Fuel: +10% Energy for 10 years"
   },
   {
@@ -16777,6 +18493,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist dies",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist dies"
   },
   {
@@ -16795,6 +18524,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Ever Spinning Top",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 1800,
+     "cooldown_years": 5.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Ever Spinning Top",
    "relic_id": "ever-spinning-top"
   },
@@ -16814,6 +18565,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Mini Moon Dust",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Mini Moon Dust specimen [Grand Archive DLC]"
   },
   {
@@ -16832,6 +18596,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Society on the rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+10 Society on the rift"
   },
   {
@@ -16850,6 +18627,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Intentional Tidal Locking planetary decision",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Intentional Tidal Locking planetary decision"
   },
   {
@@ -16868,6 +18658,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Display Microplanet Husk decision",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Display Microplanet Husk decision"
   },
   {
@@ -16886,6 +18689,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+15 Society on the rift",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "+15 Society on the rift for 10 years"
   },
   {
@@ -16904,6 +18720,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random Biology (Farming) technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random Biology (Farming) technology"
   },
   {
@@ -16922,6 +18751,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist gains the Maimed trait",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist gains the Maimed trait unless robotic"
   },
   {
@@ -16940,6 +18782,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random Biology (Farming) technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random Biology (Farming) technology"
   },
   {
@@ -16958,6 +18813,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Formula Pink",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Formula Pink: +20 opinion from non-robotic/lithoid/toxoid empires, +10% army health, -50% morale damage"
   },
   {
@@ -16976,6 +18844,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Obsidian Obelisk Fragment",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Obsidian Obelisk Fragment specimen [Grand Archive DLC]"
   },
   {
@@ -16994,6 +18875,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "about 6 years later the obelisk demands 1 pop per year",
+   "timing": {
+    "mode": "duration",
+    "days": 2160,
+    "years": 6.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 2160,
+    "delay_years": 6.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 6 years"
+   },
    "text": "Follow-up: about 6 years later the obelisk demands 1 pop per year for 6 years. Accept → Restoring the Balance (+10% Energy for 6 years). Refuse → Obelisk's Curse (-6% happiness for 6 years; +6 deviancy for gestalts)."
   },
   {
@@ -17012,6 +18906,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Scientist is lost",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist is lost"
   },
   {
@@ -17030,6 +18937,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obe",
+   "timing": {
+    "mode": "delayed",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": 360,
+    "delay_years": 1.0,
+    "activation": null,
+    "derived_from": "text",
+    "match": "delayed arrival"
+   },
    "text": "Follow-up: after 1 year the scientist returns with Paranoia + Traumatized; a year later they gain Obelisk's Curse (+10% Energy, but sacrifices 1 pop per year while on the council)."
   },
   {
@@ -17048,6 +18968,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Writer's Sphere",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "The Writer's Sphere specimen [Grand Archive DLC]"
   },
   {
@@ -17066,6 +18999,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10% Physics research",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "+10% Physics research for 10 years"
   },
   {
@@ -17084,6 +19030,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)",
+   "timing": {
+    "mode": "uses",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": 3,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "usable 3 times"
+   },
    "text": "Incubate Wind Creatures (usable 3 times, +5 max generator districts each)"
   },
   {
@@ -17102,6 +19061,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Extradimensional Fungus",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Extradimensional Fungus specimen [Grand Archive DLC]"
   },
   {
@@ -17120,6 +19092,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Extra Dimensional Spores",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Extra Dimensional Spores: +25% Exotic Gases"
   },
   {
@@ -17138,6 +19123,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10 Society on the rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+10 Society on the rift"
   },
   {
@@ -17156,6 +19154,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Reconverted Leader (+1 envoy)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Reconverted Leader (+1 envoy) if you convert the scientist to an envoy in the follow-up event"
   },
   {
@@ -17174,6 +19185,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "25% progress toward Rift Sphere technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "25% progress toward Rift Sphere technology"
   },
   {
@@ -17192,6 +19216,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "A new pre-FTL planet appears in the rift system",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A new pre-FTL planet appears in the rift system"
   },
   {
@@ -17210,6 +19247,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "OR a new random species appears on your nearest colony",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR a new random species appears on your nearest colony"
   },
   {
@@ -17228,6 +19278,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Temporal Distortions modifier for 1 year",
+   "timing": {
+    "mode": "duration",
+    "days": 360,
+    "years": 1.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 1 year"
+   },
    "text": "Temporal Distortions modifier for 1 year: +100% resources from jobs, +100% pop growth speed, +100% pop assembly speed, +100% building build speed"
   },
   {
@@ -17246,6 +19309,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Spawns The Crystal Rift",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spawns The Crystal Rift"
   },
   {
@@ -17264,6 +19340,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Peace in This Dimension modifier",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "Peace in This Dimension modifier for 10 years: +10% happiness"
   },
   {
@@ -17282,6 +19371,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Xenophobe and Genocidal empires receive a separate reward the wiki does not name"
   },
   {
@@ -17300,6 +19402,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Formless Haven",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Formless Haven: a size 40 Gaia world in the Azilash system"
   },
   {
@@ -17318,6 +19433,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Zadigal paragon",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Zadigal paragon"
   },
   {
@@ -17336,6 +19464,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Recurring every 10 years, choose one",
+   "timing": {
+    "mode": "cycle",
+    "days": null,
+    "years": null,
+    "cycle_days": 3600,
+    "cycle_years": 10,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "Recurring every 10 years"
+   },
    "text": "Recurring every 10 years, choose one: 16 extradimensional cruisers, 100 Astral Threads, or a random Physics technology"
   },
   {
@@ -17354,6 +19495,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Eternal Throne relic (conditional",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 333,
+       "resource": "astral threads"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Eternal Throne relic (conditional: via subjugation or victory)",
    "relic_id": "eternal-throne"
   },
@@ -17373,6 +19536,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Luminarium subject type (conditional",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Luminarium subject type (conditional: if subjugation succeeds)"
   },
   {
@@ -17391,6 +19567,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+10% damage against extradimensional invaders (costs 2000 Astral Threads per faction)"
   },
   {
@@ -17409,6 +19598,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Skrand Sharpbeak,",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Skrand Sharpbeak, if you have him, gains 800 experience"
   },
   {
@@ -17427,6 +19629,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "50% progress toward the least advanced unresearched of Gene Seed Purification, Targeted Ge",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "50% progress toward the least advanced unresearched of Gene Seed Purification, Targeted Gene Expressions, Glandular Acclimation, Gene Tailoring, Genome Mapping"
   },
   {
@@ -17445,6 +19660,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR +20% progress toward Universal Macrophage plus Adaptive Evolution situation progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR +20% progress toward Universal Macrophage plus Adaptive Evolution situation progress if Evolutionary Predators - needs an organic main species"
   },
   {
@@ -17463,6 +19691,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Designates the Anomalous Cube Fallen Empire",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Designates the Anomalous Cube Fallen Empire"
   },
   {
@@ -17481,6 +19722,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Adaptive Evolution progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Adaptive Evolution progress if Evolutionary Predators"
   },
   {
@@ -17499,6 +19753,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Adds a 1 Living Metal deposit to the planet",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Adds a 1 Living Metal deposit to the planet"
   },
   {
@@ -17517,6 +19784,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR +25% Living Metal technology progress and -50% edict cost",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR +25% Living Metal technology progress and -50% edict cost"
   },
   {
@@ -17535,6 +19815,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "'Shanty on Repeat' music track",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "'Shanty on Repeat' music track"
   },
   {
@@ -17553,6 +19846,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Harmonious Crew empire modifier (ship speed)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Harmonious Crew empire modifier (ship speed)"
   },
   {
@@ -17571,6 +19877,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Space Shanty",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Space Shanty specimen [Grand Archive]"
   },
   {
@@ -17589,6 +19908,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Choice - proceed cautiously",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice - proceed cautiously: 6x minor artifacts (50 / 150 / 250 by game stage) (20 artifacts, or 200 Alloys without Ancient Relics) and the Mask of Transformation terraforming modifier"
   },
   {
@@ -17607,6 +19939,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "OR uncover the source",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR uncover the source: 6x minor artifacts (50 / 150 / 250 by game stage) (10 artifacts, or 400 Alloys without Ancient Relics), 1,000 Minerals, 200 Rare Crystals"
   },
   {
@@ -17625,6 +19970,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Mask of Transformation",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "The Mask of Transformation specimen [Grand Archive]"
   },
   {
@@ -17643,6 +20001,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "OR +60% Genome Mapping and +40% Epigenetic Triggers progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR +60% Genome Mapping and +40% Epigenetic Triggers progress if both are researched (nothing if Xenophobe)"
   },
   {
@@ -17661,6 +20032,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Choice of one",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice of one: Frozen Submariners' Legacy (20 years, +20% colony development speed, -3% amenities usage)"
   },
   {
@@ -17679,6 +20063,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+30% Subterranean Colonization progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+30% Subterranean Colonization progress if not researched"
   },
   {
@@ -17697,6 +20094,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+60% Railguns progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+60% Railguns progress if you have Coilguns"
   },
   {
@@ -17715,6 +20125,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Frozen Submariners' Ingenuity (5 years, +5% Engineering research) for trade empires",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Frozen Submariners' Ingenuity (5 years, +5% Engineering research) for trade empires"
   },
   {
@@ -17733,6 +20156,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "In Memory (10 years, +10% monthly Unity) for Memorialists",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "In Memory (10 years, +10% monthly Unity) for Memorialists"
   },
   {
@@ -17751,6 +20187,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Mutually exclusive endgame options that affect the Contingency crisis",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Mutually exclusive endgame options that affect the Contingency crisis"
   },
   {
@@ -17769,6 +20218,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Scientist gains Maniacal or Paranoid (33% each)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Scientist gains Maniacal or Paranoid (33% each)"
   },
   {
@@ -17787,6 +20249,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Crystal of Odryskia relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Crystal of Odryskia relic",
    "relic_id": "crystal-of-odryskia"
   },
@@ -17806,6 +20290,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Spawns the Abandoned Ecumenopolis site",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spawns the Abandoned Ecumenopolis site"
   },
   {
@@ -17824,6 +20321,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Miniature Galaxy relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Miniature Galaxy relic",
    "relic_id": "miniature-galaxy"
   },
@@ -17843,6 +20362,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "A Life Worthwhile empire modifier (+5% happiness)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A Life Worthwhile empire modifier (+5% happiness)"
   },
   {
@@ -17861,6 +20393,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: Studying Polarian Seeds modifier (+10% Biology research speed)"
   },
   {
@@ -17879,6 +20424,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR the next habitability technology as a research option with 60%+ progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR the next habitability technology as a research option with 60%+ progress"
   },
   {
@@ -17897,6 +20455,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Specimen",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Specimen [Grand Archive]"
   },
   {
@@ -17915,6 +20486,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "80%: next terraforming technology plus Shallarian Terraforming Knowledge (+20% terraformin",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "80%: next terraforming technology plus Shallarian Terraforming Knowledge (+20% terraforming speed, -10% cost)"
   },
   {
@@ -17933,6 +20517,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Specimen",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Specimen [Grand Archive]"
   },
   {
@@ -17951,6 +20548,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Omnicodex relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Omnicodex relic",
    "relic_id": "the-omnicodex"
   },
@@ -17970,6 +20589,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Specimen",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Specimen [Grand Archive]"
   },
   {
@@ -17988,6 +20620,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "OR gamble - 67% a size 25 Gaia world, 33% lose ~10% of your pops and a free robotic empire",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR gamble - 67% a size 25 Gaia world, 33% lose ~10% of your pops and a free robotic empire spawns with an option to switch to it"
   },
   {
@@ -18006,6 +20651,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "OR Local Hive modifier on your capital (+10% amenities, +10% build speed, +10% food produc",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Local Hive modifier on your capital (+10% amenities, +10% build speed, +10% food production)"
   },
   {
@@ -18024,6 +20682,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "OR the Larionessi Consciousness as a unique vassal empire",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR the Larionessi Consciousness as a unique vassal empire"
   },
   {
@@ -18042,6 +20713,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Specimen",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Specimen [Grand Archive]"
   },
   {
@@ -18060,6 +20744,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Keides (unique leader)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Keides (unique leader): keep him a scientist and strip his negative traits, or change his class and strip all traits"
   },
   {
@@ -18078,6 +20775,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Either way 54,000 experience and the Ancestral Inheritance trait",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Either way 54,000 experience and the Ancestral Inheritance trait"
   },
   {
@@ -18096,6 +20806,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Special project granting the rare technology Gateway Activation",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Special project granting the rare technology Gateway Activation"
   },
   {
@@ -18114,6 +20837,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "If it is already a research option",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "If it is already a research option: +65% progress; otherwise it is added as an option at 45% progress"
   },
   {
@@ -18132,6 +20868,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "±20 progress toward the Embodied Identity situation",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "±20 progress toward the Embodied Identity situation"
   },
   {
@@ -18150,6 +20899,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Option to start the Embodied Identity situation",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Option to start the Embodied Identity situation if not already running"
   },
   {
@@ -18168,6 +20930,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Spawns a hostile fleet",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spawns a hostile fleet"
   },
   {
@@ -18186,6 +20961,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "If you took Unity above",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "If you took Unity above: option to begin de-cyberization in the Embodied Identity situation"
   },
   {
@@ -18204,6 +20992,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Home Cooking permanent empire modifier (+10% Food from jobs, or +10% Minerals from jobs fo",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "permanent"
+   },
    "text": "Home Cooking permanent empire modifier (+10% Food from jobs, or +10% Minerals from jobs for Lithoids)"
   },
   {
@@ -18222,6 +21023,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "If you took option 1",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "permanent"
+   },
    "text": "If you took option 1: choose Cultural Reconstruction (+20% pop happiness) or Cultural Maturity (+5% monthly Unity), both permanent"
   },
   {
@@ -18240,6 +21054,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Otherwise you get Cultural Maturity",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Otherwise you get Cultural Maturity"
   },
   {
@@ -18258,6 +21085,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Ancient Laser Pointer",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Ancient Laser Pointer specimen [Grand Archive]"
   },
   {
@@ -18276,6 +21116,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "A random tier 1 technology as a research option at 85% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A random tier 1 technology as a research option at 85% progress"
   },
   {
@@ -18294,6 +21147,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "A random tier 1 technology at 85% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A random tier 1 technology at 85% progress"
   },
   {
@@ -18312,6 +21178,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "A random tier 1 technology at 85% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A random tier 1 technology at 85% progress"
   },
   {
@@ -18330,6 +21209,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "A random tier 1 technology at 85% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A random tier 1 technology at 85% progress"
   },
   {
@@ -18348,6 +21240,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Spurred by the Past empire modifier (happiness)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spurred by the Past empire modifier (happiness)"
   },
   {
@@ -18366,6 +21271,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Confessions of the Benefactors",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Confessions of the Benefactors specimen [Grand Archive]"
   },
   {
@@ -18384,6 +21302,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Devolving Beam (rare) as a research option at +25% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Devolving Beam (rare) as a research option at +25% progress"
   },
   {
@@ -18402,6 +21333,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Replaces Spurred by the Past with Full Circle (Benign Cover-Up) or Goes Around, Comes Arou",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Replaces Spurred by the Past with Full Circle (Benign Cover-Up) or Goes Around, Comes Around (Bury The Hatchet)"
   },
   {
@@ -18420,6 +21364,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Special project to restore the crashed ship as a warship (up to battleship) or as a habita",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Special project to restore the crashed ship as a warship (up to battleship) or as a habitat (grants Orbital Habitats technology)"
   },
   {
@@ -18438,6 +21395,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Minamar Chandelier",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Minamar Chandelier specimen [Grand Archive]"
   },
   {
@@ -18456,6 +21426,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Removes a ship debris blocker",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Removes a ship debris blocker"
   },
   {
@@ -18474,6 +21457,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Removes a ship debris blocker",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Removes a ship debris blocker"
   },
   {
@@ -18492,6 +21488,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Removes a ship debris blocker",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Removes a ship debris blocker"
   },
   {
@@ -18510,6 +21519,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Research Allocation empire modifier (-15% Engineering from jobs) - a penalty, removed at c",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Research Allocation empire modifier (-15% Engineering from jobs) - a penalty, removed at chapter 5"
   },
   {
@@ -18528,6 +21550,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Removes a ship debris blocker",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Removes a ship debris blocker"
   },
   {
@@ -18546,6 +21581,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Quantum Firewalls as a research option at 40% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Quantum Firewalls as a research option at 40% progress"
   },
   {
@@ -18564,6 +21612,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Improved Decryption Processes (+1 Codebreaking)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Improved Decryption Processes (+1 Codebreaking)"
   },
   {
@@ -18582,6 +21643,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Removes the Research Allocation penalty",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Removes the Research Allocation penalty"
   },
   {
@@ -18600,6 +21674,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "If you have not met the MSI",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "If you have not met the MSI: reveals their location and grants +10% happiness and +10% Unity for 10 years"
   },
   {
@@ -18618,6 +21705,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Spirit of the Unshackled",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Spirit of the Unshackled specimen [Grand Archive]"
   },
   {
@@ -18636,6 +21736,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "If finished before 2230",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "If finished before 2230: +50% megastructure build speed for 10 years"
   },
   {
@@ -18654,6 +21767,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Ends the 'A Rift in Space' situation",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Ends the 'A Rift in Space' situation"
   },
   {
@@ -18672,6 +21798,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Ancient Rift Sphere",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Ancient Rift Sphere specimen [Grand Archive]"
   },
   {
@@ -18690,6 +21829,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Captain Ness's Logbook",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Captain Ness's Logbook specimen [Grand Archive]"
   },
   {
@@ -18708,6 +21860,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "-10% resources from jobs",
+   "timing": {
+    "mode": "duration",
+    "days": 3600,
+    "years": 10.0,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 10 years"
+   },
    "text": "-10% resources from jobs for 10 years (a penalty)"
   },
   {
@@ -18726,6 +21891,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "50% progress toward Psionic Theory",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "50% progress toward Psionic Theory"
   },
   {
@@ -18744,6 +21922,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Fragment of Reckoning",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Fragment of Reckoning specimen [Grand Archive]"
   },
   {
@@ -18762,6 +21953,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Grunur Data Crystal",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Grunur Data Crystal specimen [Grand Archive]"
   },
   {
@@ -18780,6 +21984,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Organic Computer",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Organic Computer specimen [Grand Archive]"
   },
   {
@@ -18798,6 +22015,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Devolved Baol Drones",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Devolved Baol Drones specimen [Grand Archive]"
   },
   {
@@ -18816,6 +22046,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Fragmented Zroni Archive",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Fragmented Zroni Archive specimen [Grand Archive]"
   },
   {
@@ -18834,6 +22077,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Zroni War Banners",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Zroni War Banners specimen [Grand Archive]"
   },
   {
@@ -18852,6 +22108,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Psionic Archive relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Psionic Archive relic",
    "relic_id": "psionic-archive"
   },
@@ -18871,6 +22149,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Final Sacrifice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "The Final Sacrifice specimen [Grand Archive]"
   },
   {
@@ -18889,6 +22180,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+10% attraction to Xenophile or Xenophobe ethics for one year",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+10% attraction to Xenophile or Xenophobe ethics for one year"
   },
   {
@@ -18907,6 +22211,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "adAkkaria Propaganda Poster",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "adAkkaria Propaganda Poster specimen [Grand Archive]"
   },
   {
@@ -18925,6 +22242,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Landeer's Arm",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Landeer's Arm specimen [Grand Archive]"
   },
   {
@@ -18943,6 +22273,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Option for the scientist to gain Psionic",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Option for the scientist to gain Psionic if not robotic"
   },
   {
@@ -18961,6 +22304,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Choice",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 50000,
+       "resource": "energy"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Choice: The Tempest Invocator relic",
    "relic_id": "the-tempest-invocator"
   },
@@ -18980,6 +22345,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "OR turn the adAkkaria Convention homeworld into a habitable planet with the Patriotic Inst",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR turn the adAkkaria Convention homeworld into a habitable planet with the Patriotic Institute of Celebration building"
   },
   {
@@ -18998,6 +22376,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Piece of the Invocator",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Piece of the Invocator specimen [Grand Archive]"
   },
   {
@@ -19016,6 +22407,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+20% progress on Rudimentary Node Reformatting or Xeno-Linguistics (with Galactic Paragons",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+20% progress on Rudimentary Node Reformatting or Xeno-Linguistics (with Galactic Paragons), otherwise Rudimentary Node Culling or Xeno Diplomacy"
   },
   {
@@ -19034,6 +22438,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: 1,000 Minerals"
   },
   {
@@ -19052,6 +22469,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "INET Trade Manifesto",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "INET Trade Manifesto specimen [Grand Archive]"
   },
   {
@@ -19070,6 +22500,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Inetian Planetary Model Manual",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Inetian Planetary Model Manual specimen [Grand Archive]"
   },
   {
@@ -19088,6 +22531,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+50% progress on Probability Current",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+50% progress on Probability Current"
   },
   {
@@ -19106,6 +22562,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Disturbance Oppressor relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "The Disturbance Oppressor relic",
    "relic_id": "the-disturbance-oppressor"
   },
@@ -19125,6 +22603,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% progress on Nutrient Replication",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% progress on Nutrient Replication"
   },
   {
@@ -19143,6 +22634,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Last General's Badge",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "The Last General's Badge specimen [Grand Archive]"
   },
   {
@@ -19161,6 +22665,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Head of Zarqlan relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Head of Zarqlan relic",
    "relic_id": "head-of-zarqlan"
   },
@@ -19180,6 +22706,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "66%: Forced Mindfulness empire modifier",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "66%: Forced Mindfulness empire modifier"
   },
   {
@@ -19198,6 +22737,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "33%: +200 each of Volatile Motes, Exotic Gases and Rare Crystals",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "33%: +200 each of Volatile Motes, Exotic Gases and Rare Crystals"
   },
   {
@@ -19216,6 +22768,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Doomsday Scrolls",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Doomsday Scrolls specimen [Grand Archive]"
   },
   {
@@ -19234,6 +22799,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Refinery technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Refinery technology progress"
   },
   {
@@ -19252,6 +22830,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: Hostile Environment Adaptation technology with conditional extras"
   },
   {
@@ -19270,6 +22861,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Target Scrambler technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Target Scrambler technology progress"
   },
   {
@@ -19288,6 +22892,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "33%: Anthem of Aurora empire modifier",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "33%: Anthem of Aurora empire modifier"
   },
   {
@@ -19306,6 +22923,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Localised Aurora Borealis",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Localised Aurora Borealis specimen [Grand Archive]"
   },
   {
@@ -19324,6 +22954,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Non-machine",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Non-machine: Deploy Tissue Growth Stimulants planetary decision"
   },
   {
@@ -19342,6 +22985,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Machine Intelligence",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Machine Intelligence: 6x minor artifacts (300 / 400 / 500) and the Construct Fungiform Housing Units decision"
   },
   {
@@ -19360,6 +23016,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Osseus Construction Material",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Osseus Construction Material specimen [Grand Archive]"
   },
   {
@@ -19378,6 +23047,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Pulse Armor technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Pulse Armor technology progress"
   },
   {
@@ -19396,6 +23078,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR Subterranean Colonization technology (conditional)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Subterranean Colonization technology (conditional)"
   },
   {
@@ -19414,6 +23109,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR Tomb World Adaptation technology (conditional)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Tomb World Adaptation technology (conditional)"
   },
   {
@@ -19432,6 +23140,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: +250 Exotic Gases"
   },
   {
@@ -19450,6 +23171,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR Vitality Boosters technology (conditional)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Vitality Boosters technology (conditional)"
   },
   {
@@ -19468,6 +23202,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Rock Jellies",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rock Jellies specimen [Grand Archive]"
   },
   {
@@ -19486,6 +23233,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Blade of the Huntress relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Blade of the Huntress relic",
    "relic_id": "blade-of-the-huntress"
   },
@@ -19505,6 +23274,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Retarax Hunting Trophies",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Retarax Hunting Trophies specimen [Grand Archive]"
   },
   {
@@ -19523,6 +23305,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Rampart (rare) technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Rampart (rare) technology progress"
   },
   {
@@ -19541,6 +23336,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Heart of the Pulsar",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Heart of the Pulsar specimen [Grand Archive]"
   },
   {
@@ -19559,6 +23367,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: Hostile Environment Adaptation, Deep Crust Engineering, or (Gestalt) Unity of Purpose / (non-Gestalt) Artificial Moral Codes technology"
   },
   {
@@ -19577,6 +23398,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR Ecological Adaptation technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Ecological Adaptation technology"
   },
   {
@@ -19595,6 +23429,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR Terrestrial Sculpting technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Terrestrial Sculpting technology"
   },
   {
@@ -19613,6 +23460,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: The Memorex planet modifier"
   },
   {
@@ -19631,6 +23491,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: recruit the Oracle unique leader (closed to Fanatic Xenophobes)"
   },
   {
@@ -19649,6 +23522,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: Advanced Shields technology, Deep Core Mining technology (or 100 Volatile Motes if already researched), or Xenology technology"
   },
   {
@@ -19667,6 +23553,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Giant Egg Shell",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Giant Egg Shell specimen [Grand Archive]"
   },
   {
@@ -19685,6 +23584,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Awakens Shard, a guardian - defeating it grants The Rubricator relic",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Awakens Shard, a guardian - defeating it grants The Rubricator relic",
    "relic_id": "the-rubricator"
   },
@@ -19704,6 +23625,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "A corvette at 25-75% damage, with a special project to repair it",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A corvette at 25-75% damage, with a special project to repair it"
   },
   {
@@ -19722,6 +23656,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: Anti-Gravity Engineering technology (50% progress if already an option, 10% if not)"
   },
   {
@@ -19740,6 +23687,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR the next colonization technology (50% / 25%)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR the next colonization technology (50% / 25%)"
   },
   {
@@ -19758,6 +23718,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Primitive Mega-Electromagnet",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Primitive Mega-Electromagnet specimen [Grand Archive]"
   },
   {
@@ -19776,6 +23749,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Mutation Vats planetary feature",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Mutation Vats planetary feature"
   },
   {
@@ -19794,6 +23780,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Nano-Missile Cloud Launcher technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Nano-Missile Cloud Launcher technology progress"
   },
   {
@@ -19812,6 +23811,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Radiated Remains",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Radiated Remains specimen [Grand Archive]"
   },
   {
@@ -19830,6 +23842,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Choice",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "Choice: special project granting The Defragmentor relic plus the C.A.R.E Interactive Interface modifier (+10% Energy from jobs)",
    "relic_id": "the-defragmentor"
   },
@@ -19849,6 +23883,28 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "OR 100 Influence and fight two mega-warforms for The Defragmentor relic plus a large minor",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": {
+     "cooldown_days": 3600,
+     "cooldown_years": 10.0,
+     "cost": [
+      {
+       "amount": 3000,
+       "resource": "unity"
+      }
+     ]
+    },
+    "derived_from": "relic_catalogue",
+    "match": "relic is kept"
+   },
    "text": "OR 100 Influence and fight two mega-warforms for The Defragmentor relic plus a large minor artifact payout",
    "relic_id": "the-defragmentor"
   },
@@ -19868,6 +23924,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Random",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Random: 3x research speed"
   },
   {
@@ -19886,6 +23955,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "OR Self-Aware Colony Ships technology (50% progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR Self-Aware Colony Ships technology (50% progress if already an option, 25% if not)"
   },
   {
@@ -19904,6 +23986,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Rock Jellies",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rock Jellies specimen [Grand Archive]"
   },
   {
@@ -19922,6 +24017,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "83% (71.5%",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "83% (71.5% if Egalitarian): another 6x minor artifacts (50 / 150 / 250 by game stage) payout plus a 12-year empire modifier (+5% Engineering, +2% Society)"
   },
   {
@@ -19940,6 +24048,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Relic Rails Remains",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Relic Rails Remains specimen [Grand Archive]"
   },
   {
@@ -19958,6 +24079,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Macro Batteries technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Macro Batteries technology progress"
   },
   {
@@ -19976,6 +24110,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Robot Debris Fragment",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Robot Debris Fragment specimen [Grand Archive]"
   },
   {
@@ -19994,6 +24141,19 @@
    "group": "leaders",
    "group_label": "Leaders",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: scientist gains Meticulous (blocked if they have Maniacal or Carefree), or Percussive Maintainer"
   },
   {
@@ -20012,6 +24172,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Rudari Death Laser empire modifier (weapons range)",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rudari Death Laser empire modifier (weapons range)"
   },
   {
@@ -20030,6 +24203,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Rudari Death Laser Prototype",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rudari Death Laser Prototype specimen [Grand Archive]"
   },
   {
@@ -20048,6 +24234,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Defensive Web Slinger technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Defensive Web Slinger technology progress"
   },
   {
@@ -20066,6 +24265,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Adds an Alien Site level 3 anomaly to a random body in the system",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Adds an Alien Site level 3 anomaly to a random body in the system"
   },
   {
@@ -20084,6 +24296,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Ruins Artifact",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Ruins Artifact specimen [Grand Archive]"
   },
   {
@@ -20102,6 +24327,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: Sage Rage empire modifier (army damage), or 100 Influence"
   },
   {
@@ -20120,6 +24358,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Saturator Artillery technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Saturator Artillery technology progress"
   },
   {
@@ -20138,6 +24389,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Jade Dining Set",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Jade Dining Set specimen [Grand Archive]"
   },
   {
@@ -20156,6 +24420,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Ruination Glare technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Ruination Glare technology progress"
   },
   {
@@ -20174,6 +24451,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "One of Deep Crust Engineering, Ion Disruptors or Nano-Separators",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "One of Deep Crust Engineering, Ion Disruptors or Nano-Separators"
   },
   {
@@ -20192,6 +24482,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Disturbance Tech",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Disturbance Tech specimen [Grand Archive]"
   },
   {
@@ -20210,6 +24513,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Hostile Environment Adaptation technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Hostile Environment Adaptation technology"
   },
   {
@@ -20228,6 +24544,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Driller Drones technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Driller Drones technology progress"
   },
   {
@@ -20246,6 +24575,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Fossilized Megastomach",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Fossilized Megastomach specimen [Grand Archive]"
   },
   {
@@ -20264,6 +24606,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Suspension Field technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Suspension Field technology progress"
   },
   {
@@ -20282,6 +24637,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Programmable Puzzle Cube",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Programmable Puzzle Cube specimen [Grand Archive]"
   },
   {
@@ -20300,6 +24668,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Memory Orbs",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Memory Orbs specimen [Grand Archive]"
   },
   {
@@ -20318,6 +24699,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "A titan at 25-75% damage",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A titan at 25-75% damage"
   },
   {
@@ -20336,6 +24730,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "The Pilgrimage of Last Days",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "The Pilgrimage of Last Days specimen [Grand Archive]"
   },
   {
@@ -20354,6 +24761,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Illanii Archives",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Illanii Archives specimen [Grand Archive]"
   },
   {
@@ -20372,6 +24792,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+25% Ancient Cavitation Collapser technology progress",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+25% Ancient Cavitation Collapser technology progress"
   },
   {
@@ -20390,6 +24823,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "One of Mega Art Installation (+10%), Terrestrial Sculpting, or Mineral Cutting Beams",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "One of Mega Art Installation (+10%), Terrestrial Sculpting, or Mineral Cutting Beams"
   },
   {
@@ -20408,6 +24854,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Planetary Sculpture",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Planetary Sculpture specimen [Grand Archive]"
   },
   {
@@ -20426,6 +24885,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "One of",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "One of: Combat Training technology plus the Modern Trench War modifier, Artificial Workforce, or Climate Control Network"
   },
   {
@@ -20444,6 +24916,19 @@
    "group": "research",
    "group_label": "Research",
    "name": "Rare Crystal Manufacturing technology",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rare Crystal Manufacturing technology"
   },
   {
@@ -20462,6 +24947,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Option to upgrade to the Kha'Lanka Crystal Plant",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Option to upgrade to the Kha'Lanka Crystal Plant"
   },
   {
@@ -20480,6 +24978,19 @@
    "group": "loot",
    "group_label": "Loot",
    "name": "Kha'Lanka Crystallized Corpses",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Kha'Lanka Crystallized Corpses specimen [Grand Archive]"
   },
   {
@@ -20498,6 +25009,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "The scientist goes missing for 30-40 days",
+   "timing": {
+    "mode": "duration",
+    "days": 35,
+    "years": 0.1,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "for 30-40 days"
+   },
    "text": "The scientist goes missing for 30-40 days"
   },
   {
@@ -20516,6 +25040,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "Rescue costs 100 Influence and 500 Energy, or you lose 3 clues; either path gives +5 clues",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Rescue costs 100 Influence and 500 Energy, or you lose 3 clues; either path gives +5 clues and the scientist returns Maimed"
   },
   {
@@ -20534,6 +25071,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: negotiate for 8-9 Sentinel armies as planetary protection"
   },
   {
@@ -20552,6 +25102,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "OR claim the land, silence them, or destroy them - each sends 9 armies against you",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "OR claim the land, silence them, or destroy them - each sends 9 armies against you"
   },
   {
@@ -20570,6 +25133,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Winning the fight gives the Sentinels Metal planetary feature",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Winning the fight gives the Sentinels Metal planetary feature"
   },
   {
@@ -20588,6 +25164,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Losing opens the Into the Earth project with science / entertainment / hunting / lab-rat m",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Losing opens the Into the Earth project with science / entertainment / hunting / lab-rat modifiers"
   },
   {
@@ -20606,6 +25195,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "A Stardust Storm appears in the system",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "A Stardust Storm appears in the system"
   },
   {
@@ -20624,6 +25226,19 @@
    "group": "forces",
    "group_label": "Forces",
    "name": "Choice",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Choice: pay 2,000 Energy, or fight a small pirate fleet"
   },
   {
@@ -20642,6 +25257,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Grants a permanent modifier",
+   "timing": {
+    "mode": "permanent",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "text",
+    "match": "permanent"
+   },
    "text": "Grants a permanent modifier: 'We are now more vigilant against incoming danger' (+10 Tracking)"
   },
   {
@@ -20660,6 +25288,19 @@
    "group": "risk",
    "group_label": "Risk",
    "name": "There is also an option that kills the scientist",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "There is also an option that kills the scientist"
   },
   {
@@ -20678,6 +25319,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "Creates a habitat over the site",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "Creates a habitat over the site"
   },
   {
@@ -20696,6 +25350,19 @@
    "group": "empire",
    "group_label": "Empire",
    "name": "+50% progress on the first unresearched of Planetary Storm Negation, Storm Manipulation, C",
+   "timing": {
+    "mode": "instant",
+    "days": null,
+    "years": null,
+    "cycle_days": null,
+    "cycle_years": null,
+    "uses": null,
+    "delay_days": null,
+    "delay_years": null,
+    "activation": null,
+    "derived_from": "default",
+    "match": null
+   },
    "text": "+50% progress on the first unresearched of Planetary Storm Negation, Storm Manipulation, Cosmic Weather Models, Planetary Storm Nullification, Advanced Storm Manipulation, Storm Dampening Generators, Payload Padding, Probability Current"
   }
  ],
@@ -33631,11 +38298,35 @@
   },
   {
    "kind": "astral_rift",
-   "text": "The Seal carries the only recurring reward (type 'recurring'). The schema cannot express recurrence - any rift-value total is wrong for it until it can."
+   "text": "The Seal's every-10-years choice is expressed by timing.mode 'cycle' with cycle_days 3600. A rift-value total must decide how many cycles to count - the data states the cadence, not a lifetime value. The legacy 'recurring' reward type is kept because the UI renders it; timing.mode is the field to read."
   },
   {
    "kind": "astral_rift",
    "text": "Rewards parsed out of choice lines inherit the chapter of the CHOICE, not the payout. Ruined Planet's chapter-4 and chapter-5 offers actually resolve at chapter 7."
+  },
+  {
+   "kind": "astral_rift",
+   "text": "Reward timing is derived from the wiki's own wording, not the game files. `timing.match` records the substring each mode came from so any row can be checked by hand."
+  },
+  {
+   "kind": "astral_rift",
+   "text": "A Stellaris year is treated as 360 days. The relic catalogue's cooldowns (900/1800/3600) divide exactly by 360 and not by 365, which is the evidence for it."
+  },
+  {
+   "kind": "astral_rift",
+   "text": "`timing.mode` is the dominant shape only. `days`, `delay_days`, `uses` and `activation` are independent — a reward that arrives in 5 years and then lasts 10 carries both."
+  },
+  {
+   "kind": "astral_rift",
+   "text": "`mode: instant` is the default, not a finding. It means no time dimension was stated, which for most rewards means permanent-on-acquisition; it is not evidence of a one-off effect."
+  },
+  {
+   "kind": "astral_rift",
+   "text": "Stated ranges ('returns in 30-40 days') are reduced to their midpoint. The range survives in `raw`."
+  },
+  {
+   "kind": "astral_rift",
+   "text": "Relic timing comes from the relic catalogue, which was captured from a wiki page tagged game version 4.5, while the rift and site data is documented against 3.14. Cooldowns and triumph costs may not match the version the rest of the dataset describes."
   },
   {
    "kind": "archaeological_site",
@@ -33684,7 +38375,37 @@
   {
    "kind": "archaeological_site",
    "text": "Sites have no choice tree on the wiki, so every chapter's choices[] is empty and title is null."
-  }
+  },
+  {
+   "kind": "archaeological_site",
+   "text": "Reward timing is derived from the wiki's own wording, not the game files. `timing.match` records the substring each mode came from so any row can be checked by hand."
+  },
+  {
+   "kind": "archaeological_site",
+   "text": "A Stellaris year is treated as 360 days. The relic catalogue's cooldowns (900/1800/3600) divide exactly by 360 and not by 365, which is the evidence for it."
+  },
+  {
+   "kind": "archaeological_site",
+   "text": "`timing.mode` is the dominant shape only. `days`, `delay_days`, `uses` and `activation` are independent — a reward that arrives in 5 years and then lasts 10 carries both."
+  },
+  {
+   "kind": "archaeological_site",
+   "text": "`mode: instant` is the default, not a finding. It means no time dimension was stated, which for most rewards means permanent-on-acquisition; it is not evidence of a one-off effect."
+  },
+  {
+   "kind": "archaeological_site",
+   "text": "Stated ranges ('returns in 30-40 days') are reduced to their midpoint. The range survives in `raw`."
+  },
+  {
+   "kind": "archaeological_site",
+   "text": "Relic timing comes from the relic catalogue, which was captured from a wiki page tagged game version 4.5, while the rift and site data is documented against 3.14. Cooldowns and triumph costs may not match the version the rest of the dataset describes."
+  },
+  "Reward timing is derived from the wiki's own wording, not the game files. `timing.match` records the substring each mode came from so any row can be checked by hand.",
+  "A Stellaris year is treated as 360 days. The relic catalogue's cooldowns (900/1800/3600) divide exactly by 360 and not by 365, which is the evidence for it.",
+  "`timing.mode` is the dominant shape only. `days`, `delay_days`, `uses` and `activation` are independent — a reward that arrives in 5 years and then lasts 10 carries both.",
+  "`mode: instant` is the default, not a finding. It means no time dimension was stated, which for most rewards means permanent-on-acquisition; it is not evidence of a one-off effect.",
+  "Stated ranges ('returns in 30-40 days') are reduced to their midpoint. The range survives in `raw`.",
+  "Relic timing comes from the relic catalogue, which was captured from a wiki page tagged game version 4.5, while the rift and site data is documented against 3.14. Cooldowns and triumph costs may not match the version the rest of the dataset describes."
  ],
  "reward_codes": [
   {

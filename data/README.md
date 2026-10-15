@@ -88,6 +88,42 @@ Four arrays, one purpose each:
    file groups those into `choices` option groups (see below). That is a different thing from a
    rift's event choices.
 
+## Reward timing
+
+Every reward carries a `timing` object. It replaced the old `recurring` *type*, which
+special-cased one row and said nothing about the other 53 rewards that have a time dimension.
+
+```
+timing: { mode, days, years, cycle_days, cycle_years, uses,
+          delay_days, delay_years, activation, derived_from, match }
+```
+
+`mode` is the dominant shape, for a chip or label — one of
+`cycle · uses · duration · delayed · while_active · permanent · instant`, in that precedence.
+Every other field is independently nullable, so a reward that **arrives in 5 years and then
+lasts 10** carries both `delay_days` and `days`.
+
+- **Canonical unit is days. A Stellaris year is 360 days.** The evidence is the relic
+  catalogue: its only cooldowns (900 / 1800 / 3600) divide exactly by 360 and give fractions
+  under 365. `years` is derived, never independently sourced, so the two cannot drift.
+- **`activation`** is relic-only: `{cooldown_days, cooldown_years, cost[]}`. A relic is kept
+  permanently (`mode: "permanent"`) while its *triumph* sits on a cooldown — one `mode` could
+  not express both, so the cooldown lives in its own field.
+- **`derived_from`** is `text`, `relic_catalogue` or `default`, and **`match`** records the exact
+  substring a text-derived mode came from, so any row can be checked by hand.
+- **`mode: "instant"` is the default, not a finding.** 289 of 343 rewards have it. It means no
+  time dimension was stated — which usually means permanent-on-acquisition, *not* a one-off.
+  Don't render it as "instant" to a player.
+
+The UI bundle carries a **compact** projection: nulls dropped, `derived_from`/`match` omitted,
+and nothing emitted at all for a plain instant reward — so **a missing `timing` in
+`rift-data.js` / `dig-data.js` means instant**. 54 rewards carry one.
+
+Counting caveat: the data states a *cadence*, not a lifetime value. Any "what is this rift
+worth" total has to decide how many cycles of The Seal to count. The legacy `recurring` reward
+type is still present because the UI renders it (`TYPE_SHORT`, `yieldKey`); `timing.mode` is
+the field to read, and the validator asserts the two never disagree.
+
 ## Reward values are not numbers
 
 Payouts are multipliers of *current* empire output with a min–max clamp, expanded in

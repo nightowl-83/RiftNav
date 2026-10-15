@@ -75,6 +75,13 @@ OVERRIDES = os.path.join(DATA, "overrides", "reward_names.json")
 CHAPTER_REF = re.compile(r"\s+at chapter\s+[\w/-]+", re.I)   # internal wiki jargon; kept in the data, not shown
 
 
+def ui_timing(t):
+    """Compact timing for the bundle: null fields dropped, and nothing emitted at all for a
+    plain instant reward. The UI reads a missing `timing` as instant."""
+    if not t: return None
+    if t["mode"] == "instant" and not t["activation"]: return None
+    return {k: v for k, v in t.items() if v is not None and k not in ("derived_from", "match")} or None
+
 def reward_key(x):
     """Stable id for a reward: survives rebuilds and rid renumbering."""
     return f"{x['entity_uid']}#{x['chapter']}#{hashlib.sha1(x['raw'].encode()).hexdigest()[:10]}"
@@ -269,6 +276,8 @@ def main(rifts, arch, catalogue, T):
                "rewardGroupLabel": x["group_label"], "chapter": x["chapter"], "source": x["source"],
                "polarity": x["polarity"], "conditional": x["conditional"], "gate": x["gate"],
                "text": x["text"], "raw": x["raw"], "pathSource": how}
+        _t = ui_timing(x.get("timing"))
+        if _t: row["timing"] = _t
         if x["type"] == "relic":
             row["relicId"] = x.get("relic_id")
             row["relic"] = relic_card(relic_by_id[x["relic_id"]]) if x.get("relic_id") else None
@@ -318,6 +327,8 @@ def main(rifts, arch, catalogue, T):
                "rid": x["rid"], "type": x["type"], "rewardGroup": x["group"],
                "rewardGroupLabel": x["group_label"], "source": x["source"], "polarity": x["polarity"],
                "conditional": x["conditional"], "gate": x["gate"], "text": x["text"], "raw": x["raw"]}
+        _t = ui_timing(x.get("timing"))
+        if _t: row["timing"] = _t
         if x["type"] == "relic":
             row["relicId"] = x.get("relic_id")
             row["relic"] = relic_card(relic_by_id[x["relic_id"]]) if x.get("relic_id") else None

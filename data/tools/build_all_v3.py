@@ -12,9 +12,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from parse_rewards import classify, from_choice, GATE, COND
 from situations import SITUATIONS
 from paths import DATA
-import corrections, relics as relic_catalogue
+import corrections, relics as relic_catalogue, timing as timing_mod
 from reward_text import code_table, Translator, SUPPLEMENTARY_CODES
-SCHEMA="stellaris-discovery/3.0"; VERSION="3.0"; GENERATED="2026-09-27"
+SCHEMA="stellaris-discovery/3.0"; VERSION="3.0"; GENERATED="2026-10-15"
 WIKI="3.14"
 
 REWARD_GROUPS = OrderedDict([
@@ -83,6 +83,7 @@ def collect(entities):
                     base["group"]=TYPE_TO_GROUP[t]
                     base["group_label"]=REWARD_GROUPS[base["group"]]["label"]
                     base["name"]=clean_name(o)
+                    base["timing"]=timing_mod.derive(o["raw"], t)
                     rewards.append(base)
     return rewards, payouts, chains, ignored
 
@@ -133,9 +134,11 @@ def envelope(name, kind, ents, rewards, payouts, chains, ignored, src, extra_ass
      "reward_groups":[{"key":k,"label":v["label"],"blurb":v["blurb"],"types":v["types"]}
                       for k,v in REWARD_GROUPS.items()],
      "payout_types":PAYOUT_TYPES,
+     "timing_modes":list(timing_mod.MODES),
+     "timing_year_days":timing_mod.YEAR_DAYS,
      "entities":ents,"rewards":rewards,"payouts":payouts,"chains":chains,
      "ignored_lines":ignored,
-     "assumptions":list(extra_assumptions),
+     "assumptions":list(extra_assumptions)+list(timing_mod.ASSUMPTIONS),
     }
 
 def main():
@@ -159,8 +162,10 @@ def main():
       rsrc.get("assumptions",[])+[
        "Rift situations were added in v3 from the Astral_rift_situations wiki page, which no "
        "earlier version covered. Stage numbering is the wiki's, not the game files'.",
-       "The Seal carries the only recurring reward (type 'recurring'). The schema cannot express "
-       "recurrence - any rift-value total is wrong for it until it can.",
+       "The Seal's every-10-years choice is expressed by timing.mode 'cycle' with cycle_days 3600. "
+       "A rift-value total must decide how many cycles to count - the data states the cadence, not "
+       "a lifetime value. The legacy 'recurring' reward type is kept because the UI renders it; "
+       "timing.mode is the field to read.",
        "Rewards parsed out of choice lines inherit the chapter of the CHOICE, not the payout. "
        "Ruined Planet's chapter-4 and chapter-5 offers actually resolve at chapter 7.",
       ])
@@ -205,6 +210,10 @@ def main():
     unmatched,ambiguous=[],[]
     for arr in (rr,ar_):
         u,a=relic_catalogue.link(arr,cat); unmatched+=u; ambiguous+=a
+        _by_id={r["id"]:r for r in cat}
+        for _x in arr:
+            if _x.get("relic_id") and _x["relic_id"] in _by_id:
+                _x["timing"]=timing_mod.derive(_x["raw"], _x["type"], _by_id[_x["relic_id"]])
 
     # ---------- merged ----------
     ments=rents+aents

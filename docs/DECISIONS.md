@@ -6,6 +6,39 @@ supersedes it and say so.
 
 ---
 
+## 2026-10-15 — Reward timing is a `timing` object, not a reward type
+
+**Decided:** Every reward carries `timing: {mode, days, years, cycle_*, uses, delay_*,
+activation, derived_from, match}`. Canonical unit is days; a Stellaris year is 360 days.
+
+**Why:** 54 of 343 rewards have a time dimension, in six distinct shapes — duration, delayed,
+permanent, uses, cycle, while_active. The `recurring` *type* described exactly one of them
+(The Seal) and left the other 53 unexpressed. A type is the wrong instrument for this: a reward
+can be delayed *and* timed, and a relic is permanent *and* has a cooldown, which one enum field
+cannot say.
+
+**Evidence for 360 days:** the relic catalogue's only cooldown values (900 / 1800 / 3600) divide
+exactly by 360 — 2.5y / 5y / 10y — and give fractions under 365. `years` is derived from `days`
+so the two cannot drift.
+
+**Supersedes** the 2026-09-26 entry "capture relic effects before modelling timing" — relics
+landed on 2026-09-27, and timing was then designed against their real cooldowns as that entry
+intended.
+
+**Consequences to respect:**
+- `mode: "instant"` is the default (289 rewards), not a finding. It means no timing was stated,
+  usually permanent-on-acquisition. Do not surface it to a player as "instant".
+- The data states a cadence, not a lifetime value. A totals view still has to decide how many
+  cycles of The Seal to count — that judgment did not go away, it just got explicit.
+- The legacy `recurring` reward type stays, because the UI renders it (`TYPE_SHORT`, `yieldKey`).
+  `timing.mode` is the field to read. The validator asserts the two never disagree. Retiring the
+  type would need a UI change and was not done unilaterally.
+
+**What would overturn it:** Paradox changing the 360-day year, or the wiki starting to publish
+timing in a structured form rather than prose.
+
+---
+
 ## 2026-10-06 — The folder graphics are frozen
 
 **Decided:** New UI work never edits the notched folder card's graphics: `folderPath()`,
