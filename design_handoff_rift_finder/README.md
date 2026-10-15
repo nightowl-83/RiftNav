@@ -114,6 +114,17 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 - **Reader:** `ABORT RIFT` goes back to that rift's reward list (`goBack`); the last step's button reads `RETURN TO REWARDS ›`.
 - **Backdrop:** a `rgba(4,10,20,.5)` layer fades in over the galaxy (.7s), and the galaxy eases right to `xoff` 0.24 over .7s. The value is written straight to the map element, so the map's code and its prop stay as they are. Both are restored on close. The corner HUD hides while the panel is open.
 
+**Round 2 (list and panel header):**
+
+- **Narrower list:** the minimized list is 280px wide, so the panel starts at 338px.
+- **Dimming:** the list sits at opacity .55 while you work in the panel, and returns to 1 on hover or keyboard focus.
+- **Hide the list:** a button at the left of the panel header (Material Symbols Rounded `left_panel_close` / `left_panel_open`, `aria-expanded`, label "Hide the list" / "Show the list") slides the list out and widens the panel to left 34px. The list comes back on close.
+- **No repeated sub-headers:** inside the panel, the eyebrow lines ("BASE GAME SITE // ARC-…", "BASE GAME SITE // 5 PHASES", "GENERAL RIFT") are hidden. The call-outs under the title carry the same facts. Rifts get matching call-outs (CHAPTERS, GROUP, REWARDS), shown only in the panel.
+- **Requirements:** a Material Symbols Rounded `checklist` icon button next to MONITOR SITUATION opens the requirements (plus restrictions and notes) in the existing bottom sheet. It behaves as a dialog: it traps focus, closes on Escape, scrim or swipe, and returns focus to the button. The requirements panels inside the detail are hidden.
+- **Title on scroll:** the panel's scroll sets `--tp`, from 0 to 1 over the first 90px. The big title scales down to 62% and fades, while a compact 20px title fades into the sticky header row beside the actions. A hairline appears under the header. In the reader the compact title is always shown.
+- **Tooltips:** header buttons show their `aria-label` as an amber tooltip on hover or keyboard focus, so close reads "Close and return to the full list". Only one tooltip shows at a time.
+- **Reader stacking:** the reader now stacks below 960px of panel width.
+
 **Closing** (×, the bar's ‹, or Escape when focus isn't in a text field): the panel fades and slides out, the rows return as full notched cards, the header comes back, the bar goes back to scroll-based behaviour, and focus returns to the card that was open.
 
 **Reduced motion:** no slides; the panel and the list swap instantly.
