@@ -6,6 +6,48 @@ supersedes it and say so.
 
 ---
 
+## 2026-10-06 — The folder graphics are frozen
+
+**Decided:** New UI work never edits the notched folder card's graphics: `folderPath()`,
+`frameRef()`, `bindFrame()`, `buildFrame()` and `drawFrame()`, or any existing `.rf-fc*` rule (stroke
+colours, corner accents, hover path, header panel). New elements are added alongside them. A new
+panel may reuse the frame by calling `frameRef('<key>', true)`. Before committing, diff those
+functions and rules against `main`.
+
+**Why:** The folder card took several rounds to get right (Figma 82:17), and seeing it "broken again"
+cost a lot of time and trust. Freezing it makes any change to it a deliberate, visible decision.
+
+**What would overturn it:** Mike asking to change the card itself, with Figma updated first.
+
+---
+
+## 2026-10-06 — The local preview serves a copy of the repo build
+
+**Decided:** The `rift-finder-holo` preview (port 8743, `~/Claude/.claude/launch.json`) serves
+`~/Claude/rift-nav-current/`, a copy of `design_handoff_rift_finder/` from the repo. Whoever changes
+the screen file refreshes that copy in the same step. `~/Claude/Rift Finder Holo.preview.html` is a
+20 September snapshot; don't use it.
+
+**Why:** The old preview silently showed a pre-fix snapshot, which looked like a regression. The
+copy can't be a live link, because macOS blocks the preview server from reading the Desktop folder.
+
+**What would overturn it:** moving the repo out of `~/Desktop`; then serve the repo folder directly.
+
+---
+
+## 2026-10-06 — Desktop layout experiments live on branches until one is picked
+
+**Decided:** "Split tabs" (`split-tabs`) and "inline detail" (`inline-detail`) stay on their own
+branches. `main` keeps Notched split as the default. Both branches route item switching through
+`switchTo(type, name)`, so whichever is merged keeps monitoring and per-item progress consistent.
+
+**Why:** These are two competing directions. Merging either would make it the default before Mike
+has compared them in the real app.
+
+**What would overturn it:** Mike picking one; merge that branch and delete the other.
+
+---
+
 ## 2026-09-28 — New layouts are tested on a branch, as an extra `layout` option
 
 **Decided:** The "Split tabs" layout is built as a fourth `layout` option ("Split tabs") on the
