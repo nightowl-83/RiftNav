@@ -52,6 +52,33 @@ Design vernacular already in the product — reuse it, don't invent parallel ter
 RIFT NAV · HOLO DECK · GUIDE ONLINE · SELECT RIFT · SCAN COMPLETE · SIG-#### · RETARGET ·
 ABORT RIFT · EVENT LOG · CLASSIC/HOLO toggle.
 
+## The data goes stale on its own — a weekly task watches for it
+
+The datasets are copied from the community wiki. The game gets patched, the wiki lags the game,
+and our copy lags the wiki. None of that announces itself.
+
+**`data/sources.json`** pins the wiki pages we depend on and the revision each was last verified
+against. A scheduled task, **"Stellaris source watch"** (Mondays), compares live revision ids
+against those pins and scans recent Paradox patch notes for mentions of rifts, dig sites or
+relics. It only reports — it never re-captures and never commits.
+
+**Do not trust the pages' own `{{version}}` tags.** The Relics tag read `{{Version|4.5}}` when we
+captured it on 2026-09-26 and reads `{{version|3.14}}` today, having moved *backwards*. Pinned
+revision ids are the only reliable staleness signal, which is why the manifest exists.
+
+When the watch flags a change:
+
+1. Re-capture. For relics that means pasting `data/tools/capture/capture_relics.js` into a browser
+   console on a wiki tab — the wiki blocks scripted clients, so this is a human step.
+2. Run `python3 data/tools/diff_relic_capture.py`. It reads the baseline from git (so saving over
+   the capture cannot destroy it) and diffs only the five fields the dataset consumes. It says
+   whether any relic cooldown moved, which is the one thing that would invalidate `timing`.
+3. Rebuild, validate, then update `verified_revid` and `status` in `data/sources.json`.
+
+State as of 2026-10-15: `Relics` is **BEHIND** (captured at 119679, page now 120038).
+`Astral_rift` and `Archaeological_site` are **BASELINE_ONLY** — watched from now on, but the
+August captures were never revision-pinned, so August-to-now is unmeasured.
+
 ## Committing from Cowork needs one extra step
 
 **A Cowork session cannot stage or commit until file deletion is granted for the folder.**

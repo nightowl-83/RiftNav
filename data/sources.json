@@ -1,0 +1,40 @@
+{
+  "_about": "Wiki pages this project's data is copied from, and the revision each was last verified against. Read by the weekly source-watch task (see data/SOURCE_WATCH.md) to tell whether our copy has fallen behind. Pinning a revid is the only reliable staleness signal: the pages' own {{version}} tags have proven unreliable - the Relics tag read 4.5 on 2026-09-26 and reads 3.14 today, having moved backwards.",
+  "wiki": "https://stellaris.paradoxwikis.com",
+  "revid_api": "/api.php?action=parse&page={page}&prop=revid&format=json",
+  "updated": "2026-10-15",
+  "pages": [
+    {
+      "page": "Relics",
+      "feeds": ["data/relics.v3.json", "timing.activation on 22 rewards"],
+      "verified_revid": 119679,
+      "verified_on": "2026-09-26",
+      "current_revid_at_pin": 120038,
+      "status": "BEHIND",
+      "note": "Captured at 119679 when the page was tagged {{Version|4.5}}. The page has since been edited and re-tagged {{version|3.14}} - a version tag moving backwards. Re-capture with data/tools/capture/capture_relics.js (browser console; the wiki blocks scripted clients), then diff the five consumed fields: passive, triumph, triumph_cost, triumph_cooldown_days, activatable."
+    },
+    {
+      "page": "Astral_rift",
+      "feeds": ["data/astral_rifts.v3.json", "the 4 rift situations"],
+      "verified_revid": null,
+      "verified_on": "2026-08-30",
+      "current_revid_at_pin": 120113,
+      "status": "BASELINE_ONLY",
+      "note": "Captured 2026-08-30 by reading the page, not by a pinned capture, so the revid it saw is unknown. 120113 is the revision monitoring started from, NOT a revision our data was verified against. Changes are detected from 2026-10-15 forward; anything between August and now is unmeasured."
+    },
+    {
+      "page": "Archaeological_site",
+      "feeds": ["data/archaeological_sites.v3.json"],
+      "verified_revid": null,
+      "verified_on": "2026-08-30",
+      "current_revid_at_pin": 120102,
+      "status": "BASELINE_ONLY",
+      "note": "Same caveat as Astral_rift: baseline, not a verified match."
+    }
+  ],
+  "also_watch": {
+    "what": "Paradox patch notes and dev diaries",
+    "why": "The wiki lags the game. A patch that touches astral rifts, dig sites or relics is a staleness warning even when no wiki page has changed yet - which is exactly the state this project was in through September.",
+    "keywords": ["astral rift", "archaeological site", "dig site", "relic", "Astral Planes", "Grand Archive"]
+  }
+}

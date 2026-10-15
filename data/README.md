@@ -191,6 +191,20 @@ bonuses: "Black Curtain + astral threads: +25% Astral Rift Exploration Speed" na
 offered, and the effect is a modifier. A priority rule catches the "X + currency: effect" form, and
 the validator fails if one is ever typed as a payout.
 
+## Staleness
+
+`sources.json` pins the wiki pages this data comes from and the revision each was verified
+against. The weekly "Stellaris source watch" task compares live revision ids against those pins.
+**The pages' own `{{version}}` tags are not reliable** — the Relics tag has moved *backwards*
+(4.5 → 3.14), which is why revision ids are the signal and the manifest exists.
+
+`tools/diff_relic_capture.py` diffs a fresh relic capture against the committed one, limited to
+the five consumed fields (`passive`, `triumph`, `triumph_cost`, `triumph_cooldown_days`,
+`activatable`). The baseline is read from git, so overwriting the capture cannot lose it.
+
+Current: `Relics` is behind (captured 119679, live 120038). The other two are baselined from
+2026-10-15; their August captures were never revision-pinned.
+
 ## Provenance
 
 Wiki-sourced, documented against game version **3.14**. Rifts captured 2026-08-30, rift

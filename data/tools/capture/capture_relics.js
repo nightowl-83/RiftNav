@@ -121,6 +121,6 @@ async function captureRelics(page = 'Relics') {
   // upgradeable relics repeat a name per stage (Celestial Chart x4); number the stages in page order
   const seen = {};
   for (const r of out) if (r.subsection) r.stage = (seen[r.subsection] = (seen[r.subsection] || 0) + 1);
-  return { page, revid: j.parse.revid, wiki_version: (w.match(/\{\{Version\|([^}]+)\}\}/) || [])[1] || null,
+  return { page, revid: j.parse.revid, wiki_version: (w.match(/\{\{version\|([^}]+)\}\}/i) || [])[1] || null,  // case-insensitive: the page tag has been both {{Version|4.5}} and {{version|3.14}}
            wikitext_sha256: sha, url: `https://stellaris.paradoxwikis.com/${page}`, dlc_names: dlcNames, relics: out };
 }
