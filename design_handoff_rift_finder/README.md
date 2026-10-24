@@ -84,6 +84,109 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 | Corner brackets | **none** on the notched card (Grid and Split column keep them) |
 | Header panel | Same frame as the card (no hover, no + column). Padding `44px 24px 22px`, height from content, `width: 100%; min-width: 320px; max-width: 920px` |
 
+
+### Inline detail (Notched split, desktop)
+
+`inlineDetail = layout === 'Notched split' && !state.mob`. Mobile, Grid and Split column are unchanged. Based on board D of the Rift Nav — Split Browse Prototypes canvas.
+
+**Browse with nothing selected** is unchanged: pixel-identical to `main` at 1440, 1280 and 1180 when compared with animations frozen.
+
+**Selecting a rift or dig site** (card click, Enter/Space, a search result) sets `state.rift` / `state.dig`, but the screen stays put:
+
+- **Header:** the browse header panel (`.rf-hdr`) collapses (max-height 0, opacity 0, .45s `cubic-bezier(.2,.7,.2,1)`) and is hidden from the tab order (`visibility: hidden` once collapsed).
+- **Compact bar:** forced visible while something is selected (`shrunk || inlineSel`). Its ‹ closes the selection. Its toggle, search and category menu work on the same `browse` / `q` / `cat` state, so the search filters the rows live. The monitoring count stays on the right. Under inline detail the search also matches rewards, so "relic" finds the 10 rifts with a relic reward.
+- **Column:** narrows to 340px (`.rf-inl-col`), starts below the bar (top 56 + 56 + 20px), and the card gap drops to 4px.
+- **Rows:** each card becomes a minimized row, a separate element (`.rf-mrow`). The full card isn't reshaped; it isn't rendered while rows show.
+  - **Shape:** 44px tall, radius 10px, background `rgba(2,8,16,.28)` with a faint 1px border `rgba(176,214,255,.07)`. Hover: background `rgba(8,20,34,.45)`, border `.14`. Selected: background `rgba(30,20,10,.42)`, border `rgba(255,224,190,.2)`.
+  - **Icon:** Material Symbols Rounded "folder" (weight 400, unfilled; `FOLDER_ICON`, viewBox `0 -960 960 960`) at 18px, so its line is 1.5px like the app's other line icons. Colour `#7f9cb4`; hover `#8ecbff`; selected `#ffd9b0` with a soft amber glow.
+  - **Name:** Chakra Petch 15px/600, `#cfe0ef` (`#fff8ef` when selected), ellipsis.
+  - **Pin:** the existing + / ⦿ pin as its own 32×32 button (`.rf-mpin`), labelled "Monitor {name}" / "Stop monitoring {name}" with `aria-pressed`. It toggles monitoring without opening the item.
+  - **Selected row:** has `aria-current="true"` and scrolls into view (`block: 'nearest'`).
+- **Panel** (`<section class="rf-inl-panel">`): fixed at left 398px, right 34px, top 132px, bottom 46px (above the footer).
+  - **Frame:** comes from `frameRef('panel', true)`, the same notched outline and corner accents, unchanged.
+  - **Fill:** `rgba(6,16,28,.62)` with `blur(14px) saturate(140%)`, clipped to the panel shape.
+  - **Motion:** enters fading in and sliding 28px from the right (.45s, .1s delay); exits the reverse (.26s).
+  - **Header row:** the eyebrow (`{GROUP} RIFT // SIG-####` or `{GROUP} SITE // ARC-####`), `MONITOR SITUATION`, and a 38px × labelled "Close and return to the full list".
+  - **Contents:** the existing rift detail, dig detail and reader, re-hosted. The old `‹ ABORT / ALL …` rows are hidden.
+  - **Sizing:** the panel is a size container (`container-name: rfinl`). The reader keeps three columns above 900px of panel width (1008px at 1440) and stacks below that (848px at 1280, 748px at 1180).
+  - **Accessibility:** `aria-labelledby` points at the item's name heading (`#rf-inl-name`), which takes focus on open. In the reader, the section is labelled with the rift name instead.
+- **Switching rows:** swaps the panel content and replays `hudIn`. Each item keeps its reward and reader step in `state.progress` via `switchTo(type, name)`, which the monitoring tabs now share. Coming back resumes where you were.
+- **Reader:** `ABORT RIFT` goes back to that rift's reward list (`goBack`); the last step's button reads `RETURN TO REWARDS ›`.
+- **Backdrop:** a `rgba(4,10,20,.5)` layer fades in over the galaxy (.7s), and the galaxy eases right to `xoff` 0.24 over .7s. The value is written straight to the map element, so the map's code and its prop stay as they are. Both are restored on close. The corner HUD hides while the panel is open.
+
+**Round 2 (list and panel header):**
+
+- **Narrower list:** the minimized list is 280px wide, so the panel starts at 338px.
+- **Dimming:** the list sits at opacity .55 while you work in the panel, and returns to 1 on hover or keyboard focus.
+- **Hide the list:** a button at the left of the panel header (Material Symbols Rounded `left_panel_close` / `left_panel_open`, `aria-expanded`, label "Hide the list" / "Show the list") slides the list out and widens the panel to left 34px. The list comes back on close.
+- **No repeated sub-headers:** inside the panel, the eyebrow lines ("BASE GAME SITE // ARC-…", "BASE GAME SITE // 5 PHASES", "GENERAL RIFT") are hidden. The call-outs under the title carry the same facts. Rifts get matching call-outs (CHAPTERS, GROUP, REWARDS), shown only in the panel.
+- **Requirements:** a Material Symbols Rounded `checklist` icon button next to MONITOR SITUATION opens the requirements (plus restrictions and notes) in the existing bottom sheet. It behaves as a dialog: it traps focus, closes on Escape, scrim or swipe, and returns focus to the button. The requirements panels inside the detail are hidden.
+- **Title on scroll:** the panel's scroll sets `--tp`, from 0 to 1 over the first 90px. The big title scales down to 62% and fades, while a compact 20px title fades into the sticky header row beside the actions. A hairline appears under the header. In the reader the compact title is always shown.
+- **Tooltips:** header buttons show their `aria-label` as an amber tooltip on hover or keyboard focus, so close reads "Close and return to the full list". Only one tooltip shows at a time.
+- **Reader stacking:** the reader now stacks below 960px of panel width.
+
+**Round 3 (2026-10-24):**
+
+- **Side list title:** the list gets a sticky title row ("Rift Index" or "Dig Site Index", plus a count) at `top: 112px`, under the compact bar. It has its own « button (Material Rounded `keyboard_double_arrow_left`) that hides the list.
+- **Panel toggle:** the panel header's toggle uses the same icon (« to hide, » to show).
+- **Header controls:** all four are 38px tall, MONITOR SITUATION included.
+- **Folder fade:** the panel's folder container (outline, fill, shadow, notch bar) keeps its top 30% unchanged and fades to 0% at its bottom edge. The content inside isn't masked.
+  - **How:** the fill carries its own mask. The outline stroke sits half a pixel outside the panel box, and the shadow spreads beyond it, so the outline, notch bar and shadow are masked through `.rf-inl-fade` wrappers that extend 80px past the box. A mask clips anything outside its own box, and that clipping is what removed the border in the first attempt. The gradient stops are measured from the panel's edges.
+  - **Checked:** the top 30% band is pixel-identical with the fade on or off. The border's contrast steps 73 → 58 → 43 → 26 → 12 → 0 from the 30% line to the bottom.
+- **Reader bar:** in the reader, ABORT RIFT, the step count, ‹ PREV and NEXT STEP › sit in a full-width sticky bar (`.rf-readbar`, 64px) above the footer. The panel's bottom moves up to clear it (`.is-reading`).
+- **Reader side column:** the in-panel Prev/Next row, the Abort button and the MISSION PARAMETERS card are hidden. The mission parameters are the same text as the requirements sheet behind the checklist button.
+- **Radar:** the "RIFT TRACE ACTIVE" radar graphic is removed.
+- **Wording:** "Retarget" now reads "Change target".
+- **Back button:** the compact bar's ‹ is now a Material `arrow_back` plus "BACK". The bar is a size container: below 1000px of bar width the label hides and the button becomes a 34px square (44px on touch) with the arrow centred.
+- **Footer:** half height (17px). The corner HUD and panel bottoms moved down with it.
+
+**Round 4 (2026-10-24):**
+
+- **Card corners:** detail and reader cards (step, claim, target information, mission parameters, access requirements; class `.rf-cardx`) lose their coloured corner brackets. Their glow read as a filled square in two corners.
+  - **Border:** the folder card's treatment instead: a 1px white border fading `.3 → .16` left to right (`::before`), and brighter `.42` pools at all four corners (`::after`, radial masks with the folder's stops).
+  - **Background and shadow:** the folder's fill `linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5))` and shadow `0 18px 50px rgba(0,6,16,.4)`.
+  - **Not changed:** home tiles and the boot panel keep their brackets.
+- **Reader in the panel:** above 960px of panel width the reader starts 44px below the panel's title row. The EVENT LOG heading sits above its column, so the first log item, the step card and the target box share a top edge (259px at 1440).
+- **Footer:** 14px tall with tight line height (the smallest that holds the 11px text). The reader bar, panel and corner HUD moved down with it.
+
+**Round 5 (2026-10-24):**
+
+- **Footer:** 4px of padding above and below the 14px line (23px with its border). The reader bar (bottom 22px), panel (34px, 98px while reading) and corner HUD (22px) moved up with it.
+- **Browse header:** three rows. The title and subtitle; the ASTRAL RIFTS / DIG SITES toggle (now side by side, never stacked) with MONITORING at the far end of the same row (`.rf-segrow`); then search and the reward-type filter. The segment row is a size container: below 420px it drops the word MONITORING and keeps the count ("02 ▾"). On phones the monitoring button stays in the dock.
+- **Monitoring tabs in inline detail:** the tab strip (`.rf-monstrip`) was rendering behind the fixed compact bar. While something is selected and anything is monitored (root class `.has-montabs`), it's pinned under the bar (top 112px, 44px tall). The list (padding-top 120px), the Rift Index row (sticky at 156px) and the panel (top 176px) move down to clear it.
+- **Reward-type menu:** one popover at the page root (`.rf-catpop`, fixed, z-index 900), so it sits above the folder container instead of under it. `openCat` measures the trigger. The menu (up to 620px wide) opens 9px below the trigger when its estimated height fits above the footer, otherwise above the trigger, left-aligned to it and kept 16px inside the viewport. If it fits neither way, or the viewport is under 412px wide, the reward-type sheet opens instead (the drawer is no longer phone-only for `filter`). The popover follows its trigger while the page scrolls a little and closes as before (outside click, Escape, 60px of scroll, screen change). Both the header trigger and the compact bar trigger use it.
+- **Step card:** the step card (STEP 1 OF 3 …) fades like the folder: its top 30% is unchanged, then its border pools, its fading edge and its fill thin out to nothing at the bottom. The masks are on the `::before` / `::after` borders (intersected with a vertical gradient) and the fill is a vertical gradient, so the card's content isn't masked. Its drop shadow and backdrop blur are removed, because their hard edges would show under the fade.
+- **Rift Index row:** the whole row is one button ("Hide the list", `aria-expanded`). The « icon leads, with no border or box. The row has no background until it's stuck under the bar (`.is-stuck`, set from the page scroll), then it gets a solid `rgba(5,12,22,.97)` backing that fades out 16px below.
+- **Panel toggle:** the panel header's » button only appears while the list is hidden. When the list is showing, the Rift Index row is the way to hide it.
+
+**Round 6 (2026-10-24):**
+
+- **Header search and filter:** in the split header they share one row that never wraps. Search takes the spare width (`flex: 1 1 200px`, no max width). The filter's label shortens as the row narrows. The row is a size container (`rfctl`): ALL REWARD TYPES at 460px and up, ALL REWARDS from 370px, ALL below that (a chosen category shows its name and ellipsizes). Measured: 1440 → search 245 / filter 216; 1280 → 238 / 176; 1024 → 214 / 106.
+- **Search icon:** both QUERY DESIGNATION fields (header and compact bar) get a Material Rounded `search` icon 13px in from the left, and the text starts at 39px. The fields are labelled "Search rifts and dig sites".
+- **Monitoring strip:** it scrolls sideways if the tabs overflow but never shows a scrollbar (`scrollbar-width: none`, `overflow-y: hidden`). It has 8px more padding on top (20px, or 18px under the compact bar). Under inline detail it's 52px tall, so the panel sits at 184px, the list at padding-top 128px and the Rift Index row at 164px.
+- **Hiding and showing the list:** the panel's left edge still slides (.45s). The content used to re-wrap on every frame, and at 1280 the reader jumped between stacked and three columns partway through.
+  - **Now:** for the length of the slide, the content (`.rf-inl-scroll`, which is now the `rfinl` size container in place of the panel) holds the narrower of the two widths, pinned to the panel's right edge, which doesn't move. Showing the list narrows the content at the start. Hiding it widens the content at the end, with a .22s fade.
+  - **Checked:** a frame-by-frame capture at 1280 shows the layout change exactly once each way.
+- **Show list:** while the list is hidden, "SHOW LIST" sits to the right of the panel's » button and works as part of it.
+- **Reader bar:** while the list is open it runs from the list's edge (left 314px, with the controls at 338px, aligned to the panel) to the right of the viewport. It slides with the list.
+- **Phone dock:** the order is Search, then Filter, then Monitoring. With monitored items the dock has 10px of right padding, so the count badge clears its border.
+- **Top bar:** `GUIDE ONLINE` hides below 1140px. At 1024 it pushed the page 81px wider than the window (also on `main`).
+
+**Closing** (×, the bar's ‹, or Escape when focus isn't in a text field): the panel fades and slides out, the rows return as full notched cards, the header comes back, the bar goes back to scroll-based behaviour, and focus returns to the card that was open.
+
+**Reduced motion:** no slides; the panel and the list swap instantly.
+
+**Folder graphics are untouched:** `folderPath`, `frameRef`, `bindFrame`, `buildFrame` and `drawFrame`, and all 28 existing `.rf-fc*` rules, are byte-identical to `main`. Everything here is new markup and new rules alongside them.
+
+**Verified** headless at 1440×900, 1280×800 and 1180×820, plus 390×844 (mobile unchanged).
+
+- **Browse:** pixel-identical to `main`.
+- **The Garden:** the header collapses, the bar shows, there are 36 rows (icon, name, pin), the panel shows 5 rewards, and there's no horizontal scroll.
+- **Resume:** Infinity Root at step 2, then Genesis, then back to The Garden: step 2 again.
+- **Pins:** a row's pin toggled monitoring without changing the selection, and the bar's count went to 01.
+- **Search:** "relic" filtered the rows.
+- **Closing:** ×, ‹ and Escape each returned to the full cards with focus on The Garden.
+
 ---
 
 ## The notched folder shape
@@ -545,11 +648,27 @@ Right-aligned `ACCESS REQUIREMENTS` panel: `max-width: 400px; border-radius: 14p
 
 Divider: `height: 1px; background: linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent); margin: 22px 0 26px`.
 
-Reward grid: `repeat(auto-fill, minmax(336px, 1fr)); gap: 18px`. Each card `border-radius: 16px; padding: 24px; min-height: 194px`, glass `linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54))`, `backdrop-filter: blur(22px) saturate(140%)`, `box-shadow: 0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14)`, **four** 22px corner brackets (amber TL + BR, cyan TR + BL).
+**Reward Ledger, V2 Two-tone** (replaced the card grid on 2026-10-24; Figma "Rift Helper UI" › Rewards Ledger › V2, node 97-449). The label row reads `SELECT TARGET REWARD // {n} DOCUMENTED`. Icons are always shown; the ICONS switch was removed on 2026-10-24.
 
-A relic reward also shows a compact **Relic card** (below) between its name and the progress bar. Card content: category (9px, `.2em`, `#8ecbff`) + code `RWD-{hash % 900 + 100}` right → name Chakra Petch 26px/600 pushed to bottom → 3px progress bar + meta `{n} STEPS / ROLL {n}` or `/ NO ROLLS`. Bar gradient is amber (`#ffb87a → #ffd9b0`) when the hardest roll is ≥ 5, cyan (`#8ecbff → #d6ecff`) otherwise; width `min(100, steps/9 × 100)%`.
-
-Hover: `border-color: rgba(174,225,255,.62); transform: translateY(-2px); box-shadow: 0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2)`.
+- **Groups,** in this order and only if non-empty: Economy, Rift ops, Military, Defense, Fleet, Species & pops, Leaders, Unlocks, Other.
+  - **Header:** uppercase label plus count, then a 1px rule filling the row (IBM Plex Mono 11px, `.2em`). 16px between groups, 8px to the first row.
+  - **Domain:** comes from `LEDGER_CAT` (category to domain) and `LEDGER_KEYWORDS`, which applies only to "Empire modifiers", first match wins: rift, then weapon/damage, then armor/shield/hull, then sublight/ship build/fleet, then resource/job/energy/minerals/food/alloys. Both tables sit next to `TYPE_SHORT`. Specimen text is never keyword-matched.
+- **Row:** one per reward group, so duplicate routes are still one row. It's the same `role="button"` element as the old card, with the same click, keyboard and aria-label.
+  - **Grid:** icon tile · text · faction chip · meta · chevron, with a 14px gap and padding `10px 14px 10px 10px`. Radius 11, background `rgba(2,8,16,.32)` with a 14px glass blur, border `rgba(176,214,255,.08)`. Hover and focus: `rgba(142,203,255,.06)`, border `rgba(142,203,255,.3)`. The cyan 2px focus ring is kept.
+  - **Icon tile:** 34×34, radius 9, with an 18px stroke icon per domain (`LEDGER_ICON`). Tile background `rgba(142,203,255,.04)`, border `rgba(142,203,255,.11)` (half the original strength).
+  - **Title:** Chakra Petch 17px/600. When the short name is a route label rather than an effect ("… base", "… + …", "… offering bonus"), the effect is used instead.
+  - **Detail line:** `Costs {cost}` (Plex Mono 12.5px, warm), parsed from the `cost:` notes along the route. Multiple costs are joined with " + ", and "food / minerals / energy" shortens to "res" when there are two or more. Otherwise it shows a short note (`#8ba7bf`): "{Faction} ending" for route-label rewards, or the effect when it adds something.
+  - **Relic card:** the compact relic card sits under the title.
+  - **Faction chip:** the reward's own label first, then the last route step naming a faction in its choice or chapter title. Rifts with a faction branch default to `ANY ROUTE`; it's hidden on rifts with no faction branch.
+  - **Meta:** `{n} STEPS` (with the `N ROUTES · SHORTEST` prefix when there are several routes) plus 5 roll pips, filled up to the route's hardest roll.
+- **Colour:** V2 Two-tone, as CSS custom properties `--ldg-*` on `:root`.
+  - **Blue `#8ecbff`:** group labels and rules, icons and tiles, pips for rolls 1–4.
+  - **Warm:** cost text (`#ffc796`) and pips for roll ≥ 5 (`#ffb87a`, the old bar's threshold).
+  - **Neutral:** titles, notes, steps and chips.
+  - **No per-domain colours.**
+- **Phones, touch tablets and widths ≤ 640px:** the chip and meta drop to a second line under the text. No horizontal scroll at 390.
+- **Removed:** the `RWD-###` code (`this.code()` stays; the SIG/ARC codes still use it).
+- **Screenshots:** `screenshots/ledger--{ruined-planet|the-microverse|the-garden}--{w}x{h}.png` at 390×844, 820×1180, 1180×820 and 1440×900.
 
 ## 8. Step-by-step reader
 
