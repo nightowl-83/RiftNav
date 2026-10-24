@@ -6,6 +6,31 @@ supersedes it and say so.
 
 ---
 
+## 2026-10-24 — Reward section uses the Ledger, V2 Two-tone
+
+**Decided:** The rift detail's "SELECT TARGET REWARD" section is the Reward Ledger, a compact list
+grouped by what each reward does, in the V2 Two-tone colour treatment. It replaces the card grid.
+Built on the `reward-ledger` branch (`f2ff18e`); spec in `design_handoff_rift_finder/README.md` §7.
+
+**Why:**
+- The old cards were about 194px tall, so only about 4 fit on a screen.
+- They repeated the same category eyebrow on most cards (13 of 19 on Ruined Planet say "EMPIRE
+  MODIFIERS").
+- They led with an `RWD-###` hash that means nothing to players.
+
+The ledger shows the whole list on one screen, leads with the effect, and groups by what the
+reward does. V2 uses only the two hues the app already has: blue for structure, and warm only
+for "this costs you something or it's hard". Colour then carries meaning instead of decoration.
+
+**Rules that come with it:**
+- **No per-domain colours.** The domain and keyword tables live next to `TYPE_SHORT`.
+- **Derived only:** everything is derived at render time; no data edits.
+
+**What would overturn it:** players needing domain colour to scan long lists (try the mock's V3
+"domain hint" first), or the dig site screen needing a different pattern that should be shared.
+
+---
+
 ## 2026-10-15 — Reward timing is a `timing` object, not a reward type
 
 **Decided:** Every reward carries `timing: {mode, days, years, cycle_*, uses, delay_*,
