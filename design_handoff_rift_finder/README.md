@@ -140,6 +140,16 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 - **Back button:** the compact bar's ‹ is now a Material `arrow_back` plus "BACK". The bar is a size container: below 1000px of bar width the label hides and the button becomes a 34px square (44px on touch) with the arrow centred.
 - **Footer:** half height (17px). The corner HUD and panel bottoms moved down with it.
 
+**Round 4 (2026-10-24):**
+
+- **Card corners:** detail and reader cards (step, claim, target information, mission parameters, access requirements; class `.rf-cardx`) lose their coloured corner brackets. Their glow read as a filled square in two corners.
+  - **Border:** the folder card's treatment instead: a 1px white border fading `.3 → .16` left to right (`::before`), and brighter `.42` pools at all four corners (`::after`, radial masks with the folder's stops).
+  - **Background and shadow:** the folder's fill `linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5))` and shadow `0 18px 50px rgba(0,6,16,.4)`.
+  - **Not changed:** home tiles and the boot panel keep their brackets.
+- **Reader in the panel:** above 960px of panel width the reader starts 44px below the panel's title row. The EVENT LOG heading sits above its column, so the first log item, the step card and the target box share a top edge (259px at 1440).
+- **Footer:** 14px tall with tight line height (the smallest that holds the 11px text). The reader bar, panel and corner HUD moved down with it.
+- **Top bar:** `GUIDE ONLINE` hides below 1140px. At 1024 it pushed the page 81px wider than the window (also on `main`).
+
 **Closing** (×, the bar's ‹, or Escape when focus isn't in a text field): the panel fades and slides out, the rows return as full notched cards, the header comes back, the bar goes back to scroll-based behaviour, and focus returns to the card that was open.
 
 **Reduced motion:** no slides; the panel and the list swap instantly.
