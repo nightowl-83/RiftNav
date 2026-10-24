@@ -344,6 +344,64 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   .rf-step h2{font-size:28px!important}
   .rf-final h2{font-size:32px!important}
 }
+
+/* Reward Ledger, V2 Two-tone (rift detail, "SELECT TARGET REWARD"). Two hues only: blue is structure,
+   warm means "this costs you something or it's hard". No per-domain colours. */
+:root{--ldg-accent:#8ecbff;--ldg-warm:#ffc796;--ldg-warm-2:#ffb87a;--ldg-fg:#f6fbff;--ldg-muted:#8ba7bf;--ldg-dim:#5f7d95;
+  --ldg-line:rgba(176,214,255,.16);--ldg-line-2:rgba(176,214,255,.08);--ldg-pip:rgba(176,214,255,.14);
+  --ldg-tile-bg:rgba(142,203,255,.08);--ldg-tile-bd:rgba(142,203,255,.22);--ldg-row:rgba(2,8,16,.32);--ldg-row-hover:rgba(142,203,255,.06);--ldg-row-bd-hover:rgba(142,203,255,.3)}
+.ldg-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ldg-head .rf-dt-lbl{margin-bottom:0!important}
+.ldg-sw{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:10px;min-height:32px;padding:0;border:0;background:none;color:var(--ldg-muted);font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.16em;cursor:pointer}
+.ldg-sw-tr{position:relative;width:36px;height:20px;border-radius:999px;background:var(--ldg-line);transition:background-color .2s}
+.ldg-sw-tr::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--ldg-muted);transition:transform .2s,background-color .2s}
+.ldg-sw[aria-checked="true"]{color:#cfe0ef}
+.ldg-sw[aria-checked="true"] .ldg-sw-tr{background:rgba(142,203,255,.45)}
+.ldg-sw[aria-checked="true"] .ldg-sw-tr::after{transform:translateX(16px);background:var(--ldg-fg)}
+.ldg-group+.ldg-group{margin-top:16px}
+.ldg-gh{display:flex;align-items:center;gap:10px;margin-bottom:8px;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ldg-accent)}
+.ldg-gh::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(142,203,255,.3),transparent)}
+.ldg-gh-n{color:var(--ldg-dim)}
+.ldg-row{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto 14px;align-items:center;gap:14px;box-sizing:border-box;width:100%;padding:10px 14px 10px 10px;border-radius:11px;border:1px solid var(--ldg-line-2);background:var(--ldg-row);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);color:inherit;text-align:left;cursor:pointer;transition:background-color .18s ease,border-color .18s ease}
+.ldg-row+.ldg-row{margin-top:6px}
+.ldg-row:hover,.ldg-row:focus-visible{background:var(--ldg-row-hover);border-color:var(--ldg-row-bd-hover)}
+.ldg-row.no-fac{grid-template-columns:auto minmax(0,1fr) auto 14px}
+.ldg-tile{flex:none;width:34px;height:34px;box-sizing:border-box;border-radius:9px;display:grid;place-items:center;background:var(--ldg-tile-bg);border:1px solid var(--ldg-tile-bd);color:var(--ldg-accent)}
+.ldg-tile svg{width:18px;height:18px}
+.ldg-tile path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ldg-t{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ldg-title{font:600 17px/1.2 'Chakra Petch',sans-serif;letter-spacing:.01em;color:var(--ldg-fg);text-wrap:pretty}
+.ldg-cost{font:400 12.5px/1.4 'IBM Plex Mono',ui-monospace,monospace;color:var(--ldg-warm)}
+.ldg-note{font-size:12.5px;line-height:1.4;color:var(--ldg-muted);text-wrap:pretty}
+.ldg-t .rf-relic{margin-top:8px}
+.ldg-fac{font:500 10.5px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ldg-muted);border:1px solid var(--ldg-line);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.ldg-meta{display:inline-flex;align-items:center;gap:8px;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.1em;color:var(--ldg-muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.ldg-pips{display:inline-flex;gap:3px}
+.ldg-pips i{width:6px;height:10px;border-radius:1.5px;background:var(--ldg-pip)}
+.ldg-pips i.on{background:var(--ldg-accent)}
+.ldg-pips.is-hot i.on{background:var(--ldg-warm-2)}
+.ldg-chev{width:14px;height:14px;color:var(--ldg-dim)}
+.ldg-chev path{fill:none;stroke:currentColor;stroke-width:2}
+/* icons off: no tile, 16px left padding; nothing else changes */
+.ldg.no-icons .ldg-tile{display:none}
+.ldg.no-icons .ldg-row{grid-template-columns:minmax(0,1fr) auto auto 14px;padding-left:16px}
+.ldg.no-icons .ldg-row.no-fac{grid-template-columns:minmax(0,1fr) auto 14px}
+/* phones, tablets on touch and narrow widths: chip and meta drop under the text */
+@media (max-width:640px){
+  .ldg-row,.ldg-row.no-fac{grid-template-columns:auto minmax(0,1fr) 14px;row-gap:6px}
+  .ldg-row .ldg-fac,.ldg-row .ldg-meta{grid-column:2;justify-self:start}
+  .ldg-row .ldg-chev{grid-row:1;grid-column:3}
+  .ldg.no-icons .ldg-row,.ldg.no-icons .ldg-row.no-fac{grid-template-columns:minmax(0,1fr) 14px}
+  .ldg.no-icons .ldg-row .ldg-fac,.ldg.no-icons .ldg-row .ldg-meta{grid-column:1}
+  .ldg.no-icons .ldg-row .ldg-chev{grid-column:2}
+}
+.is-mob .ldg-row,.is-mob .ldg-row.no-fac{grid-template-columns:auto minmax(0,1fr) 14px;row-gap:6px}
+.is-mob .ldg-row .ldg-fac,.is-mob .ldg-row .ldg-meta{grid-column:2;justify-self:start}
+.is-mob .ldg-row .ldg-chev{grid-row:1;grid-column:3}
+.is-mob .ldg.no-icons .ldg-row,.is-mob .ldg.no-icons .ldg-row.no-fac{grid-template-columns:minmax(0,1fr) 14px}
+.is-mob .ldg.no-icons .ldg-row .ldg-fac,.is-mob .ldg.no-icons .ldg-row .ldg-meta{grid-column:1}
+.is-mob .ldg.no-icons .ldg-row .ldg-chev{grid-column:2}
+@media (prefers-reduced-motion: reduce){.ldg-row,.ldg-sw-tr,.ldg-sw-tr::after{transition:none}}
 </style>
 </helmet>
 
@@ -1016,20 +1074,22 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   <button type="button" class="{{ reqCls }}" aria-expanded="{{ reqOpen }}" onClick="{{ toggleReq }}"><b>REQUIRES</b><span class="rf-req1-t">{{ riftReqLine }}</span></button>
   </sc-if>
   <div class="rf-dt-div" style="height:1px;background:linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent);margin:22px 0 26px"></div>
+  <div class="ldg-head">
   <div class="rf-dt-lbl" style="font-size:11px;letter-spacing:.22em;color:#8ecbff;margin-bottom:18px">SELECT TARGET REWARD // {{ rewardCountLabel }}</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(336px,100%),1fr));gap:18px">
-    <sc-for list="{{ rewardCards }}" as="r" hint-placeholder-count="6">
-      <div role="button" tabIndex="0" aria-label="{{ r.aria }}" onClick="{{ r.open }}" onKeyDown="{{ r.key }}" style="position:relative;border-radius:16px;background:linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14);padding:24px;min-height:194px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease" style-hover="border-color:rgba(174,225,255,.62);box-shadow:0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2);transform:translateY(-2px)">
-        <div style="position:absolute;left:-1px;top:-1px;width:22px;height:22px;border-left:1.5px solid rgba(255,224,190,.8);border-top:1.5px solid rgba(255,224,190,.8);border-top-left-radius:16px;pointer-events:none"></div>
-        <div style="position:absolute;right:-1px;top:-1px;width:22px;height:22px;border-right:1.5px solid rgba(174,225,255,.6);border-top:1.5px solid rgba(174,225,255,.6);border-top-right-radius:16px;pointer-events:none"></div>
-        <div style="position:absolute;left:-1px;bottom:-1px;width:22px;height:22px;border-left:1.5px solid rgba(174,225,255,.6);border-bottom:1.5px solid rgba(174,225,255,.6);border-bottom-left-radius:16px;pointer-events:none"></div>
-        <div style="position:absolute;right:-1px;bottom:-1px;width:22px;height:22px;border-right:1.5px solid rgba(255,224,190,.8);border-bottom:1.5px solid rgba(255,224,190,.8);border-bottom-right-radius:16px;pointer-events:none"></div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <span style="font-size:11px;letter-spacing:.2em;color:#8ecbff">{{ r.cat }}</span>
-          <span style="margin-left:auto;font-size:9px;letter-spacing:.14em;color:#6f8ea6">{{ r.code }}</span>
-        </div>
-        <div style="margin-top:auto;font-family:'Chakra Petch',sans-serif;font-size:26px;font-weight:600;letter-spacing:.01em;line-height:1.2;color:#f6fbff;text-wrap:pretty">{{ r.name }}</div>
-        <sc-for list="{{ r.relics }}" as="rc3" hint-placeholder-count="0">
+  <button type="button" class="ldg-sw" role="switch" aria-checked="{{ ledgerIconsOn }}" onClick="{{ toggleLedgerIcons }}"><span class="ldg-sw-tr" aria-hidden="true"></span>ICONS</button>
+  </div>
+  <div class="{{ ledgerCls }}">
+    <sc-for list="{{ ledgerGroups }}" as="g" hint-placeholder-count="3">
+    <div class="ldg-group" role="group" aria-label="{{ g.label }}">
+      <div class="ldg-gh" aria-hidden="true">{{ g.label }} <span class="ldg-gh-n">{{ g.count }}</span></div>
+      <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="3">
+      <div class="{{ r.rowCls }}" role="button" tabIndex="0" aria-label="{{ r.aria }}" onClick="{{ r.open }}" onKeyDown="{{ r.key }}">
+        <span class="ldg-tile" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="{{ r.icon }}"></path></svg></span>
+        <span class="ldg-t">
+          <span class="ldg-title">{{ r.title }}</span>
+          <sc-if value="{{ r.hasCost }}" hint-placeholder-val="{{ false }}"><span class="ldg-cost">Costs {{ r.cost }}</span></sc-if>
+          <sc-if value="{{ r.hasNote }}" hint-placeholder-val="{{ false }}"><span class="ldg-note">{{ r.note }}</span></sc-if>
+          <sc-for list="{{ r.relics }}" as="rc3" hint-placeholder-count="0">
 <div class="{{ rc3.cls }}">
   <div class="rf-relic-eb">{{ rc3.eyebrow }}</div>
   <sc-if value="{{ rc3.showName }}" hint-placeholder-val="{{ true }}"><div class="rf-relic-name">{{ rc3.name }}</div></sc-if>
@@ -1046,13 +1106,13 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   </sc-if>
 </div>
         </sc-for>
-        <div style="margin-top:16px;display:flex;align-items:center;gap:12px">
-          <div style="flex:1;height:3px;border-radius:9px;background:rgba(176,214,255,.16);overflow:hidden">
-            <div style="{{ r.barStyle }}"></div>
-          </div>
-          <span style="font-size:11px;letter-spacing:.12em;color:#a8c4dc;white-space:nowrap">{{ r.meta }}</span>
-        </div>
+        </span>
+        <sc-if value="{{ r.hasFac }}" hint-placeholder-val="{{ false }}"><span class="ldg-fac">{{ r.fac }}</span></sc-if>
+        <span class="ldg-meta">{{ r.meta }}<span class="{{ r.pipCls }}" aria-hidden="true"><sc-for list="{{ r.pips }}" as="p" hint-placeholder-count="5"><i class="{{ p.cls }}"></i></sc-for></span></span>
+        <svg class="ldg-chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"></path></svg>
       </div>
+      </sc-for>
+    </div>
     </sc-for>
   </div>
 </div>
@@ -1359,7 +1419,8 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 <script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Notched split&quot;,&quot;options&quot;:[&quot;Grid&quot;,&quot;Split column&quot;,&quot;Notched split&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;backdrop&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Galaxy map&quot;,&quot;options&quot;:[&quot;Galaxy map&quot;,&quot;Video&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Backdrop&quot;},&quot;filterUI&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Menu&quot;,&quot;options&quot;:[&quot;Menu&quot;,&quot;One line&quot;,&quot;Chips&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Home filters&quot;},&quot;videoDim&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:46,&quot;min&quot;:0,&quot;max&quot;:85,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Video backdrop&quot;},&quot;holoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;cornerBrackets&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;},&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Overlays&quot;}}">
 class Component extends DCLogic {
   state = { rift: null, reward: null, cur: 0, railOpen: {}, q: '', boot: 0, cat: 'ALL', catOpen: false, browse: null, dig: null, cam: null, ctlOpen: false, presetName: '', presets: null, copied: false, monitored: [], condensed: false, narrow: false, monMenuOpen: false, tip: '', toastText: '', toastAdd: true, progress: {},
-    mob: false, dockMini: false, searchOpen: false, sq: '', sScope: 'all', drawer: null, drawerCat: null, reqOpen: false };
+    mob: false, dockMini: false, searchOpen: false, sq: '', sScope: 'all', drawer: null, drawerCat: null, reqOpen: false,
+    ledgerIcons: (() => { try { return localStorage.getItem('rf-ledger-icons') !== '0'; } catch (e) { return true; } })() };
 
   componentDidMount() {
     this.startBoot();
@@ -1993,6 +2054,58 @@ class Component extends DCLogic {
   YIELD_ORDER = ['relic', 'tech', 'specimen', 'modifier', 'place', 'other'];
   // risks: deaths, losses, hostile spawns and the negative traits a scientist can pick up
   RISK_RX = /scientist (dies|is (lost|killed)|disappears|and science ship)|\b(gains?|with) (the )?(maniacal|paranoid|paranoia|maimed|traumatized)\b|\bmishap\b|lose ~?\d+%|hostile|killed|\bdies\b/i;
+  // Reward Ledger: what a reward does, from its category plus keyword rules (first match wins).
+  // Specimen text is never keyword-matched (same class of bug as the old "Relic Rails" false positive).
+  LEDGER_ORDER = ['Economy', 'Rift ops', 'Military', 'Defense', 'Fleet', 'Species & pops', 'Leaders', 'Unlocks', 'Other'];
+  LEDGER_CAT = { 'Paragons & leaders': 'Leaders', 'Leader traits': 'Leaders', 'Species & pops': 'Species & pops',
+    'Unlocks': 'Unlocks', 'Situations': 'Unlocks', 'Systems': 'Unlocks' };
+  LEDGER_KEYWORDS = [   // only for "Empire modifiers"
+    [/\brift\b/i, 'Rift ops'], [/weapon|damage/i, 'Military'], [/armor|shield|hull/i, 'Defense'],
+    [/sublight|ship build|fleet/i, 'Fleet'], [/resource|\bjobs?\b|energy|minerals|food|alloys/i, 'Economy']
+  ];
+  // 24px stroke icons, one per domain
+  LEDGER_ICON = {
+    'Economy': 'M4 7h16M4 12h16M4 17h10',
+    'Rift ops': 'M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0M8.8 12a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0',
+    'Military': 'M5 12a7 7 0 1 0 14 0a7 7 0 1 0 -14 0M12 2v5M12 17v5M2 12h5M17 12h5',
+    'Defense': 'M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z',
+    'Fleet': 'M4 18L12 5l8 13-8-4z',
+    'Species & pops': 'M6 9a3 3 0 1 0 6 0a3 3 0 1 0 -6 0M13.6 10a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0 -4.8 0M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5M14 15.2c2.6-.6 5 .9 6 3.8',
+    'Leaders': 'M5 15l7-5 7 5M5 10l7-5 7 5M7 19h10',
+    'Unlocks': 'M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5',
+    'Other': 'M12 4l8 8-8 8-8-8z'
+  };
+  FACTIONS = ['Black Curtain', 'Starlight Vanguard'];
+  ledgerDomain(r) {
+    const cat = (r.cat || '').trim();
+    if (this.LEDGER_CAT[cat]) return this.LEDGER_CAT[cat];
+    if (cat !== 'Empire modifiers') return 'Other';
+    const text = [r.effect, r.short].filter(Boolean).join(' ');
+    if (/specimen/i.test(text)) return 'Other';
+    const hit = this.LEDGER_KEYWORDS.find(([rx]) => rx.test(text));
+    return hit ? hit[1] : 'Other';
+  }
+  // "cost: -1000 food / minerals / energy (grants …)" on the route's choices, joined with " + "
+  ledgerCost(st) {
+    const costs = [];
+    st.forEach(x => {
+      const m = String(x.note || '').match(/cost:\s*-?\s*([\d,]+)\s*([^(\[]+)/i);
+      if (m) costs.push(Number(m[1].replace(/,/g, '')).toLocaleString('en-US') + ' ' + m[2].trim().replace(/\s+/g, ' ').toLowerCase());
+    });
+    if (costs.length > 1) return costs.map(c => c.replace(/food \/ minerals \/ energy/, 'res')).join(' + ');
+    return costs[0] || '';
+  }
+  // the faction route: the reward's own label first ("Starlight Vanguard + alloys"), else the last route
+  // step whose choice or chapter names a faction; rifts with a faction branch default to "any route"
+  ledgerFaction(rift, r, st) {
+    const named = t => this.FACTIONS.find(f => String(t || '').toLowerCase().includes(f.toLowerCase()));
+    const branch = rift.chapters.some(c => c.choices.some(x => named(x.text)));
+    if (!branch) return '';
+    let f = named(r.short) || named(r.name);
+    if (!f) for (const x of st) { const g = named(x.choice) || named(x.title); if (g) f = g; }
+    return f ? f.toUpperCase() : 'ANY ROUTE';
+  }
+  setLedgerIcons(on) { try { localStorage.setItem('rf-ledger-icons', on ? '1' : '0'); } catch (e) {} this.setState({ ledgerIcons: on }); }
   TYPE_SHORT = { tech: 'TECHNOLOGY', specimen: 'SPECIMEN', modifier: 'MODIFIER', edict: 'EDICT', recurring: 'RECURRING',
     planet: 'PLANET', deposit: 'DEPOSIT', system: 'SYSTEM', leader: 'LEADER', trait: 'LEADER TRAIT', species: 'POPS',
     unit: 'SHIPS & ARMIES', contact: 'DIPLOMACY', situation: 'SITUATION', followup: 'FOLLOW-UP', decision: 'DECISION',
@@ -2307,6 +2420,37 @@ class Component extends DCLogic {
     const monOnRift = !!rift && this.isMon('rift', rift.name), monOnDig = !!dig && this.isMon('dig', dig);
     const reqLine = (...parts) => parts.filter(Boolean).join(' · ');
     const menuPanel = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(min(184px,100%),1fr));gap:4px;padding:10px;border-radius:14px;background:linear-gradient(160deg, rgba(16,36,58,.98), rgba(5,13,24,.985));backdrop-filter:blur(30px) saturate(140%);-webkit-backdrop-filter:blur(30px) saturate(140%);border:1px solid rgba(176,214,255,.24);box-shadow:0 26px 70px rgba(0,6,16,.55), inset 0 1px 0 rgba(255,255,255,.16);animation:hudFade .16s ease-out;z-index:600;position:absolute';
+    // ---- reward ledger (rift detail) ----
+    const rewardCards = this.rewardGroups(rift).map(g => {
+      const r = g.r, idx = g.idx;
+      const st = this.steps(rift, r);
+      const dif = st.map(x => x.diff).filter(n => typeof n === 'number');
+      const hard = dif.length ? Math.max.apply(null, dif) : 0;
+      const domain = this.ledgerDomain(r);
+      // a route label ("Black Curtain base", "… + alloys", "… offering bonus") isn't an effect: lead with the effect
+      const label = this.shortOf(r), isLabel = /\bbase$/i.test(label) || label.includes(' + ') || /offering bonus$/i.test(label);
+      const title = isLabel && r.effect ? r.effect.charAt(0).toUpperCase() + r.effect.slice(1) : label;
+      const cost = this.ledgerCost(st), fac = this.ledgerFaction(rift, r, st);
+      const effect = String(r.effect || '').replace(/^follow-?up:\s*/i, '').replace(/[.]$/, '');
+      const note = cost ? '' : (isLabel && fac && fac !== 'ANY ROUTE' ? fac.charAt(0) + fac.slice(1).toLowerCase().replace(/ (\w)/g, (m, c) => ' ' + c.toUpperCase()) + ' ending'
+        : (effect && !effect.toLowerCase().startsWith(title.toLowerCase()) && r.type !== 'relic' ? effect.charAt(0).toUpperCase() + effect.slice(1) : ''));
+      return {
+        name: label, title, domain, icon: this.LEDGER_ICON[domain],
+        cost, hasCost: !!cost, note, hasNote: !!note, fac, hasFac: !!fac,
+        rowCls: 'ldg-row' + (fac ? '' : ' no-fac'),
+        relics: r.type === 'relic' ? [this.relicCard(r.relic, { compact: true, hideName: true, note: r.relicNote })] : [],
+        meta: (g.routes > 1 ? g.routes + ' ROUTES · SHORTEST ' : '') + st.length + ' STEPS',
+        pipCls: 'ldg-pips' + (hard >= 5 ? ' is-hot' : ''),
+        pips: [1, 2, 3, 4, 5].map(i => ({ cls: i <= hard ? 'on' : '' })),
+        open: () => this.set({ reward: idx, cur: 0, railOpen: {} }),
+        key: this.onActivate(() => this.set({ reward: idx, cur: 0, railOpen: {} })),
+        aria: this.shortOf(r) + ', ' + (r.cat || 'reward') + ', ' + (g.routes > 1 ? g.routes + ' routes, shortest ' : '') + st.length + ' steps'
+      };
+    });
+    const ledgerGroups = this.LEDGER_ORDER.map(dm => {
+      const rows = rewardCards.filter(c => c.domain === dm);
+      return { label: dm.toUpperCase(), count: String(rows.length), rows };
+    }).filter(gr => gr.rows.length);
     return {
       // ---- mobile navigation ----
       mob, rootClass: 'rf-root' + (mob ? ' is-mob' : ''),
@@ -2599,22 +2743,10 @@ class Component extends DCLogic {
       hasRestrict: !!(rift && rift.restrict),
       rewardCountLabel: this.rewardGroups(rift).length + ' DOCUMENTED',
 
-      rewardCards: this.rewardGroups(rift).map(g => {
-        const r = g.r, idx = g.idx;
-        const st = this.steps(rift, r);
-        const dif = st.map(x => x.diff).filter(n => typeof n === 'number');
-        const hard = dif.length ? Math.max.apply(null, dif) : 0;
-        return {
-          name: this.shortOf(r), cat: (r.cat || '').toUpperCase(), code: 'RWD-' + String(this.code(r.name) % 900 + 100),
-          relics: r.type === 'relic' ? [this.relicCard(r.relic, { compact: true, hideName: true, note: r.relicNote })] : [],
-          meta: (g.routes > 1 ? g.routes + ' ROUTES · SHORTEST ' : '') + st.length + ' STEPS' + (hard ? ' / ROLL ' + hard : ' / NO ROLLS'),
-          barStyle: 'height:3px;border-radius:9px;background:' + (hard >= 5 ? 'linear-gradient(90deg,#ffb87a,#ffd9b0)' : 'linear-gradient(90deg,#8ecbff,#d6ecff)')
-            + ';width:' + Math.min(100, Math.round((st.length / 9) * 100)) + '%',
-          open: () => this.set({ reward: idx, cur: 0, railOpen: {} }),
-          key: this.onActivate(() => this.set({ reward: idx, cur: 0, railOpen: {} })),
-          aria: this.shortOf(r) + ', ' + (r.cat || 'reward') + ', ' + (g.routes > 1 ? g.routes + ' routes, shortest ' : '') + st.length + ' steps'
-        };
-      }),
+      rewardCards, ledgerGroups,
+      ledgerCls: 'ldg' + (this.state.ledgerIcons === false ? ' no-icons' : ''),
+      ledgerIconsOn: this.state.ledgerIcons === false ? 'false' : 'true',
+      toggleLedgerIcons: () => this.setLedgerIcons(this.state.ledgerIcons === false),
 
       rewardName: this.shortOf(reward),
       rewardEffect: reward && reward.type !== 'relic' ? (reward.effect || '') : '', hasRewardEffect: !!(reward && reward.type !== 'relic' && reward.effect),
