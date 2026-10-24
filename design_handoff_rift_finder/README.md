@@ -84,6 +84,62 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 | Corner brackets | **none** on the notched card (Grid and Split column keep them) |
 | Header panel | Same frame as the card (no hover, no + column). Padding `44px 24px 22px`, height from content, `width: 100%; min-width: 320px; max-width: 920px` |
 
+
+### Inline detail (Notched split, desktop)
+
+`inlineDetail = layout === 'Notched split' && !state.mob`. Mobile, Grid and Split column are unchanged. Based on board D of the Rift Nav — Split Browse Prototypes canvas.
+
+**Browse with nothing selected** is unchanged: pixel-identical to `main` at 1440, 1280 and 1180 when compared with animations frozen.
+
+**Selecting a rift or dig site** (card click, Enter/Space, a search result) sets `state.rift` / `state.dig`, but the screen stays put:
+
+- **Header:** the browse header panel (`.rf-hdr`) collapses (max-height 0, opacity 0, .45s `cubic-bezier(.2,.7,.2,1)`) and is hidden from the tab order (`visibility: hidden` once collapsed).
+- **Compact bar:** forced visible while something is selected (`shrunk || inlineSel`). Its ‹ closes the selection. Its toggle, search and category menu work on the same `browse` / `q` / `cat` state, so the search filters the rows live. The monitoring count stays on the right. Under inline detail the search also matches rewards, so "relic" finds the 10 rifts with a relic reward.
+- **Column:** narrows to 340px (`.rf-inl-col`), starts below the bar (top 56 + 56 + 20px), and the card gap drops to 4px.
+- **Rows:** each card becomes a minimized row, a separate element (`.rf-mrow`). The full card isn't reshaped; it isn't rendered while rows show.
+  - **Shape:** 44px tall, radius 10px, background `rgba(2,8,16,.28)` with a faint 1px border `rgba(176,214,255,.07)`. Hover: background `rgba(8,20,34,.45)`, border `.14`. Selected: background `rgba(30,20,10,.42)`, border `rgba(255,224,190,.2)`.
+  - **Icon:** Material Symbols Rounded "folder" (weight 400, unfilled; `FOLDER_ICON`, viewBox `0 -960 960 960`) at 18px, so its line is 1.5px like the app's other line icons. Colour `#7f9cb4`; hover `#8ecbff`; selected `#ffd9b0` with a soft amber glow.
+  - **Name:** Chakra Petch 15px/600, `#cfe0ef` (`#fff8ef` when selected), ellipsis.
+  - **Pin:** the existing + / ⦿ pin as its own 32×32 button (`.rf-mpin`), labelled "Monitor {name}" / "Stop monitoring {name}" with `aria-pressed`. It toggles monitoring without opening the item.
+  - **Selected row:** has `aria-current="true"` and scrolls into view (`block: 'nearest'`).
+- **Panel** (`<section class="rf-inl-panel">`): fixed at left 398px, right 34px, top 132px, bottom 46px (above the footer).
+  - **Frame:** comes from `frameRef('panel', true)`, the same notched outline and corner accents, unchanged.
+  - **Fill:** `rgba(6,16,28,.62)` with `blur(14px) saturate(140%)`, clipped to the panel shape.
+  - **Motion:** enters fading in and sliding 28px from the right (.45s, .1s delay); exits the reverse (.26s).
+  - **Header row:** the eyebrow (`{GROUP} RIFT // SIG-####` or `{GROUP} SITE // ARC-####`), `MONITOR SITUATION`, and a 38px × labelled "Close and return to the full list".
+  - **Contents:** the existing rift detail, dig detail and reader, re-hosted. The old `‹ ABORT / ALL …` rows are hidden.
+  - **Sizing:** the panel is a size container (`container-name: rfinl`). The reader keeps three columns above 900px of panel width (1008px at 1440) and stacks below that (848px at 1280, 748px at 1180).
+  - **Accessibility:** `aria-labelledby` points at the item's name heading (`#rf-inl-name`), which takes focus on open. In the reader, the section is labelled with the rift name instead.
+- **Switching rows:** swaps the panel content and replays `hudIn`. Each item keeps its reward and reader step in `state.progress` via `switchTo(type, name)`, which the monitoring tabs now share. Coming back resumes where you were.
+- **Reader:** `ABORT RIFT` goes back to that rift's reward list (`goBack`); the last step's button reads `RETURN TO REWARDS ›`.
+- **Backdrop:** a `rgba(4,10,20,.5)` layer fades in over the galaxy (.7s), and the galaxy eases right to `xoff` 0.24 over .7s. The value is written straight to the map element, so the map's code and its prop stay as they are. Both are restored on close. The corner HUD hides while the panel is open.
+
+**Round 2 (list and panel header):**
+
+- **Narrower list:** the minimized list is 280px wide, so the panel starts at 338px.
+- **Dimming:** the list sits at opacity .55 while you work in the panel, and returns to 1 on hover or keyboard focus.
+- **Hide the list:** a button at the left of the panel header (Material Symbols Rounded `left_panel_close` / `left_panel_open`, `aria-expanded`, label "Hide the list" / "Show the list") slides the list out and widens the panel to left 34px. The list comes back on close.
+- **No repeated sub-headers:** inside the panel, the eyebrow lines ("BASE GAME SITE // ARC-…", "BASE GAME SITE // 5 PHASES", "GENERAL RIFT") are hidden. The call-outs under the title carry the same facts. Rifts get matching call-outs (CHAPTERS, GROUP, REWARDS), shown only in the panel.
+- **Requirements:** a Material Symbols Rounded `checklist` icon button next to MONITOR SITUATION opens the requirements (plus restrictions and notes) in the existing bottom sheet. It behaves as a dialog: it traps focus, closes on Escape, scrim or swipe, and returns focus to the button. The requirements panels inside the detail are hidden.
+- **Title on scroll:** the panel's scroll sets `--tp`, from 0 to 1 over the first 90px. The big title scales down to 62% and fades, while a compact 20px title fades into the sticky header row beside the actions. A hairline appears under the header. In the reader the compact title is always shown.
+- **Tooltips:** header buttons show their `aria-label` as an amber tooltip on hover or keyboard focus, so close reads "Close and return to the full list". Only one tooltip shows at a time.
+- **Reader stacking:** the reader now stacks below 960px of panel width.
+
+**Closing** (×, the bar's ‹, or Escape when focus isn't in a text field): the panel fades and slides out, the rows return as full notched cards, the header comes back, the bar goes back to scroll-based behaviour, and focus returns to the card that was open.
+
+**Reduced motion:** no slides; the panel and the list swap instantly.
+
+**Folder graphics are untouched:** `folderPath`, `frameRef`, `bindFrame`, `buildFrame` and `drawFrame`, and all 28 existing `.rf-fc*` rules, are byte-identical to `main`. Everything here is new markup and new rules alongside them.
+
+**Verified** headless at 1440×900, 1280×800 and 1180×820, plus 390×844 (mobile unchanged).
+
+- **Browse:** pixel-identical to `main`.
+- **The Garden:** the header collapses, the bar shows, there are 36 rows (icon, name, pin), the panel shows 5 rewards, and there's no horizontal scroll.
+- **Resume:** Infinity Root at step 2, then Genesis, then back to The Garden: step 2 again.
+- **Pins:** a row's pin toggled monitoring without changing the selection, and the bar's count went to 01.
+- **Search:** "relic" filtered the rows.
+- **Closing:** ×, ‹ and Escape each returned to the full cards with focus on The Garden.
+
 ---
 
 ## The notched folder shape
