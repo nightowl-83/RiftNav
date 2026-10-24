@@ -82,9 +82,11 @@ card grid with the grouped "Reward Ledger" in its V2 Two-tone colour treatment.
    - **What it would need:** specimens and relics would all land in "Other". The ledger would need
      Specimens, Relics and Technology as domains first.
 4. **`Rift Finder Split.dc.html`** still has its own copy of the old grid (left alone).
-5. **Merge order:** `reward-ledger` was cut from `main`, while `split-tabs` and `inline-detail`
-   are still unmerged. The inline-detail panel re-hosts this same rift detail, so the ledger
-   should drop in, but check the merge.
+5. **Merge order (corrected the same day):** `reward-ledger` was first cut from `main`, so the
+   preview lost the inline-detail side list and panel. The ledger was only meant to replace the
+   cards, so `inline-detail` was merged into `reward-ledger` (`e4e0247`). The branch now holds
+   inline detail plus the ledger inside its panel, and the desktop screenshots show that view.
+   Merging `reward-ledger` therefore brings inline detail with it.
 6. **Untracked folder:** `reference/_graphics/resources/` was untracked in the working copy
    before this session; it isn't part of this work and wasn't committed.
 
