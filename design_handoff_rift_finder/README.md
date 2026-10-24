@@ -130,7 +130,9 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 - **Side list title:** the list gets a sticky title row ("Rift Index" or "Dig Site Index", plus a count) at `top: 112px`, under the compact bar. It has its own « button (Material Rounded `keyboard_double_arrow_left`) that hides the list.
 - **Panel toggle:** the panel header's toggle uses the same icon (« to hide, » to show).
 - **Header controls:** all four are 38px tall, MONITOR SITUATION included.
-- **Folder fade:** the panel's folder container (outline, fill, shadow, notch bar) keeps its top 30% and fades to 0% at the bottom. It's done with a `mask-image` on those layers only, so the content inside isn't masked.
+- **Folder fade:** the panel's folder container (outline, fill, shadow, notch bar) keeps its top 30% unchanged and fades to 0% at its bottom edge. The content inside isn't masked.
+  - **How:** the fill carries its own mask. The outline stroke sits half a pixel outside the panel box, and the shadow spreads beyond it, so the outline, notch bar and shadow are masked through `.rf-inl-fade` wrappers that extend 80px past the box. A mask clips anything outside its own box, and that clipping is what removed the border in the first attempt. The gradient stops are measured from the panel's edges.
+  - **Checked:** the top 30% band is pixel-identical with the fade on or off. The border's contrast steps 73 → 58 → 43 → 26 → 12 → 0 from the 30% line to the bottom.
 - **Reader bar:** in the reader, ABORT RIFT, the step count, ‹ PREV and NEXT STEP › sit in a full-width sticky bar (`.rf-readbar`, 64px) above the footer. The panel's bottom moves up to clear it (`.is-reading`).
 - **Reader side column:** the in-panel Prev/Next row, the Abort button and the MISSION PARAMETERS card are hidden. The mission parameters are the same text as the requirements sheet behind the checklist button.
 - **Radar:** the "RIFT TRACE ACTIVE" radar graphic is removed.

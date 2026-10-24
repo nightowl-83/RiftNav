@@ -468,9 +468,17 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 .rf-idx-min{width:32px!important;height:32px!important;border-radius:9px!important}
 /* panel header: every control the same 38px height */
 .rf-inl-head .rf-inl-mon{height:38px!important;box-sizing:border-box!important;padding:0 15px!important;display:inline-flex!important;align-items:center!important;flex:none}
-/* the folder container (outline, fill, shadow, notch bar) keeps its top 30% and fades out toward the bottom;
-   the content inside is not masked */
-.rf-inl-panel>.rf-fc-outline,.rf-inl-panel>.rf-inl-fill,.rf-inl-panel>.rf-fc-shadow,.rf-inl-panel>.rf-fc-bar{
+/* the folder container keeps its top 30% exactly as it was and fades to 0% at its bottom edge; the content
+   inside is not masked. The outline's stroke sits half a pixel outside the panel box and the shadow spreads
+   beyond it, so those two are masked through wrappers that extend 80px past the box (a mask clips anything
+   outside its own box); the gradient stops are measured from the panel's edges, not the wrapper's. */
+.rf-inl-fade{position:absolute;inset:-80px;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(80px + (100% - 160px) * .3),transparent calc(100% - 80px));
+  mask-image:linear-gradient(180deg,#000 0,#000 calc(80px + (100% - 160px) * .3),transparent calc(100% - 80px))}
+.rf-inl-fade--lo{z-index:0}
+.rf-inl-fade--hi{z-index:3}
+.rf-inl-fade-box{position:absolute;inset:80px}
+.rf-inl-panel>.rf-inl-fill{
   -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 100%);mask-image:linear-gradient(180deg,#000 30%,transparent 100%)}
 /* ledger icon tiles: half the border and background opacity */
 .ldg-tile{background:rgba(142,203,255,.04);border-color:rgba(142,203,255,.11)}
@@ -1041,8 +1049,9 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 
 <section class="{{ inlCls }}" aria-labelledby="{{ inlLabelledby }}" aria-label="{{ inlAriaLabel }}">
 <sc-if value="{{ inlineSel }}" hint-placeholder-val="{{ false }}">
-  <div class="rf-fc-shadow"></div><div class="rf-inl-fill"></div><div class="rf-fc-bar"></div>
-  <div class="rf-fc-outline" ref="{{ panelFrameRef }}"></div>
+  <div class="rf-inl-fade rf-inl-fade--lo" aria-hidden="true"><div class="rf-inl-fade-box"><div class="rf-fc-shadow"></div></div></div>
+  <div class="rf-inl-fill"></div>
+  <div class="rf-inl-fade rf-inl-fade--hi" aria-hidden="true"><div class="rf-inl-fade-box"><div class="rf-fc-bar"></div><div class="rf-fc-outline" ref="{{ panelFrameRef }}"></div></div></div>
   <div class="rf-inl-head">
     <button type="button" class="rf-inl-ico rf-tipbtn rf-tipbtn--l" aria-label="{{ sideLabel }}" aria-expanded="{{ sideOpen }}" onClick="{{ toggleSide }}"><svg width="18" height="18" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="{{ sideIcon }}"></path></svg></button>
     <span class="{{ inlTitleCls }}" aria-hidden="true">{{ inlTitle }}</span>
