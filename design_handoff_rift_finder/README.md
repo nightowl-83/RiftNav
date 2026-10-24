@@ -158,6 +158,18 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 - **Step card:** the step card (STEP 1 OF 3 …) fades like the folder: its top 30% is unchanged, then its border pools, its fading edge and its fill thin out to nothing at the bottom. The masks are on the `::before` / `::after` borders (intersected with a vertical gradient) and the fill is a vertical gradient, so the card's content isn't masked. Its drop shadow and backdrop blur are removed, because their hard edges would show under the fade.
 - **Rift Index row:** the whole row is one button ("Hide the list", `aria-expanded`). The « icon leads, with no border or box. The row has no background until it's stuck under the bar (`.is-stuck`, set from the page scroll), then it gets a solid `rgba(5,12,22,.97)` backing that fades out 16px below.
 - **Panel toggle:** the panel header's » button only appears while the list is hidden. When the list is showing, the Rift Index row is the way to hide it.
+
+**Round 6 (2026-10-24):**
+
+- **Header search and filter:** in the split header they share one row that never wraps. Search takes the spare width (`flex: 1 1 200px`, no max width). The filter's label shortens as the row narrows. The row is a size container (`rfctl`): ALL REWARD TYPES at 460px and up, ALL REWARDS from 370px, ALL below that (a chosen category shows its name and ellipsizes). Measured: 1440 → search 245 / filter 216; 1280 → 238 / 176; 1024 → 214 / 106.
+- **Search icon:** both QUERY DESIGNATION fields (header and compact bar) get a Material Rounded `search` icon 13px in from the left, and the text starts at 39px. The fields are labelled "Search rifts and dig sites".
+- **Monitoring strip:** it scrolls sideways if the tabs overflow but never shows a scrollbar (`scrollbar-width: none`, `overflow-y: hidden`). It has 8px more padding on top (20px, or 18px under the compact bar). Under inline detail it's 52px tall, so the panel sits at 184px, the list at padding-top 128px and the Rift Index row at 164px.
+- **Hiding and showing the list:** the panel's left edge still slides (.45s). The content used to re-wrap on every frame, and at 1280 the reader jumped between stacked and three columns partway through.
+  - **Now:** for the length of the slide, the content (`.rf-inl-scroll`, which is now the `rfinl` size container in place of the panel) holds the narrower of the two widths, pinned to the panel's right edge, which doesn't move. Showing the list narrows the content at the start. Hiding it widens the content at the end, with a .22s fade.
+  - **Checked:** a frame-by-frame capture at 1280 shows the layout change exactly once each way.
+- **Show list:** while the list is hidden, "SHOW LIST" sits to the right of the panel's » button and works as part of it.
+- **Reader bar:** while the list is open it runs from the list's edge (left 314px, with the controls at 338px, aligned to the panel) to the right of the viewport. It slides with the list.
+- **Phone dock:** the order is Search, then Filter, then Monitoring. With monitored items the dock has 10px of right padding, so the count badge clears its border.
 - **Top bar:** `GUIDE ONLINE` hides below 1140px. At 1024 it pushed the page 81px wider than the window (also on `main`).
 
 **Closing** (×, the bar's ‹, or Escape when focus isn't in a text field): the panel fades and slides out, the rows return as full notched cards, the header comes back, the bar goes back to scroll-based behaviour, and focus returns to the card that was open.
