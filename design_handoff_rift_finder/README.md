@@ -545,11 +545,28 @@ Right-aligned `ACCESS REQUIREMENTS` panel: `max-width: 400px; border-radius: 14p
 
 Divider: `height: 1px; background: linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent); margin: 22px 0 26px`.
 
-Reward grid: `repeat(auto-fill, minmax(336px, 1fr)); gap: 18px`. Each card `border-radius: 16px; padding: 24px; min-height: 194px`, glass `linear-gradient(155deg, rgba(26,54,82,.46), rgba(6,16,28,.54))`, `backdrop-filter: blur(22px) saturate(140%)`, `box-shadow: 0 22px 60px rgba(0,6,16,.42), inset 0 1px 0 rgba(255,255,255,.14)`, **four** 22px corner brackets (amber TL + BR, cyan TR + BL).
+**Reward Ledger, V2 Two-tone** (replaced the card grid on 2026-10-24; Figma "Rift Helper UI" › Rewards Ledger › V2, node 97-449). The label row `SELECT TARGET REWARD // {n} DOCUMENTED` gets an `ICONS` switch on the right (`role="switch"`, state `ledgerIcons`, remembered in `localStorage['rf-ledger-icons']`).
 
-A relic reward also shows a compact **Relic card** (below) between its name and the progress bar. Card content: category (9px, `.2em`, `#8ecbff`) + code `RWD-{hash % 900 + 100}` right → name Chakra Petch 26px/600 pushed to bottom → 3px progress bar + meta `{n} STEPS / ROLL {n}` or `/ NO ROLLS`. Bar gradient is amber (`#ffb87a → #ffd9b0`) when the hardest roll is ≥ 5, cyan (`#8ecbff → #d6ecff`) otherwise; width `min(100, steps/9 × 100)%`.
-
-Hover: `border-color: rgba(174,225,255,.62); transform: translateY(-2px); box-shadow: 0 26px 70px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2)`.
+- **Groups,** in this order and only if non-empty: Economy, Rift ops, Military, Defense, Fleet, Species & pops, Leaders, Unlocks, Other.
+  - **Header:** uppercase label plus count, then a 1px rule filling the row (IBM Plex Mono 11px, `.2em`). 16px between groups, 8px to the first row.
+  - **Domain:** comes from `LEDGER_CAT` (category to domain) and `LEDGER_KEYWORDS`, which applies only to "Empire modifiers", first match wins: rift, then weapon/damage, then armor/shield/hull, then sublight/ship build/fleet, then resource/job/energy/minerals/food/alloys. Both tables sit next to `TYPE_SHORT`. Specimen text is never keyword-matched.
+- **Row:** one per reward group, so duplicate routes are still one row. It's the same `role="button"` element as the old card, with the same click, keyboard and aria-label.
+  - **Grid:** icon tile · text · faction chip · meta · chevron, with a 14px gap and padding `10px 14px 10px 10px`. Radius 11, background `rgba(2,8,16,.32)` with a 14px glass blur, border `rgba(176,214,255,.08)`. Hover and focus: `rgba(142,203,255,.06)`, border `rgba(142,203,255,.3)`. The cyan 2px focus ring is kept.
+  - **Icon tile:** 34×34, radius 9, with an 18px stroke icon per domain (`LEDGER_ICON`).
+  - **Title:** Chakra Petch 17px/600. When the short name is a route label rather than an effect ("… base", "… + …", "… offering bonus"), the effect is used instead.
+  - **Detail line:** `Costs {cost}` (Plex Mono 12.5px, warm), parsed from the `cost:` notes along the route. Multiple costs are joined with " + ", and "food / minerals / energy" shortens to "res" when there are two or more. Otherwise it shows a short note (`#8ba7bf`): "{Faction} ending" for route-label rewards, or the effect when it adds something.
+  - **Relic card:** the compact relic card sits under the title.
+  - **Faction chip:** the reward's own label first, then the last route step naming a faction in its choice or chapter title. Rifts with a faction branch default to `ANY ROUTE`; it's hidden on rifts with no faction branch.
+  - **Meta:** `{n} STEPS` (with the `N ROUTES · SHORTEST` prefix when there are several routes) plus 5 roll pips, filled up to the route's hardest roll.
+- **Colour:** V2 Two-tone, as CSS custom properties `--ldg-*` on `:root`.
+  - **Blue `#8ecbff`:** group labels and rules, icons and tiles, pips for rolls 1–4.
+  - **Warm:** cost text (`#ffc796`) and pips for roll ≥ 5 (`#ffb87a`, the old bar's threshold).
+  - **Neutral:** titles, notes, steps and chips.
+  - **No per-domain colours.**
+- **Icons off:** the tile is hidden and the left padding becomes 16px.
+- **Phones, touch tablets and widths ≤ 640px:** the chip and meta drop to a second line under the text. No horizontal scroll at 390.
+- **Removed:** the `RWD-###` code (`this.code()` stays; the SIG/ARC codes still use it).
+- **Screenshots:** `screenshots/ledger--{ruined-planet|the-microverse|the-garden}--{w}x{h}[--noicons].png` at 390×844, 820×1180, 1180×820 and 1440×900.
 
 ## 8. Step-by-step reader
 
