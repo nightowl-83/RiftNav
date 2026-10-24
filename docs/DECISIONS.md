@@ -6,6 +6,21 @@ supersedes it and say so.
 
 ---
 
+## 2026-10-24 — Inline detail and the Reward Ledger ship to the live site
+
+**Decided:** `reward-ledger` (inline detail for Notched split, rounds 2–6, plus the Reward Ledger) is
+merged into `main`, so the Cloudflare Pages production site serves it. Notched split, still the
+default layout, now opens rifts and dig sites in the inline panel beside the list. This supersedes
+the 2026-10-06 entry for inline detail: Mike picked it by asking for this build to go live.
+`split-tabs` stays on its branch, unmerged and not deleted.
+
+**Why:** Mike asked for this build to go live after six rounds of review on the branch.
+
+**What would overturn it:** testers finding the inline panel worse than the full-page detail. In
+that case, revert the merge commit on `main`.
+
+---
+
 ## 2026-10-24 — Reward section uses the Ledger, V2 Two-tone
 
 **Decided:** The rift detail's "SELECT TARGET REWARD" section is the Reward Ledger, a compact list
