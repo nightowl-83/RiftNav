@@ -125,6 +125,19 @@ Same column geometry as Split column, but cards and the header panel take a **fo
 - **Tooltips:** header buttons show their `aria-label` as an amber tooltip on hover or keyboard focus, so close reads "Close and return to the full list". Only one tooltip shows at a time.
 - **Reader stacking:** the reader now stacks below 960px of panel width.
 
+**Round 3 (2026-10-24):**
+
+- **Side list title:** the list gets a sticky title row ("Rift Index" or "Dig Site Index", plus a count) at `top: 112px`, under the compact bar. It has its own « button (Material Rounded `keyboard_double_arrow_left`) that hides the list.
+- **Panel toggle:** the panel header's toggle uses the same icon (« to hide, » to show).
+- **Header controls:** all four are 38px tall, MONITOR SITUATION included.
+- **Folder fade:** the panel's folder container (outline, fill, shadow, notch bar) keeps its top 30% and fades to 0% at the bottom. It's done with a `mask-image` on those layers only, so the content inside isn't masked.
+- **Reader bar:** in the reader, ABORT RIFT, the step count, ‹ PREV and NEXT STEP › sit in a full-width sticky bar (`.rf-readbar`, 64px) above the footer. The panel's bottom moves up to clear it (`.is-reading`).
+- **Reader side column:** the in-panel Prev/Next row, the Abort button and the MISSION PARAMETERS card are hidden. The mission parameters are the same text as the requirements sheet behind the checklist button.
+- **Radar:** the "RIFT TRACE ACTIVE" radar graphic is removed.
+- **Wording:** "Retarget" now reads "Change target".
+- **Back button:** the compact bar's ‹ is now a Material `arrow_back` plus "BACK". The bar is a size container: below 1000px of bar width the label hides and the button becomes a 34px square (44px on touch) with the arrow centred.
+- **Footer:** half height (17px). The corner HUD and panel bottoms moved down with it.
+
 **Closing** (×, the bar's ‹, or Escape when focus isn't in a text field): the panel fades and slides out, the rows return as full notched cards, the header comes back, the bar goes back to scroll-based behaviour, and focus returns to the card that was open.
 
 **Reduced motion:** no slides; the panel and the list swap instantly.
@@ -601,14 +614,14 @@ Right-aligned `ACCESS REQUIREMENTS` panel: `max-width: 400px; border-radius: 14p
 
 Divider: `height: 1px; background: linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent); margin: 22px 0 26px`.
 
-**Reward Ledger, V2 Two-tone** (replaced the card grid on 2026-10-24; Figma "Rift Helper UI" › Rewards Ledger › V2, node 97-449). The label row `SELECT TARGET REWARD // {n} DOCUMENTED` gets an `ICONS` switch on the right (`role="switch"`, state `ledgerIcons`, remembered in `localStorage['rf-ledger-icons']`).
+**Reward Ledger, V2 Two-tone** (replaced the card grid on 2026-10-24; Figma "Rift Helper UI" › Rewards Ledger › V2, node 97-449). The label row reads `SELECT TARGET REWARD // {n} DOCUMENTED`. Icons are always shown; the ICONS switch was removed on 2026-10-24.
 
 - **Groups,** in this order and only if non-empty: Economy, Rift ops, Military, Defense, Fleet, Species & pops, Leaders, Unlocks, Other.
   - **Header:** uppercase label plus count, then a 1px rule filling the row (IBM Plex Mono 11px, `.2em`). 16px between groups, 8px to the first row.
   - **Domain:** comes from `LEDGER_CAT` (category to domain) and `LEDGER_KEYWORDS`, which applies only to "Empire modifiers", first match wins: rift, then weapon/damage, then armor/shield/hull, then sublight/ship build/fleet, then resource/job/energy/minerals/food/alloys. Both tables sit next to `TYPE_SHORT`. Specimen text is never keyword-matched.
 - **Row:** one per reward group, so duplicate routes are still one row. It's the same `role="button"` element as the old card, with the same click, keyboard and aria-label.
   - **Grid:** icon tile · text · faction chip · meta · chevron, with a 14px gap and padding `10px 14px 10px 10px`. Radius 11, background `rgba(2,8,16,.32)` with a 14px glass blur, border `rgba(176,214,255,.08)`. Hover and focus: `rgba(142,203,255,.06)`, border `rgba(142,203,255,.3)`. The cyan 2px focus ring is kept.
-  - **Icon tile:** 34×34, radius 9, with an 18px stroke icon per domain (`LEDGER_ICON`).
+  - **Icon tile:** 34×34, radius 9, with an 18px stroke icon per domain (`LEDGER_ICON`). Tile background `rgba(142,203,255,.04)`, border `rgba(142,203,255,.11)` (half the original strength).
   - **Title:** Chakra Petch 17px/600. When the short name is a route label rather than an effect ("… base", "… + …", "… offering bonus"), the effect is used instead.
   - **Detail line:** `Costs {cost}` (Plex Mono 12.5px, warm), parsed from the `cost:` notes along the route. Multiple costs are joined with " + ", and "food / minerals / energy" shortens to "res" when there are two or more. Otherwise it shows a short note (`#8ba7bf`): "{Faction} ending" for route-label rewards, or the effect when it adds something.
   - **Relic card:** the compact relic card sits under the title.
@@ -619,10 +632,9 @@ Divider: `height: 1px; background: linear-gradient(90deg, rgba(255,222,186,.5), 
   - **Warm:** cost text (`#ffc796`) and pips for roll ≥ 5 (`#ffb87a`, the old bar's threshold).
   - **Neutral:** titles, notes, steps and chips.
   - **No per-domain colours.**
-- **Icons off:** the tile is hidden and the left padding becomes 16px.
 - **Phones, touch tablets and widths ≤ 640px:** the chip and meta drop to a second line under the text. No horizontal scroll at 390.
 - **Removed:** the `RWD-###` code (`this.code()` stays; the SIG/ARC codes still use it).
-- **Screenshots:** `screenshots/ledger--{ruined-planet|the-microverse|the-garden}--{w}x{h}[--noicons].png` at 390×844, 820×1180, 1180×820 and 1440×900.
+- **Screenshots:** `screenshots/ledger--{ruined-planet|the-microverse|the-garden}--{w}x{h}.png` at 390×844, 820×1180, 1180×820 and 1440×900.
 
 ## 8. Step-by-step reader
 

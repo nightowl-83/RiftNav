@@ -352,12 +352,6 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   --ldg-tile-bg:rgba(142,203,255,.08);--ldg-tile-bd:rgba(142,203,255,.22);--ldg-row:rgba(2,8,16,.32);--ldg-row-hover:rgba(142,203,255,.06);--ldg-row-bd-hover:rgba(142,203,255,.3)}
 .ldg-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
 .ldg-head .rf-dt-lbl{margin-bottom:0!important}
-.ldg-sw{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:10px;min-height:32px;padding:0;border:0;background:none;color:var(--ldg-muted);font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.16em;cursor:pointer}
-.ldg-sw-tr{position:relative;width:36px;height:20px;border-radius:999px;background:var(--ldg-line);transition:background-color .2s}
-.ldg-sw-tr::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--ldg-muted);transition:transform .2s,background-color .2s}
-.ldg-sw[aria-checked="true"]{color:#cfe0ef}
-.ldg-sw[aria-checked="true"] .ldg-sw-tr{background:rgba(142,203,255,.45)}
-.ldg-sw[aria-checked="true"] .ldg-sw-tr::after{transform:translateX(16px);background:var(--ldg-fg)}
 .ldg-group+.ldg-group{margin-top:16px}
 .ldg-gh{display:flex;align-items:center;gap:10px;margin-bottom:8px;font:500 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ldg-accent)}
 .ldg-gh::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(142,203,255,.3),transparent)}
@@ -383,25 +377,16 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 .ldg-chev{width:14px;height:14px;color:var(--ldg-dim)}
 .ldg-chev path{fill:none;stroke:currentColor;stroke-width:2}
 /* icons off: no tile, 16px left padding; nothing else changes */
-.ldg.no-icons .ldg-tile{display:none}
-.ldg.no-icons .ldg-row{grid-template-columns:minmax(0,1fr) auto auto 14px;padding-left:16px}
-.ldg.no-icons .ldg-row.no-fac{grid-template-columns:minmax(0,1fr) auto 14px}
 /* phones, tablets on touch and narrow widths: chip and meta drop under the text */
 @media (max-width:640px){
   .ldg-row,.ldg-row.no-fac{grid-template-columns:auto minmax(0,1fr) 14px;row-gap:6px}
   .ldg-row .ldg-fac,.ldg-row .ldg-meta{grid-column:2;justify-self:start}
   .ldg-row .ldg-chev{grid-row:1;grid-column:3}
-  .ldg.no-icons .ldg-row,.ldg.no-icons .ldg-row.no-fac{grid-template-columns:minmax(0,1fr) 14px}
-  .ldg.no-icons .ldg-row .ldg-fac,.ldg.no-icons .ldg-row .ldg-meta{grid-column:1}
-  .ldg.no-icons .ldg-row .ldg-chev{grid-column:2}
 }
 .is-mob .ldg-row,.is-mob .ldg-row.no-fac{grid-template-columns:auto minmax(0,1fr) 14px;row-gap:6px}
 .is-mob .ldg-row .ldg-fac,.is-mob .ldg-row .ldg-meta{grid-column:2;justify-self:start}
 .is-mob .ldg-row .ldg-chev{grid-row:1;grid-column:3}
-.is-mob .ldg.no-icons .ldg-row,.is-mob .ldg.no-icons .ldg-row.no-fac{grid-template-columns:minmax(0,1fr) 14px}
-.is-mob .ldg.no-icons .ldg-row .ldg-fac,.is-mob .ldg.no-icons .ldg-row .ldg-meta{grid-column:1}
-.is-mob .ldg.no-icons .ldg-row .ldg-chev{grid-column:2}
-@media (prefers-reduced-motion: reduce){.ldg-row,.ldg-sw-tr,.ldg-sw-tr::after{transition:none}}
+@media (prefers-reduced-motion: reduce){.ldg-row{transition:none}}
 /* Inline detail (Notched split, desktop): picking a rift or dig site keeps the list, minimizes it to rows,
    and loads the detail into the open area on the right. New rules only; the folder card rules above are untouched. */
 .rf-split-off{display:contents}
@@ -428,7 +413,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 .rf-mpin{position:absolute;right:6px;top:50%;width:32px;height:32px;margin:-16px 0 0;padding:0;border:0;border-radius:8px;background:transparent;color:#8ecbff;font:200 19px/1 'JetBrains Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background-color .18s ease,color .18s ease}
 .rf-mpin:hover{background:rgba(163,229,255,.1);color:#fff}
 .rf-mpin.is-on{color:#ffd9b0;font:400 15px/1 'IBM Plex Mono',ui-monospace,monospace;background:rgba(255,214,170,.12)}
-.rf-inl-panel{--tp:0;position:fixed;left:338px;right:34px;top:132px;bottom:46px;z-index:20;display:flex;flex-direction:column;container-type:inline-size;container-name:rfinl;animation:rfInlIn .45s cubic-bezier(.2,.7,.2,1) .1s both}
+.rf-inl-panel{--tp:0;position:fixed;left:338px;right:34px;top:132px;bottom:29px;z-index:20;display:flex;flex-direction:column;container-type:inline-size;container-name:rfinl;animation:rfInlIn .45s cubic-bezier(.2,.7,.2,1) .1s both}
 .rf-inl-panel.is-wide{left:34px}
 .rf-inl-panel{transition:left .45s cubic-bezier(.2,.7,.2,1)}
 .rf-inl-panel.is-out{animation:rfInlOut .26s ease-in both}
@@ -474,6 +459,40 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   .rf-read-radar{order:1}
 }
 @media (prefers-reduced-motion: reduce){.rf-inl-panel,.rf-inl-panel.is-out{animation:none}.rf-home-notch,.rf-hdr,.rf-hdr.is-collapsed,.rf-inl-dim{transition:none}}
+
+/* ---- round 3 (inline detail + ledger) ---- */
+/* side list: a sticky "Rift Index" title row with its own minimize button */
+.rf-idx-head{position:sticky;top:112px;z-index:6;display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:8px 2px 10px 4px;background:linear-gradient(180deg,rgba(5,12,22,.96) 70%,rgba(5,12,22,0));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.rf-idx-t{flex:1;min-width:0;font:600 14px 'Chakra Petch',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d6ecff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rf-idx-n{flex:none;font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.16em;color:#7f9cb4}
+.rf-idx-min{width:32px!important;height:32px!important;border-radius:9px!important}
+/* panel header: every control the same 38px height */
+.rf-inl-head .rf-inl-mon{height:38px!important;box-sizing:border-box!important;padding:0 15px!important;display:inline-flex!important;align-items:center!important;flex:none}
+/* the folder container (outline, fill, shadow, notch bar) keeps its top 30% and fades out toward the bottom;
+   the content inside is not masked */
+.rf-inl-panel>.rf-fc-outline,.rf-inl-panel>.rf-inl-fill,.rf-inl-panel>.rf-fc-shadow,.rf-inl-panel>.rf-fc-bar{
+  -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 100%);mask-image:linear-gradient(180deg,#000 30%,transparent 100%)}
+/* ledger icon tiles: half the border and background opacity */
+.ldg-tile{background:rgba(142,203,255,.04);border-color:rgba(142,203,255,.11)}
+/* reader in the panel: Prev, Next and Abort live in a full-width sticky bar above the footer; mission
+   parameters are behind the requirements button */
+.rf-inl-panel.is-reading{bottom:93px}
+.rf-inl-scroll .rf-read-nav,.rf-inl-scroll .rf-read-abort,.rf-inl-scroll .rf-read-params{display:none!important}
+.rf-readbar{position:fixed;left:0;right:0;bottom:17px;z-index:870;height:64px;box-sizing:border-box;display:flex;align-items:center;gap:12px;padding:0 34px;background:linear-gradient(180deg,rgba(7,17,30,.9),rgba(6,14,26,.96));backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);border-top:1px solid rgba(176,214,255,.16);animation:hudFade .25s ease-out}
+.rf-readbar-step{font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;color:#a8c4dc;white-space:nowrap}
+.rf-readbar-gap{flex:1}
+.rf-readbar-abort{flex:none;height:40px;box-sizing:border-box;padding:0 16px;border-radius:11px;border:1px solid rgba(255,150,110,.34);background:rgba(30,14,10,.4);color:#ffb87a;font:400 11px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.2em;cursor:pointer}
+.rf-readbar-abort:hover{border-color:rgba(255,160,120,.7);color:#ffd0a8}
+/* compact bar back: arrow + "BACK" while there is room, a centred square arrow once it gets tight */
+.rf-cbar{container-type:inline-size;container-name:rfcbar}
+.rf-cbar .rf-back.rf-cbar-backbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:0 13px 0 10px!important;min-width:34px;box-sizing:border-box}
+.rf-cbar-backbtn svg{flex:none;display:block}
+.rf-cbar-backbtn svg path{fill:currentColor}
+@container rfcbar (max-width:1000px){
+  .rf-cbar-back-t{display:none}
+  .rf-cbar .rf-back.rf-cbar-backbtn{width:34px;padding:0!important}
+}
+@media (pointer:coarse){@container rfcbar (max-width:1000px){.rf-cbar .rf-back.rf-cbar-backbtn{width:44px}}}
 </style>
 </helmet>
 
@@ -640,7 +659,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 </sc-if>
 <sc-if value="{{ compactAny }}" hint-placeholder-val="{{ false }}">
 <div class="rf-cbar" style="{{ compactBar }}">
-  <button class="rf-back" aria-label="{{ cbarBackLabel }}" onClick="{{ cbarBack }}" style="flex:none;height:34px;border-radius:10px;background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:0 13px;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef">‹</button>
+  <button class="rf-back rf-cbar-backbtn" aria-label="{{ cbarBackLabel }}" onClick="{{ cbarBack }}" style="flex:none;height:34px;border-radius:10px;background:rgba(10,24,40,.45);border:1px solid rgba(176,214,255,.26);color:#cfe6ff;font-family:inherit;font-size:11px;letter-spacing:.2em;cursor:pointer;transition:border-color .2s ease,color .2s ease" style-hover="border-color:rgba(174,225,255,.6);color:#fff8ef"><svg width="18" height="18" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"></path></svg><span class="rf-cbar-back-t">BACK</span></button>
   <div class="rf-tgl rf-cbar-tgl" style="{{ compactToggle }}">
     <button type="button" aria-pressed="{{ tabRiftOn }}" onClick="{{ browseRifts }}" style="{{ tabRiftStyle }}">ASTRAL RIFTS</button>
     <button type="button" aria-pressed="{{ tabDigOn }}" onClick="{{ browseDigs }}" style="{{ tabDigStyle }}">DIG SITES</button>
@@ -792,6 +811,13 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   </div>
   
 
+  <sc-if value="{{ inlineSel }}" hint-placeholder-val="{{ false }}">
+  <div class="rf-idx-head">
+    <span class="rf-idx-t">{{ indexTitle }}</span>
+    <span class="rf-idx-n">{{ indexCount }}</span>
+    <button type="button" class="rf-inl-ico rf-idx-min rf-tipbtn" aria-label="Hide the list" aria-expanded="true" onClick="{{ toggleSide }}"><svg width="18" height="18" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"></path></svg></button>
+  </div>
+  </sc-if>
   <sc-if value="{{ browseNone }}" hint-placeholder-val="{{ true }}">
   <div style="{{ browseGrid }}">
     <button type="button" onClick="{{ browseRifts }}" style="font:inherit;color:inherit;text-align:left;width:100%;margin:0;position:relative;border-radius:14px;background:linear-gradient(160deg, rgba(22,48,74,.44), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.2);box-shadow:0 18px 50px rgba(0,6,16,.4), inset 0 1px 0 rgba(255,255,255,.13);padding:22px;min-height:140px;display:flex;flex-direction:column;cursor:pointer;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;animation:wipeIn .55s cubic-bezier(.2,.75,.2,1) both;animation-delay:.36s" style-hover="border-color:rgba(174,225,255,.6);transform:translateY(-2px);box-shadow:0 22px 60px rgba(0,6,16,.5), inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 1px rgba(174,225,255,.18)">
@@ -1021,7 +1047,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
     <button type="button" class="rf-inl-ico rf-tipbtn rf-tipbtn--l" aria-label="{{ sideLabel }}" aria-expanded="{{ sideOpen }}" onClick="{{ toggleSide }}"><svg width="18" height="18" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="{{ sideIcon }}"></path></svg></button>
     <span class="{{ inlTitleCls }}" aria-hidden="true">{{ inlTitle }}</span>
     <button type="button" class="rf-inl-ico rf-tipbtn" aria-label="{{ reqLabel }}" aria-haspopup="dialog" onClick="{{ openReq }}"><svg width="18" height="18" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m221-313 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-228q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm0-320 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-548q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm339 353q-17 0-28.5-11.5T520-320q0-17 11.5-28.5T560-360h280q17 0 28.5 11.5T880-320q0 17-11.5 28.5T840-280H560Zm0-320q-17 0-28.5-11.5T520-640q0-17 11.5-28.5T560-680h280q17 0 28.5 11.5T880-640q0 17-11.5 28.5T840-600H560Z"></path></svg></button>
-    <button type="button" aria-pressed="{{ inlMonOn }}" onClick="{{ inlMon }}" style="{{ inlMonStyle }}">{{ inlMonLabel }}</button>
+    <button type="button" class="rf-inl-mon" aria-pressed="{{ inlMonOn }}" onClick="{{ inlMon }}" style="{{ inlMonStyle }}">{{ inlMonLabel }}</button>
     <button type="button" class="rf-inl-x rf-tipbtn" aria-label="Close and return to the full list" onClick="{{ closeInline }}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="m3 3 8 8M11 3l-8 8"></path></svg></button>
   </div>
 </sc-if>
@@ -1181,7 +1207,6 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
   <div class="rf-dt-div" style="height:1px;background:linear-gradient(90deg, rgba(255,222,186,.5), rgba(174,225,255,.3) 40%, transparent);margin:22px 0 26px"></div>
   <div class="ldg-head">
   <div class="rf-dt-lbl" style="font-size:11px;letter-spacing:.22em;color:#8ecbff;margin-bottom:18px">SELECT TARGET REWARD // {{ rewardCountLabel }}</div>
-  <button type="button" class="ldg-sw" role="switch" aria-checked="{{ ledgerIconsOn }}" onClick="{{ toggleLedgerIcons }}"><span class="ldg-sw-tr" aria-hidden="true"></span>ICONS</button>
   </div>
   <div class="{{ ledgerCls }}">
     <sc-for list="{{ ledgerGroups }}" as="g" hint-placeholder-count="3">
@@ -1256,7 +1281,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
         <div style="{{ railFinal.titleStyle }}">{{ railFinal.title }}</div>
       </div>
     </div>
-    <button onClick="{{ abortRead }}" style="margin-top:12px;width:100%;border-radius:11px;background:rgba(30,14,10,.4);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,150,110,.34);color:#ffb87a;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:11px 0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:border-color .22s ease,color .22s ease,background-color .22s ease" style-hover="border-color:rgba(255,160,120,.7);color:#ffd0a8;background:rgba(52,20,12,.5)">✕ ABORT RIFT</button>
+    <button class="rf-read-abort" onClick="{{ abortRead }}" style="margin-top:12px;width:100%;border-radius:11px;background:rgba(30,14,10,.4);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,150,110,.34);color:#ffb87a;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:11px 0;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:border-color .22s ease,color .22s ease,background-color .22s ease" style-hover="border-color:rgba(255,160,120,.7);color:#ffd0a8;background:rgba(52,20,12,.5)">✕ ABORT RIFT</button>
   </div>
 
   <div class="rf-read-main" style="flex:100 1 470px;min-width:0">
@@ -1265,7 +1290,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
       <div class="rf-mstrip-top">
         <span class="rf-mstrip-n">{{ stripStep }}</span>
         <button type="button" class="rf-mstrip-t" aria-haspopup="dialog" aria-label="{{ stripTargetAria }}" onClick="{{ openTarget }}">◎ {{ rewardName }}</button>
-        <button type="button" class="rf-mstrip-rt" onClick="{{ back }}">RETARGET</button>
+        <button type="button" class="rf-mstrip-rt" onClick="{{ back }}">CHANGE TARGET</button>
       </div>
       <div class="rf-mstrip-bar"><div style="{{ progressStyle }}"></div></div>
     </div>
@@ -1332,7 +1357,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
         </sc-if>
       </div>
     </sc-if>
-    <div class="rf-d" style="display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap">
+    <div class="rf-d rf-read-nav" style="display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap">
       <button onClick="{{ prev }}" style="{{ prevStyle }}">‹ PREV</button>
       <button onClick="{{ next }}" style="{{ nextStyle }}">{{ nextLabel }}</button>
     </div>
@@ -1369,23 +1394,11 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
       </div>
       <button onClick="{{ back }}" style="position:relative;overflow:hidden;margin-top:18px;width:100%;border-radius:10px;background:linear-gradient(180deg, rgba(255,214,170,.2), rgba(255,190,130,.06));border:1px solid rgba(255,224,190,.62);color:#ffe6c8;font-family:inherit;font-size:11px;letter-spacing:.2em;padding:11px 0;cursor:pointer;animation:retGlow 7s ease-in-out infinite;transition:border-color .22s ease,color .22s ease" style-hover="border-color:rgba(255,236,214,.92);color:#fff8ef">
         <span style="position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;background:linear-gradient(105deg, transparent 0%, rgba(255,224,190,.06) 34%, rgba(255,238,216,.36) 50%, rgba(255,224,190,.06) 66%, transparent 100%);animation:retSwipe 7s ease-in-out infinite"></span>
-        <span style="position:relative">RETARGET</span>
+        <span style="position:relative">CHANGE TARGET</span>
       </button>
     </div>
 
-    <div class="rf-read-radar" style="position:relative;height:186px;border-radius:14px;border:1px solid rgba(176,214,255,.18);background:radial-gradient(80% 80% at 50% 50%, rgba(142,203,255,.16), rgba(6,16,28,.5));backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;overflow:hidden">
-      <div style="position:absolute;width:152px;height:152px;border:1px solid rgba(174,225,255,.3);border-radius:999px"></div>
-      <div style="position:absolute;width:114px;height:114px;border:1px dashed rgba(255,224,190,.4);border-radius:999px;animation:spin 24s linear infinite"></div>
-      <div style="position:absolute;width:74px;height:74px;border:1px solid rgba(174,225,255,.5);border-top-color:transparent;border-radius:999px;animation:spinR 9s linear infinite"></div>
-      <div style="position:absolute;width:152px;height:1px;background:linear-gradient(90deg, transparent, rgba(174,225,255,.45), transparent)"></div>
-      <div style="position:absolute;width:1px;height:152px;background:linear-gradient(180deg, transparent, rgba(174,225,255,.45), transparent)"></div>
-      <div style="position:relative;text-align:center">
-        <div aria-hidden="true" style="width:8px;height:8px;border-radius:99px;background:#ffd9b0;box-shadow:0 0 14px #ffd9b0;animation:blink 2.4s infinite"></div>
-      </div>
-      <div style="position:absolute;left:12px;bottom:9px;font-size:8px;letter-spacing:.16em;color:#8ba7bf">RIFT TRACE ACTIVE</div>
-    </div>
-
-    <div style="position:relative;border-radius:14px;background:rgba(8,18,32,.5);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.11);padding:18px">
+    <div class="rf-read-params" style="position:relative;border-radius:14px;background:rgba(8,18,32,.5);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(176,214,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.11);padding:18px">
       <div style="position:absolute;right:-1px;top:-1px;width:20px;height:20px;border-right:1.5px solid rgba(255,224,190,.7);border-top:1.5px solid rgba(255,224,190,.7);border-top-right-radius:14px;pointer-events:none"></div>
       <div style="font-size:11px;letter-spacing:.22em;color:#8ecbff;margin-bottom:11px">MISSION PARAMETERS</div>
       <div style="font-size:12px;line-height:1.75;color:#cfe0ef">{{ riftReq }}</div>
@@ -1399,7 +1412,16 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 </div>
 </section>
 
-<div class="rf-foot" style="display:flex;align-items:center;gap:16px;height:34px;padding:0 34px;border-top:1px solid rgba(176,214,255,.12);font-size:11px;letter-spacing:.18em;color:#7f9cb4;background:rgba(6,14,26,.94);backdrop-filter:blur(30px) saturate(140%);-webkit-backdrop-filter:blur(30px) saturate(140%);position:fixed;left:0;right:0;bottom:0;z-index:880" data-comment-anchor="b696c1d46c-div">
+<sc-if value="{{ readBarAny }}" hint-placeholder-val="{{ false }}">
+<div class="rf-readbar" role="group" aria-label="Step controls">
+  <button type="button" class="rf-readbar-abort" onClick="{{ abortRead }}">✕ ABORT RIFT</button>
+  <span class="rf-readbar-step">{{ readBarStep }}</span>
+  <span class="rf-readbar-gap"></span>
+  <button type="button" onClick="{{ prev }}" style="{{ prevStyle }}">‹ PREV</button>
+  <button type="button" onClick="{{ next }}" style="{{ nextStyle }}">{{ nextLabel }}</button>
+</div>
+</sc-if>
+<div class="rf-foot" style="display:flex;align-items:center;gap:16px;height:17px;padding:0 34px;border-top:1px solid rgba(176,214,255,.12);font-size:11px;letter-spacing:.18em;color:#7f9cb4;background:rgba(6,14,26,.94);backdrop-filter:blur(30px) saturate(140%);-webkit-backdrop-filter:blur(30px) saturate(140%);position:fixed;left:0;right:0;bottom:0;z-index:880" data-comment-anchor="b696c1d46c-div">
   <span class="rf-foot-long">ASTRAL PLANES // RIFT NAVIGATION HOLO v5.0</span>
   <span class="rf-foot-short">RIFT NAV // HOLO v5.0</span>
   <span class="rf-foot-status" style="margin-left:auto">{{ statusLine }}</span>
@@ -1532,7 +1554,7 @@ input:focus-visible{outline:2px solid #8ecbff!important;outline-offset:1px}
 class Component extends DCLogic {
   state = { rift: null, reward: null, cur: 0, railOpen: {}, q: '', boot: 0, cat: 'ALL', catOpen: false, browse: null, dig: null, cam: null, ctlOpen: false, presetName: '', presets: null, copied: false, monitored: [], condensed: false, narrow: false, monMenuOpen: false, tip: '', toastText: '', toastAdd: true, progress: {},
     mob: false, dockMini: false, searchOpen: false, sq: '', sScope: 'all', drawer: null, drawerCat: null, reqOpen: false, inlOut: false, inlSideHidden: false,
-    ledgerIcons: (() => { try { return localStorage.getItem('rf-ledger-icons') !== '0'; } catch (e) { return true; } })() };
+  };
 
   componentDidMount() {
     this.startBoot();
@@ -2321,7 +2343,6 @@ class Component extends DCLogic {
     if (!f) for (const x of st) { const g = named(x.choice) || named(x.title); if (g) f = g; }
     return f ? f.toUpperCase() : 'ANY ROUTE';
   }
-  setLedgerIcons(on) { try { localStorage.setItem('rf-ledger-icons', on ? '1' : '0'); } catch (e) {} this.setState({ ledgerIcons: on }); }
   TYPE_SHORT = { tech: 'TECHNOLOGY', specimen: 'SPECIMEN', modifier: 'MODIFIER', edict: 'EDICT', recurring: 'RECURRING',
     planet: 'PLANET', deposit: 'DEPOSIT', system: 'SYSTEM', leader: 'LEADER', trait: 'LEADER TRAIT', species: 'POPS',
     unit: 'SHIPS & ARMIES', contact: 'DIPLOMACY', situation: 'SITUATION', followup: 'FOLLOW-UP', decision: 'DECISION',
@@ -2670,10 +2691,13 @@ class Component extends DCLogic {
     return {
       // ---- inline detail (Notched split, desktop) ----
       inlineSel, inlRows: inlineSel,
+      indexTitle: browse === 'dig' ? 'Dig Site Index' : 'Rift Index',
+      indexCount: browse === 'dig' ? digShown.length + (digShown.length === 1 ? ' SITE' : ' SITES') : filtered.length + ' RIFTS',
+      readBarAny: inlineSel && !!reward, readBarStep: cur >= steps.length ? 'COMPLETE' : 'STEP ' + (cur + 1) + ' OF ' + steps.length,
       inlTitle: rift ? rift.name : (dig || ''), inlTitleCls: 'rf-inl-title' + (reward ? ' is-pinned' : ''),
       inlScrollRef: this._inlScrollRef || (this._inlScrollRef = el => this.bindInlScroll(el)),
       sideOpen: !this.state.inlSideHidden, sideLabel: this.state.inlSideHidden ? 'Show the list' : 'Hide the list',
-      sideIcon: this.state.inlSideHidden ? 'M500-592v224q0 14 12 19t22-5l98-98q12-12 12-28t-12-28l-98-98q-10-10-22-5t-12 19ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm120-80v-560H200v560h120Zm80 0h360v-560H400v560Zm-80 0H200h120Z' : 'M660-368v-224q0-14-12-19t-22 5l-98 98q-12 12-12 28t12 28l98 98q10 10 22 5t12-19ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm120-80v-560H200v560h120Zm80 0h360v-560H400v560Zm-80 0H200h120Z',
+      sideIcon: this.state.inlSideHidden ? 'M383-480 228-636q-11-11-11.5-27.5T228-692q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L284-268q-11 11-27.5 11.5T228-268q-11-11-11-28t11-28l155-156Zm264 0L492-636q-11-11-11.5-27.5T492-692q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L548-268q-11 11-27.5 11.5T492-268q-11-11-11-28t11-28l155-156Z' : 'm313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z',
       toggleSide: () => this.set({ inlSideHidden: !this.state.inlSideHidden }),
       reqLabel: rift ? 'Access requirements' : 'Requirements', openReq: e => this.openDrawer('req', null, e),
       reqMain: rift ? (this.clean(rift.req, '') || 'No special requirement.') : (digSite ? (digSite.req || 'No special requirement beyond a surveyed site inside your borders.') : ''),
@@ -2687,7 +2711,7 @@ class Component extends DCLogic {
       ] : [], fullCards: !inlineSel, folderIcon: this.FOLDER_ICON,
       hdrCls: 'rf-hdr' + (inlineSel ? ' is-collapsed' : ''),
       inlDimCls: 'rf-inl-dim' + (inlineSel ? ' is-on' : ''),
-      inlCls: inlineSel ? 'rf-inl-panel' + (this.state.inlSideHidden ? ' is-wide' : '') + (this.state.inlOut ? ' is-out' : '') : 'rf-split-off',
+      inlCls: inlineSel ? 'rf-inl-panel' + (reward ? ' is-reading' : '') + (this.state.inlSideHidden ? ' is-wide' : '') + (this.state.inlOut ? ' is-out' : '') : 'rf-split-off',
       inlScrollCls: inlineSel ? 'rf-inl-scroll' : 'rf-split-off',
       inlLabelledby: inlineSel && !reward ? 'rf-inl-name' : '',
       inlAriaLabel: inlineSel && reward && rift ? rift.name : '',
@@ -2698,7 +2722,7 @@ class Component extends DCLogic {
       inlMonLabel: (rift ? this.isMon('rift', rift.name) : !!(dig && this.isMon('dig', dig))) ? '⦿ MONITORING' : '✚ MONITOR SITUATION',
       closeInline: () => this.closeInline(),
       cbarBack: inlineSel ? () => this.closeInline() : () => this.set({ browse: null, rift: null, dig: null, reward: null, cur: 0, railOpen: {}, q: '', cat: 'ALL', digCat: 'ALL', catOpen: false }),
-      cbarBackLabel: inlineSel ? 'Close and return to the full list' : 'Back to galaxy',
+      cbarBackLabel: inlineSel ? 'Back to the full list' : 'Back to galaxy',
       abortRead: inlineDetail ? goBack : closeAll,
       // ---- mobile navigation ----
       mob, rootClass: 'rf-root' + (mob ? ' is-mob' : ''),
@@ -2777,7 +2801,7 @@ class Component extends DCLogic {
         const f = (v, m) => { const n = Math.round(v * 57.3) % m; return (n < 0 ? '-' : '') + String(Math.abs(n)).padStart(3, '0'); };
         return 'X' + f(cam.ang, 360) + ' / Y' + f(cam.pitch, 180);
       })(),
-      cornerHudStyle: 'position:fixed;right:0;bottom:34px;width:' + this.HUD_W + 'px;height:180px;z-index:860;pointer-events:none;'
+      cornerHudStyle: 'position:fixed;right:0;bottom:17px;width:' + this.HUD_W + 'px;height:180px;z-index:860;pointer-events:none;'
         + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (this.state.hudClear && !inlineSel ? 'block' : 'none'),
       cornerHudTopStyle: 'position:fixed;right:0;top:56px;width:' + this.HUD_W + 'px;height:210px;z-index:860;pointer-events:none;'
         + 'opacity:' + (split ? '.72' : '.85') + ';display:' + (this.state.hudClear && !inlineSel ? 'block' : 'none'),
@@ -2994,9 +3018,7 @@ class Component extends DCLogic {
       rewardCountLabel: this.rewardGroups(rift).length + ' DOCUMENTED',
 
       rewardCards, ledgerGroups,
-      ledgerCls: 'ldg' + (this.state.ledgerIcons === false ? ' no-icons' : ''),
-      ledgerIconsOn: this.state.ledgerIcons === false ? 'false' : 'true',
-      toggleLedgerIcons: () => this.setLedgerIcons(this.state.ledgerIcons === false),
+      ledgerCls: 'ldg',
 
       rewardName: this.shortOf(reward),
       rewardEffect: reward && reward.type !== 'relic' ? (reward.effect || '') : '', hasRewardEffect: !!(reward && reward.type !== 'relic' && reward.effect),
