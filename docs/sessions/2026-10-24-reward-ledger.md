@@ -104,3 +104,101 @@ card grid with the grouped "Reward Ledger" in its V2 Two-tone colour treatment.
 - Figma: https://www.figma.com/design/1MdYxgxTFL90Cp1HXiBwAz/Rift-Helper-UI?node-id=97-449
 - Ledger Color Variations (web mock): https://claude.ai/artifact/9ZXKeVAY5fQJPtC9nXKiZT
 - Branch: https://github.com/nightowl-83/RiftNav/tree/reward-ledger
+
+---
+
+# Later the same day: inline detail refinement rounds 3–6, then live
+
+**Status at close:** `reward-ledger` merged into `main` (`8012e8e`) and pushed, so the Cloudflare
+Pages production site now serves inline detail plus the Reward Ledger. The deploy itself wasn't
+checked: `gh` isn't installed here, and the site is password-gated.
+
+## What we set out to do
+
+Mike reviewed the branch in the preview and sent four more rounds of edits, then asked for the build
+to go live. Every round is written up in `design_handoff_rift_finder/README.md` under "Inline detail"
+(Round 3 through Round 6).
+
+## What actually changed
+
+- **Round 3** (`fa0e3a7`, screenshots fixed in `12249b1`):
+  - A sticky "Rift Index" title row.
+  - « / » double-arrow icons.
+  - Header buttons all 38px tall.
+  - A fading folder container.
+  - The ICONS switch removed, with tiles at half opacity.
+  - A full-width reader bar (Abort / step / Prev / Next) above the footer.
+  - Mission parameters moved into the requirements sheet.
+  - The radar removed.
+  - "Retarget" renamed "Change target".
+  - The compact bar's back button gained an arrow and a "BACK" label.
+  - The footer halved.
+- **Fade fix** (`f462fdf`). The first fade masked the folder outline directly. Its stroke sits
+  half a pixel outside the box, so the border disappeared entirely, and Mike called it out. The
+  outline, notch bar and shadow now sit in `.rf-inl-fade` wrappers that extend 80px past the panel.
+  The top 30% was checked pixel-identical.
+- **Round 4** (`c9557ec`):
+  - The detail and reader cards (`.rf-cardx`) lost their coloured corner brackets and took the
+    folder's border and fill instead.
+  - The reader's three columns start on one line.
+  - Footer at 14px.
+  - GUIDE ONLINE hides below 1140px, because it overflowed at 1024.
+- **Round 5** (`b4f0a1e`):
+  - The footer gained 4px of padding top and bottom.
+  - The browse header became three rows: title; the toggle with Monitoring; search with the filter.
+  - The monitoring tabs now sit as a fixed strip under the compact bar. They had been hidden
+    behind it.
+  - The reward-type menu is a root-level popover beside its trigger, or the filter sheet when it
+    won't fit.
+  - The step card fades like the folder.
+  - The Rift Index row is a single button and only gets a background once stuck.
+  - The panel's » appears only while the list is hidden.
+- **Round 6** (`af10113`):
+  - Search takes the spare width, and the filter label shortens: ALL REWARD TYPES, then
+    ALL REWARDS, then ALL.
+  - Both query fields got search icons.
+  - The monitoring strip shows no scrollbar and gained 8px of top padding.
+  - A "SHOW LIST" label sits beside the panel's ».
+  - While the list is open, the reader bar spans the viewport minus the list.
+  - The phone dock order is now Search, Filter, Monitoring, and the dock has room for the badge.
+  - **Collapse flicker:** found by a frame-by-frame screencast. The panel's content re-wrapped on
+    every frame, and at 1280 the reader jumped between stacked and three columns partway through
+    the slide. The `rfinl` size container moved from the panel to `.rf-inl-scroll`. During the
+    slide that element holds the narrower of the two widths, pinned right, so the layout changes
+    once.
+- **Live:** merged into `main`, with the decision recorded (`174b71e`).
+- **Verified:**
+  - **Every round:** headless Chrome over CDP from `file://`, at 1440, 1280, 1024 and 390, with no
+    page errors.
+  - **Folder graphics:** `folderPath`, `frameRef`, `bindFrame`, `buildFrame`, `drawFrame` and all
+    `.rf-fc*` rules are identical to `main` before the merge.
+  - **Screenshots:** the 12 ledger screenshots were regenerated after each visual round. The
+    `--noicons` set was removed along with the switch.
+- **Data:** none changed. No `data/*.json`, `rift-data.js` or `dig-data.js` edits, so there was
+  nothing to rebuild or validate.
+
+## Decisions made
+
+"Inline detail and the Reward Ledger ship to the live site" in `docs/DECISIONS.md`. It supersedes
+the 2026-10-06 "experiments stay on branches" entry for inline detail.
+
+## What's still open
+
+1. **The live deploy wasn't confirmed.** Open the site and hard-refresh.
+2. **Collapse flicker:** if a flash of the folder itself (not the content) remains, the next
+   suspect is the fill's `backdrop-filter` combined with its mask while the panel resizes.
+   Headless capture can't show compositor flicker.
+3. **A lighter horizontal band** shows across the list after scrolling in headless screenshots. It
+   was also present before round 5. It's probably a headless artifact; check in a real browser.
+4. **`split-tabs`** is unmerged and not deleted. Decide whether to drop it now that inline detail
+   is live.
+5. **Still open from this morning:** the Ruined Planet chapter 7 duplicates and their computed
+   routes; the dig site detail has no ledger; `Rift Finder Split.dc.html` still has the old grid.
+6. **Untracked folder:** `reference/_graphics/resources/` is still untracked and not part of
+   this work.
+
+## Next three things
+
+1. Check the live site after the deploy, at desktop width and on a phone.
+2. Decide `split-tabs`: delete it, or keep it as an alternative layout option.
+3. Fix the Ruined Planet chapter 7 duplicates and routes in the data, through `build_v3.py`.
